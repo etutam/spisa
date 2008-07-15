@@ -87,7 +87,7 @@ namespace UnitTest
         [TestMethod]
         public void CancelarFacturaImpresa()
         {
-            NotaPedido np = new NotaPedido();
+           /* NotaPedido np = new NotaPedido();
             np.Cliente = Cliente.TraerClientePorID(1);
             np.DescuentoEspecial = 10;
             np.FechaEmision = DateTime.Now;
@@ -147,7 +147,7 @@ namespace UnitTest
 
             f = Factura.TraerFacturaPorID(IdFactura);
 
-            if (Articulo.TraerArticuloPorID(1).Cantidad != CantidadArticulosOriginal) Assert.Fail();
+            if (Articulo.TraerArticuloPorID(1).Cantidad != CantidadArticulosOriginal) Assert.Fail();*/
         }
     }
 }

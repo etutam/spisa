@@ -10,6 +10,14 @@ using System.Data.Common;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 
+using System.Collections.Generic;
+using System.Linq;
+
+using System.Text;
+using System.IO;
+using System.Data.SqlClient;
+
+
 using System.Configuration;
 
 using System.Transactions; 
@@ -113,6 +121,18 @@ namespace SPISA.Libreria
 
             return ds.Tables[0];
         }
+
+        public static void test(){
+            using (SPISA.Entities.EntitiesModel entitiesModel = new SPISA.Entities.EntitiesModel())
+            {
+                SPISA.Entities.Articulo _articulo = (from art
+                                                     in entitiesModel.Articulos
+                                                     select art).First();
+                                     
+            }
+
+
+        }
         private static void CargarDatosEnArticulo(IDataReader dataReader, ref Articulo a)
         {
             try
@@ -149,6 +169,7 @@ namespace SPISA.Libreria
                 if (sendErrorsByMail) ExceptionPolicy.HandleException(ex, "Global Policy");
                 return null;
             }
+            
 
             Articulo a = null; 
             Database db = DatabaseFactory.CreateDatabase();
@@ -325,7 +346,7 @@ namespace SPISA.Libreria
         /// <param name="TipoOperacion"> 1- Resta
         ///                              2- Suma</param>
         /// <returns></returns>
-        public static int ModificarCantidad(int IdArticulo, Decimal Cantidad, int TipoOperacion)
+        public static int ModificarCantidad(int IdArticulo, Decimal Cantidad, int TipoOperacion, DbTransaction transaction)
         {
             try
             {
@@ -346,7 +367,7 @@ namespace SPISA.Libreria
 
             if (controlStock)
             {
-
+                
                 Database db = DatabaseFactory.CreateDatabase();
                 string sqlCommand = Consts.Articulos_ModificarCantidad;
 
@@ -361,8 +382,7 @@ namespace SPISA.Libreria
                 using (DbConnection conn = db.CreateConnection())
                 {
                     conn.Open();
-
-                    r = db.ExecuteScalar(dbCommand);
+                    r = db.ExecuteScalar(dbCommand, transaction);
 
                     Logger.Append(Consts.Articulos_ModificarCantidad, new Object[] { "IdArticulo", IdArticulo, "Cantidad", Cantidad, "TipoOperacion", TipoOperacion }, r.ToString() + " rows");
 

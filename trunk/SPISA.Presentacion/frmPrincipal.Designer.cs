@@ -53,9 +53,12 @@ namespace SPISA.Presentacion
             Infragistics.Win.UltraWinStatusBar.UltraStatusPanel ultraStatusPanel2 = new Infragistics.Win.UltraWinStatusBar.UltraStatusPanel();
             Infragistics.Win.UltraWinStatusBar.UltraStatusPanel ultraStatusPanel3 = new Infragistics.Win.UltraWinStatusBar.UltraStatusPanel();
             Infragistics.Win.Appearance appearance5 = new Infragistics.Win.Appearance();
+            Infragistics.Win.UltraWinEditors.EditorButton editorButton1 = new Infragistics.Win.UltraWinEditors.EditorButton();
             this.explorerBar = new Infragistics.Win.UltraWinExplorerBar.UltraExplorerBar();
             this.status = new Infragistics.Win.UltraWinStatusBar.UltraStatusBar();
+            this.txtDolar = new Infragistics.Win.UltraWinEditors.UltraTextEditor();
             ((System.ComponentModel.ISupportInitialize)(this.explorerBar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDolar)).BeginInit();
             this.SuspendLayout();
             // 
             // explorerBar
@@ -134,12 +137,14 @@ namespace SPISA.Presentacion
             // 
             // status
             // 
+            this.status.ButtonStyle = Infragistics.Win.UIElementButtonStyle.ButtonSoft;
             this.status.Location = new System.Drawing.Point(0, 598);
             this.status.Name = "status";
             appearance4.TextHAlignAsString = "Left";
             ultraStatusPanel1.Appearance = appearance4;
             ultraStatusPanel1.Key = "pDolar";
             ultraStatusPanel1.SizingMode = Infragistics.Win.UltraWinStatusBar.PanelSizingMode.Adjustable;
+            ultraStatusPanel1.Style = Infragistics.Win.UltraWinStatusBar.PanelStyle.Button;
             ultraStatusPanel1.Width = 200;
             appearance5.FontData.BoldAsString = "True";
             appearance5.FontData.ItalicAsString = "False";
@@ -160,12 +165,27 @@ namespace SPISA.Presentacion
             this.status.TabIndex = 3;
             this.status.Text = "ultraStatusBar1";
             this.status.ViewStyle = Infragistics.Win.UltraWinStatusBar.ViewStyle.Office2007;
+            this.status.ButtonClick += new Infragistics.Win.UltraWinStatusBar.PanelEventHandler(this.status_ButtonClick_1);
+            // 
+            // txtDolar
+            // 
+            editorButton1.ButtonStyle = Infragistics.Win.UIElementButtonStyle.Flat;
+            editorButton1.Text = "OK";
+            this.txtDolar.ButtonsRight.Add(editorButton1);
+            this.txtDolar.Location = new System.Drawing.Point(717, 577);
+            this.txtDolar.Name = "txtDolar";
+            this.txtDolar.Size = new System.Drawing.Size(200, 21);
+            this.txtDolar.TabIndex = 5;
+            this.txtDolar.Visible = false;
+            this.txtDolar.Leave += new System.EventHandler(this.txtDolar_Leave);
+            this.txtDolar.EditorButtonClick += new Infragistics.Win.UltraWinEditors.EditorButtonEventHandler(this.txtDolar_EditorButtonClick);
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(917, 621);
+            this.Controls.Add(this.txtDolar);
             this.Controls.Add(this.explorerBar);
             this.Controls.Add(this.status);
             this.IsMdiContainer = true;
@@ -176,7 +196,9 @@ namespace SPISA.Presentacion
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrincipal_FormClosing);
             this.Resize += new System.EventHandler(this.frmPrincipal_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.explorerBar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDolar)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -184,5 +206,6 @@ namespace SPISA.Presentacion
 
         private Infragistics.Win.UltraWinExplorerBar.UltraExplorerBar explorerBar;
         private Infragistics.Win.UltraWinStatusBar.UltraStatusBar status;
+        private Infragistics.Win.UltraWinEditors.UltraTextEditor txtDolar;
     }
 }

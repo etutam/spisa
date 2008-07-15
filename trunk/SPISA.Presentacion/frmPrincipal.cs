@@ -23,59 +23,64 @@ namespace SPISA.Presentacion
 
     public partial class frmPrincipal : Form
     {
-        [SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]
-        public class TestMessageFilter : IMessageFilter
-        {
-            public bool PreFilterMessage(ref Message m)
-            {
-                bool ret = false;
-                if (m.Msg == 522)
-                {
-                    ret = true;
-                }
+        //[SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]
+        //public class TestMessageFilter : IMessageFilter
+        //{
+        //    public bool PreFilterMessage(ref Message m)
+        //    {
+        //        bool ret = false;
+        //        if (m.Msg == 522)
+        //        {
+        //            ret = true;
+        //        }
 
-                return ret;
+        //        return ret;
 
-            }
-        }
+        //    }
+        //}
 
-        public static Cotizacion valorDolar = new Cotizacion();
+        public static String valorDolar = "";
 
 
-        System.Threading.Timer dollarTimer;
+        //System.Threading.Timer dollarTimer;
+
         public frmPrincipal()
         {
-            Application.AddMessageFilter(new TestMessageFilter());
+            //Application.AddMessageFilter(new TestMessageFilter());
 
             InitializeComponent();
 
             string[] grupos = { "groupFavoritos", "groupGestion" };
             ExplorerBarController.FillExplorerBar(grupos,explorerBar);
 
-
-            CheckForIllegalCrossThreadCalls = false;
-            dollarTimer = new System.Threading.Timer(new TimerCallback(TraerCotizacion), status,2000, 60000);
-
-            ExplorerBarController.e = this.explorerBar;
-            status.Panels["pMessages"].Width = this.Size.Width - this.explorerBar.Width - status.Panels["pDolar"].Width;
-
             status.Panels[1].Text = "Version: " + Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
             Logger.Append("============================= EL SISTEMA HA SIDO INICIADO ============================= ", null, null);
+
+            //CheckForIllegalCrossThreadCalls = false;
+            //dollarTimer = new System.Threading.Timer(new TimerCallback(TraerCotizacion), status,2000, 60000);
+
+            //ExplorerBarController.e = this.explorerBar;
+            //status.Panels["pMessages"].Width = this.Size.Width - this.explorerBar.Width - status.Panels["pDolar"].Width;
+
+            valorDolar = ConfigurationManager.AppSettings["ValorDolar"];
+            status.Panels[0].Text = "Dolar: " + valorDolar;
+
         }
 
-        public void TraerCotizacion(object value)
-        {
-            Infragistics.Win.UltraWinStatusBar.UltraStatusBar bar = (Infragistics.Win.UltraWinStatusBar.UltraStatusBar)value;
-            bar.Panels["pDolar"].Text = "Dolar: " + valorDolar.DolarVenta;
 
-            Logger.Append("El dolar ha sido actualizado a $" + valorDolar.DolarVenta.ToString(), null, null);
-        }
+        //public void TraerCotizacion(object value)
+        //{
+        //    Infragistics.Win.UltraWinStatusBar.UltraStatusBar bar = (Infragistics.Win.UltraWinStatusBar.UltraStatusBar)value;
+        //    bar.Panels["pDolar"].Text = "Dolar: " + valorDolar.DolarVenta;
+
+        //    Logger.Append("El dolar ha sido actualizado a $" + valorDolar.DolarVenta.ToString(), null, null);
+        //}
 
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-
+            Articulo.test();
         }
 
         private void ultraExplorerBar1_ItemClick(object sender, Infragistics.Win.UltraWinExplorerBar.ItemEventArgs e)
@@ -573,7 +578,7 @@ namespace SPISA.Presentacion
                         }
                         if (check != 3)
                         {
-                            Decimal valorDolar = Decimal.Round(Convert.ToDecimal(frmPrincipal.valorDolar.DolarVenta), 2);
+                            Decimal valorDolar = Convert.ToDecimal(frmPrincipal.valorDolar);
                             Factura f = ucNP.NotaPedido.GenerarFactura();
 
                             f.ValorDolar = valorDolar;
@@ -1024,6 +1029,46 @@ namespace SPISA.Presentacion
         private void frmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             Logger.Append("============================= EL USUARIO HA CERRADO EL SISTEMA =============================", null, null);
+        }
+
+
+        private void setEditarValorDolar(bool state)
+        {
+            if (state)
+            {
+                status.Panels[0].Style = Infragistics.Win.UltraWinStatusBar.PanelStyle.ControlContainer;
+                status.Panels[0].Control = txtDolar;
+                txtDolar.Visible = true;
+                txtDolar.Text = valorDolar;
+                txtDolar.Focus();
+            }
+            else
+            {
+                status.Panels[0].Text = "Dolar: " + txtDolar.Text;
+                status.Panels[0].Style = Infragistics.Win.UltraWinStatusBar.PanelStyle.Button;
+                valorDolar = txtDolar.Text;
+
+                Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                config.AppSettings.Settings.Remove("ValorDolar");
+                config.AppSettings.Settings.Add("ValorDolar", valorDolar);
+                config.Save();
+                ConfigurationManager.RefreshSection("appSettings");
+            }
+        }
+
+        private void status_ButtonClick_1(object sender, Infragistics.Win.UltraWinStatusBar.PanelEventArgs e)
+        {
+            setEditarValorDolar(true);
+        }
+
+        private void txtDolar_Leave(object sender, EventArgs e)
+        {
+            setEditarValorDolar(false);
+        }
+
+        private void txtDolar_EditorButtonClick(object sender, Infragistics.Win.UltraWinEditors.EditorButtonEventArgs e)
+        {
+            setEditarValorDolar(false);
         }
     }
 }

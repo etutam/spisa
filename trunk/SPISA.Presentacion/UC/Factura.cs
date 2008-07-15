@@ -28,7 +28,7 @@ namespace SPISA.Presentacion
         #region Constructores
         public UcFactura()
         {
-            Decimal valorDolar = Decimal.Round(Convert.ToDecimal(frmPrincipal.valorDolar.DolarVenta), 2);
+            Decimal valorDolar = Convert.ToDecimal(frmPrincipal.valorDolar);
             StringBuilder sb = new StringBuilder();
             long numeroFactura = Factura.ObtenerNuevoNumeroDeFactura();
 

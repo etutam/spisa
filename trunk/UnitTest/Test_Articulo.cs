@@ -43,6 +43,9 @@ namespace UnitTest
         [TestMethod]
         public void TestMethod_TraerArticuloPorCodigo()
         {
+            Articulo a = new Articulo();
+            Articulo.test();
+
             //Articulo a = Articulo.TraerArticuloPorCodigo(null);
         }
 

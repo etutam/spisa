@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SPISA.Entities" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+  <EntityContainer Name="EntitiesModelCS">
+    <EntitySet Name="Articulos" EntityType="SPISA.Entities.Articulo" />
+    <EntitySet Name="Articulos_Compuestos" EntityType="SPISA.Entities.Articulos_Compuestos" />
+    <EntitySet Name="Buscador_Criterios" EntityType="SPISA.Entities.Buscador_Criterios" />
+    <EntitySet Name="Buscador_Relaciones" EntityType="SPISA.Entities.Buscador_Relaciones" />
+    <EntitySet Name="Categorias" EntityType="SPISA.Entities.Categorias" />
+    <EntitySet Name="Clientes" EntityType="SPISA.Entities.Clientes" />
+    <EntitySet Name="CondicionesIVA" EntityType="SPISA.Entities.CondicionesIVA" />
+    <EntitySet Name="CuentaCorriente_Movimientos" EntityType="SPISA.Entities.CuentaCorriente_Movimientos" />
+    <EntitySet Name="CuentaCorriente_Pagos" EntityType="SPISA.Entities.CuentaCorriente_Pagos" />
+    <EntitySet Name="CuentaCorriente_Pagos_DatosDelPago" EntityType="SPISA.Entities.CuentaCorriente_Pagos_DatosDelPago" />
+    <EntitySet Name="CuentasCorriente" EntityType="SPISA.Entities.CuentasCorriente" />
+    <EntitySet Name="Descuentos" EntityType="SPISA.Entities.Descuentos" />
+    <EntitySet Name="Facturas" EntityType="SPISA.Entities.Facturas" />
+    <EntitySet Name="FormasDePago" EntityType="SPISA.Entities.FormasDePago" />
+    <EntitySet Name="MovimientosTipo" EntityType="SPISA.Entities.MovimientosTipo" />
+    <EntitySet Name="NotaPedido_Items" EntityType="SPISA.Entities.NotaPedido_Items" />
+    <EntitySet Name="NotaPedidos" EntityType="SPISA.Entities.NotaPedidos" />
+    <EntitySet Name="Operatorias" EntityType="SPISA.Entities.Operatorias" />
+    <EntitySet Name="Provincias" EntityType="SPISA.Entities.Provincias" />
+    <EntitySet Name="Remitos" EntityType="SPISA.Entities.Remitos" />
+    <EntitySet Name="sysdiagrams" EntityType="SPISA.Entities.sysdiagrams" />
+    <EntitySet Name="Transportistas" EntityType="SPISA.Entities.Transportistas" />
+    <AssociationSet Name="FK_Articulos_Categoria" Association="SPISA.Entities.FK_Articulos_Categoria">
+      <End Role="Categorias" EntitySet="Categorias" />
+      <End Role="Articulos" EntitySet="Articulos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NotaPedido_Items1_1Articulo" Association="SPISA.Entities.FK_NotaPedido_Items1_1Articulo">
+      <End Role="Articulos" EntitySet="Articulos" />
+      <End Role="NotaPedido_Items" EntitySet="NotaPedido_Items" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Clientes_CondicionesIVA" Association="SPISA.Entities.FK_Clientes_CondicionesIVA">
+      <End Role="CondicionesIVA" EntitySet="CondicionesIVA" />
+      <End Role="Clientes" EntitySet="Clientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Clientes_Operatorias" Association="SPISA.Entities.FK_Clientes_Operatorias">
+      <End Role="Operatorias" EntitySet="Operatorias" />
+      <End Role="Clientes" EntitySet="Clientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Clientes_Provincias" Association="SPISA.Entities.FK_Clientes_Provincias">
+      <End Role="Provincias" EntitySet="Provincias" />
+      <End Role="Clientes" EntitySet="Clientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NotaPedidos1_1Clientes" Association="SPISA.Entities.FK_NotaPedidos1_1Clientes">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="NotaPedidos" EntitySet="NotaPedidos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CuentaCorriente_Movimientos_CuentaCorriente_Pagos" Association="SPISA.Entities.FK_CuentaCorriente_Movimientos_CuentaCorriente_Pagos">
+      <End Role="CuentaCorriente_Pagos" EntitySet="CuentaCorriente_Pagos" />
+      <End Role="CuentaCorriente_Movimientos" EntitySet="CuentaCorriente_Movimientos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CuentaCorriente_Movimientos_MovimientosTipo" Association="SPISA.Entities.FK_CuentaCorriente_Movimientos_MovimientosTipo">
+      <End Role="MovimientosTipo" EntitySet="MovimientosTipo" />
+      <End Role="CuentaCorriente_Movimientos" EntitySet="CuentaCorriente_Movimientos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CuentaCorriente_Pagos_DatosDelPago_CuentaCorriente_Pagos" Association="SPISA.Entities.FK_CuentaCorriente_Pagos_DatosDelPago_CuentaCorriente_Pagos">
+      <End Role="CuentaCorriente_Pagos" EntitySet="CuentaCorriente_Pagos" />
+      <End Role="CuentaCorriente_Pagos_DatosDelPago" EntitySet="CuentaCorriente_Pagos_DatosDelPago" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CuentaCorriente_Pagos_FormasDePago" Association="SPISA.Entities.FK_CuentaCorriente_Pagos_FormasDePago">
+      <End Role="FormasDePago" EntitySet="FormasDePago" />
+      <End Role="CuentaCorriente_Pagos" EntitySet="CuentaCorriente_Pagos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Facturas1_1NotaPedidos" Association="SPISA.Entities.FK_Facturas1_1NotaPedidos">
+      <End Role="NotaPedidos" EntitySet="NotaPedidos" />
+      <End Role="Facturas" EntitySet="Facturas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NotaPedido_Items1_nNotaPedidos" Association="SPISA.Entities.FK_NotaPedido_Items1_nNotaPedidos">
+      <End Role="NotaPedidos" EntitySet="NotaPedidos" />
+      <End Role="NotaPedido_Items" EntitySet="NotaPedido_Items" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Articulo">
+    <Key>
+      <PropertyRef Name="idArticulo" />
+    </Key>
+    <Property Name="idArticulo" Type="Int32" Nullable="false" />
+    <Property Name="codigo" Type="String" Nullable="false" MaxLength="20" Unicode="false" />
+    <Property Name="descripcion" Type="String" Nullable="false" MaxLength="500" Unicode="false" />
+    <Property Name="cantidad" Type="Int32" Nullable="false" />
+    <Property Name="preciounitario" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <NavigationProperty Name="Categorias" Relationship="SPISA.Entities.FK_Articulos_Categoria" FromRole="Articulos" ToRole="Categorias" />
+    <NavigationProperty Name="NotaPedido_Items" Relationship="SPISA.Entities.FK_NotaPedido_Items1_1Articulo" FromRole="Articulos" ToRole="NotaPedido_Items" />
+  </EntityType>
+  <EntityType Name="Articulos_Compuestos">
+    <Key>
+      <PropertyRef Name="CodigoArticulo" />
+      <PropertyRef Name="CodigoCompuesto" />
+    </Key>
+    <Property Name="CodigoArticulo" Type="String" Nullable="false" MaxLength="20" Unicode="false" />
+    <Property Name="CodigoCompuesto" Type="String" Nullable="false" MaxLength="20" Unicode="false" />
+    <Property Name="Cantidad" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Buscador_Criterios">
+    <Key>
+      <PropertyRef Name="TipoDeDato" />
+      <PropertyRef Name="Criterio" />
+    </Key>
+    <Property Name="TipoDeDato" Type="String" Nullable="false" MaxLength="50" Unicode="false" />
+    <Property Name="Criterio" Type="String" Nullable="false" MaxLength="50" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Buscador_Relaciones">
+    <Key>
+      <PropertyRef Name="Tabla" />
+    </Key>
+    <Property Name="Tabla" Type="String" Nullable="false" MaxLength="50" Unicode="false" />
+    <Property Name="ColumnaID" Type="String" MaxLength="255" Unicode="false" />
+    <Property Name="TablaABuscar" Type="String" MaxLength="50" Unicode="false" />
+    <Property Name="ColumnaABuscar" Type="String" MaxLength="50" Unicode="false" />
+    <Property Name="NombreColumna" Type="String" MaxLength="255" Unicode="false" />
+    <Property Name="TipoDeDato" Type="String" MaxLength="50" Unicode="false" />
+    <Property Name="QueryPersonalizada" Type="String" MaxLength="255" Unicode="false" />
+    <Property Name="ColumnaPersonalizada" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Categorias">
+    <Key>
+      <PropertyRef Name="IdCategoria" />
+    </Key>
+    <Property Name="IdCategoria" Type="Int32" Nullable="false" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="50" Unicode="false" />
+    <Property Name="Descuento" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Articulos" Relationship="SPISA.Entities.FK_Articulos_Categoria" FromRole="Categorias" ToRole="Articulos" />
+  </EntityType>
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="IdCliente" />
+    </Key>
+    <Property Name="IdCliente" Type="Int32" Nullable="false" />
+    <Property Name="Codigo" Type="Int32" Nullable="false" />
+    <Property Name="RazonSocial" Type="String" Nullable="false" MaxLength="100" Unicode="false" />
+    <Property Name="Domicilio" Type="String" MaxLength="100" Unicode="false" />
+    <Property Name="Localidad" Type="String" MaxLength="40" Unicode="false" />
+    <Property Name="CUIT" Type="String" Nullable="false" MaxLength="11" Unicode="false" />
+    <Property Name="Saldo" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="IdTransportista" Type="Int32" />
+    <NavigationProperty Name="CondicionesIVA" Relationship="SPISA.Entities.FK_Clientes_CondicionesIVA" FromRole="Clientes" ToRole="CondicionesIVA" />
+    <NavigationProperty Name="Operatorias" Relationship="SPISA.Entities.FK_Clientes_Operatorias" FromRole="Clientes" ToRole="Operatorias" />
+    <NavigationProperty Name="Provincias" Relationship="SPISA.Entities.FK_Clientes_Provincias" FromRole="Clientes" ToRole="Provincias" />
+    <NavigationProperty Name="NotaPedidos" Relationship="SPISA.Entities.FK_NotaPedidos1_1Clientes" FromRole="Clientes" ToRole="NotaPedidos" />
+  </EntityType>
+  <EntityType Name="CondicionesIVA">
+    <Key>
+      <PropertyRef Name="IdCondicionIVA" />
+    </Key>
+    <Property Name="IdCondicionIVA" Type="Int32" Nullable="false" />
+    <Property Name="CondicionIVA" Type="String" Nullable="false" MaxLength="50" Unicode="false" />
+    <NavigationProperty Name="Clientes" Relationship="SPISA.Entities.FK_Clientes_CondicionesIVA" FromRole="CondicionesIVA" ToRole="Clientes" />
+  </EntityType>
+  <EntityType Name="CuentaCorriente_Movimientos">
+    <Key>
+      <PropertyRef Name="IdMovimiento" />
+    </Key>
+    <Property Name="IdMovimiento" Type="Int32" Nullable="false" />
+    <Property Name="IdCuentaCorriente" Type="Int32" Nullable="false" />
+    <Property Name="IdFactura" Type="Int32" />
+    <Property Name="Monto" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="CuentaCorriente_Pagos" Relationship="SPISA.Entities.FK_CuentaCorriente_Movimientos_CuentaCorriente_Pagos" FromRole="CuentaCorriente_Movimientos" ToRole="CuentaCorriente_Pagos" />
+    <NavigationProperty Name="MovimientosTipo" Relationship="SPISA.Entities.FK_CuentaCorriente_Movimientos_MovimientosTipo" FromRole="CuentaCorriente_Movimientos" ToRole="MovimientosTipo" />
+  </EntityType>
+  <EntityType Name="CuentaCorriente_Pagos">
+    <Key>
+      <PropertyRef Name="IdPago" />
+    </Key>
+    <Property Name="IdPago" Type="Int32" Nullable="false" />
+    <Property Name="IdCuentaCorriente" Type="Int32" Nullable="false" />
+    <Property Name="IdCliente" Type="Int32" Nullable="false" />
+    <Property Name="Monto" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+    <NavigationProperty Name="CuentaCorriente_Movimientos" Relationship="SPISA.Entities.FK_CuentaCorriente_Movimientos_CuentaCorriente_Pagos" FromRole="CuentaCorriente_Pagos" ToRole="CuentaCorriente_Movimientos" />
+    <NavigationProperty Name="CuentaCorriente_Pagos_DatosDelPago" Relationship="SPISA.Entities.FK_CuentaCorriente_Pagos_DatosDelPago_CuentaCorriente_Pagos" FromRole="CuentaCorriente_Pagos" ToRole="CuentaCorriente_Pagos_DatosDelPago" />
+    <NavigationProperty Name="FormasDePago" Relationship="SPISA.Entities.FK_CuentaCorriente_Pagos_FormasDePago" FromRole="CuentaCorriente_Pagos" ToRole="FormasDePago" />
+  </EntityType>
+  <EntityType Name="CuentaCorriente_Pagos_DatosDelPago">
+    <Key>
+      <PropertyRef Name="IdPago" />
+      <PropertyRef Name="ChequeNumero" />
+      <PropertyRef Name="FechaCheque" />
+      <PropertyRef Name="FechaCobro" />
+    </Key>
+    <Property Name="IdPago" Type="Int32" Nullable="false" />
+    <Property Name="ChequeNumero" Type="Int32" Nullable="false" />
+    <Property Name="FechaCheque" Type="DateTime" Nullable="false" />
+    <Property Name="FechaCobro" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="CuentaCorriente_Pagos" Relationship="SPISA.Entities.FK_CuentaCorriente_Pagos_DatosDelPago_CuentaCorriente_Pagos" FromRole="CuentaCorriente_Pagos_DatosDelPago" ToRole="CuentaCorriente_Pagos" />
+  </EntityType>
+  <EntityType Name="CuentasCorriente">
+    <Key>
+      <PropertyRef Name="IdCuentaCorriente" />
+    </Key>
+    <Property Name="IdCuentaCorriente" Type="Int32" Nullable="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Nullable="false" />
+    <Property Name="IdCliente" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Descuentos">
+    <Key>
+      <PropertyRef Name="IdCliente" />
+      <PropertyRef Name="IdCategoria" />
+      <PropertyRef Name="Descuento" />
+    </Key>
+    <Property Name="IdCliente" Type="Int32" Nullable="false" />
+    <Property Name="IdCategoria" Type="Int32" Nullable="false" />
+    <Property Name="Descuento" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Facturas">
+    <Key>
+      <PropertyRef Name="IdFactura" />
+    </Key>
+    <Property Name="IdFactura" Type="Int32" Nullable="false" />
+    <Property Name="NumeroFactura" Type="Int64" Nullable="false" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" />
+    <Property Name="Observaciones" Type="String" MaxLength="200" Unicode="false" />
+    <Property Name="FueImpresa" Type="Boolean" Nullable="false" />
+    <Property Name="ValorDolar" Type="Decimal" Precision="3" Scale="2" />
+    <Property Name="FueCancelada" Type="Boolean" Nullable="false" />
+    <Property Name="EsNotaDeCredito" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="NotaPedidos" Relationship="SPISA.Entities.FK_Facturas1_1NotaPedidos" FromRole="Facturas" ToRole="NotaPedidos" />
+  </EntityType>
+  <EntityType Name="FormasDePago">
+    <Key>
+      <PropertyRef Name="IdFormaDePago" />
+    </Key>
+    <Property Name="IdFormaDePago" Type="Int32" Nullable="false" />
+    <Property Name="FormaDePago" Type="String" Nullable="false" MaxLength="50" Unicode="false" />
+    <NavigationProperty Name="CuentaCorriente_Pagos" Relationship="SPISA.Entities.FK_CuentaCorriente_Pagos_FormasDePago" FromRole="FormasDePago" ToRole="CuentaCorriente_Pagos" />
+  </EntityType>
+  <EntityType Name="MovimientosTipo">
+    <Key>
+      <PropertyRef Name="IdMovimiento" />
+    </Key>
+    <Property Name="IdMovimiento" Type="Int32" Nullable="false" />
+    <Property Name="Movimiento" Type="String" Nullable="false" MaxLength="50" Unicode="false" />
+    <NavigationProperty Name="CuentaCorriente_Movimientos" Relationship="SPISA.Entities.FK_CuentaCorriente_Movimientos_MovimientosTipo" FromRole="MovimientosTipo" ToRole="CuentaCorriente_Movimientos" />
+  </EntityType>
+  <EntityType Name="NotaPedido_Items">
+    <Key>
+      <PropertyRef Name="IdNotaPedido" />
+      <PropertyRef Name="IdArticulo" />
+      <PropertyRef Name="Cantidad" />
+    </Key>
+    <Property Name="IdNotaPedido" Type="Int32" Nullable="false" />
+    <Property Name="IdArticulo" Type="Int32" Nullable="false" />
+    <Property Name="Cantidad" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="PrecioUnitario" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Descuento" Type="Decimal" Precision="10" Scale="2" />
+    <NavigationProperty Name="Articulos" Relationship="SPISA.Entities.FK_NotaPedido_Items1_1Articulo" FromRole="NotaPedido_Items" ToRole="Articulos" />
+    <NavigationProperty Name="NotaPedidos" Relationship="SPISA.Entities.FK_NotaPedido_Items1_nNotaPedidos" FromRole="NotaPedido_Items" ToRole="NotaPedidos" />
+  </EntityType>
+  <EntityType Name="NotaPedidos">
+    <Key>
+      <PropertyRef Name="IdNotaPedido" />
+    </Key>
+    <Property Name="IdNotaPedido" Type="Int32" Nullable="false" />
+    <Property Name="FechaEmision" Type="DateTime" Nullable="false" />
+    <Property Name="FechaEntrega" Type="DateTime" />
+    <Property Name="NumeroOrden" Type="Int32" Nullable="false" />
+    <Property Name="Observaciones" Type="String" MaxLength="200" Unicode="false" />
+    <Property Name="DescuentoEspecial" Type="Double" />
+    <NavigationProperty Name="Clientes" Relationship="SPISA.Entities.FK_NotaPedidos1_1Clientes" FromRole="NotaPedidos" ToRole="Clientes" />
+    <NavigationProperty Name="Facturas" Relationship="SPISA.Entities.FK_Facturas1_1NotaPedidos" FromRole="NotaPedidos" ToRole="Facturas" />
+    <NavigationProperty Name="NotaPedido_Items" Relationship="SPISA.Entities.FK_NotaPedido_Items1_nNotaPedidos" FromRole="NotaPedidos" ToRole="NotaPedido_Items" />
+  </EntityType>
+  <EntityType Name="Operatorias">
+    <Key>
+      <PropertyRef Name="IdOperatoria" />
+    </Key>
+    <Property Name="IdOperatoria" Type="Int32" Nullable="false" />
+    <Property Name="Operatoria" Type="String" Nullable="false" MaxLength="50" Unicode="false" />
+    <NavigationProperty Name="Clientes" Relationship="SPISA.Entities.FK_Clientes_Operatorias" FromRole="Operatorias" ToRole="Clientes" />
+  </EntityType>
+  <EntityType Name="Provincias">
+    <Key>
+      <PropertyRef Name="IdProvincia" />
+    </Key>
+    <Property Name="IdProvincia" Type="Int32" Nullable="false" />
+    <Property Name="Provincia" Type="String" Nullable="false" MaxLength="50" Unicode="false" />
+    <NavigationProperty Name="Clientes" Relationship="SPISA.Entities.FK_Clientes_Provincias" FromRole="Provincias" ToRole="Clientes" />
+  </EntityType>
+  <EntityType Name="Remitos">
+    <Key>
+      <PropertyRef Name="IdRemito" />
+    </Key>
+    <Property Name="IdRemito" Type="Int32" Nullable="false" />
+    <Property Name="IdNotaPedido" Type="Int32" Nullable="false" />
+    <Property Name="NumeroRemito" Type="Int32" Nullable="false" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" />
+    <Property Name="Observaciones" Type="String" MaxLength="200" Unicode="false" />
+    <Property Name="IdTransportista" Type="Int32" />
+    <Property Name="Peso" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="Bultos" Type="Int32" />
+    <Property Name="Valor" Type="Decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="2147483647" />
+  </EntityType>
+  <EntityType Name="Transportistas">
+    <Key>
+      <PropertyRef Name="IdTransportista" />
+    </Key>
+    <Property Name="IdTransportista" Type="Int32" Nullable="false" />
+    <Property Name="Transportista" Type="String" Nullable="false" MaxLength="100" Unicode="false" />
+    <Property Name="Domicilio" Type="String" Nullable="false" MaxLength="100" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_Articulos_Categoria">
+    <End Role="Categorias" Type="SPISA.Entities.Categorias" Multiplicity="1" />
+    <End Role="Articulos" Type="SPISA.Entities.Articulo" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_NotaPedido_Items1_1Articulo">
+    <End Role="Articulos" Type="SPISA.Entities.Articulo" Multiplicity="1" />
+    <End Role="NotaPedido_Items" Type="SPISA.Entities.NotaPedido_Items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Articulos">
+        <PropertyRef Name="idArticulo" />
+      </Principal>
+      <Dependent Role="NotaPedido_Items">
+        <PropertyRef Name="IdArticulo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Clientes_CondicionesIVA">
+    <End Role="CondicionesIVA" Type="SPISA.Entities.CondicionesIVA" Multiplicity="1" />
+    <End Role="Clientes" Type="SPISA.Entities.Clientes" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Clientes_Operatorias">
+    <End Role="Operatorias" Type="SPISA.Entities.Operatorias" Multiplicity="1" />
+    <End Role="Clientes" Type="SPISA.Entities.Clientes" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Clientes_Provincias">
+    <End Role="Provincias" Type="SPISA.Entities.Provincias" Multiplicity="1" />
+    <End Role="Clientes" Type="SPISA.Entities.Clientes" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_NotaPedidos1_1Clientes">
+    <End Role="Clientes" Type="SPISA.Entities.Clientes" Multiplicity="1" />
+    <End Role="NotaPedidos" Type="SPISA.Entities.NotaPedidos" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_CuentaCorriente_Movimientos_CuentaCorriente_Pagos">
+    <End Role="CuentaCorriente_Pagos" Type="SPISA.Entities.CuentaCorriente_Pagos" Multiplicity="0..1" />
+    <End Role="CuentaCorriente_Movimientos" Type="SPISA.Entities.CuentaCorriente_Movimientos" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_CuentaCorriente_Movimientos_MovimientosTipo">
+    <End Role="MovimientosTipo" Type="SPISA.Entities.MovimientosTipo" Multiplicity="1" />
+    <End Role="CuentaCorriente_Movimientos" Type="SPISA.Entities.CuentaCorriente_Movimientos" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_CuentaCorriente_Pagos_DatosDelPago_CuentaCorriente_Pagos">
+    <End Role="CuentaCorriente_Pagos" Type="SPISA.Entities.CuentaCorriente_Pagos" Multiplicity="1" />
+    <End Role="CuentaCorriente_Pagos_DatosDelPago" Type="SPISA.Entities.CuentaCorriente_Pagos_DatosDelPago" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CuentaCorriente_Pagos">
+        <PropertyRef Name="IdPago" />
+      </Principal>
+      <Dependent Role="CuentaCorriente_Pagos_DatosDelPago">
+        <PropertyRef Name="IdPago" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CuentaCorriente_Pagos_FormasDePago">
+    <End Role="FormasDePago" Type="SPISA.Entities.FormasDePago" Multiplicity="1" />
+    <End Role="CuentaCorriente_Pagos" Type="SPISA.Entities.CuentaCorriente_Pagos" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Facturas1_1NotaPedidos">
+    <End Role="NotaPedidos" Type="SPISA.Entities.NotaPedidos" Multiplicity="1" />
+    <End Role="Facturas" Type="SPISA.Entities.Facturas" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_NotaPedido_Items1_nNotaPedidos">
+    <End Role="NotaPedidos" Type="SPISA.Entities.NotaPedidos" Multiplicity="1" />
+    <End Role="NotaPedido_Items" Type="SPISA.Entities.NotaPedido_Items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NotaPedidos">
+        <PropertyRef Name="IdNotaPedido" />
+      </Principal>
+      <Dependent Role="NotaPedido_Items">
+        <PropertyRef Name="IdNotaPedido" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

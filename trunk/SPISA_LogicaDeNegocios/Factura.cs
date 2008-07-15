@@ -104,7 +104,7 @@ namespace SPISA.Libreria
         }
         public bool EsNotaDeCredito
         {
-            get { return _esNotaDeCredito; }
+            get     { return _esNotaDeCredito; }
             set { _esNotaDeCredito = value; }
         }
         #endregion
@@ -405,12 +405,12 @@ namespace SPISA.Libreria
                         db.ExecuteNonQuery(dbCmdOC, ts);
 
                         // Almacenamos el Movimiento
-                        CuentaCorriente.TraerPorIdCliente(this._Cliente.Id).AlmacenarMovimiento(new CuentaCorriente.Movimiento(this, this._FechaEmision, this.CalcularTotal()), ts);
+                        CuentaCorriente.TraerPorIdCliente(this._Cliente.Id, ts).AlmacenarMovimiento(new CuentaCorriente.Movimiento(this, this._FechaEmision, this.CalcularTotal()), ts);
 
                         foreach (NotaPedido_Item item in this.Items)
                         {
                             // Restamos el Stock
-                            Articulo.ModificarCantidad(item.Articulo.Id, item.Cantidad, (!this.EsNotaDeCredito ? 1 : 2)); // 1: Debe - 2: Haber
+                            Articulo.ModificarCantidad(item.Articulo.Id, item.Cantidad, (!this.EsNotaDeCredito ? 1 : 2), ts); // 1: Debe - 2: Haber
                         }
                     }
                     ts.Commit();

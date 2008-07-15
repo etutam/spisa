@@ -129,7 +129,7 @@ namespace SPISA.Libreria
         #region Metodos Estaticos
 
         //TODO: Falta terminar este metodo 
-        public static CuentaCorriente TraerPorIdCliente(int idCliente)
+        public static CuentaCorriente TraerPorIdCliente(int idCliente, DbTransaction transaction)
         {
             if (idCliente <= 0) return null;
             
@@ -142,18 +142,29 @@ namespace SPISA.Libreria
                 DbCommand dbCommand = db.GetStoredProcCommand(sqlCommand);
                 db.AddInParameter(dbCommand, "@IdCliente", DbType.Int32, idCliente);
 
-                using (IDataReader dataReader = db.ExecuteReader(dbCommand))
+                IDataReader dataReader;
+
+                if (transaction != null)
                 {
-                    if (dataReader.Read())
-                    {
-                        _cc = new CuentaCorriente();
-                        _cc._idCuentaCorriente = Convert.ToInt32(dataReader["IdCuentaCorriente"]);
-                    }
-                    else
-                    {
-                        _cc = CrearCuentaCorriente(idCliente);
-                    }
+                    dataReader = db.ExecuteReader(dbCommand, transaction);
                 }
+                else
+                {
+                    dataReader = db.ExecuteReader(dbCommand);
+                }
+                
+                if (dataReader.Read())
+                {
+                    _cc = new CuentaCorriente();
+                    _cc._idCuentaCorriente = Convert.ToInt32(dataReader["IdCuentaCorriente"]);
+                    dataReader.Close();
+                }
+                else
+                {
+                    dataReader.Close();
+                    _cc = CrearCuentaCorriente(idCliente, transaction);
+                }
+            
 
                 Logger.Append(Consts.CuentaCorriente_TraerPorIdCliente, new Object[] { "IdCliente", idCliente }, "IdCuentaCorriente=" + _cc.Id);
             }
@@ -174,7 +185,7 @@ namespace SPISA.Libreria
             return _cc;
         }
 
-        public static CuentaCorriente CrearCuentaCorriente(int idCliente)
+        public static CuentaCorriente CrearCuentaCorriente(int idCliente, DbTransaction transaction)
         {
             if (idCliente <= 0) return null;
 
@@ -195,7 +206,15 @@ namespace SPISA.Libreria
 
                     try
                     {
-                        r = db.ExecuteScalar(dbCommand);
+                        if (transaction != null)
+                        {
+                            r = db.ExecuteScalar(dbCommand, transaction);
+                        }
+                        else
+                        {
+                            r = db.ExecuteScalar(dbCommand);
+                        }
+
                     }
                     catch (Exception ex)
                     {
@@ -204,7 +223,7 @@ namespace SPISA.Libreria
                     }
                 }
 
-                cc = TraerPorIdCliente(idCliente);
+                cc = TraerPorIdCliente(idCliente, transaction);
                 Logger.Append(Consts.CuentaCorriente_Agregar, new Object[] { "IdCliente", idCliente }, "IdCuentaCorriente=" + cc.Id);
 
                 if (cc == null) throw new Exception("No se ha podido obtener la cuenta corriente del Cliente");
