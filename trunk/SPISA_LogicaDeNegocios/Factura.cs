@@ -72,6 +72,44 @@
 //            set { _Cliente = value; }
 //        }
 
+<<<<<<< .mine
+        public NotaPedido NotaPedido
+        {
+            get { return _NotaPedido; }
+            set { _NotaPedido = value; }
+        }
+        public IList<NotaPedido_Item> Items
+        {
+            get { return _ListaItems; }
+            set { _ListaItems = value; }
+        }
+        public string Observaciones
+        {
+            get { return _Observaciones; }
+            set { _Observaciones = value; }
+        }
+        public decimal ValorDolar
+        {
+            get { return _valorDolar; }
+            set { _valorDolar = value; } 
+        }
+        public bool FueImpresa
+        {
+            get { return _fueImpresa; }
+            set { _fueImpresa = value; }
+        }
+        public bool FueCancelada
+        {
+            get { return _fueCancelada; }
+            set { _fueCancelada = value; }
+        }
+        public bool EsNotaDeCredito
+        {
+            get     { return _esNotaDeCredito; }
+            set { _esNotaDeCredito = value; }
+        }
+        #endregion
+=======
 //        public NotaPedido NotaPedido
 //        {
 //            get { return _NotaPedido; }
@@ -108,6 +146,7 @@
 //            set { _esNotaDeCredito = value; }
 //        }
 //        #endregion
+>>>>>>> .r5
 
 //        #region Metodos Estaticos
 
@@ -404,9 +443,24 @@
 //                    {
 //                        db.ExecuteNonQuery(dbCmdOC, ts);
 
+<<<<<<< .mine
+                        // Almacenamos el Movimiento
+                        CuentaCorriente.TraerPorIdCliente(this._Cliente.Id, ts).AlmacenarMovimiento(new CuentaCorriente.Movimiento(this, this._FechaEmision, this.CalcularTotal()), ts);
+=======
 //                        // Almacenamos el Movimiento
 //                        CuentaCorriente.TraerPorIdCliente(this._Cliente.Id, ts).AlmacenarMovimiento(new CuentaCorriente.Movimiento(this, this._FechaEmision, this.CalcularTotal()), ts);
+>>>>>>> .r5
 
+<<<<<<< .mine
+                        foreach (NotaPedido_Item item in this.Items)
+                        {
+                            // Restamos el Stock
+                            Articulo.ModificarCantidad(item.Articulo.Id, item.Cantidad, (!this.EsNotaDeCredito ? 1 : 2), ts); // 1: Debe - 2: Haber
+                        }
+                    }
+                    ts.Commit();
+                    Logger.Append(Consts.Facturas_AlmacenarImpresion, new Object[] { "EsNotaDeCredito", EsNotaDeCredito }, "No devuelve nada");
+=======
 //                        foreach (NotaPedido_Item item in this.Items)
 //                        {
 //                            // Restamos el Stock
@@ -415,6 +469,7 @@
 //                    }
 //                    ts.Commit();
 //                    Logger.Append(Consts.Facturas_AlmacenarImpresion, new Object[] { "EsNotaDeCredito", EsNotaDeCredito }, "No devuelve nada");
+>>>>>>> .r5
 
 //                }
 //                catch (Exception ex)
@@ -527,6 +582,16 @@
 //                        NotaPedido.ActualizarItems(this.NotaPedido.IdNotaPedido, this._ListaItems, ts);
 //                    }
 
+<<<<<<< .mine
+                    db.AddInParameter(dbCommand, "Fecha", DbType.DateTime, this._FechaEmision);
+                    db.AddInParameter(dbCommand, "IdNotaPedido", DbType.Int32, this._NotaPedido.IdNotaPedido);
+                    db.AddInParameter(dbCommand ,"IdCliente", DbType.Int32, (this._Cliente != null ? this._Cliente.Id : -1));
+                    db.AddInParameter(dbCommand, "NumeroFactura", DbType.Int64, this._NumeroFactura);
+                    db.AddInParameter(dbCommand, "Observaciones", DbType.String, (this._Observaciones != null ? this._Observaciones : ""));
+                    db.AddInParameter(dbCommand, "DescuentoEspecial", DbType.Int32, this._DescuentoEspecial);
+                    db.AddInParameter(dbCommand, "ValorDolar", DbType.Decimal, (this._valorDolar != 0 ? this._valorDolar : 0));
+                    db.AddInParameter(dbCommand, "EsNotaDeCredito", DbType.Boolean, this._esNotaDeCredito);
+=======
 //                    db.AddInParameter(dbCommand, "Fecha", DbType.DateTime, this._FechaEmision);
 //                    db.AddInParameter(dbCommand, "IdNotaPedido", DbType.Int32, this._NotaPedido.IdNotaPedido);
 //                    db.AddInParameter(dbCommand, "IdCliente", DbType.Int32, (this._Cliente != null ? this._Cliente.Id : -1));
@@ -535,6 +600,7 @@
 //                    db.AddInParameter(dbCommand, "DescuentoEspecial", DbType.Int32, this._DescuentoEspecial);
 //                    db.AddInParameter(dbCommand, "ValorDolar", DbType.Decimal, (this._valorDolar != 0 ? this._valorDolar : 0));
 //                    db.AddInParameter(dbCommand, "EsNotaDeCredito", DbType.Boolean, this._esNotaDeCredito);
+>>>>>>> .r5
 
 //                    _IdFactura = Convert.ToInt32(db.ExecuteScalar(dbCommand, ts));
 

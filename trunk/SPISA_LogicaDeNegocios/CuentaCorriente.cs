@@ -128,10 +128,17 @@
        
 //        #region Metodos Estaticos
 
+<<<<<<< .mine
+        //TODO: Falta terminar este metodo 
+        public static CuentaCorriente TraerPorIdCliente(int idCliente, DbTransaction transaction)
+        {
+            if (idCliente <= 0) return null;
+=======
 //        //TODO: Falta terminar este metodo 
 //        public static CuentaCorriente TraerPorIdCliente(int idCliente, DbTransaction transaction)
 //        {
 //            if (idCliente <= 0) return null;
+>>>>>>> .r5
             
 //            string sqlCommand = Consts.CuentaCorriente_TraerPorIdCliente;
 //            CuentaCorriente _cc = null;
@@ -142,7 +149,33 @@
 //                DbCommand dbCommand = db.GetStoredProcCommand(sqlCommand);
 //                db.AddInParameter(dbCommand, "@IdCliente", DbType.Int32, idCliente);
 
+<<<<<<< .mine
+                IDataReader dataReader;
+
+                if (transaction != null)
+                {
+                    dataReader = db.ExecuteReader(dbCommand, transaction);
+                }
+=======
 //                IDataReader dataReader;
+>>>>>>> .r5
+                else
+                {
+                    dataReader = db.ExecuteReader(dbCommand);
+                }
+                
+                if (dataReader.Read())
+                {
+                    _cc = new CuentaCorriente();
+                    _cc._idCuentaCorriente = Convert.ToInt32(dataReader["IdCuentaCorriente"]);
+                    dataReader.Close();
+                }
+                else
+                {
+                    dataReader.Close();
+                    _cc = CrearCuentaCorriente(idCliente, transaction);
+                }
+            
 
 //                if (transaction != null)
 //                {
@@ -185,9 +218,15 @@
 //            return _cc;
 //        }
 
+<<<<<<< .mine
+        public static CuentaCorriente CrearCuentaCorriente(int idCliente, DbTransaction transaction)
+        {
+            if (idCliente <= 0) return null;
+=======
 //        public static CuentaCorriente CrearCuentaCorriente(int idCliente, DbTransaction transaction)
 //        {
 //            if (idCliente <= 0) return null;
+>>>>>>> .r5
 
 //            string sqlCommand = Consts.CuentaCorriente_Agregar;
 //            object r = null;
@@ -204,6 +243,26 @@
 
 //                    conn.Open();
 
+<<<<<<< .mine
+                    try
+                    {
+                        if (transaction != null)
+                        {
+                            r = db.ExecuteScalar(dbCommand, transaction);
+                        }
+                        else
+                        {
+                            r = db.ExecuteScalar(dbCommand);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        ExceptionPolicy.HandleException(ex, "Global Policy");
+                        throw ex;
+                    }
+                }
+=======
 //                    try
 //                    {
 //                        if (transaction != null)
@@ -214,7 +273,12 @@
 //                        {
 //                            r = db.ExecuteScalar(dbCommand);
 //                        }
+>>>>>>> .r5
 
+<<<<<<< .mine
+                cc = TraerPorIdCliente(idCliente, transaction);
+                Logger.Append(Consts.CuentaCorriente_Agregar, new Object[] { "IdCliente", idCliente }, "IdCuentaCorriente=" + cc.Id);
+=======
 //                    }
 //                    catch (Exception ex)
 //                    {
@@ -222,6 +286,7 @@
 //                        throw ex;
 //                    }
 //                }
+>>>>>>> .r5
 
 //                cc = TraerPorIdCliente(idCliente, transaction);
 //                Logger.Append(Consts.CuentaCorriente_Agregar, new Object[] { "IdCliente", idCliente }, "IdCuentaCorriente=" + cc.Id);

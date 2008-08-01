@@ -965,16 +965,15 @@
 //                DbCommand dbCommand = db.GetStoredProcCommand(sqlCommand);
 //                db.AddInParameter(dbCommand, "IdCliente", DbType.Int32, IdCliente);
 
-//                using (IDataReader dr = db.ExecuteReader(dbCommand))
-//                {
-//                    _affectedRows = db.ExecuteNonQuery(dbCommand, ts);
-//                }
-//            }
-//            catch (Exception e)
-//            {
-//                AppSettingsReader appSettingsReader = new AppSettingsReader();
-//                bool sendErrorsByMail = Convert.ToBoolean(appSettingsReader.GetValue("SendErrorsByMail", typeof(Boolean)));
+                _affectedRows = db.ExecuteNonQuery(dbCommand, ts);
+                
+            }
+            catch (Exception e)
+            {
+                AppSettingsReader appSettingsReader = new AppSettingsReader();
+                bool sendErrorsByMail = Convert.ToBoolean(appSettingsReader.GetValue("SendErrorsByMail", typeof(Boolean)));
 
+                if (sendErrorsByMail) ExceptionPolicy.HandleException(e, "Global Policy");
 //                if (sendErrorsByMail) ExceptionPolicy.HandleException(e, "Global Policy");
 
 //                throw e;

@@ -192,7 +192,7 @@ namespace SPISA.Presentacion
             this.Name = "frmPrincipal";
             this.Text = "S.P.I.S.A. Gestion 2007";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.frmPrincipal_Load);
+           // this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrincipal_FormClosing);
             this.Resize += new System.EventHandler(this.frmPrincipal_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.explorerBar)).EndInit();

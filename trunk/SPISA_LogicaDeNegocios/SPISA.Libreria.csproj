@@ -90,11 +90,19 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provincia.cs" />
     <Compile Include="Remito.cs" />
+<<<<<<< .mine
+    <Compile Include="_SpisaEntityModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_SpisaEntityModel.edmx</DependentUpon>
+    </Compile>
+=======
     <Compile Include="SPISAEntitiesModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SPISAEntitiesModel.edmx</DependentUpon>
     </Compile>
+>>>>>>> .r5
     <Compile Include="utils.cs" />
     <Compile Include="Util\Util.cs" />
   </ItemGroup>
@@ -105,12 +113,23 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< .mine
+    <None Include="App.Config" />
+=======
     <None Include="App.config" />
+>>>>>>> .r5
     <None Include="keyfile.snk" />
+<<<<<<< .mine
+    <EntityDeploy Include="_SpisaEntityModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>_SpisaEntityModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+=======
     <EntityDeploy Include="SPISAEntitiesModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SPISAEntitiesModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+>>>>>>> .r5
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

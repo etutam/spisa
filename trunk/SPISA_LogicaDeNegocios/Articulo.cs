@@ -10,8 +10,15 @@
 //using System.Data.SqlClient;
 //using System.Data.SqlTypes;
 
-//using System.Collections.Generic;
-//using System.Linq;
+using System.Collections.Generic;
+using System.Linq;
+
+using System.Text;
+using System.IO;
+using System.Data.SqlClient;
+
+
+using System.Configuration;
 
 //using System.Text;
 //using System.IO;
@@ -119,8 +126,14 @@
 //                throw ex;
 //            }
 
-//            return ds.Tables[0];
-//        }
+            return ds.Tables[0];
+        }
+
+        private static void CargarDatosEnArticulo(IDataReader dataReader, ref Articulo a)
+        {
+            try
+            {
+                if (a == null) a = new Articulo();
 
 //        public static void test(){
 //            using (SPISA.Entities.EntitiesModel entitiesModel = new SPISA.Entities.EntitiesModel())
@@ -138,6 +151,7 @@
 //            try
 //            {
 //                if (a == null) a = new Articulo();
+            
 
 //                a._idArticulo = Convert.ToInt32(dataReader["idArticulo"]);
 //                a._codigo = Convert.ToString(dataReader["codigo"]);
@@ -335,30 +349,32 @@
                  
 //            }
 
-//            return a;
-//        }
-//        /// <summary>
-//        /// Se encarga de sustraer de la tabla de Articulo, una cantidad "Cantidad" del artìculo "IdArticulo"
-//        /// Generalmente, este mètodo va a ser invocado desde el mètodo "AlmacenarImpresión" 
-//        /// </summary>
-//        /// <param name="IdArticulo"></param>
-//        /// <param name="Cantidad"></param>
-//        /// <param name="TipoOperacion"> 1- Resta
-//        ///                              2- Suma</param>
-//        /// <returns></returns>
-//        public static int ModificarCantidad(int IdArticulo, Decimal Cantidad, int TipoOperacion, DbTransaction transaction)
-//        {
-//            try
-//            {
-//                if (IdArticulo <= 0) throw new ArgumentException("IdArticulo es menor o igual a 0");
-//                if (Cantidad <= 0) throw new ArgumentException("Cantidad es menor o igual a 0");
-//            }
-//            catch (ArgumentException ex)
-//            {
-//                AppSettingsReader appSettingsReader = new AppSettingsReader();
-//                bool sendErrorsByMail = Convert.ToBoolean(appSettingsReader.GetValue("SendErrorsByMail", typeof(Boolean)));
+            return a;
+        }
+        /// <summary>
+        /// Se encarga de sustraer de la tabla de Articulo, una cantidad "Cantidad" del artìculo "IdArticulo"
+        /// Generalmente, este mètodo va a ser invocado desde el mètodo "AlmacenarImpresión" 
+        /// </summary>
+        /// <param name="IdArticulo"></param>
+        /// <param name="Cantidad"></param>
+        /// <param name="TipoOperacion"> 1- Resta
+        ///                              2- Suma</param>
+        /// <returns></returns>
+        public static int ModificarCantidad(int IdArticulo, Decimal Cantidad, int TipoOperacion, DbTransaction transaction)
+        {
+            try
+            {
+                if (IdArticulo <= 0) throw new ArgumentException("IdArticulo es menor o igual a 0");
+                if (Cantidad <= 0) throw new ArgumentException("Cantidad es menor o igual a 0");
+            }
+            catch (ArgumentException ex)
+            {
+                AppSettingsReader appSettingsReader = new AppSettingsReader();
+                bool sendErrorsByMail = Convert.ToBoolean(appSettingsReader.GetValue("SendErrorsByMail", typeof(Boolean)));
 
-//                if (sendErrorsByMail) ExceptionPolicy.HandleException(ex, "Global Policy");
+                if (sendErrorsByMail) ExceptionPolicy.HandleException(ex, "Global Policy");
+                return -1;
+            }
 //                return -1;
 //            }
 
@@ -370,7 +386,7 @@
                 
 //                Database db = DatabaseFactory.CreateDatabase();
 //                string sqlCommand = Consts.Articulos_ModificarCantidad;
-
+                
 //                DbCommand dbCommand = db.GetStoredProcCommand(sqlCommand);
 //                object r = null;
 
@@ -385,8 +401,7 @@
 //                    r = db.ExecuteScalar(dbCommand, transaction);
 
 //                    Logger.Append(Consts.Articulos_ModificarCantidad, new Object[] { "IdArticulo", IdArticulo, "Cantidad", Cantidad, "TipoOperacion", TipoOperacion }, r.ToString() + " rows");
-
-//                }
+                    r = db.ExecuteScalar(dbCommand, transaction);
 
 //                return Convert.ToInt32(r);
 //            }
