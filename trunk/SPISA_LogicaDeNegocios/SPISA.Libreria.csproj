@@ -69,6 +69,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Articulo.cs" />
+    <Compile Include="BusinessObjects\ArticuloBO.cs" />
+    <Compile Include="BusinessObjects\BaseBO.cs" />
+    <Compile Include="BusinessObjects\CategoriaBO.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="consts.cs" />
@@ -76,6 +79,9 @@
     <Compile Include="CuentaCorriente.cs" />
     <Compile Include="ExceptionEmailHandler.cs" />
     <Compile Include="Factura.cs" />
+    <Compile Include="Interfaces\IArticuloDAO.cs" />
+    <Compile Include="Interfaces\ICategoriaDAO.cs" />
+    <Compile Include="Interfaces\IDaoFactory.cs" />
     <Compile Include="IPrintable.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="NotaPedido.cs" />
@@ -90,6 +96,7 @@
       <DependentUpon>SPISAEntitiesModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="utils.cs" />
+    <Compile Include="Util\Util.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SPISA.Util\SPISA.Util.csproj">
@@ -98,6 +105,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="keyfile.snk" />
     <EntityDeploy Include="SPISAEntitiesModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

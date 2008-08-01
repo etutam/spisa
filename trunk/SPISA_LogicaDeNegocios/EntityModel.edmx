@@ -12,7 +12,7 @@
       </DesignerInfoPropertySet>
     </edmx:Options>
     <edmx:ReverseEngineer />
-    <edmx:Diagrams ><Diagram Name="EntityModel"><EntityTypeShape EntityType="SPISAModel.Articulo" PointX="5.25" PointY="7.5" Width="1.5" Height="2.0853483072916665" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.Articulos_Compuestos" PointX="9.75" PointY="1.625" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.Buscador_Criterios" PointX="0.75" PointY="10.625" Width="1.5" Height="1.2636116536458317" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.Buscador_Relaciones" PointX="2.75" PointY="10.625" Width="1.5" Height="2.2496956380208317" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.Categorias" PointX="3" PointY="7.75" Width="1.5" Height="1.5923063151041674" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.Clientes" PointX="3" PointY="3.125" Width="1.5" Height="2.9070849609374996" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.CondicionesIVA" PointX="0.75" PointY="3.875" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.CuentaCorriente_Movimientos" PointX="12.25" PointY="8.125" Width="1.5" Height="2.0853483072916674" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.CuentaCorriente_Pagos" PointX="10" PointY="11.125" Width="1.5" Height="2.0853483072916674" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.CuentaCorriente_Pagos_DatosDelPago" PointX="12.25" PointY="11.375" Width="1.5" Height="1.7566536458333317" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.CuentasCorriente" PointX="9.75" PointY="4.625" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.Descuentos" PointX="4.75" PointY="10.625" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.Facturas" PointX="7.5" PointY="6.125" Width="1.5" Height="2.4140429687500005" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.FormasDePago" PointX="7.75" PointY="11.5" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.MovimientosTipo" PointX="10" PointY="8.5" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.NotaPedido_Items" PointX="7.5" PointY="2.5" Width="1.5" Height="2.0853483072916665" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.NotaPedidos" PointX="5.25" PointY="3.375" Width="1.5" Height="2.4140429687499996" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.Operatorias" PointX="0.75" PointY="0.75" Width="1.5" Height="1.427958984375" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.Provincias" PointX="0.75" PointY="6.875" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.Remitos" PointX="11.75" PointY="1.625" Width="1.5" Height="2.4140429687499996" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.Transportistas" PointX="11.75" PointY="5.625" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><AssociationConnector Association="SPISAModel.FK_Articulos_Categoria" ManuallyRouted="false"><ConnectorPoint PointX="4.5" PointY="8.5461531575520837" /><ConnectorPoint PointX="5.25" PointY="8.5461531575520837" /></AssociationConnector><AssociationConnector Association="SPISAModel.FK_NotaPedido_Items1_1Articulo" ManuallyRouted="false"><ConnectorPoint PointX="6.75" PointY="8.5426741536458337" /><ConnectorPoint PointX="7.125" PointY="8.5426741536458337" /><ConnectorPoint PointX="7.125" PointY="3.5426741536458333" /><ConnectorPoint PointX="7.5" PointY="3.5426741536458333" /></AssociationConnector><AssociationConnector Association="SPISAModel.FK_Clientes_CondicionesIVA" ManuallyRouted="false"><ConnectorPoint PointX="2.25" PointY="4.5889794921875" /><ConnectorPoint PointX="2.5416666666666665" PointY="4.5889794921874989" /><ConnectorPoint PointX="2.7083333333333335" PointY="4.5889794921875" /><ConnectorPoint PointX="3" PointY="4.5889794921875" /></AssociationConnector><AssociationConnector Association="SPISAModel.FK_Clientes_Operatorias" ManuallyRouted="false"><ConnectorPoint PointX="2.25" PointY="1.4639794921875" /><ConnectorPoint PointX="3.75" PointY="1.4639794921875" /><ConnectorPoint PointX="3.75" PointY="3.125" /></AssociationConnector><AssociationConnector Association="SPISAModel.FK_Clientes_Provincias" ManuallyRouted="false"><ConnectorPoint PointX="2.25" PointY="7.5889794921875" /><ConnectorPoint PointX="2.625" PointY="7.5889794921875" /><ConnectorPoint PointX="2.625" PointY="3.82573774609375" /><ConnectorPoint PointX="3" PointY="3.82573774609375" /></AssociationConnector><AssociationConnector Association="SPISAModel.FK_NotaPedidos1_1Clientes" ManuallyRouted="false"><ConnectorPoint PointX="4.5" PointY="4.582021484375" /><ConnectorPoint PointX="5.25" PointY="4.582021484375" /></AssociationConnector><AssociationConnector Association="SPISAModel.FK_CuentaCorriente_Movimientos_CuentaCorriente_Pagos" ManuallyRouted="false"><ConnectorPoint PointX="11.5" PointY="12.167674153645834" /><ConnectorPoint PointX="11.875" PointY="12.167674153645834" /><ConnectorPoint PointX="11.875" PointY="9.1676741536458337" /><ConnectorPoint PointX="12.25" PointY="9.1676741536458337" /></AssociationConnector><AssociationConnector Association="SPISAModel.FK_CuentaCorriente_Movimientos_MovimientosTipo" ManuallyRouted="false"><ConnectorPoint PointX="11.5" PointY="9.6103165690104166" /><ConnectorPoint PointX="11.791666666666666" PointY="9.6103165690104166" /><ConnectorPoint PointX="11.958333333333334" PointY="9.6103165690104166" /><ConnectorPoint PointX="12.25" PointY="9.6103165690104166" /></AssociationConnector><AssociationConnector Association="SPISAModel.FK_CuentaCorriente_Pagos_DatosDelPago_CuentaCorriente_Pagos" ManuallyRouted="false"><ConnectorPoint PointX="11.5" PointY="12.712163899739583" /><ConnectorPoint PointX="12.25" PointY="12.712163899739583" /></AssociationConnector><AssociationConnector Association="SPISAModel.FK_CuentaCorriente_Pagos_FormasDePago" ManuallyRouted="false"><ConnectorPoint PointX="9.25" PointY="12.2139794921875" /><ConnectorPoint PointX="10" PointY="12.2139794921875" /></AssociationConnector><AssociationConnector Association="SPISAModel.FK_Facturas1_1NotaPedidos" ManuallyRouted="false"><ConnectorPoint PointX="6.75" PointY="4.6658580611979161" /><ConnectorPoint PointX="7.041666666666667" PointY="4.6658580611979152" /><ConnectorPoint PointX="7.208333333333333" PointY="4.6658580611979161" /><ConnectorPoint PointX="7.25" PointY="4.6658580611979161" /><ConnectorPoint PointX="7.25" PointY="4.8353483072916665" /><ConnectorPoint PointX="8.25" PointY="4.8353483072916665" /><ConnectorPoint PointX="8.25" PointY="6.125" /></AssociationConnector><AssociationConnector Association="SPISAModel.FK_NotaPedido_Items1_nNotaPedidos" ManuallyRouted="false"><ConnectorPoint PointX="6.75" PointY="4.12651123046875" /><ConnectorPoint PointX="7.041666666666667" PointY="4.1265112304687488" /><ConnectorPoint PointX="7.208333333333333" PointY="4.12651123046875" /><ConnectorPoint PointX="7.5" PointY="4.12651123046875" /></AssociationConnector></Diagram></edmx:Diagrams>
+    <edmx:Diagrams ><Diagram Name="EntityModel"><EntityTypeShape EntityType="SPISAModel.Articulo" PointX="5.25" PointY="7.5" Width="1.5" Height="2.0853483072916665" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.Articulos_Compuestos" PointX="8.125" PointY="0.625" Width="3.625" Height="1.4279589843749996" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.Buscador_Criterios" PointX="0.75" PointY="10.625" Width="1.5" Height="1.2636116536458317" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.Buscador_Relaciones" PointX="2.75" PointY="10.625" Width="1.5" Height="2.2496956380208317" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.Categoria" PointX="3" PointY="7.75" Width="1.5" Height="1.5923063151041674" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.Cliente" PointX="3" PointY="3.125" Width="1.5" Height="2.9070849609374996" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.CondicionIVA" PointX="0.75" PointY="3.875" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.CuentaCorriente_Movimiento" PointX="12.25" PointY="8.125" Width="1.5" Height="2.0853483072916674" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.CuentaCorriente_Pagos" PointX="10" PointY="11.125" Width="1.5" Height="2.0853483072916674" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.CuentaCorriente_Pagos_DatosDelPago" PointX="12.25" PointY="11.375" Width="1.5" Height="1.7566536458333317" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.CuentaCorriente" PointX="9.75" PointY="4.625" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.Descuento" PointX="4.75" PointY="10.625" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.Factura" PointX="7.5" PointY="6.125" Width="1.5" Height="2.4140429687500005" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.FormaDePago" PointX="7.75" PointY="11.5" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.MovimientoTipo" PointX="10" PointY="8.5" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.NotaPedido_Item" PointX="7.5" PointY="2.5" Width="1.5" Height="2.0853483072916665" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.NotaPedido" PointX="5.25" PointY="3.375" Width="1.5" Height="2.4140429687499996" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.Operatoria" PointX="0.75" PointY="0.75" Width="1.5" Height="1.427958984375" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.Provincia" PointX="0.75" PointY="6.875" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.Remito" PointX="12.5" PointY="2" Width="1.5" Height="2.4140429687499996" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.Transportista" PointX="11.75" PointY="5.625" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><AssociationConnector Association="SPISAModel.FK_Articulos_Categoria" ManuallyRouted="false"><ConnectorPoint PointX="4.5" PointY="8.5461531575520837" /><ConnectorPoint PointX="5.25" PointY="8.5461531575520837" /></AssociationConnector><AssociationConnector Association="SPISAModel.FK_NotaPedido_Items1_1Articulo" ManuallyRouted="false"><ConnectorPoint PointX="6.75" PointY="8.5426741536458337" /><ConnectorPoint PointX="7.125" PointY="8.5426741536458337" /><ConnectorPoint PointX="7.125" PointY="3.5426741536458333" /><ConnectorPoint PointX="7.5" PointY="3.5426741536458333" /></AssociationConnector><AssociationConnector Association="SPISAModel.FK_Clientes_CondicionesIVA" ManuallyRouted="false"><ConnectorPoint PointX="2.25" PointY="4.5889794921875" /><ConnectorPoint PointX="2.5416666666666665" PointY="4.5889794921874989" /><ConnectorPoint PointX="2.7083333333333335" PointY="4.5889794921875" /><ConnectorPoint PointX="3" PointY="4.5889794921875" /></AssociationConnector><AssociationConnector Association="SPISAModel.FK_Clientes_Operatorias" ManuallyRouted="false"><ConnectorPoint PointX="2.25" PointY="1.4639794921875" /><ConnectorPoint PointX="3.75" PointY="1.4639794921875" /><ConnectorPoint PointX="3.75" PointY="3.125" /></AssociationConnector><AssociationConnector Association="SPISAModel.FK_Clientes_Provincias" ManuallyRouted="false"><ConnectorPoint PointX="2.25" PointY="7.5889794921875" /><ConnectorPoint PointX="2.625" PointY="7.5889794921875" /><ConnectorPoint PointX="2.625" PointY="3.82573774609375" /><ConnectorPoint PointX="3" PointY="3.82573774609375" /></AssociationConnector><AssociationConnector Association="SPISAModel.FK_NotaPedidos1_1Clientes" ManuallyRouted="false"><ConnectorPoint PointX="4.5" PointY="4.582021484375" /><ConnectorPoint PointX="5.25" PointY="4.582021484375" /></AssociationConnector><AssociationConnector Association="SPISAModel.FK_CuentaCorriente_Movimientos_CuentaCorriente_Pagos" ManuallyRouted="false"><ConnectorPoint PointX="11.5" PointY="12.167674153645834" /><ConnectorPoint PointX="11.875" PointY="12.167674153645834" /><ConnectorPoint PointX="11.875" PointY="9.1676741536458337" /><ConnectorPoint PointX="12.25" PointY="9.1676741536458337" /></AssociationConnector><AssociationConnector Association="SPISAModel.FK_CuentaCorriente_Movimientos_MovimientosTipo" ManuallyRouted="false"><ConnectorPoint PointX="11.5" PointY="9.6103165690104166" /><ConnectorPoint PointX="11.791666666666666" PointY="9.6103165690104166" /><ConnectorPoint PointX="11.958333333333334" PointY="9.6103165690104166" /><ConnectorPoint PointX="12.25" PointY="9.6103165690104166" /></AssociationConnector><AssociationConnector Association="SPISAModel.FK_CuentaCorriente_Pagos_DatosDelPago_CuentaCorriente_Pagos" ManuallyRouted="false"><ConnectorPoint PointX="11.5" PointY="12.712163899739583" /><ConnectorPoint PointX="12.25" PointY="12.712163899739583" /></AssociationConnector><AssociationConnector Association="SPISAModel.FK_CuentaCorriente_Pagos_FormasDePago" ManuallyRouted="false"><ConnectorPoint PointX="9.25" PointY="12.2139794921875" /><ConnectorPoint PointX="10" PointY="12.2139794921875" /></AssociationConnector><AssociationConnector Association="SPISAModel.FK_Facturas1_1NotaPedidos" ManuallyRouted="false"><ConnectorPoint PointX="6.75" PointY="4.6658580611979161" /><ConnectorPoint PointX="7.041666666666667" PointY="4.6658580611979152" /><ConnectorPoint PointX="7.208333333333333" PointY="4.6658580611979161" /><ConnectorPoint PointX="7.25" PointY="4.6658580611979161" /><ConnectorPoint PointX="7.25" PointY="4.8353483072916665" /><ConnectorPoint PointX="8.25" PointY="4.8353483072916665" /><ConnectorPoint PointX="8.25" PointY="6.125" /></AssociationConnector><AssociationConnector Association="SPISAModel.FK_NotaPedido_Items1_nNotaPedidos" ManuallyRouted="false"><ConnectorPoint PointX="6.75" PointY="4.12651123046875" /><ConnectorPoint PointX="7.041666666666667" PointY="4.1265112304687488" /><ConnectorPoint PointX="7.208333333333333" PointY="4.12651123046875" /><ConnectorPoint PointX="7.5" PointY="4.12651123046875" /></AssociationConnector></Diagram></edmx:Diagrams>
   </edmx:Designer>
   <edmx:Runtime>
     <!-- CSDL content -->
@@ -23,23 +23,23 @@
           <EntitySet Name="Articulos_Compuestos" EntityType="SPISAModel.Articulos_Compuestos" />
           <EntitySet Name="Buscador_Criterios" EntityType="SPISAModel.Buscador_Criterios" />
           <EntitySet Name="Buscador_Relaciones" EntityType="SPISAModel.Buscador_Relaciones" />
-          <EntitySet Name="Categorias" EntityType="SPISAModel.Categorias" />
-          <EntitySet Name="Clientes" EntityType="SPISAModel.Clientes" />
-          <EntitySet Name="CondicionesIVA" EntityType="SPISAModel.CondicionesIVA" />
-          <EntitySet Name="CuentaCorriente_Movimientos" EntityType="SPISAModel.CuentaCorriente_Movimientos" />
+          <EntitySet Name="Categorias" EntityType="SPISAModel.Categoria" />
+          <EntitySet Name="Clientes" EntityType="SPISAModel.Cliente" />
+          <EntitySet Name="CondicionesIVA" EntityType="SPISAModel.CondicionIVA" />
+          <EntitySet Name="CuentaCorriente_Movimientos" EntityType="SPISAModel.CuentaCorriente_Movimiento" />
           <EntitySet Name="CuentaCorriente_Pagos" EntityType="SPISAModel.CuentaCorriente_Pagos" />
           <EntitySet Name="CuentaCorriente_Pagos_DatosDelPago" EntityType="SPISAModel.CuentaCorriente_Pagos_DatosDelPago" />
-          <EntitySet Name="CuentasCorriente" EntityType="SPISAModel.CuentasCorriente" />
-          <EntitySet Name="Descuentos" EntityType="SPISAModel.Descuentos" />
-          <EntitySet Name="Facturas" EntityType="SPISAModel.Facturas" />
-          <EntitySet Name="FormasDePago" EntityType="SPISAModel.FormasDePago" />
-          <EntitySet Name="MovimientosTipo" EntityType="SPISAModel.MovimientosTipo" />
-          <EntitySet Name="NotaPedido_Items" EntityType="SPISAModel.NotaPedido_Items" />
-          <EntitySet Name="NotaPedidos" EntityType="SPISAModel.NotaPedidos" />
-          <EntitySet Name="Operatorias" EntityType="SPISAModel.Operatorias" />
-          <EntitySet Name="Provincias" EntityType="SPISAModel.Provincias" />
-          <EntitySet Name="Remitos" EntityType="SPISAModel.Remitos" />
-          <EntitySet Name="Transportistas" EntityType="SPISAModel.Transportistas" />
+          <EntitySet Name="CuentasCorriente" EntityType="SPISAModel.CuentaCorriente" />
+          <EntitySet Name="Descuentos" EntityType="SPISAModel.Descuento" />
+          <EntitySet Name="Facturas" EntityType="SPISAModel.Factura" />
+          <EntitySet Name="FormasDePago" EntityType="SPISAModel.FormaDePago" />
+          <EntitySet Name="MovimientosTipo" EntityType="SPISAModel.MovimientoTipo" />
+          <EntitySet Name="NotaPedido_Items" EntityType="SPISAModel.NotaPedido_Item" />
+          <EntitySet Name="NotaPedidos" EntityType="SPISAModel.NotaPedido" />
+          <EntitySet Name="Operatorias" EntityType="SPISAModel.Operatoria" />
+          <EntitySet Name="Provincias" EntityType="SPISAModel.Provincia" />
+          <EntitySet Name="Remitos" EntityType="SPISAModel.Remito" />
+          <EntitySet Name="Transportistas" EntityType="SPISAModel.Transportista" />
           <AssociationSet Name="FK_Articulos_Categoria" Association="SPISAModel.FK_Articulos_Categoria">
             <End Role="Categorias" EntitySet="Categorias" />
             <End Role="Articulos" EntitySet="Articulos" />
@@ -131,7 +131,7 @@
           <Property Name="QueryPersonalizada" Type="String" MaxLength="255" Unicode="false" />
           <Property Name="ColumnaPersonalizada" Type="Boolean" />
         </EntityType>
-        <EntityType Name="Categorias">
+        <EntityType Name="Categoria">
           <Key>
             <PropertyRef Name="IdCategoria" />
           </Key>
@@ -140,7 +140,7 @@
           <Property Name="Descuento" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Articulos" Relationship="SPISAModel.FK_Articulos_Categoria" FromRole="Categorias" ToRole="Articulos" />
         </EntityType>
-        <EntityType Name="Clientes">
+        <EntityType Name="Cliente">
           <Key>
             <PropertyRef Name="IdCliente" />
           </Key>
@@ -157,7 +157,7 @@
           <NavigationProperty Name="Provincias" Relationship="SPISAModel.FK_Clientes_Provincias" FromRole="Clientes" ToRole="Provincias" />
           <NavigationProperty Name="NotaPedidos" Relationship="SPISAModel.FK_NotaPedidos1_1Clientes" FromRole="Clientes" ToRole="NotaPedidos" />
         </EntityType>
-        <EntityType Name="CondicionesIVA">
+        <EntityType Name="CondicionIVA">
           <Key>
             <PropertyRef Name="IdCondicionIVA" />
           </Key>
@@ -165,7 +165,7 @@
           <Property Name="CondicionIVA" Type="String" Nullable="false" MaxLength="50" Unicode="false" />
           <NavigationProperty Name="Clientes" Relationship="SPISAModel.FK_Clientes_CondicionesIVA" FromRole="CondicionesIVA" ToRole="Clientes" />
         </EntityType>
-        <EntityType Name="CuentaCorriente_Movimientos">
+        <EntityType Name="CuentaCorriente_Movimiento">
           <Key>
             <PropertyRef Name="IdMovimiento" />
           </Key>
@@ -202,7 +202,7 @@
           <Property Name="FechaCobro" Type="DateTime" Nullable="false" />
           <NavigationProperty Name="CuentaCorriente_Pagos" Relationship="SPISAModel.FK_CuentaCorriente_Pagos_DatosDelPago_CuentaCorriente_Pagos" FromRole="CuentaCorriente_Pagos_DatosDelPago" ToRole="CuentaCorriente_Pagos" />
         </EntityType>
-        <EntityType Name="CuentasCorriente">
+        <EntityType Name="CuentaCorriente">
           <Key>
             <PropertyRef Name="IdCuentaCorriente" />
           </Key>
@@ -210,7 +210,7 @@
           <Property Name="FechaCreacion" Type="DateTime" Nullable="false" />
           <Property Name="IdCliente" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityType Name="Descuentos">
+        <EntityType Name="Descuento">
           <Key>
             <PropertyRef Name="IdCliente" />
             <PropertyRef Name="IdCategoria" />
@@ -220,7 +220,7 @@
           <Property Name="IdCategoria" Type="Int32" Nullable="false" />
           <Property Name="Descuento" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityType Name="Facturas">
+        <EntityType Name="Factura">
           <Key>
             <PropertyRef Name="IdFactura" />
           </Key>
@@ -234,7 +234,7 @@
           <Property Name="EsNotaDeCredito" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="NotaPedidos" Relationship="SPISAModel.FK_Facturas1_1NotaPedidos" FromRole="Facturas" ToRole="NotaPedidos" />
         </EntityType>
-        <EntityType Name="FormasDePago">
+        <EntityType Name="FormaDePago">
           <Key>
             <PropertyRef Name="IdFormaDePago" />
           </Key>
@@ -242,7 +242,7 @@
           <Property Name="FormaDePago" Type="String" Nullable="false" MaxLength="50" Unicode="false" />
           <NavigationProperty Name="CuentaCorriente_Pagos" Relationship="SPISAModel.FK_CuentaCorriente_Pagos_FormasDePago" FromRole="FormasDePago" ToRole="CuentaCorriente_Pagos" />
         </EntityType>
-        <EntityType Name="MovimientosTipo">
+        <EntityType Name="MovimientoTipo">
           <Key>
             <PropertyRef Name="IdMovimiento" />
           </Key>
@@ -250,7 +250,7 @@
           <Property Name="Movimiento" Type="String" Nullable="false" MaxLength="50" Unicode="false" />
           <NavigationProperty Name="CuentaCorriente_Movimientos" Relationship="SPISAModel.FK_CuentaCorriente_Movimientos_MovimientosTipo" FromRole="MovimientosTipo" ToRole="CuentaCorriente_Movimientos" />
         </EntityType>
-        <EntityType Name="NotaPedido_Items">
+        <EntityType Name="NotaPedido_Item">
           <Key>
             <PropertyRef Name="IdNotaPedido" />
             <PropertyRef Name="IdArticulo" />
@@ -264,7 +264,7 @@
           <NavigationProperty Name="Articulos" Relationship="SPISAModel.FK_NotaPedido_Items1_1Articulo" FromRole="NotaPedido_Items" ToRole="Articulos" />
           <NavigationProperty Name="NotaPedidos" Relationship="SPISAModel.FK_NotaPedido_Items1_nNotaPedidos" FromRole="NotaPedido_Items" ToRole="NotaPedidos" />
         </EntityType>
-        <EntityType Name="NotaPedidos">
+        <EntityType Name="NotaPedido">
           <Key>
             <PropertyRef Name="IdNotaPedido" />
           </Key>
@@ -278,7 +278,7 @@
           <NavigationProperty Name="Facturas" Relationship="SPISAModel.FK_Facturas1_1NotaPedidos" FromRole="NotaPedidos" ToRole="Facturas" />
           <NavigationProperty Name="NotaPedido_Items" Relationship="SPISAModel.FK_NotaPedido_Items1_nNotaPedidos" FromRole="NotaPedidos" ToRole="NotaPedido_Items" />
         </EntityType>
-        <EntityType Name="Operatorias">
+        <EntityType Name="Operatoria">
           <Key>
             <PropertyRef Name="IdOperatoria" />
           </Key>
@@ -286,7 +286,7 @@
           <Property Name="Operatoria" Type="String" Nullable="false" MaxLength="50" Unicode="false" />
           <NavigationProperty Name="Clientes" Relationship="SPISAModel.FK_Clientes_Operatorias" FromRole="Operatorias" ToRole="Clientes" />
         </EntityType>
-        <EntityType Name="Provincias">
+        <EntityType Name="Provincia">
           <Key>
             <PropertyRef Name="IdProvincia" />
           </Key>
@@ -294,7 +294,7 @@
           <Property Name="Provincia" Type="String" Nullable="false" MaxLength="50" Unicode="false" />
           <NavigationProperty Name="Clientes" Relationship="SPISAModel.FK_Clientes_Provincias" FromRole="Provincias" ToRole="Clientes" />
         </EntityType>
-        <EntityType Name="Remitos">
+        <EntityType Name="Remito">
           <Key>
             <PropertyRef Name="IdRemito" />
           </Key>
@@ -308,7 +308,7 @@
           <Property Name="Bultos" Type="Int32" />
           <Property Name="Valor" Type="Decimal" Precision="10" Scale="2" />
         </EntityType>
-        <EntityType Name="Transportistas">
+        <EntityType Name="Transportista">
           <Key>
             <PropertyRef Name="IdTransportista" />
           </Key>
@@ -317,12 +317,12 @@
           <Property Name="Domicilio" Type="String" Nullable="false" MaxLength="100" Unicode="false" />
         </EntityType>
         <Association Name="FK_Articulos_Categoria">
-          <End Role="Categorias" Type="SPISAModel.Categorias" Multiplicity="1" />
+          <End Role="Categorias" Type="SPISAModel.Categoria" Multiplicity="1" />
           <End Role="Articulos" Type="SPISAModel.Articulo" Multiplicity="*" />
         </Association>
         <Association Name="FK_NotaPedido_Items1_1Articulo">
           <End Role="Articulos" Type="SPISAModel.Articulo" Multiplicity="1" />
-          <End Role="NotaPedido_Items" Type="SPISAModel.NotaPedido_Items" Multiplicity="*" />
+          <End Role="NotaPedido_Items" Type="SPISAModel.NotaPedido_Item" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Articulos">
               <PropertyRef Name="idArticulo" />
@@ -333,28 +333,28 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Clientes_CondicionesIVA">
-          <End Role="CondicionesIVA" Type="SPISAModel.CondicionesIVA" Multiplicity="1" />
-          <End Role="Clientes" Type="SPISAModel.Clientes" Multiplicity="*" />
+          <End Role="CondicionesIVA" Type="SPISAModel.CondicionIVA" Multiplicity="1" />
+          <End Role="Clientes" Type="SPISAModel.Cliente" Multiplicity="*" />
         </Association>
         <Association Name="FK_Clientes_Operatorias">
-          <End Role="Operatorias" Type="SPISAModel.Operatorias" Multiplicity="1" />
-          <End Role="Clientes" Type="SPISAModel.Clientes" Multiplicity="*" />
+          <End Role="Operatorias" Type="SPISAModel.Operatoria" Multiplicity="1" />
+          <End Role="Clientes" Type="SPISAModel.Cliente" Multiplicity="*" />
         </Association>
         <Association Name="FK_Clientes_Provincias">
-          <End Role="Provincias" Type="SPISAModel.Provincias" Multiplicity="1" />
-          <End Role="Clientes" Type="SPISAModel.Clientes" Multiplicity="*" />
+          <End Role="Provincias" Type="SPISAModel.Provincia" Multiplicity="1" />
+          <End Role="Clientes" Type="SPISAModel.Cliente" Multiplicity="*" />
         </Association>
         <Association Name="FK_NotaPedidos1_1Clientes">
-          <End Role="Clientes" Type="SPISAModel.Clientes" Multiplicity="1" />
-          <End Role="NotaPedidos" Type="SPISAModel.NotaPedidos" Multiplicity="*" />
+          <End Role="Clientes" Type="SPISAModel.Cliente" Multiplicity="1" />
+          <End Role="NotaPedidos" Type="SPISAModel.NotaPedido" Multiplicity="*" />
         </Association>
         <Association Name="FK_CuentaCorriente_Movimientos_CuentaCorriente_Pagos">
           <End Role="CuentaCorriente_Pagos" Type="SPISAModel.CuentaCorriente_Pagos" Multiplicity="0..1" />
-          <End Role="CuentaCorriente_Movimientos" Type="SPISAModel.CuentaCorriente_Movimientos" Multiplicity="*" />
+          <End Role="CuentaCorriente_Movimientos" Type="SPISAModel.CuentaCorriente_Movimiento" Multiplicity="*" />
         </Association>
         <Association Name="FK_CuentaCorriente_Movimientos_MovimientosTipo">
-          <End Role="MovimientosTipo" Type="SPISAModel.MovimientosTipo" Multiplicity="1" />
-          <End Role="CuentaCorriente_Movimientos" Type="SPISAModel.CuentaCorriente_Movimientos" Multiplicity="*" />
+          <End Role="MovimientosTipo" Type="SPISAModel.MovimientoTipo" Multiplicity="1" />
+          <End Role="CuentaCorriente_Movimientos" Type="SPISAModel.CuentaCorriente_Movimiento" Multiplicity="*" />
         </Association>
         <Association Name="FK_CuentaCorriente_Pagos_DatosDelPago_CuentaCorriente_Pagos">
           <End Role="CuentaCorriente_Pagos" Type="SPISAModel.CuentaCorriente_Pagos" Multiplicity="1" />
@@ -369,16 +369,16 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CuentaCorriente_Pagos_FormasDePago">
-          <End Role="FormasDePago" Type="SPISAModel.FormasDePago" Multiplicity="1" />
+          <End Role="FormasDePago" Type="SPISAModel.FormaDePago" Multiplicity="1" />
           <End Role="CuentaCorriente_Pagos" Type="SPISAModel.CuentaCorriente_Pagos" Multiplicity="*" />
         </Association>
         <Association Name="FK_Facturas1_1NotaPedidos">
-          <End Role="NotaPedidos" Type="SPISAModel.NotaPedidos" Multiplicity="1" />
-          <End Role="Facturas" Type="SPISAModel.Facturas" Multiplicity="*" />
+          <End Role="NotaPedidos" Type="SPISAModel.NotaPedido" Multiplicity="1" />
+          <End Role="Facturas" Type="SPISAModel.Factura" Multiplicity="*" />
         </Association>
         <Association Name="FK_NotaPedido_Items1_nNotaPedidos">
-          <End Role="NotaPedidos" Type="SPISAModel.NotaPedidos" Multiplicity="1" />
-          <End Role="NotaPedido_Items" Type="SPISAModel.NotaPedido_Items" Multiplicity="*" />
+          <End Role="NotaPedidos" Type="SPISAModel.NotaPedido" Multiplicity="1" />
+          <End Role="NotaPedido_Items" Type="SPISAModel.NotaPedido_Item" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="NotaPedidos">
               <PropertyRef Name="IdNotaPedido" />
@@ -921,7 +921,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Categorias">
-            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.Categorias)">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.Categoria)">
               <MappingFragment StoreEntitySet="Categorias">
                 <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -930,7 +930,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Clientes">
-            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.Clientes)">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.Cliente)">
               <MappingFragment StoreEntitySet="Clientes">
                 <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
@@ -944,7 +944,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CondicionesIVA">
-            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.CondicionesIVA)">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.CondicionIVA)">
               <MappingFragment StoreEntitySet="CondicionesIVA">
                 <ScalarProperty Name="IdCondicionIVA" ColumnName="IdCondicionIVA" />
                 <ScalarProperty Name="CondicionIVA" ColumnName="CondicionIVA" />
@@ -952,7 +952,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CuentaCorriente_Movimientos">
-            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.CuentaCorriente_Movimientos)">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.CuentaCorriente_Movimiento)">
               <MappingFragment StoreEntitySet="CuentaCorriente_Movimientos">
                 <ScalarProperty Name="IdMovimiento" ColumnName="IdMovimiento" />
                 <ScalarProperty Name="IdCuentaCorriente" ColumnName="IdCuentaCorriente" />
@@ -983,7 +983,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CuentasCorriente">
-            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.CuentasCorriente)">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.CuentaCorriente)">
               <MappingFragment StoreEntitySet="CuentasCorriente">
                 <ScalarProperty Name="IdCuentaCorriente" ColumnName="IdCuentaCorriente" />
                 <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
@@ -992,7 +992,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Descuentos">
-            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.Descuentos)">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.Descuento)">
               <MappingFragment StoreEntitySet="Descuentos">
                 <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
                 <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
@@ -1001,7 +1001,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Facturas">
-            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.Facturas)">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.Factura)">
               <MappingFragment StoreEntitySet="Facturas">
                 <ScalarProperty Name="IdFactura" ColumnName="IdFactura" />
                 <ScalarProperty Name="NumeroFactura" ColumnName="NumeroFactura" />
@@ -1015,7 +1015,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="FormasDePago">
-            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.FormasDePago)">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.FormaDePago)">
               <MappingFragment StoreEntitySet="FormasDePago">
                 <ScalarProperty Name="IdFormaDePago" ColumnName="IdFormaDePago" />
                 <ScalarProperty Name="FormaDePago" ColumnName="FormaDePago" />
@@ -1023,7 +1023,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="MovimientosTipo">
-            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.MovimientosTipo)">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.MovimientoTipo)">
               <MappingFragment StoreEntitySet="MovimientosTipo">
                 <ScalarProperty Name="IdMovimiento" ColumnName="IdMovimiento" />
                 <ScalarProperty Name="Movimiento" ColumnName="Movimiento" />
@@ -1031,7 +1031,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NotaPedido_Items">
-            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.NotaPedido_Items)">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.NotaPedido_Item)">
               <MappingFragment StoreEntitySet="NotaPedido_Items">
                 <ScalarProperty Name="IdNotaPedido" ColumnName="IdNotaPedido" />
                 <ScalarProperty Name="IdArticulo" ColumnName="IdArticulo" />
@@ -1042,7 +1042,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NotaPedidos">
-            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.NotaPedidos)">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.NotaPedido)">
               <MappingFragment StoreEntitySet="NotaPedidos">
                 <ScalarProperty Name="IdNotaPedido" ColumnName="IdNotaPedido" />
                 <ScalarProperty Name="FechaEmision" ColumnName="FechaEmision" />
@@ -1054,7 +1054,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Operatorias">
-            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.Operatorias)">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.Operatoria)">
               <MappingFragment StoreEntitySet="Operatorias">
                 <ScalarProperty Name="IdOperatoria" ColumnName="IdOperatoria" />
                 <ScalarProperty Name="Operatoria" ColumnName="Operatoria" />
@@ -1062,7 +1062,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Provincias">
-            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.Provincias)">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.Provincia)">
               <MappingFragment StoreEntitySet="Provincias">
                 <ScalarProperty Name="IdProvincia" ColumnName="IdProvincia" />
                 <ScalarProperty Name="Provincia" ColumnName="Provincia" />
@@ -1070,7 +1070,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Remitos">
-            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.Remitos)">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.Remito)">
               <MappingFragment StoreEntitySet="Remitos">
                 <ScalarProperty Name="IdRemito" ColumnName="IdRemito" />
                 <ScalarProperty Name="IdNotaPedido" ColumnName="IdNotaPedido" />
@@ -1085,7 +1085,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Transportistas">
-            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.Transportistas)">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.Transportista)">
               <MappingFragment StoreEntitySet="Transportistas">
                 <ScalarProperty Name="IdTransportista" ColumnName="IdTransportista" />
                 <ScalarProperty Name="Transportista" ColumnName="Transportista" />

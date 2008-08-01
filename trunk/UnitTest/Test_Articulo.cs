@@ -43,9 +43,10 @@ namespace UnitTest
         [TestMethod]
         public void TestMethod_TraerArticuloPorCodigo()
         {
-            Articulo a = new Articulo();
-            Articulo.test();
-
+            
+            ArticuloBO articulo = new ArticuloBO(Utilities.CreateFactoryInstance());
+            articulo.TraerArticuloPorCodigo("1");
+            
             //Articulo a = Articulo.TraerArticuloPorCodigo(null);
         }
 
@@ -70,7 +71,7 @@ namespace UnitTest
         [TestMethod]
         public void TestMethod_DecimalSeparator()
         {
-            Articulo a = Articulo.TraerArticuloPorID(4);
+            //Articulo a = Articulo.TraerArticuloPorID(4);
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
-  <EntityContainerMapping StorageEntityContainer="dbo" CdmEntityContainer="EntitiesModelCS">
+  <EntityContainerMapping StorageEntityContainer="dbo" CdmEntityContainer="EntitiesContext">
     <EntitySetMapping Name="Articulos">
       <EntityTypeMapping TypeName="IsTypeOf(SPISA.Entities.Articulo)">
         <MappingFragment StoreEntitySet="Articulos">
@@ -18,6 +18,126 @@
           <ScalarProperty Name="CodigoArticulo" ColumnName="CodigoArticulo" />
           <ScalarProperty Name="CodigoCompuesto" ColumnName="CodigoCompuesto" />
           <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuditColumns">
+      <EntityTypeMapping TypeName="IsTypeOf(SPISA.Entities.AuditColumns)">
+        <MappingFragment StoreEntitySet="AuditColumns">
+          <ScalarProperty Name="TableID" ColumnName="TableID" />
+          <ScalarProperty Name="ColumnID" ColumnName="ColumnID" />
+          <ScalarProperty Name="ColumnName" ColumnName="ColumnName" />
+          <ScalarProperty Name="AuditColumn" ColumnName="AuditColumn" />
+          <ScalarProperty Name="CaptureColumn" ColumnName="CaptureColumn" />
+          <ScalarProperty Name="IsLookup" ColumnName="IsLookup" />
+          <ScalarProperty Name="KeyColumn" ColumnName="KeyColumn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuditConfig">
+      <EntityTypeMapping TypeName="IsTypeOf(SPISA.Entities.AuditConfig)">
+        <MappingFragment StoreEntitySet="AuditConfig">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuditLog">
+      <EntityTypeMapping TypeName="IsTypeOf(SPISA.Entities.AuditLog)">
+        <MappingFragment StoreEntitySet="AuditLog">
+          <ScalarProperty Name="AuditLogID" ColumnName="AuditLogID" />
+          <ScalarProperty Name="TableID" ColumnName="TableID" />
+          <ScalarProperty Name="RowsAffected" ColumnName="RowsAffected" />
+          <ScalarProperty Name="Event" ColumnName="Event" />
+          <ScalarProperty Name="PostedDateTime" ColumnName="PostedDateTime" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="HostName" ColumnName="HostName" />
+          <ScalarProperty Name="ApplicationName" ColumnName="ApplicationName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuditLogAutoKeys">
+      <EntityTypeMapping TypeName="IsTypeOf(SPISA.Entities.AuditLogAutoKeys)">
+        <MappingFragment StoreEntitySet="AuditLogAutoKeys">
+          <ScalarProperty Name="TableName" ColumnName="TableName" />
+          <ScalarProperty Name="KeyValue" ColumnName="KeyValue" />
+          <ScalarProperty Name="Filler" ColumnName="Filler" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuditLogDetail">
+      <EntityTypeMapping TypeName="IsTypeOf(SPISA.Entities.AuditLogDetail)">
+        <MappingFragment StoreEntitySet="AuditLogDetail">
+          <ScalarProperty Name="AuditLogID" ColumnName="AuditLogID" />
+          <ScalarProperty Name="RowKey" ColumnName="RowKey" />
+          <ScalarProperty Name="ColumnID" ColumnName="ColumnID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="OldValue" ColumnName="OldValue" />
+          <ScalarProperty Name="NewValue" ColumnName="NewValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuditLogImage">
+      <EntityTypeMapping TypeName="IsTypeOf(SPISA.Entities.AuditLogImage)">
+        <MappingFragment StoreEntitySet="AuditLogImage">
+          <ScalarProperty Name="AuditLogID" ColumnName="AuditLogID" />
+          <ScalarProperty Name="RowKey" ColumnName="RowKey" />
+          <ScalarProperty Name="ColumnID" ColumnName="ColumnID" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuditLogNText">
+      <EntityTypeMapping TypeName="IsTypeOf(SPISA.Entities.AuditLogNText)">
+        <MappingFragment StoreEntitySet="AuditLogNText">
+          <ScalarProperty Name="AuditLogID" ColumnName="AuditLogID" />
+          <ScalarProperty Name="RowKey" ColumnName="RowKey" />
+          <ScalarProperty Name="ColumnID" ColumnName="ColumnID" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuditLogText">
+      <EntityTypeMapping TypeName="IsTypeOf(SPISA.Entities.AuditLogText)">
+        <MappingFragment StoreEntitySet="AuditLogText">
+          <ScalarProperty Name="AuditLogID" ColumnName="AuditLogID" />
+          <ScalarProperty Name="RowKey" ColumnName="RowKey" />
+          <ScalarProperty Name="ColumnID" ColumnName="ColumnID" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuditLookups">
+      <EntityTypeMapping TypeName="IsTypeOf(SPISA.Entities.AuditLookups)">
+        <MappingFragment StoreEntitySet="AuditLookups">
+          <ScalarProperty Name="LookupID" ColumnName="LookupID" />
+          <ScalarProperty Name="ExpressionIsColumn" ColumnName="ExpressionIsColumn" />
+          <ScalarProperty Name="LookupExpression" ColumnName="LookupExpression" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuditRelationships">
+      <EntityTypeMapping TypeName="IsTypeOf(SPISA.Entities.AuditRelationships)">
+        <MappingFragment StoreEntitySet="AuditRelationships">
+          <ScalarProperty Name="RelationshipID" ColumnName="RelationshipID" />
+          <ScalarProperty Name="TableName" ColumnName="TableName" />
+          <ScalarProperty Name="JoinExpression" ColumnName="JoinExpression" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuditTables">
+      <EntityTypeMapping TypeName="IsTypeOf(SPISA.Entities.AuditTables)">
+        <MappingFragment StoreEntitySet="AuditTables">
+          <ScalarProperty Name="TableID" ColumnName="TableID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="TableName" ColumnName="TableName" />
+          <ScalarProperty Name="AuditTable" ColumnName="AuditTable" />
+          <ScalarProperty Name="AuditInserts" ColumnName="AuditInserts" />
+          <ScalarProperty Name="AuditUpdates" ColumnName="AuditUpdates" />
+          <ScalarProperty Name="AuditDeletes" ColumnName="AuditDeletes" />
+          <ScalarProperty Name="AuditDeletesAll" ColumnName="AuditDeletesAll" />
+          <ScalarProperty Name="UniqueKeyType" ColumnName="UniqueKeyType" />
+          <ScalarProperty Name="UserColumn" ColumnName="UserColumn" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -44,7 +164,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Categorias">
-      <EntityTypeMapping TypeName="IsTypeOf(SPISA.Entities.Categorias)">
+      <EntityTypeMapping TypeName="IsTypeOf(SPISA.Entities.Categoria)">
         <MappingFragment StoreEntitySet="Categorias">
           <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
           <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -243,6 +363,31 @@
         <ScalarProperty Name="IdNotaPedido" ColumnName="IdNotaPedido" />
         <ScalarProperty Name="IdArticulo" ColumnName="IdArticulo" />
         <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_AuditColumns1" TypeName="SPISA.Entities.FK_AuditColumns1" StoreEntitySet="AuditColumns">
+      <EndProperty Name="AuditTables">
+        <ScalarProperty Name="TableID" ColumnName="TableID" />
+      </EndProperty>
+      <EndProperty Name="AuditColumns">
+        <ScalarProperty Name="TableID" ColumnName="TableID" />
+        <ScalarProperty Name="ColumnID" ColumnName="ColumnID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_AuditRelationships" TypeName="SPISA.Entities.FK_AuditRelationships" StoreEntitySet="AuditLookups">
+      <EndProperty Name="AuditRelationships">
+        <ScalarProperty Name="RelationshipID" ColumnName="RelationshipID" />
+      </EndProperty>
+      <EndProperty Name="AuditLookups">
+        <ScalarProperty Name="LookupID" ColumnName="LookupID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_AuditTables" TypeName="SPISA.Entities.FK_AuditTables" StoreEntitySet="AuditRelationships">
+      <EndProperty Name="AuditTables">
+        <ScalarProperty Name="TableID" ColumnName="TableID" />
+      </EndProperty>
+      <EndProperty Name="AuditRelationships">
+        <ScalarProperty Name="RelationshipID" ColumnName="RelationshipID" />
       </EndProperty>
     </AssociationSetMapping>
     <AssociationSetMapping Name="FK_Clientes_CondicionesIVA" TypeName="SPISA.Entities.FK_Clientes_CondicionesIVA" StoreEntitySet="Clientes">

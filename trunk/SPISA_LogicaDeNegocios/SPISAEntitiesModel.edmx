@@ -12,18 +12,29 @@
       </DesignerInfoPropertySet>
     </edmx:Options>
     <edmx:ReverseEngineer />
-    <edmx:Diagrams ><Diagram Name="SPISAEntitiesModel"><EntityTypeShape EntityType="SPISA.Entities.Articulo" PointX="5.25" PointY="7.5" Width="1.5" Height="2.0853483072916665" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.Articulos_Compuestos" PointX="9.75" PointY="1.625" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.Buscador_Criterios" PointX="0.75" PointY="10.625" Width="1.5" Height="1.2636116536458317" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.Buscador_Relaciones" PointX="2.75" PointY="10.625" Width="1.5" Height="2.2496956380208317" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.Categorias" PointX="3" PointY="7.75" Width="1.5" Height="1.5923063151041674" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.Clientes" PointX="3" PointY="3.125" Width="1.5" Height="2.9070849609374996" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.CondicionesIVA" PointX="0.75" PointY="3.875" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.CuentaCorriente_Movimientos" PointX="12.25" PointY="8.125" Width="1.5" Height="2.0853483072916674" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.CuentaCorriente_Pagos" PointX="10" PointY="11.125" Width="1.5" Height="2.0853483072916674" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.CuentaCorriente_Pagos_DatosDelPago" PointX="12.25" PointY="11.375" Width="1.5" Height="1.7566536458333317" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.CuentasCorriente" PointX="9.75" PointY="4.625" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.Descuentos" PointX="4.75" PointY="10.625" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.Facturas" PointX="7.5" PointY="6.125" Width="1.5" Height="2.4140429687500005" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.FormasDePago" PointX="7.75" PointY="11.5" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.MovimientosTipo" PointX="10" PointY="8.5" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.NotaPedido_Items" PointX="7.5" PointY="2.5" Width="1.5" Height="2.0853483072916665" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.NotaPedidos" PointX="5.25" PointY="3.375" Width="1.5" Height="2.4140429687499996" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.Operatorias" PointX="0.75" PointY="0.75" Width="1.5" Height="1.427958984375" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.Provincias" PointX="0.75" PointY="6.875" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.Remitos" PointX="11.75" PointY="1.625" Width="1.5" Height="2.4140429687499996" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.sysdiagrams" PointX="11.75" PointY="5.625" Width="1.5" Height="1.7566536458333335" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.Transportistas" PointX="0.75" PointY="13.625" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><AssociationConnector Association="SPISA.Entities.FK_Articulos_Categoria" ManuallyRouted="false"><ConnectorPoint PointX="4.5" PointY="8.5461531575520837" /><ConnectorPoint PointX="5.25" PointY="8.5461531575520837" /></AssociationConnector><AssociationConnector Association="SPISA.Entities.FK_NotaPedido_Items1_1Articulo" ManuallyRouted="false"><ConnectorPoint PointX="6.75" PointY="8.5426741536458337" /><ConnectorPoint PointX="7.125" PointY="8.5426741536458337" /><ConnectorPoint PointX="7.125" PointY="3.5426741536458333" /><ConnectorPoint PointX="7.5" PointY="3.5426741536458333" /></AssociationConnector><AssociationConnector Association="SPISA.Entities.FK_Clientes_CondicionesIVA" ManuallyRouted="false"><ConnectorPoint PointX="2.25" PointY="4.5889794921875" /><ConnectorPoint PointX="2.5416666666666665" PointY="4.5889794921874989" /><ConnectorPoint PointX="2.7083333333333335" PointY="4.5889794921875" /><ConnectorPoint PointX="3" PointY="4.5889794921875" /></AssociationConnector><AssociationConnector Association="SPISA.Entities.FK_Clientes_Operatorias" ManuallyRouted="false"><ConnectorPoint PointX="2.25" PointY="1.4639794921875" /><ConnectorPoint PointX="3.75" PointY="1.4639794921875" /><ConnectorPoint PointX="3.75" PointY="3.125" /></AssociationConnector><AssociationConnector Association="SPISA.Entities.FK_Clientes_Provincias" ManuallyRouted="false"><ConnectorPoint PointX="2.25" PointY="7.5889794921875" /><ConnectorPoint PointX="2.625" PointY="7.5889794921875" /><ConnectorPoint PointX="2.625" PointY="3.82573774609375" /><ConnectorPoint PointX="3" PointY="3.82573774609375" /></AssociationConnector><AssociationConnector Association="SPISA.Entities.FK_NotaPedidos1_1Clientes" ManuallyRouted="false"><ConnectorPoint PointX="4.5" PointY="4.582021484375" /><ConnectorPoint PointX="5.25" PointY="4.582021484375" /></AssociationConnector><AssociationConnector Association="SPISA.Entities.FK_CuentaCorriente_Movimientos_CuentaCorriente_Pagos" ManuallyRouted="false"><ConnectorPoint PointX="11.5" PointY="12.167674153645834" /><ConnectorPoint PointX="11.875" PointY="12.167674153645834" /><ConnectorPoint PointX="11.875" PointY="9.1676741536458337" /><ConnectorPoint PointX="12.25" PointY="9.1676741536458337" /></AssociationConnector><AssociationConnector Association="SPISA.Entities.FK_CuentaCorriente_Movimientos_MovimientosTipo" ManuallyRouted="false"><ConnectorPoint PointX="11.5" PointY="9.6103165690104166" /><ConnectorPoint PointX="11.791666666666666" PointY="9.6103165690104166" /><ConnectorPoint PointX="11.958333333333334" PointY="9.6103165690104166" /><ConnectorPoint PointX="12.25" PointY="9.6103165690104166" /></AssociationConnector><AssociationConnector Association="SPISA.Entities.FK_CuentaCorriente_Pagos_DatosDelPago_CuentaCorriente_Pagos" ManuallyRouted="false"><ConnectorPoint PointX="11.5" PointY="12.712163899739583" /><ConnectorPoint PointX="12.25" PointY="12.712163899739583" /></AssociationConnector><AssociationConnector Association="SPISA.Entities.FK_CuentaCorriente_Pagos_FormasDePago" ManuallyRouted="false"><ConnectorPoint PointX="9.25" PointY="12.2139794921875" /><ConnectorPoint PointX="10" PointY="12.2139794921875" /></AssociationConnector><AssociationConnector Association="SPISA.Entities.FK_Facturas1_1NotaPedidos" ManuallyRouted="false"><ConnectorPoint PointX="6.75" PointY="4.6658580611979161" /><ConnectorPoint PointX="7.041666666666667" PointY="4.6658580611979152" /><ConnectorPoint PointX="7.208333333333333" PointY="4.6658580611979161" /><ConnectorPoint PointX="7.25" PointY="4.6658580611979161" /><ConnectorPoint PointX="7.25" PointY="4.8353483072916665" /><ConnectorPoint PointX="8.25" PointY="4.8353483072916665" /><ConnectorPoint PointX="8.25" PointY="6.125" /></AssociationConnector><AssociationConnector Association="SPISA.Entities.FK_NotaPedido_Items1_nNotaPedidos" ManuallyRouted="false"><ConnectorPoint PointX="6.75" PointY="4.12651123046875" /><ConnectorPoint PointX="7.041666666666667" PointY="4.1265112304687488" /><ConnectorPoint PointX="7.208333333333333" PointY="4.12651123046875" /><ConnectorPoint PointX="7.5" PointY="4.12651123046875" /></AssociationConnector></Diagram></edmx:Diagrams>
+    <edmx:Diagrams ><Diagram Name="SPISAEntitiesModel"><EntityTypeShape EntityType="SPISA.Entities.Articulo" PointX="5.25" PointY="7.5" Width="1.5" Height="2.0853483072916665" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.Articulos_Compuestos" PointX="0.75" PointY="10.625" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.AuditColumns" PointX="12" PointY="4.375" Width="1.5" Height="2.2496956380208335" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.AuditConfig" PointX="2.75" PointY="10.625" Width="1.5" Height="1.2636116536458317" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.AuditLog" PointX="4.75" PointY="10.625" Width="1.5" Height="2.2496956380208317" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.AuditLogAutoKeys" PointX="0.75" PointY="13.625" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.AuditLogDetail" PointX="2.75" PointY="13.625" Width="1.5" Height="1.9210009765624996" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.AuditLogImage" PointX="4.75" PointY="13.625" Width="1.5" Height="1.5923063151041674" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.AuditLogNText" PointX="6.75" PointY="14.625" Width="1.5" Height="1.5923063151041674" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.AuditLogText" PointX="8.75" PointY="14.625" Width="1.5" Height="1.5923063151041674" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.AuditLookups" PointX="14.25" PointY="2" Width="1.5" Height="1.592306315104167" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.AuditRelationships" PointX="12" PointY="1.875" Width="1.5" Height="1.7566536458333333" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.AuditTables" PointX="9.75" PointY="2.875" Width="1.5" Height="2.9070849609374996" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.Buscador_Criterios" PointX="10.75" PointY="14.625" Width="1.5" Height="1.2636116536458317" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.Buscador_Relaciones" PointX="12.75" PointY="14.625" Width="1.5" Height="2.2496956380208317" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.Categoria" PointX="2.75" PointY="8.5" Width="1.5" Height="1.5923063151041674" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.Clientes" PointX="3" PointY="3.125" Width="1.5" Height="2.9070849609374996" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.CondicionesIVA" PointX="0.75" PointY="3.875" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.CuentaCorriente_Movimientos" PointX="12.25" PointY="8.125" Width="1.5" Height="2.0853483072916674" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.CuentaCorriente_Pagos" PointX="10" PointY="11.125" Width="1.5" Height="2.0853483072916674" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.CuentaCorriente_Pagos_DatosDelPago" PointX="12.25" PointY="11.375" Width="1.5" Height="1.7566536458333317" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.CuentasCorriente" PointX="14.75" PointY="4.625" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.Descuentos" PointX="14.75" PointY="7.625" Width="1.5" Height="1.4279589843750005" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.Facturas" PointX="7.5" PointY="6.125" Width="1.5" Height="2.4140429687500005" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.FormasDePago" PointX="7.75" PointY="11.5" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.MovimientosTipo" PointX="10" PointY="8.5" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.NotaPedido_Items" PointX="7.5" PointY="2.5" Width="1.5" Height="2.0853483072916665" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.NotaPedidos" PointX="5.25" PointY="3.375" Width="1.5" Height="2.4140429687499996" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.Operatorias" PointX="0.75" PointY="0.75" Width="1.5" Height="1.427958984375" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.Provincias" PointX="0.75" PointY="6.875" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.Remitos" PointX="14.75" PointY="10.625" Width="1.5" Height="2.4140429687499996" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.sysdiagrams" PointX="14.75" PointY="14.625" Width="1.5" Height="1.7566536458333317" IsExpanded="true" /><EntityTypeShape EntityType="SPISA.Entities.Transportistas" PointX="0.75" PointY="16.625" Width="1.5" Height="1.4279589843750031" IsExpanded="true" /><AssociationConnector Association="SPISA.Entities.FK_Articulos_Categoria" ManuallyRouted="false"><ConnectorPoint PointX="4.25" PointY="9.0426741536458337" /><ConnectorPoint PointX="5.25" PointY="9.0426741536458337" /></AssociationConnector><AssociationConnector Association="SPISA.Entities.FK_NotaPedido_Items1_1Articulo" ManuallyRouted="false"><ConnectorPoint PointX="6.75" PointY="8.5426741536458337" /><ConnectorPoint PointX="7.125" PointY="8.5426741536458337" /><ConnectorPoint PointX="7.125" PointY="3.5426741536458333" /><ConnectorPoint PointX="7.5" PointY="3.5426741536458333" /></AssociationConnector><AssociationConnector Association="SPISA.Entities.FK_AuditColumns1" ManuallyRouted="false"><ConnectorPoint PointX="11.25" PointY="5.07854248046875" /><ConnectorPoint PointX="12" PointY="5.07854248046875" /></AssociationConnector><AssociationConnector Association="SPISA.Entities.FK_AuditRelationships" ManuallyRouted="false"><ConnectorPoint PointX="13.5" PointY="2.7961531575520837" /><ConnectorPoint PointX="14.25" PointY="2.7961531575520837" /></AssociationConnector><AssociationConnector Association="SPISA.Entities.FK_AuditTables" ManuallyRouted="false"><ConnectorPoint PointX="11.25" PointY="3.2533268229166667" /><ConnectorPoint PointX="12" PointY="3.2533268229166667" /></AssociationConnector><AssociationConnector Association="SPISA.Entities.FK_Clientes_CondicionesIVA" ManuallyRouted="false"><ConnectorPoint PointX="2.25" PointY="4.5889794921875" /><ConnectorPoint PointX="3" PointY="4.5889794921875" /></AssociationConnector><AssociationConnector Association="SPISA.Entities.FK_Clientes_Operatorias" ManuallyRouted="false"><ConnectorPoint PointX="2.25" PointY="1.4639794921875" /><ConnectorPoint PointX="3.84375" PointY="1.4639794921875" /><ConnectorPoint PointX="3.84375" PointY="3.125" /></AssociationConnector><AssociationConnector Association="SPISA.Entities.FK_Clientes_Provincias" ManuallyRouted="false"><ConnectorPoint PointX="2.25" PointY="7.5889794921875" /><ConnectorPoint PointX="3.75" PointY="7.5889794921875" /><ConnectorPoint PointX="3.75" PointY="6.0320849609375" /></AssociationConnector><AssociationConnector Association="SPISA.Entities.FK_NotaPedidos1_1Clientes" ManuallyRouted="false"><ConnectorPoint PointX="4.5" PointY="4.582021484375" /><ConnectorPoint PointX="5.25" PointY="4.582021484375" /></AssociationConnector><AssociationConnector Association="SPISA.Entities.FK_CuentaCorriente_Movimientos_CuentaCorriente_Pagos" ManuallyRouted="false"><ConnectorPoint PointX="11.5" PointY="12.167674153645834" /><ConnectorPoint PointX="11.875" PointY="12.167674153645834" /><ConnectorPoint PointX="11.875" PointY="9.1676741536458337" /><ConnectorPoint PointX="12.25" PointY="9.1676741536458337" /></AssociationConnector><AssociationConnector Association="SPISA.Entities.FK_CuentaCorriente_Movimientos_MovimientosTipo" ManuallyRouted="false"><ConnectorPoint PointX="11.5" PointY="9.6103165690104166" /><ConnectorPoint PointX="11.791666666666666" PointY="9.6103165690104166" /><ConnectorPoint PointX="11.958333333333334" PointY="9.6103165690104166" /><ConnectorPoint PointX="12.25" PointY="9.6103165690104166" /></AssociationConnector><AssociationConnector Association="SPISA.Entities.FK_CuentaCorriente_Pagos_DatosDelPago_CuentaCorriente_Pagos" ManuallyRouted="false"><ConnectorPoint PointX="11.5" PointY="12.712163899739583" /><ConnectorPoint PointX="12.25" PointY="12.712163899739583" /></AssociationConnector><AssociationConnector Association="SPISA.Entities.FK_CuentaCorriente_Pagos_FormasDePago" ManuallyRouted="false"><ConnectorPoint PointX="9.25" PointY="12.2139794921875" /><ConnectorPoint PointX="10" PointY="12.2139794921875" /></AssociationConnector><AssociationConnector Association="SPISA.Entities.FK_Facturas1_1NotaPedidos" ManuallyRouted="false"><ConnectorPoint PointX="6.75" PointY="4.6658580611979161" /><ConnectorPoint PointX="7.041666666666667" PointY="4.6658580611979152" /><ConnectorPoint PointX="7.208333333333333" PointY="4.6658580611979161" /><ConnectorPoint PointX="7.25" PointY="4.6658580611979161" /><ConnectorPoint PointX="7.25" PointY="4.8353483072916665" /><ConnectorPoint PointX="8.25" PointY="4.8353483072916665" /><ConnectorPoint PointX="8.25" PointY="6.125" /></AssociationConnector><AssociationConnector Association="SPISA.Entities.FK_NotaPedido_Items1_nNotaPedidos" ManuallyRouted="false"><ConnectorPoint PointX="6.75" PointY="4.12651123046875" /><ConnectorPoint PointX="7.041666666666667" PointY="4.1265112304687488" /><ConnectorPoint PointX="7.208333333333333" PointY="4.12651123046875" /><ConnectorPoint PointX="7.5" PointY="4.12651123046875" /></AssociationConnector></Diagram></edmx:Diagrams>
   </edmx:Designer>
   <edmx:Runtime>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SPISA.Entities" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
-        <EntityContainer Name="EntitiesModelCS">
+        <EntityContainer Name="EntitiesContext">
           <EntitySet Name="Articulos" EntityType="SPISA.Entities.Articulo" />
           <EntitySet Name="Articulos_Compuestos" EntityType="SPISA.Entities.Articulos_Compuestos" />
+          <EntitySet Name="AuditColumns" EntityType="SPISA.Entities.AuditColumns" />
+          <EntitySet Name="AuditConfig" EntityType="SPISA.Entities.AuditConfig" />
+          <EntitySet Name="AuditLog" EntityType="SPISA.Entities.AuditLog" />
+          <EntitySet Name="AuditLogAutoKeys" EntityType="SPISA.Entities.AuditLogAutoKeys" />
+          <EntitySet Name="AuditLogDetail" EntityType="SPISA.Entities.AuditLogDetail" />
+          <EntitySet Name="AuditLogImage" EntityType="SPISA.Entities.AuditLogImage" />
+          <EntitySet Name="AuditLogNText" EntityType="SPISA.Entities.AuditLogNText" />
+          <EntitySet Name="AuditLogText" EntityType="SPISA.Entities.AuditLogText" />
+          <EntitySet Name="AuditLookups" EntityType="SPISA.Entities.AuditLookups" />
+          <EntitySet Name="AuditRelationships" EntityType="SPISA.Entities.AuditRelationships" />
+          <EntitySet Name="AuditTables" EntityType="SPISA.Entities.AuditTables" />
           <EntitySet Name="Buscador_Criterios" EntityType="SPISA.Entities.Buscador_Criterios" />
           <EntitySet Name="Buscador_Relaciones" EntityType="SPISA.Entities.Buscador_Relaciones" />
-          <EntitySet Name="Categorias" EntityType="SPISA.Entities.Categorias" />
+          <EntitySet Name="Categorias" EntityType="SPISA.Entities.Categoria" />
           <EntitySet Name="Clientes" EntityType="SPISA.Entities.Clientes" />
           <EntitySet Name="CondicionesIVA" EntityType="SPISA.Entities.CondicionesIVA" />
           <EntitySet Name="CuentaCorriente_Movimientos" EntityType="SPISA.Entities.CuentaCorriente_Movimientos" />
@@ -48,6 +59,18 @@
           <AssociationSet Name="FK_NotaPedido_Items1_1Articulo" Association="SPISA.Entities.FK_NotaPedido_Items1_1Articulo">
             <End Role="Articulos" EntitySet="Articulos" />
             <End Role="NotaPedido_Items" EntitySet="NotaPedido_Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AuditColumns1" Association="SPISA.Entities.FK_AuditColumns1">
+            <End Role="AuditTables" EntitySet="AuditTables" />
+            <End Role="AuditColumns" EntitySet="AuditColumns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AuditRelationships" Association="SPISA.Entities.FK_AuditRelationships">
+            <End Role="AuditRelationships" EntitySet="AuditRelationships" />
+            <End Role="AuditLookups" EntitySet="AuditLookups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AuditTables" Association="SPISA.Entities.FK_AuditTables">
+            <End Role="AuditTables" EntitySet="AuditTables" />
+            <End Role="AuditRelationships" EntitySet="AuditRelationships" />
           </AssociationSet>
           <AssociationSet Name="FK_Clientes_CondicionesIVA" Association="SPISA.Entities.FK_Clientes_CondicionesIVA">
             <End Role="CondicionesIVA" EntitySet="CondicionesIVA" />
@@ -111,6 +134,130 @@
           <Property Name="CodigoCompuesto" Type="String" Nullable="false" MaxLength="20" Unicode="false" />
           <Property Name="Cantidad" Type="Int32" Nullable="false" />
         </EntityType>
+        <EntityType Name="AuditColumns">
+          <Key>
+            <PropertyRef Name="TableID" />
+            <PropertyRef Name="ColumnID" />
+          </Key>
+          <Property Name="TableID" Type="Int32" Nullable="false" />
+          <Property Name="ColumnID" Type="Int32" Nullable="false" />
+          <Property Name="ColumnName" Type="String" Nullable="false" MaxLength="128" />
+          <Property Name="AuditColumn" Type="Boolean" Nullable="false" />
+          <Property Name="CaptureColumn" Type="Boolean" Nullable="false" />
+          <Property Name="IsLookup" Type="Boolean" Nullable="false" />
+          <Property Name="KeyColumn" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="AuditTables" Relationship="SPISA.Entities.FK_AuditColumns1" FromRole="AuditColumns" ToRole="AuditTables" />
+        </EntityType>
+        <EntityType Name="AuditConfig">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="false" />
+          <Property Name="Value" Type="String" Nullable="false" MaxLength="2000" Unicode="false" />
+        </EntityType>
+        <EntityType Name="AuditLog">
+          <Key>
+            <PropertyRef Name="AuditLogID" />
+          </Key>
+          <Property Name="AuditLogID" Type="Int32" Nullable="false" />
+          <Property Name="TableID" Type="Int32" Nullable="false" />
+          <Property Name="RowsAffected" Type="Int32" Nullable="false" />
+          <Property Name="Event" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="PostedDateTime" Type="DateTime" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="128" />
+          <Property Name="HostName" Type="String" Nullable="false" MaxLength="128" />
+          <Property Name="ApplicationName" Type="String" Nullable="false" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="AuditLogAutoKeys">
+          <Key>
+            <PropertyRef Name="TableName" />
+          </Key>
+          <Property Name="TableName" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="true" />
+          <Property Name="KeyValue" Type="Int32" Nullable="false" />
+          <Property Name="Filler" Type="String" Nullable="false" MaxLength="6000" Unicode="false" FixedLength="true" />
+        </EntityType>
+        <EntityType Name="AuditLogDetail">
+          <Key>
+            <PropertyRef Name="AuditLogID" />
+            <PropertyRef Name="RowKey" />
+            <PropertyRef Name="ColumnID" />
+          </Key>
+          <Property Name="AuditLogID" Type="Int32" Nullable="false" />
+          <Property Name="RowKey" Type="String" Nullable="false" MaxLength="512" Unicode="false" />
+          <Property Name="ColumnID" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Byte" Nullable="false" />
+          <Property Name="OldValue" Type="String" MaxLength="2147483647" Unicode="false" />
+          <Property Name="NewValue" Type="String" MaxLength="2147483647" Unicode="false" />
+        </EntityType>
+        <EntityType Name="AuditLogImage">
+          <Key>
+            <PropertyRef Name="AuditLogID" />
+            <PropertyRef Name="RowKey" />
+            <PropertyRef Name="ColumnID" />
+          </Key>
+          <Property Name="AuditLogID" Type="Int32" Nullable="false" />
+          <Property Name="RowKey" Type="String" Nullable="false" MaxLength="512" Unicode="false" />
+          <Property Name="ColumnID" Type="Int32" Nullable="false" />
+          <Property Name="Value" Type="Binary" MaxLength="2147483647" />
+        </EntityType>
+        <EntityType Name="AuditLogNText">
+          <Key>
+            <PropertyRef Name="AuditLogID" />
+            <PropertyRef Name="RowKey" />
+            <PropertyRef Name="ColumnID" />
+          </Key>
+          <Property Name="AuditLogID" Type="Int32" Nullable="false" />
+          <Property Name="RowKey" Type="String" Nullable="false" MaxLength="512" Unicode="false" />
+          <Property Name="ColumnID" Type="Int32" Nullable="false" />
+          <Property Name="Value" Type="String" MaxLength="1073741823" />
+        </EntityType>
+        <EntityType Name="AuditLogText">
+          <Key>
+            <PropertyRef Name="AuditLogID" />
+            <PropertyRef Name="RowKey" />
+            <PropertyRef Name="ColumnID" />
+          </Key>
+          <Property Name="AuditLogID" Type="Int32" Nullable="false" />
+          <Property Name="RowKey" Type="String" Nullable="false" MaxLength="512" Unicode="false" />
+          <Property Name="ColumnID" Type="Int32" Nullable="false" />
+          <Property Name="Value" Type="String" MaxLength="2147483647" Unicode="false" />
+        </EntityType>
+        <EntityType Name="AuditLookups">
+          <Key>
+            <PropertyRef Name="LookupID" />
+          </Key>
+          <Property Name="LookupID" Type="Int32" Nullable="false" />
+          <Property Name="ExpressionIsColumn" Type="Boolean" Nullable="false" />
+          <Property Name="LookupExpression" Type="String" Nullable="false" MaxLength="1024" />
+          <NavigationProperty Name="AuditRelationships" Relationship="SPISA.Entities.FK_AuditRelationships" FromRole="AuditLookups" ToRole="AuditRelationships" />
+        </EntityType>
+        <EntityType Name="AuditRelationships">
+          <Key>
+            <PropertyRef Name="RelationshipID" />
+          </Key>
+          <Property Name="RelationshipID" Type="Int32" Nullable="false" />
+          <Property Name="TableName" Type="String" Nullable="false" MaxLength="128" />
+          <Property Name="JoinExpression" Type="String" Nullable="false" MaxLength="1024" />
+          <NavigationProperty Name="AuditLookups" Relationship="SPISA.Entities.FK_AuditRelationships" FromRole="AuditRelationships" ToRole="AuditLookups" />
+          <NavigationProperty Name="AuditTables" Relationship="SPISA.Entities.FK_AuditTables" FromRole="AuditRelationships" ToRole="AuditTables" />
+        </EntityType>
+        <EntityType Name="AuditTables">
+          <Key>
+            <PropertyRef Name="TableID" />
+          </Key>
+          <Property Name="TableID" Type="Int32" Nullable="false" />
+          <Property Name="Owner" Type="String" Nullable="false" MaxLength="128" />
+          <Property Name="TableName" Type="String" Nullable="false" MaxLength="128" />
+          <Property Name="AuditTable" Type="Boolean" Nullable="false" />
+          <Property Name="AuditInserts" Type="Boolean" Nullable="false" />
+          <Property Name="AuditUpdates" Type="Boolean" Nullable="false" />
+          <Property Name="AuditDeletes" Type="Boolean" Nullable="false" />
+          <Property Name="AuditDeletesAll" Type="Boolean" Nullable="false" />
+          <Property Name="UniqueKeyType" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="UserColumn" Type="String" Nullable="false" MaxLength="128" />
+          <NavigationProperty Name="AuditColumns" Relationship="SPISA.Entities.FK_AuditColumns1" FromRole="AuditTables" ToRole="AuditColumns" />
+          <NavigationProperty Name="AuditRelationships" Relationship="SPISA.Entities.FK_AuditTables" FromRole="AuditTables" ToRole="AuditRelationships" />
+        </EntityType>
         <EntityType Name="Buscador_Criterios">
           <Key>
             <PropertyRef Name="TipoDeDato" />
@@ -132,7 +279,7 @@
           <Property Name="QueryPersonalizada" Type="String" MaxLength="255" Unicode="false" />
           <Property Name="ColumnaPersonalizada" Type="Boolean" />
         </EntityType>
-        <EntityType Name="Categorias">
+        <EntityType Name="Categoria">
           <Key>
             <PropertyRef Name="IdCategoria" />
           </Key>
@@ -328,7 +475,7 @@
           <Property Name="Domicilio" Type="String" Nullable="false" MaxLength="100" Unicode="false" />
         </EntityType>
         <Association Name="FK_Articulos_Categoria">
-          <End Role="Categorias" Type="SPISA.Entities.Categorias" Multiplicity="1" />
+          <End Role="Categorias" Type="SPISA.Entities.Categoria" Multiplicity="1" />
           <End Role="Articulos" Type="SPISA.Entities.Articulo" Multiplicity="*" />
         </Association>
         <Association Name="FK_NotaPedido_Items1_1Articulo">
@@ -342,6 +489,26 @@
               <PropertyRef Name="IdArticulo" />
             </Dependent>
           </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AuditColumns1">
+          <End Role="AuditTables" Type="SPISA.Entities.AuditTables" Multiplicity="1" />
+          <End Role="AuditColumns" Type="SPISA.Entities.AuditColumns" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AuditTables">
+              <PropertyRef Name="TableID" />
+            </Principal>
+            <Dependent Role="AuditColumns">
+              <PropertyRef Name="TableID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AuditRelationships">
+          <End Role="AuditRelationships" Type="SPISA.Entities.AuditRelationships" Multiplicity="1" />
+          <End Role="AuditLookups" Type="SPISA.Entities.AuditLookups" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_AuditTables">
+          <End Role="AuditTables" Type="SPISA.Entities.AuditTables" Multiplicity="1" />
+          <End Role="AuditRelationships" Type="SPISA.Entities.AuditRelationships" Multiplicity="*" />
         </Association>
         <Association Name="FK_Clientes_CondicionesIVA">
           <End Role="CondicionesIVA" Type="SPISA.Entities.CondicionesIVA" Multiplicity="1" />
@@ -407,6 +574,17 @@
         <EntityContainer Name="dbo">
           <EntitySet Name="Articulos" EntityType="SPISA.Entities.Store.Articulos" />
           <EntitySet Name="Articulos_Compuestos" EntityType="SPISA.Entities.Store.Articulos_Compuestos" />
+          <EntitySet Name="AuditColumns" EntityType="SPISA.Entities.Store.AuditColumns" />
+          <EntitySet Name="AuditConfig" EntityType="SPISA.Entities.Store.AuditConfig" />
+          <EntitySet Name="AuditLog" EntityType="SPISA.Entities.Store.AuditLog" />
+          <EntitySet Name="AuditLogAutoKeys" EntityType="SPISA.Entities.Store.AuditLogAutoKeys" />
+          <EntitySet Name="AuditLogDetail" EntityType="SPISA.Entities.Store.AuditLogDetail" />
+          <EntitySet Name="AuditLogImage" EntityType="SPISA.Entities.Store.AuditLogImage" />
+          <EntitySet Name="AuditLogNText" EntityType="SPISA.Entities.Store.AuditLogNText" />
+          <EntitySet Name="AuditLogText" EntityType="SPISA.Entities.Store.AuditLogText" />
+          <EntitySet Name="AuditLookups" EntityType="SPISA.Entities.Store.AuditLookups" />
+          <EntitySet Name="AuditRelationships" EntityType="SPISA.Entities.Store.AuditRelationships" />
+          <EntitySet Name="AuditTables" EntityType="SPISA.Entities.Store.AuditTables" />
           <EntitySet Name="Buscador_Criterios" EntityType="SPISA.Entities.Store.Buscador_Criterios">
             <DefiningQuery>SELECT 
       [Buscador_Criterios].[TipoDeDato] AS [TipoDeDato], 
@@ -467,6 +645,18 @@
           <AssociationSet Name="FK_Articulos_Categoria" Association="SPISA.Entities.Store.FK_Articulos_Categoria">
             <End Role="Categorias" EntitySet="Categorias" />
             <End Role="Articulos" EntitySet="Articulos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AuditColumns1" Association="SPISA.Entities.Store.FK_AuditColumns1">
+            <End Role="AuditTables" EntitySet="AuditTables" />
+            <End Role="AuditColumns" EntitySet="AuditColumns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AuditRelationships" Association="SPISA.Entities.Store.FK_AuditRelationships">
+            <End Role="AuditRelationships" EntitySet="AuditRelationships" />
+            <End Role="AuditLookups" EntitySet="AuditLookups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AuditTables" Association="SPISA.Entities.Store.FK_AuditTables">
+            <End Role="AuditTables" EntitySet="AuditTables" />
+            <End Role="AuditRelationships" EntitySet="AuditRelationships" />
           </AssociationSet>
           <AssociationSet Name="FK_Clientes_CondicionesIVA" Association="SPISA.Entities.Store.FK_Clientes_CondicionesIVA">
             <End Role="CondicionesIVA" EntitySet="CondicionesIVA" />
@@ -532,6 +722,126 @@
           <Property Name="CodigoArticulo" Type="varchar" Nullable="false" MaxLength="20" />
           <Property Name="CodigoCompuesto" Type="varchar" Nullable="false" MaxLength="20" />
           <Property Name="Cantidad" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AuditColumns">
+          <Key>
+            <PropertyRef Name="TableID" />
+            <PropertyRef Name="ColumnID" />
+          </Key>
+          <Property Name="TableID" Type="int" Nullable="false" />
+          <Property Name="ColumnID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ColumnName" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="AuditColumn" Type="bit" Nullable="false" />
+          <Property Name="CaptureColumn" Type="bit" Nullable="false" />
+          <Property Name="IsLookup" Type="bit" Nullable="false" />
+          <Property Name="KeyColumn" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AuditConfig">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Value" Type="varchar" Nullable="false" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="AuditLog">
+          <Key>
+            <PropertyRef Name="AuditLogID" />
+          </Key>
+          <Property Name="AuditLogID" Type="int" Nullable="false" />
+          <Property Name="TableID" Type="int" Nullable="false" />
+          <Property Name="RowsAffected" Type="int" Nullable="false" />
+          <Property Name="Event" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="PostedDateTime" Type="datetime" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="HostName" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="ApplicationName" Type="nvarchar" Nullable="false" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="AuditLogAutoKeys">
+          <Key>
+            <PropertyRef Name="TableName" />
+          </Key>
+          <Property Name="TableName" Type="char" Nullable="false" MaxLength="128" />
+          <Property Name="KeyValue" Type="int" Nullable="false" />
+          <Property Name="Filler" Type="char" Nullable="false" MaxLength="6000" />
+        </EntityType>
+        <EntityType Name="AuditLogDetail">
+          <Key>
+            <PropertyRef Name="AuditLogID" />
+            <PropertyRef Name="RowKey" />
+            <PropertyRef Name="ColumnID" />
+          </Key>
+          <Property Name="AuditLogID" Type="int" Nullable="false" />
+          <Property Name="RowKey" Type="varchar" Nullable="false" MaxLength="512" />
+          <Property Name="ColumnID" Type="int" Nullable="false" />
+          <Property Name="Status" Type="tinyint" Nullable="false" />
+          <Property Name="OldValue" Type="varchar(max)" />
+          <Property Name="NewValue" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="AuditLogImage">
+          <Key>
+            <PropertyRef Name="AuditLogID" />
+            <PropertyRef Name="RowKey" />
+            <PropertyRef Name="ColumnID" />
+          </Key>
+          <Property Name="AuditLogID" Type="int" Nullable="false" />
+          <Property Name="RowKey" Type="varchar" Nullable="false" MaxLength="512" />
+          <Property Name="ColumnID" Type="int" Nullable="false" />
+          <Property Name="Value" Type="image" />
+        </EntityType>
+        <EntityType Name="AuditLogNText">
+          <Key>
+            <PropertyRef Name="AuditLogID" />
+            <PropertyRef Name="RowKey" />
+            <PropertyRef Name="ColumnID" />
+          </Key>
+          <Property Name="AuditLogID" Type="int" Nullable="false" />
+          <Property Name="RowKey" Type="varchar" Nullable="false" MaxLength="512" />
+          <Property Name="ColumnID" Type="int" Nullable="false" />
+          <Property Name="Value" Type="ntext" />
+        </EntityType>
+        <EntityType Name="AuditLogText">
+          <Key>
+            <PropertyRef Name="AuditLogID" />
+            <PropertyRef Name="RowKey" />
+            <PropertyRef Name="ColumnID" />
+          </Key>
+          <Property Name="AuditLogID" Type="int" Nullable="false" />
+          <Property Name="RowKey" Type="varchar" Nullable="false" MaxLength="512" />
+          <Property Name="ColumnID" Type="int" Nullable="false" />
+          <Property Name="Value" Type="text" />
+        </EntityType>
+        <EntityType Name="AuditLookups">
+          <Key>
+            <PropertyRef Name="LookupID" />
+          </Key>
+          <Property Name="LookupID" Type="int" Nullable="false" />
+          <Property Name="RelationshipID" Type="int" Nullable="false" />
+          <Property Name="ExpressionIsColumn" Type="bit" Nullable="false" />
+          <Property Name="LookupExpression" Type="nvarchar" Nullable="false" MaxLength="1024" />
+        </EntityType>
+        <EntityType Name="AuditRelationships">
+          <Key>
+            <PropertyRef Name="RelationshipID" />
+          </Key>
+          <Property Name="TableID" Type="int" Nullable="false" />
+          <Property Name="RelationshipID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TableName" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="JoinExpression" Type="nvarchar" Nullable="false" MaxLength="1024" />
+        </EntityType>
+        <EntityType Name="AuditTables">
+          <Key>
+            <PropertyRef Name="TableID" />
+          </Key>
+          <Property Name="TableID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Owner" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="TableName" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="AuditTable" Type="bit" Nullable="false" />
+          <Property Name="AuditInserts" Type="bit" Nullable="false" />
+          <Property Name="AuditUpdates" Type="bit" Nullable="false" />
+          <Property Name="AuditDeletes" Type="bit" Nullable="false" />
+          <Property Name="AuditDeletesAll" Type="bit" Nullable="false" />
+          <Property Name="UniqueKeyType" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="UserColumn" Type="nvarchar" Nullable="false" MaxLength="128" />
         </EntityType>
         <!--Errors Found During Generation:
       warning 6002: The table/view 'SPISA.dbo.Buscador_Criterios' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
@@ -762,6 +1072,42 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_AuditColumns1">
+          <End Role="AuditTables" Type="SPISA.Entities.Store.AuditTables" Multiplicity="1" />
+          <End Role="AuditColumns" Type="SPISA.Entities.Store.AuditColumns" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AuditTables">
+              <PropertyRef Name="TableID" />
+            </Principal>
+            <Dependent Role="AuditColumns">
+              <PropertyRef Name="TableID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AuditRelationships">
+          <End Role="AuditRelationships" Type="SPISA.Entities.Store.AuditRelationships" Multiplicity="1" />
+          <End Role="AuditLookups" Type="SPISA.Entities.Store.AuditLookups" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AuditRelationships">
+              <PropertyRef Name="RelationshipID" />
+            </Principal>
+            <Dependent Role="AuditLookups">
+              <PropertyRef Name="RelationshipID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AuditTables">
+          <End Role="AuditTables" Type="SPISA.Entities.Store.AuditTables" Multiplicity="1" />
+          <End Role="AuditRelationships" Type="SPISA.Entities.Store.AuditRelationships" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AuditTables">
+              <PropertyRef Name="TableID" />
+            </Principal>
+            <Dependent Role="AuditRelationships">
+              <PropertyRef Name="TableID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Clientes_CondicionesIVA">
           <End Role="CondicionesIVA" Type="SPISA.Entities.Store.CondicionesIVA" Multiplicity="1" />
           <End Role="Clientes" Type="SPISA.Entities.Store.Clientes" Multiplicity="*" />
@@ -899,7 +1245,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
-        <EntityContainerMapping StorageEntityContainer="dbo" CdmEntityContainer="EntitiesModelCS">
+        <EntityContainerMapping StorageEntityContainer="dbo" CdmEntityContainer="EntitiesContext">
           <EntitySetMapping Name="Articulos">
             <EntityTypeMapping TypeName="IsTypeOf(SPISA.Entities.Articulo)">
               <MappingFragment StoreEntitySet="Articulos">
@@ -917,6 +1263,126 @@
                 <ScalarProperty Name="CodigoArticulo" ColumnName="CodigoArticulo" />
                 <ScalarProperty Name="CodigoCompuesto" ColumnName="CodigoCompuesto" />
                 <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AuditColumns">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISA.Entities.AuditColumns)">
+              <MappingFragment StoreEntitySet="AuditColumns">
+                <ScalarProperty Name="TableID" ColumnName="TableID" />
+                <ScalarProperty Name="ColumnID" ColumnName="ColumnID" />
+                <ScalarProperty Name="ColumnName" ColumnName="ColumnName" />
+                <ScalarProperty Name="AuditColumn" ColumnName="AuditColumn" />
+                <ScalarProperty Name="CaptureColumn" ColumnName="CaptureColumn" />
+                <ScalarProperty Name="IsLookup" ColumnName="IsLookup" />
+                <ScalarProperty Name="KeyColumn" ColumnName="KeyColumn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AuditConfig">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISA.Entities.AuditConfig)">
+              <MappingFragment StoreEntitySet="AuditConfig">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AuditLog">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISA.Entities.AuditLog)">
+              <MappingFragment StoreEntitySet="AuditLog">
+                <ScalarProperty Name="AuditLogID" ColumnName="AuditLogID" />
+                <ScalarProperty Name="TableID" ColumnName="TableID" />
+                <ScalarProperty Name="RowsAffected" ColumnName="RowsAffected" />
+                <ScalarProperty Name="Event" ColumnName="Event" />
+                <ScalarProperty Name="PostedDateTime" ColumnName="PostedDateTime" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="HostName" ColumnName="HostName" />
+                <ScalarProperty Name="ApplicationName" ColumnName="ApplicationName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AuditLogAutoKeys">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISA.Entities.AuditLogAutoKeys)">
+              <MappingFragment StoreEntitySet="AuditLogAutoKeys">
+                <ScalarProperty Name="TableName" ColumnName="TableName" />
+                <ScalarProperty Name="KeyValue" ColumnName="KeyValue" />
+                <ScalarProperty Name="Filler" ColumnName="Filler" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AuditLogDetail">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISA.Entities.AuditLogDetail)">
+              <MappingFragment StoreEntitySet="AuditLogDetail">
+                <ScalarProperty Name="AuditLogID" ColumnName="AuditLogID" />
+                <ScalarProperty Name="RowKey" ColumnName="RowKey" />
+                <ScalarProperty Name="ColumnID" ColumnName="ColumnID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="OldValue" ColumnName="OldValue" />
+                <ScalarProperty Name="NewValue" ColumnName="NewValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AuditLogImage">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISA.Entities.AuditLogImage)">
+              <MappingFragment StoreEntitySet="AuditLogImage">
+                <ScalarProperty Name="AuditLogID" ColumnName="AuditLogID" />
+                <ScalarProperty Name="RowKey" ColumnName="RowKey" />
+                <ScalarProperty Name="ColumnID" ColumnName="ColumnID" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AuditLogNText">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISA.Entities.AuditLogNText)">
+              <MappingFragment StoreEntitySet="AuditLogNText">
+                <ScalarProperty Name="AuditLogID" ColumnName="AuditLogID" />
+                <ScalarProperty Name="RowKey" ColumnName="RowKey" />
+                <ScalarProperty Name="ColumnID" ColumnName="ColumnID" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AuditLogText">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISA.Entities.AuditLogText)">
+              <MappingFragment StoreEntitySet="AuditLogText">
+                <ScalarProperty Name="AuditLogID" ColumnName="AuditLogID" />
+                <ScalarProperty Name="RowKey" ColumnName="RowKey" />
+                <ScalarProperty Name="ColumnID" ColumnName="ColumnID" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AuditLookups">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISA.Entities.AuditLookups)">
+              <MappingFragment StoreEntitySet="AuditLookups">
+                <ScalarProperty Name="LookupID" ColumnName="LookupID" />
+                <ScalarProperty Name="ExpressionIsColumn" ColumnName="ExpressionIsColumn" />
+                <ScalarProperty Name="LookupExpression" ColumnName="LookupExpression" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AuditRelationships">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISA.Entities.AuditRelationships)">
+              <MappingFragment StoreEntitySet="AuditRelationships">
+                <ScalarProperty Name="RelationshipID" ColumnName="RelationshipID" />
+                <ScalarProperty Name="TableName" ColumnName="TableName" />
+                <ScalarProperty Name="JoinExpression" ColumnName="JoinExpression" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AuditTables">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISA.Entities.AuditTables)">
+              <MappingFragment StoreEntitySet="AuditTables">
+                <ScalarProperty Name="TableID" ColumnName="TableID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="TableName" ColumnName="TableName" />
+                <ScalarProperty Name="AuditTable" ColumnName="AuditTable" />
+                <ScalarProperty Name="AuditInserts" ColumnName="AuditInserts" />
+                <ScalarProperty Name="AuditUpdates" ColumnName="AuditUpdates" />
+                <ScalarProperty Name="AuditDeletes" ColumnName="AuditDeletes" />
+                <ScalarProperty Name="AuditDeletesAll" ColumnName="AuditDeletesAll" />
+                <ScalarProperty Name="UniqueKeyType" ColumnName="UniqueKeyType" />
+                <ScalarProperty Name="UserColumn" ColumnName="UserColumn" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -943,7 +1409,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Categorias">
-            <EntityTypeMapping TypeName="IsTypeOf(SPISA.Entities.Categorias)">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISA.Entities.Categoria)">
               <MappingFragment StoreEntitySet="Categorias">
                 <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -1142,6 +1608,31 @@
               <ScalarProperty Name="IdNotaPedido" ColumnName="IdNotaPedido" />
               <ScalarProperty Name="IdArticulo" ColumnName="IdArticulo" />
               <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_AuditColumns1" TypeName="SPISA.Entities.FK_AuditColumns1" StoreEntitySet="AuditColumns">
+            <EndProperty Name="AuditTables">
+              <ScalarProperty Name="TableID" ColumnName="TableID" />
+            </EndProperty>
+            <EndProperty Name="AuditColumns">
+              <ScalarProperty Name="TableID" ColumnName="TableID" />
+              <ScalarProperty Name="ColumnID" ColumnName="ColumnID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_AuditRelationships" TypeName="SPISA.Entities.FK_AuditRelationships" StoreEntitySet="AuditLookups">
+            <EndProperty Name="AuditRelationships">
+              <ScalarProperty Name="RelationshipID" ColumnName="RelationshipID" />
+            </EndProperty>
+            <EndProperty Name="AuditLookups">
+              <ScalarProperty Name="LookupID" ColumnName="LookupID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_AuditTables" TypeName="SPISA.Entities.FK_AuditTables" StoreEntitySet="AuditRelationships">
+            <EndProperty Name="AuditTables">
+              <ScalarProperty Name="TableID" ColumnName="TableID" />
+            </EndProperty>
+            <EndProperty Name="AuditRelationships">
+              <ScalarProperty Name="RelationshipID" ColumnName="RelationshipID" />
             </EndProperty>
           </AssociationSetMapping>
           <AssociationSetMapping Name="FK_Clientes_CondicionesIVA" TypeName="SPISA.Entities.FK_Clientes_CondicionesIVA" StoreEntitySet="Clientes">

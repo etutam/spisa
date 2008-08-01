@@ -22,6 +22,7 @@ namespace SPISA.Libreria
 
             if (Convert.ToBoolean(reader.GetValue("LogActivities", typeof(bool))) == true)
             {
+                
                 FileStream objWriter;
 
                 // Generate the line to append

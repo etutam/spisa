@@ -9,8 +9,11 @@
 //------------------------------------------------------------------------------
 
 [assembly: global::System.Data.Objects.DataClasses.EdmSchemaAttribute()]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("SPISA.Entities", "FK_Articulos_Categoria", "Categorias", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SPISA.Entities.Categorias), "Articulos", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SPISA.Entities.Articulo))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("SPISA.Entities", "FK_Articulos_Categoria", "Categorias", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SPISA.Entities.Categoria), "Articulos", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SPISA.Entities.Articulo))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("SPISA.Entities", "FK_NotaPedido_Items1_1Articulo", "Articulos", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SPISA.Entities.Articulo), "NotaPedido_Items", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SPISA.Entities.NotaPedido_Items))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("SPISA.Entities", "FK_AuditColumns1", "AuditTables", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SPISA.Entities.AuditTables), "AuditColumns", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SPISA.Entities.AuditColumns))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("SPISA.Entities", "FK_AuditRelationships", "AuditRelationships", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SPISA.Entities.AuditRelationships), "AuditLookups", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SPISA.Entities.AuditLookups))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("SPISA.Entities", "FK_AuditTables", "AuditTables", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SPISA.Entities.AuditTables), "AuditRelationships", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SPISA.Entities.AuditRelationships))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("SPISA.Entities", "FK_Clientes_CondicionesIVA", "CondicionesIVA", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SPISA.Entities.CondicionesIVA), "Clientes", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SPISA.Entities.Clientes))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("SPISA.Entities", "FK_Clientes_Operatorias", "Operatorias", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SPISA.Entities.Operatorias), "Clientes", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SPISA.Entities.Clientes))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("SPISA.Entities", "FK_Clientes_Provincias", "Provincias", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SPISA.Entities.Provincias), "Clientes", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SPISA.Entities.Clientes))]
@@ -23,34 +26,34 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("SPISA.Entities", "FK_NotaPedido_Items1_nNotaPedidos", "NotaPedidos", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SPISA.Entities.NotaPedidos), "NotaPedido_Items", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SPISA.Entities.NotaPedido_Items))]
 
 // Original file name:
-// Generation date: 15/07/2008 8:32:29
+// Generation date: 7/30/2008 7:01:42 AM
 namespace SPISA.Entities
 {
     
     /// <summary>
-    /// There are no comments for EntitiesModel in the schema.
+    /// There are no comments for EntitiesContext in the schema.
     /// </summary>
-    public partial class EntitiesModel : global::System.Data.Objects.ObjectContext
+    public partial class EntitiesContext : global::System.Data.Objects.ObjectContext
     {
         /// <summary>
-        /// Initializes a new EntitiesModel object using the connection string found in the 'EntitiesModel' section of the application configuration file.
+        /// Initializes a new EntitiesContext object using the connection string found in the 'EntitiesContext' section of the application configuration file.
         /// </summary>
-        public EntitiesModel() :
-            base("name=EntitiesModelCS", "EntitiesModelCS")
+        public EntitiesContext() : 
+                base("name=EntitiesContext", "EntitiesContext")
         {
         }
         /// <summary>
-        /// Initialize a new EntitiesModel object.
+        /// Initialize a new EntitiesContext object.
         /// </summary>
-        public EntitiesModel(string connectionString) :
-            base(connectionString, "EntitiesModelCS")
+        public EntitiesContext(string connectionString) : 
+                base(connectionString, "EntitiesContext")
         {
         }
         /// <summary>
-        /// Initialize a new EntitiesModel object.
+        /// Initialize a new EntitiesContext object.
         /// </summary>
-        public EntitiesModel(global::System.Data.EntityClient.EntityConnection connection) : 
-                base(connection, "EntitiesModelCS")
+        public EntitiesContext(global::System.Data.EntityClient.EntityConnection connection) : 
+                base(connection, "EntitiesContext")
         {
         }
         /// <summary>
@@ -85,6 +88,182 @@ namespace SPISA.Entities
             }
         }
         private global::System.Data.Objects.ObjectQuery<Articulos_Compuestos> _Articulos_Compuestos;
+        /// <summary>
+        /// There are no comments for AuditColumns in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public global::System.Data.Objects.ObjectQuery<AuditColumns> AuditColumns
+        {
+            get
+            {
+                if ((this._AuditColumns == null))
+                {
+                    this._AuditColumns = base.CreateQuery<AuditColumns>("[AuditColumns]");
+                }
+                return this._AuditColumns;
+            }
+        }
+        private global::System.Data.Objects.ObjectQuery<AuditColumns> _AuditColumns;
+        /// <summary>
+        /// There are no comments for AuditConfig in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public global::System.Data.Objects.ObjectQuery<AuditConfig> AuditConfig
+        {
+            get
+            {
+                if ((this._AuditConfig == null))
+                {
+                    this._AuditConfig = base.CreateQuery<AuditConfig>("[AuditConfig]");
+                }
+                return this._AuditConfig;
+            }
+        }
+        private global::System.Data.Objects.ObjectQuery<AuditConfig> _AuditConfig;
+        /// <summary>
+        /// There are no comments for AuditLog in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public global::System.Data.Objects.ObjectQuery<AuditLog> AuditLog
+        {
+            get
+            {
+                if ((this._AuditLog == null))
+                {
+                    this._AuditLog = base.CreateQuery<AuditLog>("[AuditLog]");
+                }
+                return this._AuditLog;
+            }
+        }
+        private global::System.Data.Objects.ObjectQuery<AuditLog> _AuditLog;
+        /// <summary>
+        /// There are no comments for AuditLogAutoKeys in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public global::System.Data.Objects.ObjectQuery<AuditLogAutoKeys> AuditLogAutoKeys
+        {
+            get
+            {
+                if ((this._AuditLogAutoKeys == null))
+                {
+                    this._AuditLogAutoKeys = base.CreateQuery<AuditLogAutoKeys>("[AuditLogAutoKeys]");
+                }
+                return this._AuditLogAutoKeys;
+            }
+        }
+        private global::System.Data.Objects.ObjectQuery<AuditLogAutoKeys> _AuditLogAutoKeys;
+        /// <summary>
+        /// There are no comments for AuditLogDetail in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public global::System.Data.Objects.ObjectQuery<AuditLogDetail> AuditLogDetail
+        {
+            get
+            {
+                if ((this._AuditLogDetail == null))
+                {
+                    this._AuditLogDetail = base.CreateQuery<AuditLogDetail>("[AuditLogDetail]");
+                }
+                return this._AuditLogDetail;
+            }
+        }
+        private global::System.Data.Objects.ObjectQuery<AuditLogDetail> _AuditLogDetail;
+        /// <summary>
+        /// There are no comments for AuditLogImage in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public global::System.Data.Objects.ObjectQuery<AuditLogImage> AuditLogImage
+        {
+            get
+            {
+                if ((this._AuditLogImage == null))
+                {
+                    this._AuditLogImage = base.CreateQuery<AuditLogImage>("[AuditLogImage]");
+                }
+                return this._AuditLogImage;
+            }
+        }
+        private global::System.Data.Objects.ObjectQuery<AuditLogImage> _AuditLogImage;
+        /// <summary>
+        /// There are no comments for AuditLogNText in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public global::System.Data.Objects.ObjectQuery<AuditLogNText> AuditLogNText
+        {
+            get
+            {
+                if ((this._AuditLogNText == null))
+                {
+                    this._AuditLogNText = base.CreateQuery<AuditLogNText>("[AuditLogNText]");
+                }
+                return this._AuditLogNText;
+            }
+        }
+        private global::System.Data.Objects.ObjectQuery<AuditLogNText> _AuditLogNText;
+        /// <summary>
+        /// There are no comments for AuditLogText in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public global::System.Data.Objects.ObjectQuery<AuditLogText> AuditLogText
+        {
+            get
+            {
+                if ((this._AuditLogText == null))
+                {
+                    this._AuditLogText = base.CreateQuery<AuditLogText>("[AuditLogText]");
+                }
+                return this._AuditLogText;
+            }
+        }
+        private global::System.Data.Objects.ObjectQuery<AuditLogText> _AuditLogText;
+        /// <summary>
+        /// There are no comments for AuditLookups in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public global::System.Data.Objects.ObjectQuery<AuditLookups> AuditLookups
+        {
+            get
+            {
+                if ((this._AuditLookups == null))
+                {
+                    this._AuditLookups = base.CreateQuery<AuditLookups>("[AuditLookups]");
+                }
+                return this._AuditLookups;
+            }
+        }
+        private global::System.Data.Objects.ObjectQuery<AuditLookups> _AuditLookups;
+        /// <summary>
+        /// There are no comments for AuditRelationships in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public global::System.Data.Objects.ObjectQuery<AuditRelationships> AuditRelationships
+        {
+            get
+            {
+                if ((this._AuditRelationships == null))
+                {
+                    this._AuditRelationships = base.CreateQuery<AuditRelationships>("[AuditRelationships]");
+                }
+                return this._AuditRelationships;
+            }
+        }
+        private global::System.Data.Objects.ObjectQuery<AuditRelationships> _AuditRelationships;
+        /// <summary>
+        /// There are no comments for AuditTables in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public global::System.Data.Objects.ObjectQuery<AuditTables> AuditTables
+        {
+            get
+            {
+                if ((this._AuditTables == null))
+                {
+                    this._AuditTables = base.CreateQuery<AuditTables>("[AuditTables]");
+                }
+                return this._AuditTables;
+            }
+        }
+        private global::System.Data.Objects.ObjectQuery<AuditTables> _AuditTables;
         /// <summary>
         /// There are no comments for Buscador_Criterios in the schema.
         /// </summary>
@@ -121,18 +300,18 @@ namespace SPISA.Entities
         /// There are no comments for Categorias in the schema.
         /// </summary>
         [global::System.ComponentModel.BrowsableAttribute(false)]
-        public global::System.Data.Objects.ObjectQuery<Categorias> Categorias
+        public global::System.Data.Objects.ObjectQuery<Categoria> Categorias
         {
             get
             {
                 if ((this._Categorias == null))
                 {
-                    this._Categorias = base.CreateQuery<Categorias>("[Categorias]");
+                    this._Categorias = base.CreateQuery<Categoria>("[Categorias]");
                 }
                 return this._Categorias;
             }
         }
-        private global::System.Data.Objects.ObjectQuery<Categorias> _Categorias;
+        private global::System.Data.Objects.ObjectQuery<Categoria> _Categorias;
         /// <summary>
         /// There are no comments for Clientes in the schema.
         /// </summary>
@@ -420,6 +599,83 @@ namespace SPISA.Entities
             base.AddObject("Articulos_Compuestos", articulos_Compuestos);
         }
         /// <summary>
+        /// There are no comments for AuditColumns in the schema.
+        /// </summary>
+        public void AddToAuditColumns(AuditColumns auditColumns)
+        {
+            base.AddObject("AuditColumns", auditColumns);
+        }
+        /// <summary>
+        /// There are no comments for AuditConfig in the schema.
+        /// </summary>
+        public void AddToAuditConfig(AuditConfig auditConfig)
+        {
+            base.AddObject("AuditConfig", auditConfig);
+        }
+        /// <summary>
+        /// There are no comments for AuditLog in the schema.
+        /// </summary>
+        public void AddToAuditLog(AuditLog auditLog)
+        {
+            base.AddObject("AuditLog", auditLog);
+        }
+        /// <summary>
+        /// There are no comments for AuditLogAutoKeys in the schema.
+        /// </summary>
+        public void AddToAuditLogAutoKeys(AuditLogAutoKeys auditLogAutoKeys)
+        {
+            base.AddObject("AuditLogAutoKeys", auditLogAutoKeys);
+        }
+        /// <summary>
+        /// There are no comments for AuditLogDetail in the schema.
+        /// </summary>
+        public void AddToAuditLogDetail(AuditLogDetail auditLogDetail)
+        {
+            base.AddObject("AuditLogDetail", auditLogDetail);
+        }
+        /// <summary>
+        /// There are no comments for AuditLogImage in the schema.
+        /// </summary>
+        public void AddToAuditLogImage(AuditLogImage auditLogImage)
+        {
+            base.AddObject("AuditLogImage", auditLogImage);
+        }
+        /// <summary>
+        /// There are no comments for AuditLogNText in the schema.
+        /// </summary>
+        public void AddToAuditLogNText(AuditLogNText auditLogNText)
+        {
+            base.AddObject("AuditLogNText", auditLogNText);
+        }
+        /// <summary>
+        /// There are no comments for AuditLogText in the schema.
+        /// </summary>
+        public void AddToAuditLogText(AuditLogText auditLogText)
+        {
+            base.AddObject("AuditLogText", auditLogText);
+        }
+        /// <summary>
+        /// There are no comments for AuditLookups in the schema.
+        /// </summary>
+        public void AddToAuditLookups(AuditLookups auditLookups)
+        {
+            base.AddObject("AuditLookups", auditLookups);
+        }
+        /// <summary>
+        /// There are no comments for AuditRelationships in the schema.
+        /// </summary>
+        public void AddToAuditRelationships(AuditRelationships auditRelationships)
+        {
+            base.AddObject("AuditRelationships", auditRelationships);
+        }
+        /// <summary>
+        /// There are no comments for AuditTables in the schema.
+        /// </summary>
+        public void AddToAuditTables(AuditTables auditTables)
+        {
+            base.AddObject("AuditTables", auditTables);
+        }
+        /// <summary>
         /// There are no comments for Buscador_Criterios in the schema.
         /// </summary>
         public void AddToBuscador_Criterios(Buscador_Criterios buscador_Criterios)
@@ -436,9 +692,9 @@ namespace SPISA.Entities
         /// <summary>
         /// There are no comments for Categorias in the schema.
         /// </summary>
-        public void AddToCategorias(Categorias categorias)
+        public void AddToCategorias(Categoria categoria)
         {
-            base.AddObject("Categorias", categorias);
+            base.AddObject("Categorias", categoria);
         }
         /// <summary>
         /// There are no comments for Clientes in the schema.
@@ -711,15 +967,15 @@ namespace SPISA.Entities
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.ComponentModel.BrowsableAttribute(false)]
-        public Categorias Categorias
+        public Categoria Categorias
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Categorias>("SPISA.Entities.FK_Articulos_Categoria", "Categorias").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Categoria>("SPISA.Entities.FK_Articulos_Categoria", "Categorias").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Categorias>("SPISA.Entities.FK_Articulos_Categoria", "Categorias").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Categoria>("SPISA.Entities.FK_Articulos_Categoria", "Categorias").Value = value;
             }
         }
         /// <summary>
@@ -727,17 +983,17 @@ namespace SPISA.Entities
         /// </summary>
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         [global::System.ComponentModel.BrowsableAttribute(false)]
-        public global::System.Data.Objects.DataClasses.EntityReference<Categorias> CategoriasReference
+        public global::System.Data.Objects.DataClasses.EntityReference<Categoria> CategoriasReference
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Categorias>("SPISA.Entities.FK_Articulos_Categoria", "Categorias");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Categoria>("SPISA.Entities.FK_Articulos_Categoria", "Categorias");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<Categorias>("SPISA.Entities.FK_Articulos_Categoria", "Categorias", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<Categoria>("SPISA.Entities.FK_Articulos_Categoria", "Categorias", value);
                 }
             }
         }
@@ -851,6 +1107,1728 @@ namespace SPISA.Entities
         private int _Cantidad;
         partial void OnCantidadChanging(int value);
         partial void OnCantidadChanged();
+    }
+    /// <summary>
+    /// There are no comments for SPISA.Entities.AuditColumns in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// TableID
+    /// ColumnID
+    /// </KeyProperties>
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="SPISA.Entities", Name="AuditColumns")]
+    [global::System.Runtime.Serialization.DataContractAttribute()]
+    [global::System.Serializable()]
+    public partial class AuditColumns : global::System.Data.Objects.DataClasses.EntityObject
+    {
+        /// <summary>
+        /// Create a new AuditColumns object.
+        /// </summary>
+        /// <param name="tableID">Initial value of TableID.</param>
+        /// <param name="columnID">Initial value of ColumnID.</param>
+        /// <param name="columnName">Initial value of ColumnName.</param>
+        /// <param name="auditColumn">Initial value of AuditColumn.</param>
+        /// <param name="captureColumn">Initial value of CaptureColumn.</param>
+        /// <param name="isLookup">Initial value of IsLookup.</param>
+        /// <param name="keyColumn">Initial value of KeyColumn.</param>
+        public static AuditColumns CreateAuditColumns(int tableID, int columnID, string columnName, bool auditColumn, bool captureColumn, bool isLookup, byte keyColumn)
+        {
+            AuditColumns auditColumns = new AuditColumns();
+            auditColumns.TableID = tableID;
+            auditColumns.ColumnID = columnID;
+            auditColumns.ColumnName = columnName;
+            auditColumns.AuditColumn = auditColumn;
+            auditColumns.CaptureColumn = captureColumn;
+            auditColumns.IsLookup = isLookup;
+            auditColumns.KeyColumn = keyColumn;
+            return auditColumns;
+        }
+        /// <summary>
+        /// There are no comments for Property TableID in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public int TableID
+        {
+            get
+            {
+                return this._TableID;
+            }
+            set
+            {
+                this.OnTableIDChanging(value);
+                this.ReportPropertyChanging("TableID");
+                this._TableID = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("TableID");
+                this.OnTableIDChanged();
+            }
+        }
+        private int _TableID;
+        partial void OnTableIDChanging(int value);
+        partial void OnTableIDChanged();
+        /// <summary>
+        /// There are no comments for Property ColumnID in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public int ColumnID
+        {
+            get
+            {
+                return this._ColumnID;
+            }
+            set
+            {
+                this.OnColumnIDChanging(value);
+                this.ReportPropertyChanging("ColumnID");
+                this._ColumnID = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("ColumnID");
+                this.OnColumnIDChanged();
+            }
+        }
+        private int _ColumnID;
+        partial void OnColumnIDChanging(int value);
+        partial void OnColumnIDChanged();
+        /// <summary>
+        /// There are no comments for Property ColumnName in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string ColumnName
+        {
+            get
+            {
+                return this._ColumnName;
+            }
+            set
+            {
+                this.OnColumnNameChanging(value);
+                this.ReportPropertyChanging("ColumnName");
+                this._ColumnName = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false, 128);
+                this.ReportPropertyChanged("ColumnName");
+                this.OnColumnNameChanged();
+            }
+        }
+        private string _ColumnName;
+        partial void OnColumnNameChanging(string value);
+        partial void OnColumnNameChanged();
+        /// <summary>
+        /// There are no comments for Property AuditColumn in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public bool AuditColumn
+        {
+            get
+            {
+                return this._AuditColumn;
+            }
+            set
+            {
+                this.OnAuditColumnChanging(value);
+                this.ReportPropertyChanging("AuditColumn");
+                this._AuditColumn = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("AuditColumn");
+                this.OnAuditColumnChanged();
+            }
+        }
+        private bool _AuditColumn;
+        partial void OnAuditColumnChanging(bool value);
+        partial void OnAuditColumnChanged();
+        /// <summary>
+        /// There are no comments for Property CaptureColumn in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public bool CaptureColumn
+        {
+            get
+            {
+                return this._CaptureColumn;
+            }
+            set
+            {
+                this.OnCaptureColumnChanging(value);
+                this.ReportPropertyChanging("CaptureColumn");
+                this._CaptureColumn = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("CaptureColumn");
+                this.OnCaptureColumnChanged();
+            }
+        }
+        private bool _CaptureColumn;
+        partial void OnCaptureColumnChanging(bool value);
+        partial void OnCaptureColumnChanged();
+        /// <summary>
+        /// There are no comments for Property IsLookup in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsLookup
+        {
+            get
+            {
+                return this._IsLookup;
+            }
+            set
+            {
+                this.OnIsLookupChanging(value);
+                this.ReportPropertyChanging("IsLookup");
+                this._IsLookup = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("IsLookup");
+                this.OnIsLookupChanged();
+            }
+        }
+        private bool _IsLookup;
+        partial void OnIsLookupChanging(bool value);
+        partial void OnIsLookupChanged();
+        /// <summary>
+        /// There are no comments for Property KeyColumn in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public byte KeyColumn
+        {
+            get
+            {
+                return this._KeyColumn;
+            }
+            set
+            {
+                this.OnKeyColumnChanging(value);
+                this.ReportPropertyChanging("KeyColumn");
+                this._KeyColumn = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("KeyColumn");
+                this.OnKeyColumnChanged();
+            }
+        }
+        private byte _KeyColumn;
+        partial void OnKeyColumnChanging(byte value);
+        partial void OnKeyColumnChanged();
+        /// <summary>
+        /// There are no comments for AuditTables in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("SPISA.Entities", "FK_AuditColumns1", "AuditTables")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public AuditTables AuditTables
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<AuditTables>("SPISA.Entities.FK_AuditColumns1", "AuditTables").Value;
+            }
+            set
+            {
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<AuditTables>("SPISA.Entities.FK_AuditColumns1", "AuditTables").Value = value;
+            }
+        }
+        /// <summary>
+        /// There are no comments for AuditTables in the schema.
+        /// </summary>
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public global::System.Data.Objects.DataClasses.EntityReference<AuditTables> AuditTablesReference
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<AuditTables>("SPISA.Entities.FK_AuditColumns1", "AuditTables");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<AuditTables>("SPISA.Entities.FK_AuditColumns1", "AuditTables", value);
+                }
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for SPISA.Entities.AuditConfig in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Name
+    /// </KeyProperties>
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="SPISA.Entities", Name="AuditConfig")]
+    [global::System.Runtime.Serialization.DataContractAttribute()]
+    [global::System.Serializable()]
+    public partial class AuditConfig : global::System.Data.Objects.DataClasses.EntityObject
+    {
+        /// <summary>
+        /// Create a new AuditConfig object.
+        /// </summary>
+        /// <param name="name">Initial value of Name.</param>
+        /// <param name="value">Initial value of Value.</param>
+        public static AuditConfig CreateAuditConfig(string name, string value)
+        {
+            AuditConfig auditConfig = new AuditConfig();
+            auditConfig.Name = name;
+            auditConfig.Value = value;
+            return auditConfig;
+        }
+        /// <summary>
+        /// There are no comments for Property Name in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name
+        {
+            get
+            {
+                return this._Name;
+            }
+            set
+            {
+                this.OnNameChanging(value);
+                this.ReportPropertyChanging("Name");
+                this._Name = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false, 100);
+                this.ReportPropertyChanged("Name");
+                this.OnNameChanged();
+            }
+        }
+        private string _Name;
+        partial void OnNameChanging(string value);
+        partial void OnNameChanged();
+        /// <summary>
+        /// There are no comments for Property Value in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string Value
+        {
+            get
+            {
+                return this._Value;
+            }
+            set
+            {
+                this.OnValueChanging(value);
+                this.ReportPropertyChanging("Value");
+                this._Value = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false, 2000);
+                this.ReportPropertyChanged("Value");
+                this.OnValueChanged();
+            }
+        }
+        private string _Value;
+        partial void OnValueChanging(string value);
+        partial void OnValueChanged();
+    }
+    /// <summary>
+    /// There are no comments for SPISA.Entities.AuditLog in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// AuditLogID
+    /// </KeyProperties>
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="SPISA.Entities", Name="AuditLog")]
+    [global::System.Runtime.Serialization.DataContractAttribute()]
+    [global::System.Serializable()]
+    public partial class AuditLog : global::System.Data.Objects.DataClasses.EntityObject
+    {
+        /// <summary>
+        /// Create a new AuditLog object.
+        /// </summary>
+        /// <param name="auditLogID">Initial value of AuditLogID.</param>
+        /// <param name="tableID">Initial value of TableID.</param>
+        /// <param name="rowsAffected">Initial value of RowsAffected.</param>
+        /// <param name="event">Initial value of Event.</param>
+        /// <param name="postedDateTime">Initial value of PostedDateTime.</param>
+        /// <param name="userName">Initial value of UserName.</param>
+        /// <param name="hostName">Initial value of HostName.</param>
+        /// <param name="applicationName">Initial value of ApplicationName.</param>
+        public static AuditLog CreateAuditLog(int auditLogID, int tableID, int rowsAffected, string @event, global::System.DateTime postedDateTime, string userName, string hostName, string applicationName)
+        {
+            AuditLog auditLog = new AuditLog();
+            auditLog.AuditLogID = auditLogID;
+            auditLog.TableID = tableID;
+            auditLog.RowsAffected = rowsAffected;
+            auditLog.Event = @event;
+            auditLog.PostedDateTime = postedDateTime;
+            auditLog.UserName = userName;
+            auditLog.HostName = hostName;
+            auditLog.ApplicationName = applicationName;
+            return auditLog;
+        }
+        /// <summary>
+        /// There are no comments for Property AuditLogID in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public int AuditLogID
+        {
+            get
+            {
+                return this._AuditLogID;
+            }
+            set
+            {
+                this.OnAuditLogIDChanging(value);
+                this.ReportPropertyChanging("AuditLogID");
+                this._AuditLogID = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("AuditLogID");
+                this.OnAuditLogIDChanged();
+            }
+        }
+        private int _AuditLogID;
+        partial void OnAuditLogIDChanging(int value);
+        partial void OnAuditLogIDChanged();
+        /// <summary>
+        /// There are no comments for Property TableID in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public int TableID
+        {
+            get
+            {
+                return this._TableID;
+            }
+            set
+            {
+                this.OnTableIDChanging(value);
+                this.ReportPropertyChanging("TableID");
+                this._TableID = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("TableID");
+                this.OnTableIDChanged();
+            }
+        }
+        private int _TableID;
+        partial void OnTableIDChanging(int value);
+        partial void OnTableIDChanged();
+        /// <summary>
+        /// There are no comments for Property RowsAffected in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public int RowsAffected
+        {
+            get
+            {
+                return this._RowsAffected;
+            }
+            set
+            {
+                this.OnRowsAffectedChanging(value);
+                this.ReportPropertyChanging("RowsAffected");
+                this._RowsAffected = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("RowsAffected");
+                this.OnRowsAffectedChanged();
+            }
+        }
+        private int _RowsAffected;
+        partial void OnRowsAffectedChanging(int value);
+        partial void OnRowsAffectedChanged();
+        /// <summary>
+        /// There are no comments for Property Event in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string Event
+        {
+            get
+            {
+                return this._Event;
+            }
+            set
+            {
+                this.OnEventChanging(value);
+                this.ReportPropertyChanging("Event");
+                this._Event = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false, 1);
+                this.ReportPropertyChanged("Event");
+                this.OnEventChanged();
+            }
+        }
+        private string _Event;
+        partial void OnEventChanging(string value);
+        partial void OnEventChanged();
+        /// <summary>
+        /// There are no comments for Property PostedDateTime in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.DateTime PostedDateTime
+        {
+            get
+            {
+                return this._PostedDateTime;
+            }
+            set
+            {
+                this.OnPostedDateTimeChanging(value);
+                this.ReportPropertyChanging("PostedDateTime");
+                this._PostedDateTime = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, global::System.DateTimeKind.Unspecified, true);
+                this.ReportPropertyChanged("PostedDateTime");
+                this.OnPostedDateTimeChanged();
+            }
+        }
+        private global::System.DateTime _PostedDateTime;
+        partial void OnPostedDateTimeChanging(global::System.DateTime value);
+        partial void OnPostedDateTimeChanged();
+        /// <summary>
+        /// There are no comments for Property UserName in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string UserName
+        {
+            get
+            {
+                return this._UserName;
+            }
+            set
+            {
+                this.OnUserNameChanging(value);
+                this.ReportPropertyChanging("UserName");
+                this._UserName = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false, 128);
+                this.ReportPropertyChanged("UserName");
+                this.OnUserNameChanged();
+            }
+        }
+        private string _UserName;
+        partial void OnUserNameChanging(string value);
+        partial void OnUserNameChanged();
+        /// <summary>
+        /// There are no comments for Property HostName in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string HostName
+        {
+            get
+            {
+                return this._HostName;
+            }
+            set
+            {
+                this.OnHostNameChanging(value);
+                this.ReportPropertyChanging("HostName");
+                this._HostName = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false, 128);
+                this.ReportPropertyChanged("HostName");
+                this.OnHostNameChanged();
+            }
+        }
+        private string _HostName;
+        partial void OnHostNameChanging(string value);
+        partial void OnHostNameChanged();
+        /// <summary>
+        /// There are no comments for Property ApplicationName in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string ApplicationName
+        {
+            get
+            {
+                return this._ApplicationName;
+            }
+            set
+            {
+                this.OnApplicationNameChanging(value);
+                this.ReportPropertyChanging("ApplicationName");
+                this._ApplicationName = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false, 128);
+                this.ReportPropertyChanged("ApplicationName");
+                this.OnApplicationNameChanged();
+            }
+        }
+        private string _ApplicationName;
+        partial void OnApplicationNameChanging(string value);
+        partial void OnApplicationNameChanged();
+    }
+    /// <summary>
+    /// There are no comments for SPISA.Entities.AuditLogAutoKeys in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// TableName
+    /// </KeyProperties>
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="SPISA.Entities", Name="AuditLogAutoKeys")]
+    [global::System.Runtime.Serialization.DataContractAttribute()]
+    [global::System.Serializable()]
+    public partial class AuditLogAutoKeys : global::System.Data.Objects.DataClasses.EntityObject
+    {
+        /// <summary>
+        /// Create a new AuditLogAutoKeys object.
+        /// </summary>
+        /// <param name="tableName">Initial value of TableName.</param>
+        /// <param name="keyValue">Initial value of KeyValue.</param>
+        /// <param name="filler">Initial value of Filler.</param>
+        public static AuditLogAutoKeys CreateAuditLogAutoKeys(string tableName, int keyValue, string filler)
+        {
+            AuditLogAutoKeys auditLogAutoKeys = new AuditLogAutoKeys();
+            auditLogAutoKeys.TableName = tableName;
+            auditLogAutoKeys.KeyValue = keyValue;
+            auditLogAutoKeys.Filler = filler;
+            return auditLogAutoKeys;
+        }
+        /// <summary>
+        /// There are no comments for Property TableName in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string TableName
+        {
+            get
+            {
+                return this._TableName;
+            }
+            set
+            {
+                this.OnTableNameChanging(value);
+                this.ReportPropertyChanging("TableName");
+                this._TableName = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false, 128);
+                this.ReportPropertyChanged("TableName");
+                this.OnTableNameChanged();
+            }
+        }
+        private string _TableName;
+        partial void OnTableNameChanging(string value);
+        partial void OnTableNameChanged();
+        /// <summary>
+        /// There are no comments for Property KeyValue in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public int KeyValue
+        {
+            get
+            {
+                return this._KeyValue;
+            }
+            set
+            {
+                this.OnKeyValueChanging(value);
+                this.ReportPropertyChanging("KeyValue");
+                this._KeyValue = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("KeyValue");
+                this.OnKeyValueChanged();
+            }
+        }
+        private int _KeyValue;
+        partial void OnKeyValueChanging(int value);
+        partial void OnKeyValueChanged();
+        /// <summary>
+        /// There are no comments for Property Filler in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string Filler
+        {
+            get
+            {
+                return this._Filler;
+            }
+            set
+            {
+                this.OnFillerChanging(value);
+                this.ReportPropertyChanging("Filler");
+                this._Filler = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false, 6000);
+                this.ReportPropertyChanged("Filler");
+                this.OnFillerChanged();
+            }
+        }
+        private string _Filler;
+        partial void OnFillerChanging(string value);
+        partial void OnFillerChanged();
+    }
+    /// <summary>
+    /// There are no comments for SPISA.Entities.AuditLogDetail in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// AuditLogID
+    /// RowKey
+    /// ColumnID
+    /// </KeyProperties>
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="SPISA.Entities", Name="AuditLogDetail")]
+    [global::System.Runtime.Serialization.DataContractAttribute()]
+    [global::System.Serializable()]
+    public partial class AuditLogDetail : global::System.Data.Objects.DataClasses.EntityObject
+    {
+        /// <summary>
+        /// Create a new AuditLogDetail object.
+        /// </summary>
+        /// <param name="auditLogID">Initial value of AuditLogID.</param>
+        /// <param name="rowKey">Initial value of RowKey.</param>
+        /// <param name="columnID">Initial value of ColumnID.</param>
+        /// <param name="status">Initial value of Status.</param>
+        public static AuditLogDetail CreateAuditLogDetail(int auditLogID, string rowKey, int columnID, byte status)
+        {
+            AuditLogDetail auditLogDetail = new AuditLogDetail();
+            auditLogDetail.AuditLogID = auditLogID;
+            auditLogDetail.RowKey = rowKey;
+            auditLogDetail.ColumnID = columnID;
+            auditLogDetail.Status = status;
+            return auditLogDetail;
+        }
+        /// <summary>
+        /// There are no comments for Property AuditLogID in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public int AuditLogID
+        {
+            get
+            {
+                return this._AuditLogID;
+            }
+            set
+            {
+                this.OnAuditLogIDChanging(value);
+                this.ReportPropertyChanging("AuditLogID");
+                this._AuditLogID = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("AuditLogID");
+                this.OnAuditLogIDChanged();
+            }
+        }
+        private int _AuditLogID;
+        partial void OnAuditLogIDChanging(int value);
+        partial void OnAuditLogIDChanged();
+        /// <summary>
+        /// There are no comments for Property RowKey in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string RowKey
+        {
+            get
+            {
+                return this._RowKey;
+            }
+            set
+            {
+                this.OnRowKeyChanging(value);
+                this.ReportPropertyChanging("RowKey");
+                this._RowKey = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false, 512);
+                this.ReportPropertyChanged("RowKey");
+                this.OnRowKeyChanged();
+            }
+        }
+        private string _RowKey;
+        partial void OnRowKeyChanging(string value);
+        partial void OnRowKeyChanged();
+        /// <summary>
+        /// There are no comments for Property ColumnID in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public int ColumnID
+        {
+            get
+            {
+                return this._ColumnID;
+            }
+            set
+            {
+                this.OnColumnIDChanging(value);
+                this.ReportPropertyChanging("ColumnID");
+                this._ColumnID = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("ColumnID");
+                this.OnColumnIDChanged();
+            }
+        }
+        private int _ColumnID;
+        partial void OnColumnIDChanging(int value);
+        partial void OnColumnIDChanged();
+        /// <summary>
+        /// There are no comments for Property Status in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public byte Status
+        {
+            get
+            {
+                return this._Status;
+            }
+            set
+            {
+                this.OnStatusChanging(value);
+                this.ReportPropertyChanging("Status");
+                this._Status = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("Status");
+                this.OnStatusChanged();
+            }
+        }
+        private byte _Status;
+        partial void OnStatusChanging(byte value);
+        partial void OnStatusChanged();
+        /// <summary>
+        /// There are no comments for Property OldValue in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string OldValue
+        {
+            get
+            {
+                return this._OldValue;
+            }
+            set
+            {
+                this.OnOldValueChanging(value);
+                this.ReportPropertyChanging("OldValue");
+                this._OldValue = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true, 2147483647);
+                this.ReportPropertyChanged("OldValue");
+                this.OnOldValueChanged();
+            }
+        }
+        private string _OldValue;
+        partial void OnOldValueChanging(string value);
+        partial void OnOldValueChanged();
+        /// <summary>
+        /// There are no comments for Property NewValue in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string NewValue
+        {
+            get
+            {
+                return this._NewValue;
+            }
+            set
+            {
+                this.OnNewValueChanging(value);
+                this.ReportPropertyChanging("NewValue");
+                this._NewValue = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true, 2147483647);
+                this.ReportPropertyChanged("NewValue");
+                this.OnNewValueChanged();
+            }
+        }
+        private string _NewValue;
+        partial void OnNewValueChanging(string value);
+        partial void OnNewValueChanged();
+    }
+    /// <summary>
+    /// There are no comments for SPISA.Entities.AuditLogImage in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// AuditLogID
+    /// RowKey
+    /// ColumnID
+    /// </KeyProperties>
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="SPISA.Entities", Name="AuditLogImage")]
+    [global::System.Runtime.Serialization.DataContractAttribute()]
+    [global::System.Serializable()]
+    public partial class AuditLogImage : global::System.Data.Objects.DataClasses.EntityObject
+    {
+        /// <summary>
+        /// Create a new AuditLogImage object.
+        /// </summary>
+        /// <param name="auditLogID">Initial value of AuditLogID.</param>
+        /// <param name="rowKey">Initial value of RowKey.</param>
+        /// <param name="columnID">Initial value of ColumnID.</param>
+        public static AuditLogImage CreateAuditLogImage(int auditLogID, string rowKey, int columnID)
+        {
+            AuditLogImage auditLogImage = new AuditLogImage();
+            auditLogImage.AuditLogID = auditLogID;
+            auditLogImage.RowKey = rowKey;
+            auditLogImage.ColumnID = columnID;
+            return auditLogImage;
+        }
+        /// <summary>
+        /// There are no comments for Property AuditLogID in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public int AuditLogID
+        {
+            get
+            {
+                return this._AuditLogID;
+            }
+            set
+            {
+                this.OnAuditLogIDChanging(value);
+                this.ReportPropertyChanging("AuditLogID");
+                this._AuditLogID = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("AuditLogID");
+                this.OnAuditLogIDChanged();
+            }
+        }
+        private int _AuditLogID;
+        partial void OnAuditLogIDChanging(int value);
+        partial void OnAuditLogIDChanged();
+        /// <summary>
+        /// There are no comments for Property RowKey in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string RowKey
+        {
+            get
+            {
+                return this._RowKey;
+            }
+            set
+            {
+                this.OnRowKeyChanging(value);
+                this.ReportPropertyChanging("RowKey");
+                this._RowKey = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false, 512);
+                this.ReportPropertyChanged("RowKey");
+                this.OnRowKeyChanged();
+            }
+        }
+        private string _RowKey;
+        partial void OnRowKeyChanging(string value);
+        partial void OnRowKeyChanged();
+        /// <summary>
+        /// There are no comments for Property ColumnID in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public int ColumnID
+        {
+            get
+            {
+                return this._ColumnID;
+            }
+            set
+            {
+                this.OnColumnIDChanging(value);
+                this.ReportPropertyChanging("ColumnID");
+                this._ColumnID = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("ColumnID");
+                this.OnColumnIDChanged();
+            }
+        }
+        private int _ColumnID;
+        partial void OnColumnIDChanging(int value);
+        partial void OnColumnIDChanged();
+        /// <summary>
+        /// There are no comments for Property Value in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] Value
+        {
+            get
+            {
+                return global::System.Data.Objects.DataClasses.StructuralObject.GetValidValue(this._Value);
+            }
+            set
+            {
+                this.OnValueChanging(value);
+                this.ReportPropertyChanging("Value");
+                this._Value = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true, 2147483647);
+                this.ReportPropertyChanged("Value");
+                this.OnValueChanged();
+            }
+        }
+        private byte[] _Value;
+        partial void OnValueChanging(byte[] value);
+        partial void OnValueChanged();
+    }
+    /// <summary>
+    /// There are no comments for SPISA.Entities.AuditLogNText in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// AuditLogID
+    /// RowKey
+    /// ColumnID
+    /// </KeyProperties>
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="SPISA.Entities", Name="AuditLogNText")]
+    [global::System.Runtime.Serialization.DataContractAttribute()]
+    [global::System.Serializable()]
+    public partial class AuditLogNText : global::System.Data.Objects.DataClasses.EntityObject
+    {
+        /// <summary>
+        /// Create a new AuditLogNText object.
+        /// </summary>
+        /// <param name="auditLogID">Initial value of AuditLogID.</param>
+        /// <param name="rowKey">Initial value of RowKey.</param>
+        /// <param name="columnID">Initial value of ColumnID.</param>
+        public static AuditLogNText CreateAuditLogNText(int auditLogID, string rowKey, int columnID)
+        {
+            AuditLogNText auditLogNText = new AuditLogNText();
+            auditLogNText.AuditLogID = auditLogID;
+            auditLogNText.RowKey = rowKey;
+            auditLogNText.ColumnID = columnID;
+            return auditLogNText;
+        }
+        /// <summary>
+        /// There are no comments for Property AuditLogID in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public int AuditLogID
+        {
+            get
+            {
+                return this._AuditLogID;
+            }
+            set
+            {
+                this.OnAuditLogIDChanging(value);
+                this.ReportPropertyChanging("AuditLogID");
+                this._AuditLogID = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("AuditLogID");
+                this.OnAuditLogIDChanged();
+            }
+        }
+        private int _AuditLogID;
+        partial void OnAuditLogIDChanging(int value);
+        partial void OnAuditLogIDChanged();
+        /// <summary>
+        /// There are no comments for Property RowKey in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string RowKey
+        {
+            get
+            {
+                return this._RowKey;
+            }
+            set
+            {
+                this.OnRowKeyChanging(value);
+                this.ReportPropertyChanging("RowKey");
+                this._RowKey = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false, 512);
+                this.ReportPropertyChanged("RowKey");
+                this.OnRowKeyChanged();
+            }
+        }
+        private string _RowKey;
+        partial void OnRowKeyChanging(string value);
+        partial void OnRowKeyChanged();
+        /// <summary>
+        /// There are no comments for Property ColumnID in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public int ColumnID
+        {
+            get
+            {
+                return this._ColumnID;
+            }
+            set
+            {
+                this.OnColumnIDChanging(value);
+                this.ReportPropertyChanging("ColumnID");
+                this._ColumnID = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("ColumnID");
+                this.OnColumnIDChanged();
+            }
+        }
+        private int _ColumnID;
+        partial void OnColumnIDChanging(int value);
+        partial void OnColumnIDChanged();
+        /// <summary>
+        /// There are no comments for Property Value in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string Value
+        {
+            get
+            {
+                return this._Value;
+            }
+            set
+            {
+                this.OnValueChanging(value);
+                this.ReportPropertyChanging("Value");
+                this._Value = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true, 1073741823);
+                this.ReportPropertyChanged("Value");
+                this.OnValueChanged();
+            }
+        }
+        private string _Value;
+        partial void OnValueChanging(string value);
+        partial void OnValueChanged();
+    }
+    /// <summary>
+    /// There are no comments for SPISA.Entities.AuditLogText in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// AuditLogID
+    /// RowKey
+    /// ColumnID
+    /// </KeyProperties>
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="SPISA.Entities", Name="AuditLogText")]
+    [global::System.Runtime.Serialization.DataContractAttribute()]
+    [global::System.Serializable()]
+    public partial class AuditLogText : global::System.Data.Objects.DataClasses.EntityObject
+    {
+        /// <summary>
+        /// Create a new AuditLogText object.
+        /// </summary>
+        /// <param name="auditLogID">Initial value of AuditLogID.</param>
+        /// <param name="rowKey">Initial value of RowKey.</param>
+        /// <param name="columnID">Initial value of ColumnID.</param>
+        public static AuditLogText CreateAuditLogText(int auditLogID, string rowKey, int columnID)
+        {
+            AuditLogText auditLogText = new AuditLogText();
+            auditLogText.AuditLogID = auditLogID;
+            auditLogText.RowKey = rowKey;
+            auditLogText.ColumnID = columnID;
+            return auditLogText;
+        }
+        /// <summary>
+        /// There are no comments for Property AuditLogID in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public int AuditLogID
+        {
+            get
+            {
+                return this._AuditLogID;
+            }
+            set
+            {
+                this.OnAuditLogIDChanging(value);
+                this.ReportPropertyChanging("AuditLogID");
+                this._AuditLogID = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("AuditLogID");
+                this.OnAuditLogIDChanged();
+            }
+        }
+        private int _AuditLogID;
+        partial void OnAuditLogIDChanging(int value);
+        partial void OnAuditLogIDChanged();
+        /// <summary>
+        /// There are no comments for Property RowKey in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string RowKey
+        {
+            get
+            {
+                return this._RowKey;
+            }
+            set
+            {
+                this.OnRowKeyChanging(value);
+                this.ReportPropertyChanging("RowKey");
+                this._RowKey = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false, 512);
+                this.ReportPropertyChanged("RowKey");
+                this.OnRowKeyChanged();
+            }
+        }
+        private string _RowKey;
+        partial void OnRowKeyChanging(string value);
+        partial void OnRowKeyChanged();
+        /// <summary>
+        /// There are no comments for Property ColumnID in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public int ColumnID
+        {
+            get
+            {
+                return this._ColumnID;
+            }
+            set
+            {
+                this.OnColumnIDChanging(value);
+                this.ReportPropertyChanging("ColumnID");
+                this._ColumnID = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("ColumnID");
+                this.OnColumnIDChanged();
+            }
+        }
+        private int _ColumnID;
+        partial void OnColumnIDChanging(int value);
+        partial void OnColumnIDChanged();
+        /// <summary>
+        /// There are no comments for Property Value in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string Value
+        {
+            get
+            {
+                return this._Value;
+            }
+            set
+            {
+                this.OnValueChanging(value);
+                this.ReportPropertyChanging("Value");
+                this._Value = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true, 2147483647);
+                this.ReportPropertyChanged("Value");
+                this.OnValueChanged();
+            }
+        }
+        private string _Value;
+        partial void OnValueChanging(string value);
+        partial void OnValueChanged();
+    }
+    /// <summary>
+    /// There are no comments for SPISA.Entities.AuditLookups in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// LookupID
+    /// </KeyProperties>
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="SPISA.Entities", Name="AuditLookups")]
+    [global::System.Runtime.Serialization.DataContractAttribute()]
+    [global::System.Serializable()]
+    public partial class AuditLookups : global::System.Data.Objects.DataClasses.EntityObject
+    {
+        /// <summary>
+        /// Create a new AuditLookups object.
+        /// </summary>
+        /// <param name="lookupID">Initial value of LookupID.</param>
+        /// <param name="expressionIsColumn">Initial value of ExpressionIsColumn.</param>
+        /// <param name="lookupExpression">Initial value of LookupExpression.</param>
+        public static AuditLookups CreateAuditLookups(int lookupID, bool expressionIsColumn, string lookupExpression)
+        {
+            AuditLookups auditLookups = new AuditLookups();
+            auditLookups.LookupID = lookupID;
+            auditLookups.ExpressionIsColumn = expressionIsColumn;
+            auditLookups.LookupExpression = lookupExpression;
+            return auditLookups;
+        }
+        /// <summary>
+        /// There are no comments for Property LookupID in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public int LookupID
+        {
+            get
+            {
+                return this._LookupID;
+            }
+            set
+            {
+                this.OnLookupIDChanging(value);
+                this.ReportPropertyChanging("LookupID");
+                this._LookupID = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("LookupID");
+                this.OnLookupIDChanged();
+            }
+        }
+        private int _LookupID;
+        partial void OnLookupIDChanging(int value);
+        partial void OnLookupIDChanged();
+        /// <summary>
+        /// There are no comments for Property ExpressionIsColumn in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public bool ExpressionIsColumn
+        {
+            get
+            {
+                return this._ExpressionIsColumn;
+            }
+            set
+            {
+                this.OnExpressionIsColumnChanging(value);
+                this.ReportPropertyChanging("ExpressionIsColumn");
+                this._ExpressionIsColumn = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("ExpressionIsColumn");
+                this.OnExpressionIsColumnChanged();
+            }
+        }
+        private bool _ExpressionIsColumn;
+        partial void OnExpressionIsColumnChanging(bool value);
+        partial void OnExpressionIsColumnChanged();
+        /// <summary>
+        /// There are no comments for Property LookupExpression in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string LookupExpression
+        {
+            get
+            {
+                return this._LookupExpression;
+            }
+            set
+            {
+                this.OnLookupExpressionChanging(value);
+                this.ReportPropertyChanging("LookupExpression");
+                this._LookupExpression = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false, 1024);
+                this.ReportPropertyChanged("LookupExpression");
+                this.OnLookupExpressionChanged();
+            }
+        }
+        private string _LookupExpression;
+        partial void OnLookupExpressionChanging(string value);
+        partial void OnLookupExpressionChanged();
+        /// <summary>
+        /// There are no comments for AuditRelationships in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("SPISA.Entities", "FK_AuditRelationships", "AuditRelationships")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public AuditRelationships AuditRelationships
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<AuditRelationships>("SPISA.Entities.FK_AuditRelationships", "AuditRelationships").Value;
+            }
+            set
+            {
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<AuditRelationships>("SPISA.Entities.FK_AuditRelationships", "AuditRelationships").Value = value;
+            }
+        }
+        /// <summary>
+        /// There are no comments for AuditRelationships in the schema.
+        /// </summary>
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public global::System.Data.Objects.DataClasses.EntityReference<AuditRelationships> AuditRelationshipsReference
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<AuditRelationships>("SPISA.Entities.FK_AuditRelationships", "AuditRelationships");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<AuditRelationships>("SPISA.Entities.FK_AuditRelationships", "AuditRelationships", value);
+                }
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for SPISA.Entities.AuditRelationships in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// RelationshipID
+    /// </KeyProperties>
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="SPISA.Entities", Name="AuditRelationships")]
+    [global::System.Runtime.Serialization.DataContractAttribute()]
+    [global::System.Serializable()]
+    public partial class AuditRelationships : global::System.Data.Objects.DataClasses.EntityObject
+    {
+        /// <summary>
+        /// Create a new AuditRelationships object.
+        /// </summary>
+        /// <param name="relationshipID">Initial value of RelationshipID.</param>
+        /// <param name="tableName">Initial value of TableName.</param>
+        /// <param name="joinExpression">Initial value of JoinExpression.</param>
+        public static AuditRelationships CreateAuditRelationships(int relationshipID, string tableName, string joinExpression)
+        {
+            AuditRelationships auditRelationships = new AuditRelationships();
+            auditRelationships.RelationshipID = relationshipID;
+            auditRelationships.TableName = tableName;
+            auditRelationships.JoinExpression = joinExpression;
+            return auditRelationships;
+        }
+        /// <summary>
+        /// There are no comments for Property RelationshipID in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public int RelationshipID
+        {
+            get
+            {
+                return this._RelationshipID;
+            }
+            set
+            {
+                this.OnRelationshipIDChanging(value);
+                this.ReportPropertyChanging("RelationshipID");
+                this._RelationshipID = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("RelationshipID");
+                this.OnRelationshipIDChanged();
+            }
+        }
+        private int _RelationshipID;
+        partial void OnRelationshipIDChanging(int value);
+        partial void OnRelationshipIDChanged();
+        /// <summary>
+        /// There are no comments for Property TableName in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string TableName
+        {
+            get
+            {
+                return this._TableName;
+            }
+            set
+            {
+                this.OnTableNameChanging(value);
+                this.ReportPropertyChanging("TableName");
+                this._TableName = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false, 128);
+                this.ReportPropertyChanged("TableName");
+                this.OnTableNameChanged();
+            }
+        }
+        private string _TableName;
+        partial void OnTableNameChanging(string value);
+        partial void OnTableNameChanged();
+        /// <summary>
+        /// There are no comments for Property JoinExpression in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string JoinExpression
+        {
+            get
+            {
+                return this._JoinExpression;
+            }
+            set
+            {
+                this.OnJoinExpressionChanging(value);
+                this.ReportPropertyChanging("JoinExpression");
+                this._JoinExpression = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false, 1024);
+                this.ReportPropertyChanged("JoinExpression");
+                this.OnJoinExpressionChanged();
+            }
+        }
+        private string _JoinExpression;
+        partial void OnJoinExpressionChanging(string value);
+        partial void OnJoinExpressionChanged();
+        /// <summary>
+        /// There are no comments for AuditLookups in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("SPISA.Entities", "FK_AuditRelationships", "AuditLookups")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public global::System.Data.Objects.DataClasses.EntityCollection<AuditLookups> AuditLookups
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<AuditLookups>("SPISA.Entities.FK_AuditRelationships", "AuditLookups");
+            }
+        }
+        /// <summary>
+        /// There are no comments for AuditTables in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("SPISA.Entities", "FK_AuditTables", "AuditTables")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public AuditTables AuditTables
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<AuditTables>("SPISA.Entities.FK_AuditTables", "AuditTables").Value;
+            }
+            set
+            {
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<AuditTables>("SPISA.Entities.FK_AuditTables", "AuditTables").Value = value;
+            }
+        }
+        /// <summary>
+        /// There are no comments for AuditTables in the schema.
+        /// </summary>
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public global::System.Data.Objects.DataClasses.EntityReference<AuditTables> AuditTablesReference
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<AuditTables>("SPISA.Entities.FK_AuditTables", "AuditTables");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<AuditTables>("SPISA.Entities.FK_AuditTables", "AuditTables", value);
+                }
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for SPISA.Entities.AuditTables in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// TableID
+    /// </KeyProperties>
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="SPISA.Entities", Name="AuditTables")]
+    [global::System.Runtime.Serialization.DataContractAttribute()]
+    [global::System.Serializable()]
+    public partial class AuditTables : global::System.Data.Objects.DataClasses.EntityObject
+    {
+        /// <summary>
+        /// Create a new AuditTables object.
+        /// </summary>
+        /// <param name="tableID">Initial value of TableID.</param>
+        /// <param name="owner">Initial value of Owner.</param>
+        /// <param name="tableName">Initial value of TableName.</param>
+        /// <param name="auditTable">Initial value of AuditTable.</param>
+        /// <param name="auditInserts">Initial value of AuditInserts.</param>
+        /// <param name="auditUpdates">Initial value of AuditUpdates.</param>
+        /// <param name="auditDeletes">Initial value of AuditDeletes.</param>
+        /// <param name="auditDeletesAll">Initial value of AuditDeletesAll.</param>
+        /// <param name="uniqueKeyType">Initial value of UniqueKeyType.</param>
+        /// <param name="userColumn">Initial value of UserColumn.</param>
+        public static AuditTables CreateAuditTables(int tableID, string owner, string tableName, bool auditTable, bool auditInserts, bool auditUpdates, bool auditDeletes, bool auditDeletesAll, string uniqueKeyType, string userColumn)
+        {
+            AuditTables auditTables = new AuditTables();
+            auditTables.TableID = tableID;
+            auditTables.Owner = owner;
+            auditTables.TableName = tableName;
+            auditTables.AuditTable = auditTable;
+            auditTables.AuditInserts = auditInserts;
+            auditTables.AuditUpdates = auditUpdates;
+            auditTables.AuditDeletes = auditDeletes;
+            auditTables.AuditDeletesAll = auditDeletesAll;
+            auditTables.UniqueKeyType = uniqueKeyType;
+            auditTables.UserColumn = userColumn;
+            return auditTables;
+        }
+        /// <summary>
+        /// There are no comments for Property TableID in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public int TableID
+        {
+            get
+            {
+                return this._TableID;
+            }
+            set
+            {
+                this.OnTableIDChanging(value);
+                this.ReportPropertyChanging("TableID");
+                this._TableID = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("TableID");
+                this.OnTableIDChanged();
+            }
+        }
+        private int _TableID;
+        partial void OnTableIDChanging(int value);
+        partial void OnTableIDChanged();
+        /// <summary>
+        /// There are no comments for Property Owner in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string Owner
+        {
+            get
+            {
+                return this._Owner;
+            }
+            set
+            {
+                this.OnOwnerChanging(value);
+                this.ReportPropertyChanging("Owner");
+                this._Owner = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false, 128);
+                this.ReportPropertyChanged("Owner");
+                this.OnOwnerChanged();
+            }
+        }
+        private string _Owner;
+        partial void OnOwnerChanging(string value);
+        partial void OnOwnerChanged();
+        /// <summary>
+        /// There are no comments for Property TableName in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string TableName
+        {
+            get
+            {
+                return this._TableName;
+            }
+            set
+            {
+                this.OnTableNameChanging(value);
+                this.ReportPropertyChanging("TableName");
+                this._TableName = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false, 128);
+                this.ReportPropertyChanged("TableName");
+                this.OnTableNameChanged();
+            }
+        }
+        private string _TableName;
+        partial void OnTableNameChanging(string value);
+        partial void OnTableNameChanged();
+        /// <summary>
+        /// There are no comments for Property AuditTable in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public bool AuditTable
+        {
+            get
+            {
+                return this._AuditTable;
+            }
+            set
+            {
+                this.OnAuditTableChanging(value);
+                this.ReportPropertyChanging("AuditTable");
+                this._AuditTable = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("AuditTable");
+                this.OnAuditTableChanged();
+            }
+        }
+        private bool _AuditTable;
+        partial void OnAuditTableChanging(bool value);
+        partial void OnAuditTableChanged();
+        /// <summary>
+        /// There are no comments for Property AuditInserts in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public bool AuditInserts
+        {
+            get
+            {
+                return this._AuditInserts;
+            }
+            set
+            {
+                this.OnAuditInsertsChanging(value);
+                this.ReportPropertyChanging("AuditInserts");
+                this._AuditInserts = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("AuditInserts");
+                this.OnAuditInsertsChanged();
+            }
+        }
+        private bool _AuditInserts;
+        partial void OnAuditInsertsChanging(bool value);
+        partial void OnAuditInsertsChanged();
+        /// <summary>
+        /// There are no comments for Property AuditUpdates in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public bool AuditUpdates
+        {
+            get
+            {
+                return this._AuditUpdates;
+            }
+            set
+            {
+                this.OnAuditUpdatesChanging(value);
+                this.ReportPropertyChanging("AuditUpdates");
+                this._AuditUpdates = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("AuditUpdates");
+                this.OnAuditUpdatesChanged();
+            }
+        }
+        private bool _AuditUpdates;
+        partial void OnAuditUpdatesChanging(bool value);
+        partial void OnAuditUpdatesChanged();
+        /// <summary>
+        /// There are no comments for Property AuditDeletes in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public bool AuditDeletes
+        {
+            get
+            {
+                return this._AuditDeletes;
+            }
+            set
+            {
+                this.OnAuditDeletesChanging(value);
+                this.ReportPropertyChanging("AuditDeletes");
+                this._AuditDeletes = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("AuditDeletes");
+                this.OnAuditDeletesChanged();
+            }
+        }
+        private bool _AuditDeletes;
+        partial void OnAuditDeletesChanging(bool value);
+        partial void OnAuditDeletesChanged();
+        /// <summary>
+        /// There are no comments for Property AuditDeletesAll in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public bool AuditDeletesAll
+        {
+            get
+            {
+                return this._AuditDeletesAll;
+            }
+            set
+            {
+                this.OnAuditDeletesAllChanging(value);
+                this.ReportPropertyChanging("AuditDeletesAll");
+                this._AuditDeletesAll = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("AuditDeletesAll");
+                this.OnAuditDeletesAllChanged();
+            }
+        }
+        private bool _AuditDeletesAll;
+        partial void OnAuditDeletesAllChanging(bool value);
+        partial void OnAuditDeletesAllChanged();
+        /// <summary>
+        /// There are no comments for Property UniqueKeyType in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string UniqueKeyType
+        {
+            get
+            {
+                return this._UniqueKeyType;
+            }
+            set
+            {
+                this.OnUniqueKeyTypeChanging(value);
+                this.ReportPropertyChanging("UniqueKeyType");
+                this._UniqueKeyType = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false, 1);
+                this.ReportPropertyChanged("UniqueKeyType");
+                this.OnUniqueKeyTypeChanged();
+            }
+        }
+        private string _UniqueKeyType;
+        partial void OnUniqueKeyTypeChanging(string value);
+        partial void OnUniqueKeyTypeChanged();
+        /// <summary>
+        /// There are no comments for Property UserColumn in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string UserColumn
+        {
+            get
+            {
+                return this._UserColumn;
+            }
+            set
+            {
+                this.OnUserColumnChanging(value);
+                this.ReportPropertyChanging("UserColumn");
+                this._UserColumn = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false, 128);
+                this.ReportPropertyChanged("UserColumn");
+                this.OnUserColumnChanged();
+            }
+        }
+        private string _UserColumn;
+        partial void OnUserColumnChanging(string value);
+        partial void OnUserColumnChanged();
+        /// <summary>
+        /// There are no comments for AuditColumns in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("SPISA.Entities", "FK_AuditColumns1", "AuditColumns")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public global::System.Data.Objects.DataClasses.EntityCollection<AuditColumns> AuditColumns
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<AuditColumns>("SPISA.Entities.FK_AuditColumns1", "AuditColumns");
+            }
+        }
+        /// <summary>
+        /// There are no comments for AuditRelationships in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("SPISA.Entities", "FK_AuditTables", "AuditRelationships")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public global::System.Data.Objects.DataClasses.EntityCollection<AuditRelationships> AuditRelationships
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<AuditRelationships>("SPISA.Entities.FK_AuditTables", "AuditRelationships");
+            }
+        }
     }
     /// <summary>
     /// There are no comments for SPISA.Entities.Buscador_Criterios in the schema.
@@ -1130,29 +3108,29 @@ namespace SPISA.Entities
         partial void OnColumnaPersonalizadaChanged();
     }
     /// <summary>
-    /// There are no comments for SPISA.Entities.Categorias in the schema.
+    /// There are no comments for SPISA.Entities.Categoria in the schema.
     /// </summary>
     /// <KeyProperties>
     /// IdCategoria
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="SPISA.Entities", Name="Categorias")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="SPISA.Entities", Name="Categoria")]
     [global::System.Runtime.Serialization.DataContractAttribute()]
     [global::System.Serializable()]
-    public partial class Categorias : global::System.Data.Objects.DataClasses.EntityObject
+    public partial class Categoria : global::System.Data.Objects.DataClasses.EntityObject
     {
         /// <summary>
-        /// Create a new Categorias object.
+        /// Create a new Categoria object.
         /// </summary>
         /// <param name="idCategoria">Initial value of IdCategoria.</param>
         /// <param name="descripcion">Initial value of Descripcion.</param>
         /// <param name="descuento">Initial value of Descuento.</param>
-        public static Categorias CreateCategorias(int idCategoria, string descripcion, int descuento)
+        public static Categoria CreateCategoria(int idCategoria, string descripcion, int descuento)
         {
-            Categorias categorias = new Categorias();
-            categorias.IdCategoria = idCategoria;
-            categorias.Descripcion = descripcion;
-            categorias.Descuento = descuento;
-            return categorias;
+            Categoria categoria = new Categoria();
+            categoria.IdCategoria = idCategoria;
+            categoria.Descripcion = descripcion;
+            categoria.Descuento = descuento;
+            return categoria;
         }
         /// <summary>
         /// There are no comments for Property IdCategoria in the schema.

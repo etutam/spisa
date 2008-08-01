@@ -1,11 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="SPISA.Entities" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
-  <EntityContainer Name="EntitiesModelCS">
+  <EntityContainer Name="EntitiesContext">
     <EntitySet Name="Articulos" EntityType="SPISA.Entities.Articulo" />
     <EntitySet Name="Articulos_Compuestos" EntityType="SPISA.Entities.Articulos_Compuestos" />
+    <EntitySet Name="AuditColumns" EntityType="SPISA.Entities.AuditColumns" />
+    <EntitySet Name="AuditConfig" EntityType="SPISA.Entities.AuditConfig" />
+    <EntitySet Name="AuditLog" EntityType="SPISA.Entities.AuditLog" />
+    <EntitySet Name="AuditLogAutoKeys" EntityType="SPISA.Entities.AuditLogAutoKeys" />
+    <EntitySet Name="AuditLogDetail" EntityType="SPISA.Entities.AuditLogDetail" />
+    <EntitySet Name="AuditLogImage" EntityType="SPISA.Entities.AuditLogImage" />
+    <EntitySet Name="AuditLogNText" EntityType="SPISA.Entities.AuditLogNText" />
+    <EntitySet Name="AuditLogText" EntityType="SPISA.Entities.AuditLogText" />
+    <EntitySet Name="AuditLookups" EntityType="SPISA.Entities.AuditLookups" />
+    <EntitySet Name="AuditRelationships" EntityType="SPISA.Entities.AuditRelationships" />
+    <EntitySet Name="AuditTables" EntityType="SPISA.Entities.AuditTables" />
     <EntitySet Name="Buscador_Criterios" EntityType="SPISA.Entities.Buscador_Criterios" />
     <EntitySet Name="Buscador_Relaciones" EntityType="SPISA.Entities.Buscador_Relaciones" />
-    <EntitySet Name="Categorias" EntityType="SPISA.Entities.Categorias" />
+    <EntitySet Name="Categorias" EntityType="SPISA.Entities.Categoria" />
     <EntitySet Name="Clientes" EntityType="SPISA.Entities.Clientes" />
     <EntitySet Name="CondicionesIVA" EntityType="SPISA.Entities.CondicionesIVA" />
     <EntitySet Name="CuentaCorriente_Movimientos" EntityType="SPISA.Entities.CuentaCorriente_Movimientos" />
@@ -30,6 +41,18 @@
     <AssociationSet Name="FK_NotaPedido_Items1_1Articulo" Association="SPISA.Entities.FK_NotaPedido_Items1_1Articulo">
       <End Role="Articulos" EntitySet="Articulos" />
       <End Role="NotaPedido_Items" EntitySet="NotaPedido_Items" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AuditColumns1" Association="SPISA.Entities.FK_AuditColumns1">
+      <End Role="AuditTables" EntitySet="AuditTables" />
+      <End Role="AuditColumns" EntitySet="AuditColumns" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AuditRelationships" Association="SPISA.Entities.FK_AuditRelationships">
+      <End Role="AuditRelationships" EntitySet="AuditRelationships" />
+      <End Role="AuditLookups" EntitySet="AuditLookups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AuditTables" Association="SPISA.Entities.FK_AuditTables">
+      <End Role="AuditTables" EntitySet="AuditTables" />
+      <End Role="AuditRelationships" EntitySet="AuditRelationships" />
     </AssociationSet>
     <AssociationSet Name="FK_Clientes_CondicionesIVA" Association="SPISA.Entities.FK_Clientes_CondicionesIVA">
       <End Role="CondicionesIVA" EntitySet="CondicionesIVA" />
@@ -93,6 +116,130 @@
     <Property Name="CodigoCompuesto" Type="String" Nullable="false" MaxLength="20" Unicode="false" />
     <Property Name="Cantidad" Type="Int32" Nullable="false" />
   </EntityType>
+  <EntityType Name="AuditColumns">
+    <Key>
+      <PropertyRef Name="TableID" />
+      <PropertyRef Name="ColumnID" />
+    </Key>
+    <Property Name="TableID" Type="Int32" Nullable="false" />
+    <Property Name="ColumnID" Type="Int32" Nullable="false" />
+    <Property Name="ColumnName" Type="String" Nullable="false" MaxLength="128" />
+    <Property Name="AuditColumn" Type="Boolean" Nullable="false" />
+    <Property Name="CaptureColumn" Type="Boolean" Nullable="false" />
+    <Property Name="IsLookup" Type="Boolean" Nullable="false" />
+    <Property Name="KeyColumn" Type="Byte" Nullable="false" />
+    <NavigationProperty Name="AuditTables" Relationship="SPISA.Entities.FK_AuditColumns1" FromRole="AuditColumns" ToRole="AuditTables" />
+  </EntityType>
+  <EntityType Name="AuditConfig">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="false" />
+    <Property Name="Value" Type="String" Nullable="false" MaxLength="2000" Unicode="false" />
+  </EntityType>
+  <EntityType Name="AuditLog">
+    <Key>
+      <PropertyRef Name="AuditLogID" />
+    </Key>
+    <Property Name="AuditLogID" Type="Int32" Nullable="false" />
+    <Property Name="TableID" Type="Int32" Nullable="false" />
+    <Property Name="RowsAffected" Type="Int32" Nullable="false" />
+    <Property Name="Event" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="PostedDateTime" Type="DateTime" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="128" />
+    <Property Name="HostName" Type="String" Nullable="false" MaxLength="128" />
+    <Property Name="ApplicationName" Type="String" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="AuditLogAutoKeys">
+    <Key>
+      <PropertyRef Name="TableName" />
+    </Key>
+    <Property Name="TableName" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="true" />
+    <Property Name="KeyValue" Type="Int32" Nullable="false" />
+    <Property Name="Filler" Type="String" Nullable="false" MaxLength="6000" Unicode="false" FixedLength="true" />
+  </EntityType>
+  <EntityType Name="AuditLogDetail">
+    <Key>
+      <PropertyRef Name="AuditLogID" />
+      <PropertyRef Name="RowKey" />
+      <PropertyRef Name="ColumnID" />
+    </Key>
+    <Property Name="AuditLogID" Type="Int32" Nullable="false" />
+    <Property Name="RowKey" Type="String" Nullable="false" MaxLength="512" Unicode="false" />
+    <Property Name="ColumnID" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Byte" Nullable="false" />
+    <Property Name="OldValue" Type="String" MaxLength="2147483647" Unicode="false" />
+    <Property Name="NewValue" Type="String" MaxLength="2147483647" Unicode="false" />
+  </EntityType>
+  <EntityType Name="AuditLogImage">
+    <Key>
+      <PropertyRef Name="AuditLogID" />
+      <PropertyRef Name="RowKey" />
+      <PropertyRef Name="ColumnID" />
+    </Key>
+    <Property Name="AuditLogID" Type="Int32" Nullable="false" />
+    <Property Name="RowKey" Type="String" Nullable="false" MaxLength="512" Unicode="false" />
+    <Property Name="ColumnID" Type="Int32" Nullable="false" />
+    <Property Name="Value" Type="Binary" MaxLength="2147483647" />
+  </EntityType>
+  <EntityType Name="AuditLogNText">
+    <Key>
+      <PropertyRef Name="AuditLogID" />
+      <PropertyRef Name="RowKey" />
+      <PropertyRef Name="ColumnID" />
+    </Key>
+    <Property Name="AuditLogID" Type="Int32" Nullable="false" />
+    <Property Name="RowKey" Type="String" Nullable="false" MaxLength="512" Unicode="false" />
+    <Property Name="ColumnID" Type="Int32" Nullable="false" />
+    <Property Name="Value" Type="String" MaxLength="1073741823" />
+  </EntityType>
+  <EntityType Name="AuditLogText">
+    <Key>
+      <PropertyRef Name="AuditLogID" />
+      <PropertyRef Name="RowKey" />
+      <PropertyRef Name="ColumnID" />
+    </Key>
+    <Property Name="AuditLogID" Type="Int32" Nullable="false" />
+    <Property Name="RowKey" Type="String" Nullable="false" MaxLength="512" Unicode="false" />
+    <Property Name="ColumnID" Type="Int32" Nullable="false" />
+    <Property Name="Value" Type="String" MaxLength="2147483647" Unicode="false" />
+  </EntityType>
+  <EntityType Name="AuditLookups">
+    <Key>
+      <PropertyRef Name="LookupID" />
+    </Key>
+    <Property Name="LookupID" Type="Int32" Nullable="false" />
+    <Property Name="ExpressionIsColumn" Type="Boolean" Nullable="false" />
+    <Property Name="LookupExpression" Type="String" Nullable="false" MaxLength="1024" />
+    <NavigationProperty Name="AuditRelationships" Relationship="SPISA.Entities.FK_AuditRelationships" FromRole="AuditLookups" ToRole="AuditRelationships" />
+  </EntityType>
+  <EntityType Name="AuditRelationships">
+    <Key>
+      <PropertyRef Name="RelationshipID" />
+    </Key>
+    <Property Name="RelationshipID" Type="Int32" Nullable="false" />
+    <Property Name="TableName" Type="String" Nullable="false" MaxLength="128" />
+    <Property Name="JoinExpression" Type="String" Nullable="false" MaxLength="1024" />
+    <NavigationProperty Name="AuditLookups" Relationship="SPISA.Entities.FK_AuditRelationships" FromRole="AuditRelationships" ToRole="AuditLookups" />
+    <NavigationProperty Name="AuditTables" Relationship="SPISA.Entities.FK_AuditTables" FromRole="AuditRelationships" ToRole="AuditTables" />
+  </EntityType>
+  <EntityType Name="AuditTables">
+    <Key>
+      <PropertyRef Name="TableID" />
+    </Key>
+    <Property Name="TableID" Type="Int32" Nullable="false" />
+    <Property Name="Owner" Type="String" Nullable="false" MaxLength="128" />
+    <Property Name="TableName" Type="String" Nullable="false" MaxLength="128" />
+    <Property Name="AuditTable" Type="Boolean" Nullable="false" />
+    <Property Name="AuditInserts" Type="Boolean" Nullable="false" />
+    <Property Name="AuditUpdates" Type="Boolean" Nullable="false" />
+    <Property Name="AuditDeletes" Type="Boolean" Nullable="false" />
+    <Property Name="AuditDeletesAll" Type="Boolean" Nullable="false" />
+    <Property Name="UniqueKeyType" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="UserColumn" Type="String" Nullable="false" MaxLength="128" />
+    <NavigationProperty Name="AuditColumns" Relationship="SPISA.Entities.FK_AuditColumns1" FromRole="AuditTables" ToRole="AuditColumns" />
+    <NavigationProperty Name="AuditRelationships" Relationship="SPISA.Entities.FK_AuditTables" FromRole="AuditTables" ToRole="AuditRelationships" />
+  </EntityType>
   <EntityType Name="Buscador_Criterios">
     <Key>
       <PropertyRef Name="TipoDeDato" />
@@ -114,7 +261,7 @@
     <Property Name="QueryPersonalizada" Type="String" MaxLength="255" Unicode="false" />
     <Property Name="ColumnaPersonalizada" Type="Boolean" />
   </EntityType>
-  <EntityType Name="Categorias">
+  <EntityType Name="Categoria">
     <Key>
       <PropertyRef Name="IdCategoria" />
     </Key>
@@ -310,7 +457,7 @@
     <Property Name="Domicilio" Type="String" Nullable="false" MaxLength="100" Unicode="false" />
   </EntityType>
   <Association Name="FK_Articulos_Categoria">
-    <End Role="Categorias" Type="SPISA.Entities.Categorias" Multiplicity="1" />
+    <End Role="Categorias" Type="SPISA.Entities.Categoria" Multiplicity="1" />
     <End Role="Articulos" Type="SPISA.Entities.Articulo" Multiplicity="*" />
   </Association>
   <Association Name="FK_NotaPedido_Items1_1Articulo">
@@ -324,6 +471,26 @@
         <PropertyRef Name="IdArticulo" />
       </Dependent>
     </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AuditColumns1">
+    <End Role="AuditTables" Type="SPISA.Entities.AuditTables" Multiplicity="1" />
+    <End Role="AuditColumns" Type="SPISA.Entities.AuditColumns" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AuditTables">
+        <PropertyRef Name="TableID" />
+      </Principal>
+      <Dependent Role="AuditColumns">
+        <PropertyRef Name="TableID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AuditRelationships">
+    <End Role="AuditRelationships" Type="SPISA.Entities.AuditRelationships" Multiplicity="1" />
+    <End Role="AuditLookups" Type="SPISA.Entities.AuditLookups" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_AuditTables">
+    <End Role="AuditTables" Type="SPISA.Entities.AuditTables" Multiplicity="1" />
+    <End Role="AuditRelationships" Type="SPISA.Entities.AuditRelationships" Multiplicity="*" />
   </Association>
   <Association Name="FK_Clientes_CondicionesIVA">
     <End Role="CondicionesIVA" Type="SPISA.Entities.CondicionesIVA" Multiplicity="1" />
