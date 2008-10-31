@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{0380E3EA-9446-4C3E-98A6-A5FE83E67C7D}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -24,7 +24,6 @@
     <OldToolsVersion>2.0</OldToolsVersion>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,34 +43,36 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=3.1.0.0, Culture=neutral, PublicKeyToken=c816bc9b997df520, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\dlls\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=3.1.0.0, Culture=neutral, PublicKeyToken=c816bc9b997df520, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\dlls\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=3.1.0.0, Culture=neutral, PublicKeyToken=c816bc9b997df520, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\dlls\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging, Version=3.1.0.0, Culture=neutral, PublicKeyToken=c816bc9b997df520, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\dlls\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=3.1.0.0, Culture=neutral, PublicKeyToken=c816bc9b997df520, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\dlls\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.Entity">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Runtime.Serialization">
-      <RequiredTargetFramework>3.0</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Security" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Articulo.cs" />
-    <Compile Include="BusinessObjects\ArticuloBO.cs" />
-    <Compile Include="BusinessObjects\BaseBO.cs" />
-    <Compile Include="BusinessObjects\CategoriaBO.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="consts.cs" />
@@ -79,9 +80,6 @@
     <Compile Include="CuentaCorriente.cs" />
     <Compile Include="ExceptionEmailHandler.cs" />
     <Compile Include="Factura.cs" />
-    <Compile Include="Interfaces\IArticuloDAO.cs" />
-    <Compile Include="Interfaces\ICategoriaDAO.cs" />
-    <Compile Include="Interfaces\IDaoFactory.cs" />
     <Compile Include="IPrintable.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="NotaPedido.cs" />
@@ -90,21 +88,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provincia.cs" />
     <Compile Include="Remito.cs" />
-<<<<<<< .mine
-    <Compile Include="_SpisaEntityModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_SpisaEntityModel.edmx</DependentUpon>
-    </Compile>
-=======
-    <Compile Include="SPISAEntitiesModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SPISAEntitiesModel.edmx</DependentUpon>
-    </Compile>
->>>>>>> .r5
     <Compile Include="utils.cs" />
-    <Compile Include="Util\Util.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SPISA.Util\SPISA.Util.csproj">
@@ -113,23 +97,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< .mine
-    <None Include="App.Config" />
-=======
-    <None Include="App.config" />
->>>>>>> .r5
     <None Include="keyfile.snk" />
-<<<<<<< .mine
-    <EntityDeploy Include="_SpisaEntityModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>_SpisaEntityModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-=======
-    <EntityDeploy Include="SPISAEntitiesModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SPISAEntitiesModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
->>>>>>> .r5
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,13 +1,13 @@
-//using System;
-//using System.Collections.Generic;
-//using System.Text;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
-//using SPISA.Libreria;
+using SPISA.Libreria;
 
-//namespace SPISA.Libreria
-//{
-//    public interface IPrintable
-//    {
-//        IList<Printing.ObjetoAImprimir> GetObjectsToPrint();
-//    }
-//}
+namespace SPISA.Libreria
+{
+    public interface IPrintable
+    {
+        IList<Printing.ObjetoAImprimir> GetObjectsToPrint();
+    }
+}

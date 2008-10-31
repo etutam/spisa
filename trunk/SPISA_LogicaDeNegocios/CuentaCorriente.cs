@@ -1,260 +1,201 @@
-//using System;
-//using System.Collections.Generic;
-//using System.Text;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
-//using Microsoft.Practices.EnterpriseLibrary.Data;
-//using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling;
+using Microsoft.Practices.EnterpriseLibrary.Data;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling;
 
-//using System.Data;
-//using System.Data.Common;
+using System.Data;
+using System.Data.Common;
 
-//using System.Data.SqlClient;
-//using System.Transactions;
+using System.Data.SqlClient;
+using System.Transactions;
 
-//using System.Configuration;
+using System.Configuration;
 
-//namespace SPISA.Libreria
-//{
-//    public class CuentaCorriente
-//    {
-        
-//        public class Movimiento
-//        {
-//            #region Campos privados
-//            Factura _factura; 
-//            Decimal _monto;
-//            DateTime _fecha;
-//            string _tipoMovimiento;
+namespace SPISA.Libreria
+{
+    public class CuentaCorriente
+    {
 
-//            #endregion
+        public class Movimiento
+        {
+            #region Campos privados
+            Factura _factura;
+            Decimal _monto;
+            DateTime _fecha;
+            string _tipoMovimiento;
 
-//            #region Constructores
-//            public Movimiento()
-//            {
+            #endregion
 
-//            }
-//            public Movimiento(Factura f, DateTime fecha, Decimal monto)
-//            {
-//                this._factura = f;
-//                this._fecha = fecha;
-//                this._monto = monto;
-//            }
-//            #endregion
+            #region Constructores
+            public Movimiento()
+            {
 
-//            #region Propiedades
+            }
+            public Movimiento(Factura f, DateTime fecha, Decimal monto)
+            {
+                this._factura = f;
+                this._fecha = fecha;
+                this._monto = monto;
+            }
+            #endregion
 
-//            public string TipoMovimiento
-//            {
-//                get { return _tipoMovimiento; }
-//                set { _tipoMovimiento = value; } 
-//            }
-//            public Factura Factura
-//            {
-//                get
-//                {
-//                    return _factura;
-//                }
-//                set
-//                {
-//                    _factura = value;
-//                }
-//            }
-//            public Decimal Monto
-//            {
-//                get
-//                {
-//                    return _monto;
-//                }
-//                set
-//                {
-//                    _monto = value;
-//                }
-//            }
+            #region Propiedades
 
-//            public DateTime Fecha
-//            {
-//                get
-//                {
-//                    return _fecha;
-//                }
-//                set
-//                {
-//                    _fecha = value; 
-//                }
-//            }
-//            #endregion
+            public string TipoMovimiento
+            {
+                get { return _tipoMovimiento; }
+                set { _tipoMovimiento = value; }
+            }
+            public Factura Factura
+            {
+                get
+                {
+                    return _factura;
+                }
+                set
+                {
+                    _factura = value;
+                }
+            }
+            public Decimal Monto
+            {
+                get
+                {
+                    return _monto;
+                }
+                set
+                {
+                    _monto = value;
+                }
+            }
 
-//        }
+            public DateTime Fecha
+            {
+                get
+                {
+                    return _fecha;
+                }
+                set
+                {
+                    _fecha = value;
+                }
+            }
+            #endregion
 
-//        #region Campos Privados
+        }
 
-//        int _idCuentaCorriente;
-//        IList<Movimiento> _movimientos;
-//        #endregion
+        #region Campos Privados
 
-//        #region Constructores
-//        public CuentaCorriente()
-//        {
-//            _movimientos = new List<Movimiento>();
+        int _idCuentaCorriente;
+        IList<Movimiento> _movimientos;
+        #endregion
 
-//        }
-//        #endregion
+        #region Constructores
+        public CuentaCorriente()
+        {
+            _movimientos = new List<Movimiento>();
 
-//        #region Propiedades
+        }
+        #endregion
 
-//        public int Id
-//        {
-//            get
-//            {
-//                return _idCuentaCorriente;
-//            }
-//            set
-//            {
-//                _idCuentaCorriente = value;
-//            }
-//        }
-//        public IList<Movimiento> Movimientos
-//        {
-//            get
-//            {
-//                return _movimientos;
-//            }
-//            set
-//            {
-//                _movimientos = value;
-//            }
-//        }
-//        #endregion
-       
-//        #region Metodos Estaticos
+        #region Propiedades
 
-<<<<<<< .mine
+        public int Id
+        {
+            get
+            {
+                return _idCuentaCorriente;
+            }
+            set
+            {
+                _idCuentaCorriente = value;
+            }
+        }
+        public IList<Movimiento> Movimientos
+        {
+            get
+            {
+                return _movimientos;
+            }
+            set
+            {
+                _movimientos = value;
+            }
+        }
+        #endregion
+
+        #region Metodos Estaticos
+
         //TODO: Falta terminar este metodo 
-        public static CuentaCorriente TraerPorIdCliente(int idCliente, DbTransaction transaction)
+        public static CuentaCorriente TraerPorIdCliente(int idCliente)
         {
             if (idCliente <= 0) return null;
-=======
-//        //TODO: Falta terminar este metodo 
-//        public static CuentaCorriente TraerPorIdCliente(int idCliente, DbTransaction transaction)
-//        {
-//            if (idCliente <= 0) return null;
->>>>>>> .r5
-            
-//            string sqlCommand = Consts.CuentaCorriente_TraerPorIdCliente;
-//            CuentaCorriente _cc = null;
 
-//            try
-//            {
-//                Database db = DatabaseFactory.CreateDatabase();
-//                DbCommand dbCommand = db.GetStoredProcCommand(sqlCommand);
-//                db.AddInParameter(dbCommand, "@IdCliente", DbType.Int32, idCliente);
+            string sqlCommand = Consts.CuentaCorriente_TraerPorIdCliente;
+            CuentaCorriente _cc = null;
 
-<<<<<<< .mine
-                IDataReader dataReader;
+            try
+            {
+                Database db = DatabaseFactory.CreateDatabase();
+                DbCommand dbCommand = db.GetStoredProcCommand(sqlCommand);
+                db.AddInParameter(dbCommand, "@IdCliente", DbType.Int32, idCliente);
 
-                if (transaction != null)
+                using (IDataReader dataReader = db.ExecuteReader(dbCommand))
                 {
-                    dataReader = db.ExecuteReader(dbCommand, transaction);
+                    if (dataReader.Read())
+                    {
+                        _cc = new CuentaCorriente();
+                        _cc._idCuentaCorriente = Convert.ToInt32(dataReader["IdCuentaCorriente"]);
+                    }
+                    else
+                    {
+                        _cc = CrearCuentaCorriente(idCliente);
+                    }
                 }
-=======
-//                IDataReader dataReader;
->>>>>>> .r5
-                else
-                {
-                    dataReader = db.ExecuteReader(dbCommand);
-                }
-                
-                if (dataReader.Read())
-                {
-                    _cc = new CuentaCorriente();
-                    _cc._idCuentaCorriente = Convert.ToInt32(dataReader["IdCuentaCorriente"]);
-                    dataReader.Close();
-                }
-                else
-                {
-                    dataReader.Close();
-                    _cc = CrearCuentaCorriente(idCliente, transaction);
-                }
-            
 
-//                if (transaction != null)
-//                {
-//                    dataReader = db.ExecuteReader(dbCommand, transaction);
-//                }
-//                else
-//                {
-//                    dataReader = db.ExecuteReader(dbCommand);
-//                }
-                
-//                if (dataReader.Read())
-//                {
-//                    _cc = new CuentaCorriente();
-//                    _cc._idCuentaCorriente = Convert.ToInt32(dataReader["IdCuentaCorriente"]);
-//                    dataReader.Close();
-//                }
-//                else
-//                {
-//                    dataReader.Close();
-//                    _cc = CrearCuentaCorriente(idCliente, transaction);
-//                }
-            
+                Logger.Append(Consts.CuentaCorriente_TraerPorIdCliente, new Object[] { "IdCliente", idCliente }, "IdCuentaCorriente=" + _cc.Id);
+            }
+            catch (Exception ex)
+            {
 
-//                Logger.Append(Consts.CuentaCorriente_TraerPorIdCliente, new Object[] { "IdCliente", idCliente }, "IdCuentaCorriente=" + _cc.Id);
-//            }
-//            catch (Exception ex)
-//            {
+                _cc = null;
 
-//                _cc = null;
-                
-//                AppSettingsReader appSettingsReader = new AppSettingsReader();
-//                bool sendErrorsByMail = Convert.ToBoolean(appSettingsReader.GetValue("SendErrorsByMail", typeof(Boolean)));
+                AppSettingsReader appSettingsReader = new AppSettingsReader();
+                bool sendErrorsByMail = Convert.ToBoolean(appSettingsReader.GetValue("SendErrorsByMail", typeof(Boolean)));
 
-//                if (sendErrorsByMail) ExceptionPolicy.HandleException(ex, "Global Policy");
-                
-//                throw (ex);
-//            }
+                if (sendErrorsByMail) ExceptionPolicy.HandleException(ex, "Global Policy");
 
-            
-//            return _cc;
-//        }
+                throw (ex);
+            }
 
-<<<<<<< .mine
-        public static CuentaCorriente CrearCuentaCorriente(int idCliente, DbTransaction transaction)
+
+            return _cc;
+        }
+
+        public static CuentaCorriente CrearCuentaCorriente(int idCliente)
         {
             if (idCliente <= 0) return null;
-=======
-//        public static CuentaCorriente CrearCuentaCorriente(int idCliente, DbTransaction transaction)
-//        {
-//            if (idCliente <= 0) return null;
->>>>>>> .r5
 
-//            string sqlCommand = Consts.CuentaCorriente_Agregar;
-//            object r = null;
-//            CuentaCorriente cc = null;
+            string sqlCommand = Consts.CuentaCorriente_Agregar;
+            object r = null;
+            CuentaCorriente cc = null;
 
-//            try
-//            {
-//                Database db = DatabaseFactory.CreateDatabase();
-//                DbCommand dbCommand = db.GetStoredProcCommand(sqlCommand);
-//                db.AddInParameter(dbCommand, "IdCliente", DbType.Int32, idCliente);
+            try
+            {
+                Database db = DatabaseFactory.CreateDatabase();
+                DbCommand dbCommand = db.GetStoredProcCommand(sqlCommand);
+                db.AddInParameter(dbCommand, "IdCliente", DbType.Int32, idCliente);
 
-//                using (DbConnection conn = db.CreateConnection())
-//                {
+                using (DbConnection conn = db.CreateConnection())
+                {
 
-//                    conn.Open();
+                    conn.Open();
 
-<<<<<<< .mine
                     try
                     {
-                        if (transaction != null)
-                        {
-                            r = db.ExecuteScalar(dbCommand, transaction);
-                        }
-                        else
-                        {
-                            r = db.ExecuteScalar(dbCommand);
-                        }
-
+                        r = db.ExecuteScalar(dbCommand);
                     }
                     catch (Exception ex)
                     {
@@ -262,103 +203,78 @@
                         throw ex;
                     }
                 }
-=======
-//                    try
-//                    {
-//                        if (transaction != null)
-//                        {
-//                            r = db.ExecuteScalar(dbCommand, transaction);
-//                        }
-//                        else
-//                        {
-//                            r = db.ExecuteScalar(dbCommand);
-//                        }
->>>>>>> .r5
 
-<<<<<<< .mine
-                cc = TraerPorIdCliente(idCliente, transaction);
+                cc = TraerPorIdCliente(idCliente);
                 Logger.Append(Consts.CuentaCorriente_Agregar, new Object[] { "IdCliente", idCliente }, "IdCuentaCorriente=" + cc.Id);
-=======
-//                    }
-//                    catch (Exception ex)
-//                    {
-//                        ExceptionPolicy.HandleException(ex, "Global Policy");
-//                        throw ex;
-//                    }
-//                }
->>>>>>> .r5
 
-//                cc = TraerPorIdCliente(idCliente, transaction);
-//                Logger.Append(Consts.CuentaCorriente_Agregar, new Object[] { "IdCliente", idCliente }, "IdCuentaCorriente=" + cc.Id);
+                if (cc == null) throw new Exception("No se ha podido obtener la cuenta corriente del Cliente");
+            }
+            catch (Exception ex)
+            {
+                AppSettingsReader appSettingsReader = new AppSettingsReader();
+                bool sendErrorsByMail = Convert.ToBoolean(appSettingsReader.GetValue("SendErrorsByMail", typeof(Boolean)));
 
-//                if (cc == null) throw new Exception("No se ha podido obtener la cuenta corriente del Cliente");
-//            }
-//            catch (Exception ex)
-//            {
-//                AppSettingsReader appSettingsReader = new AppSettingsReader();
-//                bool sendErrorsByMail = Convert.ToBoolean(appSettingsReader.GetValue("SendErrorsByMail", typeof(Boolean)));
+                if (sendErrorsByMail) ExceptionPolicy.HandleException(ex, "Global Policy");
 
-//                if (sendErrorsByMail) ExceptionPolicy.HandleException(ex, "Global Policy");
+                throw ex;
+            }
 
-//                throw ex;
-//            }
+            return cc;
+        }
+        #endregion
 
-//            return cc;
-//        }
-//        #endregion
+        #region Metodos
 
-//        #region Metodos 
+        /// <summary>
+        /// Este método se encarga de Almacenar el Movimiento en la cuenta corriente del cliente
+        /// y a su vez actualiza el campo saldo de la tabla Clientes
+        /// </summary>
+        /// <param name="m"></param>
+        /// <returns></returns>
+        public int AlmacenarMovimiento(Movimiento m, DbTransaction ts)
+        {
+            if (m.Factura == null) throw new Exception("m.Factura==null");
 
-//        /// <summary>
-//        /// Este método se encarga de Almacenar el Movimiento en la cuenta corriente del cliente
-//        /// y a su vez actualiza el campo saldo de la tabla Clientes
-//        /// </summary>
-//        /// <param name="m"></param>
-//        /// <returns></returns>
-//        public int AlmacenarMovimiento(Movimiento m, DbTransaction ts)
-//        {
-//            if (m.Factura == null) throw new Exception("m.Factura==null");
+            string sqlCommand = Consts.CuentaCorriente_AlmacenarMovimiento;
+            object r = null;
 
-//            string sqlCommand = Consts.CuentaCorriente_AlmacenarMovimiento;
-//            object r = null;
+            try
+            {
+                Database db = DatabaseFactory.CreateDatabase();
+                DbCommand dbCommand = db.GetStoredProcCommand(sqlCommand);
+                db.AddInParameter(dbCommand, "IdCuentaCorriente", DbType.Int32, this._idCuentaCorriente);
+                db.AddInParameter(dbCommand, "IdFactura", DbType.Int32, m.Factura.Id);
+                db.AddInParameter(dbCommand, "Monto", DbType.Decimal, m.Monto);
 
-//            try
-//            {
-//                Database db = DatabaseFactory.CreateDatabase();
-//                DbCommand dbCommand = db.GetStoredProcCommand(sqlCommand);
-//                db.AddInParameter(dbCommand, "IdCuentaCorriente", DbType.Int32, this._idCuentaCorriente);
-//                db.AddInParameter(dbCommand, "IdFactura", DbType.Int32, m.Factura.Id);
-//                db.AddInParameter(dbCommand, "Monto", DbType.Decimal, m.Monto);
+                if (!m.Factura.EsNotaDeCredito) db.AddInParameter(dbCommand, "TipoOperacion", DbType.Int32, 1);
+                else db.AddInParameter(dbCommand, "TipoOperacion", DbType.Int32, 2);
 
-//                if (!m.Factura.EsNotaDeCredito) db.AddInParameter(dbCommand, "TipoOperacion", DbType.Int32, 1);
-//                else db.AddInParameter(dbCommand, "TipoOperacion", DbType.Int32, 2);
+                using (DbConnection conn = db.CreateConnection())
+                {
+                    conn.Open();
+                    r = db.ExecuteScalar(dbCommand, ts);
+                }
 
-//                using (DbConnection conn = db.CreateConnection())
-//                {
-//                    conn.Open();
-//                    r = db.ExecuteScalar(dbCommand, ts);
-//                }
+                Logger.Append(Consts.CuentaCorriente_AlmacenarMovimiento, new Object[] { "IdFactura", m.Factura.Id, "Fecha", m.Fecha, "Monto", m.Monto, "TipoMovimiento", m.TipoMovimiento }, "No devuelve nada");
 
-//                Logger.Append(Consts.CuentaCorriente_AlmacenarMovimiento, new Object[] { "IdFactura", m.Factura.Id, "Fecha", m.Fecha, "Monto", m.Monto, "TipoMovimiento", m.TipoMovimiento }, "No devuelve nada");
+            }
+            catch (Exception ex)
+            {
+                AppSettingsReader appSettingsReader = new AppSettingsReader();
+                bool sendErrorsByMail = Convert.ToBoolean(appSettingsReader.GetValue("SendErrorsByMail", typeof(Boolean)));
 
-//            }
-//           catch (Exception ex)
-//            {
-//                AppSettingsReader appSettingsReader = new AppSettingsReader();
-//                bool sendErrorsByMail = Convert.ToBoolean(appSettingsReader.GetValue("SendErrorsByMail", typeof(Boolean)));
+                if (sendErrorsByMail) ExceptionPolicy.HandleException(ex, "Global Policy");
+                throw (ex);
+            }
 
-//                if (sendErrorsByMail) ExceptionPolicy.HandleException(ex, "Global Policy");
-//                throw (ex);
-//            }
-            
-//            return Convert.ToInt32(r);
-        
-//        }
-//        #endregion
+            return Convert.ToInt32(r);
+
+        }
+        #endregion
 
 
 
-//    }
+    }
 
 
-//}
+}

@@ -80,7 +80,7 @@ namespace SPISA.Presentacion
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-            Articulo.test();
+            //Articulo.test();
         }
 
         private void ultraExplorerBar1_ItemClick(object sender, Infragistics.Win.UltraWinExplorerBar.ItemEventArgs e)
