@@ -1,0 +1,16 @@
+Using multiple panes for one activity. If multiple windows or panes are used in
+a particular user activity, it is important to keep them synchronized. In a Web
+application, a user interface usually displays a set of elements in a same page
+(which may include frames) for a given user activity. However, in rich client
+applications, you may actually have many non-modal windows affecting just
+one particular process. For example, you may have a product category selector
+window floating in your application that lets you specify a particular category,
+the products in which will be displayed in another window.
+User process components help you to implement this kind of user interface by
+centralizing the state for all windows in a single location. You can further simplify
+synchronization across multiple user interface elements by using data
+bindable formats for state data.
+ Isolating long-running user activities
+
+
+--- > WINDOWS PRESETATION FOUNDATION?
