@@ -15,7 +15,7 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("Gestioname.Model", "FK_Transacciones_TiposTransacciones", "TiposTransacciones", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Gestioname.Infrastructure.Model.TiposTransacciones), "Transacciones", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Gestioname.Infrastructure.Model.Transacciones))]
 
 // Original file name:
-// Generation date: 29/12/2008 0:02:01
+// Generation date: 29/12/2008 11:08:30 a.m.
 namespace Gestioname.Infrastructure.Model
 {
     
@@ -530,29 +530,6 @@ namespace Gestioname.Infrastructure.Model
         partial void OnIdCuentaChanging(int value);
         partial void OnIdCuentaChanged();
         /// <summary>
-        /// There are no comments for Property IdCliente in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Nullable<int> IdCliente
-        {
-            get
-            {
-                return this._IdCliente;
-            }
-            set
-            {
-                this.OnIdClienteChanging(value);
-                this.ReportPropertyChanging("IdCliente");
-                this._IdCliente = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("IdCliente");
-                this.OnIdClienteChanged();
-            }
-        }
-        private global::System.Nullable<int> _IdCliente;
-        partial void OnIdClienteChanging(global::System.Nullable<int> value);
-        partial void OnIdClienteChanged();
-        /// <summary>
         /// There are no comments for Property Balance in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
@@ -638,9 +615,7 @@ namespace Gestioname.Infrastructure.Model
     /// There are no comments for Gestioname.Model.Pagos in the schema.
     /// </summary>
     /// <KeyProperties>
-    /// IdTransaccion
-    /// TipoPago
-    /// Monto
+    /// IdPago
     /// </KeyProperties>
     [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="Gestioname.Model", Name="Pagos")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
@@ -650,44 +625,44 @@ namespace Gestioname.Infrastructure.Model
         /// <summary>
         /// Create a new Pagos object.
         /// </summary>
-        /// <param name="idTransaccion">Initial value of IdTransaccion.</param>
+        /// <param name="idPago">Initial value of IdPago.</param>
         /// <param name="tipoPago">Initial value of TipoPago.</param>
         /// <param name="monto">Initial value of Monto.</param>
-        public static Pagos CreatePagos(int idTransaccion, string tipoPago, string monto)
+        public static Pagos CreatePagos(int idPago, string tipoPago, string monto)
         {
             Pagos pagos = new Pagos();
-            pagos.IdTransaccion = idTransaccion;
+            pagos.IdPago = idPago;
             pagos.TipoPago = tipoPago;
             pagos.Monto = monto;
             return pagos;
         }
         /// <summary>
-        /// There are no comments for Property IdTransaccion in the schema.
+        /// There are no comments for Property IdPago in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public int IdTransaccion
+        public int IdPago
         {
             get
             {
-                return this._IdTransaccion;
+                return this._IdPago;
             }
             set
             {
-                this.OnIdTransaccionChanging(value);
-                this.ReportPropertyChanging("IdTransaccion");
-                this._IdTransaccion = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("IdTransaccion");
-                this.OnIdTransaccionChanged();
+                this.OnIdPagoChanging(value);
+                this.ReportPropertyChanging("IdPago");
+                this._IdPago = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("IdPago");
+                this.OnIdPagoChanged();
             }
         }
-        private int _IdTransaccion;
-        partial void OnIdTransaccionChanging(int value);
-        partial void OnIdTransaccionChanged();
+        private int _IdPago;
+        partial void OnIdPagoChanging(int value);
+        partial void OnIdPagoChanged();
         /// <summary>
         /// There are no comments for Property TipoPago in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string TipoPago
         {
@@ -710,7 +685,7 @@ namespace Gestioname.Infrastructure.Model
         /// <summary>
         /// There are no comments for Property Monto in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string Monto
         {
@@ -799,29 +774,6 @@ namespace Gestioname.Infrastructure.Model
         private global::System.Nullable<global::System.DateTime> _Fecha;
         partial void OnFechaChanging(global::System.Nullable<global::System.DateTime> value);
         partial void OnFechaChanged();
-        /// <summary>
-        /// There are no comments for Property IdPago in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Nullable<int> IdPago
-        {
-            get
-            {
-                return this._IdPago;
-            }
-            set
-            {
-                this.OnIdPagoChanging(value);
-                this.ReportPropertyChanging("IdPago");
-                this._IdPago = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("IdPago");
-                this.OnIdPagoChanged();
-            }
-        }
-        private global::System.Nullable<int> _IdPago;
-        partial void OnIdPagoChanging(global::System.Nullable<int> value);
-        partial void OnIdPagoChanged();
         /// <summary>
         /// There are no comments for Transacciones in the schema.
         /// </summary>
@@ -989,17 +941,13 @@ namespace Gestioname.Infrastructure.Model
         /// Create a new Transacciones object.
         /// </summary>
         /// <param name="idTransaccion">Initial value of IdTransaccion.</param>
-        /// <param name="idCuenta">Initial value of IdCuenta.</param>
-        /// <param name="idTipoTransaccion">Initial value of IdTipoTransaccion.</param>
         /// <param name="fecha">Initial value of Fecha.</param>
         /// <param name="monto">Initial value of Monto.</param>
         /// <param name="balance">Initial value of Balance.</param>
-        public static Transacciones CreateTransacciones(int idTransaccion, int idCuenta, int idTipoTransaccion, global::System.DateTime fecha, string monto, string balance)
+        public static Transacciones CreateTransacciones(int idTransaccion, global::System.DateTime fecha, string monto, string balance)
         {
             Transacciones transacciones = new Transacciones();
             transacciones.IdTransaccion = idTransaccion;
-            transacciones.IdCuenta = idCuenta;
-            transacciones.IdTipoTransaccion = idTipoTransaccion;
             transacciones.Fecha = fecha;
             transacciones.Monto = monto;
             transacciones.Balance = balance;
@@ -1028,52 +976,6 @@ namespace Gestioname.Infrastructure.Model
         private int _IdTransaccion;
         partial void OnIdTransaccionChanging(int value);
         partial void OnIdTransaccionChanged();
-        /// <summary>
-        /// There are no comments for Property IdCuenta in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public int IdCuenta
-        {
-            get
-            {
-                return this._IdCuenta;
-            }
-            set
-            {
-                this.OnIdCuentaChanging(value);
-                this.ReportPropertyChanging("IdCuenta");
-                this._IdCuenta = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("IdCuenta");
-                this.OnIdCuentaChanged();
-            }
-        }
-        private int _IdCuenta;
-        partial void OnIdCuentaChanging(int value);
-        partial void OnIdCuentaChanged();
-        /// <summary>
-        /// There are no comments for Property IdTipoTransaccion in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public int IdTipoTransaccion
-        {
-            get
-            {
-                return this._IdTipoTransaccion;
-            }
-            set
-            {
-                this.OnIdTipoTransaccionChanging(value);
-                this.ReportPropertyChanging("IdTipoTransaccion");
-                this._IdTipoTransaccion = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("IdTipoTransaccion");
-                this.OnIdTipoTransaccionChanged();
-            }
-        }
-        private int _IdTipoTransaccion;
-        partial void OnIdTipoTransaccionChanging(int value);
-        partial void OnIdTipoTransaccionChanged();
         /// <summary>
         /// There are no comments for Property Fecha in the schema.
         /// </summary>
