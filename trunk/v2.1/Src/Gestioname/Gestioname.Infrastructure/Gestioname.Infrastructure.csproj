@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseClasses\FacadeBase.cs" />
     <Compile Include="Model\EntityDomainModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -68,6 +69,12 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>EntityDomainModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gestioname.Framework.ObjectContextManager\Gestioname.Framework.ObjectContextManager.csproj">
+      <Project>{5C8A4AF3-73F6-4C4B-B547-795EDC1AA77C}</Project>
+      <Name>Gestioname.Framework.ObjectContextManager</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

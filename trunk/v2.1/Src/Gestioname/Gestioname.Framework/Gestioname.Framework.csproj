@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{B7CC3721-620C-445E-81DB-14D6E4CFBFE6}</ProjectGuid>
+    <ProjectGuid>{A6001C18-3A4F-4621-9C19-51ABF8E7C03C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Gestioname.Modules.Clientes.BusinessComponents</RootNamespace>
-    <AssemblyName>Gestioname.Modules.Clientes.BusinessComponents</AssemblyName>
+    <RootNamespace>Gestioname.Framework</RootNamespace>
+    <AssemblyName>Gestioname.Framework</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -45,19 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClientesManager.cs" />
-    <Compile Include="CuentasManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Gestioname.Infrastructure\Gestioname.Infrastructure.csproj">
-      <Project>{6E4C5F29-05F2-46C8-8AE4-7A1B96685B8C}</Project>
-      <Name>Gestioname.Infrastructure</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Gestioname.Modules.Clientes.Interfaces\Gestioname.Modules.Clientes.Interfaces.csproj">
-      <Project>{358F6599-A3EA-4200-AF46-A68B14434EE3}</Project>
-      <Name>Gestioname.Modules.Clientes.Interfaces</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -9,42 +9,42 @@
 //------------------------------------------------------------------------------
 
 [assembly: global::System.Data.Objects.DataClasses.EdmSchemaAttribute()]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("Gestioname.Model", "FK_Cuentas_Clientes", "Clientes", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Gestioname.Infrastructure.Model.Clientes), "Cuentas", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Gestioname.Infrastructure.Model.Cuentas))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("Gestioname.Model", "FK_Transacciones_Cuentas", "Cuentas", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Gestioname.Infrastructure.Model.Cuentas), "Transacciones", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Gestioname.Infrastructure.Model.Transacciones))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("Gestioname.Model", "FK_Pagos_Transacciones", "Transacciones", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Gestioname.Infrastructure.Model.Transacciones), "Pagos", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Gestioname.Infrastructure.Model.Pagos))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("Gestioname.Model", "FK_Transacciones_TiposTransacciones", "TiposTransacciones", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Gestioname.Infrastructure.Model.TiposTransacciones), "Transacciones", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Gestioname.Infrastructure.Model.Transacciones))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("Gestioname.Model", "FK_Cuentas_Clientes", "Clientes", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Gestioname.Infrastructure.Model.Cliente), "Cuentas", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Gestioname.Infrastructure.Model.Cuenta))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("Gestioname.Model", "FK_Transacciones_Cuentas", "Cuentas", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Gestioname.Infrastructure.Model.Cuenta), "Transacciones", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Gestioname.Infrastructure.Model.Transaccion))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("Gestioname.Model", "FK_Pagos_Transacciones", "Transacciones", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Gestioname.Infrastructure.Model.Transaccion), "Pagos", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Gestioname.Infrastructure.Model.Pago))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("Gestioname.Model", "FK_Transacciones_TiposTransacciones", "TiposTransacciones", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Gestioname.Infrastructure.Model.TipoTransaccion), "Transacciones", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Gestioname.Infrastructure.Model.Transaccion))]
 
 // Original file name:
-// Generation date: 29/12/2008 11:08:30 a.m.
+// Generation date: 02/01/2009 20:37:27
 namespace Gestioname.Infrastructure.Model
 {
     
     /// <summary>
-    /// There are no comments for GestionameDBConnectionString in the schema.
+    /// There are no comments for Entities in the schema.
     /// </summary>
-    public partial class GestionameDBConnectionString : global::System.Data.Objects.ObjectContext
+    public partial class GestionameContext : global::System.Data.Objects.ObjectContext
     {
         /// <summary>
-        /// Initializes a new GestionameDBConnectionString object using the connection string found in the 'GestionameDBConnectionString' section of the application configuration file.
+        /// Initializes a new Entities object using the connection string found in the 'Entities' section of the application configuration file.
         /// </summary>
-        public GestionameDBConnectionString() : 
-                base("name=GestionameDBConnectionString", "GestionameDBConnectionString")
+        public GestionameContext() :
+            base("name=GestionameDBConnectionString", "GestionameDBConnectionString")
         {
             this.OnContextCreated();
         }
         /// <summary>
-        /// Initialize a new GestionameDBConnectionString object.
+        /// Initialize a new Entities object.
         /// </summary>
-        public GestionameDBConnectionString(string connectionString) : 
-                base(connectionString, "GestionameDBConnectionString")
+        public GestionameContext(string connectionString) :
+            base(connectionString, "GestionameDBConnectionString")
         {
             this.OnContextCreated();
         }
         /// <summary>
-        /// Initialize a new GestionameDBConnectionString object.
+        /// Initialize a new Entities object.
         /// </summary>
-        public GestionameDBConnectionString(global::System.Data.EntityClient.EntityConnection connection) : 
-                base(connection, "GestionameDBConnectionString")
+        public GestionameContext(global::System.Data.EntityClient.EntityConnection connection) :
+            base(connection, "GestionameDBConnectionString")
         {
             this.OnContextCreated();
         }
@@ -52,158 +52,136 @@ namespace Gestioname.Infrastructure.Model
         /// <summary>
         /// There are no comments for Clientes in the schema.
         /// </summary>
-        public global::System.Data.Objects.ObjectQuery<Clientes> Clientes
+        public global::System.Data.Objects.ObjectQuery<Cliente> Clientes
         {
             get
             {
                 if ((this._Clientes == null))
                 {
-                    this._Clientes = base.CreateQuery<Clientes>("[Clientes]");
+                    this._Clientes = base.CreateQuery<Cliente>("[Clientes]");
                 }
                 return this._Clientes;
             }
         }
-        private global::System.Data.Objects.ObjectQuery<Clientes> _Clientes;
-        /// <summary>
-        /// There are no comments for Configuracion in the schema.
-        /// </summary>
-        public global::System.Data.Objects.ObjectQuery<Configuracion> Configuracion
-        {
-            get
-            {
-                if ((this._Configuracion == null))
-                {
-                    this._Configuracion = base.CreateQuery<Configuracion>("[Configuracion]");
-                }
-                return this._Configuracion;
-            }
-        }
-        private global::System.Data.Objects.ObjectQuery<Configuracion> _Configuracion;
+        private global::System.Data.Objects.ObjectQuery<Cliente> _Clientes;
         /// <summary>
         /// There are no comments for Cuentas in the schema.
         /// </summary>
-        public global::System.Data.Objects.ObjectQuery<Cuentas> Cuentas
+        public global::System.Data.Objects.ObjectQuery<Cuenta> Cuentas
         {
             get
             {
                 if ((this._Cuentas == null))
                 {
-                    this._Cuentas = base.CreateQuery<Cuentas>("[Cuentas]");
+                    this._Cuentas = base.CreateQuery<Cuenta>("[Cuentas]");
                 }
                 return this._Cuentas;
             }
         }
-        private global::System.Data.Objects.ObjectQuery<Cuentas> _Cuentas;
+        private global::System.Data.Objects.ObjectQuery<Cuenta> _Cuentas;
         /// <summary>
         /// There are no comments for Pagos in the schema.
         /// </summary>
-        public global::System.Data.Objects.ObjectQuery<Pagos> Pagos
+        public global::System.Data.Objects.ObjectQuery<Pago> Pagos
         {
             get
             {
                 if ((this._Pagos == null))
                 {
-                    this._Pagos = base.CreateQuery<Pagos>("[Pagos]");
+                    this._Pagos = base.CreateQuery<Pago>("[Pagos]");
                 }
                 return this._Pagos;
             }
         }
-        private global::System.Data.Objects.ObjectQuery<Pagos> _Pagos;
+        private global::System.Data.Objects.ObjectQuery<Pago> _Pagos;
         /// <summary>
-        /// There are no comments for TiposTransacciones in the schema.
+        /// There are no comments for TiposTransaccion in the schema.
         /// </summary>
-        public global::System.Data.Objects.ObjectQuery<TiposTransacciones> TiposTransacciones
+        public global::System.Data.Objects.ObjectQuery<TipoTransaccion> TiposTransaccion
         {
             get
             {
-                if ((this._TiposTransacciones == null))
+                if ((this._TiposTransaccion == null))
                 {
-                    this._TiposTransacciones = base.CreateQuery<TiposTransacciones>("[TiposTransacciones]");
+                    this._TiposTransaccion = base.CreateQuery<TipoTransaccion>("[TiposTransaccion]");
                 }
-                return this._TiposTransacciones;
+                return this._TiposTransaccion;
             }
         }
-        private global::System.Data.Objects.ObjectQuery<TiposTransacciones> _TiposTransacciones;
+        private global::System.Data.Objects.ObjectQuery<TipoTransaccion> _TiposTransaccion;
         /// <summary>
         /// There are no comments for Transacciones in the schema.
         /// </summary>
-        public global::System.Data.Objects.ObjectQuery<Transacciones> Transacciones
+        public global::System.Data.Objects.ObjectQuery<Transaccion> Transacciones
         {
             get
             {
                 if ((this._Transacciones == null))
                 {
-                    this._Transacciones = base.CreateQuery<Transacciones>("[Transacciones]");
+                    this._Transacciones = base.CreateQuery<Transaccion>("[Transacciones]");
                 }
                 return this._Transacciones;
             }
         }
-        private global::System.Data.Objects.ObjectQuery<Transacciones> _Transacciones;
+        private global::System.Data.Objects.ObjectQuery<Transaccion> _Transacciones;
         /// <summary>
         /// There are no comments for Clientes in the schema.
         /// </summary>
-        public void AddToClientes(Clientes clientes)
+        public void AddToClientes(Cliente cliente)
         {
-            base.AddObject("Clientes", clientes);
-        }
-        /// <summary>
-        /// There are no comments for Configuracion in the schema.
-        /// </summary>
-        public void AddToConfiguracion(Configuracion configuracion)
-        {
-            base.AddObject("Configuracion", configuracion);
+            base.AddObject("Clientes", cliente);
         }
         /// <summary>
         /// There are no comments for Cuentas in the schema.
         /// </summary>
-        public void AddToCuentas(Cuentas cuentas)
+        public void AddToCuentas(Cuenta cuenta)
         {
-            base.AddObject("Cuentas", cuentas);
+            base.AddObject("Cuentas", cuenta);
         }
         /// <summary>
         /// There are no comments for Pagos in the schema.
         /// </summary>
-        public void AddToPagos(Pagos pagos)
+        public void AddToPagos(Pago pago)
         {
-            base.AddObject("Pagos", pagos);
+            base.AddObject("Pagos", pago);
         }
         /// <summary>
-        /// There are no comments for TiposTransacciones in the schema.
+        /// There are no comments for TiposTransaccion in the schema.
         /// </summary>
-        public void AddToTiposTransacciones(TiposTransacciones tiposTransacciones)
+        public void AddToTiposTransaccion(TipoTransaccion tipoTransaccion)
         {
-            base.AddObject("TiposTransacciones", tiposTransacciones);
+            base.AddObject("TiposTransaccion", tipoTransaccion);
         }
         /// <summary>
         /// There are no comments for Transacciones in the schema.
         /// </summary>
-        public void AddToTransacciones(Transacciones transacciones)
+        public void AddToTransacciones(Transaccion transaccion)
         {
-            base.AddObject("Transacciones", transacciones);
+            base.AddObject("Transacciones", transaccion);
         }
     }
     /// <summary>
-    /// There are no comments for Gestioname.Model.Clientes in the schema.
+    /// There are no comments for Gestioname.Model.Cliente in the schema.
     /// </summary>
     /// <KeyProperties>
     /// IdCliente
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="Gestioname.Model", Name="Clientes")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="Gestioname.Model", Name="Cliente")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
-    public partial class Clientes : global::System.Data.Objects.DataClasses.EntityObject
+    public partial class Cliente : global::System.Data.Objects.DataClasses.EntityObject
     {
         /// <summary>
-        /// Create a new Clientes object.
+        /// Create a new Cliente object.
         /// </summary>
         /// <param name="idCliente">Initial value of IdCliente.</param>
         /// <param name="codigo">Initial value of Codigo.</param>
-        public static Clientes CreateClientes(int idCliente, string codigo)
+        public static Cliente CreateCliente(int idCliente, string codigo)
         {
-            Clientes clientes = new Clientes();
-            clientes.IdCliente = idCliente;
-            clientes.Codigo = codigo;
-            return clientes;
+            Cliente cliente = new Cliente();
+            cliente.IdCliente = idCliente;
+            cliente.Codigo = codigo;
+            return cliente;
         }
         /// <summary>
         /// There are no comments for Property IdCliente in the schema.
@@ -373,138 +351,43 @@ namespace Gestioname.Infrastructure.Model
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Data.Objects.DataClasses.EntityCollection<Cuentas> Cuentas
+        public global::System.Data.Objects.DataClasses.EntityCollection<Cuenta> Cuentas
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<Cuentas>("Gestioname.Model.FK_Cuentas_Clientes", "Cuentas");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<Cuenta>("Gestioname.Model.FK_Cuentas_Clientes", "Cuentas");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<Cuentas>("Gestioname.Model.FK_Cuentas_Clientes", "Cuentas", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<Cuenta>("Gestioname.Model.FK_Cuentas_Clientes", "Cuentas", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for Gestioname.Model.Configuracion in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// IdConfiguracion
-    /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="Gestioname.Model", Name="Configuracion")]
-    [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
-    [global::System.Serializable()]
-    public partial class Configuracion : global::System.Data.Objects.DataClasses.EntityObject
-    {
-        /// <summary>
-        /// Create a new Configuracion object.
-        /// </summary>
-        /// <param name="idConfiguracion">Initial value of IdConfiguracion.</param>
-        /// <param name="clave">Initial value of Clave.</param>
-        /// <param name="valor">Initial value of Valor.</param>
-        public static Configuracion CreateConfiguracion(int idConfiguracion, string clave, string valor)
-        {
-            Configuracion configuracion = new Configuracion();
-            configuracion.IdConfiguracion = idConfiguracion;
-            configuracion.Clave = clave;
-            configuracion.Valor = valor;
-            return configuracion;
-        }
-        /// <summary>
-        /// There are no comments for Property IdConfiguracion in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public int IdConfiguracion
-        {
-            get
-            {
-                return this._IdConfiguracion;
-            }
-            set
-            {
-                this.OnIdConfiguracionChanging(value);
-                this.ReportPropertyChanging("IdConfiguracion");
-                this._IdConfiguracion = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("IdConfiguracion");
-                this.OnIdConfiguracionChanged();
-            }
-        }
-        private int _IdConfiguracion;
-        partial void OnIdConfiguracionChanging(int value);
-        partial void OnIdConfiguracionChanged();
-        /// <summary>
-        /// There are no comments for Property Clave in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string Clave
-        {
-            get
-            {
-                return this._Clave;
-            }
-            set
-            {
-                this.OnClaveChanging(value);
-                this.ReportPropertyChanging("Clave");
-                this._Clave = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false);
-                this.ReportPropertyChanged("Clave");
-                this.OnClaveChanged();
-            }
-        }
-        private string _Clave;
-        partial void OnClaveChanging(string value);
-        partial void OnClaveChanged();
-        /// <summary>
-        /// There are no comments for Property Valor in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string Valor
-        {
-            get
-            {
-                return this._Valor;
-            }
-            set
-            {
-                this.OnValorChanging(value);
-                this.ReportPropertyChanging("Valor");
-                this._Valor = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false);
-                this.ReportPropertyChanged("Valor");
-                this.OnValorChanged();
-            }
-        }
-        private string _Valor;
-        partial void OnValorChanging(string value);
-        partial void OnValorChanged();
-    }
-    /// <summary>
-    /// There are no comments for Gestioname.Model.Cuentas in the schema.
+    /// There are no comments for Gestioname.Model.Cuenta in the schema.
     /// </summary>
     /// <KeyProperties>
     /// IdCuenta
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="Gestioname.Model", Name="Cuentas")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="Gestioname.Model", Name="Cuenta")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
-    public partial class Cuentas : global::System.Data.Objects.DataClasses.EntityObject
+    public partial class Cuenta : global::System.Data.Objects.DataClasses.EntityObject
     {
         /// <summary>
-        /// Create a new Cuentas object.
+        /// Create a new Cuenta object.
         /// </summary>
         /// <param name="idCuenta">Initial value of IdCuenta.</param>
         /// <param name="balance">Initial value of Balance.</param>
-        public static Cuentas CreateCuentas(int idCuenta, string balance)
+        public static Cuenta CreateCuenta(int idCuenta, string balance)
         {
-            Cuentas cuentas = new Cuentas();
-            cuentas.IdCuenta = idCuenta;
-            cuentas.Balance = balance;
-            return cuentas;
+            Cuenta cuenta = new Cuenta();
+            cuenta.IdCuenta = idCuenta;
+            cuenta.Balance = balance;
+            return cuenta;
         }
         /// <summary>
         /// There are no comments for Property IdCuenta in the schema.
@@ -559,15 +442,15 @@ namespace Gestioname.Infrastructure.Model
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public Clientes Clientes
+        public Cliente Clientes
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Clientes>("Gestioname.Model.FK_Cuentas_Clientes", "Clientes").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Cliente>("Gestioname.Model.FK_Cuentas_Clientes", "Clientes").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Clientes>("Gestioname.Model.FK_Cuentas_Clientes", "Clientes").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Cliente>("Gestioname.Model.FK_Cuentas_Clientes", "Clientes").Value = value;
             }
         }
         /// <summary>
@@ -575,17 +458,17 @@ namespace Gestioname.Infrastructure.Model
         /// </summary>
         [global::System.ComponentModel.BrowsableAttribute(false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Data.Objects.DataClasses.EntityReference<Clientes> ClientesReference
+        public global::System.Data.Objects.DataClasses.EntityReference<Cliente> ClientesReference
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Clientes>("Gestioname.Model.FK_Cuentas_Clientes", "Clientes");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Cliente>("Gestioname.Model.FK_Cuentas_Clientes", "Clientes");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<Clientes>("Gestioname.Model.FK_Cuentas_Clientes", "Clientes", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<Cliente>("Gestioname.Model.FK_Cuentas_Clientes", "Clientes", value);
                 }
             }
         }
@@ -596,45 +479,48 @@ namespace Gestioname.Infrastructure.Model
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Data.Objects.DataClasses.EntityCollection<Transacciones> Transacciones
+        public global::System.Data.Objects.DataClasses.EntityCollection<Transaccion> Transacciones
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<Transacciones>("Gestioname.Model.FK_Transacciones_Cuentas", "Transacciones");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<Transaccion>("Gestioname.Model.FK_Transacciones_Cuentas", "Transacciones");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<Transacciones>("Gestioname.Model.FK_Transacciones_Cuentas", "Transacciones", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<Transaccion>("Gestioname.Model.FK_Transacciones_Cuentas", "Transacciones", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for Gestioname.Model.Pagos in the schema.
+    /// There are no comments for Gestioname.Model.Pago in the schema.
     /// </summary>
     /// <KeyProperties>
     /// IdPago
+    /// IdTransaccion
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="Gestioname.Model", Name="Pagos")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="Gestioname.Model", Name="Pago")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
-    public partial class Pagos : global::System.Data.Objects.DataClasses.EntityObject
+    public partial class Pago : global::System.Data.Objects.DataClasses.EntityObject
     {
         /// <summary>
-        /// Create a new Pagos object.
+        /// Create a new Pago object.
         /// </summary>
         /// <param name="idPago">Initial value of IdPago.</param>
+        /// <param name="idTransaccion">Initial value of IdTransaccion.</param>
         /// <param name="tipoPago">Initial value of TipoPago.</param>
         /// <param name="monto">Initial value of Monto.</param>
-        public static Pagos CreatePagos(int idPago, string tipoPago, string monto)
+        public static Pago CreatePago(int idPago, int idTransaccion, string tipoPago, string monto)
         {
-            Pagos pagos = new Pagos();
-            pagos.IdPago = idPago;
-            pagos.TipoPago = tipoPago;
-            pagos.Monto = monto;
-            return pagos;
+            Pago pago = new Pago();
+            pago.IdPago = idPago;
+            pago.IdTransaccion = idTransaccion;
+            pago.TipoPago = tipoPago;
+            pago.Monto = monto;
+            return pago;
         }
         /// <summary>
         /// There are no comments for Property IdPago in the schema.
@@ -659,6 +545,29 @@ namespace Gestioname.Infrastructure.Model
         private int _IdPago;
         partial void OnIdPagoChanging(int value);
         partial void OnIdPagoChanged();
+        /// <summary>
+        /// There are no comments for Property IdTransaccion in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdTransaccion
+        {
+            get
+            {
+                return this._IdTransaccion;
+            }
+            set
+            {
+                this.OnIdTransaccionChanging(value);
+                this.ReportPropertyChanging("IdTransaccion");
+                this._IdTransaccion = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("IdTransaccion");
+                this.OnIdTransaccionChanged();
+            }
+        }
+        private int _IdTransaccion;
+        partial void OnIdTransaccionChanging(int value);
+        partial void OnIdTransaccionChanged();
         /// <summary>
         /// There are no comments for Property TipoPago in the schema.
         /// </summary>
@@ -781,15 +690,15 @@ namespace Gestioname.Infrastructure.Model
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public Transacciones Transacciones
+        public Transaccion Transacciones
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Transacciones>("Gestioname.Model.FK_Pagos_Transacciones", "Transacciones").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Transaccion>("Gestioname.Model.FK_Pagos_Transacciones", "Transacciones").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Transacciones>("Gestioname.Model.FK_Pagos_Transacciones", "Transacciones").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Transaccion>("Gestioname.Model.FK_Pagos_Transacciones", "Transacciones").Value = value;
             }
         }
         /// <summary>
@@ -797,43 +706,43 @@ namespace Gestioname.Infrastructure.Model
         /// </summary>
         [global::System.ComponentModel.BrowsableAttribute(false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Data.Objects.DataClasses.EntityReference<Transacciones> TransaccionesReference
+        public global::System.Data.Objects.DataClasses.EntityReference<Transaccion> TransaccionesReference
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Transacciones>("Gestioname.Model.FK_Pagos_Transacciones", "Transacciones");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Transaccion>("Gestioname.Model.FK_Pagos_Transacciones", "Transacciones");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<Transacciones>("Gestioname.Model.FK_Pagos_Transacciones", "Transacciones", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<Transaccion>("Gestioname.Model.FK_Pagos_Transacciones", "Transacciones", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for Gestioname.Model.TiposTransacciones in the schema.
+    /// There are no comments for Gestioname.Model.TipoTransaccion in the schema.
     /// </summary>
     /// <KeyProperties>
     /// IdTipoTransaccion
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="Gestioname.Model", Name="TiposTransacciones")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="Gestioname.Model", Name="TipoTransaccion")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
-    public partial class TiposTransacciones : global::System.Data.Objects.DataClasses.EntityObject
+    public partial class TipoTransaccion : global::System.Data.Objects.DataClasses.EntityObject
     {
         /// <summary>
-        /// Create a new TiposTransacciones object.
+        /// Create a new TipoTransaccion object.
         /// </summary>
         /// <param name="idTipoTransaccion">Initial value of IdTipoTransaccion.</param>
         /// <param name="tipoTransacción">Initial value of TipoTransacción.</param>
-        public static TiposTransacciones CreateTiposTransacciones(int idTipoTransaccion, string tipoTransacción)
+        public static TipoTransaccion CreateTipoTransaccion(int idTipoTransaccion, string tipoTransacción)
         {
-            TiposTransacciones tiposTransacciones = new TiposTransacciones();
-            tiposTransacciones.IdTipoTransaccion = idTipoTransaccion;
-            tiposTransacciones.TipoTransacción = tipoTransacción;
-            return tiposTransacciones;
+            TipoTransaccion tipoTransaccion = new TipoTransaccion();
+            tipoTransaccion.IdTipoTransaccion = idTipoTransaccion;
+            tipoTransaccion.TipoTransacción = tipoTransacción;
+            return tipoTransaccion;
         }
         /// <summary>
         /// There are no comments for Property IdTipoTransaccion in the schema.
@@ -911,47 +820,47 @@ namespace Gestioname.Infrastructure.Model
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Data.Objects.DataClasses.EntityCollection<Transacciones> Transacciones
+        public global::System.Data.Objects.DataClasses.EntityCollection<Transaccion> Transacciones
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<Transacciones>("Gestioname.Model.FK_Transacciones_TiposTransacciones", "Transacciones");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<Transaccion>("Gestioname.Model.FK_Transacciones_TiposTransacciones", "Transacciones");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<Transacciones>("Gestioname.Model.FK_Transacciones_TiposTransacciones", "Transacciones", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<Transaccion>("Gestioname.Model.FK_Transacciones_TiposTransacciones", "Transacciones", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for Gestioname.Model.Transacciones in the schema.
+    /// There are no comments for Gestioname.Model.Transaccion in the schema.
     /// </summary>
     /// <KeyProperties>
     /// IdTransaccion
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="Gestioname.Model", Name="Transacciones")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="Gestioname.Model", Name="Transaccion")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
-    public partial class Transacciones : global::System.Data.Objects.DataClasses.EntityObject
+    public partial class Transaccion : global::System.Data.Objects.DataClasses.EntityObject
     {
         /// <summary>
-        /// Create a new Transacciones object.
+        /// Create a new Transaccion object.
         /// </summary>
         /// <param name="idTransaccion">Initial value of IdTransaccion.</param>
         /// <param name="fecha">Initial value of Fecha.</param>
         /// <param name="monto">Initial value of Monto.</param>
         /// <param name="balance">Initial value of Balance.</param>
-        public static Transacciones CreateTransacciones(int idTransaccion, global::System.DateTime fecha, string monto, string balance)
+        public static Transaccion CreateTransaccion(int idTransaccion, global::System.DateTime fecha, string monto, string balance)
         {
-            Transacciones transacciones = new Transacciones();
-            transacciones.IdTransaccion = idTransaccion;
-            transacciones.Fecha = fecha;
-            transacciones.Monto = monto;
-            transacciones.Balance = balance;
-            return transacciones;
+            Transaccion transaccion = new Transaccion();
+            transaccion.IdTransaccion = idTransaccion;
+            transaccion.Fecha = fecha;
+            transaccion.Monto = monto;
+            transaccion.Balance = balance;
+            return transaccion;
         }
         /// <summary>
         /// There are no comments for Property IdTransaccion in the schema.
@@ -1075,15 +984,15 @@ namespace Gestioname.Infrastructure.Model
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public Cuentas Cuentas
+        public Cuenta Cuentas
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Cuentas>("Gestioname.Model.FK_Transacciones_Cuentas", "Cuentas").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Cuenta>("Gestioname.Model.FK_Transacciones_Cuentas", "Cuentas").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Cuentas>("Gestioname.Model.FK_Transacciones_Cuentas", "Cuentas").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Cuenta>("Gestioname.Model.FK_Transacciones_Cuentas", "Cuentas").Value = value;
             }
         }
         /// <summary>
@@ -1091,17 +1000,17 @@ namespace Gestioname.Infrastructure.Model
         /// </summary>
         [global::System.ComponentModel.BrowsableAttribute(false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Data.Objects.DataClasses.EntityReference<Cuentas> CuentasReference
+        public global::System.Data.Objects.DataClasses.EntityReference<Cuenta> CuentasReference
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Cuentas>("Gestioname.Model.FK_Transacciones_Cuentas", "Cuentas");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Cuenta>("Gestioname.Model.FK_Transacciones_Cuentas", "Cuentas");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<Cuentas>("Gestioname.Model.FK_Transacciones_Cuentas", "Cuentas", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<Cuenta>("Gestioname.Model.FK_Transacciones_Cuentas", "Cuentas", value);
                 }
             }
         }
@@ -1112,17 +1021,17 @@ namespace Gestioname.Infrastructure.Model
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Data.Objects.DataClasses.EntityCollection<Pagos> Pagos
+        public global::System.Data.Objects.DataClasses.EntityCollection<Pago> Pagos
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<Pagos>("Gestioname.Model.FK_Pagos_Transacciones", "Pagos");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<Pago>("Gestioname.Model.FK_Pagos_Transacciones", "Pagos");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<Pagos>("Gestioname.Model.FK_Pagos_Transacciones", "Pagos", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<Pago>("Gestioname.Model.FK_Pagos_Transacciones", "Pagos", value);
                 }
             }
         }
@@ -1133,15 +1042,15 @@ namespace Gestioname.Infrastructure.Model
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public TiposTransacciones TiposTransacciones
+        public TipoTransaccion TiposTransacciones
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<TiposTransacciones>("Gestioname.Model.FK_Transacciones_TiposTransacciones", "TiposTransacciones").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<TipoTransaccion>("Gestioname.Model.FK_Transacciones_TiposTransacciones", "TiposTransacciones").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<TiposTransacciones>("Gestioname.Model.FK_Transacciones_TiposTransacciones", "TiposTransacciones").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<TipoTransaccion>("Gestioname.Model.FK_Transacciones_TiposTransacciones", "TiposTransacciones").Value = value;
             }
         }
         /// <summary>
@@ -1149,17 +1058,17 @@ namespace Gestioname.Infrastructure.Model
         /// </summary>
         [global::System.ComponentModel.BrowsableAttribute(false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Data.Objects.DataClasses.EntityReference<TiposTransacciones> TiposTransaccionesReference
+        public global::System.Data.Objects.DataClasses.EntityReference<TipoTransaccion> TiposTransaccionesReference
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<TiposTransacciones>("Gestioname.Model.FK_Transacciones_TiposTransacciones", "TiposTransacciones");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<TipoTransaccion>("Gestioname.Model.FK_Transacciones_TiposTransacciones", "TiposTransacciones");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<TiposTransacciones>("Gestioname.Model.FK_Transacciones_TiposTransacciones", "TiposTransacciones", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<TipoTransaccion>("Gestioname.Model.FK_Transacciones_TiposTransacciones", "TiposTransacciones", value);
                 }
             }
         }

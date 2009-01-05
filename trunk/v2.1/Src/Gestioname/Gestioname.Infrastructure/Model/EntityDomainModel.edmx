@@ -4,10 +4,9 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Gestioname.Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+    <Schema Namespace="Gestioname.Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
         <EntityContainer Name="GestionameModelStoreContainer">
           <EntitySet Name="Clientes" EntityType="Gestioname.Model.Store.Clientes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Configuracion" EntityType="Gestioname.Model.Store.Configuracion" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Cuentas" EntityType="Gestioname.Model.Store.Cuentas" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Pagos" EntityType="Gestioname.Model.Store.Pagos" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="TiposTransacciones" EntityType="Gestioname.Model.Store.TiposTransacciones" store:Type="Tables" Schema="dbo" />
@@ -41,25 +40,18 @@
           <Property Name="Provincia" Type="varchar" MaxLength="50" />
           <Property Name="CUIT" Type="varchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="Configuracion">
-          <Key>
-            <PropertyRef Name="IdConfiguracion" />
-          </Key>
-          <Property Name="IdConfiguracion" Type="int" Nullable="false" />
-          <Property Name="Clave" Type="varchar" Nullable="false" MaxLength="50" />
-          <Property Name="Valor" Type="varchar" Nullable="false" MaxLength="50" />
-        </EntityType>
         <EntityType Name="Cuentas">
           <Key>
             <PropertyRef Name="IdCuenta" />
           </Key>
           <Property Name="IdCuenta" Type="int" Nullable="false" />
-          <Property Name="IdCliente" Type="int" />
+          <Property Name="IdCliente" Type="int" Nullable="false" />
           <Property Name="Balance" Type="varchar" Nullable="false" MaxLength="50" />
         </EntityType>
         <EntityType Name="Pagos">
           <Key>
             <PropertyRef Name="IdPago" />
+            <PropertyRef Name="IdTransaccion" />
           </Key>
           <Property Name="IdPago" Type="int" Nullable="false" />
           <Property Name="IdTransaccion" Type="int" Nullable="false" />
@@ -90,7 +82,7 @@
           <Property Name="IdPago" Type="int" />
         </EntityType>
         <Association Name="FK_Cuentas_Clientes">
-          <End Role="Clientes" Type="Gestioname.Model.Store.Clientes" Multiplicity="0..1" />
+          <End Role="Clientes" Type="Gestioname.Model.Store.Clientes" Multiplicity="1" />
           <End Role="Cuentas" Type="Gestioname.Model.Store.Cuentas" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Clientes">
@@ -137,18 +129,16 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Gestioname.Model" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
-        <EntityContainer Name="GestionameDBConnectionString">
-          <EntitySet Name="Clientes" EntityType="Gestioname.Model.Clientes" />
-          <EntitySet Name="Configuracion" EntityType="Gestioname.Model.Configuracion" />
-          <EntitySet Name="Cuentas" EntityType="Gestioname.Model.Cuentas" />
-          <EntitySet Name="Pagos" EntityType="Gestioname.Model.Pagos" />
-          <EntitySet Name="TiposTransacciones" EntityType="Gestioname.Model.TiposTransacciones" />
-          <EntitySet Name="Transacciones" EntityType="Gestioname.Model.Transacciones" />
+        <EntityContainer Name="Entities">
+          <EntitySet Name="Clientes" EntityType="Gestioname.Model.Cliente" />
+          <EntitySet Name="Cuentas" EntityType="Gestioname.Model.Cuenta" />
+          <EntitySet Name="Pagos" EntityType="Gestioname.Model.Pago" />
+          <EntitySet Name="TiposTransaccion" EntityType="Gestioname.Model.TipoTransaccion" />
+          <EntitySet Name="Transacciones" EntityType="Gestioname.Model.Transaccion" />
           <AssociationSet Name="FK_Cuentas_Clientes" Association="Gestioname.Model.FK_Cuentas_Clientes">
             <End Role="Clientes" EntitySet="Clientes" />
             <End Role="Cuentas" EntitySet="Cuentas" />
@@ -162,11 +152,11 @@
             <End Role="Pagos" EntitySet="Pagos" />
           </AssociationSet>
           <AssociationSet Name="FK_Transacciones_TiposTransacciones" Association="Gestioname.Model.FK_Transacciones_TiposTransacciones">
-            <End Role="TiposTransacciones" EntitySet="TiposTransacciones" />
+            <End Role="TiposTransacciones" EntitySet="TiposTransaccion" />
             <End Role="Transacciones" EntitySet="Transacciones" />
           </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Clientes">
+        <EntityType Name="Cliente">
           <Key>
             <PropertyRef Name="IdCliente" />
           </Key>
@@ -179,15 +169,7 @@
           <Property Name="CUIT" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="Cuentas" Relationship="Gestioname.Model.FK_Cuentas_Clientes" FromRole="Clientes" ToRole="Cuentas" />
         </EntityType>
-        <EntityType Name="Configuracion">
-          <Key>
-            <PropertyRef Name="IdConfiguracion" />
-          </Key>
-          <Property Name="IdConfiguracion" Type="Int32" Nullable="false" />
-          <Property Name="Clave" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="Valor" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-        </EntityType>
-        <EntityType Name="Cuentas">
+        <EntityType Name="Cuenta">
           <Key>
             <PropertyRef Name="IdCuenta" />
           </Key>
@@ -196,11 +178,13 @@
           <NavigationProperty Name="Clientes" Relationship="Gestioname.Model.FK_Cuentas_Clientes" FromRole="Cuentas" ToRole="Clientes" />
           <NavigationProperty Name="Transacciones" Relationship="Gestioname.Model.FK_Transacciones_Cuentas" FromRole="Cuentas" ToRole="Transacciones" />
         </EntityType>
-        <EntityType Name="Pagos">
+        <EntityType Name="Pago">
           <Key>
             <PropertyRef Name="IdPago" />
+            <PropertyRef Name="IdTransaccion" />
           </Key>
           <Property Name="IdPago" Type="Int32" Nullable="false" />
+          <Property Name="IdTransaccion" Type="Int32" Nullable="false" />
           <Property Name="TipoPago" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="Monto" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="NumeroCheque" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
@@ -208,7 +192,7 @@
           <Property Name="Fecha" Type="DateTime" />
           <NavigationProperty Name="Transacciones" Relationship="Gestioname.Model.FK_Pagos_Transacciones" FromRole="Pagos" ToRole="Transacciones" />
         </EntityType>
-        <EntityType Name="TiposTransacciones">
+        <EntityType Name="TipoTransaccion">
           <Key>
             <PropertyRef Name="IdTipoTransaccion" />
           </Key>
@@ -217,7 +201,7 @@
           <Property Name="Descripcion" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="Transacciones" Relationship="Gestioname.Model.FK_Transacciones_TiposTransacciones" FromRole="TiposTransacciones" ToRole="Transacciones" />
         </EntityType>
-        <EntityType Name="Transacciones">
+        <EntityType Name="Transaccion">
           <Key>
             <PropertyRef Name="IdTransaccion" />
           </Key>
@@ -231,29 +215,37 @@
           <NavigationProperty Name="TiposTransacciones" Relationship="Gestioname.Model.FK_Transacciones_TiposTransacciones" FromRole="Transacciones" ToRole="TiposTransacciones" />
         </EntityType>
         <Association Name="FK_Cuentas_Clientes">
-          <End Role="Clientes" Type="Gestioname.Model.Clientes" Multiplicity="0..1" />
-          <End Role="Cuentas" Type="Gestioname.Model.Cuentas" Multiplicity="*" />
+          <End Role="Clientes" Type="Gestioname.Model.Cliente" Multiplicity="1" />
+          <End Role="Cuentas" Type="Gestioname.Model.Cuenta" Multiplicity="*" />
         </Association>
         <Association Name="FK_Transacciones_Cuentas">
-          <End Role="Cuentas" Type="Gestioname.Model.Cuentas" Multiplicity="1" />
-          <End Role="Transacciones" Type="Gestioname.Model.Transacciones" Multiplicity="*" />
+          <End Role="Cuentas" Type="Gestioname.Model.Cuenta" Multiplicity="1" />
+          <End Role="Transacciones" Type="Gestioname.Model.Transaccion" Multiplicity="*" />
         </Association>
         <Association Name="FK_Pagos_Transacciones">
-          <End Role="Transacciones" Type="Gestioname.Model.Transacciones" Multiplicity="1" />
-          <End Role="Pagos" Type="Gestioname.Model.Pagos" Multiplicity="*" />
+          <End Role="Transacciones" Type="Gestioname.Model.Transaccion" Multiplicity="1" />
+          <End Role="Pagos" Type="Gestioname.Model.Pago" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Transacciones">
+              <PropertyRef Name="IdTransaccion" />
+            </Principal>
+            <Dependent Role="Pagos">
+              <PropertyRef Name="IdTransaccion" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_Transacciones_TiposTransacciones">
-          <End Role="TiposTransacciones" Type="Gestioname.Model.TiposTransacciones" Multiplicity="1" />
-          <End Role="Transacciones" Type="Gestioname.Model.Transacciones" Multiplicity="*" />
+          <End Role="TiposTransacciones" Type="Gestioname.Model.TipoTransaccion" Multiplicity="1" />
+          <End Role="Transacciones" Type="Gestioname.Model.Transaccion" Multiplicity="*" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
-        <EntityContainerMapping StorageEntityContainer="GestionameModelStoreContainer" CdmEntityContainer="GestionameDBConnectionString">
+        <EntityContainerMapping StorageEntityContainer="GestionameModelStoreContainer" CdmEntityContainer="Entities">
           <EntitySetMapping Name="Clientes">
-            <EntityTypeMapping TypeName="IsTypeOf(Gestioname.Model.Clientes)">
+            <EntityTypeMapping TypeName="IsTypeOf(Gestioname.Model.Cliente)">
               <MappingFragment StoreEntitySet="Clientes">
                 <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
@@ -265,17 +257,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Configuracion">
-            <EntityTypeMapping TypeName="IsTypeOf(Gestioname.Model.Configuracion)">
-              <MappingFragment StoreEntitySet="Configuracion">
-                <ScalarProperty Name="IdConfiguracion" ColumnName="IdConfiguracion" />
-                <ScalarProperty Name="Clave" ColumnName="Clave" />
-                <ScalarProperty Name="Valor" ColumnName="Valor" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Cuentas">
-            <EntityTypeMapping TypeName="IsTypeOf(Gestioname.Model.Cuentas)">
+            <EntityTypeMapping TypeName="IsTypeOf(Gestioname.Model.Cuenta)">
               <MappingFragment StoreEntitySet="Cuentas">
                 <ScalarProperty Name="IdCuenta" ColumnName="IdCuenta" />
                 <ScalarProperty Name="Balance" ColumnName="Balance" />
@@ -283,9 +266,10 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Pagos">
-            <EntityTypeMapping TypeName="IsTypeOf(Gestioname.Model.Pagos)">
+            <EntityTypeMapping TypeName="IsTypeOf(Gestioname.Model.Pago)">
               <MappingFragment StoreEntitySet="Pagos">
                 <ScalarProperty Name="IdPago" ColumnName="IdPago" />
+                <ScalarProperty Name="IdTransaccion" ColumnName="IdTransaccion" />
                 <ScalarProperty Name="TipoPago" ColumnName="TipoPago" />
                 <ScalarProperty Name="Monto" ColumnName="Monto" />
                 <ScalarProperty Name="NumeroCheque" ColumnName="NumeroCheque" />
@@ -294,8 +278,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TiposTransacciones">
-            <EntityTypeMapping TypeName="IsTypeOf(Gestioname.Model.TiposTransacciones)">
+          <EntitySetMapping Name="TiposTransaccion">
+            <EntityTypeMapping TypeName="IsTypeOf(Gestioname.Model.TipoTransaccion)">
               <MappingFragment StoreEntitySet="TiposTransacciones">
                 <ScalarProperty Name="IdTipoTransaccion" ColumnName="IdTipoTransaccion" />
                 <ScalarProperty Name="TipoTransacción" ColumnName="TipoTransacción" />
@@ -304,7 +288,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Transacciones">
-            <EntityTypeMapping TypeName="IsTypeOf(Gestioname.Model.Transacciones)">
+            <EntityTypeMapping TypeName="IsTypeOf(Gestioname.Model.Transaccion)">
               <MappingFragment StoreEntitySet="Transacciones">
                 <ScalarProperty Name="IdTransaccion" ColumnName="IdTransaccion" />
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
@@ -321,7 +305,6 @@
             <EndProperty Name="Cuentas">
               <ScalarProperty Name="IdCuenta" ColumnName="IdCuenta" />
             </EndProperty>
-            <Condition ColumnName="IdCliente" IsNull="false" />
           </AssociationSetMapping>
           <AssociationSetMapping Name="FK_Transacciones_Cuentas" TypeName="Gestioname.Model.FK_Transacciones_Cuentas" StoreEntitySet="Transacciones">
             <EndProperty Name="Cuentas">
@@ -337,6 +320,7 @@
             </EndProperty>
             <EndProperty Name="Pagos">
               <ScalarProperty Name="IdPago" ColumnName="IdPago" />
+              <ScalarProperty Name="IdTransaccion" ColumnName="IdTransaccion" />
             </EndProperty>
           </AssociationSetMapping>
           <AssociationSetMapping Name="FK_Transacciones_TiposTransacciones" TypeName="Gestioname.Model.FK_Transacciones_TiposTransacciones" StoreEntitySet="Transacciones">
@@ -366,12 +350,11 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram Name="EntityDomainModel">
-        <EntityTypeShape EntityType="Gestioname.Model.Clientes" Width="1.5" PointX="0.75" PointY="0.875" Height="2.2496956380208335" IsExpanded="true" />
-        <EntityTypeShape EntityType="Gestioname.Model.Configuracion" Width="1.5" PointX="5.75" PointY="4.75" Height="1.4279589843749996" IsExpanded="true" />
-        <EntityTypeShape EntityType="Gestioname.Model.Cuentas" Width="1.5" PointX="3" PointY="1.25" Height="1.5923063151041665" IsExpanded="true" />
-        <EntityTypeShape EntityType="Gestioname.Model.Pagos" Width="1.5" PointX="7.5" PointY="1" Height="2.0853483072916674" IsExpanded="true" />
-        <EntityTypeShape EntityType="Gestioname.Model.TiposTransacciones" Width="1.5" PointX="3" PointY="5.25" Height="1.5923063151041674" IsExpanded="true" />
-        <EntityTypeShape EntityType="Gestioname.Model.Transacciones" Width="1.5" PointX="5.25" PointY="0.875" Height="2.2496956380208335" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gestioname.Model.Cliente" Width="1.5" PointX="0.75" PointY="0.875" Height="2.2496956380208335" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gestioname.Model.Cuenta" Width="1.5" PointX="3" PointY="1.25" Height="1.5923063151041665" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gestioname.Model.Pago" Width="1.5" PointX="7.5" PointY="0.875" Height="2.2496956380208335" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gestioname.Model.TipoTransaccion" Width="1.5" PointX="3" PointY="5.25" Height="1.5923063151041674" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gestioname.Model.Transaccion" Width="1.5" PointX="5.25" PointY="0.875" Height="2.2496956380208335" IsExpanded="true" />
         <AssociationConnector Association="Gestioname.Model.FK_Cuentas_Clientes" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="2.0461531575520833" />
           <ConnectorPoint PointX="3" PointY="2.0461531575520833" /></AssociationConnector>
@@ -379,11 +362,11 @@
           <ConnectorPoint PointX="4.5" PointY="2.0461531575520833" />
           <ConnectorPoint PointX="5.25" PointY="2.0461531575520833" /></AssociationConnector>
         <AssociationConnector Association="Gestioname.Model.FK_Pagos_Transacciones" ManuallyRouted="false">
-          <ConnectorPoint PointX="6.75" PointY="2.0426741536458337" />
-          <ConnectorPoint PointX="7.5" PointY="2.0426741536458337" /></AssociationConnector>
+          <ConnectorPoint PointX="6.75" PointY="1.9998478190104168" />
+          <ConnectorPoint PointX="7.5" PointY="1.9998478190104168" /></AssociationConnector>
         <AssociationConnector Association="Gestioname.Model.FK_Transacciones_TiposTransacciones" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="6.5413826497395835" />
-          <ConnectorPoint PointX="5.46875" PointY="6.5413826497395835" />
-          <ConnectorPoint PointX="5.46875" PointY="3.1246956380208335" /></AssociationConnector></Diagram></edmx:Diagrams>
+          <ConnectorPoint PointX="4.5" PointY="6.0461531575520837" />
+          <ConnectorPoint PointX="6" PointY="6.0461531575520837" />
+          <ConnectorPoint PointX="6" PointY="3.1246956380208335" /></AssociationConnector></Diagram></edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>
