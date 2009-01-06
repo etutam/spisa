@@ -60,7 +60,7 @@ namespace Gestioname.Framework.ObjectContextManager
         {
             if (_currentScope != null && !_currentScope._isDisposed)
                 throw new InvalidOperationException("ObjectContextScope instances cannot be nested.");
-
+            
             _saveAllChangesAtEndOfScope = saveAllChangesAtEndOfScope;
             _objectContext = new T();
             _isDisposed = false;

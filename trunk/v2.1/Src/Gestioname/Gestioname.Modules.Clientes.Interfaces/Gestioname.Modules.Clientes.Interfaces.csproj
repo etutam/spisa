@@ -48,11 +48,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IClientesManager.cs" />
-    <Compile Include="ICuentasManager.cs" />
+    <Compile Include="IClientesFacade.cs" />
+    <Compile Include="ICuentasFacade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Gestioname.Framework\Gestioname.Framework.csproj">
+      <Project>{A6001C18-3A4F-4621-9C19-51ABF8E7C03C}</Project>
+      <Name>Gestioname.Framework</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Gestioname.Infrastructure\Gestioname.Infrastructure.csproj">
       <Project>{6E4C5F29-05F2-46C8-8AE4-7A1B96685B8C}</Project>
       <Name>Gestioname.Infrastructure</Name>

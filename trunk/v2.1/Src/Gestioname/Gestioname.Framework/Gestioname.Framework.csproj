@@ -32,7 +32,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Entity">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Xml.Linq">
@@ -45,7 +49,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseClasses\FacadeBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gestioname.Framework.ObjectContextManager\Gestioname.Framework.ObjectContextManager.csproj">
+      <Project>{5C8A4AF3-73F6-4C4B-B547-795EDC1AA77C}</Project>
+      <Name>Gestioname.Framework.ObjectContextManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gestioname.Infrastructure\Gestioname.Infrastructure.csproj">
+      <Project>{6E4C5F29-05F2-46C8-8AE4-7A1B96685B8C}</Project>
+      <Name>Gestioname.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

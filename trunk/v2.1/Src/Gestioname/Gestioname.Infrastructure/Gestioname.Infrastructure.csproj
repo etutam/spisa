@@ -55,26 +55,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseClasses\FacadeBase.cs" />
-    <Compile Include="Model\EntityDomainModel.Designer.cs">
+    <Compile Include="GestionameContextExtensions.cs" />
+    <Compile Include="Model\GestionameContext.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EntityDomainModel.edmx</DependentUpon>
+      <DependentUpon>GestionameContext.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <EntityDeploy Include="Model\EntityDomainModel.edmx">
+    <EntityDeploy Include="Model\GestionameContext.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>EntityDomainModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>GestionameContext.Designer.cs</LastGenOutput>
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Gestioname.Framework.ObjectContextManager\Gestioname.Framework.ObjectContextManager.csproj">
-      <Project>{5C8A4AF3-73F6-4C4B-B547-795EDC1AA77C}</Project>
-      <Name>Gestioname.Framework.ObjectContextManager</Name>
+    <ProjectReference Include="..\EFExtensions\EFExtensions.csproj">
+      <Project>{3B7B86B0-9ABB-44C0-A10D-1373CB2EA9B1}</Project>
+      <Name>EFExtensions</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BaseClasses\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

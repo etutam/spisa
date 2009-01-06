@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Gestioname.Infrastructure.Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityContainer Name="GestionameInfrastructureModelStoreContainer">
+          <EntitySet Name="Clientes" EntityType="Gestioname.Infrastructure.Model.Store.Clientes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Cuentas" EntityType="Gestioname.Infrastructure.Model.Store.Cuentas" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Pagos" EntityType="Gestioname.Infrastructure.Model.Store.Pagos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TiposTransacciones" EntityType="Gestioname.Infrastructure.Model.Store.TiposTransacciones" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Transacciones" EntityType="Gestioname.Infrastructure.Model.Store.Transacciones" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Cuentas_Clientes" Association="Gestioname.Infrastructure.Model.Store.FK_Cuentas_Clientes">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="Cuentas" EntitySet="Cuentas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pagos_Transacciones" Association="Gestioname.Infrastructure.Model.Store.FK_Pagos_Transacciones">
+            <End Role="Transacciones" EntitySet="Transacciones" />
+            <End Role="Pagos" EntitySet="Pagos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transacciones_Cuentas" Association="Gestioname.Infrastructure.Model.Store.FK_Transacciones_Cuentas">
+            <End Role="Cuentas" EntitySet="Cuentas" />
+            <End Role="Transacciones" EntitySet="Transacciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transacciones_TiposTransacciones" Association="Gestioname.Infrastructure.Model.Store.FK_Transacciones_TiposTransacciones">
+            <End Role="TiposTransacciones" EntitySet="TiposTransacciones" />
+            <End Role="Transacciones" EntitySet="Transacciones" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Clientes">
+          <Key>
+            <PropertyRef Name="IdCliente" />
+          </Key>
+          <Property Name="IdCliente" Type="int" Nullable="false" />
+          <Property Name="Codigo" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="RazonSocial" Type="varchar" MaxLength="200" />
+          <Property Name="Domicilio" Type="varchar" MaxLength="50" />
+          <Property Name="Localidad" Type="varchar" MaxLength="50" />
+          <Property Name="Provincia" Type="varchar" MaxLength="50" />
+          <Property Name="CUIT" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Cuentas">
+          <Key>
+            <PropertyRef Name="IdCuenta" />
+          </Key>
+          <Property Name="IdCuenta" Type="int" Nullable="false" />
+          <Property Name="IdCliente" Type="int" />
+          <Property Name="Balance" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Pagos">
+          <Key>
+            <PropertyRef Name="IdPago" />
+          </Key>
+          <Property Name="IdPago" Type="int" Nullable="false" />
+          <Property Name="IdTransaccion" Type="int" Nullable="false" />
+          <Property Name="TipoPago" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Monto" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="NumeroCheque" Type="varchar" MaxLength="50" />
+          <Property Name="Banco" Type="varchar" MaxLength="50" />
+          <Property Name="Fecha" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TiposTransacciones">
+          <Key>
+            <PropertyRef Name="IdTipoTransaccion" />
+          </Key>
+          <Property Name="IdTipoTransaccion" Type="int" Nullable="false" />
+          <Property Name="TipoTransacción" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Transacciones">
+          <Key>
+            <PropertyRef Name="IdTransaccion" />
+          </Key>
+          <Property Name="IdTransaccion" Type="int" Nullable="false" />
+          <Property Name="IdCuenta" Type="int" Nullable="false" />
+          <Property Name="IdTipoTransaccion" Type="int" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+          <Property Name="Monto" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Balance" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="IdPago" Type="int" />
+        </EntityType>
+        <Association Name="FK_Cuentas_Clientes">
+          <End Role="Clientes" Type="Gestioname.Infrastructure.Model.Store.Clientes" Multiplicity="0..1" />
+          <End Role="Cuentas" Type="Gestioname.Infrastructure.Model.Store.Cuentas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="IdCliente" />
+            </Principal>
+            <Dependent Role="Cuentas">
+              <PropertyRef Name="IdCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pagos_Transacciones">
+          <End Role="Transacciones" Type="Gestioname.Infrastructure.Model.Store.Transacciones" Multiplicity="1" />
+          <End Role="Pagos" Type="Gestioname.Infrastructure.Model.Store.Pagos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Transacciones">
+              <PropertyRef Name="IdTransaccion" />
+            </Principal>
+            <Dependent Role="Pagos">
+              <PropertyRef Name="IdTransaccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transacciones_Cuentas">
+          <End Role="Cuentas" Type="Gestioname.Infrastructure.Model.Store.Cuentas" Multiplicity="1" />
+          <End Role="Transacciones" Type="Gestioname.Infrastructure.Model.Store.Transacciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cuentas">
+              <PropertyRef Name="IdCuenta" />
+            </Principal>
+            <Dependent Role="Transacciones">
+              <PropertyRef Name="IdCuenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transacciones_TiposTransacciones">
+          <End Role="TiposTransacciones" Type="Gestioname.Infrastructure.Model.Store.TiposTransacciones" Multiplicity="1" />
+          <End Role="Transacciones" Type="Gestioname.Infrastructure.Model.Store.Transacciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposTransacciones">
+              <PropertyRef Name="IdTipoTransaccion" />
+            </Principal>
+            <Dependent Role="Transacciones">
+              <PropertyRef Name="IdTipoTransaccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Gestioname.Infrastructure.Model" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityContainer Name="GestionameContext">
+          <EntitySet Name="ClienteSet" EntityType="Gestioname.Infrastructure.Model.Cliente" />
+          <EntitySet Name="CuentaSet" EntityType="Gestioname.Infrastructure.Model.Cuenta" />
+          <EntitySet Name="PagoSet" EntityType="Gestioname.Infrastructure.Model.Pago" />
+          <EntitySet Name="TipoTransaccionSet" EntityType="Gestioname.Infrastructure.Model.TipoTransaccion" />
+          <EntitySet Name="TransaccionSet" EntityType="Gestioname.Infrastructure.Model.Transaccion" />
+          <AssociationSet Name="FK_Cuentas_Clientes" Association="Gestioname.Infrastructure.Model.FK_Cuentas_Clientes">
+            <End Role="Clientes" EntitySet="ClienteSet" />
+            <End Role="Cuentas" EntitySet="CuentaSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transacciones_Cuentas" Association="Gestioname.Infrastructure.Model.FK_Transacciones_Cuentas">
+            <End Role="Cuentas" EntitySet="CuentaSet" />
+            <End Role="Transacciones" EntitySet="TransaccionSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pagos_Transacciones" Association="Gestioname.Infrastructure.Model.FK_Pagos_Transacciones">
+            <End Role="Transacciones" EntitySet="TransaccionSet" />
+            <End Role="Pagos" EntitySet="PagoSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transacciones_TiposTransacciones" Association="Gestioname.Infrastructure.Model.FK_Transacciones_TiposTransacciones">
+            <End Role="TiposTransacciones" EntitySet="TipoTransaccionSet" />
+            <End Role="Transacciones" EntitySet="TransaccionSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="IdCliente" />
+          </Key>
+          <Property Name="IdCliente" Type="Int32" Nullable="false" />
+          <Property Name="Codigo" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="RazonSocial" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="Domicilio" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Localidad" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Provincia" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CUIT" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Cuentas" Relationship="Gestioname.Infrastructure.Model.FK_Cuentas_Clientes" FromRole="Clientes" ToRole="Cuentas" />
+        </EntityType>
+        <EntityType Name="Cuenta">
+          <Key>
+            <PropertyRef Name="IdCuenta" />
+          </Key>
+          <Property Name="IdCuenta" Type="Int32" Nullable="false" />
+          <Property Name="Balance" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Cliente" Relationship="Gestioname.Infrastructure.Model.FK_Cuentas_Clientes" FromRole="Cuentas" ToRole="Clientes" />
+          <NavigationProperty Name="Transacciones" Relationship="Gestioname.Infrastructure.Model.FK_Transacciones_Cuentas" FromRole="Cuentas" ToRole="Transacciones" />
+        </EntityType>
+        <EntityType Name="Pago">
+          <Key>
+            <PropertyRef Name="IdPago" />
+          </Key>
+          <Property Name="IdPago" Type="Int32" Nullable="false" />
+          <Property Name="TipoPago" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Monto" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="NumeroCheque" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Banco" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Fecha" Type="DateTime" />
+          <NavigationProperty Name="Transaccion" Relationship="Gestioname.Infrastructure.Model.FK_Pagos_Transacciones" FromRole="Pagos" ToRole="Transacciones" />
+        </EntityType>
+        <EntityType Name="TipoTransaccion">
+          <Key>
+            <PropertyRef Name="IdTipoTransaccion" />
+          </Key>
+          <Property Name="IdTipoTransaccion" Type="Int32" Nullable="false" />
+          <Property Name="TipoTransacción" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Transacciones" Relationship="Gestioname.Infrastructure.Model.FK_Transacciones_TiposTransacciones" FromRole="TiposTransacciones" ToRole="Transacciones" />
+        </EntityType>
+        <EntityType Name="Transaccion">
+          <Key>
+            <PropertyRef Name="IdTransaccion" />
+          </Key>
+          <Property Name="IdTransaccion" Type="Int32" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" />
+          <Property Name="Monto" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Balance" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IdPago" Type="Int32" />
+          <NavigationProperty Name="Cuenta" Relationship="Gestioname.Infrastructure.Model.FK_Transacciones_Cuentas" FromRole="Transacciones" ToRole="Cuentas" />
+          <NavigationProperty Name="Pagos" Relationship="Gestioname.Infrastructure.Model.FK_Pagos_Transacciones" FromRole="Transacciones" ToRole="Pagos" />
+          <NavigationProperty Name="TiposTransacciones" Relationship="Gestioname.Infrastructure.Model.FK_Transacciones_TiposTransacciones" FromRole="Transacciones" ToRole="TiposTransacciones" />
+        </EntityType>
+        <Association Name="FK_Cuentas_Clientes">
+          <End Role="Clientes" Type="Gestioname.Infrastructure.Model.Cliente" Multiplicity="0..1" />
+          <End Role="Cuentas" Type="Gestioname.Infrastructure.Model.Cuenta" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Transacciones_Cuentas">
+          <End Role="Cuentas" Type="Gestioname.Infrastructure.Model.Cuenta" Multiplicity="1" />
+          <End Role="Transacciones" Type="Gestioname.Infrastructure.Model.Transaccion" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Pagos_Transacciones">
+          <End Role="Transacciones" Type="Gestioname.Infrastructure.Model.Transaccion" Multiplicity="1" />
+          <End Role="Pagos" Type="Gestioname.Infrastructure.Model.Pago" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Transacciones_TiposTransacciones">
+          <End Role="TiposTransacciones" Type="Gestioname.Infrastructure.Model.TipoTransaccion" Multiplicity="1" />
+          <End Role="Transacciones" Type="Gestioname.Infrastructure.Model.Transaccion" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="GestionameInfrastructureModelStoreContainer" CdmEntityContainer="GestionameContext">
+          <EntitySetMapping Name="ClienteSet">
+            <EntityTypeMapping TypeName="IsTypeOf(Gestioname.Infrastructure.Model.Cliente)">
+              <MappingFragment StoreEntitySet="Clientes">
+                <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+                <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
+                <ScalarProperty Name="Localidad" ColumnName="Localidad" />
+                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+                <ScalarProperty Name="CUIT" ColumnName="CUIT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CuentaSet">
+            <EntityTypeMapping TypeName="IsTypeOf(Gestioname.Infrastructure.Model.Cuenta)">
+              <MappingFragment StoreEntitySet="Cuentas">
+                <ScalarProperty Name="IdCuenta" ColumnName="IdCuenta" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PagoSet">
+            <EntityTypeMapping TypeName="IsTypeOf(Gestioname.Infrastructure.Model.Pago)">
+              <MappingFragment StoreEntitySet="Pagos">
+                <ScalarProperty Name="IdPago" ColumnName="IdPago" />
+                <ScalarProperty Name="TipoPago" ColumnName="TipoPago" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="NumeroCheque" ColumnName="NumeroCheque" />
+                <ScalarProperty Name="Banco" ColumnName="Banco" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoTransaccionSet">
+            <EntityTypeMapping TypeName="IsTypeOf(Gestioname.Infrastructure.Model.TipoTransaccion)">
+              <MappingFragment StoreEntitySet="TiposTransacciones">
+                <ScalarProperty Name="IdTipoTransaccion" ColumnName="IdTipoTransaccion" />
+                <ScalarProperty Name="TipoTransacción" ColumnName="TipoTransacción" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TransaccionSet">
+            <EntityTypeMapping TypeName="IsTypeOf(Gestioname.Infrastructure.Model.Transaccion)">
+              <MappingFragment StoreEntitySet="Transacciones">
+                <ScalarProperty Name="IdTransaccion" ColumnName="IdTransaccion" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="IdPago" ColumnName="IdPago" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_Cuentas_Clientes" TypeName="Gestioname.Infrastructure.Model.FK_Cuentas_Clientes" StoreEntitySet="Cuentas">
+            <EndProperty Name="Clientes">
+              <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+            </EndProperty>
+            <EndProperty Name="Cuentas">
+              <ScalarProperty Name="IdCuenta" ColumnName="IdCuenta" />
+            </EndProperty>
+            <Condition ColumnName="IdCliente" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Transacciones_Cuentas" TypeName="Gestioname.Infrastructure.Model.FK_Transacciones_Cuentas" StoreEntitySet="Transacciones">
+            <EndProperty Name="Cuentas">
+              <ScalarProperty Name="IdCuenta" ColumnName="IdCuenta" />
+            </EndProperty>
+            <EndProperty Name="Transacciones">
+              <ScalarProperty Name="IdTransaccion" ColumnName="IdTransaccion" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Pagos_Transacciones" TypeName="Gestioname.Infrastructure.Model.FK_Pagos_Transacciones" StoreEntitySet="Pagos">
+            <EndProperty Name="Transacciones">
+              <ScalarProperty Name="IdTransaccion" ColumnName="IdTransaccion" />
+            </EndProperty>
+            <EndProperty Name="Pagos">
+              <ScalarProperty Name="IdPago" ColumnName="IdPago" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Transacciones_TiposTransacciones" TypeName="Gestioname.Infrastructure.Model.FK_Transacciones_TiposTransacciones" StoreEntitySet="Transacciones">
+            <EndProperty Name="TiposTransacciones">
+              <ScalarProperty Name="IdTipoTransaccion" ColumnName="IdTipoTransaccion" />
+            </EndProperty>
+            <EndProperty Name="Transacciones">
+              <ScalarProperty Name="IdTransaccion" ColumnName="IdTransaccion" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="GestionameContext">
+        <EntityTypeShape EntityType="Gestioname.Infrastructure.Model.Cliente" Width="1.5" PointX="0.75" PointY="0.875" Height="2.2496956380208335" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gestioname.Infrastructure.Model.Cuenta" Width="1.5" PointX="3" PointY="1.25" Height="1.5923063151041665" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gestioname.Infrastructure.Model.Pago" Width="1.5" PointX="7.5" PointY="1" Height="2.0853483072916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gestioname.Infrastructure.Model.TipoTransaccion" Width="1.5" PointX="3" PointY="5.25" Height="1.5923063151041674" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gestioname.Infrastructure.Model.Transaccion" Width="1.5" PointX="5.25" PointY="0.875" Height="2.2496956380208335" IsExpanded="true" />
+        <AssociationConnector Association="Gestioname.Infrastructure.Model.FK_Cuentas_Clientes" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="2.0461531575520833" />
+          <ConnectorPoint PointX="3" PointY="2.0461531575520833" /></AssociationConnector>
+        <AssociationConnector Association="Gestioname.Infrastructure.Model.FK_Transacciones_Cuentas" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="2.0461531575520833" />
+          <ConnectorPoint PointX="5.25" PointY="2.0461531575520833" /></AssociationConnector>
+        <AssociationConnector Association="Gestioname.Infrastructure.Model.FK_Pagos_Transacciones" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="2.0426741536458337" />
+          <ConnectorPoint PointX="7.5" PointY="2.0426741536458337" /></AssociationConnector>
+        <AssociationConnector Association="Gestioname.Infrastructure.Model.FK_Transacciones_TiposTransacciones" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="6.0461531575520837" />
+          <ConnectorPoint PointX="6" PointY="6.0461531575520837" />
+          <ConnectorPoint PointX="6" PointY="3.1246956380208335" /></AssociationConnector></Diagram></edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

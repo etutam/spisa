@@ -9,29 +9,28 @@ using System.Text;
 
 namespace Gestioname.Framework.ObjectContextManager
 {
-    /// <summary>
-    /// Maintains an ObjectContext instance in static field. This instance is then
-    /// shared during the lifespan of the AppDomain.
-    /// </summary>
-    public sealed class StaticObjectContextManager<T> : ObjectContextManager<T> where T : ObjectContext, new()
+    public sealed class ScopedObjectContextManager<T> : ObjectContextManager<T> where T : ObjectContext, new()
     {
-        private static T _objectContext;
-        private static object _lockObject = new object();
+        private T _objectContext;
 
         /// <summary>
-        /// Returns a shared NorthwindObjectContext instance.
+        /// Returns the ObjectContext instance that belongs to the current ObjectContextScope.
+        /// If currently no ObjectContextScope exists, a local instance of an ObjectContext 
+        /// class is returned.
         /// </summary>
         public override T ObjectContext
         {
             get
             {
-                lock (_lockObject)
+                if (ObjectContextScope<T>.CurrentObjectContext != null)
+                    return ObjectContextScope<T>.CurrentObjectContext;
+                else
                 {
                     if (_objectContext == null)
                         _objectContext = new T();
-                }
 
-                return _objectContext;
+                    return _objectContext;
+                }
             }
         }
     }
