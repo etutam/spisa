@@ -28,6 +28,8 @@ namespace Gestioname.Modules.Clientes.BusinessComponents
             }
         }
 
+        #region CRUD Cliente
+
         public void AddCliente(Cliente cliente)
         {
             try
@@ -38,6 +40,18 @@ namespace Gestioname.Modules.Clientes.BusinessComponents
             catch (Exception ex)
             {
                 throw ex;                
+            }
+        }
+
+        public void AddTransaccion(Transaccion transaccion)
+        {
+            try
+            {
+                
+            }
+            catch (Exception ex)
+            {
+
             }
         }
 
@@ -52,14 +66,18 @@ namespace Gestioname.Modules.Clientes.BusinessComponents
             throw new NotImplementedException();
         }
 
+        #endregion
+
+
+
+        #region Queries Cliente
         public Cliente GetClienteById(int id)
         {
             var q = from c in Context.ClienteSet
                          where c.IdCliente == id
                          select c;
 
-            var client = q.First();
-            return client;
+            return q.FirstOrDefault();
         }
 
         public Cliente GetClienteByCodigo(string codigo)
@@ -68,8 +86,7 @@ namespace Gestioname.Modules.Clientes.BusinessComponents
                     where c.Codigo.Equals(codigo)
                     select c;
 
-            var client = q.First();
-            return client;
+            return q.FirstOrDefault();
         }
 
         public List<Cliente> FindClientesByRazonSocial(string razonSocial)
@@ -78,12 +95,10 @@ namespace Gestioname.Modules.Clientes.BusinessComponents
                     where c.RazonSocial.Contains(razonSocial)
                     select c;
 
-            var client = q.ToList();
-            return client;
+            return q.ToList();
         }
-
         #endregion
 
-       
+        #endregion
     }
 }

@@ -18,11 +18,8 @@ namespace Gestioname.Modules.Clientes.Interfaces
         #endregion
         
         #region Methods
-        ///// <summary>
-        ///// Agrega una Cuenta para administrar los movimientos de compras/pagos del cliente 
-        ///// </summary>
-        ///// <param name="cuenta"></param>
-        //void AddCuenta(Cuenta cuenta);
+
+        #region Clientes
         /// <summary>
         /// Agrega un cliente a la base de datos
         /// </summary>
@@ -55,6 +52,20 @@ namespace Gestioname.Modules.Clientes.Interfaces
         /// </summary>
         /// <returns>Listado de Instancias de Clientes</returns>
         List<Cliente> FindClientesByRazonSocial(string razonSocial);
+        #endregion 
+
+        #region Transacciones
+        /// <summary>
+        /// Agrega una nueva transaccion al cliente
+        /// </summary>
+        /// <param name="transaccion"></param>
+        void AddTransaccion(Transaccion transaccion);
+        /// <summary>
+        /// Elimina una transaccion del cliente
+        /// </summary>
+        /// <param name="transaccion"></param>
+        void DeleteTransaccion(Transaccion transaccion);
+        #endregion 
         #endregion
     }
 }
