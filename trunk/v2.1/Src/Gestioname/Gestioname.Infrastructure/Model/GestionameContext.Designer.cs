@@ -15,7 +15,7 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("Gestioname.Infrastructure.Model", "FK_Transacciones_TiposTransacciones", "TiposTransacciones", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Gestioname.Infrastructure.Model.TipoTransaccion), "Transacciones", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Gestioname.Infrastructure.Model.Transaccion))]
 
 // Original file name:
-// Generation date: 08/01/2009 03:59:55 p.m.
+// Generation date: 12/01/2009 11:45:55 a.m.
 namespace Gestioname.Infrastructure.Model
 {
     
@@ -176,11 +176,16 @@ namespace Gestioname.Infrastructure.Model
         /// </summary>
         /// <param name="idCliente">Initial value of IdCliente.</param>
         /// <param name="codigo">Initial value of Codigo.</param>
-        public static Cliente CreateCliente(int idCliente, string codigo)
+        public static Cliente CreateCliente(int idCliente, string codigo, string cuit, string razonSocial, string domicilio, string localidad, string provincia)
         {
             Cliente cliente = new Cliente();
             cliente.IdCliente = idCliente;
             cliente.Codigo = codigo;
+            cliente.CUIT = cuit;
+            cliente.RazonSocial = razonSocial;
+            cliente.Domicilio = domicilio;
+            cliente.Localidad = localidad;
+            cliente.Provincia = provincia;
             return cliente;
         }
         /// <summary>
@@ -459,13 +464,13 @@ namespace Gestioname.Infrastructure.Model
         partial void OnObservacionesChanging(string value);
         partial void OnObservacionesChanged();
         /// <summary>
-        /// There are no comments for Clientes in the schema.
+        /// There are no comments for Cliente in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("Gestioname.Infrastructure.Model", "FK_Cuentas_Clientes", "Clientes")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public Cliente Clientes
+        public Cliente Cliente
         {
             get
             {
@@ -477,11 +482,11 @@ namespace Gestioname.Infrastructure.Model
             }
         }
         /// <summary>
-        /// There are no comments for Clientes in the schema.
+        /// There are no comments for Cliente in the schema.
         /// </summary>
         [global::System.ComponentModel.BrowsableAttribute(false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Data.Objects.DataClasses.EntityReference<Cliente> ClientesReference
+        public global::System.Data.Objects.DataClasses.EntityReference<Cliente> ClienteReference
         {
             get
             {
@@ -707,13 +712,13 @@ namespace Gestioname.Infrastructure.Model
         partial void OnFechaChanging(global::System.Nullable<global::System.DateTime> value);
         partial void OnFechaChanged();
         /// <summary>
-        /// There are no comments for Transacciones in the schema.
+        /// There are no comments for Transaccion in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("Gestioname.Infrastructure.Model", "FK_Pagos_Transacciones", "Transacciones")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public Transaccion Transacciones
+        public Transaccion Transaccion
         {
             get
             {
@@ -725,11 +730,11 @@ namespace Gestioname.Infrastructure.Model
             }
         }
         /// <summary>
-        /// There are no comments for Transacciones in the schema.
+        /// There are no comments for Transaccion in the schema.
         /// </summary>
         [global::System.ComponentModel.BrowsableAttribute(false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Data.Objects.DataClasses.EntityReference<Transaccion> TransaccionesReference
+        public global::System.Data.Objects.DataClasses.EntityReference<Transaccion> TransaccionReference
         {
             get
             {
@@ -876,13 +881,14 @@ namespace Gestioname.Infrastructure.Model
         /// <param name="fecha">Initial value of Fecha.</param>
         /// <param name="monto">Initial value of Monto.</param>
         /// <param name="balance">Initial value of Balance.</param>
-        public static Transaccion CreateTransaccion(int idTransaccion, global::System.DateTime fecha, string monto, string balance)
+        public static Transaccion CreateTransaccion(int idTransaccion, TipoTransaccion tipoTransaccion, global::System.DateTime fecha, string monto, string balance)
         {
             Transaccion transaccion = new Transaccion();
             transaccion.IdTransaccion = idTransaccion;
             transaccion.Fecha = fecha;
             transaccion.Monto = monto;
             transaccion.Balance = balance;
+            transaccion.TipoTransaccion = tipoTransaccion;
             return transaccion;
         }
         /// <summary>
@@ -1001,13 +1007,13 @@ namespace Gestioname.Infrastructure.Model
         partial void OnIdPagoChanging(global::System.Nullable<int> value);
         partial void OnIdPagoChanged();
         /// <summary>
-        /// There are no comments for Cuentas in the schema.
+        /// There are no comments for Cuenta in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("Gestioname.Infrastructure.Model", "FK_Transacciones_Cuentas", "Cuentas")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public Cuenta Cuentas
+        public Cuenta Cuenta
         {
             get
             {
@@ -1019,11 +1025,11 @@ namespace Gestioname.Infrastructure.Model
             }
         }
         /// <summary>
-        /// There are no comments for Cuentas in the schema.
+        /// There are no comments for Cuenta in the schema.
         /// </summary>
         [global::System.ComponentModel.BrowsableAttribute(false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Data.Objects.DataClasses.EntityReference<Cuenta> CuentasReference
+        public global::System.Data.Objects.DataClasses.EntityReference<Cuenta> CuentaReference
         {
             get
             {
@@ -1059,13 +1065,13 @@ namespace Gestioname.Infrastructure.Model
             }
         }
         /// <summary>
-        /// There are no comments for TiposTransacciones in the schema.
+        /// There are no comments for TipoTransaccion in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("Gestioname.Infrastructure.Model", "FK_Transacciones_TiposTransacciones", "TiposTransacciones")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public TipoTransaccion TiposTransacciones
+        public TipoTransaccion TipoTransaccion
         {
             get
             {
@@ -1077,11 +1083,11 @@ namespace Gestioname.Infrastructure.Model
             }
         }
         /// <summary>
-        /// There are no comments for TiposTransacciones in the schema.
+        /// There are no comments for TipoTransaccion in the schema.
         /// </summary>
         [global::System.ComponentModel.BrowsableAttribute(false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Data.Objects.DataClasses.EntityReference<TipoTransaccion> TiposTransaccionesReference
+        public global::System.Data.Objects.DataClasses.EntityReference<TipoTransaccion> TipoTransaccionReference
         {
             get
             {

@@ -24,7 +24,7 @@ namespace Gestioname.Modules.Clientes.Interfaces
         /// Agrega un cliente a la base de datos
         /// </summary>
         /// <param name="cliente">Cliente a agregar</param>
-        void AddCliente(Cliente cliente);
+        void CreateCliente(Cliente cliente);
         /// <summary>
         /// Actualiza un cliente existente en la base de datos
         /// </summary>
@@ -54,18 +54,19 @@ namespace Gestioname.Modules.Clientes.Interfaces
         List<Cliente> FindClientesByRazonSocial(string razonSocial);
         #endregion 
 
+        #region Cuentas
+        Cuenta GetCuentaById(int idCuenta);
+        List<Cuenta> GetCuentas();
+        #endregion
+
         #region Transacciones
-        /// <summary>
-        /// Agrega una nueva transaccion al cliente
-        /// </summary>
-        /// <param name="transaccion"></param>
-        void AddTransaccion(Transaccion transaccion);
-        /// <summary>
-        /// Elimina una transaccion del cliente
-        /// </summary>
-        /// <param name="transaccion"></param>
-        void DeleteTransaccion(Transaccion transaccion);
-        #endregion 
+        void CreateTransaccion(int idCuenta, string tipoTransaccion, DateTime fecha, string monto);
+        #endregion
+
+        #region Queries TiposTransacciones
+
+        #endregion
+
         #endregion
     }
 }

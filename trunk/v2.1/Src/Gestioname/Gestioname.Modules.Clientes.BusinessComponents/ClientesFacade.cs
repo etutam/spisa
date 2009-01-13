@@ -21,7 +21,7 @@ namespace Gestioname.Modules.Clientes.BusinessComponents
         #region IClientesFacade Members
 
         public GestionameContext Context
-        {
+        { 
             get
             {
                 return base.ObjectContext;
@@ -30,10 +30,11 @@ namespace Gestioname.Modules.Clientes.BusinessComponents
 
         #region CRUD Cliente
 
-        public void AddCliente(Cliente cliente)
+        public void CreateCliente(string codigo, string cuit, string razonSocial, string domicilio, string localidad, string provincia)
         {
             try
             {
+                Cliente cliente = Cliente.CreateCliente(0, codigo, cuit, razonSocial, domicilio, localidad, provincia);
                 Add("ClienteSet", cliente);
                 SaveAllObjectChanges();
             }
@@ -43,15 +44,16 @@ namespace Gestioname.Modules.Clientes.BusinessComponents
             }
         }
 
-        public void AddTransaccion(Transaccion transaccion)
+        public void CreateTransaccion(Transaccion transaccion)
         {
             try
             {
-                
+                ObjectContext.AddToTransaccionSet(transaccion);
+                SaveAllObjectChanges();
             }
             catch (Exception ex)
             {
-
+                throw ex;
             }
         }
 
@@ -63,12 +65,26 @@ namespace Gestioname.Modules.Clientes.BusinessComponents
 
         public void DeleteCliente(Cliente cliente)
         {
-            throw new NotImplementedException();
+            ObjectContext.AttachUpdated(cliente);
         }
 
         #endregion
 
 
+        #region Queries Cuentas
+        public Cuenta GetCuentaById(int idCuenta)
+        {
+            var q = from c in ObjectContext.CuentaSet
+                    where c.IdCuenta == idCuenta
+                    select c;
+
+            return q.FirstOrDefault();
+        }
+        public List<Cuenta> GetCuentas()
+        {
+            return ObjectContext.CuentaSet.ToList();
+        }
+        #endregion
 
         #region Queries Cliente
         public Cliente GetClienteById(int id)
@@ -96,6 +112,13 @@ namespace Gestioname.Modules.Clientes.BusinessComponents
                     select c;
 
             return q.ToList();
+        }
+        #endregion
+
+        #region Queries TiposTransacciones 
+        public TipoTransaccion GetTipoTransaccionByDescripcion(string descripcion)
+        {
+
         }
         #endregion
 
