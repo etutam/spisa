@@ -7,7 +7,7 @@ using Gestioname.Modules.Clientes.Interfaces;
 using Gestioname.Framework.BaseClasses;
 using Gestioname.Infrastructure.Model;
 
-namespace Gestioname.Modules.Clientes.BusinessComponents
+namespace Gestioname.Modules.Clientes.Facade
 {
     public class ClientesFacade : FacadeBase<Cliente>, IClientesFacade
     {
@@ -30,14 +30,12 @@ namespace Gestioname.Modules.Clientes.BusinessComponents
 
         #region CRUD Cliente
 
-        public void CreateCliente(string codigo, string cuit, string razonSocial, string domicilio, string localidad, string provincia)
+        public void AddCliente(Cliente cliente)
         {
             try
             {
-                Cliente cliente = Cliente.CreateCliente(0, codigo, cuit, razonSocial, domicilio, localidad, provincia);
                 Add("ClienteSet", cliente);
-                SaveAllObjectChanges();
-            }
+           }
             catch (Exception ex)
             {
                 throw ex;                
@@ -48,6 +46,15 @@ namespace Gestioname.Modules.Clientes.BusinessComponents
         {
             try
             {
+                // Calculamos el balance
+                var qActualBalance = from c in ObjectContext.TransaccionSet
+                                    where c.IdTransaccion == (from q in ObjectContext.TransaccionSet
+                                                              select q.IdTransaccion).Max()
+                                    select c;
+                string actualBalance = (qActualBalance.Count() == 0 ? "0" : qActualBalance.FirstOrDefault().Balance);
+
+                transaccion.Balance = Convert.ToString(Convert.ToDouble(actualBalance) + Convert.ToDouble(transaccion.Monto));
+
                 ObjectContext.AddToTransaccionSet(transaccion);
                 SaveAllObjectChanges();
             }
@@ -118,7 +125,11 @@ namespace Gestioname.Modules.Clientes.BusinessComponents
         #region Queries TiposTransacciones 
         public TipoTransaccion GetTipoTransaccionByDescripcion(string descripcion)
         {
+            var q = from c in Context.TipoTransaccionSet
+                    where c.Descripcion.Equals(descripcion)
+                    select c;
 
+            return q.FirstOrDefault();
         }
         #endregion
 

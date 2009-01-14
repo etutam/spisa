@@ -48,13 +48,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClientesFacade.cs" />
+    <Compile Include="ClientesComponent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EFExtensions\EFExtensions.csproj">
       <Project>{3B7B86B0-9ABB-44C0-A10D-1373CB2EA9B1}</Project>
       <Name>EFExtensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gestioname.Framework.ObjectContextManager\Gestioname.Framework.ObjectContextManager.csproj">
+      <Project>{5C8A4AF3-73F6-4C4B-B547-795EDC1AA77C}</Project>
+      <Name>Gestioname.Framework.ObjectContextManager</Name>
     </ProjectReference>
     <ProjectReference Include="..\Gestioname.Framework\Gestioname.Framework.csproj">
       <Project>{A6001C18-3A4F-4621-9C19-51ABF8E7C03C}</Project>
@@ -63,6 +67,10 @@
     <ProjectReference Include="..\Gestioname.Infrastructure\Gestioname.Infrastructure.csproj">
       <Project>{6E4C5F29-05F2-46C8-8AE4-7A1B96685B8C}</Project>
       <Name>Gestioname.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gestioname.Modules.Clientes.Facade\Gestioname.Modules.Clientes.Facade.csproj">
+      <Project>{5C5E708B-7DA8-4F7D-8919-CABD789A3BD0}</Project>
+      <Name>Gestioname.Modules.Clientes.Facade</Name>
     </ProjectReference>
     <ProjectReference Include="..\Gestioname.Modules.Clientes.Interfaces\Gestioname.Modules.Clientes.Interfaces.csproj">
       <Project>{358F6599-A3EA-4200-AF46-A68B14434EE3}</Project>

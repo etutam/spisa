@@ -63,42 +63,49 @@ namespace Getioname.Modules.Clientes.UnitTests
         //
         #endregion
 
-        //[TestMethod]
-        //public void AddClienteTest()
-        //{
-        //    IClientesFacade facade = new ClientesFacade();
+        [TestMethod]
+        public void AddClienteTest()
+        {
+            IClientesFacade facade = new ClientesFacade();
 
-        //    Cliente cliente = new Cliente();
-        //    cliente.Codigo = "abcde";
-        //    cliente.CUIT = "1929394";
-        //    cliente.Domicilio = "domicilio";
-        //    cliente.Localidad = "capital";
-        //    cliente.Provincia = "buenos aires";
-        //    cliente.RazonSocial = "empresa test";
+            if (facade.FindClientesByRazonSocial("empresa test") == null)
+            {
 
-        //    facade.AddCliente(cliente);
-        //}
+                Cliente cliente = new Cliente();
+                cliente.Codigo = "abcde";
+                cliente.CUIT = "1929394";
+                cliente.Domicilio = "domicilio";
+                cliente.Localidad = "capital";
+                cliente.Provincia = "buenos aires";
+                cliente.RazonSocial = "empresa test";
 
-        //[TestMethod]
-        //public void AddCuentaTest()
-        //{
-        //    for (int i = 0; i < 10; i++)
-        //    {
-        //        IClientesFacade facade = new ClientesFacade();
-        //        Cliente c = facade.GetClienteById(1);
+                facade.AddCliente(cliente);
+            }
+        }
 
-        //        if (c != null)
-        //        {
-        //            Cuenta cuenta = new Cuenta();
-        //            cuenta.Balance = "0";
+        [TestMethod]
+        public void AddCuentaTest()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                IClientesFacade facade = new ClientesFacade();
+                Cliente c = facade.GetClienteById(1);
 
-        //            c.Cuentas.Add(cuenta);
+                if (c != null)
+                {
+                    if (c.Cuentas.Count == 0)
+                    {
+                        Cuenta cuenta = new Cuenta();
+                        cuenta.Balance = "0";
 
-        //            //facade.Context.Detach(c);
-        //            facade.UpdateCliente(c);
-        //        }
-        //    }
-        //}
+                        c.Cuentas.Add(cuenta);
+
+                        //facade.Context.Detach(c);
+                        facade.UpdateCliente(c);
+                    }
+                }
+            }
+        }
 
         [TestMethod]
         public void AddTransaccionTest()
@@ -109,8 +116,8 @@ namespace Getioname.Modules.Clientes.UnitTests
             if (c != null)
             {
                 Cuenta cuenta = facade.GetCuentaById(5);
-                Transaccion transaccion = Transaccion.CreateTransaccion(0, 
-                facade.CreateTransaccion(4, "Cuenta Corriente", DateTime.Now, "20");
+                Transaccion transaccion = Transaccion.CreateTransaccion(facade.GetTipoTransaccionByDescripcion("Cuenta Corriente"), DateTime.Now, "100");
+                facade.CreateTransaccion(transaccion);
             }
         }
         //[TestMethod]
@@ -125,7 +132,7 @@ namespace Getioname.Modules.Clientes.UnitTests
         //        c.RazonSocial = "nueva razon social";
 
         //        facade.Context.Detach(c);
-        //        facade.UpdateCliente(c);
+       //        facade.UpdateCliente(c);
         //    }
         //}
     }

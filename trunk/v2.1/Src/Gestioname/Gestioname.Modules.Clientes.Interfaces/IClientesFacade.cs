@@ -24,7 +24,7 @@ namespace Gestioname.Modules.Clientes.Interfaces
         /// Agrega un cliente a la base de datos
         /// </summary>
         /// <param name="cliente">Cliente a agregar</param>
-        void CreateCliente(Cliente cliente);
+        void AddCliente(Cliente cliente);
         /// <summary>
         /// Actualiza un cliente existente en la base de datos
         /// </summary>
@@ -60,11 +60,11 @@ namespace Gestioname.Modules.Clientes.Interfaces
         #endregion
 
         #region Transacciones
-        void CreateTransaccion(int idCuenta, string tipoTransaccion, DateTime fecha, string monto);
+        void AddTransaccion(Transaccion transaccion);
         #endregion
 
         #region Queries TiposTransacciones
-
+        TipoTransaccion GetTipoTransaccionByDescripcion(string descripcion);
         #endregion
 
         #endregion

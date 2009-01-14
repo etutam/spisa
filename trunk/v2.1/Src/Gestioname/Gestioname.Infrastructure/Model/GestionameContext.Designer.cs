@@ -881,13 +881,11 @@ namespace Gestioname.Infrastructure.Model
         /// <param name="fecha">Initial value of Fecha.</param>
         /// <param name="monto">Initial value of Monto.</param>
         /// <param name="balance">Initial value of Balance.</param>
-        public static Transaccion CreateTransaccion(int idTransaccion, TipoTransaccion tipoTransaccion, global::System.DateTime fecha, string monto, string balance)
+        public static Transaccion CreateTransaccion(TipoTransaccion tipoTransaccion, global::System.DateTime fecha, string monto)
         {
             Transaccion transaccion = new Transaccion();
-            transaccion.IdTransaccion = idTransaccion;
             transaccion.Fecha = fecha;
             transaccion.Monto = monto;
-            transaccion.Balance = balance;
             transaccion.TipoTransaccion = tipoTransaccion;
             return transaccion;
         }

@@ -6,7 +6,7 @@ using System.Text;
 using Gestioname.Framework.ObjectContextManager;
 using Gestioname.Infrastructure.Model;
 
-namespace Gestioname.Infrastructure
+namespace Gestioname.Framework.ObjectContextManager
 {
     public sealed class UnitOfWorkScope : ObjectContextScope<GestionameContext>
     {
