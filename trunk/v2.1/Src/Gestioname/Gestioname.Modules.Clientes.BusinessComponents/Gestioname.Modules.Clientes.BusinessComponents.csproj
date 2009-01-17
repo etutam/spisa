@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Lib\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -68,9 +72,9 @@
       <Project>{6E4C5F29-05F2-46C8-8AE4-7A1B96685B8C}</Project>
       <Name>Gestioname.Infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Gestioname.Modules.Clientes.Facade\Gestioname.Modules.Clientes.Facade.csproj">
-      <Project>{5C5E708B-7DA8-4F7D-8919-CABD789A3BD0}</Project>
-      <Name>Gestioname.Modules.Clientes.Facade</Name>
+    <ProjectReference Include="..\Gestioname.Modules.Clientes.DataAccess\Gestioname.Modules.Clientes.DataAccess.csproj">
+      <Project>{686EE8AF-E624-4F36-969F-58AEFF7EF2FD}</Project>
+      <Name>Gestioname.Modules.Clientes.DataAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\Gestioname.Modules.Clientes.Interfaces\Gestioname.Modules.Clientes.Interfaces.csproj">
       <Project>{358F6599-A3EA-4200-AF46-A68B14434EE3}</Project>

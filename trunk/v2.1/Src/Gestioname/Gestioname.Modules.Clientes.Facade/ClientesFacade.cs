@@ -9,7 +9,7 @@ using Gestioname.Infrastructure.Model;
 
 namespace Gestioname.Modules.Clientes.Facade
 {
-    public class ClientesFacade : FacadeBase<Cliente>, IClientesFacade
+    public class ClientesFacade : FacadeBase<Cliente>, IClientesComponent
     {
         #region Constructors 
         public ClientesFacade()
@@ -42,7 +42,7 @@ namespace Gestioname.Modules.Clientes.Facade
             }
         }
 
-        public void CreateTransaccion(Transaccion transaccion)
+        public void AddTransaccion(Transaccion transaccion)
         {
             try
             {

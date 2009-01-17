@@ -7,16 +7,10 @@ using Gestioname.Infrastructure.Model;
 
 namespace Gestioname.Modules.Clientes.Interfaces
 {
-    public interface IClientesFacade
+    public interface IClientesComponent
     {
 
-        #region Properties
-        GestionameContext Context
-        {
-            get;
-        }
-        #endregion
-        
+          
         #region Methods
 
         #region Clientes
@@ -51,12 +45,12 @@ namespace Gestioname.Modules.Clientes.Interfaces
         /// Obtiene un listado de clientes por razon social
         /// </summary>
         /// <returns>Listado de Instancias de Clientes</returns>
-        List<Cliente> FindClientesByRazonSocial(string razonSocial);
+        IEnumerable<Cliente> FindClientesByRazonSocial(string razonSocial);
         #endregion 
 
         #region Cuentas
         Cuenta GetCuentaById(int idCuenta);
-        List<Cuenta> GetCuentas();
+        IEnumerable<Cuenta> GetCuentas();
         #endregion
 
         #region Transacciones

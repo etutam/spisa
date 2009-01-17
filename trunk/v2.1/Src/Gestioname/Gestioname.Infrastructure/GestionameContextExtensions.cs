@@ -15,7 +15,7 @@ namespace Gestioname.Infrastructure.Model
     public static class GestionameContextCustomExtensions 
     {
 
-        public static void ApplyReferencePropertyChanges(this ObjectContext context, IEntityWithRelationships newEntity, IEntityWithRelationships oldEntity)
+        public static void ApplyReferencePropertyChanges(this GestionameContext context, IEntityWithRelationships newEntity, IEntityWithRelationships oldEntity)
         {
             foreach (var relatedEnd in oldEntity.RelationshipManager.GetAllRelatedEnds())
             {
@@ -35,7 +35,7 @@ namespace Gestioname.Infrastructure.Model
             }
         }
 
-        public static void AttachUpdated(this ObjectContext context, EntityObject objectDetached)
+        public static void AttachUpdated(this GestionameContext context, EntityObject objectDetached)
         {
 
             if (objectDetached.EntityState == EntityState.Detached)

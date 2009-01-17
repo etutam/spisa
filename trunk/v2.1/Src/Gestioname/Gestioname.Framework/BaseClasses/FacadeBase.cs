@@ -19,7 +19,7 @@ namespace Gestioname.Framework.BaseClasses
     /// Generic base class for all other Facade classes.
     /// </summary>
     /// <typeparam name="T">An EntityObject type.</typeparam>
-    public abstract class FacadeBase<T> where T : System.Data.Objects.DataClasses.EntityObject
+    public abstract class BaseDataAccess<T> where T : System.Data.Objects.DataClasses.EntityObject
     {
         private ObjectContextManager<GestionameContext> _objectContextManager;
 
@@ -50,7 +50,7 @@ namespace Gestioname.Framework.BaseClasses
         /// <summary>
         /// Default constructor.
         /// </summary>
-        public FacadeBase()
+        public BaseDataAccess()
         { }
 
         /// <summary>
