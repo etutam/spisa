@@ -84,9 +84,17 @@ namespace Gestioname.Modules.Clientes.BusinessComponents
         #region AddCuenta
         void AddCuenta(Cuenta cuenta)
         {
-            using (new UnitOfWorkScope(true)){
-                IClientesDAO clientesDao = new ClientesDAO();
-                clientesDao.AddCuenta(cuenta);
+            try
+            {
+                using (new UnitOfWorkScope(true))
+                {
+                    IClientesDAO clientesDao = new ClientesDAO();
+                    clientesDao.AddCuenta(cuenta);
+                }
+            }
+            catch (Exception ex)
+            {
+                ProcessException(ex);
             }
 
             
@@ -96,10 +104,17 @@ namespace Gestioname.Modules.Clientes.BusinessComponents
         #region DeleteCuenta
         void DeleteCuenta(Cuenta cuenta)
         {
-            using (new UnitOfWorkScope(true))
+            try
             {
-                IClientesDAO clientesDao = new ClientesDAO();
-                clientesDao.DeleteCuenta(cuenta);
+                using (new UnitOfWorkScope(true))
+                {
+                    IClientesDAO clientesDao = new ClientesDAO();
+                    clientesDao.DeleteCuenta(cuenta);
+                }
+            }
+            catch (Exception ex)
+            {
+                ProcessException(ex);
             }
 
         }
@@ -109,10 +124,17 @@ namespace Gestioname.Modules.Clientes.BusinessComponents
 
         public void UpdateCuenta(Cuenta cuenta)
         {
-            using (new UnitOfWorkScope(true))
+            try
             {
-                IClientesDAO clientesDao = new ClientesDAO();
-                clientesDao.UpdateCuenta(cuenta);
+                using (new UnitOfWorkScope(true))
+                {
+                    IClientesDAO clientesDao = new ClientesDAO();
+                    clientesDao.UpdateCuenta(cuenta);
+                }
+            }
+            catch (Exception ex)
+            {
+                ProcessException(ex);
             }
 
         }
@@ -124,18 +146,25 @@ namespace Gestioname.Modules.Clientes.BusinessComponents
         #region AddTransaccion
         public void AddTransaccion(Transaccion transaccion)
         {
-            using (new UnitOfWorkScope(true))
+            try
             {
-                IClientesDAO clientesDao = new ClientesDAO();
-                
-                var qActualBalance = from c in clientesDao.Context.TransaccionSet
-                                     where c.IdTransaccion == (from q in clientesDao.Context.TransaccionSet
-                                                               select q.IdTransaccion).Max()
-                                     select c;
-                string actualBalance = (qActualBalance.Count() == 0 ? "0" : qActualBalance.FirstOrDefault().Balance);
+                using (new UnitOfWorkScope(true))
+                {
+                    IClientesDAO clientesDao = new ClientesDAO();
 
-                transaccion.Balance = Convert.ToString(Convert.ToDouble(actualBalance) + Convert.ToDouble(transaccion.Monto));
-                clientesDao.AddTransaccion(transaccion);
+                    var qActualBalance = from c in clientesDao.Context.TransaccionSet
+                                         where c.IdTransaccion == (from q in clientesDao.Context.TransaccionSet
+                                                                   select q.IdTransaccion).Max()
+                                         select c;
+                    string actualBalance = (qActualBalance.Count() == 0 ? "0" : qActualBalance.FirstOrDefault().Balance);
+
+                    transaccion.Balance = Convert.ToString(Convert.ToDouble(actualBalance) + Convert.ToDouble(transaccion.Monto));
+                    clientesDao.AddTransaccion(transaccion);
+                }
+            }
+            catch (Exception ex)
+            {
+                ProcessException(ex);
             }
         }
         #endregion
@@ -147,11 +176,19 @@ namespace Gestioname.Modules.Clientes.BusinessComponents
         {
             Cliente cliente = null;
 
-            using (new UnitOfWorkScope(true))
+            try
             {
-                IClientesDAO clientesDao = new ClientesDAO();
-                cliente = clientesDao.GetClienteById(id);
+                using (new UnitOfWorkScope(true))
+                {
+                    IClientesDAO clientesDao = new ClientesDAO();
+                    cliente = clientesDao.GetClienteById(id);
+                }
             }
+            catch (Exception ex)
+            {
+                ProcessException(ex);
+            }
+
 
             return cliente;
         }
@@ -160,6 +197,14 @@ namespace Gestioname.Modules.Clientes.BusinessComponents
         #region GetClienteByCodigo
         public Cliente GetClienteByCodigo(string codigo)
         {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                ProcessException(ex);
+            }
             return new Cliente();
         }
         #endregion
@@ -169,10 +214,17 @@ namespace Gestioname.Modules.Clientes.BusinessComponents
         {
             IEnumerable<Cliente> qry = null;
 
-            using (new UnitOfWorkScope(true))
+            try
             {
-                IClientesDAO clientesDao = new ClientesDAO();
-                qry = clientesDao.FindClientesByRazonSocial(razonSocial);
+                using (new UnitOfWorkScope(true))
+                {
+                    IClientesDAO clientesDao = new ClientesDAO();
+                    qry = clientesDao.FindClientesByRazonSocial(razonSocial);
+                }
+            }
+            catch (Exception ex)
+            {
+                ProcessException(ex);
             }
 
             return qry;
@@ -186,11 +238,19 @@ namespace Gestioname.Modules.Clientes.BusinessComponents
         {
             TipoTransaccion tipoTransaccion = null;
 
-            using (new UnitOfWorkScope(true))
+            try
             {
-                IClientesDAO clientesDao = new ClientesDAO();
-                tipoTransaccion =  clientesDao.GetTipoTransaccionByDescripcion(descripcion);
+                using (new UnitOfWorkScope(true))
+                {
+                    IClientesDAO clientesDao = new ClientesDAO();
+                    tipoTransaccion = clientesDao.GetTipoTransaccionByDescripcion(descripcion);
+                }
             }
+            catch (Exception ex)
+            {
+                ProcessException(ex);
+            }
+
             
             return new TipoTransaccion();
         }
@@ -202,10 +262,17 @@ namespace Gestioname.Modules.Clientes.BusinessComponents
         {
             Cuenta cuenta = null;
 
-            using (new UnitOfWorkScope(true))
+            try
             {
-                IClientesDAO clientesDao = new ClientesDAO();
-                cuenta = clientesDao.GetCuentaById(id);
+                using (new UnitOfWorkScope(true))
+                {
+                    IClientesDAO clientesDao = new ClientesDAO();
+                    cuenta = clientesDao.GetCuentaById(id);
+                }
+            }
+            catch (Exception ex)
+            {
+                ProcessException(ex);
             }
 
             return cuenta;
@@ -214,10 +281,17 @@ namespace Gestioname.Modules.Clientes.BusinessComponents
         {
             IEnumerable<Cuenta> qry = null;
 
-            using (new UnitOfWorkScope(true))
+            try
             {
-                IClientesDAO clientesDao = new ClientesDAO();
-                qry = clientesDao.GetCuentas();
+                using (new UnitOfWorkScope(true))
+                {
+                    IClientesDAO clientesDao = new ClientesDAO();
+                    qry = clientesDao.GetCuentas();
+                }
+            }
+            catch (Exception ex)
+            {
+                ProcessException(ex);
             }
 
 
