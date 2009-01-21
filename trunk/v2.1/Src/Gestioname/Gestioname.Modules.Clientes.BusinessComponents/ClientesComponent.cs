@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-
-
 
 using Gestioname.Infrastructure.Model;
 using Gestioname.Modules.Clientes.Interfaces;
@@ -17,11 +14,6 @@ namespace Gestioname.Modules.Clientes.BusinessComponents
 {
     public class ClientesComponent : IClientesComponent
     {
-        public ClientesComponent()
-        {
-            //DO NOTHING
-        }
-
         #region CRUD Cliente
         #region AddCliente
         public void AddCliente(Cliente cliente)
@@ -82,7 +74,7 @@ namespace Gestioname.Modules.Clientes.BusinessComponents
         #region CRUD Cuenta
 
         #region AddCuenta
-        void AddCuenta(Cuenta cuenta)
+        public void AddCuenta(Cuenta cuenta)
         {
             try
             {
@@ -102,7 +94,7 @@ namespace Gestioname.Modules.Clientes.BusinessComponents
         #endregion
 
         #region DeleteCuenta
-        void DeleteCuenta(Cuenta cuenta)
+        public void DeleteCuenta(Cuenta cuenta)
         {
             try
             {
@@ -251,8 +243,8 @@ namespace Gestioname.Modules.Clientes.BusinessComponents
                 ProcessException(ex);
             }
 
-            
-            return new TipoTransaccion();
+
+            return tipoTransaccion;
         }
         #endregion
         #endregion
