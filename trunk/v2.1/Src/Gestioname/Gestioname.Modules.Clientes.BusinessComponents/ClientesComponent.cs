@@ -163,6 +163,29 @@ namespace Gestioname.Modules.Clientes.BusinessComponents
         #endregion
 
         #region Queries Cliente
+
+        #region GetClientes
+        public IEnumerable<Cliente> GetClientes()
+        {
+            IEnumerable<Cliente> qry = null;
+
+            try
+            {
+                using (new UnitOfWorkScope(true))
+                {
+                    IClientesDAO clientesDao = new ClientesDAO();
+                    qry = clientesDao.GetClientes();
+                }
+            }
+            catch (Exception ex)
+            {
+                ProcessException(ex);
+            }
+
+            return qry; 
+        }
+        #endregion
+
         #region GetClienteById
         public Cliente GetClienteById(int id)
         {

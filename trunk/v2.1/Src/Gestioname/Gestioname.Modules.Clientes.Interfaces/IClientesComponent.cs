@@ -8,9 +8,7 @@ using Gestioname.Infrastructure.Model;
 namespace Gestioname.Modules.Clientes.Interfaces
 {
     public interface IClientesComponent
-    {
-
-          
+    {     
         #region Methods
 
         #region Clientes
@@ -29,6 +27,10 @@ namespace Gestioname.Modules.Clientes.Interfaces
         /// </summary>
         /// <param name="cliente">Cliente a eliminar</param>
         void DeleteCliente(Cliente cliente);
+        /// <summary>
+        /// Obtiene un listado de Clientes
+        /// </summary>
+        IEnumerable<Cliente> GetClientes();
         /// <summary>
         /// Obtiene un Cliente de la base de datos por Id
         /// </summary>

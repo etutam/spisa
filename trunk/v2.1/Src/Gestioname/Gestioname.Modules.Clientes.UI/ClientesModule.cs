@@ -5,18 +5,37 @@ using System.Text;
 
 using Microsoft.Practices.Composite.Modularity;
 using Microsoft.Practices.Composite.Regions;
+using Microsoft.Practices.Unity;
 
 namespace Gestioname.Modules.Clientes.UI
 {
-    public class ClientesModule : IModule{
+    public class ClientesModule : IModule
+    {
 
+        #region Private Fields
         private readonly IRegionManager _regionManager;
+        private readonly IUnityContainer _container;
+        #endregion
 
-        #region IModule Members
+        #region Constructors
+        public ClientesModule(IUnityContainer container, IRegionManager regionManager)
+        {
+            _regionManager = regionManager;
+            _container = container;
+        }
+        #endregion
+
+        #region Members
 
         public void Initialize()
         {
-            
+            RegisterViewsAndServices();   
+        }
+
+        protected void RegisterViewsAndServices()
+        {
+
+
         }
 
         #endregion

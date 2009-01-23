@@ -22,6 +22,7 @@ namespace Gestioname.Modules.Clientes.Interfaces
         void UpdateCliente(Cliente cliente);
 
         Cliente GetClienteById(int id);
+        IEnumerable<Cliente> GetClientes();
         IEnumerable<Cliente> FindClientesByRazonSocial(string razonSocial);
 
         void AddTransaccion(Transaccion transaccion);

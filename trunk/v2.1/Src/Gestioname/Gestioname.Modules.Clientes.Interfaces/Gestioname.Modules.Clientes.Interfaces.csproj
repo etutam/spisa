@@ -50,6 +50,8 @@
   <ItemGroup>
     <Compile Include="IClientesComponent.cs" />
     <Compile Include="IClientesDAO.cs" />
+    <Compile Include="IClientesPresentationModel.cs" />
+    <Compile Include="IClientesView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

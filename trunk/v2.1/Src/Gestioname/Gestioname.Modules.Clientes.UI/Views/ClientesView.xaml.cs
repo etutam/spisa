@@ -12,16 +12,41 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using Gestioname.Modules.Clientes.Interfaces;
+using Gestioname.Modules.Clientes.UI.Models;
+
 namespace Gestioname.Modules.Clientes.UI.Views
 {
     /// <summary>
     /// Interaction logic for ClientesView.xaml
     /// </summary>
-    public partial class ClientesView : UserControl
+    public partial class ClientesView : UserControl, IClientesView
     {
         public ClientesView()
         {
             InitializeComponent();
         }
+
+        #region CRUD
+
+        public void New()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SaveChanges()
+        {
+            throw new NotImplementedException();
+            
+        }
+
+        #endregion
+
+        #region Presentation Model
+        public void SetModel(IClientesPresentationModel model)
+        {
+            this.DataContext = model;
+        }
+        #endregion
     }
 }
