@@ -245,6 +245,7 @@ namespace Gestioname.Modules.Clientes.BusinessComponents
             return qry;
         }
         #endregion
+
         #endregion
 
         #region Queries Transaccion

@@ -7,14 +7,13 @@ using System.Windows;
 using Microsoft.Practices.Composite.UnityExtensions;
 using Microsoft.Practices.Composite.Modularity;
 
+using Gestioname.Modules.Clientes;
+
 namespace Gestioname
 {
     public class Bootstrapper : UnityBootstrapper
     {
-        protected override IModuleEnumerator GetModuleEnumerator()
-        {
-            return null;
-        }
+        protected override 
 
         protected override void ConfigureContainer()
         {

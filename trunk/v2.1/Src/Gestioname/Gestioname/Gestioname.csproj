@@ -100,17 +100,9 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Composite.UnityExtensions\Composite.UnityExtensions.csproj">
-      <Project>{17831F3B-6B82-4916-BD2B-2CE2071EA622}</Project>
-      <Name>Composite.UnityExtensions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Composite.Wpf\Composite.Wpf.csproj">
-      <Project>{F807062D-6FC9-4FF0-A9F5-5F94653EDC4D}</Project>
-      <Name>Composite.Wpf</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Composite\Composite.csproj">
-      <Project>{77138947-1D13-4E22-AEE0-5D0DD046CA34}</Project>
-      <Name>Composite</Name>
+    <ProjectReference Include="..\Gestioname.Modules.Clientes.UI\Gestioname.Modules.Clientes.csproj">
+      <Project>{A55E4577-BB79-4F12-A632-23A836C59FFF}</Project>
+      <Name>Gestioname.Modules.Clientes</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

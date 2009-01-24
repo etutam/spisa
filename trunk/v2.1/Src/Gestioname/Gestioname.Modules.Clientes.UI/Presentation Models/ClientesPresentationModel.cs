@@ -8,7 +8,7 @@ using Gestioname.Infrastructure.Model;
 using Gestioname.Modules.Clientes.Interfaces;
 using Gestioname.Modules.Clientes.BusinessComponents;
 
-namespace Gestioname.Modules.Clientes.UI.Models
+namespace Gestioname.Modules.Clientes.Models
 {
     public class ClientesPresentationModel : IClientesPresentationModel
     {

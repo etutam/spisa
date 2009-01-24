@@ -7,7 +7,7 @@ using Microsoft.Practices.Composite.Modularity;
 using Microsoft.Practices.Composite.Regions;
 using Microsoft.Practices.Unity;
 
-namespace Gestioname.Modules.Clientes.UI
+namespace Gestioname.Modules.Clientes
 {
     public class ClientesModule : IModule
     {
@@ -34,7 +34,6 @@ namespace Gestioname.Modules.Clientes.UI
 
         protected void RegisterViewsAndServices()
         {
-
 
         }
 

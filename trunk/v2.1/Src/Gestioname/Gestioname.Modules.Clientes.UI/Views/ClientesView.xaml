@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Gestioname.Modules.Clientes.UI.Views.ClientesView"
+﻿<UserControl x:Class="Gestioname.Modules.Clientes.Views.ClientesView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:my="clr-namespace:Infragistics.Windows.Editors;assembly=Infragistics3.Wpf.Editors.v8.2"
@@ -21,9 +21,10 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="250"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition Width="250"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <my:XamComboEditor  Height="30" Grid.Column="1" Text="Seleccione un Cliente de la Lista..." Name="cbSeleccionarCliente" Theme="Office2k7Blue" FontSize="15" FontFamily="Arial" />
+            <my:XamComboEditor  Height="30" Grid.Column="1"   Text="Seleccione un Cliente de la Lista..." DisplayMemberPath="RazonSocial" Value="{Binding Id}" ItemsSource="{Binding Clientes}" Name="cbSeleccionarCliente" Theme="Office2k7Blue" FontSize="15" FontFamily="Arial" />
+           
         </Grid>
         <igWindows:XamTabControl Grid.Row="1" TabStripPlacement="Top" TabLayoutStyle="SingleRowSizeToFit" Name="xamTabControl1" Theme="Office2k7Black" ClipToBounds="True" HorizontalAlignment="Left" Width="978"  TabItemCloseButtonVisibility="Visible" ShowTabHeaderCloseButton="False" SnapsToDevicePixels="False" Margin="10,10,0,10">
                 <igWindows:TabItemEx  Header="Detalles Cliente" Name="tabDetallesCliente" ClipToBounds="False" Grid.IsSharedSizeScope="False" Background="GreenYellow" Foreground="Black">

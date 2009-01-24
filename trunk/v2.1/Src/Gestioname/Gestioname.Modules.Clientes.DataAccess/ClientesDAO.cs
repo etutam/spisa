@@ -172,6 +172,16 @@ namespace Gestioname.Modules.Clientes.DataAccess
         #endregion
 
         #region Queries Cliente
+
+        #region GetClientes
+        public IEnumerable<Cliente> GetClientes()
+        {
+            var q = from c in Context.ClienteSet
+                    select c;
+            return q.ToList();
+        }
+        #endregion
+       
         #region GetClienteById
         public Cliente GetClienteById(int id)
         {

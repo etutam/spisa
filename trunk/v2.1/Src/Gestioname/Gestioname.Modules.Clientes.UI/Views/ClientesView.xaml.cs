@@ -13,9 +13,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using Gestioname.Modules.Clientes.Interfaces;
-using Gestioname.Modules.Clientes.UI.Models;
+using Gestioname.Modules.Clientes.Models;
 
-namespace Gestioname.Modules.Clientes.UI.Views
+namespace Gestioname.Modules.Clientes.Views
 {
     /// <summary>
     /// Interaction logic for ClientesView.xaml
