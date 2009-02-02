@@ -16,6 +16,10 @@ namespace Gestioname.Modules.Clientes.Interfaces
         {
             get;
         }
+
+        String Test
+        { get;
+        }
         /// <summary>
         /// Vista
         /// </summary>

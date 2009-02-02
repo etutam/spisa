@@ -211,7 +211,18 @@ namespace Gestioname.Modules.Clientes.DataAccess
                     where c.RazonSocial.Contains(razonSocial)
                     select c;
 
-            return q.ToList();
+            List<Cliente> results = null;
+
+            try
+            {
+                results = q.ToList();
+            }
+            catch
+            {
+                
+            }
+
+            return results;
         }
         #endregion
         #endregion

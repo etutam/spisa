@@ -43,6 +43,14 @@ namespace Gestioname.Modules.Clientes.Models
             private set;
         }
 
+        public String Test
+        {
+            get
+            {
+                return "Hola Mundo";
+            }
+        }
+
         public IClientesView View
         {
             get; set;

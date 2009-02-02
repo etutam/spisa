@@ -66,21 +66,21 @@ namespace Getioname.Modules.Clientes.UnitTests
         [TestMethod]
         public void AddClienteTest()
         {
-            //IClientesComponent facade = new ClientesComponent();
+            IClientesComponent facade = new ClientesComponent();
 
-            //if (facade.FindClientesByRazonSocial("empresa test") == null)
-            //{
+            if (facade.FindClientesByRazonSocial("empresa test").Count() == 0)
+            {
 
-            //    Cliente cliente = new Cliente();
-            //    cliente.Codigo = "abcde";
-            //    cliente.CUIT = "1929394";
-            //    cliente.Domicilio = "domicilio";
-            //    cliente.Localidad = "capital";
-            //    cliente.Provincia = "buenos aires";
-            //    cliente.RazonSocial = "empresa test";
+                Cliente cliente = new Cliente();
+                cliente.Codigo = "abcde";
+                cliente.CUIT = "1929394";
+                cliente.Domicilio = "domicilio";
+                cliente.Localidad = "capital";
+                cliente.Provincia = "buenos aires";
+                cliente.RazonSocial = "empresa test";
 
-            //    facade.AddCliente(cliente);
-            //}
+                facade.AddCliente(cliente);
+            }
         }
 
         [TestMethod]
@@ -88,22 +88,22 @@ namespace Getioname.Modules.Clientes.UnitTests
         {
             for (int i = 0; i < 10; i++)
             {
-                //IClientesComponent facade = new ClientesFacade();
-                //Cliente c = facade.GetClienteById(1);
+                IClientesComponent facade = new ClientesComponent();
+                Cliente c = facade.GetClienteById(1);
 
-                //if (c != null)
-                //{
-                //    if (c.Cuentas.Count == 0)
-                //    {
-                //        Cuenta cuenta = new Cuenta();
-                //        cuenta.Balance = "0";
+                if (c != null)
+                {
+                    if (c.Cuentas.Count == 0)
+                    {
+                        Cuenta cuenta = new Cuenta();
+                        cuenta.Balance = "0";
 
-                //        c.Cuentas.Add(cuenta);
+                        c.Cuentas.Add(cuenta);
 
-                //        //facade.Context.Detach(c);
-                //        facade.UpdateCliente(c);
-                //    }
-                //}
+                        //facade.Context.Detach(c);
+                        facade.UpdateCliente(c);
+                    }
+                }
             }
         }
 

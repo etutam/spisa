@@ -13,7 +13,12 @@ namespace Gestioname
 {
     public class Bootstrapper : UnityBootstrapper
     {
-        protected override 
+        protected override IModuleCatalog GetModuleCatalog()
+        {
+            var catalog = new ModuleCatalog();
+            catalog.AddModule(typeof (ClientesModule));
+            return catalog;
+        }
 
         protected override void ConfigureContainer()
         {

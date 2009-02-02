@@ -26,7 +26,7 @@ namespace Gestioname
 
         public void ShowView()
         {
-            this.Show();
+            //this.Show();
         }
     }
 }

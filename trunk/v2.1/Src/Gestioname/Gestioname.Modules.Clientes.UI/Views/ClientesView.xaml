@@ -52,7 +52,7 @@
                         <my:XamTextEditor  Margin="5,5,5,5" Grid.Row="0" Grid.Column="1" Name="txtDomicilio"  />
                             
                         <Label Grid.Row="1"  Margin="5,5,5,5"  Grid.Column="0" Content="Localidad"></Label>
-                        <my:XamTextEditor  Margin="5,5,5,5"   Grid.Row="1" Grid.Column="1" Name="txtLocalidad"  />
+                        <my:XamTextEditor  Margin="5,5,5,5"   Grid.Row="1" Grid.Column="1" Name="txtLocalidad" Text="{Binding Test}" />
 
                         <Label Grid.Row="2" Margin="5,5,5,5"  Grid.Column="0" Content="Provincia"></Label>
                         <my:XamComboEditor  Margin="5,5,5,5"   Grid.Column="1" Grid.Row="2" Name="txtProvincia" />
