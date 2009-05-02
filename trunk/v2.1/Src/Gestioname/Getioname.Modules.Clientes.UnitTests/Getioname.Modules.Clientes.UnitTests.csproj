@@ -38,6 +38,7 @@
     </Reference>
     <Reference Include="System.Data.Entity">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
+      <HintPath>..\..\..\..\..\..\..\..\Archivos de programa\Reference Assemblies\Microsoft\Framework\v3.5\System.Data.Entity.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
