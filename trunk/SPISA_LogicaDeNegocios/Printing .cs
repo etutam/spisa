@@ -84,6 +84,7 @@ namespace SPISA.Libreria
                 System.Windows.Forms.PrintDialog pd = new System.Windows.Forms.PrintDialog();
 
                 pd.PrinterSettings.Copies = numeroCopias;
+                pd.UseEXDialog = true;
 
                 if (pd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
