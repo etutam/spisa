@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Objects>
+  <item name="Fecha">
+    <x>550</x>
+    <y>100</y>
+  </item>
+  <item name="NumeroFactura">
+    <x></x>
+    <y></y>
+  </item>
+  <item name="NumeroPedido">
+    <x></x>
+    <y></y>
+  </item>
+  <item name="NumeroRemito">
+    <x></x>
+    <y></y>
+  </item>
+  <item name="RazonSocialCliente">
+    <x>100</x>
+    <y>180</y>
+  </item>
+  <item name="DomicilioCliente">
+    <x>100</x>
+    <y>195</y>
+  </item>
+  <item name="LocalidadCliente">
+    <x>100</x>
+    <y>210</y>
+  </item>
+  <item name="ProvinciaCliente">
+    <x>100</x>
+    <y>235</y>
+  </item>
+  <item name="IVACliente">
+    <x>100</x>
+    <y>265</y>
+  </item>
+  <item name="CUITCliente">
+    <x>400</x>
+    <y>265</y>
+  </item>
+  <item name="OperatoriaCliente">
+    <x></x>
+    <y></y>
+  </item>
+  <item name="InicioItems">
+    <x></x>
+    <y>350</y>
+  </item>
+	<item name="ColumnaCantidad">
+		<x>80</x>
+		<y></y>
+	</item>
+	<item name="ColumnaDescripcion">
+		<x>130</x>
+		<y></y>
+	</item>
+	<item name="ColumnaPrecioUnitario">
+		<x>640</x>
+		<y></y>
+	</item>
+	<item name="ColumnaPrecioTotal">
+		<x>750</x>
+		<y></y>
+	</item>
+  <item name="TextoAdicional1">
+    <x></x>
+    <y></y>
+  </item>
+  <item name="TextoAdicional2">
+    <x></x>
+    <y></y>
+  </item>
+  <item name="TextoAdicional3">
+    <x></x>
+    <y></y>
+  </item>
+  <item name="TextoAdicional4">
+    <x></x>
+    <y></y>
+  </item>
+  <item name="TextoAdicional5">
+    <x></x>
+    <y></y>
+  </item>
+  <item name="SubTotal1">
+    <x>40</x>
+    <y>100</y>
+  </item>
+  <item name="Impuesto">
+    <x></x>
+    <y></y>
+  </item>
+  <item name="SubTotal2">
+    <x></x>
+    <y></y>
+  </item>
+  <item name="IvaInscripto">
+    <x>430</x>
+    <y>1000</y>
+  </item>
+  <item name="IvaNoInscripto">
+    <x></x>
+    <y></y>
+  </item>
+  <item name="Total">
+    <x>690</x>
+    <y>1000</y>
+  </item>
+</Objects>

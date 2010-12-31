@@ -1,0 +1,1984 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="CopyToOutputDirectory" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <edmx:ReverseEngineer />
+    <edmx:Diagrams ><Diagram Name="SpisaEntityModel"><EntityTypeShape EntityType="SPISAModel.Articulos" PointX="5.25" PointY="7.5" Width="1.5" Height="2.0853483072916665" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.Articulos_Compuestos" PointX="0.75" PointY="10.625" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.AuditColumns" PointX="12" PointY="4.375" Width="1.5" Height="2.2496956380208335" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.AuditConfig" PointX="2.75" PointY="10.625" Width="1.5" Height="1.2636116536458317" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.AuditLog" PointX="4.75" PointY="10.625" Width="1.5" Height="2.2496956380208317" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.AuditLogAutoKeys" PointX="0.75" PointY="13.625" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.AuditLogDetail" PointX="2.75" PointY="13.625" Width="1.5" Height="1.9210009765624996" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.AuditLogImage" PointX="4.75" PointY="13.625" Width="1.5" Height="1.5923063151041674" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.AuditLogNText" PointX="6.75" PointY="14.625" Width="1.5" Height="1.5923063151041674" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.AuditLogText" PointX="8.75" PointY="14.625" Width="1.5" Height="1.5923063151041674" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.AuditLookups" PointX="14.25" PointY="2" Width="1.5" Height="1.592306315104167" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.AuditRelationships" PointX="12" PointY="1.875" Width="1.5" Height="1.7566536458333333" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.AuditTables" PointX="9.75" PointY="2.875" Width="1.5" Height="2.9070849609374996" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.Buscador_Criterios" PointX="10.75" PointY="14.625" Width="1.5" Height="1.2636116536458317" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.Buscador_Relaciones" PointX="12.75" PointY="14.625" Width="1.5" Height="2.2496956380208317" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.Categorias" PointX="3" PointY="7.75" Width="1.5" Height="1.5923063151041674" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.Clientes" PointX="3" PointY="3.125" Width="1.5" Height="2.9070849609374996" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.CondicionesIVA" PointX="0.5" PointY="3" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.CuentaCorriente_Movimientos" PointX="12.25" PointY="8.125" Width="1.5" Height="2.0853483072916674" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.CuentaCorriente_Pagos" PointX="10" PointY="11.125" Width="1.5" Height="2.0853483072916674" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.CuentaCorriente_Pagos_DatosDelPago" PointX="13.5" PointY="11.5" Width="3.25" Height="1.7566536458333317" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.CuentasCorriente" PointX="14.75" PointY="4.625" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.Descuentos" PointX="14.75" PointY="7.625" Width="1.5" Height="1.4279589843750005" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.Facturas" PointX="7.5" PointY="6.125" Width="1.5" Height="2.4140429687500005" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.FormasDePago" PointX="7.75" PointY="11.5" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.MovimientosTipo" PointX="10" PointY="8.5" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.NotaPedido_Items" PointX="7.5" PointY="2.5" Width="1.5" Height="2.0853483072916665" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.NotaPedidos" PointX="5.25" PointY="3.375" Width="1.5" Height="2.4140429687499996" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.Operatorias" PointX="0.75" PointY="0.75" Width="1.5" Height="1.427958984375" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.Provincias" PointX="0.75" PointY="6.875" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.Remitos" PointX="17" PointY="11.25" Width="1.5" Height="2.4140429687499996" IsExpanded="true" /><EntityTypeShape EntityType="SPISAModel.Transportistas" PointX="14.75" PointY="14.625" Width="1.5" Height="1.4279589843749996" IsExpanded="true" /><AssociationConnector Association="SPISAModel.FK_Articulos_Categoria" ManuallyRouted="false"><ConnectorPoint PointX="4.5" PointY="8.5461531575520837" /><ConnectorPoint PointX="5.25" PointY="8.5461531575520837" /></AssociationConnector><AssociationConnector Association="SPISAModel.FK_NotaPedido_Items1_1Articulo" ManuallyRouted="false"><ConnectorPoint PointX="6.75" PointY="8.5426741536458337" /><ConnectorPoint PointX="7.125" PointY="8.5426741536458337" /><ConnectorPoint PointX="7.125" PointY="3.5426741536458333" /><ConnectorPoint PointX="7.5" PointY="3.5426741536458333" /></AssociationConnector><AssociationConnector Association="SPISAModel.FK_AuditColumns1" ManuallyRouted="false"><ConnectorPoint PointX="11.25" PointY="5.07854248046875" /><ConnectorPoint PointX="12" PointY="5.07854248046875" /></AssociationConnector><AssociationConnector Association="SPISAModel.FK_AuditRelationships" ManuallyRouted="false"><ConnectorPoint PointX="13.5" PointY="2.7961531575520837" /><ConnectorPoint PointX="14.25" PointY="2.7961531575520837" /></AssociationConnector><AssociationConnector Association="SPISAModel.FK_AuditTables" ManuallyRouted="false"><ConnectorPoint PointX="11.25" PointY="3.2533268229166667" /><ConnectorPoint PointX="12" PointY="3.2533268229166667" /></AssociationConnector><AssociationConnector Association="SPISAModel.FK_Clientes_CondicionesIVA" ManuallyRouted="false"><ConnectorPoint PointX="2" PointY="3.7764794921875" /><ConnectorPoint PointX="3" PointY="3.7764794921875" /></AssociationConnector><AssociationConnector Association="SPISAModel.FK_Clientes_Operatorias" ManuallyRouted="false"><ConnectorPoint PointX="2.25" PointY="1.4639794921875" /><ConnectorPoint PointX="3.75" PointY="1.4639794921875" /><ConnectorPoint PointX="3.75" PointY="3.125" /></AssociationConnector><AssociationConnector Association="SPISAModel.FK_Clientes_Provincias" ManuallyRouted="false"><ConnectorPoint PointX="2.15625" PointY="6.875" /><ConnectorPoint PointX="2.15625" PointY="5.26127197265625" /><ConnectorPoint PointX="3" PointY="5.26127197265625" /></AssociationConnector><AssociationConnector Association="SPISAModel.FK_NotaPedidos1_1Clientes" ManuallyRouted="false"><ConnectorPoint PointX="4.5" PointY="4.582021484375" /><ConnectorPoint PointX="5.25" PointY="4.582021484375" /></AssociationConnector><AssociationConnector Association="SPISAModel.FK_CuentaCorriente_Movimientos_CuentaCorriente_Pagos" ManuallyRouted="false"><ConnectorPoint PointX="11.5" PointY="11.28125" /><ConnectorPoint PointX="12.84375" PointY="11.28125" /><ConnectorPoint PointX="12.84375" PointY="10.210348307291667" /></AssociationConnector><AssociationConnector Association="SPISAModel.FK_CuentaCorriente_Movimientos_MovimientosTipo" ManuallyRouted="false"><ConnectorPoint PointX="11.5" PointY="9.6103165690104166" /><ConnectorPoint PointX="12.25" PointY="9.6103165690104166" /></AssociationConnector><AssociationConnector Association="SPISAModel.FK_CuentaCorriente_Pagos_DatosDelPago_CuentaCorriente_Pagos" ManuallyRouted="false"><ConnectorPoint PointX="11.5" PointY="12.355174153645834" /><ConnectorPoint PointX="13.5" PointY="12.355174153645834" /></AssociationConnector><AssociationConnector Association="SPISAModel.FK_CuentaCorriente_Pagos_FormasDePago" ManuallyRouted="false"><ConnectorPoint PointX="9.25" PointY="12.2139794921875" /><ConnectorPoint PointX="10" PointY="12.2139794921875" /></AssociationConnector><AssociationConnector Association="SPISAModel.FK_Facturas1_1NotaPedidos" ManuallyRouted="false"><ConnectorPoint PointX="6.75" PointY="4.6658580611979161" /><ConnectorPoint PointX="7.041666666666667" PointY="4.6658580611979152" /><ConnectorPoint PointX="7.208333333333333" PointY="4.6658580611979161" /><ConnectorPoint PointX="7.25" PointY="4.6658580611979161" /><ConnectorPoint PointX="7.25" PointY="4.8353483072916665" /><ConnectorPoint PointX="8.25" PointY="4.8353483072916665" /><ConnectorPoint PointX="8.25" PointY="6.125" /></AssociationConnector><AssociationConnector Association="SPISAModel.FK_NotaPedido_Items1_nNotaPedidos" ManuallyRouted="false"><ConnectorPoint PointX="6.75" PointY="4.12651123046875" /><ConnectorPoint PointX="7.041666666666667" PointY="4.1265112304687488" /><ConnectorPoint PointX="7.208333333333333" PointY="4.12651123046875" /><ConnectorPoint PointX="7.5" PointY="4.12651123046875" /></AssociationConnector></Diagram></edmx:Diagrams>
+  </edmx:Designer>
+  <edmx:Runtime>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SPISAModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityContainer Name="SPISAEntities1">
+          <EntitySet Name="Articulos" EntityType="SPISAModel.Articulos" />
+          <EntitySet Name="Articulos_Compuestos" EntityType="SPISAModel.Articulos_Compuestos" />
+          <EntitySet Name="AuditColumns" EntityType="SPISAModel.AuditColumns" />
+          <EntitySet Name="AuditConfig" EntityType="SPISAModel.AuditConfig" />
+          <EntitySet Name="AuditLog" EntityType="SPISAModel.AuditLog" />
+          <EntitySet Name="AuditLogAutoKeys" EntityType="SPISAModel.AuditLogAutoKeys" />
+          <EntitySet Name="AuditLogDetail" EntityType="SPISAModel.AuditLogDetail" />
+          <EntitySet Name="AuditLogImage" EntityType="SPISAModel.AuditLogImage" />
+          <EntitySet Name="AuditLogNText" EntityType="SPISAModel.AuditLogNText" />
+          <EntitySet Name="AuditLogText" EntityType="SPISAModel.AuditLogText" />
+          <EntitySet Name="AuditLookups" EntityType="SPISAModel.AuditLookups" />
+          <EntitySet Name="AuditRelationships" EntityType="SPISAModel.AuditRelationships" />
+          <EntitySet Name="AuditTables" EntityType="SPISAModel.AuditTables" />
+          <EntitySet Name="Buscador_Criterios" EntityType="SPISAModel.Buscador_Criterios" />
+          <EntitySet Name="Buscador_Relaciones" EntityType="SPISAModel.Buscador_Relaciones" />
+          <EntitySet Name="Categorias" EntityType="SPISAModel.Categorias" />
+          <EntitySet Name="Clientes" EntityType="SPISAModel.Clientes" />
+          <EntitySet Name="CondicionesIVA" EntityType="SPISAModel.CondicionesIVA" />
+          <EntitySet Name="CuentaCorriente_Movimientos" EntityType="SPISAModel.CuentaCorriente_Movimientos" />
+          <EntitySet Name="CuentaCorriente_Pagos" EntityType="SPISAModel.CuentaCorriente_Pagos" />
+          <EntitySet Name="CuentaCorriente_Pagos_DatosDelPago" EntityType="SPISAModel.CuentaCorriente_Pagos_DatosDelPago" />
+          <EntitySet Name="CuentasCorriente" EntityType="SPISAModel.CuentasCorriente" />
+          <EntitySet Name="Descuentos" EntityType="SPISAModel.Descuentos" />
+          <EntitySet Name="Facturas" EntityType="SPISAModel.Facturas" />
+          <EntitySet Name="FormasDePago" EntityType="SPISAModel.FormasDePago" />
+          <EntitySet Name="MovimientosTipo" EntityType="SPISAModel.MovimientosTipo" />
+          <EntitySet Name="NotaPedido_Items" EntityType="SPISAModel.NotaPedido_Items" />
+          <EntitySet Name="NotaPedidos" EntityType="SPISAModel.NotaPedidos" />
+          <EntitySet Name="Operatorias" EntityType="SPISAModel.Operatorias" />
+          <EntitySet Name="Provincias" EntityType="SPISAModel.Provincias" />
+          <EntitySet Name="Remitos" EntityType="SPISAModel.Remitos" />
+          <EntitySet Name="Transportistas" EntityType="SPISAModel.Transportistas" />
+          <AssociationSet Name="FK_Articulos_Categoria" Association="SPISAModel.FK_Articulos_Categoria">
+            <End Role="Categorias" EntitySet="Categorias" />
+            <End Role="Articulos" EntitySet="Articulos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotaPedido_Items1_1Articulo" Association="SPISAModel.FK_NotaPedido_Items1_1Articulo">
+            <End Role="Articulos" EntitySet="Articulos" />
+            <End Role="NotaPedido_Items" EntitySet="NotaPedido_Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AuditColumns1" Association="SPISAModel.FK_AuditColumns1">
+            <End Role="AuditTables" EntitySet="AuditTables" />
+            <End Role="AuditColumns" EntitySet="AuditColumns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AuditRelationships" Association="SPISAModel.FK_AuditRelationships">
+            <End Role="AuditRelationships" EntitySet="AuditRelationships" />
+            <End Role="AuditLookups" EntitySet="AuditLookups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AuditTables" Association="SPISAModel.FK_AuditTables">
+            <End Role="AuditTables" EntitySet="AuditTables" />
+            <End Role="AuditRelationships" EntitySet="AuditRelationships" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Clientes_CondicionesIVA" Association="SPISAModel.FK_Clientes_CondicionesIVA">
+            <End Role="CondicionesIVA" EntitySet="CondicionesIVA" />
+            <End Role="Clientes" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Clientes_Operatorias" Association="SPISAModel.FK_Clientes_Operatorias">
+            <End Role="Operatorias" EntitySet="Operatorias" />
+            <End Role="Clientes" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Clientes_Provincias" Association="SPISAModel.FK_Clientes_Provincias">
+            <End Role="Provincias" EntitySet="Provincias" />
+            <End Role="Clientes" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotaPedidos1_1Clientes" Association="SPISAModel.FK_NotaPedidos1_1Clientes">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="NotaPedidos" EntitySet="NotaPedidos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CuentaCorriente_Movimientos_CuentaCorriente_Pagos" Association="SPISAModel.FK_CuentaCorriente_Movimientos_CuentaCorriente_Pagos">
+            <End Role="CuentaCorriente_Pagos" EntitySet="CuentaCorriente_Pagos" />
+            <End Role="CuentaCorriente_Movimientos" EntitySet="CuentaCorriente_Movimientos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CuentaCorriente_Movimientos_MovimientosTipo" Association="SPISAModel.FK_CuentaCorriente_Movimientos_MovimientosTipo">
+            <End Role="MovimientosTipo" EntitySet="MovimientosTipo" />
+            <End Role="CuentaCorriente_Movimientos" EntitySet="CuentaCorriente_Movimientos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CuentaCorriente_Pagos_DatosDelPago_CuentaCorriente_Pagos" Association="SPISAModel.FK_CuentaCorriente_Pagos_DatosDelPago_CuentaCorriente_Pagos">
+            <End Role="CuentaCorriente_Pagos" EntitySet="CuentaCorriente_Pagos" />
+            <End Role="CuentaCorriente_Pagos_DatosDelPago" EntitySet="CuentaCorriente_Pagos_DatosDelPago" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CuentaCorriente_Pagos_FormasDePago" Association="SPISAModel.FK_CuentaCorriente_Pagos_FormasDePago">
+            <End Role="FormasDePago" EntitySet="FormasDePago" />
+            <End Role="CuentaCorriente_Pagos" EntitySet="CuentaCorriente_Pagos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Facturas1_1NotaPedidos" Association="SPISAModel.FK_Facturas1_1NotaPedidos">
+            <End Role="NotaPedidos" EntitySet="NotaPedidos" />
+            <End Role="Facturas" EntitySet="Facturas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotaPedido_Items1_nNotaPedidos" Association="SPISAModel.FK_NotaPedido_Items1_nNotaPedidos">
+            <End Role="NotaPedidos" EntitySet="NotaPedidos" />
+            <End Role="NotaPedido_Items" EntitySet="NotaPedido_Items" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Articulos">
+          <Key>
+            <PropertyRef Name="idArticulo" />
+          </Key>
+          <Property Name="idArticulo" Type="Int32" Nullable="false" />
+          <Property Name="codigo" Type="String" Nullable="false" MaxLength="20" Unicode="false" />
+          <Property Name="descripcion" Type="String" Nullable="false" MaxLength="500" Unicode="false" />
+          <Property Name="cantidad" Type="Int32" Nullable="false" />
+          <Property Name="preciounitario" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <NavigationProperty Name="Categorias" Relationship="SPISAModel.FK_Articulos_Categoria" FromRole="Articulos" ToRole="Categorias" />
+          <NavigationProperty Name="NotaPedido_Items" Relationship="SPISAModel.FK_NotaPedido_Items1_1Articulo" FromRole="Articulos" ToRole="NotaPedido_Items" />
+        </EntityType>
+        <EntityType Name="Articulos_Compuestos">
+          <Key>
+            <PropertyRef Name="CodigoArticulo" />
+            <PropertyRef Name="CodigoCompuesto" />
+          </Key>
+          <Property Name="CodigoArticulo" Type="String" Nullable="false" MaxLength="20" Unicode="false" />
+          <Property Name="CodigoCompuesto" Type="String" Nullable="false" MaxLength="20" Unicode="false" />
+          <Property Name="Cantidad" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AuditColumns">
+          <Key>
+            <PropertyRef Name="TableID" />
+            <PropertyRef Name="ColumnID" />
+          </Key>
+          <Property Name="TableID" Type="Int32" Nullable="false" />
+          <Property Name="ColumnID" Type="Int32" Nullable="false" />
+          <Property Name="ColumnName" Type="String" Nullable="false" MaxLength="128" />
+          <Property Name="AuditColumn" Type="Boolean" Nullable="false" />
+          <Property Name="CaptureColumn" Type="Boolean" Nullable="false" />
+          <Property Name="IsLookup" Type="Boolean" Nullable="false" />
+          <Property Name="KeyColumn" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="AuditTables" Relationship="SPISAModel.FK_AuditColumns1" FromRole="AuditColumns" ToRole="AuditTables" />
+        </EntityType>
+        <EntityType Name="AuditConfig">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="false" />
+          <Property Name="Value" Type="String" Nullable="false" MaxLength="2000" Unicode="false" />
+        </EntityType>
+        <EntityType Name="AuditLog">
+          <Key>
+            <PropertyRef Name="AuditLogID" />
+          </Key>
+          <Property Name="AuditLogID" Type="Int32" Nullable="false" />
+          <Property Name="TableID" Type="Int32" Nullable="false" />
+          <Property Name="RowsAffected" Type="Int32" Nullable="false" />
+          <Property Name="Event" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="PostedDateTime" Type="DateTime" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="128" />
+          <Property Name="HostName" Type="String" Nullable="false" MaxLength="128" />
+          <Property Name="ApplicationName" Type="String" Nullable="false" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="AuditLogAutoKeys">
+          <Key>
+            <PropertyRef Name="TableName" />
+          </Key>
+          <Property Name="TableName" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="true" />
+          <Property Name="KeyValue" Type="Int32" Nullable="false" />
+          <Property Name="Filler" Type="String" Nullable="false" MaxLength="6000" Unicode="false" FixedLength="true" />
+        </EntityType>
+        <EntityType Name="AuditLogDetail">
+          <Key>
+            <PropertyRef Name="AuditLogID" />
+            <PropertyRef Name="RowKey" />
+            <PropertyRef Name="ColumnID" />
+          </Key>
+          <Property Name="AuditLogID" Type="Int32" Nullable="false" />
+          <Property Name="RowKey" Type="String" Nullable="false" MaxLength="512" Unicode="false" />
+          <Property Name="ColumnID" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Byte" Nullable="false" />
+          <Property Name="OldValue" Type="String" MaxLength="2147483647" Unicode="false" />
+          <Property Name="NewValue" Type="String" MaxLength="2147483647" Unicode="false" />
+        </EntityType>
+        <EntityType Name="AuditLogImage">
+          <Key>
+            <PropertyRef Name="AuditLogID" />
+            <PropertyRef Name="RowKey" />
+            <PropertyRef Name="ColumnID" />
+          </Key>
+          <Property Name="AuditLogID" Type="Int32" Nullable="false" />
+          <Property Name="RowKey" Type="String" Nullable="false" MaxLength="512" Unicode="false" />
+          <Property Name="ColumnID" Type="Int32" Nullable="false" />
+          <Property Name="Value" Type="Binary" MaxLength="2147483647" />
+        </EntityType>
+        <EntityType Name="AuditLogNText">
+          <Key>
+            <PropertyRef Name="AuditLogID" />
+            <PropertyRef Name="RowKey" />
+            <PropertyRef Name="ColumnID" />
+          </Key>
+          <Property Name="AuditLogID" Type="Int32" Nullable="false" />
+          <Property Name="RowKey" Type="String" Nullable="false" MaxLength="512" Unicode="false" />
+          <Property Name="ColumnID" Type="Int32" Nullable="false" />
+          <Property Name="Value" Type="String" MaxLength="1073741823" />
+        </EntityType>
+        <EntityType Name="AuditLogText">
+          <Key>
+            <PropertyRef Name="AuditLogID" />
+            <PropertyRef Name="RowKey" />
+            <PropertyRef Name="ColumnID" />
+          </Key>
+          <Property Name="AuditLogID" Type="Int32" Nullable="false" />
+          <Property Name="RowKey" Type="String" Nullable="false" MaxLength="512" Unicode="false" />
+          <Property Name="ColumnID" Type="Int32" Nullable="false" />
+          <Property Name="Value" Type="String" MaxLength="2147483647" Unicode="false" />
+        </EntityType>
+        <EntityType Name="AuditLookups">
+          <Key>
+            <PropertyRef Name="LookupID" />
+          </Key>
+          <Property Name="LookupID" Type="Int32" Nullable="false" />
+          <Property Name="ExpressionIsColumn" Type="Boolean" Nullable="false" />
+          <Property Name="LookupExpression" Type="String" Nullable="false" MaxLength="1024" />
+          <NavigationProperty Name="AuditRelationships" Relationship="SPISAModel.FK_AuditRelationships" FromRole="AuditLookups" ToRole="AuditRelationships" />
+        </EntityType>
+        <EntityType Name="AuditRelationships">
+          <Key>
+            <PropertyRef Name="RelationshipID" />
+          </Key>
+          <Property Name="RelationshipID" Type="Int32" Nullable="false" />
+          <Property Name="TableName" Type="String" Nullable="false" MaxLength="128" />
+          <Property Name="JoinExpression" Type="String" Nullable="false" MaxLength="1024" />
+          <NavigationProperty Name="AuditLookups" Relationship="SPISAModel.FK_AuditRelationships" FromRole="AuditRelationships" ToRole="AuditLookups" />
+          <NavigationProperty Name="AuditTables" Relationship="SPISAModel.FK_AuditTables" FromRole="AuditRelationships" ToRole="AuditTables" />
+        </EntityType>
+        <EntityType Name="AuditTables">
+          <Key>
+            <PropertyRef Name="TableID" />
+          </Key>
+          <Property Name="TableID" Type="Int32" Nullable="false" />
+          <Property Name="Owner" Type="String" Nullable="false" MaxLength="128" />
+          <Property Name="TableName" Type="String" Nullable="false" MaxLength="128" />
+          <Property Name="AuditTable" Type="Boolean" Nullable="false" />
+          <Property Name="AuditInserts" Type="Boolean" Nullable="false" />
+          <Property Name="AuditUpdates" Type="Boolean" Nullable="false" />
+          <Property Name="AuditDeletes" Type="Boolean" Nullable="false" />
+          <Property Name="AuditDeletesAll" Type="Boolean" Nullable="false" />
+          <Property Name="UniqueKeyType" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="UserColumn" Type="String" Nullable="false" MaxLength="128" />
+          <NavigationProperty Name="AuditColumns" Relationship="SPISAModel.FK_AuditColumns1" FromRole="AuditTables" ToRole="AuditColumns" />
+          <NavigationProperty Name="AuditRelationships" Relationship="SPISAModel.FK_AuditTables" FromRole="AuditTables" ToRole="AuditRelationships" />
+        </EntityType>
+        <EntityType Name="Buscador_Criterios">
+          <Key>
+            <PropertyRef Name="TipoDeDato" />
+            <PropertyRef Name="Criterio" />
+          </Key>
+          <Property Name="TipoDeDato" Type="String" Nullable="false" MaxLength="50" Unicode="false" />
+          <Property Name="Criterio" Type="String" Nullable="false" MaxLength="50" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Buscador_Relaciones">
+          <Key>
+            <PropertyRef Name="Tabla" />
+          </Key>
+          <Property Name="Tabla" Type="String" Nullable="false" MaxLength="50" Unicode="false" />
+          <Property Name="ColumnaID" Type="String" MaxLength="255" Unicode="false" />
+          <Property Name="TablaABuscar" Type="String" MaxLength="50" Unicode="false" />
+          <Property Name="ColumnaABuscar" Type="String" MaxLength="50" Unicode="false" />
+          <Property Name="NombreColumna" Type="String" MaxLength="255" Unicode="false" />
+          <Property Name="TipoDeDato" Type="String" MaxLength="50" Unicode="false" />
+          <Property Name="QueryPersonalizada" Type="String" MaxLength="255" Unicode="false" />
+          <Property Name="ColumnaPersonalizada" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Categorias">
+          <Key>
+            <PropertyRef Name="IdCategoria" />
+          </Key>
+          <Property Name="IdCategoria" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="50" Unicode="false" />
+          <Property Name="Descuento" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Articulos" Relationship="SPISAModel.FK_Articulos_Categoria" FromRole="Categorias" ToRole="Articulos" />
+        </EntityType>
+        <EntityType Name="Clientes">
+          <Key>
+            <PropertyRef Name="IdCliente" />
+          </Key>
+          <Property Name="IdCliente" Type="Int32" Nullable="false" />
+          <Property Name="Codigo" Type="Int32" Nullable="false" />
+          <Property Name="RazonSocial" Type="String" Nullable="false" MaxLength="100" Unicode="false" />
+          <Property Name="Domicilio" Type="String" MaxLength="100" Unicode="false" />
+          <Property Name="Localidad" Type="String" MaxLength="40" Unicode="false" />
+          <Property Name="CUIT" Type="String" Nullable="false" MaxLength="11" Unicode="false" />
+          <Property Name="Saldo" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="IdTransportista" Type="Int32" />
+          <NavigationProperty Name="CondicionesIVA" Relationship="SPISAModel.FK_Clientes_CondicionesIVA" FromRole="Clientes" ToRole="CondicionesIVA" />
+          <NavigationProperty Name="Operatorias" Relationship="SPISAModel.FK_Clientes_Operatorias" FromRole="Clientes" ToRole="Operatorias" />
+          <NavigationProperty Name="Provincias" Relationship="SPISAModel.FK_Clientes_Provincias" FromRole="Clientes" ToRole="Provincias" />
+          <NavigationProperty Name="NotaPedidos" Relationship="SPISAModel.FK_NotaPedidos1_1Clientes" FromRole="Clientes" ToRole="NotaPedidos" />
+        </EntityType>
+        <EntityType Name="CondicionesIVA">
+          <Key>
+            <PropertyRef Name="IdCondicionIVA" />
+          </Key>
+          <Property Name="IdCondicionIVA" Type="Int32" Nullable="false" />
+          <Property Name="CondicionIVA" Type="String" Nullable="false" MaxLength="50" Unicode="false" />
+          <NavigationProperty Name="Clientes" Relationship="SPISAModel.FK_Clientes_CondicionesIVA" FromRole="CondicionesIVA" ToRole="Clientes" />
+        </EntityType>
+        <EntityType Name="CuentaCorriente_Movimientos">
+          <Key>
+            <PropertyRef Name="IdMovimiento" />
+          </Key>
+          <Property Name="IdMovimiento" Type="Int32" Nullable="false" />
+          <Property Name="IdCuentaCorriente" Type="Int32" Nullable="false" />
+          <Property Name="IdFactura" Type="Int32" />
+          <Property Name="Monto" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="CuentaCorriente_Pagos" Relationship="SPISAModel.FK_CuentaCorriente_Movimientos_CuentaCorriente_Pagos" FromRole="CuentaCorriente_Movimientos" ToRole="CuentaCorriente_Pagos" />
+          <NavigationProperty Name="MovimientosTipo" Relationship="SPISAModel.FK_CuentaCorriente_Movimientos_MovimientosTipo" FromRole="CuentaCorriente_Movimientos" ToRole="MovimientosTipo" />
+        </EntityType>
+        <EntityType Name="CuentaCorriente_Pagos">
+          <Key>
+            <PropertyRef Name="IdPago" />
+          </Key>
+          <Property Name="IdPago" Type="Int32" Nullable="false" />
+          <Property Name="IdCuentaCorriente" Type="Int32" Nullable="false" />
+          <Property Name="IdCliente" Type="Int32" Nullable="false" />
+          <Property Name="Monto" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <NavigationProperty Name="CuentaCorriente_Movimientos" Relationship="SPISAModel.FK_CuentaCorriente_Movimientos_CuentaCorriente_Pagos" FromRole="CuentaCorriente_Pagos" ToRole="CuentaCorriente_Movimientos" />
+          <NavigationProperty Name="CuentaCorriente_Pagos_DatosDelPago" Relationship="SPISAModel.FK_CuentaCorriente_Pagos_DatosDelPago_CuentaCorriente_Pagos" FromRole="CuentaCorriente_Pagos" ToRole="CuentaCorriente_Pagos_DatosDelPago" />
+          <NavigationProperty Name="FormasDePago" Relationship="SPISAModel.FK_CuentaCorriente_Pagos_FormasDePago" FromRole="CuentaCorriente_Pagos" ToRole="FormasDePago" />
+        </EntityType>
+        <EntityType Name="CuentaCorriente_Pagos_DatosDelPago">
+          <Key>
+            <PropertyRef Name="IdPago" />
+            <PropertyRef Name="ChequeNumero" />
+            <PropertyRef Name="FechaCheque" />
+            <PropertyRef Name="FechaCobro" />
+          </Key>
+          <Property Name="IdPago" Type="Int32" Nullable="false" />
+          <Property Name="ChequeNumero" Type="Int32" Nullable="false" />
+          <Property Name="FechaCheque" Type="DateTime" Nullable="false" />
+          <Property Name="FechaCobro" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="CuentaCorriente_Pagos" Relationship="SPISAModel.FK_CuentaCorriente_Pagos_DatosDelPago_CuentaCorriente_Pagos" FromRole="CuentaCorriente_Pagos_DatosDelPago" ToRole="CuentaCorriente_Pagos" />
+        </EntityType>
+        <EntityType Name="CuentasCorriente">
+          <Key>
+            <PropertyRef Name="IdCuentaCorriente" />
+          </Key>
+          <Property Name="IdCuentaCorriente" Type="Int32" Nullable="false" />
+          <Property Name="FechaCreacion" Type="DateTime" Nullable="false" />
+          <Property Name="IdCliente" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Descuentos">
+          <Key>
+            <PropertyRef Name="IdCliente" />
+            <PropertyRef Name="IdCategoria" />
+            <PropertyRef Name="Descuento" />
+          </Key>
+          <Property Name="IdCliente" Type="Int32" Nullable="false" />
+          <Property Name="IdCategoria" Type="Int32" Nullable="false" />
+          <Property Name="Descuento" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Facturas">
+          <Key>
+            <PropertyRef Name="IdFactura" />
+          </Key>
+          <Property Name="IdFactura" Type="Int32" Nullable="false" />
+          <Property Name="NumeroFactura" Type="Int64" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" />
+          <Property Name="Observaciones" Type="String" MaxLength="200" Unicode="false" />
+          <Property Name="FueImpresa" Type="Boolean" Nullable="false" />
+          <Property Name="ValorDolar" Type="Decimal" Precision="3" Scale="2" />
+          <Property Name="FueCancelada" Type="Boolean" Nullable="false" />
+          <Property Name="EsNotaDeCredito" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="NotaPedidos" Relationship="SPISAModel.FK_Facturas1_1NotaPedidos" FromRole="Facturas" ToRole="NotaPedidos" />
+        </EntityType>
+        <EntityType Name="FormasDePago">
+          <Key>
+            <PropertyRef Name="IdFormaDePago" />
+          </Key>
+          <Property Name="IdFormaDePago" Type="Int32" Nullable="false" />
+          <Property Name="FormaDePago" Type="String" Nullable="false" MaxLength="50" Unicode="false" />
+          <NavigationProperty Name="CuentaCorriente_Pagos" Relationship="SPISAModel.FK_CuentaCorriente_Pagos_FormasDePago" FromRole="FormasDePago" ToRole="CuentaCorriente_Pagos" />
+        </EntityType>
+        <EntityType Name="MovimientosTipo">
+          <Key>
+            <PropertyRef Name="IdMovimiento" />
+          </Key>
+          <Property Name="IdMovimiento" Type="Int32" Nullable="false" />
+          <Property Name="Movimiento" Type="String" Nullable="false" MaxLength="50" Unicode="false" />
+          <NavigationProperty Name="CuentaCorriente_Movimientos" Relationship="SPISAModel.FK_CuentaCorriente_Movimientos_MovimientosTipo" FromRole="MovimientosTipo" ToRole="CuentaCorriente_Movimientos" />
+        </EntityType>
+        <EntityType Name="NotaPedido_Items">
+          <Key>
+            <PropertyRef Name="IdNotaPedido" />
+            <PropertyRef Name="IdArticulo" />
+            <PropertyRef Name="Cantidad" />
+          </Key>
+          <Property Name="IdNotaPedido" Type="Int32" Nullable="false" />
+          <Property Name="IdArticulo" Type="Int32" Nullable="false" />
+          <Property Name="Cantidad" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="PrecioUnitario" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Descuento" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="Articulos" Relationship="SPISAModel.FK_NotaPedido_Items1_1Articulo" FromRole="NotaPedido_Items" ToRole="Articulos" />
+          <NavigationProperty Name="NotaPedidos" Relationship="SPISAModel.FK_NotaPedido_Items1_nNotaPedidos" FromRole="NotaPedido_Items" ToRole="NotaPedidos" />
+        </EntityType>
+        <EntityType Name="NotaPedidos">
+          <Key>
+            <PropertyRef Name="IdNotaPedido" />
+          </Key>
+          <Property Name="IdNotaPedido" Type="Int32" Nullable="false" />
+          <Property Name="FechaEmision" Type="DateTime" Nullable="false" />
+          <Property Name="FechaEntrega" Type="DateTime" />
+          <Property Name="NumeroOrden" Type="Int32" Nullable="false" />
+          <Property Name="Observaciones" Type="String" MaxLength="200" Unicode="false" />
+          <Property Name="DescuentoEspecial" Type="Double" />
+          <NavigationProperty Name="Clientes" Relationship="SPISAModel.FK_NotaPedidos1_1Clientes" FromRole="NotaPedidos" ToRole="Clientes" />
+          <NavigationProperty Name="Facturas" Relationship="SPISAModel.FK_Facturas1_1NotaPedidos" FromRole="NotaPedidos" ToRole="Facturas" />
+          <NavigationProperty Name="NotaPedido_Items" Relationship="SPISAModel.FK_NotaPedido_Items1_nNotaPedidos" FromRole="NotaPedidos" ToRole="NotaPedido_Items" />
+        </EntityType>
+        <EntityType Name="Operatorias">
+          <Key>
+            <PropertyRef Name="IdOperatoria" />
+          </Key>
+          <Property Name="IdOperatoria" Type="Int32" Nullable="false" />
+          <Property Name="Operatoria" Type="String" Nullable="false" MaxLength="50" Unicode="false" />
+          <NavigationProperty Name="Clientes" Relationship="SPISAModel.FK_Clientes_Operatorias" FromRole="Operatorias" ToRole="Clientes" />
+        </EntityType>
+        <EntityType Name="Provincias">
+          <Key>
+            <PropertyRef Name="IdProvincia" />
+          </Key>
+          <Property Name="IdProvincia" Type="Int32" Nullable="false" />
+          <Property Name="Provincia" Type="String" Nullable="false" MaxLength="50" Unicode="false" />
+          <NavigationProperty Name="Clientes" Relationship="SPISAModel.FK_Clientes_Provincias" FromRole="Provincias" ToRole="Clientes" />
+        </EntityType>
+        <EntityType Name="Remitos">
+          <Key>
+            <PropertyRef Name="IdRemito" />
+          </Key>
+          <Property Name="IdRemito" Type="Int32" Nullable="false" />
+          <Property Name="IdNotaPedido" Type="Int32" Nullable="false" />
+          <Property Name="NumeroRemito" Type="Int32" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" />
+          <Property Name="Observaciones" Type="String" MaxLength="200" Unicode="false" />
+          <Property Name="IdTransportista" Type="Int32" />
+          <Property Name="Peso" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Bultos" Type="Int32" />
+          <Property Name="Valor" Type="Decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="Transportistas">
+          <Key>
+            <PropertyRef Name="IdTransportista" />
+          </Key>
+          <Property Name="IdTransportista" Type="Int32" Nullable="false" />
+          <Property Name="Transportista" Type="String" Nullable="false" MaxLength="100" Unicode="false" />
+          <Property Name="Domicilio" Type="String" Nullable="false" MaxLength="100" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_Articulos_Categoria">
+          <End Role="Categorias" Type="SPISAModel.Categorias" Multiplicity="1" />
+          <End Role="Articulos" Type="SPISAModel.Articulos" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_NotaPedido_Items1_1Articulo">
+          <End Role="Articulos" Type="SPISAModel.Articulos" Multiplicity="1" />
+          <End Role="NotaPedido_Items" Type="SPISAModel.NotaPedido_Items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Articulos">
+              <PropertyRef Name="idArticulo" />
+            </Principal>
+            <Dependent Role="NotaPedido_Items">
+              <PropertyRef Name="IdArticulo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AuditColumns1">
+          <End Role="AuditTables" Type="SPISAModel.AuditTables" Multiplicity="1" />
+          <End Role="AuditColumns" Type="SPISAModel.AuditColumns" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AuditTables">
+              <PropertyRef Name="TableID" />
+            </Principal>
+            <Dependent Role="AuditColumns">
+              <PropertyRef Name="TableID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AuditRelationships">
+          <End Role="AuditRelationships" Type="SPISAModel.AuditRelationships" Multiplicity="1" />
+          <End Role="AuditLookups" Type="SPISAModel.AuditLookups" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_AuditTables">
+          <End Role="AuditTables" Type="SPISAModel.AuditTables" Multiplicity="1" />
+          <End Role="AuditRelationships" Type="SPISAModel.AuditRelationships" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Clientes_CondicionesIVA">
+          <End Role="CondicionesIVA" Type="SPISAModel.CondicionesIVA" Multiplicity="1" />
+          <End Role="Clientes" Type="SPISAModel.Clientes" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Clientes_Operatorias">
+          <End Role="Operatorias" Type="SPISAModel.Operatorias" Multiplicity="1" />
+          <End Role="Clientes" Type="SPISAModel.Clientes" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Clientes_Provincias">
+          <End Role="Provincias" Type="SPISAModel.Provincias" Multiplicity="1" />
+          <End Role="Clientes" Type="SPISAModel.Clientes" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_NotaPedidos1_1Clientes">
+          <End Role="Clientes" Type="SPISAModel.Clientes" Multiplicity="1" />
+          <End Role="NotaPedidos" Type="SPISAModel.NotaPedidos" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_CuentaCorriente_Movimientos_CuentaCorriente_Pagos">
+          <End Role="CuentaCorriente_Pagos" Type="SPISAModel.CuentaCorriente_Pagos" Multiplicity="0..1" />
+          <End Role="CuentaCorriente_Movimientos" Type="SPISAModel.CuentaCorriente_Movimientos" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_CuentaCorriente_Movimientos_MovimientosTipo">
+          <End Role="MovimientosTipo" Type="SPISAModel.MovimientosTipo" Multiplicity="1" />
+          <End Role="CuentaCorriente_Movimientos" Type="SPISAModel.CuentaCorriente_Movimientos" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_CuentaCorriente_Pagos_DatosDelPago_CuentaCorriente_Pagos">
+          <End Role="CuentaCorriente_Pagos" Type="SPISAModel.CuentaCorriente_Pagos" Multiplicity="1" />
+          <End Role="CuentaCorriente_Pagos_DatosDelPago" Type="SPISAModel.CuentaCorriente_Pagos_DatosDelPago" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CuentaCorriente_Pagos">
+              <PropertyRef Name="IdPago" />
+            </Principal>
+            <Dependent Role="CuentaCorriente_Pagos_DatosDelPago">
+              <PropertyRef Name="IdPago" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CuentaCorriente_Pagos_FormasDePago">
+          <End Role="FormasDePago" Type="SPISAModel.FormasDePago" Multiplicity="1" />
+          <End Role="CuentaCorriente_Pagos" Type="SPISAModel.CuentaCorriente_Pagos" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Facturas1_1NotaPedidos">
+          <End Role="NotaPedidos" Type="SPISAModel.NotaPedidos" Multiplicity="1" />
+          <End Role="Facturas" Type="SPISAModel.Facturas" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_NotaPedido_Items1_nNotaPedidos">
+          <End Role="NotaPedidos" Type="SPISAModel.NotaPedidos" Multiplicity="1" />
+          <End Role="NotaPedido_Items" Type="SPISAModel.NotaPedido_Items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NotaPedidos">
+              <PropertyRef Name="IdNotaPedido" />
+            </Principal>
+            <Dependent Role="NotaPedido_Items">
+              <PropertyRef Name="IdNotaPedido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SPISAModel.Store" Alias="Self" ProviderManifestToken="09.00.3068" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityContainer Name="dbo">
+          <EntitySet Name="Articulos" EntityType="SPISAModel.Store.Articulos" />
+          <EntitySet Name="Articulos_Compuestos" EntityType="SPISAModel.Store.Articulos_Compuestos" />
+          <EntitySet Name="AuditColumns" EntityType="SPISAModel.Store.AuditColumns" />
+          <EntitySet Name="AuditConfig" EntityType="SPISAModel.Store.AuditConfig" />
+          <EntitySet Name="AuditLog" EntityType="SPISAModel.Store.AuditLog" />
+          <EntitySet Name="AuditLogAutoKeys" EntityType="SPISAModel.Store.AuditLogAutoKeys" />
+          <EntitySet Name="AuditLogDetail" EntityType="SPISAModel.Store.AuditLogDetail" />
+          <EntitySet Name="AuditLogImage" EntityType="SPISAModel.Store.AuditLogImage" />
+          <EntitySet Name="AuditLogNText" EntityType="SPISAModel.Store.AuditLogNText" />
+          <EntitySet Name="AuditLogText" EntityType="SPISAModel.Store.AuditLogText" />
+          <EntitySet Name="AuditLookups" EntityType="SPISAModel.Store.AuditLookups" />
+          <EntitySet Name="AuditRelationships" EntityType="SPISAModel.Store.AuditRelationships" />
+          <EntitySet Name="AuditTables" EntityType="SPISAModel.Store.AuditTables" />
+          <EntitySet Name="Buscador_Criterios" EntityType="SPISAModel.Store.Buscador_Criterios">
+            <DefiningQuery>SELECT 
+      [Buscador_Criterios].[TipoDeDato] AS [TipoDeDato], 
+      [Buscador_Criterios].[Criterio] AS [Criterio]
+      FROM [dbo].[Buscador_Criterios] AS [Buscador_Criterios]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Buscador_Relaciones" EntityType="SPISAModel.Store.Buscador_Relaciones">
+            <DefiningQuery>SELECT 
+      [Buscador_Relaciones].[Tabla] AS [Tabla], 
+      [Buscador_Relaciones].[ColumnaID] AS [ColumnaID], 
+      [Buscador_Relaciones].[TablaABuscar] AS [TablaABuscar], 
+      [Buscador_Relaciones].[ColumnaABuscar] AS [ColumnaABuscar], 
+      [Buscador_Relaciones].[NombreColumna] AS [NombreColumna], 
+      [Buscador_Relaciones].[TipoDeDato] AS [TipoDeDato], 
+      [Buscador_Relaciones].[QueryPersonalizada] AS [QueryPersonalizada], 
+      [Buscador_Relaciones].[ColumnaPersonalizada] AS [ColumnaPersonalizada]
+      FROM [dbo].[Buscador_Relaciones] AS [Buscador_Relaciones]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Categorias" EntityType="SPISAModel.Store.Categorias" />
+          <EntitySet Name="Clientes" EntityType="SPISAModel.Store.Clientes" />
+          <EntitySet Name="CondicionesIVA" EntityType="SPISAModel.Store.CondicionesIVA" />
+          <EntitySet Name="CuentaCorriente_Movimientos" EntityType="SPISAModel.Store.CuentaCorriente_Movimientos" />
+          <EntitySet Name="CuentaCorriente_Pagos" EntityType="SPISAModel.Store.CuentaCorriente_Pagos" />
+          <EntitySet Name="CuentaCorriente_Pagos_DatosDelPago" EntityType="SPISAModel.Store.CuentaCorriente_Pagos_DatosDelPago">
+            <DefiningQuery>SELECT 
+      [CuentaCorriente_Pagos_DatosDelPago].[IdPago] AS [IdPago], 
+      [CuentaCorriente_Pagos_DatosDelPago].[ChequeNumero] AS [ChequeNumero], 
+      [CuentaCorriente_Pagos_DatosDelPago].[FechaCheque] AS [FechaCheque], 
+      [CuentaCorriente_Pagos_DatosDelPago].[FechaCobro] AS [FechaCobro]
+      FROM [dbo].[CuentaCorriente_Pagos_DatosDelPago] AS [CuentaCorriente_Pagos_DatosDelPago]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="CuentasCorriente" EntityType="SPISAModel.Store.CuentasCorriente" />
+          <EntitySet Name="Descuentos" EntityType="SPISAModel.Store.Descuentos">
+            <DefiningQuery>SELECT 
+      [Descuentos].[IdCliente] AS [IdCliente], 
+      [Descuentos].[IdCategoria] AS [IdCategoria], 
+      [Descuentos].[Descuento] AS [Descuento]
+      FROM [dbo].[Descuentos] AS [Descuentos]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Facturas" EntityType="SPISAModel.Store.Facturas" />
+          <EntitySet Name="FormasDePago" EntityType="SPISAModel.Store.FormasDePago" />
+          <EntitySet Name="MovimientosTipo" EntityType="SPISAModel.Store.MovimientosTipo" />
+          <EntitySet Name="NotaPedido_Items" EntityType="SPISAModel.Store.NotaPedido_Items">
+            <DefiningQuery>SELECT 
+      [NotaPedido_Items].[IdNotaPedido] AS [IdNotaPedido], 
+      [NotaPedido_Items].[IdArticulo] AS [IdArticulo], 
+      [NotaPedido_Items].[Cantidad] AS [Cantidad], 
+      [NotaPedido_Items].[PrecioUnitario] AS [PrecioUnitario], 
+      [NotaPedido_Items].[Descuento] AS [Descuento]
+      FROM [dbo].[NotaPedido_Items] AS [NotaPedido_Items]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="NotaPedidos" EntityType="SPISAModel.Store.NotaPedidos" />
+          <EntitySet Name="Operatorias" EntityType="SPISAModel.Store.Operatorias" />
+          <EntitySet Name="Provincias" EntityType="SPISAModel.Store.Provincias" />
+          <EntitySet Name="Remitos" EntityType="SPISAModel.Store.Remitos" />
+          <EntitySet Name="Transportistas" EntityType="SPISAModel.Store.Transportistas" />
+          <AssociationSet Name="FK_Articulos_Categoria" Association="SPISAModel.Store.FK_Articulos_Categoria">
+            <End Role="Categorias" EntitySet="Categorias" />
+            <End Role="Articulos" EntitySet="Articulos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AuditColumns1" Association="SPISAModel.Store.FK_AuditColumns1">
+            <End Role="AuditTables" EntitySet="AuditTables" />
+            <End Role="AuditColumns" EntitySet="AuditColumns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AuditRelationships" Association="SPISAModel.Store.FK_AuditRelationships">
+            <End Role="AuditRelationships" EntitySet="AuditRelationships" />
+            <End Role="AuditLookups" EntitySet="AuditLookups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AuditTables" Association="SPISAModel.Store.FK_AuditTables">
+            <End Role="AuditTables" EntitySet="AuditTables" />
+            <End Role="AuditRelationships" EntitySet="AuditRelationships" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Clientes_CondicionesIVA" Association="SPISAModel.Store.FK_Clientes_CondicionesIVA">
+            <End Role="CondicionesIVA" EntitySet="CondicionesIVA" />
+            <End Role="Clientes" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Clientes_Operatorias" Association="SPISAModel.Store.FK_Clientes_Operatorias">
+            <End Role="Operatorias" EntitySet="Operatorias" />
+            <End Role="Clientes" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Clientes_Provincias" Association="SPISAModel.Store.FK_Clientes_Provincias">
+            <End Role="Provincias" EntitySet="Provincias" />
+            <End Role="Clientes" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CuentaCorriente_Movimientos_CuentaCorriente_Pagos" Association="SPISAModel.Store.FK_CuentaCorriente_Movimientos_CuentaCorriente_Pagos">
+            <End Role="CuentaCorriente_Pagos" EntitySet="CuentaCorriente_Pagos" />
+            <End Role="CuentaCorriente_Movimientos" EntitySet="CuentaCorriente_Movimientos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CuentaCorriente_Movimientos_MovimientosTipo" Association="SPISAModel.Store.FK_CuentaCorriente_Movimientos_MovimientosTipo">
+            <End Role="MovimientosTipo" EntitySet="MovimientosTipo" />
+            <End Role="CuentaCorriente_Movimientos" EntitySet="CuentaCorriente_Movimientos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CuentaCorriente_Pagos_DatosDelPago_CuentaCorriente_Pagos" Association="SPISAModel.Store.FK_CuentaCorriente_Pagos_DatosDelPago_CuentaCorriente_Pagos">
+            <End Role="CuentaCorriente_Pagos" EntitySet="CuentaCorriente_Pagos" />
+            <End Role="CuentaCorriente_Pagos_DatosDelPago" EntitySet="CuentaCorriente_Pagos_DatosDelPago" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CuentaCorriente_Pagos_FormasDePago" Association="SPISAModel.Store.FK_CuentaCorriente_Pagos_FormasDePago">
+            <End Role="FormasDePago" EntitySet="FormasDePago" />
+            <End Role="CuentaCorriente_Pagos" EntitySet="CuentaCorriente_Pagos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Facturas1_1NotaPedidos" Association="SPISAModel.Store.FK_Facturas1_1NotaPedidos">
+            <End Role="NotaPedidos" EntitySet="NotaPedidos" />
+            <End Role="Facturas" EntitySet="Facturas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotaPedido_Items1_1Articulo" Association="SPISAModel.Store.FK_NotaPedido_Items1_1Articulo">
+            <End Role="Articulos" EntitySet="Articulos" />
+            <End Role="NotaPedido_Items" EntitySet="NotaPedido_Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotaPedido_Items1_nNotaPedidos" Association="SPISAModel.Store.FK_NotaPedido_Items1_nNotaPedidos">
+            <End Role="NotaPedidos" EntitySet="NotaPedidos" />
+            <End Role="NotaPedido_Items" EntitySet="NotaPedido_Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotaPedidos1_1Clientes" Association="SPISAModel.Store.FK_NotaPedidos1_1Clientes">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="NotaPedidos" EntitySet="NotaPedidos" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Articulos">
+          <Key>
+            <PropertyRef Name="idArticulo" />
+          </Key>
+          <Property Name="idArticulo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdCategoria" Type="int" Nullable="false" />
+          <Property Name="codigo" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="descripcion" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="cantidad" Type="int" Nullable="false" />
+          <Property Name="preciounitario" Type="decimal" Nullable="false" Scale="2" />
+        </EntityType>
+        <EntityType Name="Articulos_Compuestos">
+          <Key>
+            <PropertyRef Name="CodigoArticulo" />
+            <PropertyRef Name="CodigoCompuesto" />
+          </Key>
+          <Property Name="CodigoArticulo" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="CodigoCompuesto" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Cantidad" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AuditColumns">
+          <Key>
+            <PropertyRef Name="TableID" />
+            <PropertyRef Name="ColumnID" />
+          </Key>
+          <Property Name="TableID" Type="int" Nullable="false" />
+          <Property Name="ColumnID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ColumnName" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="AuditColumn" Type="bit" Nullable="false" />
+          <Property Name="CaptureColumn" Type="bit" Nullable="false" />
+          <Property Name="IsLookup" Type="bit" Nullable="false" />
+          <Property Name="KeyColumn" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AuditConfig">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Value" Type="varchar" Nullable="false" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="AuditLog">
+          <Key>
+            <PropertyRef Name="AuditLogID" />
+          </Key>
+          <Property Name="AuditLogID" Type="int" Nullable="false" />
+          <Property Name="TableID" Type="int" Nullable="false" />
+          <Property Name="RowsAffected" Type="int" Nullable="false" />
+          <Property Name="Event" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="PostedDateTime" Type="datetime" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="HostName" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="ApplicationName" Type="nvarchar" Nullable="false" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="AuditLogAutoKeys">
+          <Key>
+            <PropertyRef Name="TableName" />
+          </Key>
+          <Property Name="TableName" Type="char" Nullable="false" MaxLength="128" />
+          <Property Name="KeyValue" Type="int" Nullable="false" />
+          <Property Name="Filler" Type="char" Nullable="false" MaxLength="6000" />
+        </EntityType>
+        <EntityType Name="AuditLogDetail">
+          <Key>
+            <PropertyRef Name="AuditLogID" />
+            <PropertyRef Name="RowKey" />
+            <PropertyRef Name="ColumnID" />
+          </Key>
+          <Property Name="AuditLogID" Type="int" Nullable="false" />
+          <Property Name="RowKey" Type="varchar" Nullable="false" MaxLength="512" />
+          <Property Name="ColumnID" Type="int" Nullable="false" />
+          <Property Name="Status" Type="tinyint" Nullable="false" />
+          <Property Name="OldValue" Type="varchar(max)" />
+          <Property Name="NewValue" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="AuditLogImage">
+          <Key>
+            <PropertyRef Name="AuditLogID" />
+            <PropertyRef Name="RowKey" />
+            <PropertyRef Name="ColumnID" />
+          </Key>
+          <Property Name="AuditLogID" Type="int" Nullable="false" />
+          <Property Name="RowKey" Type="varchar" Nullable="false" MaxLength="512" />
+          <Property Name="ColumnID" Type="int" Nullable="false" />
+          <Property Name="Value" Type="image" />
+        </EntityType>
+        <EntityType Name="AuditLogNText">
+          <Key>
+            <PropertyRef Name="AuditLogID" />
+            <PropertyRef Name="RowKey" />
+            <PropertyRef Name="ColumnID" />
+          </Key>
+          <Property Name="AuditLogID" Type="int" Nullable="false" />
+          <Property Name="RowKey" Type="varchar" Nullable="false" MaxLength="512" />
+          <Property Name="ColumnID" Type="int" Nullable="false" />
+          <Property Name="Value" Type="ntext" />
+        </EntityType>
+        <EntityType Name="AuditLogText">
+          <Key>
+            <PropertyRef Name="AuditLogID" />
+            <PropertyRef Name="RowKey" />
+            <PropertyRef Name="ColumnID" />
+          </Key>
+          <Property Name="AuditLogID" Type="int" Nullable="false" />
+          <Property Name="RowKey" Type="varchar" Nullable="false" MaxLength="512" />
+          <Property Name="ColumnID" Type="int" Nullable="false" />
+          <Property Name="Value" Type="text" />
+        </EntityType>
+        <EntityType Name="AuditLookups">
+          <Key>
+            <PropertyRef Name="LookupID" />
+          </Key>
+          <Property Name="LookupID" Type="int" Nullable="false" />
+          <Property Name="RelationshipID" Type="int" Nullable="false" />
+          <Property Name="ExpressionIsColumn" Type="bit" Nullable="false" />
+          <Property Name="LookupExpression" Type="nvarchar" Nullable="false" MaxLength="1024" />
+        </EntityType>
+        <EntityType Name="AuditRelationships">
+          <Key>
+            <PropertyRef Name="RelationshipID" />
+          </Key>
+          <Property Name="TableID" Type="int" Nullable="false" />
+          <Property Name="RelationshipID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TableName" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="JoinExpression" Type="nvarchar" Nullable="false" MaxLength="1024" />
+        </EntityType>
+        <EntityType Name="AuditTables">
+          <Key>
+            <PropertyRef Name="TableID" />
+          </Key>
+          <Property Name="TableID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Owner" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="TableName" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="AuditTable" Type="bit" Nullable="false" />
+          <Property Name="AuditInserts" Type="bit" Nullable="false" />
+          <Property Name="AuditUpdates" Type="bit" Nullable="false" />
+          <Property Name="AuditDeletes" Type="bit" Nullable="false" />
+          <Property Name="AuditDeletesAll" Type="bit" Nullable="false" />
+          <Property Name="UniqueKeyType" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="UserColumn" Type="nvarchar" Nullable="false" MaxLength="128" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SPISA.dbo.Buscador_Criterios' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Buscador_Criterios">
+          <Key>
+            <PropertyRef Name="TipoDeDato" />
+            <PropertyRef Name="Criterio" />
+          </Key>
+          <Property Name="TipoDeDato" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Criterio" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SPISA.dbo.Buscador_Relaciones' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Buscador_Relaciones">
+          <Key>
+            <PropertyRef Name="Tabla" />
+          </Key>
+          <Property Name="Tabla" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ColumnaID" Type="varchar" MaxLength="255" />
+          <Property Name="TablaABuscar" Type="varchar" MaxLength="50" />
+          <Property Name="ColumnaABuscar" Type="varchar" MaxLength="50" />
+          <Property Name="NombreColumna" Type="varchar" MaxLength="255" />
+          <Property Name="TipoDeDato" Type="varchar" MaxLength="50" />
+          <Property Name="QueryPersonalizada" Type="varchar" MaxLength="255" />
+          <Property Name="ColumnaPersonalizada" Type="bit" />
+        </EntityType>
+        <EntityType Name="Categorias">
+          <Key>
+            <PropertyRef Name="IdCategoria" />
+          </Key>
+          <Property Name="IdCategoria" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Descuento" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Clientes">
+          <Key>
+            <PropertyRef Name="IdCliente" />
+          </Key>
+          <Property Name="IdCliente" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="int" Nullable="false" />
+          <Property Name="RazonSocial" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Domicilio" Type="varchar" MaxLength="100" />
+          <Property Name="Localidad" Type="varchar" MaxLength="40" />
+          <Property Name="IdProvincia" Type="int" Nullable="false" />
+          <Property Name="IdCondicionIVA" Type="int" Nullable="false" />
+          <Property Name="CUIT" Type="varchar" Nullable="false" MaxLength="11" />
+          <Property Name="IdOperatoria" Type="int" Nullable="false" />
+          <Property Name="Saldo" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="IdTransportista" Type="int" />
+        </EntityType>
+        <EntityType Name="CondicionesIVA">
+          <Key>
+            <PropertyRef Name="IdCondicionIVA" />
+          </Key>
+          <Property Name="IdCondicionIVA" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CondicionIVA" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CuentaCorriente_Movimientos">
+          <Key>
+            <PropertyRef Name="IdMovimiento" />
+          </Key>
+          <Property Name="IdMovimiento" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdCuentaCorriente" Type="int" Nullable="false" />
+          <Property Name="IdMovimientoTipo" Type="int" Nullable="false" />
+          <Property Name="IdFactura" Type="int" />
+          <Property Name="Monto" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="IdPago" Type="int" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CuentaCorriente_Pagos">
+          <Key>
+            <PropertyRef Name="IdPago" />
+          </Key>
+          <Property Name="IdPago" Type="int" Nullable="false" />
+          <Property Name="IdCuentaCorriente" Type="int" Nullable="false" />
+          <Property Name="IdCliente" Type="int" Nullable="false" />
+          <Property Name="IdFormaDePago" Type="int" Nullable="false" />
+          <Property Name="Monto" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SPISA.dbo.CuentaCorriente_Pagos_DatosDelPago' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="CuentaCorriente_Pagos_DatosDelPago">
+          <Key>
+            <PropertyRef Name="IdPago" />
+            <PropertyRef Name="ChequeNumero" />
+            <PropertyRef Name="FechaCheque" />
+            <PropertyRef Name="FechaCobro" />
+          </Key>
+          <Property Name="IdPago" Type="int" Nullable="false" />
+          <Property Name="ChequeNumero" Type="int" Nullable="false" />
+          <Property Name="FechaCheque" Type="datetime" Nullable="false" />
+          <Property Name="FechaCobro" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CuentasCorriente">
+          <Key>
+            <PropertyRef Name="IdCuentaCorriente" />
+          </Key>
+          <Property Name="IdCuentaCorriente" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
+          <Property Name="IdCliente" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SPISA.dbo.Descuentos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Descuentos">
+          <Key>
+            <PropertyRef Name="IdCliente" />
+            <PropertyRef Name="IdCategoria" />
+            <PropertyRef Name="Descuento" />
+          </Key>
+          <Property Name="IdCliente" Type="int" Nullable="false" />
+          <Property Name="IdCategoria" Type="int" Nullable="false" />
+          <Property Name="Descuento" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Facturas">
+          <Key>
+            <PropertyRef Name="IdFactura" />
+          </Key>
+          <Property Name="IdFactura" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdNotaPedido" Type="int" Nullable="false" />
+          <Property Name="NumeroFactura" Type="bigint" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+          <Property Name="Observaciones" Type="varchar" MaxLength="200" />
+          <Property Name="FueImpresa" Type="bit" Nullable="false" />
+          <Property Name="ValorDolar" Type="decimal" Precision="3" Scale="2" />
+          <Property Name="FueCancelada" Type="bit" Nullable="false" />
+          <Property Name="EsNotaDeCredito" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FormasDePago">
+          <Key>
+            <PropertyRef Name="IdFormaDePago" />
+          </Key>
+          <Property Name="IdFormaDePago" Type="int" Nullable="false" />
+          <Property Name="FormaDePago" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MovimientosTipo">
+          <Key>
+            <PropertyRef Name="IdMovimiento" />
+          </Key>
+          <Property Name="IdMovimiento" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Movimiento" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SPISA.dbo.NotaPedido_Items' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="NotaPedido_Items">
+          <Key>
+            <PropertyRef Name="IdNotaPedido" />
+            <PropertyRef Name="IdArticulo" />
+            <PropertyRef Name="Cantidad" />
+          </Key>
+          <Property Name="IdNotaPedido" Type="int" Nullable="false" />
+          <Property Name="IdArticulo" Type="int" Nullable="false" />
+          <Property Name="Cantidad" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="PrecioUnitario" Type="decimal" Scale="2" />
+          <Property Name="Descuento" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="NotaPedidos">
+          <Key>
+            <PropertyRef Name="IdNotaPedido" />
+          </Key>
+          <Property Name="IdNotaPedido" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdCliente" Type="int" Nullable="false" />
+          <Property Name="FechaEmision" Type="datetime" Nullable="false" />
+          <Property Name="FechaEntrega" Type="datetime" />
+          <Property Name="NumeroOrden" Type="int" Nullable="false" />
+          <Property Name="Observaciones" Type="varchar" MaxLength="200" />
+          <Property Name="DescuentoEspecial" Type="float" />
+        </EntityType>
+        <EntityType Name="Operatorias">
+          <Key>
+            <PropertyRef Name="IdOperatoria" />
+          </Key>
+          <Property Name="IdOperatoria" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Operatoria" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Provincias">
+          <Key>
+            <PropertyRef Name="IdProvincia" />
+          </Key>
+          <Property Name="IdProvincia" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Provincia" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Remitos">
+          <Key>
+            <PropertyRef Name="IdRemito" />
+          </Key>
+          <Property Name="IdRemito" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdNotaPedido" Type="int" Nullable="false" />
+          <Property Name="NumeroRemito" Type="int" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+          <Property Name="Observaciones" Type="varchar" MaxLength="200" />
+          <Property Name="IdTransportista" Type="int" />
+          <Property Name="Peso" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Bultos" Type="int" />
+          <Property Name="Valor" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="Transportistas">
+          <Key>
+            <PropertyRef Name="IdTransportista" />
+          </Key>
+          <Property Name="IdTransportista" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Transportista" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Domicilio" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <Association Name="FK_Articulos_Categoria">
+          <End Role="Categorias" Type="SPISAModel.Store.Categorias" Multiplicity="1" />
+          <End Role="Articulos" Type="SPISAModel.Store.Articulos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categorias">
+              <PropertyRef Name="IdCategoria" />
+            </Principal>
+            <Dependent Role="Articulos">
+              <PropertyRef Name="IdCategoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AuditColumns1">
+          <End Role="AuditTables" Type="SPISAModel.Store.AuditTables" Multiplicity="1" />
+          <End Role="AuditColumns" Type="SPISAModel.Store.AuditColumns" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AuditTables">
+              <PropertyRef Name="TableID" />
+            </Principal>
+            <Dependent Role="AuditColumns">
+              <PropertyRef Name="TableID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AuditRelationships">
+          <End Role="AuditRelationships" Type="SPISAModel.Store.AuditRelationships" Multiplicity="1" />
+          <End Role="AuditLookups" Type="SPISAModel.Store.AuditLookups" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AuditRelationships">
+              <PropertyRef Name="RelationshipID" />
+            </Principal>
+            <Dependent Role="AuditLookups">
+              <PropertyRef Name="RelationshipID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AuditTables">
+          <End Role="AuditTables" Type="SPISAModel.Store.AuditTables" Multiplicity="1" />
+          <End Role="AuditRelationships" Type="SPISAModel.Store.AuditRelationships" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AuditTables">
+              <PropertyRef Name="TableID" />
+            </Principal>
+            <Dependent Role="AuditRelationships">
+              <PropertyRef Name="TableID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Clientes_CondicionesIVA">
+          <End Role="CondicionesIVA" Type="SPISAModel.Store.CondicionesIVA" Multiplicity="1" />
+          <End Role="Clientes" Type="SPISAModel.Store.Clientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CondicionesIVA">
+              <PropertyRef Name="IdCondicionIVA" />
+            </Principal>
+            <Dependent Role="Clientes">
+              <PropertyRef Name="IdCondicionIVA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Clientes_Operatorias">
+          <End Role="Operatorias" Type="SPISAModel.Store.Operatorias" Multiplicity="1" />
+          <End Role="Clientes" Type="SPISAModel.Store.Clientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operatorias">
+              <PropertyRef Name="IdOperatoria" />
+            </Principal>
+            <Dependent Role="Clientes">
+              <PropertyRef Name="IdOperatoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Clientes_Provincias">
+          <End Role="Provincias" Type="SPISAModel.Store.Provincias" Multiplicity="1" />
+          <End Role="Clientes" Type="SPISAModel.Store.Clientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provincias">
+              <PropertyRef Name="IdProvincia" />
+            </Principal>
+            <Dependent Role="Clientes">
+              <PropertyRef Name="IdProvincia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CuentaCorriente_Movimientos_CuentaCorriente_Pagos">
+          <End Role="CuentaCorriente_Pagos" Type="SPISAModel.Store.CuentaCorriente_Pagos" Multiplicity="0..1" />
+          <End Role="CuentaCorriente_Movimientos" Type="SPISAModel.Store.CuentaCorriente_Movimientos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CuentaCorriente_Pagos">
+              <PropertyRef Name="IdPago" />
+            </Principal>
+            <Dependent Role="CuentaCorriente_Movimientos">
+              <PropertyRef Name="IdPago" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CuentaCorriente_Movimientos_MovimientosTipo">
+          <End Role="MovimientosTipo" Type="SPISAModel.Store.MovimientosTipo" Multiplicity="1" />
+          <End Role="CuentaCorriente_Movimientos" Type="SPISAModel.Store.CuentaCorriente_Movimientos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MovimientosTipo">
+              <PropertyRef Name="IdMovimiento" />
+            </Principal>
+            <Dependent Role="CuentaCorriente_Movimientos">
+              <PropertyRef Name="IdMovimientoTipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CuentaCorriente_Pagos_DatosDelPago_CuentaCorriente_Pagos">
+          <End Role="CuentaCorriente_Pagos" Type="SPISAModel.Store.CuentaCorriente_Pagos" Multiplicity="1" />
+          <End Role="CuentaCorriente_Pagos_DatosDelPago" Type="SPISAModel.Store.CuentaCorriente_Pagos_DatosDelPago" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CuentaCorriente_Pagos">
+              <PropertyRef Name="IdPago" />
+            </Principal>
+            <Dependent Role="CuentaCorriente_Pagos_DatosDelPago">
+              <PropertyRef Name="IdPago" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CuentaCorriente_Pagos_FormasDePago">
+          <End Role="FormasDePago" Type="SPISAModel.Store.FormasDePago" Multiplicity="1" />
+          <End Role="CuentaCorriente_Pagos" Type="SPISAModel.Store.CuentaCorriente_Pagos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormasDePago">
+              <PropertyRef Name="IdFormaDePago" />
+            </Principal>
+            <Dependent Role="CuentaCorriente_Pagos">
+              <PropertyRef Name="IdFormaDePago" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Facturas1_1NotaPedidos">
+          <End Role="NotaPedidos" Type="SPISAModel.Store.NotaPedidos" Multiplicity="1" />
+          <End Role="Facturas" Type="SPISAModel.Store.Facturas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NotaPedidos">
+              <PropertyRef Name="IdNotaPedido" />
+            </Principal>
+            <Dependent Role="Facturas">
+              <PropertyRef Name="IdNotaPedido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotaPedido_Items1_1Articulo">
+          <End Role="Articulos" Type="SPISAModel.Store.Articulos" Multiplicity="1" />
+          <End Role="NotaPedido_Items" Type="SPISAModel.Store.NotaPedido_Items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Articulos">
+              <PropertyRef Name="idArticulo" />
+            </Principal>
+            <Dependent Role="NotaPedido_Items">
+              <PropertyRef Name="IdArticulo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotaPedido_Items1_nNotaPedidos">
+          <End Role="NotaPedidos" Type="SPISAModel.Store.NotaPedidos" Multiplicity="1" />
+          <End Role="NotaPedido_Items" Type="SPISAModel.Store.NotaPedido_Items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NotaPedidos">
+              <PropertyRef Name="IdNotaPedido" />
+            </Principal>
+            <Dependent Role="NotaPedido_Items">
+              <PropertyRef Name="IdNotaPedido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotaPedidos1_1Clientes">
+          <End Role="Clientes" Type="SPISAModel.Store.Clientes" Multiplicity="1" />
+          <End Role="NotaPedidos" Type="SPISAModel.Store.NotaPedidos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="IdCliente" />
+            </Principal>
+            <Dependent Role="NotaPedidos">
+              <PropertyRef Name="IdCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="Articulos_Actualizar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdArticulo" Type="int" Mode="In" />
+          <Parameter Name="IdCategoria" Type="int" Mode="In" />
+          <Parameter Name="Codigo" Type="varchar" Mode="In" />
+          <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+          <Parameter Name="Cantidad" Type="int" Mode="In" />
+          <Parameter Name="PrecioUnitario" Type="money" Mode="In" />
+        </Function>
+        <Function Name="Articulos_Buscar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CriterioCodigo" Type="varchar" Mode="In" />
+          <Parameter Name="Codigo" Type="varchar" Mode="In" />
+          <Parameter Name="CriterioDescripcion" Type="varchar" Mode="In" />
+          <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+          <Parameter Name="IdCategoria" Type="int" Mode="In" />
+          <Parameter Name="CriterioPrecio" Type="varchar" Mode="In" />
+          <Parameter Name="Precio" Type="decimal" Mode="In" />
+          <Parameter Name="CriterioCantidad" Type="varchar" Mode="In" />
+          <Parameter Name="Cantidad" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Articulos_CantidadSalidasPorArticuloPorFecha" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdArticulo" Type="int" Mode="In" />
+          <Parameter Name="Fecha" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="Articulos_GuardarArticulo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdCategoria" Type="int" Mode="In" />
+          <Parameter Name="Codigo" Type="varchar" Mode="In" />
+          <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+          <Parameter Name="Cantidad" Type="decimal" Mode="In" />
+          <Parameter Name="PrecioUnitario" Type="money" Mode="In" />
+        </Function>
+        <Function Name="Articulos_ModificarCantidad" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdArticulo" Type="int" Mode="In" />
+          <Parameter Name="Cantidad" Type="int" Mode="In" />
+          <Parameter Name="TipoOperacion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Articulos_TraerArticuloPorCodigo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="codigo" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="Articulos_TraerArticuloPorID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdArticulo" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Articulos_TraerArticulosPorDescripcion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="Articulos_TraerTodos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Categorias_ActualizarCategoria" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdCategoria" Type="int" Mode="In" />
+          <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+          <Parameter Name="Descuento" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Categorias_GuardarCategoria" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+          <Parameter Name="Descuento" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Categorias_TraerPorDescripcion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="Categorias_TraerPorId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdCategoria" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Categorias_TraerTodas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Clientes_ActualizarCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdCliente" Type="int" Mode="In" />
+          <Parameter Name="RazonSocial" Type="varchar" Mode="In" />
+          <Parameter Name="Domicilio" Type="varchar" Mode="In" />
+          <Parameter Name="Localidad" Type="varchar" Mode="In" />
+          <Parameter Name="IdProvincia" Type="int" Mode="In" />
+          <Parameter Name="IdCondicionIVA" Type="int" Mode="In" />
+          <Parameter Name="CUIT" Type="varchar" Mode="In" />
+          <Parameter Name="IdOperatoria" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Clientes_Buscar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Codigo" Type="varchar" Mode="In" />
+          <Parameter Name="Localidad" Type="varchar" Mode="In" />
+          <Parameter Name="RazonSocial" Type="varchar" Mode="In" />
+          <Parameter Name="CriterioSaldo" Type="varchar" Mode="In" />
+          <Parameter Name="Saldo" Type="decimal" Mode="In" />
+        </Function>
+        <Function Name="Clientes_EstablecerTransportista" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdCliente" Type="int" Mode="In" />
+          <Parameter Name="IdTransportista" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Clientes_GuardarCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Codigo" Type="int" Mode="In" />
+          <Parameter Name="RazonSocial" Type="varchar" Mode="In" />
+          <Parameter Name="Domicilio" Type="varchar" Mode="In" />
+          <Parameter Name="Localidad" Type="varchar" Mode="In" />
+          <Parameter Name="IdProvincia" Type="int" Mode="In" />
+          <Parameter Name="IdCondicionIVA" Type="int" Mode="In" />
+          <Parameter Name="CUIT" Type="varchar" Mode="In" />
+          <Parameter Name="IdOperatoria" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Clientes_ObtenerNuevoNumeroCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Clientes_TraerClientePorCodigo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Codigo" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="Clientes_TraerClientePorRazonSocial" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RazonSocial" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="Clientes_TraerPorId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdCliente" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Clientes_TraerTodos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="CondicionesIVA_TraerPorCondicionIVA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CondicionIVA" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="CondicionesIVA_TraerPorId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdCondicionIva" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CondicionesIVA_TraerTodas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="CuentaCorriente_Agregar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdCliente" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CuentaCorriente_AlmacenarMovimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdCuentaCorriente" Type="int" Mode="In" />
+          <Parameter Name="IdFactura" Type="int" Mode="In" />
+          <Parameter Name="Monto" Type="varchar" Mode="In" />
+          <Parameter Name="TipoOperacion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CuentaCorriente_TraerPorIdCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdCliente" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Descuentos_AgregarDescuento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdCliente" Type="int" Mode="In" />
+          <Parameter Name="IdCategoria" Type="int" Mode="In" />
+          <Parameter Name="Descuento" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Descuentos_EliminarPorIdCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdCliente" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Descuentos_TraerPorIdCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdCliente" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Factura_Imprimir" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdFactura" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Facturas_ActualizarFactura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdFactura" Type="int" Mode="In" />
+          <Parameter Name="IdCliente" Type="int" Mode="In" />
+          <Parameter Name="Fecha" Type="datetime" Mode="In" />
+          <Parameter Name="Observaciones" Type="varchar" Mode="In" />
+          <Parameter Name="DescuentoEspecial" Type="int" Mode="In" />
+          <Parameter Name="ValorDolar" Type="float" Mode="In" />
+          <Parameter Name="EsNotaDeCredito" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="Facturas_AlmacenarImpresion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdFactura" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Facturas_CancelarFactura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdFactura" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Facturas_GuardarFactura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Fecha" Type="datetime" Mode="In" />
+          <Parameter Name="IdNotaPedido" Type="int" Mode="In" />
+          <Parameter Name="IdCliente" Type="int" Mode="In" />
+          <Parameter Name="NumeroFactura" Type="bigint" Mode="In" />
+          <Parameter Name="Observaciones" Type="varchar" Mode="In" />
+          <Parameter Name="DescuentoEspecial" Type="int" Mode="In" />
+          <Parameter Name="ValorDolar" Type="float" Mode="In" />
+          <Parameter Name="EsNotaDeCredito" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="Facturas_ObtenerNumeroNumeroDeFactura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Facturas_TraerEntreFechas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FechaInicio" Type="datetime" Mode="In" />
+          <Parameter Name="FechaFin" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="Facturas_TraerFacturaPorID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdFactura" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Facturas_TraerFacturaPorIdNotaPedido" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdNotaPedido" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Facturas_TraerItems" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idFactura" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Facturas_TraerPorIdNotaPedido" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdNotaPedido" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Facturas_TraerTodas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetTableColumns" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TableName" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="MovimientosStock_AlmacenarMovimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdArticulo" Type="int" Mode="In" />
+          <Parameter Name="Fecha" Type="datetime" Mode="In" />
+          <Parameter Name="Cantidad" Type="int" Mode="In" />
+        </Function>
+        <Function Name="NotaPedido_Actualizar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdNotaPedido" Type="int" Mode="In" />
+          <Parameter Name="IdCliente" Type="int" Mode="In" />
+          <Parameter Name="FechaEntrega" Type="datetime" Mode="In" />
+          <Parameter Name="DescuentoEspecial" Type="int" Mode="In" />
+          <Parameter Name="Observaciones" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="NotaPedido_Borrar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdNotaPedido" Type="int" Mode="In" />
+        </Function>
+        <Function Name="NotaPedido_Buscar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RazonSocial" Type="varchar" Mode="In" />
+          <Parameter Name="FechaEmision" Type="datetime" Mode="In" />
+          <Parameter Name="FechaEntrega" Type="datetime" Mode="In" />
+          <Parameter Name="Observaciones" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="NotaPedido_Guardar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdCliente" Type="int" Mode="In" />
+          <Parameter Name="FechaEmision" Type="datetime" Mode="In" />
+          <Parameter Name="FechaEntrega" Type="datetime" Mode="In" />
+          <Parameter Name="DescuentoEspecial" Type="int" Mode="In" />
+          <Parameter Name="Observaciones" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="NotaPedido_Items_AgregarItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdNotaPedido" Type="int" Mode="In" />
+          <Parameter Name="IdArticulo" Type="int" Mode="In" />
+          <Parameter Name="Cantidad" Type="decimal" Mode="In" />
+          <Parameter Name="PrecioUnitario" Type="decimal" Mode="In" />
+          <Parameter Name="Descuento" Type="int" Mode="In" />
+        </Function>
+        <Function Name="NotaPedido_Items_BorrarPorIdNotaPedido" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdNotaPedido" Type="int" Mode="In" />
+        </Function>
+        <Function Name="NotaPedido_ObtenerUltimoNumeroDeOrden" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="NotaPedido_TraerPorId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdNotaPedido" Type="int" Mode="In" />
+        </Function>
+        <Function Name="NotaPedido_TraerTodas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Operatorias_TraerPorId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdOperatoria" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Operatorias_TraerPorOperatoria" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Operatoria" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="Operatorias_TraerTodas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="pr_kr_AuditAutoKey" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TableName" Type="varchar" Mode="In" />
+          <Parameter Name="KeyValue" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="pr_kr_AuditLogHeader" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ConfigID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="AuditLogID" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="pr_kr_AuditLogPurge" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CutoffDateTime" Type="datetime" Mode="In" />
+          <Parameter Name="BatchSize" Type="int" Mode="In" />
+        </Function>
+        <Function Name="pr_kr_AuditLogTrailer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AuditLogID" Type="int" Mode="In" />
+          <Parameter Name="TableID" Type="int" Mode="In" />
+          <Parameter Name="RowsAffected" Type="int" Mode="In" />
+          <Parameter Name="Event" Type="char" Mode="In" />
+          <Parameter Name="UserValue" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Provincias_TraerPorId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idProvincia" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Provincias_TraerPorNombre" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="Provincias_TraerTodas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Remitos_ActualizarRemito" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdRemito" Type="int" Mode="In" />
+          <Parameter Name="Fecha" Type="datetime" Mode="In" />
+          <Parameter Name="Observaciones" Type="varchar" Mode="In" />
+          <Parameter Name="IdTransportista" Type="int" Mode="In" />
+          <Parameter Name="Peso" Type="decimal" Mode="In" />
+          <Parameter Name="Bultos" Type="int" Mode="In" />
+          <Parameter Name="Valor" Type="decimal" Mode="In" />
+        </Function>
+        <Function Name="Remitos_GuardarRemito" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdNotaPedido" Type="int" Mode="In" />
+          <Parameter Name="NumeroRemito" Type="int" Mode="In" />
+          <Parameter Name="Fecha" Type="datetime" Mode="In" />
+          <Parameter Name="Observaciones" Type="varchar" Mode="In" />
+          <Parameter Name="IdTransportista" Type="int" Mode="In" />
+          <Parameter Name="Peso" Type="decimal" Mode="In" />
+          <Parameter Name="Bultos" Type="int" Mode="In" />
+          <Parameter Name="Valor" Type="decimal" Mode="In" />
+        </Function>
+        <Function Name="Remitos_ObtenerNuevoNumeroDeRemito" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Remitos_TraerRemitoPorID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdRemito" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Remitos_TraerRemitoPorIdNotaPedido" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdNotaPedido" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Remitos_TraerTodos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Transportistas_TraerPorId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdTransportista" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Transportistas_TraerTodos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="dbo" CdmEntityContainer="SPISAEntities1">
+          <EntitySetMapping Name="Articulos">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.Articulos)">
+              <MappingFragment StoreEntitySet="Articulos">
+                <ScalarProperty Name="idArticulo" ColumnName="idArticulo" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="preciounitario" ColumnName="preciounitario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Articulos_Compuestos">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.Articulos_Compuestos)">
+              <MappingFragment StoreEntitySet="Articulos_Compuestos">
+                <ScalarProperty Name="CodigoArticulo" ColumnName="CodigoArticulo" />
+                <ScalarProperty Name="CodigoCompuesto" ColumnName="CodigoCompuesto" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AuditColumns">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.AuditColumns)">
+              <MappingFragment StoreEntitySet="AuditColumns">
+                <ScalarProperty Name="TableID" ColumnName="TableID" />
+                <ScalarProperty Name="ColumnID" ColumnName="ColumnID" />
+                <ScalarProperty Name="ColumnName" ColumnName="ColumnName" />
+                <ScalarProperty Name="AuditColumn" ColumnName="AuditColumn" />
+                <ScalarProperty Name="CaptureColumn" ColumnName="CaptureColumn" />
+                <ScalarProperty Name="IsLookup" ColumnName="IsLookup" />
+                <ScalarProperty Name="KeyColumn" ColumnName="KeyColumn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AuditConfig">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.AuditConfig)">
+              <MappingFragment StoreEntitySet="AuditConfig">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AuditLog">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.AuditLog)">
+              <MappingFragment StoreEntitySet="AuditLog">
+                <ScalarProperty Name="AuditLogID" ColumnName="AuditLogID" />
+                <ScalarProperty Name="TableID" ColumnName="TableID" />
+                <ScalarProperty Name="RowsAffected" ColumnName="RowsAffected" />
+                <ScalarProperty Name="Event" ColumnName="Event" />
+                <ScalarProperty Name="PostedDateTime" ColumnName="PostedDateTime" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="HostName" ColumnName="HostName" />
+                <ScalarProperty Name="ApplicationName" ColumnName="ApplicationName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AuditLogAutoKeys">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.AuditLogAutoKeys)">
+              <MappingFragment StoreEntitySet="AuditLogAutoKeys">
+                <ScalarProperty Name="TableName" ColumnName="TableName" />
+                <ScalarProperty Name="KeyValue" ColumnName="KeyValue" />
+                <ScalarProperty Name="Filler" ColumnName="Filler" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AuditLogDetail">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.AuditLogDetail)">
+              <MappingFragment StoreEntitySet="AuditLogDetail">
+                <ScalarProperty Name="AuditLogID" ColumnName="AuditLogID" />
+                <ScalarProperty Name="RowKey" ColumnName="RowKey" />
+                <ScalarProperty Name="ColumnID" ColumnName="ColumnID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="OldValue" ColumnName="OldValue" />
+                <ScalarProperty Name="NewValue" ColumnName="NewValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AuditLogImage">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.AuditLogImage)">
+              <MappingFragment StoreEntitySet="AuditLogImage">
+                <ScalarProperty Name="AuditLogID" ColumnName="AuditLogID" />
+                <ScalarProperty Name="RowKey" ColumnName="RowKey" />
+                <ScalarProperty Name="ColumnID" ColumnName="ColumnID" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AuditLogNText">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.AuditLogNText)">
+              <MappingFragment StoreEntitySet="AuditLogNText">
+                <ScalarProperty Name="AuditLogID" ColumnName="AuditLogID" />
+                <ScalarProperty Name="RowKey" ColumnName="RowKey" />
+                <ScalarProperty Name="ColumnID" ColumnName="ColumnID" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AuditLogText">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.AuditLogText)">
+              <MappingFragment StoreEntitySet="AuditLogText">
+                <ScalarProperty Name="AuditLogID" ColumnName="AuditLogID" />
+                <ScalarProperty Name="RowKey" ColumnName="RowKey" />
+                <ScalarProperty Name="ColumnID" ColumnName="ColumnID" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AuditLookups">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.AuditLookups)">
+              <MappingFragment StoreEntitySet="AuditLookups">
+                <ScalarProperty Name="LookupID" ColumnName="LookupID" />
+                <ScalarProperty Name="ExpressionIsColumn" ColumnName="ExpressionIsColumn" />
+                <ScalarProperty Name="LookupExpression" ColumnName="LookupExpression" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AuditRelationships">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.AuditRelationships)">
+              <MappingFragment StoreEntitySet="AuditRelationships">
+                <ScalarProperty Name="RelationshipID" ColumnName="RelationshipID" />
+                <ScalarProperty Name="TableName" ColumnName="TableName" />
+                <ScalarProperty Name="JoinExpression" ColumnName="JoinExpression" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AuditTables">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.AuditTables)">
+              <MappingFragment StoreEntitySet="AuditTables">
+                <ScalarProperty Name="TableID" ColumnName="TableID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="TableName" ColumnName="TableName" />
+                <ScalarProperty Name="AuditTable" ColumnName="AuditTable" />
+                <ScalarProperty Name="AuditInserts" ColumnName="AuditInserts" />
+                <ScalarProperty Name="AuditUpdates" ColumnName="AuditUpdates" />
+                <ScalarProperty Name="AuditDeletes" ColumnName="AuditDeletes" />
+                <ScalarProperty Name="AuditDeletesAll" ColumnName="AuditDeletesAll" />
+                <ScalarProperty Name="UniqueKeyType" ColumnName="UniqueKeyType" />
+                <ScalarProperty Name="UserColumn" ColumnName="UserColumn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Buscador_Criterios">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.Buscador_Criterios)">
+              <MappingFragment StoreEntitySet="Buscador_Criterios">
+                <ScalarProperty Name="TipoDeDato" ColumnName="TipoDeDato" />
+                <ScalarProperty Name="Criterio" ColumnName="Criterio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Buscador_Relaciones">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.Buscador_Relaciones)">
+              <MappingFragment StoreEntitySet="Buscador_Relaciones">
+                <ScalarProperty Name="Tabla" ColumnName="Tabla" />
+                <ScalarProperty Name="ColumnaID" ColumnName="ColumnaID" />
+                <ScalarProperty Name="TablaABuscar" ColumnName="TablaABuscar" />
+                <ScalarProperty Name="ColumnaABuscar" ColumnName="ColumnaABuscar" />
+                <ScalarProperty Name="NombreColumna" ColumnName="NombreColumna" />
+                <ScalarProperty Name="TipoDeDato" ColumnName="TipoDeDato" />
+                <ScalarProperty Name="QueryPersonalizada" ColumnName="QueryPersonalizada" />
+                <ScalarProperty Name="ColumnaPersonalizada" ColumnName="ColumnaPersonalizada" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categorias">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.Categorias)">
+              <MappingFragment StoreEntitySet="Categorias">
+                <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Descuento" ColumnName="Descuento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clientes">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.Clientes)">
+              <MappingFragment StoreEntitySet="Clientes">
+                <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+                <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
+                <ScalarProperty Name="Localidad" ColumnName="Localidad" />
+                <ScalarProperty Name="CUIT" ColumnName="CUIT" />
+                <ScalarProperty Name="Saldo" ColumnName="Saldo" />
+                <ScalarProperty Name="IdTransportista" ColumnName="IdTransportista" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CondicionesIVA">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.CondicionesIVA)">
+              <MappingFragment StoreEntitySet="CondicionesIVA">
+                <ScalarProperty Name="IdCondicionIVA" ColumnName="IdCondicionIVA" />
+                <ScalarProperty Name="CondicionIVA" ColumnName="CondicionIVA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CuentaCorriente_Movimientos">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.CuentaCorriente_Movimientos)">
+              <MappingFragment StoreEntitySet="CuentaCorriente_Movimientos">
+                <ScalarProperty Name="IdMovimiento" ColumnName="IdMovimiento" />
+                <ScalarProperty Name="IdCuentaCorriente" ColumnName="IdCuentaCorriente" />
+                <ScalarProperty Name="IdFactura" ColumnName="IdFactura" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CuentaCorriente_Pagos">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.CuentaCorriente_Pagos)">
+              <MappingFragment StoreEntitySet="CuentaCorriente_Pagos">
+                <ScalarProperty Name="IdPago" ColumnName="IdPago" />
+                <ScalarProperty Name="IdCuentaCorriente" ColumnName="IdCuentaCorriente" />
+                <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CuentaCorriente_Pagos_DatosDelPago">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.CuentaCorriente_Pagos_DatosDelPago)">
+              <MappingFragment StoreEntitySet="CuentaCorriente_Pagos_DatosDelPago">
+                <ScalarProperty Name="IdPago" ColumnName="IdPago" />
+                <ScalarProperty Name="ChequeNumero" ColumnName="ChequeNumero" />
+                <ScalarProperty Name="FechaCheque" ColumnName="FechaCheque" />
+                <ScalarProperty Name="FechaCobro" ColumnName="FechaCobro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CuentasCorriente">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.CuentasCorriente)">
+              <MappingFragment StoreEntitySet="CuentasCorriente">
+                <ScalarProperty Name="IdCuentaCorriente" ColumnName="IdCuentaCorriente" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Descuentos">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.Descuentos)">
+              <MappingFragment StoreEntitySet="Descuentos">
+                <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+                <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+                <ScalarProperty Name="Descuento" ColumnName="Descuento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Facturas">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.Facturas)">
+              <MappingFragment StoreEntitySet="Facturas">
+                <ScalarProperty Name="IdFactura" ColumnName="IdFactura" />
+                <ScalarProperty Name="NumeroFactura" ColumnName="NumeroFactura" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="FueImpresa" ColumnName="FueImpresa" />
+                <ScalarProperty Name="ValorDolar" ColumnName="ValorDolar" />
+                <ScalarProperty Name="FueCancelada" ColumnName="FueCancelada" />
+                <ScalarProperty Name="EsNotaDeCredito" ColumnName="EsNotaDeCredito" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FormasDePago">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.FormasDePago)">
+              <MappingFragment StoreEntitySet="FormasDePago">
+                <ScalarProperty Name="IdFormaDePago" ColumnName="IdFormaDePago" />
+                <ScalarProperty Name="FormaDePago" ColumnName="FormaDePago" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MovimientosTipo">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.MovimientosTipo)">
+              <MappingFragment StoreEntitySet="MovimientosTipo">
+                <ScalarProperty Name="IdMovimiento" ColumnName="IdMovimiento" />
+                <ScalarProperty Name="Movimiento" ColumnName="Movimiento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NotaPedido_Items">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.NotaPedido_Items)">
+              <MappingFragment StoreEntitySet="NotaPedido_Items">
+                <ScalarProperty Name="IdNotaPedido" ColumnName="IdNotaPedido" />
+                <ScalarProperty Name="IdArticulo" ColumnName="IdArticulo" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="PrecioUnitario" ColumnName="PrecioUnitario" />
+                <ScalarProperty Name="Descuento" ColumnName="Descuento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NotaPedidos">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.NotaPedidos)">
+              <MappingFragment StoreEntitySet="NotaPedidos">
+                <ScalarProperty Name="IdNotaPedido" ColumnName="IdNotaPedido" />
+                <ScalarProperty Name="FechaEmision" ColumnName="FechaEmision" />
+                <ScalarProperty Name="FechaEntrega" ColumnName="FechaEntrega" />
+                <ScalarProperty Name="NumeroOrden" ColumnName="NumeroOrden" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="DescuentoEspecial" ColumnName="DescuentoEspecial" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Operatorias">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.Operatorias)">
+              <MappingFragment StoreEntitySet="Operatorias">
+                <ScalarProperty Name="IdOperatoria" ColumnName="IdOperatoria" />
+                <ScalarProperty Name="Operatoria" ColumnName="Operatoria" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Provincias">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.Provincias)">
+              <MappingFragment StoreEntitySet="Provincias">
+                <ScalarProperty Name="IdProvincia" ColumnName="IdProvincia" />
+                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Remitos">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.Remitos)">
+              <MappingFragment StoreEntitySet="Remitos">
+                <ScalarProperty Name="IdRemito" ColumnName="IdRemito" />
+                <ScalarProperty Name="IdNotaPedido" ColumnName="IdNotaPedido" />
+                <ScalarProperty Name="NumeroRemito" ColumnName="NumeroRemito" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="IdTransportista" ColumnName="IdTransportista" />
+                <ScalarProperty Name="Peso" ColumnName="Peso" />
+                <ScalarProperty Name="Bultos" ColumnName="Bultos" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transportistas">
+            <EntityTypeMapping TypeName="IsTypeOf(SPISAModel.Transportistas)">
+              <MappingFragment StoreEntitySet="Transportistas">
+                <ScalarProperty Name="IdTransportista" ColumnName="IdTransportista" />
+                <ScalarProperty Name="Transportista" ColumnName="Transportista" />
+                <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_Articulos_Categoria" TypeName="SPISAModel.FK_Articulos_Categoria" StoreEntitySet="Articulos">
+            <EndProperty Name="Categorias">
+              <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+            </EndProperty>
+            <EndProperty Name="Articulos">
+              <ScalarProperty Name="idArticulo" ColumnName="idArticulo" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_NotaPedido_Items1_1Articulo" TypeName="SPISAModel.FK_NotaPedido_Items1_1Articulo" StoreEntitySet="NotaPedido_Items">
+            <EndProperty Name="Articulos">
+              <ScalarProperty Name="idArticulo" ColumnName="IdArticulo" />
+            </EndProperty>
+            <EndProperty Name="NotaPedido_Items">
+              <ScalarProperty Name="IdNotaPedido" ColumnName="IdNotaPedido" />
+              <ScalarProperty Name="IdArticulo" ColumnName="IdArticulo" />
+              <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_AuditColumns1" TypeName="SPISAModel.FK_AuditColumns1" StoreEntitySet="AuditColumns">
+            <EndProperty Name="AuditTables">
+              <ScalarProperty Name="TableID" ColumnName="TableID" />
+            </EndProperty>
+            <EndProperty Name="AuditColumns">
+              <ScalarProperty Name="TableID" ColumnName="TableID" />
+              <ScalarProperty Name="ColumnID" ColumnName="ColumnID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_AuditRelationships" TypeName="SPISAModel.FK_AuditRelationships" StoreEntitySet="AuditLookups">
+            <EndProperty Name="AuditRelationships">
+              <ScalarProperty Name="RelationshipID" ColumnName="RelationshipID" />
+            </EndProperty>
+            <EndProperty Name="AuditLookups">
+              <ScalarProperty Name="LookupID" ColumnName="LookupID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_AuditTables" TypeName="SPISAModel.FK_AuditTables" StoreEntitySet="AuditRelationships">
+            <EndProperty Name="AuditTables">
+              <ScalarProperty Name="TableID" ColumnName="TableID" />
+            </EndProperty>
+            <EndProperty Name="AuditRelationships">
+              <ScalarProperty Name="RelationshipID" ColumnName="RelationshipID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Clientes_CondicionesIVA" TypeName="SPISAModel.FK_Clientes_CondicionesIVA" StoreEntitySet="Clientes">
+            <EndProperty Name="CondicionesIVA">
+              <ScalarProperty Name="IdCondicionIVA" ColumnName="IdCondicionIVA" />
+            </EndProperty>
+            <EndProperty Name="Clientes">
+              <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Clientes_Operatorias" TypeName="SPISAModel.FK_Clientes_Operatorias" StoreEntitySet="Clientes">
+            <EndProperty Name="Operatorias">
+              <ScalarProperty Name="IdOperatoria" ColumnName="IdOperatoria" />
+            </EndProperty>
+            <EndProperty Name="Clientes">
+              <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Clientes_Provincias" TypeName="SPISAModel.FK_Clientes_Provincias" StoreEntitySet="Clientes">
+            <EndProperty Name="Provincias">
+              <ScalarProperty Name="IdProvincia" ColumnName="IdProvincia" />
+            </EndProperty>
+            <EndProperty Name="Clientes">
+              <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_NotaPedidos1_1Clientes" TypeName="SPISAModel.FK_NotaPedidos1_1Clientes" StoreEntitySet="NotaPedidos">
+            <EndProperty Name="Clientes">
+              <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+            </EndProperty>
+            <EndProperty Name="NotaPedidos">
+              <ScalarProperty Name="IdNotaPedido" ColumnName="IdNotaPedido" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_CuentaCorriente_Movimientos_CuentaCorriente_Pagos" TypeName="SPISAModel.FK_CuentaCorriente_Movimientos_CuentaCorriente_Pagos" StoreEntitySet="CuentaCorriente_Movimientos">
+            <EndProperty Name="CuentaCorriente_Pagos">
+              <ScalarProperty Name="IdPago" ColumnName="IdPago" />
+            </EndProperty>
+            <EndProperty Name="CuentaCorriente_Movimientos">
+              <ScalarProperty Name="IdMovimiento" ColumnName="IdMovimiento" />
+            </EndProperty>
+            <Condition ColumnName="IdPago" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_CuentaCorriente_Movimientos_MovimientosTipo" TypeName="SPISAModel.FK_CuentaCorriente_Movimientos_MovimientosTipo" StoreEntitySet="CuentaCorriente_Movimientos">
+            <EndProperty Name="MovimientosTipo">
+              <ScalarProperty Name="IdMovimiento" ColumnName="IdMovimientoTipo" />
+            </EndProperty>
+            <EndProperty Name="CuentaCorriente_Movimientos">
+              <ScalarProperty Name="IdMovimiento" ColumnName="IdMovimiento" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_CuentaCorriente_Pagos_DatosDelPago_CuentaCorriente_Pagos" TypeName="SPISAModel.FK_CuentaCorriente_Pagos_DatosDelPago_CuentaCorriente_Pagos" StoreEntitySet="CuentaCorriente_Pagos_DatosDelPago">
+            <EndProperty Name="CuentaCorriente_Pagos">
+              <ScalarProperty Name="IdPago" ColumnName="IdPago" />
+            </EndProperty>
+            <EndProperty Name="CuentaCorriente_Pagos_DatosDelPago">
+              <ScalarProperty Name="IdPago" ColumnName="IdPago" />
+              <ScalarProperty Name="ChequeNumero" ColumnName="ChequeNumero" />
+              <ScalarProperty Name="FechaCheque" ColumnName="FechaCheque" />
+              <ScalarProperty Name="FechaCobro" ColumnName="FechaCobro" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_CuentaCorriente_Pagos_FormasDePago" TypeName="SPISAModel.FK_CuentaCorriente_Pagos_FormasDePago" StoreEntitySet="CuentaCorriente_Pagos">
+            <EndProperty Name="FormasDePago">
+              <ScalarProperty Name="IdFormaDePago" ColumnName="IdFormaDePago" />
+            </EndProperty>
+            <EndProperty Name="CuentaCorriente_Pagos">
+              <ScalarProperty Name="IdPago" ColumnName="IdPago" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Facturas1_1NotaPedidos" TypeName="SPISAModel.FK_Facturas1_1NotaPedidos" StoreEntitySet="Facturas">
+            <EndProperty Name="NotaPedidos">
+              <ScalarProperty Name="IdNotaPedido" ColumnName="IdNotaPedido" />
+            </EndProperty>
+            <EndProperty Name="Facturas">
+              <ScalarProperty Name="IdFactura" ColumnName="IdFactura" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_NotaPedido_Items1_nNotaPedidos" TypeName="SPISAModel.FK_NotaPedido_Items1_nNotaPedidos" StoreEntitySet="NotaPedido_Items">
+            <EndProperty Name="NotaPedidos">
+              <ScalarProperty Name="IdNotaPedido" ColumnName="IdNotaPedido" />
+            </EndProperty>
+            <EndProperty Name="NotaPedido_Items">
+              <ScalarProperty Name="IdNotaPedido" ColumnName="IdNotaPedido" />
+              <ScalarProperty Name="IdArticulo" ColumnName="IdArticulo" />
+              <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+</edmx:Edmx>

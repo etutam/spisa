@@ -1,0 +1,318 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{337EDF4E-43FF-4697-B420-F3CBD8B4D328}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SPISA.Presentacion</RootNamespace>
+    <AssemblyName>SPISA.Presentacion</AssemblyName>
+    <AssemblyOriginatorKeyFile>keyfile.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>true</SignAssembly>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="Infragistics2.Documents.v7.2, Version=7.2.20072.61, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Excel.v7.2, Version=7.2.20072.61, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Shared.v7.2, Version=7.2.20072.61, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.AppStylistSupport.v7.2, Version=7.2.20072.61, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.Misc.v7.2, Version=7.2.20072.61, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.SupportDialogs.v7.2, Version=7.2.20072.61, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraChart.v7.2.Design, Version=7.2.20072.61, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraGauge.v7.2.Design, Version=7.2.20072.61, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinCalcManager.v7.2, Version=7.2.20072.61, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinCalcManager.v7.2.FormulaBuilder, Version=7.2.20072.61, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinChart.v7.2, Version=7.2.20072.61, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinDataSource.v7.2, Version=7.2.20072.61, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinDock.v7.2, Version=7.2.20072.61, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinEditors.v7.2, Version=7.2.20072.61, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinExplorerBar.v7.2, Version=7.2.20072.61, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinGauge.v7.2, Version=7.2.20072.61, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinGrid.DocumentExport.v7.2, Version=7.2.20072.61, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinGrid.ExcelExport.v7.2, Version=7.2.20072.61, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinGrid.v7.2, Version=7.2.20072.61, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinInkProvider.Ink17.v7.2, Version=7.2.20072.61, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinInkProvider.v7.2, Version=7.2.20072.61, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinListBar.v7.2, Version=7.2.20072.61, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinListView.v7.2, Version=7.2.20072.61, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinMaskedEdit.v7.2, Version=7.2.20072.61, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinPrintPreviewDialog.v7.2, Version=7.2.20072.61, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinSchedule.v7.2, Version=7.2.20072.61, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinSpellChecker.v7.2, Version=7.2.20072.61, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinStatusBar.v7.2, Version=7.2.20072.61, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinTabbedMdi.v7.2, Version=7.2.20072.61, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinTabControl.v7.2, Version=7.2.20072.61, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinToolbars.v7.2, Version=7.2.20072.61, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinTree.v7.2, Version=7.2.20072.61, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.v7.2, Version=7.2.20072.61, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.v7.2.Design, Version=7.2.20072.61, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\ExplorerBarController.cs" />
+    <Compile Include="Controllers\StatusBarController.cs" />
+    <Compile Include="frmContainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmContainer.Designer.cs">
+      <DependentUpon>frmContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestForm2.Designer.cs">
+      <DependentUpon>TestForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\Articulo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\Articulo.Designer.cs">
+      <DependentUpon>Articulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\BaseControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\BaseControl.Designer.cs">
+      <DependentUpon>BaseControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\Buscador.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\Buscador.Designer.cs">
+      <DependentUpon>Buscador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\DetallesCliente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\DetallesCliente.Designer.cs">
+      <DependentUpon>DetallesCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\Factura.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\Factura.Designer.cs">
+      <DependentUpon>Factura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\ListadoArticulos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ListadoArticulos.Designer.cs">
+      <DependentUpon>ListadoArticulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\ListadoClientes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ListadoClientes.Designer.cs">
+      <DependentUpon>ListadoClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\ListadoFacturas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ListadoFacturas.Designer.cs">
+      <DependentUpon>ListadoFacturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\ListadoPedidos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ListadoPedidos.Designer.cs">
+      <DependentUpon>ListadoPedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmContainer.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\Factura.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Factura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\ListadoFacturas.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ListadoFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\ListadoPedidos.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ListadoPedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\NotaPedido.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NotaPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config" />
+    <None Include="DiagramaDeClases_Presentacion.cd" />
+    <None Include="Diagrams\Spisa_DER.vsd" />
+    <None Include="keyfile.snk" />
+    <None Include="Notes\EXPRESOS.xls" />
+    <None Include="Properties\DataSources\SPISA.Libreria.Articulo.datasource" />
+    <None Include="Properties\DataSources\SPISA.Libreria.Categoria.datasource" />
+    <None Include="Properties\DataSources\SPISA.Libreria.Factura.datasource" />
+    <None Include="Properties\DataSources\SPISA.Libreria.NotaPedido.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="UC\NotaPedido.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\NotaPedido.Designer.cs">
+      <DependentUpon>NotaPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\Remito.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\Remito.Designer.cs">
+      <DependentUpon>Remito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UcCliente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UcCliente.Designer.cs">
+      <DependentUpon>UcCliente.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ExplorerBarGroups.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestForm2.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TestForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\Articulo.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Articulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\Buscador.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Buscador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\DetallesCliente.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DetallesCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\ListadoArticulos.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ListadoArticulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\ListadoClientes.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ListadoClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\Remito.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Remito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UcCliente.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UcCliente.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icons\Control Panel.png" />
+    <Content Include="Icons\document.png" />
+    <Content Include="Icons\easymoblog.ico" />
+    <Content Include="Icons\exe File.png" />
+    <Content Include="Icons\Favourite.ico" />
+    <Content Include="Icons\floopy.ico" />
+    <Content Include="Icons\kcmfontinst.ico" />
+    <Content Include="Icons\Printer.png" />
+    <Content Include="Icons\Stop.ico" />
+    <Content Include="Icons\User Card.ico" />
+    <Content Include="Icons\vcard.ico" />
+    <Content Include="Resources\RemitoObjectsToPrint.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\FacturaObjectsToPrint.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Notes\Cambios a Realizar.txt" />
+    <None Include="Scripts\Articulos_Compuestos.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SPISA_LogicaDeNegocios\SPISA.Libreria.csproj">
+      <Project>{0380E3EA-9446-4C3E-98A6-A5FE83E67C7D}</Project>
+      <Name>SPISA.Libreria</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
