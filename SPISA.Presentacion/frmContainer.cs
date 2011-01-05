@@ -123,7 +123,9 @@ namespace SPISA.Presentacion
             grupos.Add("groupFavoritos");
             grupos.Add("groupGestion");
 
-            if (e.Tab!=null)
+            if (e.Tab != null)
+            {
+
                 if (e.Tab.Tag != null)
                 {
                     string[] groups = e.Tab.Tag.ToString().Split(',');
@@ -133,10 +135,11 @@ namespace SPISA.Presentacion
 
                     ExplorerBarController.FillExplorerBar(grupos, explorerBar);
 
-                    BaseControl bc = (BaseControl)e.Tab.TabPage.Controls[0];
+                    BaseControl bc = (BaseControl) e.Tab.TabPage.Controls[0];
                     bc.Refrescar();
                 }
-
+            }
+           
         }
 
 
@@ -188,6 +191,12 @@ namespace SPISA.Presentacion
                         {
                             frm.Dispose();
                             frm = null;
+                            IList<string> grupos = new List<string>();
+                            grupos.Add("groupFavoritos");
+                            grupos.Add("groupGestion");
+                            ExplorerBarController.FillExplorerBar(grupos, explorerBar);
+
+
                         }
                     }
                 }
