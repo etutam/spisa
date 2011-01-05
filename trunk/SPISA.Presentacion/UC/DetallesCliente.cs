@@ -69,7 +69,8 @@ namespace SPISA.Presentacion
         {
             get {
 
-                return txtCUIT.Value.ToString();
+                return txtCUIT.Text.Replace("-", "");
+                
                 
             }
         }
