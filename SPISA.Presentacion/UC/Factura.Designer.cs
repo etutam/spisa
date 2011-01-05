@@ -308,7 +308,7 @@ namespace SPISA.Presentacion
             this.ugArticulos.DisplayLayout.RowConnectorColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(167)))), ((int)(((byte)(191)))));
             this.ugArticulos.DisplayLayout.RowConnectorStyle = Infragistics.Win.UltraWinGrid.RowConnectorStyle.Solid;
             this.ugArticulos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ugArticulos.Location = new System.Drawing.Point(1, 312);
+            this.ugArticulos.Location = new System.Drawing.Point(2, 299);
             this.ugArticulos.Name = "ugArticulos";
             this.ugArticulos.Size = new System.Drawing.Size(690, 233);
             this.ugArticulos.TabIndex = 2;
@@ -341,9 +341,9 @@ namespace SPISA.Presentacion
             // gbDetallesCliente
             // 
             this.gbDetallesCliente.Controls.Add(this.detallesCliente);
-            this.gbDetallesCliente.Location = new System.Drawing.Point(1, 132);
+            this.gbDetallesCliente.Location = new System.Drawing.Point(1, 104);
             this.gbDetallesCliente.Name = "gbDetallesCliente";
-            this.gbDetallesCliente.Size = new System.Drawing.Size(690, 177);
+            this.gbDetallesCliente.Size = new System.Drawing.Size(690, 189);
             this.gbDetallesCliente.TabIndex = 1;
             this.gbDetallesCliente.Text = "Detalles del Cliente";
             this.gbDetallesCliente.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007;
@@ -413,9 +413,9 @@ namespace SPISA.Presentacion
             this.gbDatosGenerales.Controls.Add(this.ultraLabel2);
             this.gbDatosGenerales.Controls.Add(this.ulFechaEmision);
             this.gbDatosGenerales.Controls.Add(this.dtFechaEmision);
-            this.gbDatosGenerales.Location = new System.Drawing.Point(3, 3);
+            this.gbDatosGenerales.Location = new System.Drawing.Point(0, 0);
             this.gbDatosGenerales.Name = "gbDatosGenerales";
-            this.gbDatosGenerales.Size = new System.Drawing.Size(690, 127);
+            this.gbDatosGenerales.Size = new System.Drawing.Size(690, 108);
             this.gbDatosGenerales.TabIndex = 32;
             this.gbDatosGenerales.Text = "Datos Generales";
             this.gbDatosGenerales.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007;
@@ -425,7 +425,7 @@ namespace SPISA.Presentacion
             this.chkNotaDeCredito.BackColor = System.Drawing.Color.Transparent;
             this.chkNotaDeCredito.BackColorInternal = System.Drawing.Color.Transparent;
             this.chkNotaDeCredito.ButtonStyle = Infragistics.Win.UIElementButtonStyle.Office2007ScrollbarButton;
-            this.chkNotaDeCredito.Location = new System.Drawing.Point(294, 102);
+            this.chkNotaDeCredito.Location = new System.Drawing.Point(246, 22);
             this.chkNotaDeCredito.Name = "chkNotaDeCredito";
             this.chkNotaDeCredito.Size = new System.Drawing.Size(101, 20);
             this.chkNotaDeCredito.TabIndex = 17;
@@ -550,7 +550,7 @@ namespace SPISA.Presentacion
             this.ultraGroupBox1.Controls.Add(this.ultraLabel14);
             this.ultraGroupBox1.Controls.Add(this.ultraLabel13);
             this.ultraGroupBox1.Controls.Add(this.ultraLabel12);
-            this.ultraGroupBox1.Location = new System.Drawing.Point(1, 549);
+            this.ultraGroupBox1.Location = new System.Drawing.Point(1, 538);
             this.ultraGroupBox1.Name = "ultraGroupBox1";
             this.ultraGroupBox1.Size = new System.Drawing.Size(690, 78);
             this.ultraGroupBox1.TabIndex = 36;
@@ -722,7 +722,7 @@ namespace SPISA.Presentacion
             // 
             this.gbOpciones.Controls.Add(this.ultraLabel7);
             this.gbOpciones.Controls.Add(this.ucpStockCritico);
-            this.gbOpciones.Location = new System.Drawing.Point(3, 633);
+            this.gbOpciones.Location = new System.Drawing.Point(2, 622);
             this.gbOpciones.Name = "gbOpciones";
             this.gbOpciones.Size = new System.Drawing.Size(689, 44);
             this.gbOpciones.TabIndex = 42;
@@ -743,7 +743,7 @@ namespace SPISA.Presentacion
             this.Controls.Add(this.gbDetallesCliente);
             this.Controls.Add(this.gbDatosGenerales);
             this.Name = "UcFactura";
-            this.Size = new System.Drawing.Size(695, 680);
+            this.Size = new System.Drawing.Size(695, 665);
             ((System.ComponentModel.ISupportInitialize)(this.ucListaArticulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEditorControlCantidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEditorControlDescuento)).EndInit();
