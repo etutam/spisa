@@ -17,4 +17,4 @@ namespace SPISA.Presentacion
           Application.Run(new frmPrincipal());
         }
     }
-}
+}   
