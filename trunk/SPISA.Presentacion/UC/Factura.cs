@@ -28,6 +28,8 @@ namespace SPISA.Presentacion
         #region Constructores
         public UcFactura()
         {
+
+            frmPrincipal.valorDolar = frmPrincipal.valorDolar.Replace(".", ",");
             Decimal valorDolar = Convert.ToDecimal(frmPrincipal.valorDolar);
             StringBuilder sb = new StringBuilder();
             long numeroFactura = Factura.ObtenerNuevoNumeroDeFactura();
@@ -47,7 +49,7 @@ namespace SPISA.Presentacion
             }
             txtNumeroFactura.Text = sb.ToString() + numeroFactura.ToString();
             txtNumeroFactura.Tag = sb.ToString() + numeroFactura.ToString();
-
+                
             _factura = null;
 
             Logger.Append(this.GetType().ToString(), null, "");

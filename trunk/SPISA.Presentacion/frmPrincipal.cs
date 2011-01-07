@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Text;
 using System.Windows.Forms;
 using System.Reflection;
@@ -47,7 +48,8 @@ namespace SPISA.Presentacion
         public frmPrincipal()
         {
             //Application.AddMessageFilter(new TestMessageFilter());
-
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("es-AR");
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("es-AR");
             InitializeComponent();
 
             string[] grupos = { "groupFavoritos", "groupGestion" };
@@ -64,6 +66,7 @@ namespace SPISA.Presentacion
             //status.Panels["pMessages"].Width = this.Size.Width - this.explorerBar.Width - status.Panels["pDolar"].Width;
 
             valorDolar = ConfigurationManager.AppSettings["ValorDolar"];
+            valorDolar=valorDolar.Replace(".", ",");
             status.Panels[0].Text = "Dolar: " + valorDolar;
 
         }
@@ -578,6 +581,8 @@ namespace SPISA.Presentacion
                         }
                         if (check != 3)
                         {
+                            frmPrincipal.valorDolar = frmPrincipal.valorDolar.Replace(".", ",");
+
                             Decimal valorDolar = Convert.ToDecimal(frmPrincipal.valorDolar);
                             Factura f = ucNP.NotaPedido.GenerarFactura();
 
@@ -627,6 +632,8 @@ namespace SPISA.Presentacion
         }
         private void AgregarPedido()
         {
+            
+
             UcNotaPedido ucNp;
             frmContainer frm = frmContainer.crearContainer(this.explorerBar);
 
@@ -638,6 +645,7 @@ namespace SPISA.Presentacion
             if (frm.Visible == false) frm.Show();
             ucNp.SetInitialFocus();
         }
+
         private void AgregarFactura()
         {
             UcFactura ucFactura;
