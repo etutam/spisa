@@ -55,13 +55,17 @@
   <Grupo tag="groupFacturaActual" name="Factura Actual">
     <item tag="itemAlmacenarFactura">Almacenar Factura</item>
   </Grupo>
+  <Grupo tag="groupCotizacion" name="Cotizacion ">
+    <item tag="itemAlmacenarCotizacion">Almacenar Cotizacion</item>
+    <item tag="itemImprimir">Imprimir</item>
+  </Grupo>
   <Grupo tag="groupFacturaActualAlmacenada" name="Factura Actual">
     <item tag="itemAlmacenarFactura">Almacenar Factura</item>
 	  <item tag="itemCancelarFactura">Cancelar Factura</item>
 	  <item tag="itemVisualizarNotaDePedido">Visualizar Nota de Pedido</item>
     <item tag="itemImprimirFactura">Imprimir Factura</item>
   </Grupo>
-	<Grupo tag="groupFacturaActualAlmacenadaImpresa" name="Factura Actual">
+  	<Grupo tag="groupFacturaActualAlmacenadaImpresa" name="Factura Actual">
 		<item tag="itemAlmacenarFactura">Almacenar Factura</item>
 		<item tag="itemCancelarFactura">Cancelar Factura</item>
 		<item tag="itemVisualizarNotaDePedido">Visualizar Nota de Pedido</item>

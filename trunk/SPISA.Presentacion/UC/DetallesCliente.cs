@@ -47,8 +47,10 @@ namespace SPISA.Presentacion
         }
         public string RazonSocial
         {
-            get { return ucListaClientes.Text; }                
+            get { return ucListaClientes.Text; }
+            set { ucListaClientes.Text = value; }
         }
+
         public string DomicilioComercial
         {
             get { return txtDomicilioComercial.Text; }

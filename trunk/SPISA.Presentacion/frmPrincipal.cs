@@ -48,8 +48,12 @@ namespace SPISA.Presentacion
         public frmPrincipal()
         {
             //Application.AddMessageFilter(new TestMessageFilter());
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo("es-AR");
+            
+            CultureInfo Cultura = new CultureInfo("es-AR",true);
+            Cultura.NumberFormat.CurrencyDecimalSeparator = ",";
             Thread.CurrentThread.CurrentCulture = new CultureInfo("es-AR");
+
+
             InitializeComponent();
 
             string[] grupos = { "groupFavoritos", "groupGestion" };
@@ -175,6 +179,13 @@ namespace SPISA.Presentacion
                 case "itemAlmacenarCliente":
                     AlmacenarCliente();
                     break;
+                case "itemImprimir":
+                    Imprimir();
+                    break;
+                case "itemAlmacenarCotizacion":
+                     
+                    AlmacenarCotizacion();
+                    break;
             }
         }
 
@@ -183,6 +194,24 @@ namespace SPISA.Presentacion
 
 
         #region Otros
+ 
+
+        private void AlmacenarCotizacion()
+        {
+            frmContainer frm = frmContainer.crearContainer(this.explorerBar);
+            UcFactura ucFactura = (UcFactura)frm.TraerUserControlVisible();
+
+            ucFactura.Guardar();
+            
+        }
+
+        private void Imprimir()
+       {
+           frmContainer frm = frmContainer.crearContainer(this.explorerBar);
+           UcFactura ucFactura= (UcFactura)frm.TraerUserControlVisible();
+           ucFactura.ImprimirCotizacion();
+           
+       }
 
         private void ImprimirRemito()
         {
