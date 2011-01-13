@@ -1,0 +1,28 @@
+USE [SPISA]
+GO
+/****** Object:  StoredProcedure [dbo].[Facturas_GuardarFactura]    Script Date: 01/13/2011 15:33:26 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[Facturas_GuardarFactura]
+	@Fecha datetime, 
+	@IdNotaPedido int,
+	@IdCliente int,	
+	@NumeroFactura bigint,
+	@Observaciones varchar(500),
+	@DescuentoEspecial int,
+	@ValorDolar float,
+	@EsNotaDeCredito bit,
+	@EsCotizacion bit
+AS
+BEGIN
+		INSERT INTO Facturas (IdNotaPedido, NumeroFactura, Fecha, Observaciones,  ValorDolar, EsNotaDeCredito,Cotizacion)
+		VALUES (@IdNotaPedido, @NumeroFactura, @Fecha, @Observaciones,  @ValorDolar, @EsNotaDeCredito,@EsCotizacion)
+
+		UPDATE NotaPedidos
+		SET IdCliente=@IdCliente, DescuentoEspecial = @DescuentoEspecial
+		WHERE IdNotaPedido = @IdNotaPedido
+
+		select @@identity
+END
