@@ -32,6 +32,7 @@ namespace SPISA.Libreria
         bool _fueImpresa = false;
         bool _fueCancelada = false;
         bool _esNotaDeCredito = false;
+        private bool _esCotizacion = false;
 
         IList<NotaPedido_Item> _ListaItems = new List<NotaPedido_Item>();
 
@@ -45,6 +46,11 @@ namespace SPISA.Libreria
         #endregion
 
         #region Propiedades
+        public bool EsCotizacion
+        {
+            get { return _esCotizacion; }
+            set { _esCotizacion = value; }
+        }
         public int Id
         {
             get { return _IdFactura; }
@@ -535,6 +541,7 @@ namespace SPISA.Libreria
                     db.AddInParameter(dbCommand, "DescuentoEspecial", DbType.Int32, this._DescuentoEspecial);
                     db.AddInParameter(dbCommand, "ValorDolar", DbType.Decimal, (this._valorDolar != 0 ? this._valorDolar : 0));
                     db.AddInParameter(dbCommand, "EsNotaDeCredito", DbType.Boolean, this._esNotaDeCredito);
+                    db.AddInParameter(dbCommand, "EsCotizacion", DbType.Boolean, this._esCotizacion);
 
                     _IdFactura = Convert.ToInt32(db.ExecuteScalar(dbCommand, ts));
 

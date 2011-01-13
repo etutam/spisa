@@ -48,7 +48,7 @@ namespace SPISA.Presentacion
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn4 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Fecha");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn5 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("RazonSocial");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn6 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Observaciones");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn7 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("ValorDolar");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn7 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("ValorDolar", -1, null, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, false);
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn8 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("FueImpresa");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn9 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("FueCancelada");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn10 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Band 1");
@@ -141,7 +141,7 @@ namespace SPISA.Presentacion
             this.ultraTabPageControl1.Controls.Add(this.ultraLabel3);
             this.ultraTabPageControl1.Controls.Add(this.dtFechaEmision);
             this.ultraTabPageControl1.Controls.Add(this.ultraLabel1);
-            this.ultraTabPageControl1.Location = new System.Drawing.Point(-10000, -10000);
+            this.ultraTabPageControl1.Location = new System.Drawing.Point(1, 22);
             this.ultraTabPageControl1.Name = "ultraTabPageControl1";
             this.ultraTabPageControl1.Size = new System.Drawing.Size(792, 116);
             // 
@@ -296,7 +296,7 @@ namespace SPISA.Presentacion
             // 
             this.ultraTabPageControl2.Controls.Add(this.ultraGroupBox1);
             this.ultraTabPageControl2.Controls.Add(this.buscador);
-            this.ultraTabPageControl2.Location = new System.Drawing.Point(1, 22);
+            this.ultraTabPageControl2.Location = new System.Drawing.Point(-10000, -10000);
             this.ultraTabPageControl2.Name = "ultraTabPageControl2";
             this.ultraTabPageControl2.Size = new System.Drawing.Size(792, 116);
             // 
@@ -452,6 +452,7 @@ namespace SPISA.Presentacion
             ultraDataColumn12,
             ultraDataColumn13,
             ultraDataColumn14});
+            this.dsListaFacturas.UseBindingSource = true;
             // 
             // gbBusqueda
             // 
