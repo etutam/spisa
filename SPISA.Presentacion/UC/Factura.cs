@@ -8,6 +8,8 @@ using System.Windows.Forms;
 
 using SPISA.Libreria;
 using Infragistics.Win.UltraWinGrid;
+using Infragistics.Win.UltraWinTabControl;
+using Infragistics.Win.UltraWinExplorerBar;
 
 using System.Configuration;
 
@@ -15,6 +17,14 @@ namespace SPISA.Presentacion
 {
     public partial class UcFactura : BaseControl
     {
+
+        public enum ResultadoVerificar
+        {
+            
+            StockSuperado,
+            NoCliente,
+            NoExistenItemsCargados
+        }
 
         #region Campos Privados
         Factura _factura = null;
@@ -109,17 +119,6 @@ namespace SPISA.Presentacion
             SetearFueModificada();
         }
 
-        private void ugArticulos_Enter(object sender, EventArgs e)
-        {
-            if (ugArticulos.Rows.Count > 0)
-            {
-                ugArticulos.ActiveCell = ugArticulos.Rows[0].Cells[0];
-                ugArticulos.PerformAction(UltraGridAction.ToggleCellSel, false, false);
-                ugArticulos.PerformAction(UltraGridAction.EnterEditMode, false, false);
-
-            }
-        }
-
         private void ugArticulos_AfterCellUpdate(object sender, CellEventArgs e)
         {
             if (e.Cell.Column.Key == "Codigo")
@@ -145,7 +144,7 @@ namespace SPISA.Presentacion
 
         void detallesCliente_ClienteSeleccionado(object sender, EventArgs e)
         {
-            CalcularTotales();
+
         }
 
         private void ugArticulos_CellChange(object sender, Infragistics.Win.UltraWinGrid.CellEventArgs e)
@@ -165,8 +164,6 @@ namespace SPISA.Presentacion
                     e.Cell.Row.Cells["Descripcion"].Value = a.Descripcion;
                     e.Cell.Row.Cells["PrecioUnitario"].Value = a.PrecioUnitario * valorDolar;
                     e.Cell.Row.Cells["Tag"].Value = a.PrecioUnitario;
-
-
                 }
                 else
                 {
@@ -176,6 +173,8 @@ namespace SPISA.Presentacion
                     e.Cell.Row.Cells["PrecioUnitario"].Value = 0;
                     e.Cell.Row.Cells["PrecioFinal"].Value = 0;
                 }
+
+                e.Cell.Row.Cells["StockCritico"].SetValue(false, false);
             }
             if (e.Cell.Column.Key.Equals("Cantidad"))
             {
@@ -663,6 +662,44 @@ namespace SPISA.Presentacion
         }
 
 
+       public void ImprimirCotizacion()
+       {
+           IList<ResultadoVerificar> resultadoVerificar = VerificarCampos();
+
+           bool imprimir = true;
+               foreach (ResultadoVerificar verificar in resultadoVerificar)
+               {
+                   if (verificar == ResultadoVerificar.NoExistenItemsCargados)
+                   errorProvider.SetError(ugArticulos, "Deberá agregar al menos un item a la lista...");
+
+                   if(verificar == ResultadoVerificar.NoCliente)
+                   detallesCliente.EstablecerError();
+                   if (verificar == ResultadoVerificar.StockSuperado)
+                   {
+                       DialogResult dr = MessageBox.Show("Se supero el stock de un articulo, Desea continuar con la Impresio",
+                                                         "Stock Critico", MessageBoxButtons.YesNo);
+                       if(dr == DialogResult.No) imprimir = false;
+                   }
+               }
+               if (imprimir == true)
+               {
+                   try
+                   {
+                       Printing p = new Printing();
+                       p.Objetos = CargarObjetosAImprimir();
+
+                       AppSettingsReader settings = new AppSettingsReader();
+                       p.Imprimir(1);
+                   }
+                   catch (Exception ex)
+                   {
+                       throw ex;
+                   }
+
+               }
+
+       }
+
         public void ImprimirCopia()
         {
             if (_factura != null)
@@ -687,13 +724,14 @@ namespace SPISA.Presentacion
         /// <returns>Id de la factura impresa</returns>
         public int Imprimir()
         {
-            int ret = -1;
+            int ret = 0;
             printingCalled = true;
 
-            if (VerificarCampos())
+            IList<ResultadoVerificar> resultadoVerificar = VerificarCampos();
+            int check = BeforeCloseCheck();
+            if (resultadoVerificar.Count == 0)
             {
-                int check = BeforeCloseCheck();
-                if (check==1)
+                if (check == 1)
                 {
                     if (_factura != null)
                     {
@@ -710,7 +748,7 @@ namespace SPISA.Presentacion
                             }
                             else ret = 0;
 
-                            
+
                         }
                         catch (Exception ex)
                         {
@@ -720,19 +758,60 @@ namespace SPISA.Presentacion
                 }
                 else if (check == 2)
                 {
-                    MessageBox.Show("Es necesario almacenar la factura para poder imprimirla.", "Error al Imprimir Factura", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Es necesario almacenar la factura para poder imprimirla.",
+                                    "Error al Imprimir Factura", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    ret = 0;
                 }
             }
             else
             {
-                ret = 0;
-            }
+                foreach (ResultadoVerificar verificar in resultadoVerificar)
+                {
 
-            printingCalled = false;
+                    if (verificar == ResultadoVerificar.StockSuperado)
+                    {
+                        if (verificar == ResultadoVerificar.NoExistenItemsCargados)
+                            errorProvider.SetError(ugArticulos, "Deberá agregar al menos un item a la lista...");
+
+                        if (verificar == ResultadoVerificar.NoCliente)
+                            detallesCliente.EstablecerError();
+
+                        if (verificar == ResultadoVerificar.StockSuperado)
+                        {
+                            AppSettingsReader reader = new AppSettingsReader();
+                            int option = (int) reader.GetValue("StockCritico", typeof (int));
+
+                            switch (option)
+                            {
+                                case 1:
+                                    DialogResult dr =
+                                        MessageBox.Show(
+                                            "Existen uno o mas items cuya cantidad supera la que existe en stock. ¿Desea Continuar?",
+                                            "Stock Crítico", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                                            MessageBoxDefaultButton.Button2);
+
+                                    break;
+                                case 2:
+                                    MessageBox.Show(
+                                        "Existen uno o mas items cuya cantidad supera la que existe en stock. No puede continuar",
+                                        "Stock Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                                    break;
+                            }
+                        }
+                    }
+                }
+
+            }
+              
+            
 
             return ret;
         }
-
+        
 
         /// <summary>
         /// Si la factura proviene de una nota de pedido, la factura podra guardarse una sola vez. Para volver a generarla, habra una opcion
@@ -744,10 +823,13 @@ namespace SPISA.Presentacion
         public Factura Guardar()
         {
             Factura f = null;
-            try
+            IList<ResultadoVerificar> resultadoVerificar = VerificarCampos();
+            if (resultadoVerificar.Count == 0)
             {
-                if (VerificarCampos())
+                try
                 {
+
+
                     errorProvider.Clear();
                     detallesCliente.QuitarError();
 
@@ -769,9 +851,9 @@ namespace SPISA.Presentacion
                     f.NumeroFactura = Convert.ToInt64(Utils.RemoveCharacterAndSpaces('-', txtNumeroFactura.Text));
                     f.Observaciones = txtObservaciones.Text;
                     f.ValorDolar = Convert.ToDecimal(txtValorDolar.Value);
-                    f.DescuentoEspecial = (int)txtDescuentoEspecial.Value;
+                    f.DescuentoEspecial = (int) txtDescuentoEspecial.Value;
                     f.EsNotaDeCredito = chkNotaDeCredito.Checked;
-
+                    f.EsCotizacion = checkBox1.Checked;
                     if (f.Items != null) f.Items.Clear();
 
                     foreach (Infragistics.Win.UltraWinGrid.UltraGridRow dr in ugArticulos.Rows)
@@ -806,13 +888,53 @@ namespace SPISA.Presentacion
 
                     if (_factura == null) _factura = f;
                     this._fueModificada = false;
-                }
 
-                
+
+
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
             }
-            catch (Exception ex)
+            else
             {
-                throw ex;
+                foreach (ResultadoVerificar verificar in resultadoVerificar)
+                {
+
+                    if (verificar == ResultadoVerificar.StockSuperado)
+                    {
+                        if (verificar == ResultadoVerificar.NoExistenItemsCargados)
+                            errorProvider.SetError(ugArticulos, "Deberá agregar al menos un item a la lista...");
+
+                        if (verificar == ResultadoVerificar.NoCliente)
+                            detallesCliente.EstablecerError();
+
+                        if (verificar == ResultadoVerificar.StockSuperado)
+                        {
+                            AppSettingsReader reader = new AppSettingsReader();
+                            int option = (int)reader.GetValue("StockCritico", typeof(int));
+
+                            switch (option)
+                            {
+                                case 1:
+                                    DialogResult dr =
+                                        MessageBox.Show(
+                                            "Existen uno o mas items cuya cantidad supera la que existe en stock. ¿Desea Continuar?",
+                                            "Stock Crítico", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                                            MessageBoxDefaultButton.Button2);
+
+                                    break;
+                                case 2:
+                                    MessageBox.Show(
+                                        "Existen uno o mas items cuya cantidad supera la que existe en stock. No puede continuar",
+                                        "Stock Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                                    break;
+                            }
+                        }
+                    }
+                }
             }
 
             return f;
@@ -827,69 +949,105 @@ namespace SPISA.Presentacion
             _factura.Cancelar();
         }
 
-        private bool VerificarCampos()
+        private IList<ResultadoVerificar> VerificarCampos()
         {
-            bool ok = true;
-            bool stockCritico = false;
-
+            IList<ResultadoVerificar> listaErrores = new List<ResultadoVerificar>();
             //Verificamos que se haya seleccionado algun cliente
             if (detallesCliente.Cliente == null)
-            {
-                detallesCliente.EstablecerError();
-                ok = false;
-
-            }
-
+            listaErrores.Add(ResultadoVerificar.NoCliente);
+            
             bool existenItemsCargados = false;
-            foreach (Infragistics.Win.UltraWinGrid.UltraGridRow dr in ugArticulos.Rows)
+            foreach (UltraGridRow dr in ugArticulos.Rows)
             {
                 Articulo a = Articulo.TraerArticuloPorCodigo(dr.Cells["Codigo"].Value.ToString());
 
-                if (Convert.ToBoolean((dr.Cells["StockCritico"].Value != DBNull.Value ? dr.Cells["StockCritico"].Value : false)) == true)
-                    stockCritico = (true && (!chkNotaDeCredito.Checked));
 
                 if (a != null)
                 {
                     existenItemsCargados = true;
+                    if (Convert.ToBoolean(dr.Cells["StockCritico"].Value))
+                    {
+                        listaErrores.Add(ResultadoVerificar.StockSuperado);
+                        break;
+                    }
                 }
             }
-
             if (!existenItemsCargados)
-            {
-                errorProvider.SetError(ugArticulos, "Deberá agregar al menos un item a la lista...");
-                ok = false;
-            }
+                listaErrores.Add(ResultadoVerificar.NoExistenItemsCargados);
 
 
-            if (ok)
-                if (stockCritico)
-                {
-                    if (printingCalled)
-                    {
-                        MessageBox.Show("Existen uno o mas items cuya cantidad supera la que existe en stock. No puede continuar", "Stock Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        ok = false;
-                    }
-                    else
-                    {
-                        AppSettingsReader reader = new AppSettingsReader();
-                        int option = (int)reader.GetValue("StockCritico", typeof(int));
-
-                        switch (option)
-                        {
-                            case 1:
-                                DialogResult dr = MessageBox.Show("Existen uno o mas items cuya cantidad supera la que existe en stock. ¿Desea Continuar?", "Stock Crítico", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-                                if (dr == DialogResult.No) ok = false;
-                                break;
-                            case 2:
-                                MessageBox.Show("Existen uno o mas items cuya cantidad supera la que existe en stock. No puede continuar", "Stock Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                ok = false;
-                                break;
-                        }
-                    }
-                }
+            return listaErrores;
+        
 
 
-            return ok;
+
+            //IList<ResultadoVerificar> ListaErrores = new List<ResultadoVerificar>();
+
+            //ResultadoVerificar resultadoVerificar = ResultadoVerificar.Ok;
+
+
+            ////Verificamos que se haya seleccionado algun cliente
+            //if (detallesCliente.Cliente == null)
+            //{
+            //    detallesCliente.EstablecerError();
+            //    ok = false;
+
+            //}
+
+            //bool existenItemsCargados = false;
+            //foreach (Infragistics.Win.UltraWinGrid.UltraGridRow dr in ugArticulos.Rows)
+            //{
+            //    Articulo a = Articulo.TraerArticuloPorCodigo(dr.Cells["Codigo"].Value.ToString());
+
+            //    if (Convert.ToBoolean((dr.Cells["StockCritico"].Value != DBNull.Value ? dr.Cells["StockCritico"].Value : false)) == true)
+            //        stockCritico = (true && (!chkNotaDeCredito.Checked));
+
+            //    if (a != null)
+            //    {
+            //        existenItemsCargados = true;
+            //    }
+            //}
+
+            //if (!existenItemsCargados)
+            //{
+            //    errorProvider.SetError(ugArticulos, "Deberá agregar al menos un item a la lista...");
+            //    ok = false;
+            //}
+
+
+            //if (ok)
+            //    if (stockCritico)
+            //        resultadoVerificar = ResultadoVerificar.StockSuperado;
+            ///*{
+            //    if (printingCalled)
+            //    {
+            //        //MessageBox.Show("Existen uno o mas items cuya cantidad supera la que existe en stock. No puede continuar", "Stock Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        
+            //        ok = false;
+            //    }
+            //    else
+            //    {
+                        
+            //        AppSettingsReader reader = new AppSettingsReader();
+            //        int option = (int)reader.GetValue("StockCritico", typeof(int));
+
+            //        switch (option)
+            //        {
+            //            case 1:
+            //                DialogResult dr = MessageBox.Show("Existen uno o mas items cuya cantidad supera la que existe en stock. ¿Desea Continuar?", "Stock Crítico", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            //                if (dr == DialogResult.No) ok = false;
+            //                break;
+            //            case 2:
+            //                MessageBox.Show("Existen uno o mas items cuya cantidad supera la que existe en stock. No puede continuar", "Stock Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //                ok = false;
+            //                break;
+            //        }
+            //    }
+            //}*/
+            //return resultadoVerificar;
+            
+            
+            //return ok;
         }
 
         #endregion
@@ -958,12 +1116,56 @@ namespace SPISA.Presentacion
             }
             return ret;
         }
+
         #endregion      
 
         private void txtNumeroFactura_Leave(object sender, EventArgs e)
         {
             
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                this.txtValorDolar.Value = 1;
+                this.detallesCliente.RazonSocial = "COTIZACION";
+                IList<string> grupos = new List<string>();
+                grupos.Add("groupFavoritos");
+                grupos.Add("groupGestion");
+                grupos.Add("groupCotizacion");
+                ExplorerBarController.FillExplorerBar(grupos, ExplorerBarController.e);
+                this.chkNotaDeCredito.Visible = false;
+
+                
+            }
+            else
+            {
+                this.chkNotaDeCredito.Visible = true;
+                frmPrincipal.valorDolar = frmPrincipal.valorDolar.Replace(".", ",");
+                this.txtValorDolar.Value = Convert.ToDecimal(frmPrincipal.valorDolar);
+                this.detallesCliente.RazonSocial = "Seleccione un Cliente de la Lista... ";
+                IList<string> grupos = new List<string>();
+                grupos.Add("groupFavoritos");
+                grupos.Add("groupGestion");
+                grupos.Add("groupFacturaActual");
+                ExplorerBarController.FillExplorerBar(grupos, ExplorerBarController.e);
+
+            }
+        }
+        private void ugArticulos_Enter(object sender, EventArgs e)
+        {
+            if (ugArticulos.Rows.Count > 0)
+            {
+                ugArticulos.ActiveCell = ugArticulos.Rows[0].Cells[0];
+                ugArticulos.PerformAction(UltraGridAction.ToggleCellSel, false, false);
+                ugArticulos.PerformAction(UltraGridAction.EnterEditMode, false, false);
+
+            }
+        }
+
+       
     }
-        
 }
+        
+

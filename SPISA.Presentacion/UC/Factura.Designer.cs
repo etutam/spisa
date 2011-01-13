@@ -87,6 +87,7 @@ namespace SPISA.Presentacion
             this.txtNumeroFactura = new Infragistics.Win.UltraWinMaskedEdit.UltraMaskedEdit();
             this.ultraLabel4 = new Infragistics.Win.Misc.UltraLabel();
             this.gbDatosGenerales = new Infragistics.Win.Misc.UltraGroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.chkNotaDeCredito = new Infragistics.Win.UltraWinEditors.UltraCheckEditor();
             this.txtObservaciones = new Infragistics.Win.UltraWinEditors.UltraTextEditor();
             this.txtDescuentoEspecial = new System.Windows.Forms.NumericUpDown();
@@ -110,10 +111,10 @@ namespace SPISA.Presentacion
             this.ultraLabel14 = new Infragistics.Win.Misc.UltraLabel();
             this.ultraLabel13 = new Infragistics.Win.Misc.UltraLabel();
             this.ultraLabel12 = new Infragistics.Win.Misc.UltraLabel();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.ucpStockCritico = new Infragistics.Win.UltraWinEditors.UltraColorPicker();
-            this.ultraLabel7 = new Infragistics.Win.Misc.UltraLabel();
             this.gbOpciones = new Infragistics.Win.Misc.UltraGroupBox();
+            this.ultraLabel7 = new Infragistics.Win.Misc.UltraLabel();
+            this.ucpStockCritico = new Infragistics.Win.UltraWinEditors.UltraColorPicker();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ucListaArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEditorControlCantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEditorControlDescuento)).BeginInit();
@@ -137,10 +138,10 @@ namespace SPISA.Presentacion
             ((System.ComponentModel.ISupportInitialize)(this.txtIva105)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIva21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSubTotal)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ucpStockCritico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gbOpciones)).BeginInit();
             this.gbOpciones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ucpStockCritico)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // ucListaArticulos
@@ -243,7 +244,7 @@ namespace SPISA.Presentacion
             ultraGridColumn2.EditorControl = this.txtEditorControlCantidad;
             ultraGridColumn2.Header.VisiblePosition = 1;
             ultraGridColumn2.TabIndex = 2;
-            ultraGridColumn2.Width = 77;
+            ultraGridColumn2.Width = 78;
             ultraGridColumn3.Header.Caption = "Descripción";
             ultraGridColumn3.Header.VisiblePosition = 2;
             ultraGridColumn3.TabStop = false;
@@ -308,7 +309,7 @@ namespace SPISA.Presentacion
             this.ugArticulos.DisplayLayout.RowConnectorColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(167)))), ((int)(((byte)(191)))));
             this.ugArticulos.DisplayLayout.RowConnectorStyle = Infragistics.Win.UltraWinGrid.RowConnectorStyle.Solid;
             this.ugArticulos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ugArticulos.Location = new System.Drawing.Point(2, 299);
+            this.ugArticulos.Location = new System.Drawing.Point(2, 248);
             this.ugArticulos.Name = "ugArticulos";
             this.ugArticulos.Size = new System.Drawing.Size(690, 233);
             this.ugArticulos.TabIndex = 2;
@@ -343,7 +344,7 @@ namespace SPISA.Presentacion
             this.gbDetallesCliente.Controls.Add(this.detallesCliente);
             this.gbDetallesCliente.Location = new System.Drawing.Point(1, 104);
             this.gbDetallesCliente.Name = "gbDetallesCliente";
-            this.gbDetallesCliente.Size = new System.Drawing.Size(690, 189);
+            this.gbDetallesCliente.Size = new System.Drawing.Size(690, 139);
             this.gbDetallesCliente.TabIndex = 1;
             this.gbDetallesCliente.Text = "Detalles del Cliente";
             this.gbDetallesCliente.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007;
@@ -354,6 +355,7 @@ namespace SPISA.Presentacion
             this.detallesCliente.Location = new System.Drawing.Point(9, 19);
             this.detallesCliente.Margin = new System.Windows.Forms.Padding(2);
             this.detallesCliente.Name = "detallesCliente";
+            this.detallesCliente.RazonSocial = "Seleccione un Cliente de la Lista...";
             this.detallesCliente.RefrescarAutomaticamente = false;
             this.detallesCliente.Size = new System.Drawing.Size(673, 150);
             this.detallesCliente.TabIndex = 0;
@@ -400,6 +402,7 @@ namespace SPISA.Presentacion
             // 
             // gbDatosGenerales
             // 
+            this.gbDatosGenerales.Controls.Add(this.checkBox1);
             this.gbDatosGenerales.Controls.Add(this.chkNotaDeCredito);
             this.gbDatosGenerales.Controls.Add(this.txtObservaciones);
             this.gbDatosGenerales.Controls.Add(this.txtDescuentoEspecial);
@@ -419,6 +422,18 @@ namespace SPISA.Presentacion
             this.gbDatosGenerales.TabIndex = 32;
             this.gbDatosGenerales.Text = "Datos Generales";
             this.gbDatosGenerales.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.BackColor = System.Drawing.Color.Transparent;
+            this.checkBox1.Location = new System.Drawing.Point(246, 49);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(75, 17);
+            this.checkBox1.TabIndex = 18;
+            this.checkBox1.Text = "Cotizacion";
+            this.checkBox1.UseVisualStyleBackColor = false;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // chkNotaDeCredito
             // 
@@ -550,7 +565,7 @@ namespace SPISA.Presentacion
             this.ultraGroupBox1.Controls.Add(this.ultraLabel14);
             this.ultraGroupBox1.Controls.Add(this.ultraLabel13);
             this.ultraGroupBox1.Controls.Add(this.ultraLabel12);
-            this.ultraGroupBox1.Location = new System.Drawing.Point(1, 538);
+            this.ultraGroupBox1.Location = new System.Drawing.Point(2, 486);
             this.ultraGroupBox1.Name = "ultraGroupBox1";
             this.ultraGroupBox1.Size = new System.Drawing.Size(690, 78);
             this.ultraGroupBox1.TabIndex = 36;
@@ -693,20 +708,16 @@ namespace SPISA.Presentacion
             this.ultraLabel12.TabIndex = 13;
             this.ultraLabel12.Text = "SubTotal 1";
             // 
-            // errorProvider
+            // gbOpciones
             // 
-            this.errorProvider.BlinkRate = 100;
-            this.errorProvider.ContainerControl = this;
-            // 
-            // ucpStockCritico
-            // 
-            this.ucpStockCritico.Color = System.Drawing.Color.Transparent;
-            this.ucpStockCritico.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007;
-            this.ucpStockCritico.Location = new System.Drawing.Point(112, 15);
-            this.ucpStockCritico.Name = "ucpStockCritico";
-            this.ucpStockCritico.Size = new System.Drawing.Size(175, 21);
-            this.ucpStockCritico.TabIndex = 58;
-            this.ucpStockCritico.Text = "Transparent";
+            this.gbOpciones.Controls.Add(this.ultraLabel7);
+            this.gbOpciones.Controls.Add(this.ucpStockCritico);
+            this.gbOpciones.Location = new System.Drawing.Point(2, 570);
+            this.gbOpciones.Name = "gbOpciones";
+            this.gbOpciones.Size = new System.Drawing.Size(689, 44);
+            this.gbOpciones.TabIndex = 42;
+            this.gbOpciones.Text = "Opciones";
+            this.gbOpciones.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007;
             // 
             // ultraLabel7
             // 
@@ -718,16 +729,20 @@ namespace SPISA.Presentacion
             this.ultraLabel7.TabIndex = 57;
             this.ultraLabel7.Text = "Stock Crítico:";
             // 
-            // gbOpciones
+            // ucpStockCritico
             // 
-            this.gbOpciones.Controls.Add(this.ultraLabel7);
-            this.gbOpciones.Controls.Add(this.ucpStockCritico);
-            this.gbOpciones.Location = new System.Drawing.Point(2, 622);
-            this.gbOpciones.Name = "gbOpciones";
-            this.gbOpciones.Size = new System.Drawing.Size(689, 44);
-            this.gbOpciones.TabIndex = 42;
-            this.gbOpciones.Text = "Opciones";
-            this.gbOpciones.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007;
+            this.ucpStockCritico.Color = System.Drawing.Color.Transparent;
+            this.ucpStockCritico.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007;
+            this.ucpStockCritico.Location = new System.Drawing.Point(112, 15);
+            this.ucpStockCritico.Name = "ucpStockCritico";
+            this.ucpStockCritico.Size = new System.Drawing.Size(175, 21);
+            this.ucpStockCritico.TabIndex = 58;
+            this.ucpStockCritico.Text = "Transparent";
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.BlinkRate = 100;
+            this.errorProvider.ContainerControl = this;
             // 
             // UcFactura
             // 
@@ -769,11 +784,11 @@ namespace SPISA.Presentacion
             ((System.ComponentModel.ISupportInitialize)(this.txtIva105)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIva21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSubTotal)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ucpStockCritico)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gbOpciones)).EndInit();
             this.gbOpciones.ResumeLayout(false);
             this.gbOpciones.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ucpStockCritico)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -820,5 +835,6 @@ namespace SPISA.Presentacion
         private Infragistics.Win.Misc.UltraGroupBox gbOpciones;
         private Infragistics.Win.Misc.UltraLabel ultraLabel7;
         private Infragistics.Win.UltraWinEditors.UltraColorPicker ucpStockCritico;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
