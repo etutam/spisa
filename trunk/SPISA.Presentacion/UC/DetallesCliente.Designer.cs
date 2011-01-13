@@ -29,7 +29,6 @@ namespace SPISA.Presentacion
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetallesCliente));
             Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
@@ -62,9 +61,9 @@ namespace SPISA.Presentacion
             Infragistics.Win.Appearance appearance29 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance30 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance31 = new Infragistics.Win.Appearance();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetallesCliente));
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.ultraGroupBox1 = new Infragistics.Win.Misc.UltraGroupBox();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.txtSaldo = new Infragistics.Win.UltraWinEditors.UltraCurrencyEditor();
             this.ultraLabel1 = new Infragistics.Win.Misc.UltraLabel();
             this.ultraLabel11 = new Infragistics.Win.Misc.UltraLabel();
@@ -80,6 +79,7 @@ namespace SPISA.Presentacion
             this.txtDomicilioComercial = new Infragistics.Win.UltraWinEditors.UltraTextEditor();
             this.ultraLabel6 = new Infragistics.Win.Misc.UltraLabel();
             this.ucListaClientes = new Infragistics.Win.UltraWinGrid.UltraCombo();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.toolTipManager = new Infragistics.Win.UltraWinToolTip.UltraToolTipManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ultraGroupBox1)).BeginInit();
@@ -122,22 +122,16 @@ namespace SPISA.Presentacion
             this.ultraGroupBox1.TabIndex = 0;
             this.ultraGroupBox1.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007;
             // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "easymoblog.ico");
-            this.imageList1.Images.SetKeyName(1, "floopy.ico");
-            // 
             // txtSaldo
             // 
             this.txtSaldo.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007;
-            this.txtSaldo.Location = new System.Drawing.Point(326, 118);
+            this.txtSaldo.Location = new System.Drawing.Point(568, 114);
             this.txtSaldo.MaskInput = "{currency:-9.2}";
             this.txtSaldo.Name = "txtSaldo";
             this.txtSaldo.Size = new System.Drawing.Size(100, 21);
             this.txtSaldo.TabIndex = 56;
             this.txtSaldo.TabStop = false;
+            this.txtSaldo.Visible = false;
             // 
             // ultraLabel1
             // 
@@ -145,11 +139,12 @@ namespace SPISA.Presentacion
             appearance1.TextHAlignAsString = "Right";
             appearance1.TextVAlignAsString = "Middle";
             this.ultraLabel1.Appearance = appearance1;
-            this.ultraLabel1.Location = new System.Drawing.Point(198, 116);
+            this.ultraLabel1.Location = new System.Drawing.Point(435, 114);
             this.ultraLabel1.Name = "ultraLabel1";
             this.ultraLabel1.Size = new System.Drawing.Size(111, 23);
             this.ultraLabel1.TabIndex = 55;
             this.ultraLabel1.Text = "Saldo";
+            this.ultraLabel1.Visible = false;
             // 
             // ultraLabel11
             // 
@@ -162,6 +157,7 @@ namespace SPISA.Presentacion
             this.ultraLabel11.Size = new System.Drawing.Size(111, 23);
             this.ultraLabel11.TabIndex = 54;
             this.ultraLabel11.Text = "Operatoria";
+            this.ultraLabel11.Visible = false;
             // 
             // ucListaOperatorias
             // 
@@ -207,6 +203,7 @@ namespace SPISA.Presentacion
             this.ucListaOperatorias.Size = new System.Drawing.Size(159, 22);
             this.ucListaOperatorias.TabIndex = 53;
             this.ucListaOperatorias.TabStop = false;
+            this.ucListaOperatorias.Visible = false;
             // 
             // txtCUIT
             // 
@@ -439,6 +436,13 @@ namespace SPISA.Presentacion
             this.ucListaClientes.Enter += new System.EventHandler(this.ucListaClientes_Enter);
             this.ucListaClientes.EditorButtonClick += new Infragistics.Win.UltraWinEditors.EditorButtonEventHandler(this.ucListaClientes_EditorButtonClick);
             this.ucListaClientes.TextChanged += new System.EventHandler(this.ucListaClientes_TextChanged);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "easymoblog.ico");
+            this.imageList1.Images.SetKeyName(1, "floopy.ico");
             // 
             // toolTipManager
             // 
