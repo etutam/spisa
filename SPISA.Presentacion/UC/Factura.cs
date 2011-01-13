@@ -670,10 +670,15 @@ namespace SPISA.Presentacion
                foreach (ResultadoVerificar verificar in resultadoVerificar)
                {
                    if (verificar == ResultadoVerificar.NoExistenItemsCargados)
-                   errorProvider.SetError(ugArticulos, "Deberá agregar al menos un item a la lista...");
-
+                   {
+                       imprimir = false;
+                       errorProvider.SetError(ugArticulos, "Deberá agregar al menos un item a la lista...");
+                   }
                    if(verificar == ResultadoVerificar.NoCliente)
-                   detallesCliente.EstablecerError();
+                   {
+                       imprimir = false;
+                       detallesCliente.EstablecerError();
+                   }
                    if (verificar == ResultadoVerificar.StockSuperado)
                    {
                        DialogResult dr = MessageBox.Show("Se supero el stock de un articulo, Desea continuar con la Impresio",
