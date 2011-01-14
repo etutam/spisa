@@ -214,12 +214,23 @@ namespace SPISA.Presentacion
         }
 
         private void Imprimir()
-       {
-           frmContainer frm = frmContainer.crearContainer(this.explorerBar);
-           UcFactura ucFactura= (UcFactura)frm.TraerUserControlVisible();
-           ucFactura.ImprimirCotizacion();
-           
-       }
+        {
+            try
+            {
+                frmContainer frm = frmContainer.crearContainer(this.explorerBar);
+
+                UcFactura ucFactura = (UcFactura) frm.TraerUserControlVisible();
+                ucFactura.ImprimirCotizacion();
+                StatusBarController.ShowMessage(status,"pMessages","La impresion se realizo con exito");
+            }
+            catch(Exception ex)
+            {
+
+                MessageBox.Show("Error al imprimir cotizacion: "+ex.ToString());
+            }
+        }
+
+    
 
         private void ImprimirRemito()
         {
@@ -228,6 +239,7 @@ namespace SPISA.Presentacion
                 frmContainer frm = frmContainer.crearContainer(this.explorerBar);
                 UcRemito ucRemito = (UcRemito)frm.TraerUserControlVisible();
                 ucRemito.Imprimir();
+                StatusBarController.ShowMessage(status, "pMessages", "La impresion se realizo con exito");
             }
             catch (Exception ex)
             {
@@ -247,6 +259,7 @@ namespace SPISA.Presentacion
                     UcFactura ucFactura = (UcFactura)frm.TraerUserControlVisible();
 
                     ucFactura.ImprimirCopia();
+                    StatusBarController.ShowMessage(status, "pMessages", "La impresion se realizo con exito");
                 }
                 else
                 {
@@ -271,6 +284,7 @@ namespace SPISA.Presentacion
 
                 if (_factura != null)
                 {
+                    StatusBarController.ShowMessage(status, "pMessages", "La impresion se realizo con exito");
                     frm.ModificarTabSeleccionado("Factura \""  + _factura.Cliente.RazonSocial.ToString() + "\"", "factura_" + _factura.Id.ToString(), "groupFacturaActualAlmacenadaImpresa", true);
                     ucFactura.SetearFormularioNoModificable();
 
