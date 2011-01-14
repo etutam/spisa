@@ -211,9 +211,6 @@ namespace SPISA.Presentacion
             {
                 MessageBox.Show("Error: " + ex.ToString());
             }
-
-
-            
         }
 
         private void Imprimir()
@@ -328,7 +325,7 @@ namespace SPISA.Presentacion
                 Factura f = ucFactura.Factura;
 
                 ucFactura.Cancelar();
-
+                StatusBarController.ShowMessage(status,"pMessages","La factura fue cancelada");
                 
                 /* cambios desde aqui */
                 int existeFacturaORemito = DeterminarExistenciaDeFacturaORemito(f.NotaPedido.IdNotaPedido);
@@ -751,6 +748,8 @@ namespace SPISA.Presentacion
                     }
                 }
 
+                StatusBarController.ShowMessage(status,"pMessages","El pedido se almaceno correctamente");
+
             }
         }
         private void AlmacenarArticulo()
@@ -809,6 +808,7 @@ namespace SPISA.Presentacion
                     }
 
                     frm.ModificarTabSeleccionado("Remito \"" + r.Cliente.RazonSocial + "\"", "remito_" + r.Id.ToString(), "groupRemitoActualAlmacenado", true);
+                    StatusBarController.ShowMessage(status,"pMessages","El remito se almaceno con exito");
                 }
 
             }
@@ -875,10 +875,18 @@ namespace SPISA.Presentacion
         }
         private void AlmacenarCliente()
         {
-            frmContainer frm = frmContainer.crearContainer(this.explorerBar);
-            UcCliente ucCliente = (UcCliente)frm.TraerUserControlVisible();
+            try
+            {
+                frmContainer frm = frmContainer.crearContainer(this.explorerBar);
+                UcCliente ucCliente = (UcCliente) frm.TraerUserControlVisible();
 
-            Cliente f = ucCliente.Guardar();
+                Cliente f = ucCliente.Guardar();
+                StatusBarController.ShowMessage(status, "pMessages", "El cliente ha sido almacenado con exito");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString());
+            }
         }
         #endregion
 
