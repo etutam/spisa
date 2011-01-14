@@ -198,10 +198,21 @@ namespace SPISA.Presentacion
 
         private void AlmacenarCotizacion()
         {
-            frmContainer frm = frmContainer.crearContainer(this.explorerBar);
-            UcFactura ucFactura = (UcFactura)frm.TraerUserControlVisible();
+            try
+            {
+                frmContainer frm = frmContainer.crearContainer(this.explorerBar);
+                UcFactura ucFactura = (UcFactura)frm.TraerUserControlVisible();
 
-            ucFactura.Guardar();
+                ucFactura.Guardar();
+
+                StatusBarController.ShowMessage(status, "pMessages", "Se almacenó la cotización.");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString());
+            }
+
+
             
         }
 
