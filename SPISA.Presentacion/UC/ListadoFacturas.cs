@@ -61,11 +61,11 @@ namespace SPISA.Presentacion
                 {
                     SqlDateTime fechaDesde= new SqlDateTime();
                     SqlDateTime fechaHasta = new SqlDateTime();
-                    if (dtFechaEmision.Value != null)
+                    if (dtFechaEmision.Value != "")
                     {
                         fechaDesde = Convert.ToDateTime(dtFechaEmision.Value);
                     }
-                    if (dtFechaHasta.Value != null)
+                    if (dtFechaHasta.Value != "")
                     {
                         
                         fechaHasta = Convert.ToDateTime(dtFechaHasta.Value);
