@@ -48,10 +48,16 @@ namespace SPISA.Presentacion
         public frmPrincipal()
         {
             //Application.AddMessageFilter(new TestMessageFilter());
-            
+          
             CultureInfo Cultura = new CultureInfo("es-AR",true);
             Cultura.NumberFormat.CurrencyDecimalSeparator = ",";
-            Thread.CurrentThread.CurrentCulture = new CultureInfo("es-AR");
+            Cultura.DateTimeFormat.DateSeparator = "-";
+            Cultura.DateTimeFormat.AMDesignator = "";
+            Cultura.DateTimeFormat.PMDesignator = "";
+            Cultura.DateTimeFormat.ShortDatePattern = "yyyy-MM-dd";
+            
+            
+            Thread.CurrentThread.CurrentCulture = Cultura;
 
 
             InitializeComponent();

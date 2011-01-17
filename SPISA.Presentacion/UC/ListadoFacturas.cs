@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Data;
 using System.Text;
@@ -15,6 +16,7 @@ namespace SPISA.Presentacion
         {
             InitializeComponent();
             buscador.Inicializar();
+            
 
             Logger.Append(this.GetType().ToString(), null, "");
         }
@@ -57,7 +59,25 @@ namespace SPISA.Presentacion
                 }
                 else
                 {
+                    SqlDateTime fechaDesde= new SqlDateTime();
+                    SqlDateTime fechaHasta = new SqlDateTime();
+                    if (dtFechaEmision.Value != null)
+                    {
+                        fechaDesde = Convert.ToDateTime(dtFechaEmision.Value);
+                    }
+                    if (dtFechaHasta.Value != null)
+                    {
+                        
+                        fechaHasta = Convert.ToDateTime(dtFechaHasta.Value);
+                    }
 
+                    SqlInt32 numerofactura = new SqlInt32();
+                    ultraMaskedEdit1.Text = ultraMaskedEdit1.Text.Replace("-", "");
+                    if (ultraMaskedEdit1.Text != "")
+                    {
+                        numerofactura = Convert.ToInt32(ultraMaskedEdit1.Text);
+                    }
+                    ds = Factura.Buscar(ucListaClientes.Text,fechaDesde,fechaHasta,txtObservaciones.Text,numerofactura);
                 }
             }
             CargarDatosFacturas(ds);
