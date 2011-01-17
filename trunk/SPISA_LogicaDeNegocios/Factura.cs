@@ -117,7 +117,7 @@ namespace SPISA.Libreria
 
         #region Metodos Estaticos
 
-        public static DataSet Buscar(SqlInt32 NumeroFactura, string RazonSocial, SqlDateTime FechaEmision, string Observaciones, SqlInt32 FueImpresa, SqlInt32 FueCancelada)
+  /*      public static DataSet Buscar(SqlInt32 NumeroFactura, string RazonSocial, SqlDateTime FechaEmision, string Observaciones, SqlInt32 FueImpresa, SqlInt32 FueCancelada)
         {
             DataSet ds = null;
             string sqlCommand = Consts.Facturas_Buscar;
@@ -131,7 +131,7 @@ namespace SPISA.Libreria
                 db.AddInParameter(dbCommand, "FechaEmision", DbType.DateTime, FechaEmision);
                 db.AddInParameter(dbCommand, "FechaEntrega", DbType.DateTime, FechaEntrega);
                 db.AddInParameter(dbCommand, "Observaciones", DbType.String, Observaciones);
-                */
+                
                 ds = db.ExecuteDataSet(dbCommand);
 
                 DataRelation rel = new DataRelation("Id", ds.Tables[0].Columns[0], ds.Tables[1].Columns[0]);
@@ -150,7 +150,7 @@ namespace SPISA.Libreria
             }
 
             return ds;
-        }
+        }*/
         public static long ObtenerNuevoNumeroDeFactura()
         {
             string sqlCommand = Consts.Facturas_ObtenerNumeroNumeroDeFactura;
@@ -631,9 +631,24 @@ namespace SPISA.Libreria
             {
                 Database db = DatabaseFactory.CreateDatabase();
                 DbCommand dbCommand = db.GetStoredProcCommand(sqlCommand);
-                
-                db.AddInParameter(dbCommand,"FechaDesde",DbType.DateTime,fechaDesde.Value);
-                db.AddInParameter(dbCommand, "FechaHasta", DbType.DateTime, fechaHasta.Value);
+                if(fechaDesde.IsNull)
+                {
+                    db.AddInParameter(dbCommand, "FechaDesde", DbType.DateTime,"1800-01-01");
+                }
+                else
+                {
+                    db.AddInParameter(dbCommand, "FechaDesde", DbType.DateTime, fechaDesde.Value);
+                }
+                //db.AddInParameter(dbCommand,"FechaDesde",DbType.DateTime,fechaDesde.Value);
+                if(fechaHasta.IsNull)
+                {
+                    db.AddInParameter(dbCommand, "FechaHasta", DbType.DateTime, "1800-01-01");
+                }
+                else
+                {
+                    db.AddInParameter(dbCommand, "FechaHasta", DbType.DateTime, fechaHasta.Value);
+                }
+                //db.AddInParameter(dbCommand, "FechaHasta", DbType.DateTime, fechaHasta.Value);
                 db.AddInParameter(dbCommand,"RazonSocial",DbType.String,razonSocial);
                 db.AddInParameter(dbCommand,"NumeroFactura",DbType.Int32,numeroFactura);
                 db.AddInParameter(dbCommand,"Observaciones",DbType.String,observaciones);
