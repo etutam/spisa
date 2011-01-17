@@ -30,6 +30,7 @@ namespace SPISA.Presentacion
         {
             this.components = new System.ComponentModel.Container();
             Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
+            Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton dateButton1 = new Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton();
             Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance4 = new Infragistics.Win.Appearance();
@@ -38,9 +39,10 @@ namespace SPISA.Presentacion
             Infragistics.Win.Appearance appearance7 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance8 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance9 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton dateButton1 = new Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton();
             Infragistics.Win.Appearance appearance10 = new Infragistics.Win.Appearance();
+            Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton dateButton2 = new Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton();
             Infragistics.Win.Appearance appearance11 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance12 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand1 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn1 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("IdNotaPedido");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn2 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("IdFactura");
@@ -58,11 +60,11 @@ namespace SPISA.Presentacion
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn13 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Descripción");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn14 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Cantidad");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn15 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Descuento");
-            Infragistics.Win.Appearance appearance12 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance13 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance14 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance15 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance16 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance17 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinDataSource.UltraDataBand ultraDataBand1 = new Infragistics.Win.UltraWinDataSource.UltraDataBand("Band 1");
             Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn1 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdNotaPedido");
             Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn2 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Codigo");
@@ -80,8 +82,10 @@ namespace SPISA.Presentacion
             Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn14 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("FueCancelada");
             Infragistics.Win.UltraWinTabControl.UltraTab ultraTab1 = new Infragistics.Win.UltraWinTabControl.UltraTab();
             Infragistics.Win.UltraWinTabControl.UltraTab ultraTab2 = new Infragistics.Win.UltraWinTabControl.UltraTab();
-            Infragistics.Win.Appearance appearance17 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance18 = new Infragistics.Win.Appearance();
             this.ultraTabPageControl1 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
+            this.ultraLabel5 = new Infragistics.Win.Misc.UltraLabel();
+            this.dtFechaHasta = new Infragistics.Win.UltraWinSchedule.UltraCalendarCombo();
             this.ultraMaskedEdit1 = new Infragistics.Win.UltraWinMaskedEdit.UltraMaskedEdit();
             this.ultraButton1 = new Infragistics.Win.Misc.UltraButton();
             this.lblCliente = new Infragistics.Win.Misc.UltraLabel();
@@ -110,6 +114,7 @@ namespace SPISA.Presentacion
             this.ultraLabel4 = new Infragistics.Win.Misc.UltraLabel();
             this.ucpNoModificables = new Infragistics.Win.UltraWinEditors.UltraColorPicker();
             this.ultraTabPageControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaHasta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ucListaClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtObservaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaEmision)).BeginInit();
@@ -130,6 +135,8 @@ namespace SPISA.Presentacion
             // 
             // ultraTabPageControl1
             // 
+            this.ultraTabPageControl1.Controls.Add(this.ultraLabel5);
+            this.ultraTabPageControl1.Controls.Add(this.dtFechaHasta);
             this.ultraTabPageControl1.Controls.Add(this.ultraMaskedEdit1);
             this.ultraTabPageControl1.Controls.Add(this.ultraButton1);
             this.ultraTabPageControl1.Controls.Add(this.lblCliente);
@@ -144,6 +151,31 @@ namespace SPISA.Presentacion
             this.ultraTabPageControl1.Location = new System.Drawing.Point(1, 22);
             this.ultraTabPageControl1.Name = "ultraTabPageControl1";
             this.ultraTabPageControl1.Size = new System.Drawing.Size(792, 116);
+            // 
+            // ultraLabel5
+            // 
+            appearance1.BackColor = System.Drawing.Color.Transparent;
+            this.ultraLabel5.Appearance = appearance1;
+            this.ultraLabel5.Location = new System.Drawing.Point(525, 23);
+            this.ultraLabel5.Name = "ultraLabel5";
+            this.ultraLabel5.Size = new System.Drawing.Size(42, 23);
+            this.ultraLabel5.TabIndex = 71;
+            this.ultraLabel5.Text = "Hasta";
+            // 
+            // dtFechaHasta
+            // 
+            this.dtFechaHasta.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dtFechaHasta.BackColor = System.Drawing.SystemColors.Window;
+            this.dtFechaHasta.ButtonStyle = Infragistics.Win.UIElementButtonStyle.Office2007ScrollbarButton;
+            this.dtFechaHasta.DateButtons.Add(dateButton1);
+            this.dtFechaHasta.Format = "";
+            this.dtFechaHasta.Location = new System.Drawing.Point(571, 21);
+            this.dtFechaHasta.Name = "dtFechaHasta";
+            this.dtFechaHasta.NonAutoSizeHeight = 21;
+            this.dtFechaHasta.NullDateLabel = "";
+            this.dtFechaHasta.Size = new System.Drawing.Size(82, 21);
+            this.dtFechaHasta.TabIndex = 70;
+            this.dtFechaHasta.Value = "";
             // 
             // ultraMaskedEdit1
             // 
@@ -167,9 +199,9 @@ namespace SPISA.Presentacion
             // 
             // lblCliente
             // 
-            appearance1.BackColor = System.Drawing.Color.Transparent;
-            this.lblCliente.Appearance = appearance1;
-            this.lblCliente.Location = new System.Drawing.Point(49, 51);
+            appearance2.BackColor = System.Drawing.Color.Transparent;
+            this.lblCliente.Appearance = appearance2;
+            this.lblCliente.Location = new System.Drawing.Point(49, 66);
             this.lblCliente.Name = "lblCliente";
             this.lblCliente.Size = new System.Drawing.Size(148, 23);
             this.lblCliente.TabIndex = 55;
@@ -178,43 +210,43 @@ namespace SPISA.Presentacion
             // ucListaClientes
             // 
             this.ucListaClientes.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            appearance2.BackColor = System.Drawing.Color.Gainsboro;
-            appearance2.BackColor2 = System.Drawing.Color.DarkGray;
-            appearance2.BackGradientStyle = Infragistics.Win.GradientStyle.ForwardDiagonal;
-            this.ucListaClientes.DisplayLayout.Appearance = appearance2;
+            appearance3.BackColor = System.Drawing.Color.Gainsboro;
+            appearance3.BackColor2 = System.Drawing.Color.DarkGray;
+            appearance3.BackGradientStyle = Infragistics.Win.GradientStyle.ForwardDiagonal;
+            this.ucListaClientes.DisplayLayout.Appearance = appearance3;
             this.ucListaClientes.DisplayLayout.InterBandSpacing = 10;
             this.ucListaClientes.DisplayLayout.Override.BorderStyleRow = Infragistics.Win.UIElementBorderStyle.InsetSoft;
             this.ucListaClientes.DisplayLayout.Override.BorderStyleRowSelector = Infragistics.Win.UIElementBorderStyle.None;
-            appearance3.BackColor = System.Drawing.Color.Transparent;
-            this.ucListaClientes.DisplayLayout.Override.CardAreaAppearance = appearance3;
-            appearance4.BackColor = System.Drawing.Color.LightSteelBlue;
-            appearance4.ForeColor = System.Drawing.Color.Navy;
-            this.ucListaClientes.DisplayLayout.Override.CellAppearance = appearance4;
-            appearance5.BackColor = System.Drawing.Color.DarkGray;
-            appearance5.BackColor2 = System.Drawing.Color.Gainsboro;
-            appearance5.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
-            appearance5.FontData.Name = "Tahoma";
-            appearance5.FontData.SizeInPoints = 9F;
+            appearance4.BackColor = System.Drawing.Color.Transparent;
+            this.ucListaClientes.DisplayLayout.Override.CardAreaAppearance = appearance4;
+            appearance5.BackColor = System.Drawing.Color.LightSteelBlue;
             appearance5.ForeColor = System.Drawing.Color.Navy;
-            appearance5.TextHAlignAsString = "Left";
-            appearance5.ThemedElementAlpha = Infragistics.Win.Alpha.Transparent;
-            this.ucListaClientes.DisplayLayout.Override.HeaderAppearance = appearance5;
+            this.ucListaClientes.DisplayLayout.Override.CellAppearance = appearance5;
             appearance6.BackColor = System.Drawing.Color.DarkGray;
             appearance6.BackColor2 = System.Drawing.Color.Gainsboro;
             appearance6.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
+            appearance6.FontData.Name = "Tahoma";
+            appearance6.FontData.SizeInPoints = 9F;
             appearance6.ForeColor = System.Drawing.Color.Navy;
-            this.ucListaClientes.DisplayLayout.Override.RowSelectorAppearance = appearance6;
+            appearance6.TextHAlignAsString = "Left";
+            appearance6.ThemedElementAlpha = Infragistics.Win.Alpha.Transparent;
+            this.ucListaClientes.DisplayLayout.Override.HeaderAppearance = appearance6;
+            appearance7.BackColor = System.Drawing.Color.DarkGray;
+            appearance7.BackColor2 = System.Drawing.Color.Gainsboro;
+            appearance7.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
+            appearance7.ForeColor = System.Drawing.Color.Navy;
+            this.ucListaClientes.DisplayLayout.Override.RowSelectorAppearance = appearance7;
             this.ucListaClientes.DisplayLayout.Override.RowSelectorWidth = 20;
             this.ucListaClientes.DisplayLayout.Override.RowSpacingAfter = 1;
             this.ucListaClientes.DisplayLayout.Override.RowSpacingBefore = 3;
-            appearance7.BackColor = System.Drawing.Color.Navy;
-            appearance7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ucListaClientes.DisplayLayout.Override.SelectedRowAppearance = appearance7;
+            appearance8.BackColor = System.Drawing.Color.Navy;
+            appearance8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ucListaClientes.DisplayLayout.Override.SelectedRowAppearance = appearance8;
             this.ucListaClientes.DisplayLayout.RowConnectorColor = System.Drawing.Color.Gray;
             this.ucListaClientes.DisplayLayout.RowConnectorStyle = Infragistics.Win.UltraWinGrid.RowConnectorStyle.Dashed;
             this.ucListaClientes.DisplayMember = "RazonSocial";
             this.ucListaClientes.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007;
-            this.ucListaClientes.Location = new System.Drawing.Point(203, 48);
+            this.ucListaClientes.Location = new System.Drawing.Point(203, 65);
             this.ucListaClientes.Name = "ucListaClientes";
             this.ucListaClientes.Size = new System.Drawing.Size(134, 22);
             this.ucListaClientes.TabIndex = 56;
@@ -223,8 +255,8 @@ namespace SPISA.Presentacion
             // 
             // ultraLabel2
             // 
-            appearance8.BackColor = System.Drawing.Color.Transparent;
-            this.ultraLabel2.Appearance = appearance8;
+            appearance9.BackColor = System.Drawing.Color.Transparent;
+            this.ultraLabel2.Appearance = appearance9;
             this.ultraLabel2.Location = new System.Drawing.Point(91, 23);
             this.ultraLabel2.Name = "ultraLabel2";
             this.ultraLabel2.Size = new System.Drawing.Size(106, 23);
@@ -244,7 +276,7 @@ namespace SPISA.Presentacion
             // txtObservaciones
             // 
             this.txtObservaciones.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007;
-            this.txtObservaciones.Location = new System.Drawing.Point(519, 49);
+            this.txtObservaciones.Location = new System.Drawing.Point(519, 66);
             this.txtObservaciones.Name = "txtObservaciones";
             this.txtObservaciones.Size = new System.Drawing.Size(134, 21);
             this.txtObservaciones.TabIndex = 64;
@@ -261,9 +293,9 @@ namespace SPISA.Presentacion
             // 
             // ultraLabel3
             // 
-            appearance9.BackColor = System.Drawing.Color.Transparent;
-            this.ultraLabel3.Appearance = appearance9;
-            this.ultraLabel3.Location = new System.Drawing.Point(353, 52);
+            appearance10.BackColor = System.Drawing.Color.Transparent;
+            this.ultraLabel3.Appearance = appearance10;
+            this.ultraLabel3.Location = new System.Drawing.Point(353, 66);
             this.ultraLabel3.Name = "ultraLabel3";
             this.ultraLabel3.Size = new System.Drawing.Size(171, 23);
             this.ultraLabel3.TabIndex = 63;
@@ -273,24 +305,25 @@ namespace SPISA.Presentacion
             // 
             this.dtFechaEmision.BackColor = System.Drawing.SystemColors.Window;
             this.dtFechaEmision.ButtonStyle = Infragistics.Win.UIElementButtonStyle.Office2007ScrollbarButton;
-            this.dtFechaEmision.DateButtons.Add(dateButton1);
-            this.dtFechaEmision.Location = new System.Drawing.Point(519, 25);
+            this.dtFechaEmision.DateButtons.Add(dateButton2);
+            this.dtFechaEmision.Format = "";
+            this.dtFechaEmision.Location = new System.Drawing.Point(434, 22);
             this.dtFechaEmision.Name = "dtFechaEmision";
             this.dtFechaEmision.NonAutoSizeHeight = 21;
             this.dtFechaEmision.NullDateLabel = "";
-            this.dtFechaEmision.Size = new System.Drawing.Size(97, 21);
+            this.dtFechaEmision.Size = new System.Drawing.Size(82, 21);
             this.dtFechaEmision.TabIndex = 59;
             this.dtFechaEmision.Value = "";
             // 
             // ultraLabel1
             // 
-            appearance10.BackColor = System.Drawing.Color.Transparent;
-            this.ultraLabel1.Appearance = appearance10;
-            this.ultraLabel1.Location = new System.Drawing.Point(430, 30);
+            appearance11.BackColor = System.Drawing.Color.Transparent;
+            this.ultraLabel1.Appearance = appearance11;
+            this.ultraLabel1.Location = new System.Drawing.Point(353, 23);
             this.ultraLabel1.Name = "ultraLabel1";
             this.ultraLabel1.Size = new System.Drawing.Size(83, 23);
             this.ultraLabel1.TabIndex = 60;
-            this.ultraLabel1.Text = "Fecha Emision:";
+            this.ultraLabel1.Text = "Fecha Desde";
             // 
             // ultraTabPageControl2
             // 
@@ -344,10 +377,10 @@ namespace SPISA.Presentacion
             // grListaFacturas
             // 
             this.grListaFacturas.DataSource = this.dsListaFacturas;
-            appearance11.BackColor = System.Drawing.Color.White;
-            appearance11.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(167)))), ((int)(((byte)(191)))));
-            appearance11.BackGradientStyle = Infragistics.Win.GradientStyle.ForwardDiagonal;
-            this.grListaFacturas.DisplayLayout.Appearance = appearance11;
+            appearance12.BackColor = System.Drawing.Color.White;
+            appearance12.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(167)))), ((int)(((byte)(191)))));
+            appearance12.BackGradientStyle = Infragistics.Win.GradientStyle.ForwardDiagonal;
+            this.grListaFacturas.DisplayLayout.Appearance = appearance12;
             ultraGridColumn1.Header.VisiblePosition = 0;
             ultraGridColumn1.Hidden = true;
             ultraGridColumn2.Header.VisiblePosition = 1;
@@ -394,30 +427,30 @@ namespace SPISA.Presentacion
             this.grListaFacturas.DisplayLayout.MaxColScrollRegions = 1;
             this.grListaFacturas.DisplayLayout.MaxRowScrollRegions = 1;
             this.grListaFacturas.DisplayLayout.Override.AllowColMoving = Infragistics.Win.UltraWinGrid.AllowColMoving.NotAllowed;
-            appearance12.BackColor = System.Drawing.Color.Transparent;
-            this.grListaFacturas.DisplayLayout.Override.CardAreaAppearance = appearance12;
+            appearance13.BackColor = System.Drawing.Color.Transparent;
+            this.grListaFacturas.DisplayLayout.Override.CardAreaAppearance = appearance13;
             this.grListaFacturas.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText;
-            appearance13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
-            appearance13.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(167)))), ((int)(((byte)(191)))));
-            appearance13.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
-            appearance13.ForeColor = System.Drawing.Color.Black;
-            appearance13.TextHAlignAsString = "Left";
-            appearance13.ThemedElementAlpha = Infragistics.Win.Alpha.Transparent;
-            this.grListaFacturas.DisplayLayout.Override.HeaderAppearance = appearance13;
+            appearance14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
+            appearance14.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(167)))), ((int)(((byte)(191)))));
+            appearance14.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
+            appearance14.ForeColor = System.Drawing.Color.Black;
+            appearance14.TextHAlignAsString = "Left";
+            appearance14.ThemedElementAlpha = Infragistics.Win.Alpha.Transparent;
+            this.grListaFacturas.DisplayLayout.Override.HeaderAppearance = appearance14;
             this.grListaFacturas.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti;
-            appearance14.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(167)))), ((int)(((byte)(191)))));
-            this.grListaFacturas.DisplayLayout.Override.RowAppearance = appearance14;
-            appearance15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
-            appearance15.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(167)))), ((int)(((byte)(191)))));
-            appearance15.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
-            this.grListaFacturas.DisplayLayout.Override.RowSelectorAppearance = appearance15;
+            appearance15.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(167)))), ((int)(((byte)(191)))));
+            this.grListaFacturas.DisplayLayout.Override.RowAppearance = appearance15;
+            appearance16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
+            appearance16.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(167)))), ((int)(((byte)(191)))));
+            appearance16.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
+            this.grListaFacturas.DisplayLayout.Override.RowSelectorAppearance = appearance16;
             this.grListaFacturas.DisplayLayout.Override.RowSelectorWidth = 12;
             this.grListaFacturas.DisplayLayout.Override.RowSpacingBefore = 2;
-            appearance16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(167)))), ((int)(((byte)(191)))));
-            appearance16.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
-            appearance16.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
-            appearance16.ForeColor = System.Drawing.Color.Black;
-            this.grListaFacturas.DisplayLayout.Override.SelectedRowAppearance = appearance16;
+            appearance17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(167)))), ((int)(((byte)(191)))));
+            appearance17.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
+            appearance17.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
+            appearance17.ForeColor = System.Drawing.Color.Black;
+            this.grListaFacturas.DisplayLayout.Override.SelectedRowAppearance = appearance17;
             this.grListaFacturas.DisplayLayout.RowConnectorColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(167)))), ((int)(((byte)(191)))));
             this.grListaFacturas.DisplayLayout.RowConnectorStyle = Infragistics.Win.UltraWinGrid.RowConnectorStyle.Solid;
             this.grListaFacturas.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill;
@@ -539,8 +572,8 @@ namespace SPISA.Presentacion
             // 
             // ultraLabel4
             // 
-            appearance17.BackColor = System.Drawing.Color.Transparent;
-            this.ultraLabel4.Appearance = appearance17;
+            appearance18.BackColor = System.Drawing.Color.Transparent;
+            this.ultraLabel4.Appearance = appearance18;
             this.ultraLabel4.Location = new System.Drawing.Point(10, 19);
             this.ultraLabel4.Name = "ultraLabel4";
             this.ultraLabel4.Size = new System.Drawing.Size(99, 23);
@@ -568,6 +601,7 @@ namespace SPISA.Presentacion
             this.Size = new System.Drawing.Size(800, 650);
             this.ultraTabPageControl1.ResumeLayout(false);
             this.ultraTabPageControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaHasta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ucListaClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtObservaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaEmision)).EndInit();
@@ -619,5 +653,7 @@ namespace SPISA.Presentacion
         private Infragistics.Win.Misc.UltraGroupBox ultraGroupBox1;
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.Button btnBuscar2;
+        private Infragistics.Win.Misc.UltraLabel ultraLabel5;
+        private Infragistics.Win.UltraWinSchedule.UltraCalendarCombo dtFechaHasta;
     }
 }

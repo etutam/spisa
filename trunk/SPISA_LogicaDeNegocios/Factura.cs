@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-
+using System.Windows.Forms;
 using Microsoft.Practices.EnterpriseLibrary.Data;
 using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling;
 
@@ -177,6 +177,9 @@ namespace SPISA.Libreria
 
             return nuevoNumeroFactura;
         }
+
+
+
         public static DataSet TraerEntreFechas(DateTime FechaInicio, DateTime FechaFin)
         {
             if ((FechaInicio == null) || (FechaFin == null) || (FechaInicio.Ticks > FechaFin.Ticks)) throw new Exception("(FechaInicio o FechaFin==null) o (FechaInicio.Ticks>FechaFin.Ticks)");
@@ -617,6 +620,35 @@ namespace SPISA.Libreria
             }
             return result;
         }
+
+
+        public static DataSet Buscar(string razonSocial, SqlDateTime fechaDesde,SqlDateTime fechaHasta, string observaciones,SqlInt32 numeroFactura)
+        {
+            DataSet ds = null;
+            string sqlCommand = Consts.Facturas_Buscar ;
+
+            try
+            {
+                Database db = DatabaseFactory.CreateDatabase();
+                DbCommand dbCommand = db.GetStoredProcCommand(sqlCommand);
+                
+                db.AddInParameter(dbCommand,"FechaDesde",DbType.DateTime,fechaDesde.Value);
+                db.AddInParameter(dbCommand, "FechaHasta", DbType.DateTime, fechaHasta.Value);
+                db.AddInParameter(dbCommand,"RazonSocial",DbType.String,razonSocial);
+                db.AddInParameter(dbCommand,"NumeroFactura",DbType.Int32,numeroFactura);
+                db.AddInParameter(dbCommand,"Observaciones",DbType.String,observaciones);
+                ds= db.ExecuteDataSet(dbCommand);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se Produjo un error al ejecutar la busqueda", ex.ToString());
+            }
+
+
+            return ds;
+        }
+
 
         public Decimal CalcularTotal()
         {
