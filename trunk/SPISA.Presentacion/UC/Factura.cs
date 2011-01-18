@@ -975,7 +975,7 @@ namespace SPISA.Presentacion
                 if (a != null)
                 {
                     existenItemsCargados = true;
-                    if (Convert.ToBoolean(dr.Cells["StockCritico"].Value))
+                    if (Convert.ToBoolean(dr.Cells["StockCritico"].Value)|| a.Cantidad==0)
                     {
                         listaErrores.Add(ResultadoVerificar.StockSuperado);
                         break;

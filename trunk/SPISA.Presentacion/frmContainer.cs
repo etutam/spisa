@@ -195,8 +195,6 @@ namespace SPISA.Presentacion
                             grupos.Add("groupFavoritos");
                             grupos.Add("groupGestion");
                             ExplorerBarController.FillExplorerBar(grupos, explorerBar);
-
-
                         }
                     }
                 }

@@ -17,6 +17,9 @@ namespace SPISA.Presentacion
             {
                 components.Dispose();
             }
+
+
+            frm = null;
             base.Dispose(disposing);
         }
 
