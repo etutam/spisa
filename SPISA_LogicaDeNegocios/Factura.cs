@@ -614,7 +614,7 @@ namespace SPISA.Libreria
                     bool sendErrorsByMail = Convert.ToBoolean(appSettingsReader.GetValue("SendErrorsByMail", typeof(Boolean)));
 
                     if (sendErrorsByMail) ExceptionPolicy.HandleException(ex, "Global Policy");
-
+                    MessageBox.Show("ERROR AL CANCELAR FACTURA");
                     throw ex;
                 }
             }

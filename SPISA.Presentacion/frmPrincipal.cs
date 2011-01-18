@@ -345,6 +345,7 @@ namespace SPISA.Presentacion
                 string[] grupos = { "groupFavoritos", "groupGestion" };
                 StatusBarController.ShowMessage(status, "pMessages", "");
                 frmContainer frm = frmContainer.crearContainer(this.explorerBar);
+                //frm.MdiParent = this;
                 UcFactura ucFactura = (UcFactura)frm.TraerUserControlVisible();
                 Factura f = ucFactura.Factura;
 
@@ -368,11 +369,14 @@ namespace SPISA.Presentacion
 
                 }
 
-                frm.TabControl.Tabs.Remove(frm.TabControl.SelectedTab);
-                /*cambios hasta aqui */
+                //frm.TabControl.Tabs.Remove(frm.TabControl.SelectedTab);
+                frm.TabControl.Tabs.RemoveAt(frm.TabControl.SelectedTab.Index);
+                /*cambios hasta aqui */;
                 if (frm.TabControl.Tabs.Count == 0)
                 {
-                    frm.Close();
+                    
+                    frm.Dispose();
+                    //frm.Close();
                     ExplorerBarController.FillExplorerBar(grupos, explorerBar);
                 }
             }
