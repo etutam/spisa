@@ -665,6 +665,7 @@ namespace SPISA.Presentacion
        public void ImprimirCotizacion()
        {
            IList<ResultadoVerificar> resultadoVerificar = VerificarCampos();
+           
 
            bool imprimir = true;
                foreach (ResultadoVerificar verificar in resultadoVerificar)
@@ -907,13 +908,17 @@ namespace SPISA.Presentacion
                 foreach (ResultadoVerificar verificar in resultadoVerificar)
                 {
 
-                    if (verificar == ResultadoVerificar.StockSuperado)
-                    {
+                    
+                    
                         if (verificar == ResultadoVerificar.NoExistenItemsCargados)
+                        {
                             errorProvider.SetError(ugArticulos, "Deberá agregar al menos un item a la lista...");
+                        }
 
                         if (verificar == ResultadoVerificar.NoCliente)
+                        {
                             detallesCliente.EstablecerError();
+                        }
 
                         if (verificar == ResultadoVerificar.StockSuperado)
                         {
@@ -938,7 +943,7 @@ namespace SPISA.Presentacion
                                     break;
                             }
                         }
-                    }
+                    
                 }
             }
 

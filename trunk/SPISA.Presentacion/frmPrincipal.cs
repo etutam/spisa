@@ -51,6 +51,7 @@ namespace SPISA.Presentacion
           
             CultureInfo Cultura = new CultureInfo("es-AR",true);
             Cultura.NumberFormat.CurrencyDecimalSeparator = ",";
+            Cultura.NumberFormat.NumberDecimalSeparator = ",";
             Cultura.DateTimeFormat.DateSeparator = "-";
             Cultura.DateTimeFormat.AMDesignator = "";
             Cultura.DateTimeFormat.PMDesignator = "";
@@ -58,7 +59,8 @@ namespace SPISA.Presentacion
             
             
             Thread.CurrentThread.CurrentCulture = Cultura;
-
+            
+             
 
             InitializeComponent();
 
@@ -206,6 +208,7 @@ namespace SPISA.Presentacion
         {
             try
             {
+                StatusBarController.ShowMessage(status, "pMessages", "");
                 frmContainer frm = frmContainer.crearContainer(this.explorerBar);
                 UcFactura ucFactura = (UcFactura)frm.TraerUserControlVisible();
 
@@ -224,7 +227,7 @@ namespace SPISA.Presentacion
             try
             {
                 frmContainer frm = frmContainer.crearContainer(this.explorerBar);
-
+                StatusBarController.ShowMessage(status, "pMessages", "");
                 UcFactura ucFactura = (UcFactura) frm.TraerUserControlVisible();
                 ucFactura.ImprimirCotizacion();
                 StatusBarController.ShowMessage(status,"pMessages","La impresion se realizo con exito");
@@ -242,6 +245,7 @@ namespace SPISA.Presentacion
         {
             try
             {
+                StatusBarController.ShowMessage(status, "pMessages", "");
                 frmContainer frm = frmContainer.crearContainer(this.explorerBar);
                 UcRemito ucRemito = (UcRemito)frm.TraerUserControlVisible();
                 ucRemito.Imprimir();
@@ -258,7 +262,7 @@ namespace SPISA.Presentacion
             try
             {
                 DialogResult result = MessageBox.Show("Se imprimirá la factura. ¿Desea continuar?", "Imprimir Factura", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
-
+                StatusBarController.ShowMessage(status, "pMessages", "");
                 if (result == DialogResult.Yes)
                 {
                     frmContainer frm = frmContainer.crearContainer(this.explorerBar);
@@ -284,7 +288,7 @@ namespace SPISA.Presentacion
                 
                 frmContainer frm = frmContainer.crearContainer(this.explorerBar);
                 UcFactura ucFactura = (UcFactura)frm.TraerUserControlVisible();
-                
+                StatusBarController.ShowMessage(status, "pMessages", "");
                 int idFactura = ucFactura.Imprimir();
                 Factura _factura = Factura.TraerFacturaPorID(idFactura);
 
@@ -339,7 +343,7 @@ namespace SPISA.Presentacion
             try
             {
                 string[] grupos = { "groupFavoritos", "groupGestion" };
-                
+                StatusBarController.ShowMessage(status, "pMessages", "");
                 frmContainer frm = frmContainer.crearContainer(this.explorerBar);
                 UcFactura ucFactura = (UcFactura)frm.TraerUserControlVisible();
                 Factura f = ucFactura.Factura;
@@ -723,7 +727,7 @@ namespace SPISA.Presentacion
         private void AlmacenarPedido()
         {
             frmContainer frm = frmContainer.crearContainer(this.explorerBar);
-
+            StatusBarController.ShowMessage(status, "pMessages", "");
             UcNotaPedido ucNP = (UcNotaPedido)frm.TraerUserControlVisible();
             NotaPedido np = ucNP.Guardar();
 
@@ -792,7 +796,7 @@ namespace SPISA.Presentacion
             try
             {
                 frmContainer frm = frmContainer.crearContainer(this.explorerBar);
-
+                StatusBarController.ShowMessage(status, "pMessages", "");
                 UcRemito ucRemito = (UcRemito)frm.TraerUserControlVisible();
                 Remito r = ucRemito.Guardar();
 
@@ -841,11 +845,12 @@ namespace SPISA.Presentacion
         {
             try
             {
-
+                StatusBarController.ShowMessage(status, "pMessages", "");
                 frmContainer frm = frmContainer.crearContainer(this.explorerBar);
                 UcFactura ucFactura = (UcFactura)frm.TraerUserControlVisible();
 
                 Factura f = ucFactura.Guardar();
+                StatusBarController.ShowMessage(status,"pMessages","");
 
                 string[] options = new string[] { 
                                                 "groupPedidoActualAlmacenadoSinFacturaSinRemito",
@@ -897,6 +902,7 @@ namespace SPISA.Presentacion
         {
             try
             {
+                StatusBarController.ShowMessage(status, "pMessages", "");
                 frmContainer frm = frmContainer.crearContainer(this.explorerBar);
                 UcCliente ucCliente = (UcCliente) frm.TraerUserControlVisible();
 
