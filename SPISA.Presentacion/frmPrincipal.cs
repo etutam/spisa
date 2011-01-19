@@ -733,51 +733,60 @@ namespace SPISA.Presentacion
             frmContainer frm = frmContainer.crearContainer(this.explorerBar);
             StatusBarController.ShowMessage(status, "pMessages", "");
             UcNotaPedido ucNP = (UcNotaPedido)frm.TraerUserControlVisible();
-            NotaPedido np = ucNP.Guardar();
 
-            string[] options = new string[] { 
-                                                "groupPedidoActualAlmacenadoSinFacturaSinRemito",
-                                                "groupPedidoActualAlmacenadoSinFacturaConRemito",
-                                                "groupPedidoActualAlmacenadoConFacturaSinRemito",
-                                                "groupPedidoActualAlmacenadoConFacturaConRemito"
-                        
-                                            };
-
-            if (np != null)
+            try
             {
-                int existeFacturaORemito = DeterminarExistenciaDeFacturaORemito(np.IdNotaPedido);
-                frmContainer _container = frmContainer.crearContainer(frmContainer.explorerBar);
-                _container.ModificarTabSeleccionado("Pedido \"" + np.Cliente.RazonSocial + "\"", "pedido_" + np.IdNotaPedido, options[existeFacturaORemito], true);
+                NotaPedido np = ucNP.Guardar();
+                string[] options = new string[]
+                                       {
+                                           "groupPedidoActualAlmacenadoSinFacturaSinRemito",
+                                           "groupPedidoActualAlmacenadoSinFacturaConRemito",
+                                           "groupPedidoActualAlmacenadoConFacturaSinRemito",
+                                           "groupPedidoActualAlmacenadoConFacturaConRemito"
 
+                                       };
 
-
-                Remito r = Remito.TraerRemitoPorIdNotaPedido(np.IdNotaPedido);
-                Factura f = Factura.TraerFacturaPorIdNotaPedido(np.IdNotaPedido);
-
-                if (r != null)
+                if (np != null)
                 {
-                    if (frm.TabControl.Tabs.Exists("remito_" + r.Id))
+                    int existeFacturaORemito = DeterminarExistenciaDeFacturaORemito(np.IdNotaPedido);
+                    frmContainer _container = frmContainer.crearContainer(frmContainer.explorerBar);
+                    _container.ModificarTabSeleccionado("Pedido \"" + np.Cliente.RazonSocial + "\"",
+                                                        "pedido_" + np.IdNotaPedido, options[existeFacturaORemito], true);
+
+
+
+                    Remito r = Remito.TraerRemitoPorIdNotaPedido(np.IdNotaPedido);
+                    Factura f = Factura.TraerFacturaPorIdNotaPedido(np.IdNotaPedido);
+
+                    if (r != null)
                     {
-                        frm.TabControl.Tabs["remito_" + r.Id].Text = "Remito \"" + r.Cliente.RazonSocial + "\"";
+                        if (frm.TabControl.Tabs.Exists("remito_" + r.Id))
+                        {
+                            frm.TabControl.Tabs["remito_" + r.Id].Text = "Remito \"" + r.Cliente.RazonSocial + "\"";
 
-                        BaseControl bc = (BaseControl)frm.TabControl.Tabs["remito_" + r.Id].TabPage.Controls[0];
-                        bc.RefrescarAutomaticamente = true;
+                            BaseControl bc = (BaseControl) frm.TabControl.Tabs["remito_" + r.Id].TabPage.Controls[0];
+                            bc.RefrescarAutomaticamente = true;
+                        }
                     }
-                }
 
-                if (f != null)
-                {
-                    if (frm.TabControl.Tabs.Exists("factura_" + f.Id))
+                    if (f != null)
                     {
-                        frm.TabControl.Tabs["factura_" + f.Id].Text = "Factura \"" + f.Cliente.RazonSocial + "\"";
+                        if (frm.TabControl.Tabs.Exists("factura_" + f.Id))
+                        {
+                            frm.TabControl.Tabs["factura_" + f.Id].Text = "Factura \"" + f.Cliente.RazonSocial + "\"";
 
-                        BaseControl bc = (BaseControl)frm.TabControl.Tabs["factura_" + f.Id].TabPage.Controls[0];
-                        bc.RefrescarAutomaticamente = true;
+                            BaseControl bc = (BaseControl) frm.TabControl.Tabs["factura_" + f.Id].TabPage.Controls[0];
+                            bc.RefrescarAutomaticamente = true;
+                        }
                     }
+
+                    StatusBarController.ShowMessage(status, "pMessages", "El pedido se almaceno correctamente");
+
                 }
-
-                StatusBarController.ShowMessage(status,"pMessages","El pedido se almaceno correctamente");
-
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("ERROR AL ALMACENAR PEDIDO");
             }
         }
         private void AlmacenarArticulo()
@@ -842,7 +851,8 @@ namespace SPISA.Presentacion
             }
             catch (Exception ex)
             {
-                throw ex;
+                MessageBox.Show("ERROR AL ALMACENAR REMITO!");
+                
             }
         }
         private void AlmacenarFactura()
@@ -898,7 +908,7 @@ namespace SPISA.Presentacion
             }
             catch (Exception Ex)
             {
-                MessageBox.Show("Error");
+                MessageBox.Show("ERROR AL ALMACENAR FACTURA!");
             }
 
         }

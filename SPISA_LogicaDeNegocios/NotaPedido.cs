@@ -399,7 +399,7 @@ namespace SPISA.Libreria
         /// 
         /// </summary>
         /// <returns>Id de la Nota de Pedido</returns>
-        public int Guardar()
+        public int Guardar(DbTransaction transaction,bool hacerCommitORollback)
         {
             Database db = DatabaseFactory.CreateDatabase();
             string sqlCommand = Consts.NotaPedido_Guardar;
@@ -417,16 +417,23 @@ namespace SPISA.Libreria
             using (DbConnection conn = db.CreateConnection())
             {
                 conn.Open();
-                DbTransaction ts = conn.BeginTransaction();
+                
+                if (transaction == null)
+                {
+                    transaction = conn.BeginTransaction();
+                }
                 try
                 {
                     //Agrego la orden a la Base de Datos
-                    DataSet ds = db.ExecuteDataSet(dbCmdOC, ts);
+                    DataSet ds = db.ExecuteDataSet(dbCmdOC, transaction);
 
                     _IdNotaPedido = Convert.ToInt32(ds.Tables[0].Rows[0][0]);
 
-                    ActualizarItems(this.IdNotaPedido, this._Items, ts);
-                    ts.Commit();
+                    ActualizarItems(this.IdNotaPedido, this._Items, transaction);
+                    if(hacerCommitORollback)
+                    {
+                        transaction.Commit();
+                    }
 
                     Logger.Append(Consts.NotaPedido_Guardar, new Object[] {     "IdCliente",_Cliente.Id,
                                                                                 "FechaEmision", _FechaEmision,
@@ -437,7 +444,10 @@ namespace SPISA.Libreria
                 catch (Exception ex)
                 {
 
-                    ts.Rollback();
+                    if(hacerCommitORollback)
+                    {
+                        transaction.Rollback();
+                    }
                     throw (ex);
                 }
 
