@@ -633,7 +633,7 @@ namespace SPISA.Libreria
                 DbCommand dbCommand = db.GetStoredProcCommand(sqlCommand);
                 if(fechaDesde.IsNull)
                 {
-                    db.AddInParameter(dbCommand, "FechaDesde", DbType.DateTime,"1800-01-01");
+                    db.AddInParameter(dbCommand, "FechaDesde", DbType.DateTime,SqlDateTime.MinValue);
                 }
                 else
                 {
@@ -642,7 +642,7 @@ namespace SPISA.Libreria
                 //db.AddInParameter(dbCommand,"FechaDesde",DbType.DateTime,fechaDesde.Value);
                 if(fechaHasta.IsNull)
                 {
-                    db.AddInParameter(dbCommand, "FechaHasta", DbType.DateTime, "1800-01-01");
+                    db.AddInParameter(dbCommand, "FechaHasta", DbType.DateTime, SqlDateTime.MinValue);
                 }
                 else
                 {
