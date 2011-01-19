@@ -358,7 +358,7 @@ namespace SPISA.Presentacion
                     if (np.IdNotaPedido == -1)
                     {
                         
-                        int IdNotaPedido = np.Guardar();
+                        int IdNotaPedido = np.Guardar(null,true);
 
                         ret = NotaPedido.TraerNotaPedidoPorId(IdNotaPedido);
                     }
@@ -377,6 +377,7 @@ namespace SPISA.Presentacion
             catch (Exception ex)
             {
                 ret = null;
+               
                 throw ex;
             }
 

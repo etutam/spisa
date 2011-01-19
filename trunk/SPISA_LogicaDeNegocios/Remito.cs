@@ -334,7 +334,7 @@ namespace SPISA.Libreria
                     if (this._NotaPedido == null)
                     {
                         NotaPedido np = GenerarNotaDePedido();
-                        np.Guardar();
+                        np.Guardar(ts,false);
                         this._NotaPedido = np;
                     }
                     else

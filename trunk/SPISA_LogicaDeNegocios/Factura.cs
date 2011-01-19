@@ -528,7 +528,7 @@ namespace SPISA.Libreria
                     if (this._NotaPedido == null)
                     {
                         NotaPedido np = GenerarNotaDePedido();
-                        np.Guardar();
+                        np.Guardar(ts,false);
                         this._NotaPedido = np;
                     }
                     else
@@ -561,10 +561,10 @@ namespace SPISA.Libreria
                 }
                 catch (Exception ex)
                 {
-                    AppSettingsReader appSettingsReader = new AppSettingsReader();
-                    bool sendErrorsByMail = Convert.ToBoolean(appSettingsReader.GetValue("SendErrorsByMail", typeof(Boolean)));
+                    //AppSettingsReader appSettingsReader = new AppSettingsReader();
+                   // bool sendErrorsByMail = Convert.ToBoolean(appSettingsReader.GetValue("SendErrorsByMail", typeof(Boolean)));
 
-                    if (sendErrorsByMail) ExceptionPolicy.HandleException(ex, "Global Policy");
+                    //if (sendErrorsByMail) ExceptionPolicy.HandleException(ex, "Global Policy");
 
                     ts.Rollback();
                     throw ex;
