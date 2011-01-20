@@ -374,7 +374,10 @@ namespace SPISA.Presentacion
             PointF pos = new PointF(-1, -1);
 
             pos = ObtenerPosicionDeImpresionDeObjeto("Fecha");
-            _objetos.Add(new Printing.ObjetoAImprimir(Convert.ToDateTime(dtFechaEmision.Value).ToShortDateString().ToString(), pos.X, pos.Y));
+            // SE CAMBIA FORMATO DE FECHA PARA IMPRIMIR ASI EL CONTADOR NO ROMPE LAS PELOTAS:)
+            string fecha = Convert.ToDateTime(dtFechaEmision.Value).ToString("dd/MM/yyyy");
+            fecha = fecha.Replace("-", "/");
+            _objetos.Add(new Printing.ObjetoAImprimir(fecha, pos.X, pos.Y));
             pos = ObtenerPosicionDeImpresionDeObjeto("RazonSocialCliente");
             _objetos.Add(new Printing.ObjetoAImprimir(detallesCliente.Cliente.RazonSocial, pos.X, pos.Y));
             pos = ObtenerPosicionDeImpresionDeObjeto("DomicilioCliente");
