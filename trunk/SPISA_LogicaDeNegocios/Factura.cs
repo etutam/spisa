@@ -653,6 +653,8 @@ namespace SPISA.Libreria
                 db.AddInParameter(dbCommand,"NumeroFactura",DbType.Int32,numeroFactura);
                 db.AddInParameter(dbCommand,"Observaciones",DbType.String,observaciones);
                 ds= db.ExecuteDataSet(dbCommand);
+                DataRelation rel = new DataRelation("Id", ds.Tables[0].Columns[2], ds.Tables[1].Columns[0]);
+                ds.Relations.Add(rel);
 
             }
             catch (Exception ex)
