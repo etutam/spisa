@@ -739,7 +739,7 @@ namespace SPISA.Presentacion
 
             IList<ResultadoVerificar> resultadoVerificar = VerificarCampos();
             int check = BeforeCloseCheck();
-            if (resultadoVerificar.Count == 0)
+            if (resultadoVerificar.Count == 0 || (resultadoVerificar[0]== ResultadoVerificar.StockSuperado && chkNotaDeCredito!= null))
             {
                 if (check == 1)
                 {
@@ -834,7 +834,7 @@ namespace SPISA.Presentacion
         {
             Factura f = null;
             IList<ResultadoVerificar> resultadoVerificar = VerificarCampos();
-            if (resultadoVerificar.Count == 0)
+            if (resultadoVerificar.Count == 0 || (resultadoVerificar[0] == ResultadoVerificar.StockSuperado && chkNotaDeCredito != null))
             {
                 try
                 {
