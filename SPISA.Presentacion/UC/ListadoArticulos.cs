@@ -140,7 +140,8 @@ namespace SPISA.Presentacion
                         nuevoArticulo.Codigo = r.Cells["Codigo"].Text;
                         nuevoArticulo.Cantidad = Convert.ToInt32((r.Cells["Cantidad"].Text != "" ? r.Cells["Cantidad"].Text : "0"));
                         nuevoArticulo.Descripcion = (r.Cells["Descripcion"].Text != "" ? r.Cells["Descripcion"].Text : "(Sin Descripción)");
-                        nuevoArticulo.PrecioUnitario = Convert.ToDecimal(r.Cells["Precio Unitario"].Text);
+                       // r.Cells["Precio Unitario"].Text = r.Cells["Precio Unitario"].Text.Replace(".", ",");
+                        nuevoArticulo.PrecioUnitario = Convert.ToDecimal(r.Cells["Precio Unitario"].Text.Replace(".", ","));
                         nuevoArticulo.Categoria = Categoria.TraerCategoriaPorDescripcion((r.Cells["Categoria"].Text != "" ? r.Cells["Categoria"].Text : "Sin Categoria"));
 
                         nuevoArticulo.Guardar();
