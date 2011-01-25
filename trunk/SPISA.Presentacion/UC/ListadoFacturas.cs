@@ -59,25 +59,19 @@ namespace SPISA.Presentacion
                 }
                 else
                 {
-                    SqlDateTime fechaDesde= new SqlDateTime();
-                    SqlDateTime fechaHasta = new SqlDateTime();
-                    if (dtFechaEmision.Value != "" && dtFechaEmision.Value!= DBNull.Value)
-                    {
-                        fechaDesde = Convert.ToDateTime(dtFechaEmision.Value);
-                    }
-                    if (dtFechaHasta.Value != "" && dtFechaHasta.Value!= DBNull.Value)
-                    {
-                        
-                        fechaHasta = Convert.ToDateTime(dtFechaHasta.Value);
-                    }
+                    string razonSocial = (ucListaClientes.Text != "" ? ucListaClientes.Text : null);
+                    SqlDateTime fechaDesde = (dtFechaEmision.Text != "" ? Convert.ToDateTime(dtFechaEmision.Value) : SqlDateTime.Null);
+                    SqlDateTime fechaHasta = (dtFechaHasta.Text != "" ? Convert.ToDateTime(dtFechaHasta.Value) : SqlDateTime.Null);
+                    string observaciones = (txtObservaciones.Text != "" ? txtObservaciones.Text : null);
 
-                    SqlInt32 numerofactura = new SqlInt32();
-                    ultraMaskedEdit1.Text = ultraMaskedEdit1.Text.Replace("-", "");
-                    if (ultraMaskedEdit1.Text != "")
-                    {
-                        numerofactura = Convert.ToInt32(ultraMaskedEdit1.Text);
-                    }
-                    ds = Factura.Buscar(ucListaClientes.Text,fechaDesde,fechaHasta,txtObservaciones.Text,numerofactura);
+
+                    SqlInt32 numerofactura = (ultraMaskedEdit1.Text != "-"
+                                                  ? Convert.ToInt32(ultraMaskedEdit1.Text.Replace("-", ""))
+                                                  : 0);
+                    
+                    
+                    
+                    ds = Factura.Buscar(razonSocial,fechaDesde,fechaHasta,observaciones,numerofactura);
                 }
             }
             CargarDatosFacturas(ds);

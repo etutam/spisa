@@ -631,35 +631,27 @@ namespace SPISA.Libreria
             {
                 Database db = DatabaseFactory.CreateDatabase();
                 DbCommand dbCommand = db.GetStoredProcCommand(sqlCommand);
-                if(fechaDesde.IsNull)
-                {
-                    db.AddInParameter(dbCommand, "FechaDesde", DbType.DateTime,SqlDateTime.MinValue);
-                }
-                else
-                {
-                    db.AddInParameter(dbCommand, "FechaDesde", DbType.DateTime, fechaDesde.Value);
-                }
+                
+                db.AddInParameter(dbCommand, "FechaDesde", DbType.DateTime,(fechaDesde.IsNull?SqlDateTime.MinValue:fechaDesde.Value));
+                
+                
                 //db.AddInParameter(dbCommand,"FechaDesde",DbType.DateTime,fechaDesde.Value);
-                if(fechaHasta.IsNull)
-                {
-                    db.AddInParameter(dbCommand, "FechaHasta", DbType.DateTime, SqlDateTime.MinValue);
-                }
-                else
-                {
-                    db.AddInParameter(dbCommand, "FechaHasta", DbType.DateTime, fechaHasta.Value);
-                }
+               
+                db.AddInParameter(dbCommand, "FechaHasta", DbType.DateTime,(fechaHasta.IsNull?SqlDateTime.MinValue:fechaHasta.Value));
+                
+                
                 //db.AddInParameter(dbCommand, "FechaHasta", DbType.DateTime, fechaHasta.Value);
                 db.AddInParameter(dbCommand,"RazonSocial",DbType.String,razonSocial);
                 db.AddInParameter(dbCommand,"NumeroFactura",DbType.Int32,numeroFactura);
                 db.AddInParameter(dbCommand,"Observaciones",DbType.String,observaciones);
                 ds= db.ExecuteDataSet(dbCommand);
-                DataRelation rel = new DataRelation("Id", ds.Tables[0].Columns[2], ds.Tables[1].Columns[0]);
+                DataRelation rel = new DataRelation("Id", ds.Tables[0].Columns[0], ds.Tables[1].Columns[0]);
                 ds.Relations.Add(rel);
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Se Produjo un error al ejecutar la busqueda", ex.ToString());
+                MessageBox.Show("Se Produjo una excepción al ejecutar la busqueda \n"+ ex.Message);
             }
 
 
