@@ -1,0 +1,49 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="public" priority="2" />
+      <Item value="interface" priority="0" />
+      <Item value="int" priority="0" />
+      <Item value="string" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="A2B3DF49-0E4B-40A9-9F8E-3A422323A119/f:IEntity.cs" caret="197" fromTop="11" />
+      <File id="14659EF4-3DC4-40BE-93A8-21D39E6517D2/d:Mappings/f:Factura.hbm.xml" caret="220" fromTop="3" />
+      <File id="BAC97159-C40B-433C-9C66-D61199A82B56/f:Factura.cs" caret="185" fromTop="5" />
+      <File id="BAC97159-C40B-433C-9C66-D61199A82B56/f:Cliente.cs" caret="252" fromTop="9" />
+      <File id="14659EF4-3DC4-40BE-93A8-21D39E6517D2/d:Mappings/f:Cliente.hbm.xml" caret="428" fromTop="11" />
+      <File id="14659EF4-3DC4-40BE-93A8-21D39E6517D2/f:hibernate.cfg.xml" caret="583" fromTop="8" />
+      <File id="A2B3DF49-0E4B-40A9-9F8E-3A422323A119/f:Entity.cs" caret="235" fromTop="13" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="A2B3DF49-0E4B-40A9-9F8E-3A422323A119/f:Entity.cs" caret="217" fromTop="8" />
+      <File id="A2B3DF49-0E4B-40A9-9F8E-3A422323A119/f:IEntity.cs" caret="146" fromTop="6" />
+      <File id="14659EF4-3DC4-40BE-93A8-21D39E6517D2/d:Mappings/f:Factura.hbm.xml" caret="183" fromTop="2" />
+      <File id="BAC97159-C40B-433C-9C66-D61199A82B56/f:Factura.cs" caret="194" fromTop="5" />
+      <File id="BAC97159-C40B-433C-9C66-D61199A82B56/f:Cliente.cs" caret="197" fromTop="9" />
+      <File id="BAC97159-C40B-433C-9C66-D61199A82B56/f:Cliente.cs" caret="252" fromTop="9" />
+      <File id="14659EF4-3DC4-40BE-93A8-21D39E6517D2/d:Mappings/f:Cliente.hbm.xml" caret="328" fromTop="6" />
+      <File id="14659EF4-3DC4-40BE-93A8-21D39E6517D2/f:hibernate.cfg.xml" caret="583" fromTop="8" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+</Configuration>
