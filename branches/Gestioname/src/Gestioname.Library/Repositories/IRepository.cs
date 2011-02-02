@@ -7,5 +7,7 @@ namespace Gestioname.Library.Repositories
         T FindById(int id);
         IList<T> GetAll();
         void Save(T item);
+        void Remove(T item);
+        void Clear();
     }
 }
