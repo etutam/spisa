@@ -6,7 +6,7 @@ using Spring.Testing.NUnit;
 
 namespace Gestioname.Repositories.Test
 {
-    public class RepositoryTestCase<T> : AbstractTransactionalDbProviderSpringContextTests where T : IEntity, new()
+    public class RepositoryTestCase<T> : AbstractTransactionalDbProviderSpringContextTests where T : IEntity<T>, new()
     {
         protected override string[] ConfigLocations
         {
@@ -20,14 +20,12 @@ namespace Gestioname.Repositories.Test
         {
             base.SetUp();
 
-            //Repository = new NHibernateRepository<T>();
-
             RunDefaultUnitTests();
         }
 
         public void RunDefaultUnitTests()
         {
-            T entityToSave = new T();
+            T entityToSave = new T().GetTestInstance();
             
             Repository.Save(entityToSave);
 

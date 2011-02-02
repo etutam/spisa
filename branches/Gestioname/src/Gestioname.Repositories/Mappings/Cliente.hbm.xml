@@ -1,12 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"  
-                   assembly="Gestioname"       
-                   namespace="Gestioname.DomainModel">
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Gestioname.DomainModel" namespace="Gestioname.DomainModel">
   <class name ="Cliente">
       <id name ="Id">
         <generator class="identity"/>
       </id>
-      <property name="Razon Social" />
-      
-    </class>
+      <property name="RazonSocial" />
+  </class>
 </hibernate-mapping>

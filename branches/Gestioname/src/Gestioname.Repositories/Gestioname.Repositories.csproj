@@ -106,7 +106,7 @@
     <Content Include="Mappings\Factura.hbm.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Mappings\Cliente.hbm.xml" />
+    <EmbeddedResource Include="Mappings\Cliente.hbm.xml" />
     <EmbeddedResource Include="repositories.xml" />
   </ItemGroup>
   <ItemGroup>

@@ -7,16 +7,16 @@ using Gestioname.Library;
 
 namespace Gestioname.DomainModel
 {
-    class Factura : EntityBase 
+    class Factura : EntityBase<Factura> 
     {
 
-#region Datos Privados
+        #region Datos Privados
         
         Int32 _NumeroFactura = -1;
 
 #endregion  
 
-#region Propiedades
+        #region Propiedades
         
         public Int32 NumeroFactura 
         {
@@ -26,5 +26,9 @@ namespace Gestioname.DomainModel
 
 #endregion
 
+        public override Factura GetTestInstance()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
