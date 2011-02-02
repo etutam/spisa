@@ -5,10 +5,11 @@ using System.Text;
 
 namespace Gestioname.Library
 {
-    public abstract class EntityBase : IEntity
+    public abstract class EntityBase<T> : IEntity<T>
     {
-        public int Id { get; set; }
+        public virtual int Id { get; set; }
 
+        public abstract T GetTestInstance();
     }
 
 }
