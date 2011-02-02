@@ -46,6 +46,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NHibernate, Version=3.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Spring\NHibernate.dll</HintPath>
+    </Reference>
     <Reference Include="Spring.Core">
       <HintPath>..\..\lib\Spring\Spring.Core.dll</HintPath>
     </Reference>
@@ -103,6 +107,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Mappings\Cliente.hbm.xml" />
+    <EmbeddedResource Include="repositories.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gestioname.DomainModel\Gestioname.DomainModel.csproj">

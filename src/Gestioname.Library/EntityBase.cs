@@ -7,7 +7,7 @@ namespace Gestioname.Library
 {
     public abstract class EntityBase : IEntity
     {
-        public virtual int Id { get; set; }
+        public int Id { get; set; }
 
     }
 

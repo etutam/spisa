@@ -7,9 +7,9 @@ namespace Gestioname.Library.Repositories.NHibernate
 {
     public class NHibernateRepository<T> : Spring.Data.NHibernate.Generic.Support.HibernateDaoSupport,  IRepository<T> where T: IEntity
     {
-        public virtual T FindById(int Id)
+        public virtual T FindById(int id)
         {
-            return HibernateTemplate.Get<T>(Id);
+            return HibernateTemplate.Get<T>(id);
         }
         public virtual IList<T> GetAll()
         {
@@ -19,7 +19,6 @@ namespace Gestioname.Library.Repositories.NHibernate
         public virtual void Save(T item)
         {
             HibernateTemplate.Save(item);
-
         }
     }
 }

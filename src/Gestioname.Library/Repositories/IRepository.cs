@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Gestioname.Library.Repositories
 {
     public interface IRepository<T> where T :IEntity
     {
-        T FindById(int Id);
+        T FindById(int id);
         IList<T> GetAll();
         void Save(T item);
     }
