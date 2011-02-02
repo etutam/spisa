@@ -7,7 +7,7 @@ namespace Gestioname.Repositories
 {
     public class ClienteRepository : NHibernateRepository<Cliente> , IClienteRepository
     {
-        
+  
         
     }
 }
