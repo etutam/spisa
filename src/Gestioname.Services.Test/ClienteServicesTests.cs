@@ -14,13 +14,24 @@ namespace Gestioname.Services.Test
     [TestFixture]
     public class ClienteServicesTests
     {
-        public IClienteServices ClienteServices { get; set; }
-
         [Test]
-        public void FindByRazonSocial_OneResult()
+        public void FindByRazonSocial()
         {
-            
+            IClienteRepository clienteRepository = MockRepository.GenerateMock<IClienteRepository>();
+            string razonSocial = "RazonSocial";
+            IEnumerable<Cliente> clientes = new List<Cliente>();
+                                                
+            clienteRepository.Expect(x => x.FindByRazonSocial(razonSocial))
+                .Return(clientes);
+
+            ClienteServices clienteServices = new ClienteServices
+                                                  {
+                                                      ClienteRepository = clienteRepository
+                                                  };
+            var results = clienteServices.FindByRazonSocial(razonSocial);
+            Assert.AreSame(clientes, results);
+
+            clienteRepository.VerifyAllExpectations();
         }
     }
-
 }
