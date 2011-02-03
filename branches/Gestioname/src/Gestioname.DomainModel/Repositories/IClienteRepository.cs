@@ -8,5 +8,6 @@ namespace Gestioname.DomainModel.Repositories
 {
     public interface IClienteRepository : IRepository<Cliente>
     {
+        Cliente FindByRazonSocial(string razonsocial);
     }
 }
