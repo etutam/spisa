@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using Gestioname.DomainModel;
 using Gestioname.DomainModel.Repositories;
 using NUnit.Framework;
@@ -21,20 +23,20 @@ namespace Gestioname.Repositories.Test
         [Test]
         public void GetbyRazonSocialTest()
         {
-            Cliente prueba = new Cliente().GetTestInstance();
-            ClienteRepository.Save(prueba);
-            Cliente prueba2 = new Cliente().GetTestInstance();
-            prueba2.RazonSocial = prueba2.RazonSocial + "2";
-            ClienteRepository.Save(prueba2);
-            Cliente prueba3 = new Cliente().GetTestInstance();
-            prueba3.RazonSocial = prueba3.RazonSocial + "3";
-            ClienteRepository.Save(prueba3);
-            Cliente cliResul = ClienteRepository.FindByRazonSocial(prueba2.RazonSocial);
-            
-            
-            Assert.AreEqual(cliResul.RazonSocial,prueba2.RazonSocial);
-            
-            Assert.Null(cliResul.RazonSocial);
+            Cliente cliente1 = new Cliente().GetTestInstance();
+            ClienteRepository.Save(cliente1);
+            Cliente cliente2 = new Cliente().GetTestInstance();
+            cliente2.RazonSocial = cliente2.RazonSocial + "2";
+            ClienteRepository.Save(cliente2);
+            Cliente cliente3 = new Cliente().GetTestInstance();
+            cliente3.RazonSocial = cliente3.RazonSocial + "3";
+            ClienteRepository.Save(cliente3);
+
+            IList<Cliente> results = ClienteRepository.FindByRazonSocial(cliente2.RazonSocial) as List<Cliente>;
+                                                
+            Assert.NotNull(results);
+            Assert.AreEqual(1, results.Count);
+            Assert.AreEqual(results.First().RazonSocial, cliente2.RazonSocial);
         }
     }
 }
