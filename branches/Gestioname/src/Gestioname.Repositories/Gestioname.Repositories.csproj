@@ -106,7 +106,9 @@
       <SubType>Designer</SubType>
     </Content>
     <EmbeddedResource Include="Mappings\Cliente.hbm.xml" />
-    <EmbeddedResource Include="repositories.xml" />
+    <EmbeddedResource Include="repositories.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gestioname.DomainModel\Gestioname.DomainModel.csproj">

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Spring.Data.NHibernate.Generic;
 
 namespace Gestioname.Library.Repositories
 {
@@ -9,5 +10,7 @@ namespace Gestioname.Library.Repositories
         void Save(T item);
         void Remove(T item);
         void Clear();
+
+        HibernateTemplate HibernateTemplate { get; set; }
     }
 }

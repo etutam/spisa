@@ -11,13 +11,9 @@ namespace Gestioname.Controllers
 {
     public class ClienteController: IClienteController
     {
-
         #region Properties
-        public IClienteServices ClienteServices
-        {
-            get;
-            set;
-        }
+
+        public IClienteServices ClienteServices { get; set;}
         #endregion
 
         #region Methods

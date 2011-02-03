@@ -30,10 +30,12 @@ namespace Gestioname.Services.Test
                                                   {
                                                       ClienteRepository = clienteRepository
                                                   };
+
             var results = clienteServices.FindByRazonSocial(razonSocial);
-            Assert.AreSame(clientes, results);
 
             clienteRepository.VerifyAllExpectations();
+
+            Assert.AreSame(clientes, results);
         }
     }
 }

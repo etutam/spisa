@@ -9,7 +9,7 @@ using Rhino.Mocks;
 
 namespace Gestioname.Controllers.Test
 {
-    public class ClienteControllersTest
+    public class ClienteControllerTests
     {
         [Test]
         public void FindByRazonSocial()
