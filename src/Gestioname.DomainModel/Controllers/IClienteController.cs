@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Gestioname.DomainModel.Controllers
 {
-    public interface IClienteControllers
+    public interface IClienteController
     {
 
         void Save(Cliente cliente);
