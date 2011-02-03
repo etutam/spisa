@@ -9,7 +9,7 @@ using Gestioname.DomainModel.Services;
 
 namespace Gestioname.Controllers
 {
-    public class ClienteController: IClienteControllers
+    public class ClienteController: IClienteController
     {
 
         #region Properties
