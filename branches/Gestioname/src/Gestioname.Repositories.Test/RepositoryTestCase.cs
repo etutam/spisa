@@ -16,6 +16,8 @@ namespace Gestioname.Repositories.Test
 
         public NHibernateRepository<T> Repository { get; set; }
 
+        
+
         [SetUp]
         public override void SetUp()
         {

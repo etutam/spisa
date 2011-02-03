@@ -19,11 +19,12 @@ namespace Gestioname.Services.Test
         public void FindByRazonSocial()
         {
             IClienteRepository clienteRepository = MockRepository.GenerateMock<IClienteRepository>();
-            string razonSocial = "RazonSocial";
+            string razonSocial = "Razon Social";
             IEnumerable<Cliente> clientes = new List<Cliente>();
                                                 
             clienteRepository.Expect(x => x.FindByRazonSocial(razonSocial))
                 .Return(clientes);
+            
 
             ClienteServices clienteServices = new ClienteServices
                                                   {
