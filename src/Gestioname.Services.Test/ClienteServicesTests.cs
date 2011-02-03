@@ -9,6 +9,7 @@ using Gestioname.Repositories;
 using NUnit.Framework;
 using Rhino.Mocks;
 
+
 namespace Gestioname.Services.Test
 {
     [TestFixture]

@@ -31,12 +31,11 @@ namespace Gestioname.Repositories.Test
             Cliente cliente3 = new Cliente().GetTestInstance();
             cliente3.RazonSocial = cliente3.RazonSocial + "3";
             ClienteRepository.Save(cliente3);
-
             IList<Cliente> results = ClienteRepository.FindByRazonSocial(cliente2.RazonSocial) as List<Cliente>;
-                                                
             Assert.NotNull(results);
             Assert.AreEqual(1, results.Count);
             Assert.AreEqual(results.First().RazonSocial, cliente2.RazonSocial);
         }
+
     }
 }
