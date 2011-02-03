@@ -1,5 +1,6 @@
 ﻿using System;
 using Gestioname.Library;
+using Gestioname.Library.Repositories;
 using Gestioname.Library.Repositories.NHibernate;
 using NUnit.Framework;
 using Spring.Data.NHibernate.Generic;
@@ -7,21 +8,26 @@ using Spring.Testing.NUnit;
 
 namespace Gestioname.Repositories.Test
 {
-    public class RepositoryTestCase<T> : AbstractTransactionalDbProviderSpringContextTests where T : IEntity<T>, new()
+    public class RepositoryTestCase<TEntity, TRepository> : AbstractTransactionalDbProviderSpringContextTests where TEntity : IEntity<TEntity>, new()
+                                                                                                              where TRepository: IRepository<TEntity>, new()
     {
         protected override string[] ConfigLocations
         {
             get { return new [] { "assembly://Gestioname.Repositories/Gestioname.Repositories/repositories.xml" }; }
         }
 
-        public NHibernateRepository<T> Repository { get; set; }
+        public HibernateTemplate HibernateTemplate { get; set; }
 
-        
+        public IRepository<TEntity> Repository { get; set; }
 
         [SetUp]
         public override void SetUp()
         {
             base.SetUp();
+
+            Repository = (TRepository)applicationContext.GetObject(typeof (TRepository).Name);
+            
+            Repository.HibernateTemplate = HibernateTemplate;
 
             RunDefaultUnitTests();
         }
@@ -35,11 +41,11 @@ namespace Gestioname.Repositories.Test
 
         private void SaveTest()
         {
-            T entityToSave = new T().GetTestInstance();
+            TEntity entityToSave = new TEntity().GetTestInstance();
 
             Repository.Save(entityToSave);
 
-            T savedEntity = Repository.FindById(entityToSave.Id);
+            TEntity savedEntity = Repository.FindById(entityToSave.Id);
 
             Assert.AreEqual(entityToSave, savedEntity);
 
@@ -49,9 +55,9 @@ namespace Gestioname.Repositories.Test
 
         private void GetAllTest()
         {
-            T entityToSave1 = new T().GetTestInstance();
-            T entityToSave2 = new T().GetTestInstance();
-            T entityToSave3 = new T().GetTestInstance();
+            TEntity entityToSave1 = new TEntity().GetTestInstance();
+            TEntity entityToSave2 = new TEntity().GetTestInstance();
+            TEntity entityToSave3 = new TEntity().GetTestInstance();
 
             Repository.Save(entityToSave1);
             Repository.Save(entityToSave2);
