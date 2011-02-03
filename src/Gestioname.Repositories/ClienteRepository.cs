@@ -10,13 +10,14 @@ namespace Gestioname.Repositories
     public class ClienteRepository : NHibernateRepository<Cliente> , IClienteRepository
     {
   
-        public Cliente FindByRazonSocial(string razonsocial)
+        public IEnumerable<Cliente> FindByRazonSocial(string razonsocial)
         {
             return
                 HibernateTemplate.Execute(
                     session =>
-                    session.CreateCriteria(typeof (Cliente)).Add(
-                        Restrictions.Eq("RazonSocial", razonsocial)).UniqueResult<Cliente>());
+                    session.CreateCriteria(typeof (Cliente))
+                           .Add(Restrictions.Like("RazonSocial", razonsocial)))
+                    .List<Cliente>();
         }
     }
 }

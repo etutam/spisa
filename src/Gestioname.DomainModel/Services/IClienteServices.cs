@@ -7,6 +7,8 @@ namespace Gestioname.DomainModel.Services
 {
     public interface IClienteServices
     {
-        void Guardar(Cliente cliente);
+        void Save(Cliente cliente);
+
+        IEnumerable<Cliente> FindByRazonSocial(string razonSocial);
     }
 }
