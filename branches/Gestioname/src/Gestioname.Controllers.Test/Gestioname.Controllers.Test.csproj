@@ -34,6 +34,9 @@
     <Reference Include="nunit.framework">
       <HintPath>..\..\lib\nunit\nunit.framework.dll</HintPath>
     </Reference>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\..\lib\rhino\Rhino.Mocks.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,8 +46,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="ClienteControllersTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gestioname.Controllers\Gestioname.Controllers.csproj">
+      <Project>{2E77D41F-9A0C-45E9-BB36-764289F76A14}</Project>
+      <Name>Gestioname.Controllers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gestioname.DomainModel\Gestioname.DomainModel.csproj">
+      <Project>{BAC97159-C40B-433C-9C66-D61199A82B56}</Project>
+      <Name>Gestioname.DomainModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gestioname.Library\Gestioname.Library.csproj">
+      <Project>{A2B3DF49-0E4B-40A9-9F8E-3A422323A119}</Project>
+      <Name>Gestioname.Library</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
