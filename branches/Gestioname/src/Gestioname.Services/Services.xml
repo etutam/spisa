@@ -3,7 +3,6 @@
          xmlns:db="http://www.springframework.net/database">
 
   <object id="ClienteServices" type="Gestioname.Services.ClienteServices,Gestioname.Services">
-    <property name="HibernateTemplate" ref="HibernateTemplate"/>
   </object>
   
   
