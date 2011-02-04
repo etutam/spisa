@@ -24,7 +24,7 @@ namespace Gestioname.Repositories.Test
         public void FindByNumeroFactura()
         {
             Factura facturaprueba = new Factura().GetTestInstance();
-
+            FacturaRepository.Save(facturaprueba);
             Factura resultado = FacturaRepository.FindByNumeroFactura(facturaprueba.NumeroFactura);
 
             Assert.NotNull(resultado);
