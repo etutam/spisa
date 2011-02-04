@@ -4,7 +4,9 @@
 
   <object id="ClienteServices" type="Gestioname.Services.ClienteServices,Gestioname.Services">
   </object>
-  
+
+  <object id="FacturaServices" type="Gestioname.Services.FacturaServices,Gestioname.Services">
+  </object>
   
 </objects>
 
