@@ -40,7 +40,7 @@ namespace Gestioname.Repositories.Test
         }
 
         private void SaveTest()
-        {
+         {
             TEntity entityToSave = new TEntity().GetTestInstance();
 
             Repository.Save(entityToSave);

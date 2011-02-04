@@ -56,6 +56,9 @@
   <object id="ClienteRepository" type="Gestioname.Repositories.ClienteRepository,Gestioname.Repositories">
     <property name="HibernateTemplate" ref="HibernateTemplate"/>
   </object>
+  <object id="FacturaRepository" type="Gestioname.Repositories.FacturaRepository,Gestioname.Repositories">
+    <property name="HibernateTemplate" ref="HibernateTemplate"/>
+  </object>
   
 </objects>
 
