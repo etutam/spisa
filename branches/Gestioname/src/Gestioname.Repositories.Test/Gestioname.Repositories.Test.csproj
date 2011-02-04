@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClienteRepositoryTests.cs" />
+    <Compile Include="FacturaRepositoryTest.cs" />
     <Compile Include="RepositoryTestCase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
