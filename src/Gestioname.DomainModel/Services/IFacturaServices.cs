@@ -9,6 +9,6 @@ namespace Gestioname.DomainModel.Services
     {
         void Save(Factura factura);
 
-        Factura FindByNumeroFactura(Int32 numeroFactura);
+        Factura FindByNumeroFactura(long numeroFactura);
     }
 }

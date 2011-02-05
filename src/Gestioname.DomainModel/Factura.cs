@@ -14,13 +14,16 @@ namespace Gestioname.DomainModel
 
         #region Propiedades
 
-        public virtual Int32 NumeroFactura { get; set; }
+        public virtual long NumeroFactura { get; set; }
 
-#endregion
+        #endregion
 
         public override Factura GetTestInstance()
         {
-            return new Factura{ NumeroFactura = 999, Id= 999};
+            return new Factura
+                       {
+                           NumeroFactura = 1234567891234567
+                       };
         }
     }
 }

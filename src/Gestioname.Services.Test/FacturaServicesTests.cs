@@ -17,15 +17,24 @@ namespace Gestioname.Services.Test
       public void FindByNumeroFactura()
       {
 
-        IFacturaRepository facturaRepository = MockRepository.GenerateMock<IFacturaRepository>();
-        Int32 numeroFactura = 999;
-        Factura factura = new Factura();
+          IFacturaRepository facturaRepository = MockRepository.GenerateMock<IFacturaRepository>();
+          
+          long numeroFactura = 1234567891234567;
+
+          Factura factura = new Factura();
 
           facturaRepository.Expect(x => x.FindByNumeroFactura(numeroFactura)).Return(factura);
-
-          FacturaServices facturaServices = new FacturaServices {FacturaRepository = facturaRepository};
+          
+          FacturaServices facturaServices = new FacturaServices
+                                                {
+                                                    FacturaRepository = facturaRepository
+                                                };
           var result = facturaServices.FindByNumeroFactura(numeroFactura);
+
           facturaRepository.VerifyAllExpectations();
+
+          Assert.IsNotNull(result);
+          Assert.AreSame(factura, result);
 
       }
 

@@ -8,6 +8,6 @@ namespace Gestioname.DomainModel.Repositories
 {
     public interface IFacturaRepository : IRepository<Factura>
     {
-        Factura FindByNumeroFactura(int numeroFactura);
+        Factura FindByNumeroFactura(long numeroFactura);
     }
 }
