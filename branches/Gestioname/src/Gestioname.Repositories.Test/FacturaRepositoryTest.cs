@@ -15,26 +15,19 @@ namespace Gestioname.Repositories.Test
         public IFacturaRepository FacturaRepository { get; set; } 
 
         [Test]
-        public void RunDefaultsTests()
-        {
-            base.RunDefaultUnitTests();
-        }
-
-        [Test]
         public void FindByNumeroFactura()
         {
             Factura facturaprueba = new Factura().GetTestInstance();
+            
             FacturaRepository.Save(facturaprueba);
+            
             Factura resultado = FacturaRepository.FindByNumeroFactura(facturaprueba.NumeroFactura);
 
             Assert.NotNull(resultado);
 
-            Assert.AreEqual(999,resultado.NumeroFactura);
+            Assert.AreEqual(facturaprueba.NumeroFactura,resultado.NumeroFactura);
 
-
-
+            FacturaRepository.Remove(facturaprueba);
         }
-
-
     }
 }

@@ -11,7 +11,7 @@ namespace Gestioname.Repositories
 {
     public class FacturaRepository:NHibernateRepository<Factura>,IFacturaRepository
     {
-        public Factura FindByNumeroFactura(Int32 numeroFactura)
+        public Factura FindByNumeroFactura(long numeroFactura)
         {
             return
                 HibernateTemplate.Execute(

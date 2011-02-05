@@ -15,11 +15,11 @@ namespace Gestioname.Controllers.Test
     class FacturaControllerTests
     {
         [Test]
-        public void FindByNumeroFactua()
+        public void FindByNumeroFactura()
         {
             IFacturaServices facturaServices = MockRepository.GenerateMock<IFacturaServices>();
 
-            Int32 numeroFactura = 999;
+            long numeroFactura = 1234567891234567;
 
             Factura factura = new Factura();
 
@@ -27,9 +27,13 @@ namespace Gestioname.Controllers.Test
 
             FacturaController FacturaController = new FacturaController {FacturaServices = facturaServices};
 
-            var result = FacturaController.FindByNumeroFractura(numeroFactura);
+            var result = FacturaController.FindByNumeroFactura(numeroFactura);
 
             facturaServices.VerifyAllExpectations();
+
+            // No nos olvidemos los Asserts
+            Assert.IsNotNull(result);
+            Assert.AreSame(factura, result);
         }
     }
 }

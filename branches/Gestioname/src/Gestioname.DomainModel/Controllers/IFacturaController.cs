@@ -8,7 +8,8 @@ namespace Gestioname.DomainModel.Controllers
     public interface IFacturaController
     {
         void Save(Factura factura);
-        Factura FindByNumeroFractura(Int32 numeroaFactura);
+        
+        Factura FindByNumeroFactura(long numeroFactura);
 
     }
 }

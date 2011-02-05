@@ -21,7 +21,7 @@ namespace Gestioname.Services
            FacturaRepository.Save(factura);
         }
 
-        public Factura FindByNumeroFactura(int numeroFactura)
+        public Factura FindByNumeroFactura(long numeroFactura)
         {
             return FacturaRepository.FindByNumeroFactura(numeroFactura);
         }
