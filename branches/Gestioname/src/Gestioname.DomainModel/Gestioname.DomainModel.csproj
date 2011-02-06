@@ -43,10 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Inventario\Almacen.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="Controllers\IClienteController.cs" />
     <Compile Include="Controllers\IFacturaController.cs" />
     <Compile Include="Factura.cs" />
+    <Compile Include="Inventario\Articulo.cs" />
+    <Compile Include="Inventario\Categoria.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IClienteRepository.cs" />
     <Compile Include="Repositories\IFacturaRepository.cs" />

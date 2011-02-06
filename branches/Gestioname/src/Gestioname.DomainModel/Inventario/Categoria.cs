@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Gestioname.Library;
 
-namespace Gestioname.Library
+namespace Gestioname.DomainModel.Inventario
 {
-    public interface IEntity
+    public class Categoria : EntityBase
     {
-        int Id { get; }
     }
 }
