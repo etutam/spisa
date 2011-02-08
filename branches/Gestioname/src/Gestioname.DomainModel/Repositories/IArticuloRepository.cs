@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Gestioname.DomainModel.Inventario;
 using Gestioname.Library.Repositories;
 
 namespace Gestioname.DomainModel.Repositories
 {
-    public interface IFacturaRepository : IRepository<Factura>
+    public interface IArticuloRepository: IRepository<Articulo>
     {
-        Factura FindByNumeroFactura(long numeroFactura);
+        IEnumerable<Articulo> FindByCodigo(string codigo);
 
-        void AlmacenarImpresion(Factura factura);
+        
+
+
     }
 }

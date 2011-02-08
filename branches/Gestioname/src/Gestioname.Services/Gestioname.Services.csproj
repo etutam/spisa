@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArticuloServices.cs" />
     <Compile Include="ClienteServices.cs" />
     <Compile Include="FacturaServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

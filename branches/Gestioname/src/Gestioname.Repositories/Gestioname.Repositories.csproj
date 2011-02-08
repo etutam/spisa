@@ -68,6 +68,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArticuloRepository.cs" />
     <Compile Include="ClienteRepository.cs" />
     <Compile Include="FacturaRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -103,6 +104,7 @@
     <Content Include="hibernate.cfg.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="Mappings\Articulo.hbm.xml" />
     <EmbeddedResource Include="Mappings\Factura.hbm.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>

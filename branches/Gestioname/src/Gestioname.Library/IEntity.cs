@@ -5,8 +5,10 @@ using System.Text;
 
 namespace Gestioname.Library
 {
-    public interface IEntity
+    public interface IEntity<T> 
     {
         int Id { get; }
+
+        T GetTestInstance();
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Gestioname.DomainModel;
+using Gestioname.DomainModel.Inventario;
 using Gestioname.DomainModel.Repositories;
 using NUnit.Framework;
 using Gestioname.Library.Repositories.NHibernate;

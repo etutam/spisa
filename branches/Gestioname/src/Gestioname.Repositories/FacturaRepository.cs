@@ -18,5 +18,13 @@ namespace Gestioname.Repositories
                     session =>
                     session.CreateCriteria(typeof (Factura)).Add(Restrictions.Eq("NumeroFactura", numeroFactura)).UniqueResult<Factura>());
         }
+
+        public void AlmacenarImpresion(Factura factura)
+        {
+            
+
+            if(factura.EsNotaDeCredito)
+
+        }
     }
 }
