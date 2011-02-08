@@ -7,13 +7,10 @@ namespace Gestioname.DomainModel
 {
     public class Cliente : EntityBase<Cliente>
     {
-        //#region Campos Privados
-        //   string _razonsocial;
         
-        //#endregion
 
 
-        #region Propiedades
+        #region Properties
 
            public virtual string RazonSocial
            {
@@ -22,13 +19,14 @@ namespace Gestioname.DomainModel
         #endregion
 
 
-
+        #region Methods
         public override Cliente GetTestInstance()
         {
-            return new Cliente
-                       {
-                           RazonSocial = "Razon Social de Prueba"
-                       };
+        return new Cliente
+                    {
+                        RazonSocial = "Razon Social de Prueba"
+                    };
         }
+        #endregion
     }
 }

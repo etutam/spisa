@@ -10,16 +10,16 @@ namespace Gestioname.Controllers
 {
     public class ArticuloController:IArticuloController
     {
-        public IArticuloServices ArticuloSerices { get; set; }
+        public IArticuloServices ArticuloServices { get; set; }
 
         public void Save(Articulo articulo)
         {
-            ArticuloSerices.Save(articulo);
+            ArticuloServices.Save(articulo);
         }
 
         public IEnumerable<Articulo> FindByCodigo(string codigo)
         {
-            return ArticuloSerices.FindByCodigo(codigo);
+            return ArticuloServices.FindByCodigo(codigo);
         }
     }
 }

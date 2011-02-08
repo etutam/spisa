@@ -10,6 +10,6 @@ namespace Gestioname.DomainModel.Repositories
     {
         Factura FindByNumeroFactura(long numeroFactura);
 
-        void AlmacenarImpresion(Factura factura);
+        
     }
 }
