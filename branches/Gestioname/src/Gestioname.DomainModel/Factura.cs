@@ -12,7 +12,7 @@ namespace Gestioname.DomainModel
 
         
 
-        #region Propiedades
+        #region Properties
 
         public virtual long NumeroFactura { get; set; }
 
@@ -23,6 +23,7 @@ namespace Gestioname.DomainModel
         #endregion
 
         #region Methods
+        
         public override Factura GetTestInstance()
         {
             return new Factura
@@ -30,6 +31,14 @@ namespace Gestioname.DomainModel
                            NumeroFactura = 1234567891234567
                        };
         }
+
+
+        void Imprimir()
+        {
+            
+        }
+
+
         #endregion
     }
 }

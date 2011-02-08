@@ -8,6 +8,8 @@ namespace Gestioname.DomainModel.Inventario
 {
     public class Articulo : EntityBase<Articulo>
     {
+        #region Properties
+
         public virtual string Codigo { get; set; }
 
         public virtual string Descripcion { get; set; }
@@ -16,9 +18,12 @@ namespace Gestioname.DomainModel.Inventario
 
         public virtual decimal PrecioUnitario { get; set; }
 
-       // public Categoria Categoria { get; set; }
+        public Categoria Categoria { get; set; }
 
         //public Moneda Moneda { get; set; }
+
+        #endregion
+        #region Methods
 
         public override Articulo GetTestInstance()
         {
@@ -29,6 +34,7 @@ namespace Gestioname.DomainModel.Inventario
                            PrecioUnitario = 99.99m
                        };
         }
+        #endregion
         
     }
 }
