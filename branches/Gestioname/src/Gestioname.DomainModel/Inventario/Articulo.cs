@@ -18,7 +18,7 @@ namespace Gestioname.DomainModel.Inventario
 
         public virtual decimal PrecioUnitario { get; set; }
 
-        public Categoria Categoria { get; set; }
+        //public Categoria Categoria { get; set; }
 
         //public Moneda Moneda { get; set; }
 
