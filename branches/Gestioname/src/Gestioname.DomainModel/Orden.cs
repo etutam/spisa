@@ -16,17 +16,17 @@ namespace Gestioname.DomainModel
 
         public virtual DateTime FechaEntrega { get; set; }
 
-        public virtual int NumeroDeOrden { get; set; }
+        public virtual int Numero { get; set; }
 
         public virtual string Observaciones { get; set; }
 
         public virtual int DescuentoEspecial { get; set; }
 
-        public virtual IList<Factura> ListaFactura { get; set; }
+        public virtual IList<Factura> Facturas { get; set; }
 
-        public virtual IList<Remito> ListaRemitos { get; set; }
+        public virtual IList<Remito> Remitos { get; set; }
 
-        public virtual IList<OrdenItems> ListaItems { get; set; }
+        public virtual IList<OrdenItem> Items { get; set; }
 
         #endregion
     }

@@ -10,7 +10,7 @@ namespace Gestioname.DomainModel
     {
         #region Properties
 
-        public virtual int NumeroRemito { get; set; }
+        public virtual int Numero { get; set; }
 
         public virtual Orden Orden { get; set; }
 
@@ -18,7 +18,7 @@ namespace Gestioname.DomainModel
 
         public virtual string Observaciones { get; set; }
 
-        public virtual Cliente Cliente { get; set; }
+        //public virtual Cliente Cliente { get; set; }
 
         public virtual Decimal Peso { get; set; }
 
@@ -28,7 +28,7 @@ namespace Gestioname.DomainModel
 
         public virtual Transportista Transportista { get; set; }
 
-        public virtual IList<OrdenItems> ListaItems { get; set; }
+        public virtual IList<OrdenItem> Items { get; set; }
 
         
         #endregion
