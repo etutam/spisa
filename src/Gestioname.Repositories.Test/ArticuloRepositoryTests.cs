@@ -10,9 +10,9 @@ using Rhino.Mocks;
 
 namespace Gestioname.Repositories.Test
 {
-    [TestFixture]
-    class ArticuloRepositoryTests: RepositoryTestCase<Articulo,ArticuloRepository>
-    {
+        [TestFixture]
+        class ArticuloRepositoryTests: RepositoryTestCase<Articulo,ArticuloRepository>
+        {
         public IArticuloRepository ArticuloRepository { get; set; }
         [Test]
         public void RunDefaultsTest()
@@ -27,9 +27,10 @@ namespace Gestioname.Repositories.Test
 
             ArticuloRepository.Save(articulo1);
 
-            List<Articulo> respuesta = ArticuloRepository.FindByCodigo(articulo1.Codigo) as List<Articulo>;
+            var resul = ArticuloRepository.FindByCodigo(articulo1.Codigo) as List<Articulo>;
 
-            Assert.AreEqual(articulo1,respuesta[0]);
+            Assert.NotNull(resul);
+            Assert.AreEqual(articulo1,resul[0]);
             
         }
 

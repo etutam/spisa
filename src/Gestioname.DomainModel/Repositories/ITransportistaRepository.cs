@@ -6,8 +6,7 @@ using Gestioname.Library.Repositories;
 
 namespace Gestioname.DomainModel.Repositories
 {
-    public interface IOrdenRepository: IRepository<Orden>
+    public interface ITransportistaRepository: IRepository<Transportista>
     {
-
     }
 }
