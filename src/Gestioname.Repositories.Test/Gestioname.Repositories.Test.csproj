@@ -35,6 +35,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\net\nunit.framework.dll</HintPath>
     </Reference>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\..\lib\rhino\Rhino.Mocks.dll</HintPath>
+    </Reference>
     <Reference Include="Spring.Core">
       <HintPath>..\..\lib\Spring\Spring.Core.dll</HintPath>
     </Reference>
@@ -56,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArticuloRepositoryTests.cs" />
     <Compile Include="ClienteRepositoryTests.cs" />
     <Compile Include="FacturaRepositoryTest.cs" />
     <Compile Include="RepositoryTestCase.cs" />

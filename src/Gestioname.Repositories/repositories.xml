@@ -59,6 +59,10 @@
   <object id="FacturaRepository" type="Gestioname.Repositories.FacturaRepository,Gestioname.Repositories">
     <property name="HibernateTemplate" ref="HibernateTemplate"/>
   </object>
-  
+
+  <object id="ArticuloRepository" type="Gestioname.Repositories.ArticuloRepository,Gestioname.Repositories">
+    <property name="HibernateTemplate" ref="HibernateTemplate"/>
+  </object>
+
 </objects>
 

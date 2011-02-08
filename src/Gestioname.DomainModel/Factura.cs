@@ -16,8 +16,13 @@ namespace Gestioname.DomainModel
 
         public virtual long NumeroFactura { get; set; }
 
+        public virtual bool FueImpresa { get; set; }
+
+        public virtual bool EsNotaDeCredito { get; set; }
+
         #endregion
 
+        #region Methods
         public override Factura GetTestInstance()
         {
             return new Factura
@@ -25,5 +30,6 @@ namespace Gestioname.DomainModel
                            NumeroFactura = 1234567891234567
                        };
         }
+        #endregion
     }
 }
