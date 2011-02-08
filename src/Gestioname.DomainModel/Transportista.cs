@@ -11,7 +11,7 @@ namespace Gestioname.DomainModel
 
         #region Properties
 
-        public virtual string NombreTransportista { get; set; }
+        public virtual string Nombre { get; set; }
 
         public virtual string Domicilio { get; set; }
 
