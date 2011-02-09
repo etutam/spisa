@@ -58,6 +58,7 @@
     <Compile Include="Repositories\IArticuloRepository.cs" />
     <Compile Include="Repositories\IClienteRepository.cs" />
     <Compile Include="Repositories\IFacturaRepository.cs" />
+    <Compile Include="Repositories\IOrdenItemRepository.cs" />
     <Compile Include="Repositories\IOrdenRepository.cs" />
     <Compile Include="Repositories\IRemitoRepository.cs" />
     <Compile Include="Repositories\ITransportistaRepository.cs" />

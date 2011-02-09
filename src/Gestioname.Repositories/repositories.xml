@@ -64,5 +64,8 @@
     <property name="HibernateTemplate" ref="HibernateTemplate"/>
   </object>
 
+  <object id="OrdenRepository" type="Gestioname.Repositories.OrdenRepository,Gestioname.Repositories">
+    <property name="HibernateTemplate" ref="HibernateTemplate"/>
+  </object>
 </objects>
 

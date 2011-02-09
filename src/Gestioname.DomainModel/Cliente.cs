@@ -24,7 +24,7 @@ namespace Gestioname.DomainModel
         {
         return new Cliente
                     {
-                        RazonSocial = "Razon Social de Prueba"
+                        RazonSocial = "Razon Social de Prueba",
                     };
         }
         #endregion

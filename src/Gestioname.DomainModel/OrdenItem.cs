@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Gestioname.DomainModel.Inventario;
+using Gestioname.DomainModel;
 using Gestioname.Library;
 
 namespace Gestioname.DomainModel

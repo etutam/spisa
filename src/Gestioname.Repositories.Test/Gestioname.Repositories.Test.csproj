@@ -62,6 +62,7 @@
     <Compile Include="ArticuloRepositoryTests.cs" />
     <Compile Include="ClienteRepositoryTests.cs" />
     <Compile Include="FacturaRepositoryTest.cs" />
+    <Compile Include="OrdenRepositoryTests.cs" />
     <Compile Include="RepositoryTestCase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
