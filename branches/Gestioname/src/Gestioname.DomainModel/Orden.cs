@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using Gestioname.Library;
@@ -28,6 +29,22 @@ namespace Gestioname.DomainModel
 
         public virtual IList<OrdenItem> Items { get; set; }
 
+        #endregion
+
+        #region Methods
+
+        public override Orden GetTestInstance()
+        {
+            DateTime fecha = new DateTime(2010,2,3);
+            return new Orden
+                       {
+                           Cliente = new Cliente().GetTestInstance(),
+                           DescuentoEspecial = 100,
+                           FechaEmision = fecha,
+                           FechaEntrega = DateTime.Today,
+                           Numero = 1234
+                       };
+        }
         #endregion
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using Gestioname.DomainModel;
 using Gestioname.Library;
 using Gestioname.Library.Repositories;
 using Gestioname.Library.Repositories.NHibernate;
@@ -20,6 +21,19 @@ namespace Gestioname.Repositories.Test
 
         public IRepository<TEntity> Repository { get; set; }
 
+        [TestFixtureSetUp]
+        public void TextFixtureSetup()
+        {
+            base.OnSetUp();
+
+            Repository = (TRepository)applicationContext.GetObject(typeof(TRepository).Name);
+
+            Repository.HibernateTemplate = HibernateTemplate;
+
+            RunDefaultUnitTests();
+        }
+
+
         [SetUp]
         public override void SetUp()
         {
@@ -31,7 +45,10 @@ namespace Gestioname.Repositories.Test
 
             RunDefaultUnitTests();
         }
-
+        //protected override void OnTearDown()
+        //{
+        //    base.OnTearDown();
+        //}
         public void RunDefaultUnitTests()
         {
             SaveTest();
@@ -43,6 +60,8 @@ namespace Gestioname.Repositories.Test
          {
             TEntity entityToSave = new TEntity().GetTestInstance();
 
+            BeforeSave(entityToSave);
+
             Repository.Save(entityToSave);
 
             TEntity savedEntity = Repository.FindById(entityToSave.Id);
@@ -53,11 +72,23 @@ namespace Gestioname.Repositories.Test
             
         }
 
+        protected virtual void BeforeSave(TEntity entity)
+        {
+            
+        }
+
         private void GetAllTest()
         {
             TEntity entityToSave1 = new TEntity().GetTestInstance();
+
+            BeforeSave(entityToSave1);
+
             TEntity entityToSave2 = new TEntity().GetTestInstance();
+
+            BeforeSave(entityToSave2);
             TEntity entityToSave3 = new TEntity().GetTestInstance();
+
+            BeforeSave(entityToSave3);
 
             Repository.Save(entityToSave1);
             Repository.Save(entityToSave2);

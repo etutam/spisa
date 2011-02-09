@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Gestioname.DomainModel;
 using Gestioname.DomainModel.Inventario;
 using Gestioname.DomainModel.Services;
 using NUnit.Framework;
@@ -23,7 +24,7 @@ namespace Gestioname.Controllers.Test
 
             ArticuloController articuloController = new ArticuloController
                                                         {
-                                                            ArticuloSerices = articuloServices
+                                                            ArticuloServices = articuloServices
                                                         };
 
             var result = articuloController.FindByCodigo(codigo);

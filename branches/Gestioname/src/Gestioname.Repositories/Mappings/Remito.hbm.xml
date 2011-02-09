@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="Gestioname.DomainModel"
+                   namespace="Gestioname.DomainModel">
+  <class name ="Remito">
+    <id name ="Id">
+      <generator class="identity"/>
+    </id>
+    <many-to-one name="Orden" class="Orden" column="IdOrden"/>
+    <property name="Numero" />
+    <property name="Fecha" />
+    <property name="Observaciones" />
+    <many-to-one name="Transportista" class="Transportista" column="IdTransportista" />
+    <property name="Peso" />
+    <property name="Valor" />
+    <property name="Bultos" />
+
+  </class>
+</hibernate-mapping>

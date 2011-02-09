@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Gestioname.Library;
 
-namespace Gestioname.DomainModel.Inventario
+namespace Gestioname.DomainModel
 {
     public class Articulo : EntityBase<Articulo>
     {
