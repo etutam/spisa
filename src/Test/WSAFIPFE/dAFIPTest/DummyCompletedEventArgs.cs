@@ -1,4 +1,6 @@
-﻿namespace WSAFIPFE.dAFIPTest
+﻿using System.Runtime.CompilerServices;
+
+namespace WSAFIPFE.dAFIPTest
 {
     using System;
     using System.CodeDom.Compiler;

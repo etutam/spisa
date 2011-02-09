@@ -1,4 +1,6 @@
-﻿namespace WSAFIPFE.afipTest
+﻿using System.Runtime.CompilerServices;
+
+namespace WSAFIPFE.afipTest
 {
     using System;
     using System.CodeDom.Compiler;

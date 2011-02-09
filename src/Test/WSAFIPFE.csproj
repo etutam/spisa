@@ -15,9 +15,11 @@
     <OutputType>Library</OutputType>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <OldToolsVersion>0.0</OldToolsVersion>
     <UpgradeBackupLocation />
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>bin\Debug\</OutputPath>
@@ -43,12 +45,15 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>WSAFIPFE</RootNamespace>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Google.GData.Client">
-      <Name>Google.GData.Client</Name>
+      <HintPath>lib\Google.GData.Client.dll</HintPath>
     </Reference>
     <Reference Include="Google.GData.Spreadsheets">
-      <Name>Google.GData.Spreadsheets</Name>
+      <HintPath>lib\Google.GData.Spreadsheets.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic">
       <Name>Microsoft.VisualBasic</Name>
@@ -59,14 +64,20 @@
     <Reference Include="System.Security">
       <Name>System.Security</Name>
     </Reference>
+    <Reference Include="System.Web.Abstractions">
+      <HintPath>lib\System.Web.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Extensions">
-      <Name>System.Web.Extensions</Name>
+      <HintPath>lib\System.Web.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Services">
       <Name>System.Web.Services</Name>
     </Reference>
     <Reference Include="System.Xml">
       <Name>System.Xml</Name>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <HintPath>lib\System.Xml.Linq.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -158,7 +169,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="WSAFIPFE\afipTest\Service.cs">
-      <SubType>Code</SubType>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="WSAFIPFE\afipTest\UltNroResponse.cs">
       <SubType>Code</SubType>
@@ -248,7 +259,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="WSAFIPFE\afip\Service.cs">
-      <SubType>Code</SubType>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="WSAFIPFE\afip\UltNroResponse.cs">
       <SubType>Code</SubType>
@@ -419,7 +430,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="WSAFIPFE\bAFIPTest\Service.cs">
-      <SubType>Code</SubType>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="WSAFIPFE\bAFIP\BFEAuthorizeCompletedEventArgs.cs">
       <SubType>Code</SubType>
@@ -584,7 +595,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="WSAFIPFE\bAFIP\Service.cs">
-      <SubType>Code</SubType>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="WSAFIPFE\Certificado.cs">
       <SubType>Code</SubType>
@@ -617,7 +628,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="WSAFIPFE\dAFIPTest\wDigDepFiel.cs">
-      <SubType>Code</SubType>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="WSAFIPFE\dAFIPTest\WsDummyResponse.cs">
       <SubType>Code</SubType>
@@ -890,7 +901,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="WSAFIPFE\f1AFIPTest\Service.cs">
-      <SubType>Code</SubType>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="WSAFIPFE\f1AFIPTest\Tributo.cs">
       <SubType>Code</SubType>
@@ -1166,7 +1177,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="WSAFIPFE\f1AFIP\Service.cs">
-      <SubType>Code</SubType>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="WSAFIPFE\f1AFIP\Tributo.cs">
       <SubType>Code</SubType>
@@ -1343,7 +1354,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="WSAFIPFE\fxAFIPTest\MTXCAService.cs">
-      <SubType>Code</SubType>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="WSAFIPFE\fxAFIPTest\OtroTributoType.cs">
       <SubType>Code</SubType>
@@ -1535,7 +1546,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="WSAFIPFE\fxAFIP\MTXCAService.cs">
-      <SubType>Code</SubType>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="WSAFIPFE\fxAFIP\OtroTributoType.cs">
       <SubType>Code</SubType>
@@ -1589,7 +1600,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="WSAFIPFE\gAFIPTest\CTGService.cs">
-      <SubType>Code</SubType>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="WSAFIPFE\gAFIPTest\dummyCompletedEventArgs.cs">
       <SubType>Code</SubType>
@@ -1781,7 +1792,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="WSAFIPFE\sAFIPTest\Service.cs">
-      <SubType>Code</SubType>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="WSAFIPFE\sAFIP\ClsSEGAuthRequest.cs">
       <SubType>Code</SubType>
@@ -1910,7 +1921,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="WSAFIPFE\sAFIP\Service.cs">
-      <SubType>Code</SubType>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="WSAFIPFE\ticket.cs">
       <SubType>Code</SubType>
@@ -1922,7 +1933,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="WSAFIPFE\wsaaTest\LoginCMSService.cs">
-      <SubType>Code</SubType>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="WSAFIPFE\wsaa\loginCmsCompletedEventArgs.cs">
       <SubType>Code</SubType>
@@ -1931,7 +1942,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="WSAFIPFE\wsaa\LoginCMSService.cs">
-      <SubType>Code</SubType>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="WSAFIPFE\xAFIPTest\ClsFEXAuthRequest.cs">
       <SubType>Code</SubType>
@@ -2150,7 +2161,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="WSAFIPFE\xAFIPTest\Service.cs">
-      <SubType>Code</SubType>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="WSAFIPFE\xAFIP\ClsFEXAuthRequest.cs">
       <SubType>Code</SubType>
@@ -2369,7 +2380,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="WSAFIPFE\xAFIP\Service.cs">
-      <SubType>Code</SubType>
+      <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="WSAFIPFE.Resources.resources" />
   </ItemGroup>

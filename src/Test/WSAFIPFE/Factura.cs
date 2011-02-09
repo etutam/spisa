@@ -13,7 +13,7 @@
     using System.Runtime.InteropServices;
     using System.Security.Cryptography;
     using System.Text;
-    using System.Web.Script.Serialization;
+    using System.Web;
     using System.Web.Services.Protocols;
     using System.Xml.Serialization;
     using WSAFIPFE.afip;
@@ -30,6 +30,1806 @@
     using WSAFIPFE.sAFIPTest;
     using WSAFIPFE.xAFIP;
     using WSAFIPFE.xAFIPTest;
+    
+
+    [ComVisible(true), Guid("e0427e75-8757-422f-a419-12b10c49adcb")]
+    public interface _Factura
+    {
+        [DispId(1)]
+        string revision { [DispId(1)] get; }
+        [DispId(2)]
+        bool LicenciaArchivoValido { [DispId(2)] get; }
+        [DispId(3)]
+        string LicenciaCodigo { [DispId(3)] get; }
+        [DispId(4)]
+        string LicenciaDatos { [DispId(4)] get; }
+        [DispId(5)]
+        bool LicenciaDatosValida { [DispId(5)] get; }
+        [DispId(6)]
+        DateTime LicenciaFecha { [DispId(6)] get; }
+        [DispId(7)]
+        bool this[DateTime dFecha] { [DispId(7)] get; }
+        [DispId(8)]
+        DateTime LicenciaHasta { [DispId(8)] get; }
+        [DispId(9)]
+        int LicenciaValor { [DispId(9)] get; }
+        [DispId(10)]
+        int LicenciaLimite { [DispId(10)] get; }
+        [DispId(11)]
+        int LicenciaUsado { [DispId(11)] get; }
+        [DispId(12)]
+        string ProxyUserName { [DispId(12)] get; [DispId(12)] set; }
+        [DispId(13)]
+        string ProxyDomain { [DispId(13)] get; [DispId(13)] set; }
+        [DispId(14)]
+        string ProxyHost { [DispId(14)] get; [DispId(14)] set; }
+        [DispId(15)]
+        int ProxyPort { [DispId(15)] get; [DispId(15)] set; }
+        [DispId(0x10)]
+        string ProxyUserPassword { [DispId(0x10)] get; [DispId(0x10)] set; }
+        [DispId(0x11)]
+        int dRespuestaCodError { [DispId(0x11)] get; }
+        [DispId(0x12)]
+        string dRespuestaDescError { [DispId(0x12)] get; }
+        [DispId(0x13)]
+        double xRespuestaMonedaCtz { [DispId(0x13)] get; }
+        [DispId(20)]
+        string xRespuestaMonedaCtzFecha { [DispId(20)] get; }
+        [DispId(0x15)]
+        string ArchivoXMLError { [DispId(0x15)] get; }
+        [DispId(0x16)]
+        string ArchivoXMLRecibido { [DispId(0x16)] get; [DispId(0x16)] set; }
+        [DispId(0x17)]
+        string ArchivoXMLEnviado { [DispId(0x17)] get; [DispId(0x17)] set; }
+        [DispId(0x18)]
+        int paso { [DispId(0x18)] get; [DispId(0x18)] set; }
+        [DispId(0x19)]
+        int bMonedaItemCantidad { [DispId(0x19)] get; }
+        [DispId(0x1a)]
+        int xMonedaItemCantidad { [DispId(0x1a)] get; }
+        [DispId(0x1b)]
+        int xPtoVentaItemCantidad { [DispId(0x1b)] get; }
+        [DispId(0x1c)]
+        int xIdiomaItemCantidad { [DispId(0x1c)] get; }
+        [DispId(0x1d)]
+        int xTipo_expoItemCantidad { [DispId(0x1d)] get; }
+        [DispId(30)]
+        int xIncoTermsItemCantidad { [DispId(30)] get; }
+        [DispId(0x1f)]
+        int xPaisItemCantidad { [DispId(0x1f)] get; }
+        [DispId(0x20)]
+        int xCuitItemCantidad { [DispId(0x20)] get; }
+        [DispId(0x21)]
+        int sMonedaItemCantidad { [DispId(0x21)] get; }
+        [DispId(0x22)]
+        int bTipo_CbteItemCantidad { [DispId(0x22)] get; }
+        [DispId(0x23)]
+        int xTipo_CbteItemCantidad { [DispId(0x23)] get; }
+        [DispId(0x24)]
+        int f1TiposCbteItemCantidad { [DispId(0x24)] get; }
+        [DispId(0x25)]
+        int fxListaItemCantidad { [DispId(0x25)] get; }
+        [DispId(0x26)]
+        int f1TiposTributoItemCantidad { [DispId(0x26)] get; }
+        [DispId(0x27)]
+        int f1TiposOpcionalItemCantidad { [DispId(0x27)] get; }
+        [DispId(40)]
+        int f1TiposMonedaItemCantidad { [DispId(40)] get; }
+        [DispId(0x29)]
+        int f1TiposIvaItemCantidad { [DispId(0x29)] get; }
+        [DispId(0x2a)]
+        int f1TiposDocItemCantidad { [DispId(0x2a)] get; }
+        [DispId(0x2b)]
+        int f1PtosVentaItemCantidad { [DispId(0x2b)] get; }
+        [DispId(0x2c)]
+        int f1TiposConceptoItemCantidad { [DispId(0x2c)] get; }
+        [DispId(0x2d)]
+        int f1ErrorItemCantidad { [DispId(0x2d)] get; }
+        [DispId(0x2e)]
+        int f1EventItemCantidad { [DispId(0x2e)] get; }
+        [DispId(0x2f)]
+        int fxErrorItemCantidad { [DispId(0x2f)] get; }
+        [DispId(0x30)]
+        int fxObervacionItemCantidad { [DispId(0x30)] get; }
+        [DispId(0x31)]
+        int fxEventItemCantidad { [DispId(0x31)] get; }
+        [DispId(50)]
+        int sTipo_CbteItemCantidad { [DispId(50)] get; }
+        [DispId(0x33)]
+        int bProductoItemCantidad { [DispId(0x33)] get; }
+        [DispId(0x34)]
+        int bTipoIvaItemCantidad { [DispId(0x34)] get; }
+        [DispId(0x35)]
+        int sTipoIvaItemCantidad { [DispId(0x35)] get; }
+        [DispId(0x36)]
+        int bUMedItemCantidad { [DispId(0x36)] get; }
+        [DispId(0x37)]
+        int xUMedItemCantidad { [DispId(0x37)] get; }
+        [DispId(0x38)]
+        int bTipoDocItemCantidad { [DispId(0x38)] get; }
+        [DispId(0x39)]
+        int sTipoDocItemCantidad { [DispId(0x39)] get; }
+        [DispId(0x3a)]
+        int bZonaItemCantidad { [DispId(0x3a)] get; }
+        [DispId(0x3b)]
+        int bEventCode { [DispId(0x3b)] get; }
+        [DispId(60)]
+        int xEventCode { [DispId(60)] get; }
+        [DispId(0x3d)]
+        int sEventCode { [DispId(0x3d)] get; }
+        [DispId(0x3e)]
+        string bRespuestasCUIT { [DispId(0x3e)] get; }
+        [DispId(0x3f)]
+        string bRespuestaFch_venc_cae { [DispId(0x3f)] get; }
+        [DispId(0x40)]
+        string sRespuestaFch_venc_cae { [DispId(0x40)] get; }
+        [DispId(0x41)]
+        string bEventMsg { [DispId(0x41)] get; }
+        [DispId(0x42)]
+        string xEventMsg { [DispId(0x42)] get; }
+        [DispId(0x43)]
+        string sEventMsg { [DispId(0x43)] get; }
+        [DispId(0x44)]
+        string bRespuestaId { [DispId(0x44)] get; }
+        [DispId(0x45)]
+        int bRespuestaCbte_numero { [DispId(0x45)] get; }
+        [DispId(70)]
+        string bRespuestaCAE { [DispId(70)] get; }
+        [DispId(0x47)]
+        string bRespuestaFch_cbte { [DispId(0x47)] get; }
+        [DispId(0x48)]
+        string bRespuestaResultado { [DispId(0x48)] get; }
+        [DispId(0x49)]
+        string bRespuestaReproceso { [DispId(0x49)] get; }
+        [DispId(0x4a)]
+        string bRespuestaOBS { [DispId(0x4a)] get; }
+        [DispId(0x4b)]
+        string sRespuestaId { [DispId(0x4b)] get; }
+        [DispId(0x4c)]
+        int sRespuestaCbte_numero { [DispId(0x4c)] get; }
+        [DispId(0x4d)]
+        string sRespuestaCAE { [DispId(0x4d)] get; }
+        [DispId(0x4e)]
+        string sRespuestaFch_cbte { [DispId(0x4e)] get; }
+        [DispId(0x4f)]
+        string sRespuestaResultado { [DispId(0x4f)] get; }
+        [DispId(80)]
+        string sRespuestaReproceso { [DispId(80)] get; }
+        [DispId(0x51)]
+        string sRespuestaOBS { [DispId(0x51)] get; }
+        [DispId(0x52)]
+        string sRespuestasCUIT { [DispId(0x52)] get; }
+        [DispId(0x53)]
+        long xRespuestaId { [DispId(0x53)] get; }
+        [DispId(0x54)]
+        string xRespuestaIdS { [DispId(0x54)] get; }
+        [DispId(0x55)]
+        string xRespuestaCUIT { [DispId(0x55)] get; }
+        [DispId(0x56)]
+        string xRespuestaCAE { [DispId(0x56)] get; }
+        [DispId(0x57)]
+        string xRespuestaFch_vence_cae { [DispId(0x57)] get; }
+        [DispId(0x58)]
+        string xRespuestaFch_venc_cae { [DispId(0x58)] get; }
+        [DispId(0x59)]
+        string xRespuestaFch_cbte { [DispId(0x59)] get; }
+        [DispId(90)]
+        string xRespuestaFch_cbte_cae { [DispId(90)] get; }
+        [DispId(0x5b)]
+        string xRespuestaResultado { [DispId(0x5b)] get; }
+        [DispId(0x5c)]
+        string xRespuestaReproceso { [DispId(0x5c)] get; }
+        [DispId(0x5d)]
+        string xRespuestaMotivos_obs { [DispId(0x5d)] get; }
+        [DispId(0x5e)]
+        int xRespuestatipo_cbte { [DispId(0x5e)] get; }
+        [DispId(0x5f)]
+        int xRespuestapunto_vta { [DispId(0x5f)] get; }
+        [DispId(0x60)]
+        long xRespuestacbte_numero { [DispId(0x60)] get; }
+        [DispId(0x61)]
+        string xRespuestacbte_numeroS { [DispId(0x61)] get; }
+        [DispId(0x62)]
+        string XMLRequest { [DispId(0x62)] get; }
+        [DispId(0x63)]
+        string XMLRequestFirmado { [DispId(0x63)] get; }
+        [DispId(100)]
+        string XMLResponse { [DispId(100)] get; }
+        [DispId(0x65)]
+        bool TicketEsValido { [DispId(0x65)] get; }
+        [DispId(0x66)]
+        bool bTicketEsValido { [DispId(0x66)] get; }
+        [DispId(0x67)]
+        bool xTicketEsValido { [DispId(0x67)] get; }
+        [DispId(0x68)]
+        bool f1TicketEsValido { [DispId(0x68)] get; }
+        [DispId(0x69)]
+        bool fxTicketEsValido { [DispId(0x69)] get; }
+        [DispId(0x6a)]
+        bool mTicketEsValido { [DispId(0x6a)] get; }
+        [DispId(0x6b)]
+        string gErrorMensaje { [DispId(0x6b)] get; }
+        [DispId(0x6c)]
+        string gErrorCodigo { [DispId(0x6c)] get; }
+        [DispId(0x6d)]
+        bool gTicketEsValido { [DispId(0x6d)] get; }
+        [DispId(110)]
+        bool sTicketEsValido { [DispId(110)] get; }
+        [DispId(0x6f)]
+        int TimeOut { [DispId(0x6f)] get; [DispId(0x6f)] set; }
+        [DispId(0x70)]
+        bool LicenciaValida { [DispId(0x70)] get; }
+        [DispId(0x71)]
+        bool f1LicenciaValidaCae { [DispId(0x71)] get; }
+        [DispId(0x72)]
+        bool f1LicenciaValidaCaea { [DispId(0x72)] get; }
+        [DispId(0x73)]
+        bool fxLicenciaValidaCAE { [DispId(0x73)] get; }
+        [DispId(0x74)]
+        bool fxLicenciaValidaCAEA { [DispId(0x74)] get; }
+        [DispId(0x75)]
+        bool BLicenciaValida { [DispId(0x75)] get; }
+        [DispId(0x76)]
+        bool xLicenciaValida { [DispId(0x76)] get; }
+        [DispId(0x77)]
+        bool dLicenciaValida { [DispId(0x77)] get; }
+        [DispId(120)]
+        bool gLicenciaValida { [DispId(120)] get; }
+        [DispId(0x79)]
+        bool OLicenciaValida { [DispId(0x79)] get; }
+        [DispId(0x7a)]
+        bool sLicenciaValida { [DispId(0x7a)] get; }
+        [DispId(0x7b)]
+        bool LicenciaLote { [DispId(0x7b)] get; }
+        [DispId(0x7c)]
+        string Permsg { [DispId(0x7c)] get; }
+        [DispId(0x7d)]
+        string berrmsg { [DispId(0x7d)] get; }
+        [DispId(0x7e)]
+        string xerrmsg { [DispId(0x7e)] get; }
+        [DispId(0x7f)]
+        string serrmsg { [DispId(0x7f)] get; }
+        [DispId(0x80)]
+        int PerCode { [DispId(0x80)] get; }
+        [DispId(0x81)]
+        string PerCodeSt { [DispId(0x81)] get; }
+        [DispId(130)]
+        int berrcode { [DispId(130)] get; }
+        [DispId(0x83)]
+        int xerrcode { [DispId(0x83)] get; }
+        [DispId(0x84)]
+        string berrcodeST { [DispId(0x84)] get; }
+        [DispId(0x85)]
+        string xerrcodeST { [DispId(0x85)] get; }
+        [DispId(0x86)]
+        int serrcode { [DispId(0x86)] get; }
+        [DispId(0x87)]
+        string serrcodeST { [DispId(0x87)] get; }
+        [DispId(0x88)]
+        string FERespuestaDetalleFecha_venc_pago { [DispId(0x88)] get; }
+        [DispId(0x89)]
+        string FERespuestaDetalleFecha_serv_hasta { [DispId(0x89)] get; }
+        [DispId(0x8a)]
+        string FERespuestaDetalleFecha_serv_desde { [DispId(0x8a)] get; }
+        [DispId(0x8b)]
+        string FERespuestaDetalleMotivo { [DispId(0x8b)] get; }
+        [DispId(140)]
+        string FERespuestaDetalleFecha_vto { [DispId(140)] get; }
+        [DispId(0x8d)]
+        string FERespuestaDetalleCae { [DispId(0x8d)] get; }
+        [DispId(0x8e)]
+        string FERespuestaDetalleResultado { [DispId(0x8e)] get; }
+        [DispId(0x8f)]
+        string FERespuestaDetalleFecha_cbte { [DispId(0x8f)] get; }
+        [DispId(0x90)]
+        double FERespuestaDetalleImp_op_ex { [DispId(0x90)] get; }
+        [DispId(0x91)]
+        double FERespuestaDetalleImpt_liq_rni { [DispId(0x91)] get; }
+        [DispId(0x92)]
+        double FERespuestaDetalleImpto_liq { [DispId(0x92)] get; }
+        [DispId(0x93)]
+        double FERespuestaDetalleImp_neto { [DispId(0x93)] get; }
+        [DispId(0x94)]
+        double FERespuestaDetalleImp_tot_conc { [DispId(0x94)] get; }
+        [DispId(0x95)]
+        double FERespuestaDetalleImp_total { [DispId(0x95)] get; }
+        [DispId(150)]
+        int FERespuestaDetalleCbt_hasta { [DispId(150)] get; }
+        [DispId(0x97)]
+        string FERespuestaDetalleCbt_hastaS { [DispId(0x97)] get; }
+        [DispId(0x98)]
+        int FERespuestaDetalleCbt_desde { [DispId(0x98)] get; }
+        [DispId(0x99)]
+        string FERespuestaDetalleCbt_desdeS { [DispId(0x99)] get; }
+        [DispId(0x9a)]
+        int FERespuestaDetallePunto_vta { [DispId(0x9a)] get; }
+        [DispId(0x9b)]
+        Factura.TipoComprobante FERespuestaDetalleTipo_cbte { [DispId(0x9b)] get; }
+        [DispId(0x9c)]
+        int IndiceItem { [DispId(0x9c)] get; [DispId(0x9c)] set; }
+        [DispId(0x9d)]
+        int bIndiceItem { [DispId(0x9d)] get; [DispId(0x9d)] set; }
+        [DispId(0x9e)]
+        int xIndiceItem { [DispId(0x9e)] get; [DispId(0x9e)] set; }
+        [DispId(0x9f)]
+        int f1IndiceItem { [DispId(0x9f)] get; [DispId(0x9f)] set; }
+        [DispId(160)]
+        int fxIndiceItem { [DispId(160)] get; [DispId(160)] set; }
+        [DispId(0xa1)]
+        int dIndiceItem { [DispId(0xa1)] get; [DispId(0xa1)] set; }
+        [DispId(0xa2)]
+        int gIndiceItem { [DispId(0xa2)] get; [DispId(0xa2)] set; }
+        [DispId(0xa3)]
+        int sIndiceItem { [DispId(0xa3)] get; [DispId(0xa3)] set; }
+        [DispId(0xa4)]
+        int bItemCantidad { [DispId(0xa4)] get; [DispId(0xa4)] set; }
+        [DispId(0xa5)]
+        int xItemCantidad { [DispId(0xa5)] get; [DispId(0xa5)] set; }
+        [DispId(0xa6)]
+        int dFamiliaItemCantidad { [DispId(0xa6)] get; [DispId(0xa6)] set; }
+        [DispId(0xa7)]
+        int gEspecieItemCantidad { [DispId(0xa7)] get; [DispId(0xa7)] set; }
+        [DispId(0xa8)]
+        int gProvinciaItemCantidad { [DispId(0xa8)] get; [DispId(0xa8)] set; }
+        [DispId(0xa9)]
+        int gLocalidadItemCantidad { [DispId(0xa9)] get; [DispId(0xa9)] set; }
+        [DispId(170)]
+        int gLocalidadTodasItemCantidad { [DispId(170)] get; [DispId(170)] set; }
+        [DispId(0xab)]
+        int gCosechaItemCantidad { [DispId(0xab)] get; [DispId(0xab)] set; }
+        [DispId(0xac)]
+        int xPermisoCantidad { [DispId(0xac)] get; [DispId(0xac)] set; }
+        [DispId(0xad)]
+        int xPermisoNoInformar { [DispId(0xad)] get; [DispId(0xad)] set; }
+        [DispId(0xae)]
+        int xCmps_asocCantidad { [DispId(0xae)] get; [DispId(0xae)] set; }
+        [DispId(0xaf)]
+        int sItemCantidad { [DispId(0xaf)] get; [DispId(0xaf)] set; }
+        [DispId(0xb0)]
+        string dFamiliaCodigo { [DispId(0xb0)] get; [DispId(0xb0)] set; }
+        [DispId(0xb1)]
+        int dFamiliaCantidad { [DispId(0xb1)] get; [DispId(0xb1)] set; }
+        [DispId(0xb2)]
+        string xITEMPro_codigo { [DispId(0xb2)] get; [DispId(0xb2)] set; }
+        [DispId(0xb3)]
+        string xITEMPro_ds { [DispId(0xb3)] get; [DispId(0xb3)] set; }
+        [DispId(180)]
+        double xITEMPro_qty { [DispId(180)] get; [DispId(180)] set; }
+        [DispId(0xb5)]
+        int xITEMPro_umed { [DispId(0xb5)] get; [DispId(0xb5)] set; }
+        [DispId(0xb6)]
+        double xITEMPro_precio_uni { [DispId(0xb6)] get; [DispId(0xb6)] set; }
+        [DispId(0xb7)]
+        double xITEMPro_precio_item { [DispId(0xb7)] get; [DispId(0xb7)] set; }
+        [DispId(0xb8)]
+        int xCMPS_ASOC_cbte_tipo { [DispId(0xb8)] get; [DispId(0xb8)] set; }
+        [DispId(0xb9)]
+        int xCMPS_ASOC_cbte_punto_venta { [DispId(0xb9)] get; [DispId(0xb9)] set; }
+        [DispId(0xba)]
+        int xCMPS_ASOC_cbte_nro { [DispId(0xba)] get; [DispId(0xba)] set; }
+        [DispId(0xbb)]
+        string xCMPS_ASOC_cbte_nroS { [DispId(0xbb)] get; [DispId(0xbb)] set; }
+        [DispId(0xbc)]
+        string xPERMISO_id_permiso { [DispId(0xbc)] get; [DispId(0xbc)] set; }
+        [DispId(0xbd)]
+        int xPERMISO_dst_merc { [DispId(0xbd)] get; [DispId(0xbd)] set; }
+        [DispId(190)]
+        string bITEMpro_codigo_ncm { [DispId(190)] get; [DispId(190)] set; }
+        [DispId(0xbf)]
+        string bITEMpro_codigo_sec { [DispId(0xbf)] get; [DispId(0xbf)] set; }
+        [DispId(0xc0)]
+        string bITEMpro_ds { [DispId(0xc0)] get; [DispId(0xc0)] set; }
+        [DispId(0xc1)]
+        double bITEMpro_qty { [DispId(0xc1)] get; [DispId(0xc1)] set; }
+        [DispId(0xc2)]
+        int bITEMpro_umed { [DispId(0xc2)] get; [DispId(0xc2)] set; }
+        [DispId(0xc3)]
+        double bITEMpro_precio_uni { [DispId(0xc3)] get; [DispId(0xc3)] set; }
+        [DispId(0xc4)]
+        double bITEMimp_bonif { [DispId(0xc4)] get; [DispId(0xc4)] set; }
+        [DispId(0xc5)]
+        double bITEMimp_total { [DispId(0xc5)] get; [DispId(0xc5)] set; }
+        [DispId(0xc6)]
+        string sItemPoliza { [DispId(0xc6)] get; [DispId(0xc6)] set; }
+        [DispId(0xc7)]
+        string sItemEndoso { [DispId(0xc7)] get; [DispId(0xc7)] set; }
+        [DispId(200)]
+        string sItemds { [DispId(200)] get; [DispId(200)] set; }
+        [DispId(0xc9)]
+        double sItemqty { [DispId(0xc9)] get; [DispId(0xc9)] set; }
+        [DispId(0xca)]
+        double sItemprecio_uni { [DispId(0xca)] get; [DispId(0xca)] set; }
+        [DispId(0xcb)]
+        double sItemimp_bonif { [DispId(0xcb)] get; [DispId(0xcb)] set; }
+        [DispId(0xcc)]
+        double sItemimp_total { [DispId(0xcc)] get; [DispId(0xcc)] set; }
+        [DispId(0xcd)]
+        string sItemimp_moneda_vaseg { [DispId(0xcd)] get; [DispId(0xcd)] set; }
+        [DispId(0xce)]
+        double sItemimp_valor_aseg { [DispId(0xce)] get; [DispId(0xce)] set; }
+        [DispId(0xcf)]
+        int sItemIva_id { [DispId(0xcf)] get; [DispId(0xcf)] set; }
+        [DispId(0xd0)]
+        int bITEMIva_id { [DispId(0xd0)] get; [DispId(0xd0)] set; }
+        [DispId(0xd1)]
+        int bTipo_Doc { [DispId(0xd1)] get; [DispId(0xd1)] set; }
+        [DispId(210)]
+        string bNro_doc { [DispId(210)] get; [DispId(210)] set; }
+        [DispId(0xd3)]
+        int bZona { [DispId(0xd3)] get; [DispId(0xd3)] set; }
+        [DispId(0xd4)]
+        int bTipo_cbte { [DispId(0xd4)] get; [DispId(0xd4)] set; }
+        [DispId(0xd5)]
+        int bPunto_vta { [DispId(0xd5)] get; [DispId(0xd5)] set; }
+        [DispId(0xd6)]
+        int bcbte_nro { [DispId(0xd6)] get; [DispId(0xd6)] set; }
+        [DispId(0xd7)]
+        double bImp_total { [DispId(0xd7)] get; [DispId(0xd7)] set; }
+        [DispId(0xd8)]
+        double bImp_total_conc { [DispId(0xd8)] get; [DispId(0xd8)] set; }
+        [DispId(0xd9)]
+        double bImp_neto { [DispId(0xd9)] get; [DispId(0xd9)] set; }
+        [DispId(0xda)]
+        double bimpto_liq { [DispId(0xda)] get; [DispId(0xda)] set; }
+        [DispId(0xdb)]
+        double bimpto_liq_rni { [DispId(0xdb)] get; [DispId(0xdb)] set; }
+        [DispId(220)]
+        double bimp_op_ex { [DispId(220)] get; [DispId(220)] set; }
+        [DispId(0xdd)]
+        double bImp_perc { [DispId(0xdd)] get; [DispId(0xdd)] set; }
+        [DispId(0xde)]
+        double bImp_perc_mun { [DispId(0xde)] get; [DispId(0xde)] set; }
+        [DispId(0xdf)]
+        double bImp_iibb { [DispId(0xdf)] get; [DispId(0xdf)] set; }
+        [DispId(0xe0)]
+        double bImp_internos { [DispId(0xe0)] get; [DispId(0xe0)] set; }
+        [DispId(0xe1)]
+        string bImp_moneda_id { [DispId(0xe1)] get; [DispId(0xe1)] set; }
+        [DispId(0xe2)]
+        double bImp_moneda_ctz { [DispId(0xe2)] get; [DispId(0xe2)] set; }
+        [DispId(0xe3)]
+        string bFecha_cbte { [DispId(0xe3)] get; [DispId(0xe3)] set; }
+        [DispId(0xe4)]
+        string bFecha_cbte_orig { [DispId(0xe4)] get; [DispId(0xe4)] set; }
+        [DispId(0xe5)]
+        string bFecha_cbte_cae { [DispId(0xe5)] get; [DispId(0xe5)] set; }
+        [DispId(230)]
+        string bFecha_cae { [DispId(230)] get; [DispId(230)] set; }
+        [DispId(0xe7)]
+        int sTipo_Doc { [DispId(0xe7)] get; [DispId(0xe7)] set; }
+        [DispId(0xe8)]
+        string sNro_doc { [DispId(0xe8)] get; [DispId(0xe8)] set; }
+        [DispId(0xe9)]
+        int sTipo_cbte { [DispId(0xe9)] get; [DispId(0xe9)] set; }
+        [DispId(0xea)]
+        int sPunto_vta { [DispId(0xea)] get; [DispId(0xea)] set; }
+        [DispId(0xeb)]
+        int scbte_nro { [DispId(0xeb)] get; [DispId(0xeb)] set; }
+        [DispId(0xec)]
+        double sImp_total { [DispId(0xec)] get; [DispId(0xec)] set; }
+        [DispId(0xed)]
+        double sImp_total_conc { [DispId(0xed)] get; [DispId(0xed)] set; }
+        [DispId(0xee)]
+        double sImp_neto { [DispId(0xee)] get; [DispId(0xee)] set; }
+        [DispId(0xef)]
+        double simpto_liq { [DispId(0xef)] get; [DispId(0xef)] set; }
+        [DispId(240)]
+        double simpto_liq_rni { [DispId(240)] get; [DispId(240)] set; }
+        [DispId(0xf1)]
+        double simp_op_ex { [DispId(0xf1)] get; [DispId(0xf1)] set; }
+        [DispId(0xf2)]
+        double sImp_perc { [DispId(0xf2)] get; [DispId(0xf2)] set; }
+        [DispId(0xf3)]
+        double sImp_perc_mun { [DispId(0xf3)] get; [DispId(0xf3)] set; }
+        [DispId(0xf4)]
+        double sImp_iibb { [DispId(0xf4)] get; [DispId(0xf4)] set; }
+        [DispId(0xf5)]
+        double sImp_internos { [DispId(0xf5)] get; [DispId(0xf5)] set; }
+        [DispId(0xf6)]
+        string sImp_moneda_id { [DispId(0xf6)] get; [DispId(0xf6)] set; }
+        [DispId(0xf7)]
+        double sImp_moneda_ctz { [DispId(0xf7)] get; [DispId(0xf7)] set; }
+        [DispId(0xf8)]
+        double sImp_otrib_prov { [DispId(0xf8)] get; [DispId(0xf8)] set; }
+        [DispId(0xf9)]
+        string sFecha_cbte { [DispId(0xf9)] get; [DispId(0xf9)] set; }
+        [DispId(250)]
+        string sFecha_cbte_orig { [DispId(250)] get; [DispId(250)] set; }
+        [DispId(0xfb)]
+        string sFecha_cbte_cae { [DispId(0xfb)] get; [DispId(0xfb)] set; }
+        [DispId(0xfc)]
+        string sFecha_cae { [DispId(0xfc)] get; [DispId(0xfc)] set; }
+        [DispId(0xfd)]
+        string dRol { [DispId(0xfd)] get; [DispId(0xfd)] set; }
+        [DispId(0xfe)]
+        string dTipoAgente { [DispId(0xfe)] get; [DispId(0xfe)] set; }
+        [DispId(0xff)]
+        string dNroLegajo { [DispId(0xff)] get; [DispId(0xff)] set; }
+        [DispId(0x100)]
+        DateTime dFechaHoraAcept { [DispId(0x100)] get; [DispId(0x100)] set; }
+        [DispId(0x101)]
+        string dFechaHoraAceptS { [DispId(0x101)] get; [DispId(0x101)] set; }
+        [DispId(0x102)]
+        string dCuitDeclarante { [DispId(0x102)] get; [DispId(0x102)] set; }
+        [DispId(0x103)]
+        string dCuitPSad { [DispId(0x103)] get; [DispId(0x103)] set; }
+        [DispId(260)]
+        string dCuitIE { [DispId(260)] get; [DispId(260)] set; }
+        [DispId(0x105)]
+        string dCuitATA { [DispId(0x105)] get; [DispId(0x105)] set; }
+        [DispId(0x106)]
+        string dCodigo { [DispId(0x106)] get; [DispId(0x106)] set; }
+        [DispId(0x107)]
+        string dURL { [DispId(0x107)] get; [DispId(0x107)] set; }
+        [DispId(0x108)]
+        string dTicket { [DispId(0x108)] get; [DispId(0x108)] set; }
+        [DispId(0x109)]
+        string dHashing { [DispId(0x109)] get; [DispId(0x109)] set; }
+        [DispId(0x10a)]
+        int dCantidadTotal { [DispId(0x10a)] get; [DispId(0x10a)] set; }
+        [DispId(0x10b)]
+        string xFecha_cbte { [DispId(0x10b)] get; [DispId(0x10b)] set; }
+        [DispId(0x10c)]
+        int xPunto_vta { [DispId(0x10c)] get; [DispId(0x10c)] set; }
+        [DispId(0x10d)]
+        int xtipo_cbte { [DispId(0x10d)] get; [DispId(0x10d)] set; }
+        [DispId(270)]
+        long xCbte_nro { [DispId(270)] get; [DispId(270)] set; }
+        [DispId(0x10f)]
+        string xCbte_nroS { [DispId(0x10f)] get; [DispId(0x10f)] set; }
+        [DispId(0x110)]
+        int xtipo_expo { [DispId(0x110)] get; [DispId(0x110)] set; }
+        [DispId(0x111)]
+        string xPermiso_existente { [DispId(0x111)] get; [DispId(0x111)] set; }
+        [DispId(0x112)]
+        string xPermiso_existenteS { [DispId(0x112)] get; [DispId(0x112)] set; }
+        [DispId(0x113)]
+        int xDst_cmp { [DispId(0x113)] get; [DispId(0x113)] set; }
+        [DispId(0x114)]
+        string xCliente { [DispId(0x114)] get; [DispId(0x114)] set; }
+        [DispId(0x115)]
+        long xCuit_pais_cliente { [DispId(0x115)] get; [DispId(0x115)] set; }
+        [DispId(0x116)]
+        string xCuit_pais_clienteS { [DispId(0x116)] get; [DispId(0x116)] set; }
+        [DispId(0x117)]
+        string xDomicilio_cliente { [DispId(0x117)] get; [DispId(0x117)] set; }
+        [DispId(280)]
+        string xId_impositivo { [DispId(280)] get; [DispId(280)] set; }
+        [DispId(0x119)]
+        string xMoneda_id { [DispId(0x119)] get; [DispId(0x119)] set; }
+        [DispId(0x11a)]
+        string xMoneda_idS { [DispId(0x11a)] get; [DispId(0x11a)] set; }
+        [DispId(0x11b)]
+        double xMoneda_ctz { [DispId(0x11b)] get; [DispId(0x11b)] set; }
+        [DispId(0x11c)]
+        string xMoneda_ctzS { [DispId(0x11c)] get; [DispId(0x11c)] set; }
+        [DispId(0x11d)]
+        string xObs_comerciales { [DispId(0x11d)] get; [DispId(0x11d)] set; }
+        [DispId(0x11e)]
+        double xImp_total { [DispId(0x11e)] get; [DispId(0x11e)] set; }
+        [DispId(0x11f)]
+        string xObs { [DispId(0x11f)] get; [DispId(0x11f)] set; }
+        [DispId(0x120)]
+        string xForma_pago { [DispId(0x120)] get; [DispId(0x120)] set; }
+        [DispId(0x121)]
+        string xIncoTerms { [DispId(0x121)] get; [DispId(0x121)] set; }
+        [DispId(290)]
+        string xIncoTerms_ds { [DispId(290)] get; [DispId(290)] set; }
+        [DispId(0x123)]
+        string xIdioma_cbte { [DispId(0x123)] get; [DispId(0x123)] set; }
+        [DispId(0x124)]
+        string FERespuestaDetalleNor_doc { [DispId(0x124)] get; }
+        [DispId(0x125)]
+        Factura.TipoDocumento FERespuestaDetalleTipo_doc { [DispId(0x125)] get; }
+        [DispId(0x126)]
+        string FERespuestaId { [DispId(0x126)] get; }
+        [DispId(0x127)]
+        string FERespuestaCuit { [DispId(0x127)] get; }
+        [DispId(0x128)]
+        string FERespuestaFecha_cae { [DispId(0x128)] get; }
+        [DispId(0x129)]
+        int FERespuestaCantidadReg { [DispId(0x129)] get; }
+        [DispId(0x12a)]
+        string FERespuestaResultado { [DispId(0x12a)] get; }
+        [DispId(0x12b)]
+        string FERespuestaMotivo { [DispId(0x12b)] get; }
+        [DispId(300)]
+        string FERespuestaReproceso { [DispId(300)] get; }
+        [DispId(0x12d)]
+        int FERespuestaPresta_serv { [DispId(0x12d)] get; }
+        [DispId(0x12e)]
+        string FEDetalleNro_doc { [DispId(0x12e)] get; [DispId(0x12e)] set; }
+        [DispId(0x12f)]
+        Factura.TipoDocumento FEDetalleTipo_doc { [DispId(0x12f)] get; [DispId(0x12f)] set; }
+        [DispId(0x130)]
+        Factura.TipoComprobante FEDetalleTipo_cbte { [DispId(0x130)] get; [DispId(0x130)] set; }
+        [DispId(0x131)]
+        int FEDetallePunto_vta { [DispId(0x131)] get; [DispId(0x131)] set; }
+        [DispId(0x132)]
+        int FEDetalleCbt_desde { [DispId(0x132)] get; [DispId(0x132)] set; }
+        [DispId(0x133)]
+        string FEDetalleCbt_desdeS { [DispId(0x133)] get; [DispId(0x133)] set; }
+        [DispId(0x134)]
+        int FEDetalleCbt_hasta { [DispId(0x134)] get; [DispId(0x134)] set; }
+        [DispId(0x135)]
+        string FEDetalleCbt_hastaS { [DispId(0x135)] get; [DispId(0x135)] set; }
+        [DispId(310)]
+        double FEDetalleImp_total { [DispId(310)] get; [DispId(310)] set; }
+        [DispId(0x137)]
+        double FEDetalleImp_tot_conc { [DispId(0x137)] get; [DispId(0x137)] set; }
+        [DispId(0x138)]
+        double FEDetalleImp_neto { [DispId(0x138)] get; [DispId(0x138)] set; }
+        [DispId(0x139)]
+        double FEDetalleImpto_liq { [DispId(0x139)] get; [DispId(0x139)] set; }
+        [DispId(0x13a)]
+        double FEdetalleImto_liq_rni { [DispId(0x13a)] get; [DispId(0x13a)] set; }
+        [DispId(0x13b)]
+        double FEDetalleImp_op_ex { [DispId(0x13b)] get; [DispId(0x13b)] set; }
+        [DispId(0x13c)]
+        string FEDetalleFecha_serv_desde { [DispId(0x13c)] get; [DispId(0x13c)] set; }
+        [DispId(0x13d)]
+        string FEDetalleFecha_serv_hasta { [DispId(0x13d)] get; [DispId(0x13d)] set; }
+        [DispId(0x13e)]
+        string FEDetalleFecha_vence_pago { [DispId(0x13e)] get; [DispId(0x13e)] set; }
+        [DispId(0x13f)]
+        string FEDetalleFecha_cbte { [DispId(0x13f)] get; [DispId(0x13f)] set; }
+        [DispId(320)]
+        int FECabeceraCantReg { [DispId(320)] get; [DispId(320)] set; }
+        [DispId(0x141)]
+        int FECabeceraPresta_serv { [DispId(0x141)] get; [DispId(0x141)] set; }
+        [DispId(0x142)]
+        DateTime TicketHora { [DispId(0x142)] get; }
+        [DispId(0x143)]
+        DateTime bTicketHora { [DispId(0x143)] get; }
+        [DispId(0x144)]
+        DateTime xTicketHora { [DispId(0x144)] get; }
+        [DispId(0x145)]
+        DateTime f1TicketHora { [DispId(0x145)] get; }
+        [DispId(0x146)]
+        DateTime fxTicketHora { [DispId(0x146)] get; }
+        [DispId(0x147)]
+        DateTime mTicketHora { [DispId(0x147)] get; }
+        [DispId(0x148)]
+        DateTime dTicketHora { [DispId(0x148)] get; }
+        [DispId(0x149)]
+        DateTime gTicketHora { [DispId(0x149)] get; }
+        [DispId(330)]
+        DateTime oTicketHora { [DispId(330)] get; }
+        [DispId(0x14b)]
+        DateTime sTicketHora { [DispId(0x14b)] get; }
+        [DispId(0x14c)]
+        DateTime TicketHoraVencimiento { [DispId(0x14c)] get; }
+        [DispId(0x14d)]
+        DateTime bTicketHoraVencimiento { [DispId(0x14d)] get; }
+        [DispId(0x14e)]
+        DateTime xTicketHoraVencimiento { [DispId(0x14e)] get; }
+        [DispId(0x14f)]
+        DateTime f1TicketHoraVencimiento { [DispId(0x14f)] get; }
+        [DispId(0x150)]
+        DateTime fxTicketHoraVencimiento { [DispId(0x150)] get; }
+        [DispId(0x151)]
+        DateTime mTicketHoraVencimiento { [DispId(0x151)] get; }
+        [DispId(0x152)]
+        DateTime dTicketHoraVencimiento { [DispId(0x152)] get; }
+        [DispId(0x153)]
+        DateTime gTicketHoraVencimiento { [DispId(0x153)] get; }
+        [DispId(340)]
+        DateTime oTicketHoraVencimiento { [DispId(340)] get; }
+        [DispId(0x155)]
+        DateTime sTicketHoraVencimiento { [DispId(0x155)] get; }
+        [DispId(0x156)]
+        bool TicketValido { [DispId(0x156)] get; }
+        [DispId(0x157)]
+        bool BTicketValido { [DispId(0x157)] get; }
+        [DispId(0x158)]
+        bool xTicketValido { [DispId(0x158)] get; }
+        [DispId(0x159)]
+        bool f1TicketValido { [DispId(0x159)] get; }
+        [DispId(0x15a)]
+        bool fxTicketValido { [DispId(0x15a)] get; }
+        [DispId(0x15b)]
+        bool mTicketValido { [DispId(0x15b)] get; }
+        [DispId(0x15c)]
+        bool dTicketValido { [DispId(0x15c)] get; }
+        [DispId(0x15d)]
+        bool gTicketValido { [DispId(0x15d)] get; }
+        [DispId(350)]
+        bool oTicketValido { [DispId(350)] get; }
+        [DispId(0x15f)]
+        bool sTicketValido { [DispId(0x15f)] get; }
+        [DispId(0x160)]
+        string cuit { [DispId(0x160)] get; }
+        [DispId(0x161)]
+        string token { [DispId(0x161)] get; [DispId(0x161)] set; }
+        [DispId(0x162)]
+        string btoken { [DispId(0x162)] get; [DispId(0x162)] set; }
+        [DispId(0x163)]
+        string xtoken { [DispId(0x163)] get; [DispId(0x163)] set; }
+        [DispId(0x164)]
+        string f1token { [DispId(0x164)] get; [DispId(0x164)] set; }
+        [DispId(0x165)]
+        string fxtoken { [DispId(0x165)] get; [DispId(0x165)] set; }
+        [DispId(0x166)]
+        string mtoken { [DispId(0x166)] get; [DispId(0x166)] set; }
+        [DispId(0x167)]
+        string dtoken { [DispId(0x167)] get; [DispId(0x167)] set; }
+        [DispId(360)]
+        string gtoken { [DispId(360)] get; [DispId(360)] set; }
+        [DispId(0x169)]
+        string otoken { [DispId(0x169)] get; [DispId(0x169)] set; }
+        [DispId(0x16a)]
+        string stoken { [DispId(0x16a)] get; [DispId(0x16a)] set; }
+        [DispId(0x16b)]
+        string sign { [DispId(0x16b)] get; [DispId(0x16b)] set; }
+        [DispId(0x16c)]
+        string bsign { [DispId(0x16c)] get; [DispId(0x16c)] set; }
+        [DispId(0x16d)]
+        string xsign { [DispId(0x16d)] get; [DispId(0x16d)] set; }
+        [DispId(0x16e)]
+        string f1sign { [DispId(0x16e)] get; [DispId(0x16e)] set; }
+        [DispId(0x16f)]
+        string fxsign { [DispId(0x16f)] get; [DispId(0x16f)] set; }
+        [DispId(0x170)]
+        string msign { [DispId(0x170)] get; [DispId(0x170)] set; }
+        [DispId(0x171)]
+        string dsign { [DispId(0x171)] get; [DispId(0x171)] set; }
+        [DispId(370)]
+        string gsign { [DispId(370)] get; [DispId(370)] set; }
+        [DispId(0x173)]
+        string osign { [DispId(0x173)] get; [DispId(0x173)] set; }
+        [DispId(0x174)]
+        string ssign { [DispId(0x174)] get; [DispId(0x174)] set; }
+        [DispId(0x175)]
+        string Identificador { [DispId(0x175)] get; [DispId(0x175)] set; }
+        [DispId(0x176)]
+        string UltimoMensajeError { [DispId(0x176)] get; }
+        [DispId(0x177)]
+        int UltimoNumeroError { [DispId(0x177)] get; }
+        [DispId(0x178)]
+        Factura.modoFiscal Modo { [DispId(0x178)] get; [DispId(0x178)] set; }
+        [DispId(0x179)]
+        string RutaArchivoCertificado { [DispId(0x179)] get; [DispId(0x179)] set; }
+        [DispId(0x17a)]
+        string RespuetaDummyAppServer { [DispId(0x17a)] get; }
+        [DispId(0x17b)]
+        string RespuestaDummyAuthServer { [DispId(0x17b)] get; }
+        [DispId(380)]
+        string RespuestaDummyDbServer { [DispId(380)] get; }
+        [DispId(0x17d)]
+        string BRespuetaDummyAppServer { [DispId(0x17d)] get; }
+        [DispId(0x17e)]
+        string BRespuestaDummyAuthServer { [DispId(0x17e)] get; }
+        [DispId(0x17f)]
+        string BRespuestaDummyDbServer { [DispId(0x17f)] get; }
+        [DispId(0x180)]
+        string xRespuetaDummyAppServer { [DispId(0x180)] get; }
+        [DispId(0x181)]
+        string xRespuestaDummyAuthServer { [DispId(0x181)] get; }
+        [DispId(0x182)]
+        string xRespuestaDummyDbServer { [DispId(0x182)] get; }
+        [DispId(0x183)]
+        string f1RespuetaDummyAppServer { [DispId(0x183)] get; }
+        [DispId(0x184)]
+        string f1RespuestaDummyAuthServer { [DispId(0x184)] get; }
+        [DispId(0x185)]
+        string fxRespuetaDummyAppServer { [DispId(0x185)] get; }
+        [DispId(390)]
+        string fxRespuestaDummyAuthServer { [DispId(390)] get; }
+        [DispId(0x187)]
+        int F1RespuestaCantidadReg { [DispId(0x187)] get; }
+        [DispId(0x188)]
+        int F1RespuestaCAEAItemCantidad { [DispId(0x188)] get; }
+        [DispId(0x189)]
+        int FxRespuestaCAEAItemCantidad { [DispId(0x189)] get; }
+        [DispId(0x18a)]
+        string F1RespuestaFchProceso { [DispId(0x18a)] get; }
+        [DispId(0x18b)]
+        string F1RespuestaResultado { [DispId(0x18b)] get; }
+        [DispId(0x18c)]
+        string fxRespuestaResultado { [DispId(0x18c)] get; }
+        [DispId(0x18d)]
+        string fxRespuestaCAE { [DispId(0x18d)] get; }
+        [DispId(0x18e)]
+        string fxRespuestaCUIT { [DispId(0x18e)] get; }
+        [DispId(0x18f)]
+        int fxRespuestaNumeroComprobante { [DispId(0x18f)] get; }
+        [DispId(400)]
+        int fxRespuestaCodigoTipoComprobante { [DispId(400)] get; }
+        [DispId(0x191)]
+        int fxRespuestaNumeroPuntoVenta { [DispId(0x191)] get; }
+        [DispId(0x192)]
+        string fxRespuestaFechaEmision { [DispId(0x192)] get; }
+        [DispId(0x193)]
+        string fxRespuestaFechaVencimientoCAE { [DispId(0x193)] get; }
+        [DispId(0x194)]
+        string F1RespuestaReProceso { [DispId(0x194)] get; }
+        [DispId(0x195)]
+        string f1RespuestaDummyDbServer { [DispId(0x195)] get; }
+        [DispId(0x196)]
+        string mRespuetaDummyAppServer { [DispId(0x196)] get; }
+        [DispId(0x197)]
+        string mRespuestaDummyAuthServer { [DispId(0x197)] get; }
+        [DispId(0x198)]
+        string mRespuestaDummyDbServer { [DispId(0x198)] get; }
+        [DispId(0x199)]
+        string dRespuetaDummyAppServer { [DispId(0x199)] get; }
+        [DispId(410)]
+        string dRespuestaDummyAuthServer { [DispId(410)] get; }
+        [DispId(0x19b)]
+        string dRespuestaDummyDbServer { [DispId(0x19b)] get; }
+        [DispId(0x19c)]
+        string gRespuetaDummyAppServer { [DispId(0x19c)] get; }
+        [DispId(0x19d)]
+        string gRespuestaDummyAuthServer { [DispId(0x19d)] get; }
+        [DispId(0x19e)]
+        string gRespuestaDummyDbServer { [DispId(0x19e)] get; }
+        [DispId(0x19f)]
+        string oRespuetaDummyAppServer { [DispId(0x19f)] get; }
+        [DispId(0x1a0)]
+        string oRespuestaDummyAuthServer { [DispId(0x1a0)] get; }
+        [DispId(0x1a1)]
+        string oRespuestaDummyDbServer { [DispId(0x1a1)] get; }
+        [DispId(0x1a2)]
+        string sRespuetaDummyAppServer { [DispId(0x1a2)] get; }
+        [DispId(0x1a3)]
+        string sRespuestaDummyAuthServer { [DispId(0x1a3)] get; }
+        [DispId(420)]
+        string sRespuestaDummyDbServer { [DispId(420)] get; }
+        [DispId(0x1a5)]
+        int F1RespuestaDetalleConcepto { [DispId(0x1a5)] get; }
+        [DispId(0x1a6)]
+        int F1RespuestaDetalleDocTipo { [DispId(0x1a6)] get; }
+        [DispId(0x1a7)]
+        int F1RespuestaDetalleCbteDesde { [DispId(0x1a7)] get; }
+        [DispId(0x1a8)]
+        string F1RespuestaDetalleCbteDesdeS { [DispId(0x1a8)] get; }
+        [DispId(0x1a9)]
+        int F1RespuestaDetalleCbteHasta { [DispId(0x1a9)] get; }
+        [DispId(0x1aa)]
+        string F1RespuestaDetalleCbteHastaS { [DispId(0x1aa)] get; }
+        [DispId(0x1ab)]
+        string F1RespuestaDetalleResultado { [DispId(0x1ab)] get; }
+        [DispId(0x1ac)]
+        string F1RespuestaDetalleCAEA { [DispId(0x1ac)] get; }
+        [DispId(0x1ad)]
+        string F1RespuestaDetalleCodAutorizacion { [DispId(0x1ad)] get; }
+        [DispId(430)]
+        string F1RespuestaDetalleEmisionTipo { [DispId(430)] get; }
+        [DispId(0x1af)]
+        string F1RespuestaDetalleCae { [DispId(0x1af)] get; }
+        [DispId(0x1b0)]
+        string F1RespuestaDetalleCbteFch { [DispId(0x1b0)] get; }
+        [DispId(0x1b1)]
+        string F1RespuestaDetalleCAEFchVto { [DispId(0x1b1)] get; }
+        [DispId(0x1b2)]
+        string F1RespuestaDetalleDocNro { [DispId(0x1b2)] get; }
+        [DispId(0x1b3)]
+        int F1RespuestaDetalleObservacionItemCantidad { [DispId(0x1b3)] get; }
+        [DispId(0x1b4)]
+        int FxRespuestaObservacionItemCantidad { [DispId(0x1b4)] get; }
+        [DispId(0x1b5)]
+        int F1RespuestaDetalleObservacionCode { [DispId(0x1b5)] get; }
+        [DispId(0x1b6)]
+        string F1RespuestaDetalleObservacionMsg { [DispId(0x1b6)] get; }
+        [DispId(0x1b7)]
+        string F1RespuestaDetalleObservacionMsg1 { [DispId(0x1b7)] get; }
+        [DispId(440)]
+        string FxRespuestaObservacionDescripcion1 { [DispId(440)] get; }
+        [DispId(0x1b9)]
+        int FxRespuestaObservacionCodigo1 { [DispId(0x1b9)] get; }
+        [DispId(0x1ba)]
+        int fxListaCodigo { [DispId(0x1ba)] get; }
+        [DispId(0x1bb)]
+        string fxListaDescripcion { [DispId(0x1bb)] get; }
+        [DispId(0x1bc)]
+        string fxListaCodigo2 { [DispId(0x1bc)] get; }
+        [DispId(0x1bd)]
+        string fxListaDesde { [DispId(0x1bd)] get; }
+        [DispId(0x1be)]
+        string fxListaHasta { [DispId(0x1be)] get; }
+        [DispId(0x1bf)]
+        int F1RespuestaDetalleObservacionCode1 { [DispId(0x1bf)] get; }
+        [DispId(0x1c0)]
+        string f1RespuestaMonedaId { [DispId(0x1c0)] get; }
+        [DispId(0x1c1)]
+        string f1RespuestaMonedaFchCotiz { [DispId(0x1c1)] get; }
+        [DispId(450)]
+        double f1RespuestaMonedaCotiz { [DispId(450)] get; }
+        [DispId(0x1c3)]
+        string f1RespuestaCAEA { [DispId(0x1c3)] get; }
+        [DispId(0x1c4)]
+        int f1RespuestaCAEAPeriodo { [DispId(0x1c4)] get; }
+        [DispId(0x1c5)]
+        string f1RespuestaCAEAPeriodoS { [DispId(0x1c5)] get; }
+        [DispId(0x1c6)]
+        int f1RespuestaCAEAOrden { [DispId(0x1c6)] get; }
+        [DispId(0x1c7)]
+        string f1RespuestaCAEAOrdenS { [DispId(0x1c7)] get; }
+        [DispId(0x1c8)]
+        string f1RespuestaCAEAFchVigDesde { [DispId(0x1c8)] get; }
+        [DispId(0x1c9)]
+        string f1RespuestaCAEAFchVigHasta { [DispId(0x1c9)] get; }
+        [DispId(0x1ca)]
+        string f1RespuestaCAEAFchTopeInf { [DispId(0x1ca)] get; }
+        [DispId(0x1cb)]
+        string f1RespuestaCAEAFchProceso { [DispId(0x1cb)] get; }
+        [DispId(460)]
+        string fxRespuestaCAEA { [DispId(460)] get; }
+        [DispId(0x1cd)]
+        int fxRespuestaCAEAPeriodo { [DispId(0x1cd)] get; }
+        [DispId(0x1ce)]
+        string fxRespuestaCAEAPeriodoS { [DispId(0x1ce)] get; }
+        [DispId(0x1cf)]
+        int fxRespuestaCAEAOrden { [DispId(0x1cf)] get; }
+        [DispId(0x1d0)]
+        string fxRespuestaCAEAOrdenS { [DispId(0x1d0)] get; }
+        [DispId(0x1d1)]
+        string fxRespuestaCAEAFechaDesde { [DispId(0x1d1)] get; }
+        [DispId(0x1d2)]
+        string fxRespuestaCAEAFechaHasta { [DispId(0x1d2)] get; }
+        [DispId(0x1d3)]
+        string fxRespuestaCAEAFechaTopeInforme { [DispId(0x1d3)] get; }
+        [DispId(0x1d4)]
+        string fxRespuestaCAEAFechaProceso { [DispId(0x1d4)] get; }
+        [DispId(0x1d5)]
+        int indice { [DispId(0x1d5)] get; [DispId(0x1d5)] set; }
+        [DispId(470)]
+        int f1Indice { [DispId(470)] get; [DispId(470)] set; }
+        [DispId(0x1d7)]
+        string Autenticidad { [DispId(0x1d7)] get; [DispId(0x1d7)] set; }
+        [DispId(0x1d8)]
+        string NombreServicio { [DispId(0x1d8)] get; [DispId(0x1d8)] set; }
+        [DispId(0x1d9)]
+        string DireccionServicio { [DispId(0x1d9)] get; [DispId(0x1d9)] set; }
+        [DispId(0x1da)]
+        string DireccionServicioURL { [DispId(0x1da)] get; [DispId(0x1da)] set; }
+        [DispId(0x1db)]
+        string fxDireccionServicioURL { [DispId(0x1db)] get; [DispId(0x1db)] set; }
+        [DispId(0x1dc)]
+        string f1DireccionServicioURL { [DispId(0x1dc)] get; [DispId(0x1dc)] set; }
+        [DispId(0x1dd)]
+        string bDireccionServicio { [DispId(0x1dd)] get; [DispId(0x1dd)] set; }
+        [DispId(0x1de)]
+        string bDireccionServicioURL { [DispId(0x1de)] get; [DispId(0x1de)] set; }
+        [DispId(0x1df)]
+        string xDireccionServicioURL { [DispId(0x1df)] get; [DispId(0x1df)] set; }
+        [DispId(480)]
+        string bMonedaId { [DispId(480)] get; }
+        [DispId(0x1e1)]
+        string bMonedaDS { [DispId(0x1e1)] get; }
+        [DispId(0x1e2)]
+        string bMonedaVig_desde { [DispId(0x1e2)] get; }
+        [DispId(0x1e3)]
+        string bMonedaVig_hasta { [DispId(0x1e3)] get; }
+        [DispId(0x1e4)]
+        string xMonedaId { [DispId(0x1e4)] get; }
+        [DispId(0x1e5)]
+        string xMonedaDS { [DispId(0x1e5)] get; }
+        [DispId(0x1e6)]
+        string xMonedaVig_desde { [DispId(0x1e6)] get; }
+        [DispId(0x1e7)]
+        string xMonedaVig_HASTA { [DispId(0x1e7)] get; }
+        [DispId(0x1e8)]
+        int xPtoVenta_pve_nro { [DispId(0x1e8)] get; }
+        [DispId(0x1e9)]
+        string xPtoVenta_pvo_bloqueado { [DispId(0x1e9)] get; }
+        [DispId(490)]
+        string xPtoVenta_pvo_fchbaja { [DispId(490)] get; }
+        [DispId(0x1eb)]
+        string xPais_dst_codigo { [DispId(0x1eb)] get; }
+        [DispId(0x1ec)]
+        string xPais_dst_ds { [DispId(0x1ec)] get; }
+        [DispId(0x1ed)]
+        string xCuit_dst_cuit { [DispId(0x1ed)] get; }
+        [DispId(0x1ee)]
+        string xCuit_dst_ds { [DispId(0x1ee)] get; }
+        [DispId(0x1ef)]
+        string xIdioma_idi_Id { [DispId(0x1ef)] get; }
+        [DispId(0x1f0)]
+        string xIdioma_idi_ds { [DispId(0x1f0)] get; }
+        [DispId(0x1f1)]
+        string xIdioma_idi_Vig_desde { [DispId(0x1f1)] get; }
+        [DispId(0x1f2)]
+        string xIdioma_idi_Vig_hasta { [DispId(0x1f2)] get; }
+        [DispId(0x1f3)]
+        string xIncoTErms_inc_Id { [DispId(0x1f3)] get; }
+        [DispId(500)]
+        string xIncoTErms_inc_ds { [DispId(500)] get; }
+        [DispId(0x1f5)]
+        string xIncoTErms_inc_Vig_desde { [DispId(0x1f5)] get; }
+        [DispId(0x1f6)]
+        string xIncoTErms_inc_Vig_hasta { [DispId(0x1f6)] get; }
+        [DispId(0x1f7)]
+        string xTipo_expo_tex_Id { [DispId(0x1f7)] get; }
+        [DispId(0x1f8)]
+        string xTipo_expo_tex_ds { [DispId(0x1f8)] get; }
+        [DispId(0x1f9)]
+        string xTipo_expo_tex_Vig_desde { [DispId(0x1f9)] get; }
+        [DispId(0x1fa)]
+        string xTipo_expo_tex_Vig_hasta { [DispId(0x1fa)] get; }
+        [DispId(0x1fb)]
+        string bNombreServicio { [DispId(0x1fb)] get; [DispId(0x1fb)] set; }
+        [DispId(0x1fc)]
+        string sMonedaId { [DispId(0x1fc)] get; }
+        [DispId(0x1fd)]
+        string sMonedaDS { [DispId(0x1fd)] get; }
+        [DispId(510)]
+        string sMonedaVig_desde { [DispId(510)] get; }
+        [DispId(0x1ff)]
+        string sMonedaVig_hasta { [DispId(0x1ff)] get; }
+        [DispId(0x200)]
+        int bZonaId { [DispId(0x200)] get; }
+        [DispId(0x201)]
+        string bZonaDS { [DispId(0x201)] get; }
+        [DispId(0x202)]
+        string bZonaVig_desde { [DispId(0x202)] get; }
+        [DispId(0x203)]
+        string bZonaVig_hasta { [DispId(0x203)] get; }
+        [DispId(0x204)]
+        int bUMedId { [DispId(0x204)] get; }
+        [DispId(0x205)]
+        string bUMedDS { [DispId(0x205)] get; }
+        [DispId(0x206)]
+        string bUMedVig_desde { [DispId(0x206)] get; }
+        [DispId(0x207)]
+        string bUMedVig_hasta { [DispId(0x207)] get; }
+        [DispId(520)]
+        int xUMed_Id { [DispId(520)] get; }
+        [DispId(0x209)]
+        string xUMed_DS { [DispId(0x209)] get; }
+        [DispId(0x20a)]
+        string xUMed_Vig_desde { [DispId(0x20a)] get; }
+        [DispId(0x20b)]
+        string xUMed_Vig_hasta { [DispId(0x20b)] get; }
+        [DispId(0x20c)]
+        int bTipoDocID { [DispId(0x20c)] get; }
+        [DispId(0x20d)]
+        string bTipoDocDS { [DispId(0x20d)] get; }
+        [DispId(0x20e)]
+        string bTipoDocVig_desde { [DispId(0x20e)] get; }
+        [DispId(0x20f)]
+        string bTipoDocVig_hasta { [DispId(0x20f)] get; }
+        [DispId(0x210)]
+        int sTipoDocID { [DispId(0x210)] get; }
+        [DispId(0x211)]
+        string sTipoDocDS { [DispId(0x211)] get; }
+        [DispId(530)]
+        string sTipoDocVig_desde { [DispId(530)] get; }
+        [DispId(0x213)]
+        string sTipoDocVig_hasta { [DispId(0x213)] get; }
+        [DispId(0x214)]
+        int bTipoIvaId { [DispId(0x214)] get; }
+        [DispId(0x215)]
+        string bTipoIvaDS { [DispId(0x215)] get; }
+        [DispId(0x216)]
+        string bTipoIvaVig_desde { [DispId(0x216)] get; }
+        [DispId(0x217)]
+        string bTipoIvaVig_hasta { [DispId(0x217)] get; }
+        [DispId(0x218)]
+        int sTipoIvaId { [DispId(0x218)] get; }
+        [DispId(0x219)]
+        string sTipoIvaDS { [DispId(0x219)] get; }
+        [DispId(0x21a)]
+        string sTipoIvaVig_desde { [DispId(0x21a)] get; }
+        [DispId(0x21b)]
+        string sTipoIvaVig_hasta { [DispId(0x21b)] get; }
+        [DispId(540)]
+        int bTipo_cpteId { [DispId(540)] get; }
+        [DispId(0x21d)]
+        string bTipo_cpteDS { [DispId(0x21d)] get; }
+        [DispId(0x21e)]
+        string bTipo_cpteVig_desde { [DispId(0x21e)] get; }
+        [DispId(0x21f)]
+        string bTipo_cpteVig_hasta { [DispId(0x21f)] get; }
+        [DispId(0x220)]
+        int bTipo_cbteId { [DispId(0x220)] get; }
+        [DispId(0x221)]
+        string bTipo_cbteDS { [DispId(0x221)] get; }
+        [DispId(0x222)]
+        string bTipo_cbteVig_desde { [DispId(0x222)] get; }
+        [DispId(0x223)]
+        string bTipo_cbteVig_hasta { [DispId(0x223)] get; }
+        [DispId(0x224)]
+        int xTipo_cbte_Id { [DispId(0x224)] get; }
+        [DispId(0x225)]
+        string xTipo_cbte_DS { [DispId(0x225)] get; }
+        [DispId(550)]
+        string xTipo_cbte_Vig_desde { [DispId(550)] get; }
+        [DispId(0x227)]
+        string xTipo_cbte_Vig_hasta { [DispId(0x227)] get; }
+        [DispId(0x228)]
+        int f1TiposCbte_Id { [DispId(0x228)] get; }
+        [DispId(0x229)]
+        string f1TiposCbte_Desc { [DispId(0x229)] get; }
+        [DispId(0x22a)]
+        string f1TiposCbte_fchDesde { [DispId(0x22a)] get; }
+        [DispId(0x22b)]
+        string f1TiposCbte_fchHasta { [DispId(0x22b)] get; }
+        [DispId(0x22c)]
+        int f1TiposTributo_Id { [DispId(0x22c)] get; }
+        [DispId(0x22d)]
+        string f1TiposTributo_Desc { [DispId(0x22d)] get; }
+        [DispId(0x22e)]
+        string f1TiposTributo_fchDesde { [DispId(0x22e)] get; }
+        [DispId(0x22f)]
+        string f1TiposTributo_fchHasta { [DispId(0x22f)] get; }
+        [DispId(560)]
+        int f1TiposOpcional_Id { [DispId(560)] get; }
+        [DispId(0x231)]
+        string f1TiposOpcional_Desc { [DispId(0x231)] get; }
+        [DispId(0x232)]
+        string f1TiposOpcional_fchDesde { [DispId(0x232)] get; }
+        [DispId(0x233)]
+        string f1TiposOpcional_fchHasta { [DispId(0x233)] get; }
+        [DispId(0x234)]
+        string f1TiposMoneda_Id { [DispId(0x234)] get; }
+        [DispId(0x235)]
+        string f1TiposMoneda_Desc { [DispId(0x235)] get; }
+        [DispId(0x236)]
+        string f1TiposMoneda_fchDesde { [DispId(0x236)] get; }
+        [DispId(0x237)]
+        string f1TiposMoneda_fchHasta { [DispId(0x237)] get; }
+        [DispId(0x238)]
+        int f1TiposIva_Id { [DispId(0x238)] get; }
+        [DispId(0x239)]
+        string f1TiposIva_Desc { [DispId(0x239)] get; }
+        [DispId(570)]
+        string f1TiposIva_fchDesde { [DispId(570)] get; }
+        [DispId(0x23b)]
+        string f1TiposIva_fchHasta { [DispId(0x23b)] get; }
+        [DispId(0x23c)]
+        int f1TiposDoc_Id { [DispId(0x23c)] get; }
+        [DispId(0x23d)]
+        string f1TiposDoc_Desc { [DispId(0x23d)] get; }
+        [DispId(0x23e)]
+        string f1TiposDoc_fchDesde { [DispId(0x23e)] get; }
+        [DispId(0x23f)]
+        string f1TiposDoc_fchHasta { [DispId(0x23f)] get; }
+        [DispId(0x240)]
+        int f1PtosVenta_nro { [DispId(0x240)] get; }
+        [DispId(0x241)]
+        string f1PtosVenta_EmisisionTipo { [DispId(0x241)] get; }
+        [DispId(0x242)]
+        string f1PtosVenta_Bloqueado { [DispId(0x242)] get; }
+        [DispId(0x243)]
+        string f1PtosVenta_fchBaja { [DispId(0x243)] get; }
+        [DispId(580)]
+        int f1TiposConcepto_Id { [DispId(580)] get; }
+        [DispId(0x245)]
+        string f1TiposConcepto_Desc { [DispId(0x245)] get; }
+        [DispId(0x246)]
+        string f1TiposConcepto_fchDesde { [DispId(0x246)] get; }
+        [DispId(0x247)]
+        string f1TiposConcepto_fchHasta { [DispId(0x247)] get; }
+        [DispId(0x248)]
+        int f1ErrorCode { [DispId(0x248)] get; }
+        [DispId(0x249)]
+        int fxErrorCode { [DispId(0x249)] get; }
+        [DispId(0x24a)]
+        int fxObervacionCodigo { [DispId(0x24a)] get; }
+        [DispId(0x24b)]
+        string f1ErrorMsg { [DispId(0x24b)] get; }
+        [DispId(0x24c)]
+        string fxErrorMsg { [DispId(0x24c)] get; }
+        [DispId(0x24d)]
+        string fxObervacionDescripcion { [DispId(0x24d)] get; }
+        [DispId(590)]
+        int f1EventCode { [DispId(590)] get; }
+        [DispId(0x24f)]
+        int fxEventCode { [DispId(0x24f)] get; }
+        [DispId(0x250)]
+        string f1EventMsg { [DispId(0x250)] get; }
+        [DispId(0x251)]
+        string fxEventMsg { [DispId(0x251)] get; }
+        [DispId(0x252)]
+        string f1ErrorMsg1 { [DispId(0x252)] get; }
+        [DispId(0x253)]
+        string fxObervacionDescripcion1 { [DispId(0x253)] get; }
+        [DispId(0x254)]
+        int fxObervacionCodigo1 { [DispId(0x254)] get; }
+        [DispId(0x255)]
+        string fxErrorMsg1 { [DispId(0x255)] get; }
+        [DispId(0x256)]
+        string f1ErrorMsg2 { [DispId(0x256)] get; }
+        [DispId(0x257)]
+        string fxErrorMsg2 { [DispId(0x257)] get; }
+        [DispId(600)]
+        int f1ErrorCode1 { [DispId(600)] get; }
+        [DispId(0x259)]
+        int fxErrorCode1 { [DispId(0x259)] get; }
+        [DispId(0x25a)]
+        int f1ErrorCode2 { [DispId(0x25a)] get; }
+        [DispId(0x25b)]
+        int fxErrorCode2 { [DispId(0x25b)] get; }
+        [DispId(0x25c)]
+        string f1EventMsg1 { [DispId(0x25c)] get; }
+        [DispId(0x25d)]
+        string fxEventMsg1 { [DispId(0x25d)] get; }
+        [DispId(0x25e)]
+        string f1EventMsg2 { [DispId(0x25e)] get; }
+        [DispId(0x25f)]
+        string fxEventMsg2 { [DispId(0x25f)] get; }
+        [DispId(0x260)]
+        int f1EventCode1 { [DispId(0x260)] get; }
+        [DispId(0x261)]
+        int fxEventCode1 { [DispId(0x261)] get; }
+        [DispId(610)]
+        int f1EventCode2 { [DispId(610)] get; }
+        [DispId(0x263)]
+        int fxEventCode2 { [DispId(0x263)] get; }
+        [DispId(0x264)]
+        int sTipo_cbteId { [DispId(0x264)] get; }
+        [DispId(0x265)]
+        string sTipo_cbteDS { [DispId(0x265)] get; }
+        [DispId(0x266)]
+        string sTipo_cbteVig_desde { [DispId(0x266)] get; }
+        [DispId(0x267)]
+        string sTipo_cbteVig_hasta { [DispId(0x267)] get; }
+        [DispId(0x268)]
+        int sTipo_cpteId { [DispId(0x268)] get; }
+        [DispId(0x269)]
+        string sTipo_cpteDS { [DispId(0x269)] get; }
+        [DispId(0x26a)]
+        string sTipo_cpteVig_desde { [DispId(0x26a)] get; }
+        [DispId(0x26b)]
+        string sTipo_cpteVig_hasta { [DispId(0x26b)] get; }
+        [DispId(620)]
+        string bProductoNCM_codigo { [DispId(620)] get; }
+        [DispId(0x26d)]
+        string bProductoNCM_ds { [DispId(0x26d)] get; }
+        [DispId(0x26e)]
+        string bProductoNCM_nota { [DispId(0x26e)] get; }
+        [DispId(0x26f)]
+        string bProductoNCM_Vig_desde { [DispId(0x26f)] get; }
+        [DispId(0x270)]
+        string bProductoNCM_Vig_Hasta { [DispId(0x270)] get; }
+        [DispId(0x271)]
+        int gEspecieCodigo { [DispId(0x271)] get; }
+        [DispId(0x272)]
+        string gEspecieDescripcion { [DispId(0x272)] get; }
+        [DispId(0x273)]
+        int gProvinciaCodigo { [DispId(0x273)] get; }
+        [DispId(0x274)]
+        string gProvinciaDescripcion { [DispId(0x274)] get; }
+        [DispId(0x275)]
+        int gLocalidadCodigo { [DispId(0x275)] get; }
+        [DispId(630)]
+        string gLocalidadDescripcion { [DispId(630)] get; }
+        [DispId(0x277)]
+        int gLocalidadTodasCodigo { [DispId(0x277)] get; }
+        [DispId(0x278)]
+        string gLocalidadTodasDescripcion { [DispId(0x278)] get; }
+        [DispId(0x279)]
+        int gLocalidadTodasCodigoProvincia { [DispId(0x279)] get; }
+        [DispId(0x27a)]
+        string gLocalidadTodasDescripcionProvincia { [DispId(0x27a)] get; }
+        [DispId(0x27b)]
+        string gCosechaCodigo { [DispId(0x27b)] get; }
+        [DispId(0x27c)]
+        string gCosechaDescripcion { [DispId(0x27c)] get; }
+        [DispId(0x27d)]
+        int gCTGCantHoras { [DispId(0x27d)] get; [DispId(0x27d)] set; }
+        [DispId(0x27e)]
+        string gCTGCodigoEspecie { [DispId(0x27e)] get; [DispId(0x27e)] set; }
+        [DispId(0x27f)]
+        string gCTGCodigoCosecha { [DispId(0x27f)] get; [DispId(0x27f)] set; }
+        [DispId(640)]
+        int gCTGCodigoLocalidadDestino { [DispId(640)] get; [DispId(640)] set; }
+        [DispId(0x281)]
+        int gCTGCodigoLocalidadOrigen { [DispId(0x281)] get; [DispId(0x281)] set; }
+        [DispId(0x282)]
+        string gCTGCuitDestinatario { [DispId(0x282)] get; [DispId(0x282)] set; }
+        [DispId(0x283)]
+        string gCTGCuitDestino { [DispId(0x283)] get; [DispId(0x283)] set; }
+        [DispId(0x284)]
+        string gCTGCuitRemitenteComercial { [DispId(0x284)] get; [DispId(0x284)] set; }
+        [DispId(0x285)]
+        string gCTGCuitTrasnportista { [DispId(0x285)] get; [DispId(0x285)] set; }
+        [DispId(0x286)]
+        string gCTGCuitRepresentado { [DispId(0x286)] get; [DispId(0x286)] set; }
+        [DispId(0x287)]
+        string gCTGNumeroCartaPorte { [DispId(0x287)] get; [DispId(0x287)] set; }
+        [DispId(0x288)]
+        string gCTGPatenteVehiculo { [DispId(0x288)] get; [DispId(0x288)] set; }
+        [DispId(0x289)]
+        string gCTGPatenteVehiculoS { [DispId(0x289)] get; [DispId(0x289)] set; }
+        [DispId(650)]
+        string gCTGPesoNetoCarga { [DispId(650)] get; [DispId(650)] set; }
+        [DispId(0x28b)]
+        string gCTGRespuestaNumeroCartaPorte { [DispId(0x28b)] get; }
+        [DispId(0x28c)]
+        string gCTGRespuestaNumeroCTG { [DispId(0x28c)] get; }
+        [DispId(0x28d)]
+        string gCTGRespuestaCodigoTransaccion { [DispId(0x28d)] get; }
+        [DispId(0x28e)]
+        string gCTGRespuestaObervaciones { [DispId(0x28e)] get; }
+        [DispId(0x28f)]
+        string F1RespuestaDetalleCAEAFchProceso { [DispId(0x28f)] get; }
+        [DispId(0x290)]
+        string F1RespuestaDetalleCAEACAEA { [DispId(0x290)] get; }
+        [DispId(0x291)]
+        int F1RespuestaDetalleCAEAPtoVta { [DispId(0x291)] get; }
+        [DispId(0x292)]
+        int FxRespuestaDetalleCAEANumeroPuntoventa { [DispId(0x292)] get; }
+        [DispId(0x293)]
+        string FxRespuestaDetalleCAEABloqueado { [DispId(0x293)] get; }
+        [DispId(660)]
+        string FxRespuestaDetalleCAEAFechaBaja { [DispId(660)] get; }
+        [DispId(0x295)]
+        int F1DetalleConcepto { [DispId(0x295)] get; [DispId(0x295)] set; }
+        [DispId(0x296)]
+        int F1DetalleDocTipo { [DispId(0x296)] get; [DispId(0x296)] set; }
+        [DispId(0x297)]
+        string F1DetalleDocNro { [DispId(0x297)] get; [DispId(0x297)] set; }
+        [DispId(0x298)]
+        int F1DetalleCbteDesde { [DispId(0x298)] get; [DispId(0x298)] set; }
+        [DispId(0x299)]
+        string F1DetalleCbteDesdeS { [DispId(0x299)] get; [DispId(0x299)] set; }
+        [DispId(0x29a)]
+        int F1DetalleCbteHasta { [DispId(0x29a)] get; [DispId(0x29a)] set; }
+        [DispId(0x29b)]
+        string F1DetalleCbteHastaS { [DispId(0x29b)] get; [DispId(0x29b)] set; }
+        [DispId(0x29c)]
+        string F1DetalleCAEA { [DispId(0x29c)] get; [DispId(0x29c)] set; }
+        [DispId(0x29d)]
+        string F1DetalleCbteFch { [DispId(0x29d)] get; [DispId(0x29d)] set; }
+        [DispId(670)]
+        double F1DetalleImpTotal { [DispId(670)] get; [DispId(670)] set; }
+        [DispId(0x29f)]
+        double F1DetalleImpTotalConc { [DispId(0x29f)] get; [DispId(0x29f)] set; }
+        [DispId(0x2a0)]
+        double F1DetalleImpNeto { [DispId(0x2a0)] get; [DispId(0x2a0)] set; }
+        [DispId(0x2a1)]
+        double F1DetalleImpOpEx { [DispId(0x2a1)] get; [DispId(0x2a1)] set; }
+        [DispId(0x2a2)]
+        double F1DetalleImpTrib { [DispId(0x2a2)] get; [DispId(0x2a2)] set; }
+        [DispId(0x2a3)]
+        double F1DetalleImpIva { [DispId(0x2a3)] get; [DispId(0x2a3)] set; }
+        [DispId(0x2a4)]
+        string F1DetalleFchServDesde { [DispId(0x2a4)] get; [DispId(0x2a4)] set; }
+        [DispId(0x2a5)]
+        string F1DetalleFchServHasta { [DispId(0x2a5)] get; [DispId(0x2a5)] set; }
+        [DispId(0x2a6)]
+        string F1DetalleFchVtoPago { [DispId(0x2a6)] get; [DispId(0x2a6)] set; }
+        [DispId(0x2a7)]
+        string F1DetalleMonId { [DispId(0x2a7)] get; [DispId(0x2a7)] set; }
+        [DispId(680)]
+        double F1DetalleMonCotiz { [DispId(680)] get; [DispId(680)] set; }
+        [DispId(0x2a9)]
+        int F1DetalleCbtesAsocNro { [DispId(0x2a9)] get; [DispId(0x2a9)] set; }
+        [DispId(0x2aa)]
+        string F1DetalleCbtesAsocNroS { [DispId(0x2aa)] get; [DispId(0x2aa)] set; }
+        [DispId(0x2ab)]
+        int F1DetalleCbtesAsocPtoVta { [DispId(0x2ab)] get; [DispId(0x2ab)] set; }
+        [DispId(0x2ac)]
+        int F1DetalleCbtesAsocTipo { [DispId(0x2ac)] get; [DispId(0x2ac)] set; }
+        [DispId(0x2ad)]
+        int F1DetalleTributoId { [DispId(0x2ad)] get; [DispId(0x2ad)] set; }
+        [DispId(0x2ae)]
+        string F1DetalleTributoDesc { [DispId(0x2ae)] get; [DispId(0x2ae)] set; }
+        [DispId(0x2af)]
+        double F1DetalleTributoAlic { [DispId(0x2af)] get; [DispId(0x2af)] set; }
+        [DispId(0x2b0)]
+        double F1DetalleTributoBaseImp { [DispId(0x2b0)] get; [DispId(0x2b0)] set; }
+        [DispId(0x2b1)]
+        double F1DetalleTributoImporte { [DispId(0x2b1)] get; [DispId(0x2b1)] set; }
+        [DispId(690)]
+        int F1DetalleIvaId { [DispId(690)] get; [DispId(690)] set; }
+        [DispId(0x2b3)]
+        double F1DetalleIvaBaseImp { [DispId(0x2b3)] get; [DispId(0x2b3)] set; }
+        [DispId(0x2b4)]
+        double F1DetalleIvaImporte { [DispId(0x2b4)] get; [DispId(0x2b4)] set; }
+        [DispId(0x2b5)]
+        string F1DetalleOpcionalId { [DispId(0x2b5)] get; [DispId(0x2b5)] set; }
+        [DispId(0x2b6)]
+        string F1DetalleOpcionalValor { [DispId(0x2b6)] get; [DispId(0x2b6)] set; }
+        [DispId(0x2b7)]
+        string fxCodigoAutorizacion { [DispId(0x2b7)] get; [DispId(0x2b7)] set; }
+        [DispId(0x2b8)]
+        bool fxCodigoAutorizacionNO { [DispId(0x2b8)] get; [DispId(0x2b8)] set; }
+        [DispId(0x2b9)]
+        string fxCodigoMoneda { [DispId(0x2b9)] get; [DispId(0x2b9)] set; }
+        [DispId(0x2ba)]
+        string fxObservaciones { [DispId(0x2ba)] get; [DispId(0x2ba)] set; }
+        [DispId(0x2bb)]
+        string fxNumeroDocumento { [DispId(0x2bb)] get; [DispId(0x2bb)] set; }
+        [DispId(700)]
+        int fxNumeroPuntoVenta { [DispId(700)] get; [DispId(700)] set; }
+        [DispId(0x2bd)]
+        string fxFechaEmision { [DispId(0x2bd)] get; [DispId(0x2bd)] set; }
+        [DispId(0x2be)]
+        bool fxFechaEmisionNO { [DispId(0x2be)] get; [DispId(0x2be)] set; }
+        [DispId(0x2bf)]
+        string fxFechaServicioHasta { [DispId(0x2bf)] get; [DispId(0x2bf)] set; }
+        [DispId(0x2c0)]
+        bool fxFechaServicioHastaNO { [DispId(0x2c0)] get; [DispId(0x2c0)] set; }
+        [DispId(0x2c1)]
+        string fxFechaVencimiento { [DispId(0x2c1)] get; [DispId(0x2c1)] set; }
+        [DispId(0x2c2)]
+        bool fxFechaVencimientoNO { [DispId(0x2c2)] get; [DispId(0x2c2)] set; }
+        [DispId(0x2c3)]
+        string fxFechaVencimientoPago { [DispId(0x2c3)] get; [DispId(0x2c3)] set; }
+        [DispId(0x2c4)]
+        bool fxFechaVencimientoPagoNO { [DispId(0x2c4)] get; [DispId(0x2c4)] set; }
+        [DispId(0x2c5)]
+        string fxFechaServicioDesde { [DispId(0x2c5)] get; [DispId(0x2c5)] set; }
+        [DispId(710)]
+        bool fxFechaServicioDesdeNO { [DispId(710)] get; [DispId(710)] set; }
+        [DispId(0x2c7)]
+        int fxCodigoConcepto { [DispId(0x2c7)] get; [DispId(0x2c7)] set; }
+        [DispId(0x2c8)]
+        int fxCodigoTipoComprobante { [DispId(0x2c8)] get; [DispId(0x2c8)] set; }
+        [DispId(0x2c9)]
+        bool fxCodigoTipoAutorizacionNO { [DispId(0x2c9)] get; [DispId(0x2c9)] set; }
+        [DispId(0x2ca)]
+        int fxCodigoTipoDocumento { [DispId(0x2ca)] get; [DispId(0x2ca)] set; }
+        [DispId(0x2cb)]
+        bool fxCodigoTipoDocumentoNO { [DispId(0x2cb)] get; [DispId(0x2cb)] set; }
+        [DispId(0x2cc)]
+        string fxCodigoTipoAutorizacion { [DispId(0x2cc)] get; [DispId(0x2cc)] set; }
+        [DispId(0x2cd)]
+        double fxCotizacionMoneda { [DispId(0x2cd)] get; [DispId(0x2cd)] set; }
+        [DispId(0x2ce)]
+        double fxImporteExento { [DispId(0x2ce)] get; [DispId(0x2ce)] set; }
+        [DispId(0x2cf)]
+        bool fxImporteExentoNO { [DispId(0x2cf)] get; [DispId(0x2cf)] set; }
+        [DispId(720)]
+        double fxImporteGravado { [DispId(720)] get; [DispId(720)] set; }
+        [DispId(0x2d1)]
+        bool fxImporteGravadoNO { [DispId(0x2d1)] get; [DispId(0x2d1)] set; }
+        [DispId(0x2d2)]
+        double fxImporteNoGravado { [DispId(0x2d2)] get; [DispId(0x2d2)] set; }
+        [DispId(0x2d3)]
+        bool fxImporteNoGravadoNO { [DispId(0x2d3)] get; [DispId(0x2d3)] set; }
+        [DispId(0x2d4)]
+        double fxImporteOtrosTributos { [DispId(0x2d4)] get; [DispId(0x2d4)] set; }
+        [DispId(0x2d5)]
+        bool fxImporteOtrosTributosNO { [DispId(0x2d5)] get; [DispId(0x2d5)] set; }
+        [DispId(0x2d6)]
+        bool fxNumeroDocumentoNO { [DispId(0x2d6)] get; [DispId(0x2d6)] set; }
+        [DispId(0x2d7)]
+        double fxImporteSubTotal { [DispId(0x2d7)] get; [DispId(0x2d7)] set; }
+        [DispId(0x2d8)]
+        double fxImporteTotal { [DispId(0x2d8)] get; [DispId(0x2d8)] set; }
+        [DispId(0x2d9)]
+        int fxNumeroComprobante { [DispId(0x2d9)] get; [DispId(0x2d9)] set; }
+        [DispId(730)]
+        int fxComprobanteAsosiadoCodigoTipoComprobante { [DispId(730)] get; [DispId(730)] set; }
+        [DispId(0x2db)]
+        int fxComprobanteAsosiadoNumeroComprobante { [DispId(0x2db)] get; [DispId(0x2db)] set; }
+        [DispId(0x2dc)]
+        int fxComprobanteAsosiadoNumeroPuntoVenta { [DispId(0x2dc)] get; [DispId(0x2dc)] set; }
+        [DispId(0x2dd)]
+        int fxComprobantesAsociadosItemCantidad { [DispId(0x2dd)] get; [DispId(0x2dd)] set; }
+        [DispId(0x2de)]
+        int fxItemsItemCantidad { [DispId(0x2de)] get; [DispId(0x2de)] set; }
+        [DispId(0x2df)]
+        int fxCAEAItemCantidad { [DispId(0x2df)] get; [DispId(0x2df)] set; }
+        [DispId(0x2e0)]
+        int fxOtrosTributosItemCantidad { [DispId(0x2e0)] get; [DispId(0x2e0)] set; }
+        [DispId(0x2e1)]
+        int fxSubTotalesItemCantidad { [DispId(0x2e1)] get; [DispId(0x2e1)] set; }
+        [DispId(0x2e2)]
+        double fxItemCantidad { [DispId(0x2e2)] get; [DispId(0x2e2)] set; }
+        [DispId(0x2e3)]
+        bool fxItemCantidadNO { [DispId(0x2e3)] get; [DispId(0x2e3)] set; }
+        [DispId(740)]
+        bool fxItemImporteBonificacionNO { [DispId(740)] get; [DispId(740)] set; }
+        [DispId(0x2e5)]
+        double fxItemImporteBonificacion { [DispId(0x2e5)] get; [DispId(0x2e5)] set; }
+        [DispId(0x2e6)]
+        double fxItemImporteItem { [DispId(0x2e6)] get; [DispId(0x2e6)] set; }
+        [DispId(0x2e7)]
+        double fxItemImporteIva { [DispId(0x2e7)] get; [DispId(0x2e7)] set; }
+        [DispId(0x2e8)]
+        bool fxItemImporteIvaNO { [DispId(0x2e8)] get; [DispId(0x2e8)] set; }
+        [DispId(0x2e9)]
+        double fxItemPrecioUnitario { [DispId(0x2e9)] get; [DispId(0x2e9)] set; }
+        [DispId(0x2ea)]
+        bool fxItemPrecioUnitarioNO { [DispId(0x2ea)] get; [DispId(0x2ea)] set; }
+        [DispId(0x2eb)]
+        string fxItemCodigo { [DispId(0x2eb)] get; [DispId(0x2eb)] set; }
+        [DispId(0x2ec)]
+        double fxOtrosTributosBaseImponible { [DispId(0x2ec)] get; [DispId(0x2ec)] set; }
+        [DispId(0x2ed)]
+        double fxOtrosTributosImporte { [DispId(0x2ed)] get; [DispId(0x2ed)] set; }
+        [DispId(750)]
+        string fxOtrosTributosDescripcion { [DispId(750)] get; [DispId(750)] set; }
+        [DispId(0x2ef)]
+        int fxOtrosTributosCodigo { [DispId(0x2ef)] get; [DispId(0x2ef)] set; }
+        [DispId(0x2f0)]
+        int fxSubTotalesIvaCodigo { [DispId(0x2f0)] get; [DispId(0x2f0)] set; }
+        [DispId(0x2f1)]
+        double fxSubTotalesIvaImporte { [DispId(0x2f1)] get; [DispId(0x2f1)] set; }
+        [DispId(0x2f2)]
+        string fxItemCodigoMtx { [DispId(0x2f2)] get; [DispId(0x2f2)] set; }
+        [DispId(0x2f3)]
+        string fxItemDescripcion { [DispId(0x2f3)] get; [DispId(0x2f3)] set; }
+        [DispId(0x2f4)]
+        int fxItemCodigoCondicionIva { [DispId(0x2f4)] get; [DispId(0x2f4)] set; }
+        [DispId(0x2f5)]
+        int fxItemCodigoUnidadMedida { [DispId(0x2f5)] get; [DispId(0x2f5)] set; }
+        [DispId(0x2f6)]
+        int fxItemUnidadesMtx { [DispId(0x2f6)] get; [DispId(0x2f6)] set; }
+        [DispId(0x2f7)]
+        string fxItemUnidadesMtxS { [DispId(0x2f7)] get; [DispId(0x2f7)] set; }
+        [DispId(760)]
+        bool fxItemUnidadesMtxNO { [DispId(760)] get; [DispId(760)] set; }
+        [DispId(0x2f9)]
+        int F1CabeceraPtoVta { [DispId(0x2f9)] get; [DispId(0x2f9)] set; }
+        [DispId(0x2fa)]
+        int F1CabeceraCbteTipo { [DispId(0x2fa)] get; [DispId(0x2fa)] set; }
+        [DispId(0x2fb)]
+        int F1CabeceraCantReg { [DispId(0x2fb)] get; [DispId(0x2fb)] set; }
+        [DispId(0x2fc)]
+        int F1DetalleCbtesAsocItemCantidad { [DispId(0x2fc)] get; [DispId(0x2fc)] set; }
+        [DispId(0x2fd)]
+        int F1DetalleTributoItemCantidad { [DispId(0x2fd)] get; [DispId(0x2fd)] set; }
+        [DispId(0x2fe)]
+        int F1DetalleIvaItemCantidad { [DispId(0x2fe)] get; [DispId(0x2fe)] set; }
+        [DispId(0x2ff)]
+        int F1DetalleOpcionalItemCantidad { [DispId(0x2ff)] get; [DispId(0x2ff)] set; }
+        [DispId(0x300)]
+        bool VerificarLicencia(string strMail, string strPassword, string strDocumento, string strHoja, string strRutaArchivo);
+        [DispId(0x301)]
+        bool IniciarYActivar(int iModoFiscal, string cuitTexto, string textoRutaArchivoCertificado, string textoRutaArchivoLicencia, string strGMail, string strPassword);
+        [DispId(770)]
+        bool LeerLicencia(object textoRutaArchivoLicencia);
+        [DispId(0x303)]
+        bool ActivarLicenciaSiNoExiste(string cuitTexto, string textoRutaArchivoLicencia, string strGMail, string strPassword);
+        [DispId(0x304)]
+        bool ActivarLicencia(string cuitTexto, string textoRutaArchivoLicencia, string strGMail, string strPassword);
+        [DispId(0x305)]
+        bool logincms();
+        [DispId(0x306)]
+        bool ObtenerTicketAcceso();
+        [DispId(0x307)]
+        bool bObtenerTicketAcceso();
+        [DispId(0x308)]
+        bool xObtenerTicketAcceso();
+        [DispId(0x309)]
+        bool f1ObtenerTicketAcceso();
+        [DispId(0x30a)]
+        bool fxObtenerTicketAcceso();
+        [DispId(0x30b)]
+        bool dObtenerTicketAcceso();
+        [DispId(780)]
+        bool gObtenerTicketAcceso();
+        [DispId(0x30d)]
+        bool oObtenerTicketAcceso();
+        [DispId(0x30e)]
+        bool sObtenerTicketAcceso();
+        [DispId(0x30f)]
+        bool RegistrarConNumero(int pPuntoVenta, Factura.TipoComprobante pTipoComprobante, string cIdentificador, int nNumeroComprobante);
+        [DispId(0x310)]
+        int FERecuperaLastCMPRequest(int iPuntoVenta, Factura.TipoComprobante iTipoComprobante);
+        [DispId(0x311)]
+        int RecuperaLastCPM(int ipuntoVenta, Factura.TipoComprobante iTipoComprobante);
+        [DispId(0x312)]
+        string RecuperaLastCPMS(int ipuntoVenta, Factura.TipoComprobante iTipoComprobante);
+        [DispId(0x313)]
+        bool Dummy();
+        [DispId(0x314)]
+        bool FEAuthRequest(int pPuntoVenta, Factura.TipoComprobante pTipoComprobante, string cIdentificador);
+        [DispId(0x315)]
+        bool Registrar(int pPuntoVenta, Factura.TipoComprobante pTipoComprobante, string cIdentificador);
+        [DispId(790)]
+        bool FEAutRequestAFIP(string cIdentificador);
+        [DispId(0x317)]
+        bool iniciar(Factura.modoFiscal iModoFiscal, string cuitTexto, string textoRutaArchivoCertificado, string textoRutaArchivoLicencia);
+        [DispId(0x318)]
+        bool FEConsultaCAERequest(string cCuit, Factura.TipoComprobante iTipoComprobante, int iPuntoVenta, int iNumero, double mTotal, string cCae, string cFecha);
+        [DispId(0x319)]
+        int FERecuperaQTYRequest();
+        [DispId(0x31a)]
+        string FEUltNroRequest();
+        [DispId(0x31b)]
+        bool BFEGetPARAM_MON();
+        [DispId(0x31c)]
+        string xFECheck_Permiso(string strIdPermiso, int intDestinoMercaderia);
+        [DispId(0x31d)]
+        bool xFEGetPARAM_MON();
+        [DispId(0x31e)]
+        bool xFEGetPARAM_tipo_cbte();
+        [DispId(0x31f)]
+        bool xFEGetPARAM_uMed();
+        [DispId(800)]
+        bool xFEGetPARAM_PtoVenta();
+        [DispId(0x321)]
+        bool xFEGetPARAM_Idiomas();
+        [DispId(0x322)]
+        bool xFEGetPARAM_Tipo_expo();
+        [DispId(0x323)]
+        bool xFEGetPARAM_IncoTerms();
+        [DispId(0x324)]
+        bool xFEGetPARAM_DST_PAIS();
+        [DispId(0x325)]
+        bool xFEGetPARAM_DST_CUIT();
+        [DispId(0x326)]
+        bool SEGGetPARAM_MON();
+        [DispId(0x327)]
+        bool SEGGetPARAM_Tipo_cbte();
+        [DispId(0x328)]
+        bool SEGGetPARAM_TipoIva();
+        [DispId(0x329)]
+        bool BFEGetPARAM_Tipo_cbte();
+        [DispId(810)]
+        bool SEGGetPARAM_TipoDoc();
+        [DispId(0x32b)]
+        bool BFEGetPARAM_TipoIva();
+        [DispId(0x32c)]
+        bool BFEGetPARAM_TipoDoc();
+        [DispId(0x32d)]
+        bool BFEGetPARAM_UMed();
+        [DispId(0x32e)]
+        bool BFEGetPARAM_Zonas();
+        [DispId(0x32f)]
+        bool bFEAutorize(int nPuntoVenta, int nTipoComprobante, string cIdentificador, int nNumero);
+        [DispId(0x330)]
+        bool SEGAutorize(int nPuntoVenta, int nTipoComprobante, string cIdentificador, int nNumero);
+        [DispId(0x331)]
+        bool bRegistrar(int nPuntoVenta, int nTipoComprobante, string cIdentificador);
+        [DispId(0x332)]
+        bool xRegistrar(int nPuntoVenta, int nTipoComprobante, string cIdentificador);
+        [DispId(0x333)]
+        bool sRegistrar(int nPuntoVenta, int nTipoComprobante, string cIdentificador);
+        [DispId(820)]
+        bool xRegistrarConNumero(int nPuntoVenta, int nTipoComprobante, string cIdentificador, int nNumero);
+        [DispId(0x335)]
+        bool bRegistrarConNumero(int nPuntoVenta, int nTipoComprobante, string cIdentificador, int nNumero);
+        [DispId(0x336)]
+        bool sRegistrarConNumero(int nPuntoVenta, int nTipoComprobante, string cIdentificador, int nNumero);
+        [DispId(0x337)]
+        bool bFEGetCMP(int nPuntoVenta, int nTipoComprobante, int nNumeroComprobante);
+        [DispId(0x338)]
+        bool xFEGetCMP(int nPuntoVenta, int nTipoComprobante, int nNumeroComprobante);
+        [DispId(0x339)]
+        bool xFEGetCMPS(int nPuntoVenta, int nTipoComprobante, string cNumeroComprobante);
+        [DispId(0x33a)]
+        bool SEGGetCMP(int nPuntoVenta, int nTipoComprobante, int nNumeroComprobante);
+        [DispId(0x33b)]
+        bool BFEGetPARAM_NCM();
+        [DispId(0x33c)]
+        string BFEGetLastId();
+        [DispId(0x33d)]
+        string SEGGetLastId();
+        [DispId(830)]
+        int BFEGetLastCMP(int nPuntoVenta, int nTipoComprobante);
+        [DispId(0x33f)]
+        int xFEGetLastCMP(int nPuntoVenta, int nTipoComprobante);
+        [DispId(0x340)]
+        string xFEGetLast_ID();
+        [DispId(0x341)]
+        int SEGGetLastCMP(int nPuntoVenta, int nTipoComprobante);
+        [DispId(0x342)]
+        bool BDummy();
+        [DispId(0x343)]
+        double xFEGetPARAM_CTZ(string strMon_id);
+        [DispId(0x344)]
+        double xFEGetPARAM_CTZS(string strMon_ids);
+        [DispId(0x345)]
+        bool xDummy();
+        [DispId(0x346)]
+        bool f1Dummy();
+        [DispId(0x347)]
+        bool fxDummy();
+        [DispId(840)]
+        bool dDummy();
+        [DispId(0x349)]
+        bool dAvisoDigit();
+        [DispId(0x34a)]
+        bool dAvisoRecepAcept();
+        [DispId(0x34b)]
+        bool gDummy();
+        [DispId(0x34c)]
+        bool gObtenerEspecies();
+        [DispId(0x34d)]
+        bool gObtenerProvincias();
+        [DispId(0x34e)]
+        bool gObtenerCosechas();
+        [DispId(0x34f)]
+        bool gObtenerLocalidadesPorCodigoProvincia(int iCodigoProvincia);
+        [DispId(0x350)]
+        bool gObtenerLocalidadesTodas();
+        [DispId(0x351)]
+        bool gObtenerLocalidadesTodasLiberar();
+        [DispId(850)]
+        bool gSolicitarCTG();
+        [DispId(0x353)]
+        bool gConfirmarCTG(string strcuitRepresentado, string strNumeroCTG, string strNumeroCartaPorte, string strPesoNetoCarga, string strCuitTransportista);
+        [DispId(0x354)]
+        bool oObtenerTipoGrano();
+        [DispId(0x355)]
+        bool SDummy();
+        [DispId(0x356)]
+        bool f1ParamGetTiposCbte();
+        [DispId(0x357)]
+        bool f1ParamGetPtosVenta();
+        [DispId(0x358)]
+        bool f1ParamGetTiposMoneda();
+        [DispId(0x359)]
+        bool f1ParamGetTiposTributo();
+        [DispId(0x35a)]
+        bool f1ParamGetTiposOpcional();
+        [DispId(0x35b)]
+        bool f1ParamGetTiposIva();
+        [DispId(860)]
+        bool f1ParamGetTiposDoc();
+        [DispId(0x35d)]
+        bool f1ParamGetTiposConcepto();
+        [DispId(0x35e)]
+        bool F1CAESolicitar();
+        [DispId(0x35f)]
+        bool F1CompConsultar(int iPtoVta, int iCbteTipo, int iCbteNro);
+        [DispId(0x360)]
+        bool F1CAEARegInformativo();
+        [DispId(0x361)]
+        bool f1CAEASolicitarS(string strPeriodo, string strOrden);
+        [DispId(0x362)]
+        bool F1CAEASolicitar(int iPeriodo, int iOrden);
+        [DispId(0x363)]
+        bool f1CAEAConsultarS(string strPeriodo, string strOrden);
+        [DispId(0x364)]
+        bool F1CAEAConsultar(int iPeriodo, int iOrden);
+        [DispId(0x365)]
+        bool F1CAEASinMovimientoConsultar(string strCAEA, int iPtoVta);
+        [DispId(870)]
+        bool F1CAEASinMovimientoInformar(int iPtoVta, string strCAEA);
+        [DispId(0x367)]
+        double F1ParamGetCotizacion(string strMonId);
+        [DispId(0x368)]
+        int F1CompUltimoAutorizado(int iPtoVta, int iCbteTipo);
+        [DispId(0x369)]
+        int F1CompTotXRequest();
+        [DispId(0x36a)]
+        bool fxConsultarTiposComprobante();
+        [DispId(0x36b)]
+        bool fxConsultarTiposDocumento();
+        [DispId(0x36c)]
+        bool fxConsultarAlicutasIva();
+        [DispId(0x36d)]
+        bool fxConsultarCondicionesIva();
+        [DispId(0x36e)]
+        bool fxConsultarUnidadesMedida();
+        [DispId(0x36f)]
+        bool fxConsultarPuntosVenta();
+        [DispId(880)]
+        bool fxConsultarPuntosVentaCAE();
+        [DispId(0x371)]
+        bool fxConsultarPuntosVentaCAEA();
+        [DispId(0x372)]
+        bool fxConsultarMonedas();
+        [DispId(0x373)]
+        bool fxConsultarTiposTributo();
+        [DispId(0x374)]
+        bool fxNoEspecificar(string strCampo, int nInformar);
+        [DispId(0x375)]
+        bool fxNoEspecificarItem(string strCampo, int nInformar);
+        [DispId(0x376)]
+        int fxConsultarUltimoComprobanteAutorizado(int iPtoVta, int iCbteTipo);
+        [DispId(0x377)]
+        bool fxConsultarComprobante(int iPtoVta, int iCbteTipo, int iCbteNro);
+        [DispId(0x378)]
+        bool fxAutorizarComprobante();
+        [DispId(0x379)]
+        bool fxInformarComprobanteCAEA();
+        [DispId(890)]
+        bool fxSolicitarCAEAS(string strPeriodo, string strOrden);
+        [DispId(0x37b)]
+        bool fxSolicitarCAEA(int iPeriodo, int iOrden);
+        [DispId(0x37c)]
+        bool fxConsultarCAEA(string strCAEA);
+        [DispId(0x37d)]
+        bool fxInformarCAEANoUtilizado(string strCAEA);
+        [DispId(0x37e)]
+        bool fxInformarCAEANoUtilizadoPtoVta(string strCAEA, int iPtoVta);
+        [DispId(0x37f)]
+        bool fxconsultarPtosVtaCAEANoInformados(string strCAEA);
+        [DispId(0x380)]
+        bool fxConsultarCAEAEntreFechas(string strDesde, string strHasta);
+        [DispId(0x381)]
+        bool ProxyConfigurar(bool lActivar);
+    }
 
     [ClassInterface(ClassInterfaceType.None), ComClass("2400ac12-61ad-4999-89c8-c45fe0e9e447", "e0427e75-8757-422f-a419-12b10c49adcb", "300fa6e9-0a6a-4bbc-bf1a-5a425db36654"), Guid("2400ac12-61ad-4999-89c8-c45fe0e9e447")]
     public class Factura : _Factura
@@ -793,8 +2593,8 @@
                             this.bItemCantidad = oRespuesta.BFEResultGet.Items.Length - 1;
                             int value = this.bItemCantidad;
                             this.abProductoItem = new bProductoItem[(value - 1) + 1];
-                            int VB$t_i4$L0 = this.bItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                            int VB_t_i4_L0 = this.bItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                             {
                                 this.IndiceItem = nContador;
                                 this.bITEMimp_bonif = oRespuesta.BFEResultGet.Items[nContador].Imp_bonif;
@@ -837,12 +2637,12 @@
             {
                 return false;
             }
-            WSAFIPFE.bAFIP.ClsBFEAuthRequest autorizacion = new WSAFIPFE.bAFIP.ClsBFEAuthRequest();
+            WSAFIPFE.bAFIP.ClsBFEAuthRequest clsBfeAuthRequest = new WSAFIPFE.bAFIP.ClsBFEAuthRequest();
             try
             {
-                autorizacion.Cuit = Conversions.ToLong(this.cuit);
-                autorizacion.Token = this.btoken;
-                autorizacion.Sign = this.bsign;
+                clsBfeAuthRequest.Cuit = Conversions.ToLong(this.cuit);
+                clsBfeAuthRequest.Token = this.btoken;
+                clsBfeAuthRequest.Sign = this.bsign;
             }
             catch (Exception exception3)
             {
@@ -871,7 +2671,7 @@
                 oPedido.Cbte_nro = nNumeroComprobante;
                 oPedido.Punto_vta = nPuntoVenta;
                 oPedido.Tipo_cbte = (short) nTipoComprobante;
-                WSAFIPFE.bAFIP.BFEGetCMPResponse oRespuesta = servicio.BFEGetCMP(autorizacion, oPedido);
+                WSAFIPFE.bAFIP.BFEGetCMPResponse oRespuesta = servicio.BFEGetCMP(clsBfeAuthRequest, oPedido);
                 if (oRespuesta == null)
                 {
                     bResultado = false;
@@ -927,8 +2727,8 @@
                         this.bItemCantidad = oRespuesta.BFEResultGet.Items.Length - 1;
                         int value = this.bItemCantidad;
                         this.abProductoItem = new bProductoItem[(value - 1) + 1];
-                        int VB$t_i4$L1 = this.bItemCantidad - 1;
-                        for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                        int VB_t_i4_L1 = this.bItemCantidad - 1;
+                        for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                         {
                             this.IndiceItem = nContador;
                             this.bITEMimp_bonif = oRespuesta.BFEResultGet.Items[nContador].Imp_bonif;
@@ -1127,12 +2927,12 @@
                     }
                     return cResultado;
                 }
-                WSAFIPFE.bAFIP.ClsBFEAuthRequest autorizacion = new WSAFIPFE.bAFIP.ClsBFEAuthRequest();
+                WSAFIPFE.bAFIP.ClsBFEAuthRequest clsBfeAuthRequest = new WSAFIPFE.bAFIP.ClsBFEAuthRequest();
                 try
                 {
-                    autorizacion.Cuit = Conversions.ToLong(this.cuit);
-                    autorizacion.Token = this.btoken;
-                    autorizacion.Sign = this.bsign;
+                    clsBfeAuthRequest.Cuit = Conversions.ToLong(this.cuit);
+                    clsBfeAuthRequest.Token = this.btoken;
+                    clsBfeAuthRequest.Sign = this.bsign;
                 }
                 catch (Exception exception3)
                 {
@@ -1159,7 +2959,7 @@
                             servicio.Proxy = pr;
                         }
                         servicio.Url = this.bDireccionServicioURL;
-                        WSAFIPFE.bAFIP.BFEResponse_LastID oRespuesta = servicio.BFEGetLast_ID(autorizacion);
+                        WSAFIPFE.bAFIP.BFEResponse_LastID oRespuesta = servicio.BFEGetLast_ID(clsBfeAuthRequest);
                         this.iberrcode = oRespuesta.BFEErr.ErrCode;
                         this.strberrmsg = oRespuesta.BFEErr.ErrMsg;
                         this.iUltimoNumeroError = oRespuesta.BFEErr.ErrCode;
@@ -1234,8 +3034,8 @@
                                 this.ibMonedaItemCantidad = oRespuesta.BFEResultGet.Length;
                                 value = this.bMonedaItemCantidad;
                                 this.aBMoneda = new bMoneda[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.ibMonedaItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.ibMonedaItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.aBMoneda[nContador].id = oRespuesta.BFEResultGet[nContador].Mon_Id;
                                     this.aBMoneda[nContador].ds = oRespuesta.BFEResultGet[nContador].Mon_Ds;
@@ -1258,12 +3058,12 @@
                     }
                     return bResultado;
                 }
-                WSAFIPFE.bAFIP.ClsBFEAuthRequest autorizacion = new WSAFIPFE.bAFIP.ClsBFEAuthRequest();
+                WSAFIPFE.bAFIP.ClsBFEAuthRequest clsBfeAuthRequest = new WSAFIPFE.bAFIP.ClsBFEAuthRequest();
                 try
                 {
-                    autorizacion.Cuit = Conversions.ToLong(this.cuit);
-                    autorizacion.Token = this.btoken;
-                    autorizacion.Sign = this.bsign;
+                    clsBfeAuthRequest.Cuit = Conversions.ToLong(this.cuit);
+                    clsBfeAuthRequest.Token = this.btoken;
+                    clsBfeAuthRequest.Sign = this.bsign;
                 }
                 catch (Exception exception3)
                 {
@@ -1290,7 +3090,7 @@
                             servicio.Proxy = pr;
                         }
                         servicio.Url = this.bDireccionServicioURL;
-                        WSAFIPFE.bAFIP.BFEResponse_Mon oRespuesta = servicio.BFEGetPARAM_MON(autorizacion);
+                        WSAFIPFE.bAFIP.BFEResponse_Mon oRespuesta = servicio.BFEGetPARAM_MON(clsBfeAuthRequest);
                         this.iberrcode = oRespuesta.BFEErr.ErrCode;
                         this.strberrmsg = oRespuesta.BFEErr.ErrMsg;
                         this.iberrcode = oRespuesta.BFEErr.ErrCode;
@@ -1300,8 +3100,8 @@
                             this.ibMonedaItemCantidad = oRespuesta.BFEResultGet.Length;
                             value = this.bMonedaItemCantidad;
                             this.aBMoneda = new bMoneda[(value - 1) + 1];
-                            int VB$t_i4$L1 = this.ibMonedaItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                            int VB_t_i4_L1 = this.ibMonedaItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                             {
                                 this.aBMoneda[nContador].id = oRespuesta.BFEResultGet[nContador].Mon_Id;
                                 this.aBMoneda[nContador].ds = oRespuesta.BFEResultGet[nContador].Mon_Ds;
@@ -1379,8 +3179,8 @@
                                 this.ibProductoItemCantidad = oRespuesta.BFEResultGet.Length;
                                 value = this.bProductoItemCantidad;
                                 this.aBProducto = new bProducto[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.bProductoItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.bProductoItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.aBProducto[nContador].NCM_codigo = oRespuesta.BFEResultGet[nContador].NCM_Codigo;
                                     this.aBProducto[nContador].NCM_ds = oRespuesta.BFEResultGet[nContador].NCM_Ds;
@@ -1404,12 +3204,12 @@
                     }
                     return bResultado;
                 }
-                WSAFIPFE.bAFIP.ClsBFEAuthRequest autorizacion = new WSAFIPFE.bAFIP.ClsBFEAuthRequest();
+                WSAFIPFE.bAFIP.ClsBFEAuthRequest clsBfeAuthRequest = new WSAFIPFE.bAFIP.ClsBFEAuthRequest();
                 try
                 {
-                    autorizacion.Cuit = Conversions.ToLong(this.cuit);
-                    autorizacion.Token = this.btoken;
-                    autorizacion.Sign = this.bsign;
+                    clsBfeAuthRequest.Cuit = Conversions.ToLong(this.cuit);
+                    clsBfeAuthRequest.Token = this.btoken;
+                    clsBfeAuthRequest.Sign = this.bsign;
                 }
                 catch (Exception exception3)
                 {
@@ -1436,7 +3236,7 @@
                             servicio.Proxy = pr;
                         }
                         servicio.Url = this.bDireccionServicioURL;
-                        WSAFIPFE.bAFIP.BFEResponse_NCM oRespuesta = servicio.BFEGetPARAM_NCM(autorizacion);
+                        WSAFIPFE.bAFIP.BFEResponse_NCM oRespuesta = servicio.BFEGetPARAM_NCM(clsBfeAuthRequest);
                         this.iberrcode = oRespuesta.BFEErr.ErrCode;
                         this.strberrmsg = oRespuesta.BFEErr.ErrMsg;
                         this.iberrcode = oRespuesta.BFEErr.ErrCode;
@@ -1446,8 +3246,8 @@
                             this.ibProductoItemCantidad = oRespuesta.BFEResultGet.Length;
                             value = this.bProductoItemCantidad;
                             this.aBProducto = new bProducto[(value - 1) + 1];
-                            int VB$t_i4$L1 = this.bProductoItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                            int VB_t_i4_L1 = this.bProductoItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                             {
                                 this.aBProducto[nContador].NCM_codigo = oRespuesta.BFEResultGet[nContador].NCM_Codigo;
                                 this.aBProducto[nContador].NCM_ds = oRespuesta.BFEResultGet[nContador].NCM_Ds;
@@ -1526,8 +3326,8 @@
                                 this.ibTipo_CbteItemCantidad = oRespuesta.BFEResultGet.Length;
                                 value = this.ibTipo_CbteItemCantidad;
                                 this.aBTipo_cpte = new bTipo_cbtes[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.bTipo_CbteItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.bTipo_CbteItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.aBTipo_cpte[nContador].id = oRespuesta.BFEResultGet[nContador].Cbte_Id;
                                     this.aBTipo_cpte[nContador].ds = oRespuesta.BFEResultGet[nContador].Cbte_Ds;
@@ -1550,12 +3350,12 @@
                     }
                     return bResultado;
                 }
-                WSAFIPFE.bAFIP.ClsBFEAuthRequest autorizacion = new WSAFIPFE.bAFIP.ClsBFEAuthRequest();
+                WSAFIPFE.bAFIP.ClsBFEAuthRequest clsBfeAuthRequest = new WSAFIPFE.bAFIP.ClsBFEAuthRequest();
                 try
                 {
-                    autorizacion.Cuit = Conversions.ToLong(this.cuit);
-                    autorizacion.Token = this.btoken;
-                    autorizacion.Sign = this.bsign;
+                    clsBfeAuthRequest.Cuit = Conversions.ToLong(this.cuit);
+                    clsBfeAuthRequest.Token = this.btoken;
+                    clsBfeAuthRequest.Sign = this.bsign;
                 }
                 catch (Exception exception3)
                 {
@@ -1582,7 +3382,7 @@
                             servicio.Proxy = pr;
                         }
                         servicio.Url = this.bDireccionServicioURL;
-                        WSAFIPFE.bAFIP.BFEResponse_Tipo_Cbte oRespuesta = servicio.BFEGetPARAM_Tipo_Cbte(autorizacion);
+                        WSAFIPFE.bAFIP.BFEResponse_Tipo_Cbte oRespuesta = servicio.BFEGetPARAM_Tipo_Cbte(clsBfeAuthRequest);
                         this.iberrcode = oRespuesta.BFEErr.ErrCode;
                         this.strberrmsg = oRespuesta.BFEErr.ErrMsg;
                         this.iberrcode = oRespuesta.BFEErr.ErrCode;
@@ -1592,8 +3392,8 @@
                             this.ibTipo_CbteItemCantidad = oRespuesta.BFEResultGet.Length;
                             value = this.ibTipo_CbteItemCantidad;
                             this.aBTipo_cpte = new bTipo_cbtes[(value - 1) + 1];
-                            int VB$t_i4$L1 = this.bTipo_CbteItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                            int VB_t_i4_L1 = this.bTipo_CbteItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                             {
                                 this.aBTipo_cpte[nContador].id = oRespuesta.BFEResultGet[nContador].Cbte_Id;
                                 this.aBTipo_cpte[nContador].ds = oRespuesta.BFEResultGet[nContador].Cbte_Ds;
@@ -1671,8 +3471,8 @@
                                 this.ibTipoDocItemCantidad = oRespuesta.BFEResultGet.Length;
                                 value = this.ibTipoDocItemCantidad;
                                 this.aBTipoDoc = new bTipoDoc[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.bTipoDocItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.bTipoDocItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.aBTipoDoc[nContador].id = oRespuesta.BFEResultGet[nContador].Doc_Id;
                                     this.aBTipoDoc[nContador].ds = oRespuesta.BFEResultGet[nContador].Doc_Ds;
@@ -1695,12 +3495,12 @@
                     }
                     return bResultado;
                 }
-                WSAFIPFE.bAFIP.ClsBFEAuthRequest autorizacion = new WSAFIPFE.bAFIP.ClsBFEAuthRequest();
+                WSAFIPFE.bAFIP.ClsBFEAuthRequest clsBfeAuthRequest = new WSAFIPFE.bAFIP.ClsBFEAuthRequest();
                 try
                 {
-                    autorizacion.Cuit = Conversions.ToLong(this.cuit);
-                    autorizacion.Token = this.btoken;
-                    autorizacion.Sign = this.bsign;
+                    clsBfeAuthRequest.Cuit = Conversions.ToLong(this.cuit);
+                    clsBfeAuthRequest.Token = this.btoken;
+                    clsBfeAuthRequest.Sign = this.bsign;
                 }
                 catch (Exception exception3)
                 {
@@ -1727,7 +3527,7 @@
                             servicio.Proxy = pr;
                         }
                         servicio.Url = this.bDireccionServicioURL;
-                        WSAFIPFE.bAFIP.BFEResponse_Tipo_doc oRespuesta = servicio.BFEGetPARAM_Tipo_doc(autorizacion);
+                        WSAFIPFE.bAFIP.BFEResponse_Tipo_doc oRespuesta = servicio.BFEGetPARAM_Tipo_doc(clsBfeAuthRequest);
                         this.iberrcode = oRespuesta.BFEErr.ErrCode;
                         this.strberrmsg = oRespuesta.BFEErr.ErrMsg;
                         this.iberrcode = oRespuesta.BFEErr.ErrCode;
@@ -1737,8 +3537,8 @@
                             this.ibTipoDocItemCantidad = oRespuesta.BFEResultGet.Length;
                             value = this.ibTipoDocItemCantidad;
                             this.aBTipoDoc = new bTipoDoc[(value - 1) + 1];
-                            int VB$t_i4$L1 = this.bTipoDocItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                            int VB_t_i4_L1 = this.bTipoDocItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                             {
                                 this.aBTipoDoc[nContador].id = oRespuesta.BFEResultGet[nContador].Doc_Id;
                                 this.aBTipoDoc[nContador].ds = oRespuesta.BFEResultGet[nContador].Doc_Ds;
@@ -1816,8 +3616,8 @@
                                 this.ibTipoIvaItemCantidad = oRespuesta.BFEResultGet.Length;
                                 value = this.ibTipoIvaItemCantidad;
                                 this.abTipoIva = new bTipoIva[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.bTipoIvaItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.bTipoIvaItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.abTipoIva[nContador].id = oRespuesta.BFEResultGet[nContador].IVA_Id;
                                     this.abTipoIva[nContador].ds = oRespuesta.BFEResultGet[nContador].IVA_Ds;
@@ -1840,12 +3640,12 @@
                     }
                     return bResultado;
                 }
-                WSAFIPFE.bAFIP.ClsBFEAuthRequest autorizacion = new WSAFIPFE.bAFIP.ClsBFEAuthRequest();
+                WSAFIPFE.bAFIP.ClsBFEAuthRequest clsBfeAuthRequest = new WSAFIPFE.bAFIP.ClsBFEAuthRequest();
                 try
                 {
-                    autorizacion.Cuit = Conversions.ToLong(this.cuit);
-                    autorizacion.Token = this.btoken;
-                    autorizacion.Sign = this.bsign;
+                    clsBfeAuthRequest.Cuit = Conversions.ToLong(this.cuit);
+                    clsBfeAuthRequest.Token = this.btoken;
+                    clsBfeAuthRequest.Sign = this.bsign;
                 }
                 catch (Exception exception3)
                 {
@@ -1872,7 +3672,7 @@
                             servicio.Proxy = pr;
                         }
                         servicio.Url = this.bDireccionServicioURL;
-                        WSAFIPFE.bAFIP.BFEResponse_Tipo_IVA oRespuesta = servicio.BFEGetPARAM_Tipo_IVA(autorizacion);
+                        WSAFIPFE.bAFIP.BFEResponse_Tipo_IVA oRespuesta = servicio.BFEGetPARAM_Tipo_IVA(clsBfeAuthRequest);
                         this.iberrcode = oRespuesta.BFEErr.ErrCode;
                         this.strberrmsg = oRespuesta.BFEErr.ErrMsg;
                         this.iberrcode = oRespuesta.BFEErr.ErrCode;
@@ -1882,8 +3682,8 @@
                             this.ibTipoIvaItemCantidad = oRespuesta.BFEResultGet.Length;
                             value = this.ibTipoIvaItemCantidad;
                             this.abTipoIva = new bTipoIva[(value - 1) + 1];
-                            int VB$t_i4$L1 = this.bTipoIvaItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                            int VB_t_i4_L1 = this.bTipoIvaItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                             {
                                 this.abTipoIva[nContador].id = oRespuesta.BFEResultGet[nContador].IVA_Id;
                                 this.abTipoIva[nContador].ds = oRespuesta.BFEResultGet[nContador].IVA_Ds;
@@ -1961,8 +3761,8 @@
                                 this.ibUMedItemCantidad = oRespuesta.BFEResultGet.Length;
                                 value = this.ibUMedItemCantidad;
                                 this.aBUMed = new bUMed[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.bUMedItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.bUMedItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.aBUMed[nContador].id = oRespuesta.BFEResultGet[nContador].Umed_Id;
                                     this.aBUMed[nContador].ds = oRespuesta.BFEResultGet[nContador].Umed_Ds;
@@ -1985,12 +3785,12 @@
                     }
                     return bResultado;
                 }
-                WSAFIPFE.bAFIP.ClsBFEAuthRequest autorizacion = new WSAFIPFE.bAFIP.ClsBFEAuthRequest();
+                WSAFIPFE.bAFIP.ClsBFEAuthRequest clsBfeAuthRequest = new WSAFIPFE.bAFIP.ClsBFEAuthRequest();
                 try
                 {
-                    autorizacion.Cuit = Conversions.ToLong(this.cuit);
-                    autorizacion.Token = this.btoken;
-                    autorizacion.Sign = this.bsign;
+                    clsBfeAuthRequest.Cuit = Conversions.ToLong(this.cuit);
+                    clsBfeAuthRequest.Token = this.btoken;
+                    clsBfeAuthRequest.Sign = this.bsign;
                 }
                 catch (Exception exception3)
                 {
@@ -2017,7 +3817,7 @@
                             servicio.Proxy = pr;
                         }
                         servicio.Url = this.bDireccionServicioURL;
-                        WSAFIPFE.bAFIP.BFEResponse_Umed oRespuesta = servicio.BFEGetPARAM_UMed(autorizacion);
+                        WSAFIPFE.bAFIP.BFEResponse_Umed oRespuesta = servicio.BFEGetPARAM_UMed(clsBfeAuthRequest);
                         this.iberrcode = oRespuesta.BFEErr.ErrCode;
                         this.strberrmsg = oRespuesta.BFEErr.ErrMsg;
                         this.iberrcode = oRespuesta.BFEErr.ErrCode;
@@ -2027,8 +3827,8 @@
                             this.ibUMedItemCantidad = oRespuesta.BFEResultGet.Length;
                             value = this.ibUMedItemCantidad;
                             this.aBUMed = new bUMed[(value - 1) + 1];
-                            int VB$t_i4$L1 = this.bUMedItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                            int VB_t_i4_L1 = this.bUMedItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                             {
                                 this.aBUMed[nContador].id = oRespuesta.BFEResultGet[nContador].Umed_Id;
                                 this.aBUMed[nContador].ds = oRespuesta.BFEResultGet[nContador].Umed_Ds;
@@ -2106,8 +3906,8 @@
                                 this.ibZonaItemCantidad = oRespuesta.BFEResultGet.Length;
                                 value = this.ibZonaItemCantidad;
                                 this.abZona = new bZonas[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.bZonaItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.bZonaItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.abZona[nContador].id = oRespuesta.BFEResultGet[nContador].Zon_Id;
                                     this.abZona[nContador].ds = oRespuesta.BFEResultGet[nContador].Zon_Ds;
@@ -2130,12 +3930,12 @@
                     }
                     return bResultado;
                 }
-                WSAFIPFE.bAFIP.ClsBFEAuthRequest autorizacion = new WSAFIPFE.bAFIP.ClsBFEAuthRequest();
+                WSAFIPFE.bAFIP.ClsBFEAuthRequest clsBfeAuthRequest = new WSAFIPFE.bAFIP.ClsBFEAuthRequest();
                 try
                 {
-                    autorizacion.Cuit = Conversions.ToLong(this.cuit);
-                    autorizacion.Token = this.btoken;
-                    autorizacion.Sign = this.bsign;
+                    clsBfeAuthRequest.Cuit = Conversions.ToLong(this.cuit);
+                    clsBfeAuthRequest.Token = this.btoken;
+                    clsBfeAuthRequest.Sign = this.bsign;
                 }
                 catch (Exception exception3)
                 {
@@ -2162,7 +3962,7 @@
                             servicio.Proxy = pr;
                         }
                         servicio.Url = this.bDireccionServicioURL;
-                        WSAFIPFE.bAFIP.BFEResponse_Zon oRespuesta = servicio.BFEGetPARAM_Zonas(autorizacion);
+                        WSAFIPFE.bAFIP.BFEResponse_Zon oRespuesta = servicio.BFEGetPARAM_Zonas(clsBfeAuthRequest);
                         this.iberrcode = oRespuesta.BFEErr.ErrCode;
                         this.strberrmsg = oRespuesta.BFEErr.ErrMsg;
                         this.iberrcode = oRespuesta.BFEErr.ErrCode;
@@ -2172,8 +3972,8 @@
                             this.ibZonaItemCantidad = oRespuesta.BFEResultGet.Length;
                             value = this.ibZonaItemCantidad;
                             this.abZona = new bZonas[(value - 1) + 1];
-                            int VB$t_i4$L1 = this.bZonaItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                            int VB_t_i4_L1 = this.bZonaItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                             {
                                 this.abZona[nContador].id = oRespuesta.BFEResultGet[nContador].Zon_Id;
                                 this.abZona[nContador].ds = oRespuesta.BFEResultGet[nContador].Zon_Ds;
@@ -2344,8 +4144,8 @@
                         oPedido.Tipo_cbte = (short) nTipoComprobante;
                         oPedido.Tipo_doc = (short) this.bTipo_Doc;
                         oPedido.Zona = (short) this.bZona;
-                        int VB$t_i4$L0 = this.bItemCantidad - 1;
-                        for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                        int VB_t_i4_L0 = this.bItemCantidad - 1;
+                        for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                         {
                             WSAFIPFE.bAFIPTest.Item oPedidoitem = new WSAFIPFE.bAFIPTest.Item();
                             this.IndiceItem = nContador;
@@ -2438,12 +4238,12 @@
                 return bResultado;
             }
             this.iPaso++;
-            WSAFIPFE.bAFIP.ClsBFEAuthRequest autorizacion = new WSAFIPFE.bAFIP.ClsBFEAuthRequest();
+            WSAFIPFE.bAFIP.ClsBFEAuthRequest clsBfeAuthRequest = new WSAFIPFE.bAFIP.ClsBFEAuthRequest();
             try
             {
-                autorizacion.Cuit = Conversions.ToLong(this.cuit);
-                autorizacion.Token = this.btoken;
-                autorizacion.Sign = this.bsign;
+                clsBfeAuthRequest.Cuit = Conversions.ToLong(this.cuit);
+                clsBfeAuthRequest.Token = this.btoken;
+                clsBfeAuthRequest.Sign = this.bsign;
             }
             catch (Exception exception4)
             {
@@ -2490,8 +4290,8 @@
                 oPedido.Tipo_doc = (short) this.bTipo_Doc;
                 oPedido.Zona = (short) this.bZona;
                 this.iPaso++;
-                int VB$t_i4$L1 = this.bItemCantidad - 1;
-                for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                int VB_t_i4_L1 = this.bItemCantidad - 1;
+                for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                 {
                     WSAFIPFE.bAFIP.Item oPedidoitem = new WSAFIPFE.bAFIP.Item();
                     this.IndiceItem = nContador;
@@ -2537,7 +4337,7 @@
                         ProjectData.ClearProjectError();
                     }
                 }
-                WSAFIPFE.bAFIP.BFEResponseAuthorize oRespuesta = servicio.BFEAuthorize(autorizacion, oPedido);
+                WSAFIPFE.bAFIP.BFEResponseAuthorize oRespuesta = servicio.BFEAuthorize(clsBfeAuthRequest, oPedido);
                 this.iPaso++;
                 if (oRespuesta == null)
                 {
@@ -2614,8 +4414,8 @@
                     else
                     {
                         oFamilias = new Familia[(this.dFamiliaItemCantidad - 1) + 1];
-                        int VB$t_i4$L0 = this.dFamiliaItemCantidad - 1;
-                        for (int nIndex = 0; nIndex <= VB$t_i4$L0; nIndex++)
+                        int VB_t_i4_L0 = this.dFamiliaItemCantidad - 1;
+                        for (int nIndex = 0; nIndex <= VB_t_i4_L0; nIndex++)
                         {
                             Familia oFamilia = new Familia();
                             oFamilia.cantidad = this.adFamilia[nIndex].cantidad;
@@ -2878,12 +4678,12 @@
                     }
                     return bResultado;
                 }
-                WSAFIPFE.afip.FEAuthRequest autorizacion = new WSAFIPFE.afip.FEAuthRequest();
+                WSAFIPFE.afip.FEAuthRequest feAuthRequest = new WSAFIPFE.afip.FEAuthRequest();
                 try
                 {
-                    autorizacion.cuit = Conversions.ToLong(this.cuit);
-                    autorizacion.Token = this.token;
-                    autorizacion.Sign = this.sign;
+                    feAuthRequest.cuit = Conversions.ToLong(this.cuit);
+                    feAuthRequest.Token = this.token;
+                    feAuthRequest.Sign = this.sign;
                 }
                 catch (Exception exception3)
                 {
@@ -3098,8 +4898,8 @@
                                 this.if1ErrorItemCantidad = 0;
                                 value = this.f1ErrorItemCantidad;
                                 this.af1Error = new f1Error[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.f1ErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.f1ErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                     this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -3110,8 +4910,8 @@
                                 this.if1ErrorItemCantidad = oRespuesta.Errors.Length;
                                 value = this.f1ErrorItemCantidad;
                                 this.af1Error = new f1Error[(value - 1) + 1];
-                                int VB$t_i4$L1 = this.f1ErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                                int VB_t_i4_L1 = this.f1ErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                                 {
                                     this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                     this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -3122,8 +4922,8 @@
                                 this.if1EventItemCantidad = 0;
                                 value = this.f1EventItemCantidad;
                                 this.af1Event = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L2 = this.f1EventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L2; nContador++)
+                                int VB_t_i4_L2 = this.f1EventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L2; nContador++)
                                 {
                                     this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                     this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -3134,8 +4934,8 @@
                                 this.if1EventItemCantidad = oRespuesta.Events.Length;
                                 value = this.f1EventItemCantidad;
                                 this.af1Event = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L3 = this.f1EventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L3; nContador++)
+                                int VB_t_i4_L3 = this.f1EventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L3; nContador++)
                                 {
                                     this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                     this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -3237,8 +5037,8 @@
                             this.if1ErrorItemCantidad = 0;
                             value = this.f1ErrorItemCantidad;
                             this.af1Error = new f1Error[(value - 1) + 1];
-                            int VB$t_i4$L4 = this.f1ErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L4; nContador++)
+                            int VB_t_i4_L4 = this.f1ErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L4; nContador++)
                             {
                                 this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                 this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -3249,8 +5049,8 @@
                             this.if1ErrorItemCantidad = oRespuesta.Errors.Length;
                             value = this.f1ErrorItemCantidad;
                             this.af1Error = new f1Error[(value - 1) + 1];
-                            int VB$t_i4$L5 = this.f1ErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L5; nContador++)
+                            int VB_t_i4_L5 = this.f1ErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L5; nContador++)
                             {
                                 this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                 this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -3261,8 +5061,8 @@
                             this.if1EventItemCantidad = 0;
                             value = this.f1EventItemCantidad;
                             this.af1Event = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L6 = this.f1EventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L6; nContador++)
+                            int VB_t_i4_L6 = this.f1EventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L6; nContador++)
                             {
                                 this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                 this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -3273,8 +5073,8 @@
                             this.if1EventItemCantidad = oRespuesta.Events.Length;
                             value = this.f1EventItemCantidad;
                             this.af1Event = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L7 = this.f1EventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L7; nContador++)
+                            int VB_t_i4_L7 = this.f1EventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L7; nContador++)
                             {
                                 this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                 this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -3322,7 +5122,7 @@
         {
             int nContador;
             int nContador2;
-            int nLimite2;
+            int nLimite2=0;
             this.if1ErrorItemCantidad = 0;
             this.if1EventItemCantidad = 0;
             bool bResultado = true;
@@ -3374,8 +5174,8 @@
                         oPedidoCabecera.CantReg = this.F1CabeceraCantReg;
                         oPedidoCabecera.CbteTipo = this.F1CabeceraCbteTipo;
                         oPedidoCabecera.PtoVta = this.F1CabeceraPtoVta;
-                        int VB$t_i4$L0 = nLimite - 1;
-                        for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                        int VB_t_i4_L0 = nLimite - 1;
+                        for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                         {
                             this.indice = nContador;
                             WSAFIPFE.f1AFIPTest.FECAEADetRequest oPedidoitem = new WSAFIPFE.f1AFIPTest.FECAEADetRequest();
@@ -3388,9 +5188,9 @@
                             else
                             {
                                 oPedidoItemCbteAsocs = new WSAFIPFE.f1AFIPTest.CbteAsoc[(this.F1DetalleCbtesAsocItemCantidad - 1) + 1];
-                                int VB$t_i4$L1 = this.F1DetalleCbtesAsocItemCantidad - 1;
+                                int VB_t_i4_L1 = this.F1DetalleCbtesAsocItemCantidad - 1;
                                 nContador2 = 0;
-                                while (nContador2 <= VB$t_i4$L1)
+                                while (nContador2 <= VB_t_i4_L1)
                                 {
                                     WSAFIPFE.f1AFIPTest.CbteAsoc oPedidoItemCbteAsoc = new WSAFIPFE.f1AFIPTest.CbteAsoc();
                                     this.IndiceItem = nContador2;
@@ -3409,9 +5209,9 @@
                             else
                             {
                                 oPedidoItemIvas = new WSAFIPFE.f1AFIPTest.AlicIva[(this.F1DetalleIvaItemCantidad - 1) + 1];
-                                int VB$t_i4$L2 = this.F1DetalleIvaItemCantidad - 1;
+                                int VB_t_i4_L2 = this.F1DetalleIvaItemCantidad - 1;
                                 nContador2 = 0;
-                                while (nContador2 <= VB$t_i4$L2)
+                                while (nContador2 <= VB_t_i4_L2)
                                 {
                                     WSAFIPFE.f1AFIPTest.AlicIva oPedidoItemIva = new WSAFIPFE.f1AFIPTest.AlicIva();
                                     this.IndiceItem = nContador2;
@@ -3430,9 +5230,9 @@
                             else
                             {
                                 oPedidoItemOpcionals = new WSAFIPFE.f1AFIPTest.Opcional[(this.F1DetalleIvaItemCantidad - 1) + 1];
-                                int VB$t_i4$L3 = this.F1DetalleOpcionalItemCantidad - 1;
+                                int VB_t_i4_L3 = this.F1DetalleOpcionalItemCantidad - 1;
                                 nContador2 = 0;
-                                while (nContador2 <= VB$t_i4$L3)
+                                while (nContador2 <= VB_t_i4_L3)
                                 {
                                     WSAFIPFE.f1AFIPTest.Opcional oPedidoItemOpcional = new WSAFIPFE.f1AFIPTest.Opcional();
                                     this.IndiceItem = nContador2;
@@ -3450,9 +5250,9 @@
                             else
                             {
                                 oPedidoItemTributos = new WSAFIPFE.f1AFIPTest.Tributo[(this.F1DetalleTributoItemCantidad - 1) + 1];
-                                int VB$t_i4$L4 = this.F1DetalleTributoItemCantidad - 1;
+                                int VB_t_i4_L4 = this.F1DetalleTributoItemCantidad - 1;
                                 nContador2 = 0;
-                                while (nContador2 <= VB$t_i4$L4)
+                                while (nContador2 <= VB_t_i4_L4)
                                 {
                                     WSAFIPFE.f1AFIPTest.Tributo oPedidoItemTributo = new WSAFIPFE.f1AFIPTest.Tributo();
                                     this.IndiceItem = nContador2;
@@ -3564,8 +5364,8 @@
                                 this.if1ErrorItemCantidad = 0;
                                 value = this.f1ErrorItemCantidad;
                                 this.af1Error = new f1Error[(value - 1) + 1];
-                                int VB$t_i4$L5 = this.f1ErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L5; nContador++)
+                                int VB_t_i4_L5 = this.f1ErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L5; nContador++)
                                 {
                                     this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                     this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -3576,8 +5376,8 @@
                                 this.if1ErrorItemCantidad = oRespuesta.Errors.Length;
                                 value = this.f1ErrorItemCantidad;
                                 this.af1Error = new f1Error[(value - 1) + 1];
-                                int VB$t_i4$L6 = this.f1ErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L6; nContador++)
+                                int VB_t_i4_L6 = this.f1ErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L6; nContador++)
                                 {
                                     this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                     this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -3588,8 +5388,8 @@
                                 this.if1EventItemCantidad = 0;
                                 value = this.f1EventItemCantidad;
                                 this.af1Event = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L7 = this.f1EventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L7; nContador++)
+                                int VB_t_i4_L7 = this.f1EventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L7; nContador++)
                                 {
                                     this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                     this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -3600,8 +5400,8 @@
                                 this.if1EventItemCantidad = oRespuesta.Events.Length;
                                 value = this.f1EventItemCantidad;
                                 this.af1Event = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L8 = this.f1EventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L8; nContador++)
+                                int VB_t_i4_L8 = this.f1EventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L8; nContador++)
                                 {
                                     this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                     this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -3617,8 +5417,8 @@
                                 this.iF1RespuetaCantidadReg = oRespuesta.FeDetResp.Length;
                                 value = this.F1RespuestaCantidadReg;
                                 this.aF1RespuestaDetalle = new F1DetalleRespuesta[(value - 1) + 1];
-                                int VB$t_i4$L9 = this.iF1RespuetaCantidadReg - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L9; nContador++)
+                                int VB_t_i4_L9 = this.iF1RespuetaCantidadReg - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L9; nContador++)
                                 {
                                     WSAFIPFE.f1AFIPTest.FECAEADetResponse oRespuestaDetalleItem = oRespuesta.FeDetResp[nContador];
                                     this.aF1RespuestaDetalle[nContador].CAE = "";
@@ -3643,9 +5443,9 @@
                                         {
                                             int v2 = this.F1RespuestaDetalleObservacionItemCantidad - 1;
                                             this.aF1RespuestaDetalleObs = (F1DetalleRespuestaObs[,]) Microsoft.VisualBasic.CompilerServices.Utils.CopyArray((Array) this.aF1RespuestaDetalleObs, new F1DetalleRespuestaObs[v1 + 1, v2 + 1]);
-                                            int VB$t_i4$L10 = this.F1RespuestaDetalleObservacionItemCantidad - 1;
+                                            int VB_t_i4_L10 = this.F1RespuestaDetalleObservacionItemCantidad - 1;
                                             nContador2 = 0;
-                                            while (nContador2 <= VB$t_i4$L10)
+                                            while (nContador2 <= VB_t_i4_L10)
                                             {
                                                 this.aF1RespuestaDetalleObs[nContador, nContador2].code = oRespuestaDetalleItem.Observaciones[nContador2].Code;
                                                 this.aF1RespuestaDetalleObs[nContador, nContador2].msg = oRespuestaDetalleItem.Observaciones[nContador2].Msg;
@@ -3695,8 +5495,8 @@
                     oPedidoCabecera.CantReg = this.F1CabeceraCantReg;
                     oPedidoCabecera.CbteTipo = this.F1CabeceraCbteTipo;
                     oPedidoCabecera.PtoVta = this.F1CabeceraPtoVta;
-                    int VB$t_i4$L11 = nLimite - 1;
-                    for (nContador = 0; nContador <= VB$t_i4$L11; nContador++)
+                    int VB_t_i4_L11 = nLimite - 1;
+                    for (nContador = 0; nContador <= VB_t_i4_L11; nContador++)
                     {
                         this.indice = nContador;
                         WSAFIPFE.f1AFIP.FECAEADetRequest oPedidoitem = new WSAFIPFE.f1AFIP.FECAEADetRequest();
@@ -3709,9 +5509,9 @@
                         else
                         {
                             oPedidoItemCbteAsocs = new WSAFIPFE.f1AFIP.CbteAsoc[(this.F1DetalleCbtesAsocItemCantidad - 1) + 1];
-                            int VB$t_i4$L12 = this.F1DetalleCbtesAsocItemCantidad - 1;
+                            int VB_t_i4_L12 = this.F1DetalleCbtesAsocItemCantidad - 1;
                             nContador2 = 0;
-                            while (nContador2 <= VB$t_i4$L12)
+                            while (nContador2 <= VB_t_i4_L12)
                             {
                                 WSAFIPFE.f1AFIP.CbteAsoc oPedidoItemCbteAsoc = new WSAFIPFE.f1AFIP.CbteAsoc();
                                 this.IndiceItem = nContador2;
@@ -3730,9 +5530,9 @@
                         else
                         {
                             oPedidoItemIvas = new WSAFIPFE.f1AFIP.AlicIva[(this.F1DetalleIvaItemCantidad - 1) + 1];
-                            int VB$t_i4$L13 = this.F1DetalleIvaItemCantidad - 1;
+                            int VB_t_i4_L13 = this.F1DetalleIvaItemCantidad - 1;
                             nContador2 = 0;
-                            while (nContador2 <= VB$t_i4$L13)
+                            while (nContador2 <= VB_t_i4_L13)
                             {
                                 WSAFIPFE.f1AFIP.AlicIva oPedidoItemIva = new WSAFIPFE.f1AFIP.AlicIva();
                                 this.IndiceItem = nContador2;
@@ -3751,9 +5551,9 @@
                         else
                         {
                             oPedidoItemOpcionals = new WSAFIPFE.f1AFIP.Opcional[(this.F1DetalleIvaItemCantidad - 1) + 1];
-                            int VB$t_i4$L14 = this.F1DetalleOpcionalItemCantidad - 1;
+                            int VB_t_i4_L14 = this.F1DetalleOpcionalItemCantidad - 1;
                             nContador2 = 0;
-                            while (nContador2 <= VB$t_i4$L14)
+                            while (nContador2 <= VB_t_i4_L14)
                             {
                                 WSAFIPFE.f1AFIP.Opcional oPedidoItemOpcional = new WSAFIPFE.f1AFIP.Opcional();
                                 this.IndiceItem = nContador2;
@@ -3771,9 +5571,9 @@
                         else
                         {
                             oPedidoItemTributos = new WSAFIPFE.f1AFIP.Tributo[(this.F1DetalleTributoItemCantidad - 1) + 1];
-                            int VB$t_i4$L15 = this.F1DetalleTributoItemCantidad - 1;
+                            int VB_t_i4_L15 = this.F1DetalleTributoItemCantidad - 1;
                             nContador2 = 0;
-                            while (nContador2 <= VB$t_i4$L15)
+                            while (nContador2 <= VB_t_i4_L15)
                             {
                                 WSAFIPFE.f1AFIP.Tributo oPedidoItemTributo = new WSAFIPFE.f1AFIP.Tributo();
                                 this.IndiceItem = nContador2;
@@ -3886,8 +5686,8 @@
                             this.if1ErrorItemCantidad = 0;
                             value = this.f1ErrorItemCantidad;
                             this.af1Error = new f1Error[(value - 1) + 1];
-                            int VB$t_i4$L16 = this.f1ErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L16; nContador++)
+                            int VB_t_i4_L16 = this.f1ErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L16; nContador++)
                             {
                                 this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                 this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -3898,8 +5698,8 @@
                             this.if1ErrorItemCantidad = oRespuesta.Errors.Length;
                             value = this.f1ErrorItemCantidad;
                             this.af1Error = new f1Error[(value - 1) + 1];
-                            int VB$t_i4$L17 = this.f1ErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L17; nContador++)
+                            int VB_t_i4_L17 = this.f1ErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L17; nContador++)
                             {
                                 this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                 this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -3910,8 +5710,8 @@
                             this.if1EventItemCantidad = 0;
                             value = this.f1EventItemCantidad;
                             this.af1Event = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L18 = this.f1EventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L18; nContador++)
+                            int VB_t_i4_L18 = this.f1EventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L18; nContador++)
                             {
                                 this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                 this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -3922,8 +5722,8 @@
                             this.if1EventItemCantidad = oRespuesta.Events.Length;
                             value = this.f1EventItemCantidad;
                             this.af1Event = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L19 = this.f1EventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L19; nContador++)
+                            int VB_t_i4_L19 = this.f1EventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L19; nContador++)
                             {
                                 this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                 this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -3939,8 +5739,8 @@
                             this.iF1RespuetaCantidadReg = oRespuesta.FeDetResp.Length;
                             value = this.F1RespuestaCantidadReg;
                             this.aF1RespuestaDetalle = new F1DetalleRespuesta[(value - 1) + 1];
-                            int VB$t_i4$L20 = this.iF1RespuetaCantidadReg - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L20; nContador++)
+                            int VB_t_i4_L20 = this.iF1RespuetaCantidadReg - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L20; nContador++)
                             {
                                 WSAFIPFE.f1AFIP.FECAEADetResponse oRespuestaDetalleItem = oRespuesta.FeDetResp[nContador];
                                 this.aF1RespuestaDetalle[nContador].CAE = "";
@@ -3965,8 +5765,8 @@
                                     {
                                         int v2 = this.F1RespuestaDetalleObservacionItemCantidad - 1;
                                         this.aF1RespuestaDetalleObs = (F1DetalleRespuestaObs[,]) Microsoft.VisualBasic.CompilerServices.Utils.CopyArray((Array) this.aF1RespuestaDetalleObs, new F1DetalleRespuestaObs[v1 + 1, v2 + 1]);
-                                        int VB$t_i4$L21 = this.F1RespuestaDetalleObservacionItemCantidad - 1;
-                                        for (nContador2 = 0; nContador2 <= VB$t_i4$L21; nContador2++)
+                                        int VB_t_i4_L21 = this.F1RespuestaDetalleObservacionItemCantidad - 1;
+                                        for (nContador2 = 0; nContador2 <= VB_t_i4_L21; nContador2++)
                                         {
                                             this.aF1RespuestaDetalleObs[nContador, nContador2].code = oRespuestaDetalleItem.Observaciones[nContador2].Code;
                                             this.aF1RespuestaDetalleObs[nContador, nContador2].msg = oRespuestaDetalleItem.Observaciones[nContador2].Msg;
@@ -4063,8 +5863,8 @@
                                 this.if1ErrorItemCantidad = 0;
                                 value = this.f1ErrorItemCantidad;
                                 this.af1Error = new f1Error[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.f1ErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.f1ErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                     this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -4075,8 +5875,8 @@
                                 this.if1ErrorItemCantidad = oRespuesta.Errors.Length;
                                 value = this.f1ErrorItemCantidad;
                                 this.af1Error = new f1Error[(value - 1) + 1];
-                                int VB$t_i4$L1 = this.f1ErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                                int VB_t_i4_L1 = this.f1ErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                                 {
                                     this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                     this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -4087,8 +5887,8 @@
                                 this.if1EventItemCantidad = 0;
                                 value = this.f1EventItemCantidad;
                                 this.af1Event = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L2 = this.f1EventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L2; nContador++)
+                                int VB_t_i4_L2 = this.f1EventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L2; nContador++)
                                 {
                                     this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                     this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -4099,8 +5899,8 @@
                                 this.if1EventItemCantidad = oRespuesta.Events.Length;
                                 value = this.f1EventItemCantidad;
                                 this.af1Event = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L3 = this.f1EventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L3; nContador++)
+                                int VB_t_i4_L3 = this.f1EventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L3; nContador++)
                                 {
                                     this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                     this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -4117,8 +5917,8 @@
                                 this.iF1RespuestaCAEAItemCantidad = oRespuesta.Events.Length;
                                 value = this.iF1RespuestaCAEAItemCantidad;
                                 this.aF1RespuestaDetalleCAEA = new F1DetalleRespuestaCAEA[(value - 1) + 1];
-                                int VB$t_i4$L4 = this.iF1RespuestaCAEAItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L4; nContador++)
+                                int VB_t_i4_L4 = this.iF1RespuestaCAEAItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L4; nContador++)
                                 {
                                     this.aF1RespuestaDetalleCAEA[nContador].CAEA = oRespuesta.ResultGet[nContador].CAEA;
                                     this.aF1RespuestaDetalleCAEA[nContador].FchProceso = oRespuesta.ResultGet[nContador].FchProceso;
@@ -4202,8 +6002,8 @@
                             this.if1ErrorItemCantidad = 0;
                             value = this.f1ErrorItemCantidad;
                             this.af1Error = new f1Error[(value - 1) + 1];
-                            int VB$t_i4$L5 = this.f1ErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L5; nContador++)
+                            int VB_t_i4_L5 = this.f1ErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L5; nContador++)
                             {
                                 this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                 this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -4214,8 +6014,8 @@
                             this.if1ErrorItemCantidad = oRespuesta.Errors.Length;
                             value = this.f1ErrorItemCantidad;
                             this.af1Error = new f1Error[(value - 1) + 1];
-                            int VB$t_i4$L6 = this.f1ErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L6; nContador++)
+                            int VB_t_i4_L6 = this.f1ErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L6; nContador++)
                             {
                                 this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                 this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -4226,8 +6026,8 @@
                             this.if1EventItemCantidad = 0;
                             value = this.f1EventItemCantidad;
                             this.af1Event = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L7 = this.f1EventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L7; nContador++)
+                            int VB_t_i4_L7 = this.f1EventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L7; nContador++)
                             {
                                 this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                 this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -4238,8 +6038,8 @@
                             this.if1EventItemCantidad = oRespuesta.Events.Length;
                             value = this.f1EventItemCantidad;
                             this.af1Event = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L8 = this.f1EventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L8; nContador++)
+                            int VB_t_i4_L8 = this.f1EventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L8; nContador++)
                             {
                                 this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                 this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -4256,8 +6056,8 @@
                             this.iF1RespuestaCAEAItemCantidad = oRespuesta.Events.Length;
                             value = this.iF1RespuestaCAEAItemCantidad;
                             this.aF1RespuestaDetalleCAEA = new F1DetalleRespuestaCAEA[(value - 1) + 1];
-                            int VB$t_i4$L9 = this.iF1RespuestaCAEAItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L9; nContador++)
+                            int VB_t_i4_L9 = this.iF1RespuestaCAEAItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L9; nContador++)
                             {
                                 this.aF1RespuestaDetalleCAEA[nContador].CAEA = oRespuesta.ResultGet[nContador].CAEA;
                                 this.aF1RespuestaDetalleCAEA[nContador].FchProceso = oRespuesta.ResultGet[nContador].FchProceso;
@@ -4357,8 +6157,8 @@
                                 this.if1ErrorItemCantidad = 0;
                                 value = this.f1ErrorItemCantidad;
                                 this.af1Error = new f1Error[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.f1ErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.f1ErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                     this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -4369,8 +6169,8 @@
                                 this.if1ErrorItemCantidad = oRespuesta.Errors.Length;
                                 value = this.f1ErrorItemCantidad;
                                 this.af1Error = new f1Error[(value - 1) + 1];
-                                int VB$t_i4$L1 = this.f1ErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                                int VB_t_i4_L1 = this.f1ErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                                 {
                                     this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                     this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -4381,8 +6181,8 @@
                                 this.if1EventItemCantidad = 0;
                                 value = this.f1EventItemCantidad;
                                 this.af1Event = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L2 = this.f1EventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L2; nContador++)
+                                int VB_t_i4_L2 = this.f1EventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L2; nContador++)
                                 {
                                     this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                     this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -4393,8 +6193,8 @@
                                 this.if1EventItemCantidad = oRespuesta.Events.Length;
                                 value = this.f1EventItemCantidad;
                                 this.af1Event = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L3 = this.f1EventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L3; nContador++)
+                                int VB_t_i4_L3 = this.f1EventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L3; nContador++)
                                 {
                                     this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                     this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -4481,8 +6281,8 @@
                             this.if1ErrorItemCantidad = 0;
                             value = this.f1ErrorItemCantidad;
                             this.af1Error = new f1Error[(value - 1) + 1];
-                            int VB$t_i4$L4 = this.f1ErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L4; nContador++)
+                            int VB_t_i4_L4 = this.f1ErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L4; nContador++)
                             {
                                 this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                 this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -4493,8 +6293,8 @@
                             this.if1ErrorItemCantidad = oRespuesta.Errors.Length;
                             value = this.f1ErrorItemCantidad;
                             this.af1Error = new f1Error[(value - 1) + 1];
-                            int VB$t_i4$L5 = this.f1ErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L5; nContador++)
+                            int VB_t_i4_L5 = this.f1ErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L5; nContador++)
                             {
                                 this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                 this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -4505,8 +6305,8 @@
                             this.if1EventItemCantidad = 0;
                             value = this.f1EventItemCantidad;
                             this.af1Event = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L6 = this.f1EventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L6; nContador++)
+                            int VB_t_i4_L6 = this.f1EventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L6; nContador++)
                             {
                                 this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                 this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -4517,8 +6317,8 @@
                             this.if1EventItemCantidad = oRespuesta.Events.Length;
                             value = this.f1EventItemCantidad;
                             this.af1Event = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L7 = this.f1EventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L7; nContador++)
+                            int VB_t_i4_L7 = this.f1EventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L7; nContador++)
                             {
                                 this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                 this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -4622,8 +6422,8 @@
                                 this.if1ErrorItemCantidad = 0;
                                 value = this.f1ErrorItemCantidad;
                                 this.af1Error = new f1Error[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.f1ErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.f1ErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                     this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -4634,8 +6434,8 @@
                                 this.if1ErrorItemCantidad = oRespuesta.Errors.Length;
                                 value = this.f1ErrorItemCantidad;
                                 this.af1Error = new f1Error[(value - 1) + 1];
-                                int VB$t_i4$L1 = this.f1ErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                                int VB_t_i4_L1 = this.f1ErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                                 {
                                     this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                     this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -4646,8 +6446,8 @@
                                 this.if1EventItemCantidad = 0;
                                 value = this.f1EventItemCantidad;
                                 this.af1Event = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L2 = this.f1EventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L2; nContador++)
+                                int VB_t_i4_L2 = this.f1EventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L2; nContador++)
                                 {
                                     this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                     this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -4658,8 +6458,8 @@
                                 this.if1EventItemCantidad = oRespuesta.Events.Length;
                                 value = this.f1EventItemCantidad;
                                 this.af1Event = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L3 = this.f1EventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L3; nContador++)
+                                int VB_t_i4_L3 = this.f1EventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L3; nContador++)
                                 {
                                     this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                     this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -4762,8 +6562,8 @@
                             this.if1ErrorItemCantidad = 0;
                             value = this.f1ErrorItemCantidad;
                             this.af1Error = new f1Error[(value - 1) + 1];
-                            int VB$t_i4$L4 = this.f1ErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L4; nContador++)
+                            int VB_t_i4_L4 = this.f1ErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L4; nContador++)
                             {
                                 this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                 this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -4774,8 +6574,8 @@
                             this.if1ErrorItemCantidad = oRespuesta.Errors.Length;
                             value = this.f1ErrorItemCantidad;
                             this.af1Error = new f1Error[(value - 1) + 1];
-                            int VB$t_i4$L5 = this.f1ErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L5; nContador++)
+                            int VB_t_i4_L5 = this.f1ErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L5; nContador++)
                             {
                                 this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                 this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -4786,8 +6586,8 @@
                             this.if1EventItemCantidad = 0;
                             value = this.f1EventItemCantidad;
                             this.af1Event = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L6 = this.f1EventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L6; nContador++)
+                            int VB_t_i4_L6 = this.f1EventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L6; nContador++)
                             {
                                 this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                 this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -4798,8 +6598,8 @@
                             this.if1EventItemCantidad = oRespuesta.Events.Length;
                             value = this.f1EventItemCantidad;
                             this.af1Event = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L7 = this.f1EventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L7; nContador++)
+                            int VB_t_i4_L7 = this.f1EventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L7; nContador++)
                             {
                                 this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                 this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -4847,7 +6647,7 @@
         {
             int nContador;
             int nContador2;
-            int nLimite2;
+            int nLimite2=0;
             this.if1ErrorItemCantidad = 0;
             this.if1EventItemCantidad = 0;
             bool bResultado = true;
@@ -4899,8 +6699,8 @@
                         oPedidoCabecera.CantReg = this.F1CabeceraCantReg;
                         oPedidoCabecera.CbteTipo = this.F1CabeceraCbteTipo;
                         oPedidoCabecera.PtoVta = this.F1CabeceraPtoVta;
-                        int VB$t_i4$L0 = nLimite - 1;
-                        for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                        int VB_t_i4_L0 = nLimite - 1;
+                        for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                         {
                             this.indice = nContador;
                             WSAFIPFE.f1AFIPTest.FECAEDetRequest oPedidoitem = new WSAFIPFE.f1AFIPTest.FECAEDetRequest();
@@ -4913,9 +6713,9 @@
                             else
                             {
                                 oPedidoItemCbteAsocs = new WSAFIPFE.f1AFIPTest.CbteAsoc[(this.F1DetalleCbtesAsocItemCantidad - 1) + 1];
-                                int VB$t_i4$L1 = this.F1DetalleCbtesAsocItemCantidad - 1;
+                                int VB_t_i4_L1 = this.F1DetalleCbtesAsocItemCantidad - 1;
                                 nContador2 = 0;
-                                while (nContador2 <= VB$t_i4$L1)
+                                while (nContador2 <= VB_t_i4_L1)
                                 {
                                     WSAFIPFE.f1AFIPTest.CbteAsoc oPedidoItemCbteAsoc = new WSAFIPFE.f1AFIPTest.CbteAsoc();
                                     this.IndiceItem = nContador2;
@@ -4934,9 +6734,9 @@
                             else
                             {
                                 oPedidoItemIvas = new WSAFIPFE.f1AFIPTest.AlicIva[(this.F1DetalleIvaItemCantidad - 1) + 1];
-                                int VB$t_i4$L2 = this.F1DetalleIvaItemCantidad - 1;
+                                int VB_t_i4_L2 = this.F1DetalleIvaItemCantidad - 1;
                                 nContador2 = 0;
-                                while (nContador2 <= VB$t_i4$L2)
+                                while (nContador2 <= VB_t_i4_L2)
                                 {
                                     WSAFIPFE.f1AFIPTest.AlicIva oPedidoItemIva = new WSAFIPFE.f1AFIPTest.AlicIva();
                                     this.IndiceItem = nContador2;
@@ -4955,9 +6755,9 @@
                             else
                             {
                                 oPedidoItemOpcionals = new WSAFIPFE.f1AFIPTest.Opcional[(this.F1DetalleIvaItemCantidad - 1) + 1];
-                                int VB$t_i4$L3 = this.F1DetalleOpcionalItemCantidad - 1;
+                                int VB_t_i4_L3 = this.F1DetalleOpcionalItemCantidad - 1;
                                 nContador2 = 0;
-                                while (nContador2 <= VB$t_i4$L3)
+                                while (nContador2 <= VB_t_i4_L3)
                                 {
                                     WSAFIPFE.f1AFIPTest.Opcional oPedidoItemOpcional = new WSAFIPFE.f1AFIPTest.Opcional();
                                     this.IndiceItem = nContador2;
@@ -4975,9 +6775,9 @@
                             else
                             {
                                 oPedidoItemTributos = new WSAFIPFE.f1AFIPTest.Tributo[(this.F1DetalleTributoItemCantidad - 1) + 1];
-                                int VB$t_i4$L4 = this.F1DetalleTributoItemCantidad - 1;
+                                int VB_t_i4_L4 = this.F1DetalleTributoItemCantidad - 1;
                                 nContador2 = 0;
-                                while (nContador2 <= VB$t_i4$L4)
+                                while (nContador2 <= VB_t_i4_L4)
                                 {
                                     WSAFIPFE.f1AFIPTest.Tributo oPedidoItemTributo = new WSAFIPFE.f1AFIPTest.Tributo();
                                     this.IndiceItem = nContador2;
@@ -5088,8 +6888,8 @@
                                 this.if1ErrorItemCantidad = 0;
                                 value = this.f1ErrorItemCantidad;
                                 this.af1Error = new f1Error[(value - 1) + 1];
-                                int VB$t_i4$L5 = this.f1ErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L5; nContador++)
+                                int VB_t_i4_L5 = this.f1ErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L5; nContador++)
                                 {
                                     this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                     this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -5100,8 +6900,8 @@
                                 this.if1ErrorItemCantidad = oRespuesta.Errors.Length;
                                 value = this.f1ErrorItemCantidad;
                                 this.af1Error = new f1Error[(value - 1) + 1];
-                                int VB$t_i4$L6 = this.f1ErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L6; nContador++)
+                                int VB_t_i4_L6 = this.f1ErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L6; nContador++)
                                 {
                                     this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                     this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -5112,8 +6912,8 @@
                                 this.if1EventItemCantidad = 0;
                                 value = this.f1EventItemCantidad;
                                 this.af1Event = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L7 = this.f1EventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L7; nContador++)
+                                int VB_t_i4_L7 = this.f1EventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L7; nContador++)
                                 {
                                     this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                     this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -5124,8 +6924,8 @@
                                 this.if1EventItemCantidad = oRespuesta.Events.Length;
                                 value = this.f1EventItemCantidad;
                                 this.af1Event = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L8 = this.f1EventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L8; nContador++)
+                                int VB_t_i4_L8 = this.f1EventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L8; nContador++)
                                 {
                                     this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                     this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -5141,8 +6941,8 @@
                                 this.iF1RespuetaCantidadReg = oRespuesta.FeDetResp.Length;
                                 value = this.F1RespuestaCantidadReg;
                                 this.aF1RespuestaDetalle = new F1DetalleRespuesta[(value - 1) + 1];
-                                int VB$t_i4$L9 = this.iF1RespuetaCantidadReg - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L9; nContador++)
+                                int VB_t_i4_L9 = this.iF1RespuetaCantidadReg - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L9; nContador++)
                                 {
                                     WSAFIPFE.f1AFIPTest.FECAEDetResponse oRespuestaDetalleItem = oRespuesta.FeDetResp[nContador];
                                     this.aF1RespuestaDetalle[nContador].CAE = oRespuestaDetalleItem.CAE;
@@ -5170,9 +6970,9 @@
                                         {
                                             int v2 = this.F1RespuestaDetalleObservacionItemCantidad - 1;
                                             this.aF1RespuestaDetalleObs = (F1DetalleRespuestaObs[,]) Microsoft.VisualBasic.CompilerServices.Utils.CopyArray((Array) this.aF1RespuestaDetalleObs, new F1DetalleRespuestaObs[v1 + 1, v2 + 1]);
-                                            int VB$t_i4$L10 = this.F1RespuestaDetalleObservacionItemCantidad - 1;
+                                            int VB_t_i4_L10 = this.F1RespuestaDetalleObservacionItemCantidad - 1;
                                             nContador2 = 0;
-                                            while (nContador2 <= VB$t_i4$L10)
+                                            while (nContador2 <= VB_t_i4_L10)
                                             {
                                                 this.aF1RespuestaDetalleObs[nContador, nContador2].code = oRespuestaDetalleItem.Observaciones[nContador2].Code;
                                                 this.aF1RespuestaDetalleObs[nContador, nContador2].msg = oRespuestaDetalleItem.Observaciones[nContador2].Msg;
@@ -5222,8 +7022,8 @@
                     oPedidoCabecera.CantReg = this.F1CabeceraCantReg;
                     oPedidoCabecera.CbteTipo = this.F1CabeceraCbteTipo;
                     oPedidoCabecera.PtoVta = this.F1CabeceraPtoVta;
-                    int VB$t_i4$L11 = nLimite - 1;
-                    for (nContador = 0; nContador <= VB$t_i4$L11; nContador++)
+                    int VB_t_i4_L11 = nLimite - 1;
+                    for (nContador = 0; nContador <= VB_t_i4_L11; nContador++)
                     {
                         this.indice = nContador;
                         WSAFIPFE.f1AFIP.FECAEDetRequest oPedidoitem = new WSAFIPFE.f1AFIP.FECAEDetRequest();
@@ -5236,9 +7036,9 @@
                         else
                         {
                             oPedidoItemCbteAsocs = new WSAFIPFE.f1AFIP.CbteAsoc[(this.F1DetalleCbtesAsocItemCantidad - 1) + 1];
-                            int VB$t_i4$L12 = this.F1DetalleCbtesAsocItemCantidad - 1;
+                            int VB_t_i4_L12 = this.F1DetalleCbtesAsocItemCantidad - 1;
                             nContador2 = 0;
-                            while (nContador2 <= VB$t_i4$L12)
+                            while (nContador2 <= VB_t_i4_L12)
                             {
                                 WSAFIPFE.f1AFIP.CbteAsoc oPedidoItemCbteAsoc = new WSAFIPFE.f1AFIP.CbteAsoc();
                                 this.IndiceItem = nContador2;
@@ -5257,9 +7057,9 @@
                         else
                         {
                             oPedidoItemIvas = new WSAFIPFE.f1AFIP.AlicIva[(this.F1DetalleIvaItemCantidad - 1) + 1];
-                            int VB$t_i4$L13 = this.F1DetalleIvaItemCantidad - 1;
+                            int VB_t_i4_L13 = this.F1DetalleIvaItemCantidad - 1;
                             nContador2 = 0;
-                            while (nContador2 <= VB$t_i4$L13)
+                            while (nContador2 <= VB_t_i4_L13)
                             {
                                 WSAFIPFE.f1AFIP.AlicIva oPedidoItemIva = new WSAFIPFE.f1AFIP.AlicIva();
                                 this.IndiceItem = nContador2;
@@ -5278,9 +7078,9 @@
                         else
                         {
                             oPedidoItemOpcionals = new WSAFIPFE.f1AFIP.Opcional[(this.F1DetalleIvaItemCantidad - 1) + 1];
-                            int VB$t_i4$L14 = this.F1DetalleOpcionalItemCantidad - 1;
+                            int VB_t_i4_L14 = this.F1DetalleOpcionalItemCantidad - 1;
                             nContador2 = 0;
-                            while (nContador2 <= VB$t_i4$L14)
+                            while (nContador2 <= VB_t_i4_L14)
                             {
                                 WSAFIPFE.f1AFIP.Opcional oPedidoItemOpcional = new WSAFIPFE.f1AFIP.Opcional();
                                 this.IndiceItem = nContador2;
@@ -5298,9 +7098,9 @@
                         else
                         {
                             oPedidoItemTributos = new WSAFIPFE.f1AFIP.Tributo[(this.F1DetalleTributoItemCantidad - 1) + 1];
-                            int VB$t_i4$L15 = this.F1DetalleTributoItemCantidad - 1;
+                            int VB_t_i4_L15 = this.F1DetalleTributoItemCantidad - 1;
                             nContador2 = 0;
-                            while (nContador2 <= VB$t_i4$L15)
+                            while (nContador2 <= VB_t_i4_L15)
                             {
                                 WSAFIPFE.f1AFIP.Tributo oPedidoItemTributo = new WSAFIPFE.f1AFIP.Tributo();
                                 this.IndiceItem = nContador2;
@@ -5412,8 +7212,8 @@
                             this.if1ErrorItemCantidad = 0;
                             value = this.f1ErrorItemCantidad;
                             this.af1Error = new f1Error[(value - 1) + 1];
-                            int VB$t_i4$L16 = this.f1ErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L16; nContador++)
+                            int VB_t_i4_L16 = this.f1ErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L16; nContador++)
                             {
                                 this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                 this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -5424,8 +7224,8 @@
                             this.if1ErrorItemCantidad = oRespuesta.Errors.Length;
                             value = this.f1ErrorItemCantidad;
                             this.af1Error = new f1Error[(value - 1) + 1];
-                            int VB$t_i4$L17 = this.f1ErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L17; nContador++)
+                            int VB_t_i4_L17 = this.f1ErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L17; nContador++)
                             {
                                 this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                 this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -5436,8 +7236,8 @@
                             this.if1EventItemCantidad = 0;
                             value = this.f1EventItemCantidad;
                             this.af1Event = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L18 = this.f1EventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L18; nContador++)
+                            int VB_t_i4_L18 = this.f1EventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L18; nContador++)
                             {
                                 this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                 this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -5448,8 +7248,8 @@
                             this.if1EventItemCantidad = oRespuesta.Events.Length;
                             value = this.f1EventItemCantidad;
                             this.af1Event = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L19 = this.f1EventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L19; nContador++)
+                            int VB_t_i4_L19 = this.f1EventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L19; nContador++)
                             {
                                 this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                 this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -5465,8 +7265,8 @@
                             this.iF1RespuetaCantidadReg = oRespuesta.FeDetResp.Length;
                             value = this.F1RespuestaCantidadReg;
                             this.aF1RespuestaDetalle = new F1DetalleRespuesta[(value - 1) + 1];
-                            int VB$t_i4$L20 = this.iF1RespuetaCantidadReg - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L20; nContador++)
+                            int VB_t_i4_L20 = this.iF1RespuetaCantidadReg - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L20; nContador++)
                             {
                                 WSAFIPFE.f1AFIP.FECAEDetResponse oRespuestaDetalleItem = oRespuesta.FeDetResp[nContador];
                                 this.aF1RespuestaDetalle[nContador].CAE = oRespuestaDetalleItem.CAE;
@@ -5494,8 +7294,8 @@
                                     {
                                         int v2 = this.F1RespuestaDetalleObservacionItemCantidad - 1;
                                         this.aF1RespuestaDetalleObs = (F1DetalleRespuestaObs[,]) Microsoft.VisualBasic.CompilerServices.Utils.CopyArray((Array) this.aF1RespuestaDetalleObs, new F1DetalleRespuestaObs[v1 + 1, v2 + 1]);
-                                        int VB$t_i4$L21 = this.F1RespuestaDetalleObservacionItemCantidad - 1;
-                                        for (nContador2 = 0; nContador2 <= VB$t_i4$L21; nContador2++)
+                                        int VB_t_i4_L21 = this.F1RespuestaDetalleObservacionItemCantidad - 1;
+                                        for (nContador2 = 0; nContador2 <= VB_t_i4_L21; nContador2++)
                                         {
                                             this.aF1RespuestaDetalleObs[nContador, nContador2].code = oRespuestaDetalleItem.Observaciones[nContador2].Code;
                                             this.aF1RespuestaDetalleObs[nContador, nContador2].msg = oRespuestaDetalleItem.Observaciones[nContador2].Msg;
@@ -5521,7 +7321,7 @@
         {
             int nContador;
             int nContador2;
-            int nLimite2;
+            int nLimite2=0;
             this.if1ErrorItemCantidad = 0;
             this.if1EventItemCantidad = 0;
             bool bResultado = true;
@@ -5638,8 +7438,8 @@
                                 this.if1ErrorItemCantidad = 0;
                                 value = this.f1ErrorItemCantidad;
                                 this.af1Error = new f1Error[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.f1ErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.f1ErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                     this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -5650,8 +7450,8 @@
                                 this.if1ErrorItemCantidad = oRespuesta.Errors.Length;
                                 value = this.f1ErrorItemCantidad;
                                 this.af1Error = new f1Error[(value - 1) + 1];
-                                int VB$t_i4$L1 = this.f1ErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                                int VB_t_i4_L1 = this.f1ErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                                 {
                                     this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                     this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -5662,8 +7462,8 @@
                                 this.if1EventItemCantidad = 0;
                                 value = this.f1EventItemCantidad;
                                 this.af1Event = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L2 = this.f1EventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L2; nContador++)
+                                int VB_t_i4_L2 = this.f1EventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L2; nContador++)
                                 {
                                     this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                     this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -5674,8 +7474,8 @@
                                 this.if1EventItemCantidad = oRespuesta.Events.Length;
                                 value = this.f1EventItemCantidad;
                                 this.af1Event = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L3 = this.f1EventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L3; nContador++)
+                                int VB_t_i4_L3 = this.f1EventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L3; nContador++)
                                 {
                                     this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                     this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -5730,8 +7530,8 @@
                                     {
                                         int v2 = this.F1RespuestaDetalleObservacionItemCantidad - 1;
                                         this.aF1RespuestaDetalleObs = (F1DetalleRespuestaObs[,]) Microsoft.VisualBasic.CompilerServices.Utils.CopyArray((Array) this.aF1RespuestaDetalleObs, new F1DetalleRespuestaObs[v1 + 1, v2 + 1]);
-                                        int VB$t_i4$L4 = this.F1RespuestaDetalleObservacionItemCantidad - 1;
-                                        for (nContador2 = 0; nContador2 <= VB$t_i4$L4; nContador2++)
+                                        int VB_t_i4_L4 = this.F1RespuestaDetalleObservacionItemCantidad - 1;
+                                        for (nContador2 = 0; nContador2 <= VB_t_i4_L4; nContador2++)
                                         {
                                             this.aF1RespuestaDetalleObs[nContador, nContador2].code = oRespuestaDetalleItem.Observaciones[nContador2].Code;
                                             this.aF1RespuestaDetalleObs[nContador, nContador2].msg = oRespuestaDetalleItem.Observaciones[nContador2].Msg;
@@ -5750,8 +7550,8 @@
                                 if (this.F1DetalleCbtesAsocItemCantidad != 0)
                                 {
                                     value2 = this.F1DetalleCbtesAsocItemCantidad;
-                                    int VB$t_i4$L5 = this.F1DetalleCbtesAsocItemCantidad - 1;
-                                    for (nContador2 = 0; nContador2 <= VB$t_i4$L5; nContador2++)
+                                    int VB_t_i4_L5 = this.F1DetalleCbtesAsocItemCantidad - 1;
+                                    for (nContador2 = 0; nContador2 <= VB_t_i4_L5; nContador2++)
                                     {
                                         WSAFIPFE.f1AFIPTest.CbteAsoc oPedidoItemCbteAsoc = oRespuestaDetalleItem.CbtesAsoc[nContador];
                                         this.IndiceItem = nContador2;
@@ -5771,8 +7571,8 @@
                                 if (this.F1DetalleIvaItemCantidad != 0)
                                 {
                                     value2 = this.F1DetalleIvaItemCantidad;
-                                    int VB$t_i4$L6 = this.F1DetalleIvaItemCantidad - 1;
-                                    for (nContador2 = 0; nContador2 <= VB$t_i4$L6; nContador2++)
+                                    int VB_t_i4_L6 = this.F1DetalleIvaItemCantidad - 1;
+                                    for (nContador2 = 0; nContador2 <= VB_t_i4_L6; nContador2++)
                                     {
                                         WSAFIPFE.f1AFIPTest.AlicIva oPedidoItemIva = oRespuestaDetalleItem.Iva[nContador2];
                                         this.IndiceItem = nContador2;
@@ -5792,8 +7592,8 @@
                                 if (this.F1DetalleOpcionalItemCantidad != 0)
                                 {
                                     value2 = this.F1DetalleOpcionalItemCantidad;
-                                    int VB$t_i4$L7 = this.F1DetalleOpcionalItemCantidad - 1;
-                                    for (nContador2 = 0; nContador2 <= VB$t_i4$L7; nContador2++)
+                                    int VB_t_i4_L7 = this.F1DetalleOpcionalItemCantidad - 1;
+                                    for (nContador2 = 0; nContador2 <= VB_t_i4_L7; nContador2++)
                                     {
                                         WSAFIPFE.f1AFIPTest.Opcional oPedidoItemOpcional = oRespuestaDetalleItem.Opcionales[nContador];
                                         this.IndiceItem = nContador2;
@@ -5812,8 +7612,8 @@
                                 if (this.F1DetalleTributoItemCantidad != 0)
                                 {
                                     value2 = this.F1DetalleTributoItemCantidad;
-                                    int VB$t_i4$L8 = this.F1DetalleTributoItemCantidad - 1;
-                                    for (nContador2 = 0; nContador2 <= VB$t_i4$L8; nContador2++)
+                                    int VB_t_i4_L8 = this.F1DetalleTributoItemCantidad - 1;
+                                    for (nContador2 = 0; nContador2 <= VB_t_i4_L8; nContador2++)
                                     {
                                         WSAFIPFE.f1AFIPTest.Tributo oPedidoItemTributo = oRespuestaDetalleItem.Tributos[nContador];
                                         this.IndiceItem = nContador2;
@@ -5949,8 +7749,8 @@
                             this.if1ErrorItemCantidad = 0;
                             value = this.f1ErrorItemCantidad;
                             this.af1Error = new f1Error[(value - 1) + 1];
-                            int VB$t_i4$L9 = this.f1ErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L9; nContador++)
+                            int VB_t_i4_L9 = this.f1ErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L9; nContador++)
                             {
                                 this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                 this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -5961,8 +7761,8 @@
                             this.if1ErrorItemCantidad = oRespuesta.Errors.Length;
                             value = this.f1ErrorItemCantidad;
                             this.af1Error = new f1Error[(value - 1) + 1];
-                            int VB$t_i4$L10 = this.f1ErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L10; nContador++)
+                            int VB_t_i4_L10 = this.f1ErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L10; nContador++)
                             {
                                 this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                 this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -5973,8 +7773,8 @@
                             this.if1EventItemCantidad = 0;
                             value = this.f1EventItemCantidad;
                             this.af1Event = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L11 = this.f1EventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L11; nContador++)
+                            int VB_t_i4_L11 = this.f1EventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L11; nContador++)
                             {
                                 this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                 this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -5985,8 +7785,8 @@
                             this.if1EventItemCantidad = oRespuesta.Events.Length;
                             value = this.f1EventItemCantidad;
                             this.af1Event = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L12 = this.f1EventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L12; nContador++)
+                            int VB_t_i4_L12 = this.f1EventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L12; nContador++)
                             {
                                 this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                 this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -6041,8 +7841,8 @@
                                 {
                                     int v2 = this.F1RespuestaDetalleObservacionItemCantidad - 1;
                                     this.aF1RespuestaDetalleObs = (F1DetalleRespuestaObs[,]) Microsoft.VisualBasic.CompilerServices.Utils.CopyArray((Array) this.aF1RespuestaDetalleObs, new F1DetalleRespuestaObs[v1 + 1, v2 + 1]);
-                                    int VB$t_i4$L13 = this.F1RespuestaDetalleObservacionItemCantidad - 1;
-                                    for (nContador2 = 0; nContador2 <= VB$t_i4$L13; nContador2++)
+                                    int VB_t_i4_L13 = this.F1RespuestaDetalleObservacionItemCantidad - 1;
+                                    for (nContador2 = 0; nContador2 <= VB_t_i4_L13; nContador2++)
                                     {
                                         this.aF1RespuestaDetalleObs[nContador, nContador2].code = oRespuestaDetalleItem.Observaciones[nContador2].Code;
                                         this.aF1RespuestaDetalleObs[nContador, nContador2].msg = oRespuestaDetalleItem.Observaciones[nContador2].Msg;
@@ -6061,8 +7861,8 @@
                             if (this.F1DetalleCbtesAsocItemCantidad != 0)
                             {
                                 value2 = this.F1DetalleCbtesAsocItemCantidad;
-                                int VB$t_i4$L14 = this.F1DetalleCbtesAsocItemCantidad - 1;
-                                for (nContador2 = 0; nContador2 <= VB$t_i4$L14; nContador2++)
+                                int VB_t_i4_L14 = this.F1DetalleCbtesAsocItemCantidad - 1;
+                                for (nContador2 = 0; nContador2 <= VB_t_i4_L14; nContador2++)
                                 {
                                     WSAFIPFE.f1AFIP.CbteAsoc oPedidoItemCbteAsoc = oRespuestaDetalleItem.CbtesAsoc[nContador];
                                     this.IndiceItem = nContador2;
@@ -6082,8 +7882,8 @@
                             if (this.F1DetalleIvaItemCantidad != 0)
                             {
                                 value2 = this.F1DetalleIvaItemCantidad;
-                                int VB$t_i4$L15 = this.F1DetalleIvaItemCantidad - 1;
-                                for (nContador2 = 0; nContador2 <= VB$t_i4$L15; nContador2++)
+                                int VB_t_i4_L15 = this.F1DetalleIvaItemCantidad - 1;
+                                for (nContador2 = 0; nContador2 <= VB_t_i4_L15; nContador2++)
                                 {
                                     WSAFIPFE.f1AFIP.AlicIva oPedidoItemIva = oRespuestaDetalleItem.Iva[nContador2];
                                     this.IndiceItem = nContador2;
@@ -6103,8 +7903,8 @@
                             if (this.F1DetalleOpcionalItemCantidad != 0)
                             {
                                 value2 = this.F1DetalleOpcionalItemCantidad;
-                                int VB$t_i4$L16 = this.F1DetalleOpcionalItemCantidad - 1;
-                                for (nContador2 = 0; nContador2 <= VB$t_i4$L16; nContador2++)
+                                int VB_t_i4_L16 = this.F1DetalleOpcionalItemCantidad - 1;
+                                for (nContador2 = 0; nContador2 <= VB_t_i4_L16; nContador2++)
                                 {
                                     WSAFIPFE.f1AFIP.Opcional oPedidoItemOpcional = oRespuestaDetalleItem.Opcionales[nContador];
                                     this.IndiceItem = nContador2;
@@ -6123,8 +7923,8 @@
                             if (this.F1DetalleTributoItemCantidad != 0)
                             {
                                 value2 = this.F1DetalleTributoItemCantidad;
-                                int VB$t_i4$L17 = this.F1DetalleTributoItemCantidad - 1;
-                                for (nContador2 = 0; nContador2 <= VB$t_i4$L17; nContador2++)
+                                int VB_t_i4_L17 = this.F1DetalleTributoItemCantidad - 1;
+                                for (nContador2 = 0; nContador2 <= VB_t_i4_L17; nContador2++)
                                 {
                                     WSAFIPFE.f1AFIP.Tributo oPedidoItemTributo = oRespuestaDetalleItem.Tributos[nContador];
                                     this.IndiceItem = nContador2;
@@ -6167,7 +7967,7 @@
 
         public int F1CompTotXRequest()
         {
-            int mResultado;
+            int mResultado= 0;
             this.if1ErrorItemCantidad = 0;
             this.if1EventItemCantidad = 0;
             bool bResultado = true;
@@ -6240,8 +8040,8 @@
                                 this.if1ErrorItemCantidad = 0;
                                 value = this.f1ErrorItemCantidad;
                                 this.af1Error = new f1Error[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.f1ErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.f1ErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                     this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -6252,8 +8052,8 @@
                                 this.if1ErrorItemCantidad = oRespuesta.Errors.Length;
                                 value = this.f1ErrorItemCantidad;
                                 this.af1Error = new f1Error[(value - 1) + 1];
-                                int VB$t_i4$L1 = this.f1ErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                                int VB_t_i4_L1 = this.f1ErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                                 {
                                     this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                     this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -6264,8 +8064,8 @@
                                 this.if1EventItemCantidad = 0;
                                 value = this.f1EventItemCantidad;
                                 this.af1Event = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L2 = this.f1EventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L2; nContador++)
+                                int VB_t_i4_L2 = this.f1EventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L2; nContador++)
                                 {
                                     this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                     this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -6276,8 +8076,8 @@
                                 this.if1EventItemCantidad = oRespuesta.Events.Length;
                                 value = this.f1EventItemCantidad;
                                 this.af1Event = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L3 = this.f1EventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L3; nContador++)
+                                int VB_t_i4_L3 = this.f1EventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L3; nContador++)
                                 {
                                     this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                     this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -6361,8 +8161,8 @@
                             this.if1ErrorItemCantidad = 0;
                             value = this.f1ErrorItemCantidad;
                             this.af1Error = new f1Error[(value - 1) + 1];
-                            int VB$t_i4$L4 = this.f1ErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L4; nContador++)
+                            int VB_t_i4_L4 = this.f1ErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L4; nContador++)
                             {
                                 this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                 this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -6373,8 +8173,8 @@
                             this.if1ErrorItemCantidad = oRespuesta.Errors.Length;
                             value = this.f1ErrorItemCantidad;
                             this.af1Error = new f1Error[(value - 1) + 1];
-                            int VB$t_i4$L5 = this.f1ErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L5; nContador++)
+                            int VB_t_i4_L5 = this.f1ErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L5; nContador++)
                             {
                                 this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                 this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -6385,8 +8185,8 @@
                             this.if1EventItemCantidad = 0;
                             value = this.f1EventItemCantidad;
                             this.af1Event = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L6 = this.f1EventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L6; nContador++)
+                            int VB_t_i4_L6 = this.f1EventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L6; nContador++)
                             {
                                 this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                 this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -6397,8 +8197,8 @@
                             this.if1EventItemCantidad = oRespuesta.Events.Length;
                             value = this.f1EventItemCantidad;
                             this.af1Event = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L7 = this.f1EventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L7; nContador++)
+                            int VB_t_i4_L7 = this.f1EventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L7; nContador++)
                             {
                                 this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                 this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -6419,7 +8219,7 @@
 
         public int F1CompUltimoAutorizado(int iPtoVta, int iCbteTipo)
         {
-            int mResultado;
+            int mResultado= 0;
             this.if1ErrorItemCantidad = 0;
             this.if1EventItemCantidad = 0;
             bool bResultado = true;
@@ -6492,8 +8292,8 @@
                                 this.if1ErrorItemCantidad = 0;
                                 value = this.f1ErrorItemCantidad;
                                 this.af1Error = new f1Error[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.f1ErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.f1ErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                     this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -6504,8 +8304,8 @@
                                 this.if1ErrorItemCantidad = oRespuesta.Errors.Length;
                                 value = this.f1ErrorItemCantidad;
                                 this.af1Error = new f1Error[(value - 1) + 1];
-                                int VB$t_i4$L1 = this.f1ErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                                int VB_t_i4_L1 = this.f1ErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                                 {
                                     this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                     this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -6516,8 +8316,8 @@
                                 this.if1EventItemCantidad = 0;
                                 value = this.f1EventItemCantidad;
                                 this.af1Event = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L2 = this.f1EventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L2; nContador++)
+                                int VB_t_i4_L2 = this.f1EventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L2; nContador++)
                                 {
                                     this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                     this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -6528,8 +8328,8 @@
                                 this.if1EventItemCantidad = oRespuesta.Events.Length;
                                 value = this.f1EventItemCantidad;
                                 this.af1Event = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L3 = this.f1EventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L3; nContador++)
+                                int VB_t_i4_L3 = this.f1EventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L3; nContador++)
                                 {
                                     this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                     this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -6613,8 +8413,8 @@
                             this.if1ErrorItemCantidad = 0;
                             value = this.f1ErrorItemCantidad;
                             this.af1Error = new f1Error[(value - 1) + 1];
-                            int VB$t_i4$L4 = this.f1ErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L4; nContador++)
+                            int VB_t_i4_L4 = this.f1ErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L4; nContador++)
                             {
                                 this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                 this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -6625,8 +8425,8 @@
                             this.if1ErrorItemCantidad = oRespuesta.Errors.Length;
                             value = this.f1ErrorItemCantidad;
                             this.af1Error = new f1Error[(value - 1) + 1];
-                            int VB$t_i4$L5 = this.f1ErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L5; nContador++)
+                            int VB_t_i4_L5 = this.f1ErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L5; nContador++)
                             {
                                 this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                 this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -6637,8 +8437,8 @@
                             this.if1EventItemCantidad = 0;
                             value = this.f1EventItemCantidad;
                             this.af1Event = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L6 = this.f1EventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L6; nContador++)
+                            int VB_t_i4_L6 = this.f1EventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L6; nContador++)
                             {
                                 this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                 this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -6649,8 +8449,8 @@
                             this.if1EventItemCantidad = oRespuesta.Events.Length;
                             value = this.f1EventItemCantidad;
                             this.af1Event = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L7 = this.f1EventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L7; nContador++)
+                            int VB_t_i4_L7 = this.f1EventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L7; nContador++)
                             {
                                 this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                 this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -6816,7 +8616,7 @@
 
         public double F1ParamGetCotizacion(string strMonId)
         {
-            double mResultado;
+            double mResultado=0;
             this.if1ErrorItemCantidad = 0;
             this.if1EventItemCantidad = 0;
             bool bResultado = true;
@@ -6893,8 +8693,8 @@
                                 this.if1ErrorItemCantidad = 0;
                                 value = this.f1ErrorItemCantidad;
                                 this.af1Error = new f1Error[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.f1ErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.f1ErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                     this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -6905,8 +8705,8 @@
                                 this.if1ErrorItemCantidad = oRespuesta.Errors.Length;
                                 value = this.f1ErrorItemCantidad;
                                 this.af1Error = new f1Error[(value - 1) + 1];
-                                int VB$t_i4$L1 = this.f1ErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                                int VB_t_i4_L1 = this.f1ErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                                 {
                                     this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                     this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -6917,8 +8717,8 @@
                                 this.if1EventItemCantidad = 0;
                                 value = this.f1EventItemCantidad;
                                 this.af1Event = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L2 = this.f1EventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L2; nContador++)
+                                int VB_t_i4_L2 = this.f1EventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L2; nContador++)
                                 {
                                     this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                     this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -6929,8 +8729,8 @@
                                 this.if1EventItemCantidad = oRespuesta.Events.Length;
                                 value = this.f1EventItemCantidad;
                                 this.af1Event = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L3 = this.f1EventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L3; nContador++)
+                                int VB_t_i4_L3 = this.f1EventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L3; nContador++)
                                 {
                                     this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                     this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -7025,8 +8825,8 @@
                             this.if1ErrorItemCantidad = 0;
                             value = this.f1ErrorItemCantidad;
                             this.af1Error = new f1Error[(value - 1) + 1];
-                            int VB$t_i4$L4 = this.f1ErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L4; nContador++)
+                            int VB_t_i4_L4 = this.f1ErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L4; nContador++)
                             {
                                 this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                 this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -7037,8 +8837,8 @@
                             this.if1ErrorItemCantidad = oRespuesta.Errors.Length;
                             value = this.f1ErrorItemCantidad;
                             this.af1Error = new f1Error[(value - 1) + 1];
-                            int VB$t_i4$L5 = this.f1ErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L5; nContador++)
+                            int VB_t_i4_L5 = this.f1ErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L5; nContador++)
                             {
                                 this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                 this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -7049,8 +8849,8 @@
                             this.if1EventItemCantidad = 0;
                             value = this.f1EventItemCantidad;
                             this.af1Event = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L6 = this.f1EventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L6; nContador++)
+                            int VB_t_i4_L6 = this.f1EventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L6; nContador++)
                             {
                                 this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                 this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -7061,8 +8861,8 @@
                             this.if1EventItemCantidad = oRespuesta.Events.Length;
                             value = this.f1EventItemCantidad;
                             this.af1Event = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L7 = this.f1EventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L7; nContador++)
+                            int VB_t_i4_L7 = this.f1EventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L7; nContador++)
                             {
                                 this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                 this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -7142,8 +8942,8 @@
                                 this.if1ErrorItemCantidad = 0;
                                 value = this.f1ErrorItemCantidad;
                                 this.af1Error = new f1Error[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.f1ErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.f1ErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                     this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -7154,8 +8954,8 @@
                                 this.if1ErrorItemCantidad = oRespuesta.Errors.Length;
                                 value = this.f1ErrorItemCantidad;
                                 this.af1Error = new f1Error[(value - 1) + 1];
-                                int VB$t_i4$L1 = this.f1ErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                                int VB_t_i4_L1 = this.f1ErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                                 {
                                     this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                     this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -7166,8 +8966,8 @@
                                 this.if1EventItemCantidad = 0;
                                 value = this.f1EventItemCantidad;
                                 this.af1Event = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L2 = this.f1EventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L2; nContador++)
+                                int VB_t_i4_L2 = this.f1EventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L2; nContador++)
                                 {
                                     this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                     this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -7178,8 +8978,8 @@
                                 this.if1EventItemCantidad = oRespuesta.Events.Length;
                                 value = this.f1EventItemCantidad;
                                 this.af1Event = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L3 = this.f1EventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L3; nContador++)
+                                int VB_t_i4_L3 = this.f1EventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L3; nContador++)
                                 {
                                     this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                     this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -7192,8 +8992,8 @@
                                 this.if1PtosVentaItemCantidad = 0;
                                 value = this.f1PtosVentaItemCantidad;
                                 this.af1PtosVenta = new f1PtosVenta[(value - 1) + 1];
-                                int VB$t_i4$L4 = this.f1PtosVentaItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L4; nContador++)
+                                int VB_t_i4_L4 = this.f1PtosVentaItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L4; nContador++)
                                 {
                                     this.af1PtosVenta[nContador].nro = oRespuesta.ResultGet[nContador].Nro;
                                     this.af1PtosVenta[nContador].EmisionTipo = oRespuesta.ResultGet[nContador].EmisionTipo;
@@ -7205,8 +9005,8 @@
                             this.if1PtosVentaItemCantidad = oRespuesta.ResultGet.Length;
                             value = this.f1PtosVentaItemCantidad;
                             this.af1PtosVenta = new f1PtosVenta[(value - 1) + 1];
-                            int VB$t_i4$L5 = this.f1PtosVentaItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L5; nContador++)
+                            int VB_t_i4_L5 = this.f1PtosVentaItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L5; nContador++)
                             {
                                 this.af1PtosVenta[nContador].nro = oRespuesta.ResultGet[nContador].Nro;
                                 this.af1PtosVenta[nContador].EmisionTipo = oRespuesta.ResultGet[nContador].EmisionTipo;
@@ -7226,12 +9026,12 @@
                     }
                     return bResultado;
                 }
-                WSAFIPFE.f1AFIP.FEAuthRequest autorizacion = new WSAFIPFE.f1AFIP.FEAuthRequest();
+                WSAFIPFE.f1AFIP.FEAuthRequest feAuthRequest = new WSAFIPFE.f1AFIP.FEAuthRequest();
                 try
                 {
-                    autorizacion.Cuit = Conversions.ToLong(this.cuit);
-                    autorizacion.Token = this.f1token;
-                    autorizacion.Sign = this.f1sign;
+                    feAuthRequest.Cuit = Conversions.ToLong(this.cuit);
+                    feAuthRequest.Token = this.f1token;
+                    feAuthRequest.Sign = this.f1sign;
                 }
                 catch (Exception exception3)
                 {
@@ -7258,14 +9058,14 @@
                             servicio.Proxy = pr;
                         }
                         servicio.Url = this.f1DireccionServicioURL;
-                        WSAFIPFE.f1AFIP.FEPtoVentaResponse oRespuesta = servicio.FEParamGetPtosVenta(autorizacion);
+                        WSAFIPFE.f1AFIP.FEPtoVentaResponse oRespuesta = servicio.FEParamGetPtosVenta(feAuthRequest);
                         if (oRespuesta.Errors == null)
                         {
                             this.if1ErrorItemCantidad = 0;
                             value = this.f1ErrorItemCantidad;
                             this.af1Error = new f1Error[(value - 1) + 1];
-                            int VB$t_i4$L6 = this.f1ErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L6; nContador++)
+                            int VB_t_i4_L6 = this.f1ErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L6; nContador++)
                             {
                                 this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                 this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -7276,8 +9076,8 @@
                             this.if1ErrorItemCantidad = oRespuesta.Errors.Length;
                             value = this.f1ErrorItemCantidad;
                             this.af1Error = new f1Error[(value - 1) + 1];
-                            int VB$t_i4$L7 = this.f1ErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L7; nContador++)
+                            int VB_t_i4_L7 = this.f1ErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L7; nContador++)
                             {
                                 this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                 this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -7288,8 +9088,8 @@
                             this.if1EventItemCantidad = 0;
                             value = this.f1EventItemCantidad;
                             this.af1Event = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L8 = this.f1EventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L8; nContador++)
+                            int VB_t_i4_L8 = this.f1EventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L8; nContador++)
                             {
                                 this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                 this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -7300,8 +9100,8 @@
                             this.if1EventItemCantidad = oRespuesta.Events.Length;
                             value = this.f1EventItemCantidad;
                             this.af1Event = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L9 = this.f1EventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L9; nContador++)
+                            int VB_t_i4_L9 = this.f1EventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L9; nContador++)
                             {
                                 this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                 this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -7314,8 +9114,8 @@
                             this.if1PtosVentaItemCantidad = 0;
                             value = this.f1PtosVentaItemCantidad;
                             this.af1PtosVenta = new f1PtosVenta[(value - 1) + 1];
-                            int VB$t_i4$L10 = this.f1PtosVentaItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L10; nContador++)
+                            int VB_t_i4_L10 = this.f1PtosVentaItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L10; nContador++)
                             {
                                 this.af1PtosVenta[nContador].nro = oRespuesta.ResultGet[nContador].Nro;
                                 this.af1PtosVenta[nContador].EmisionTipo = oRespuesta.ResultGet[nContador].EmisionTipo;
@@ -7327,8 +9127,8 @@
                         this.if1PtosVentaItemCantidad = oRespuesta.ResultGet.Length;
                         value = this.f1PtosVentaItemCantidad;
                         this.af1PtosVenta = new f1PtosVenta[(value - 1) + 1];
-                        int VB$t_i4$L11 = this.f1PtosVentaItemCantidad - 1;
-                        for (nContador = 0; nContador <= VB$t_i4$L11; nContador++)
+                        int VB_t_i4_L11 = this.f1PtosVentaItemCantidad - 1;
+                        for (nContador = 0; nContador <= VB_t_i4_L11; nContador++)
                         {
                             this.af1PtosVenta[nContador].nro = oRespuesta.ResultGet[nContador].Nro;
                             this.af1PtosVenta[nContador].EmisionTipo = oRespuesta.ResultGet[nContador].EmisionTipo;
@@ -7401,8 +9201,8 @@
                                 this.if1ErrorItemCantidad = 0;
                                 value = this.f1ErrorItemCantidad;
                                 this.af1Error = new f1Error[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.f1ErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.f1ErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                     this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -7413,8 +9213,8 @@
                                 this.if1ErrorItemCantidad = oRespuesta.Errors.Length;
                                 value = this.f1ErrorItemCantidad;
                                 this.af1Error = new f1Error[(value - 1) + 1];
-                                int VB$t_i4$L1 = this.f1ErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                                int VB_t_i4_L1 = this.f1ErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                                 {
                                     this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                     this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -7425,8 +9225,8 @@
                                 this.if1EventItemCantidad = 0;
                                 value = this.f1EventItemCantidad;
                                 this.af1Event = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L2 = this.f1EventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L2; nContador++)
+                                int VB_t_i4_L2 = this.f1EventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L2; nContador++)
                                 {
                                     this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                     this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -7437,8 +9237,8 @@
                                 this.if1EventItemCantidad = oRespuesta.Events.Length;
                                 value = this.f1EventItemCantidad;
                                 this.af1Event = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L3 = this.f1EventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L3; nContador++)
+                                int VB_t_i4_L3 = this.f1EventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L3; nContador++)
                                 {
                                     this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                     this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -7449,8 +9249,8 @@
                             this.if1TiposCbteItemCantidad = oRespuesta.ResultGet.Length;
                             value = this.f1TiposCbteItemCantidad;
                             this.af1TiposCbte = new f1TiposCbte[(value - 1) + 1];
-                            int VB$t_i4$L4 = this.f1TiposCbteItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L4; nContador++)
+                            int VB_t_i4_L4 = this.f1TiposCbteItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L4; nContador++)
                             {
                                 this.af1TiposCbte[nContador].id = oRespuesta.ResultGet[nContador].Id;
                                 this.af1TiposCbte[nContador].desc = oRespuesta.ResultGet[nContador].Desc;
@@ -7470,12 +9270,12 @@
                     }
                     return bResultado;
                 }
-                WSAFIPFE.f1AFIP.FEAuthRequest autorizacion = new WSAFIPFE.f1AFIP.FEAuthRequest();
+                WSAFIPFE.f1AFIP.FEAuthRequest feAuthRequest = new WSAFIPFE.f1AFIP.FEAuthRequest();
                 try
                 {
-                    autorizacion.Cuit = Conversions.ToLong(this.cuit);
-                    autorizacion.Token = this.f1token;
-                    autorizacion.Sign = this.f1sign;
+                    feAuthRequest.Cuit = Conversions.ToLong(this.cuit);
+                    feAuthRequest.Token = this.f1token;
+                    feAuthRequest.Sign = this.f1sign;
                 }
                 catch (Exception exception3)
                 {
@@ -7502,14 +9302,14 @@
                             servicio.Proxy = pr;
                         }
                         servicio.Url = this.f1DireccionServicioURL;
-                        WSAFIPFE.f1AFIP.CbteTipoResponse oRespuesta = servicio.FEParamGetTiposCbte(autorizacion);
+                        WSAFIPFE.f1AFIP.CbteTipoResponse oRespuesta = servicio.FEParamGetTiposCbte(feAuthRequest);
                         if (oRespuesta.Errors == null)
                         {
                             this.if1ErrorItemCantidad = 0;
                             value = this.f1ErrorItemCantidad;
                             this.af1Error = new f1Error[(value - 1) + 1];
-                            int VB$t_i4$L5 = this.f1ErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L5; nContador++)
+                            int VB_t_i4_L5 = this.f1ErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L5; nContador++)
                             {
                                 this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                 this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -7520,8 +9320,8 @@
                             this.if1ErrorItemCantidad = oRespuesta.Errors.Length;
                             value = this.f1ErrorItemCantidad;
                             this.af1Error = new f1Error[(value - 1) + 1];
-                            int VB$t_i4$L6 = this.f1ErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L6; nContador++)
+                            int VB_t_i4_L6 = this.f1ErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L6; nContador++)
                             {
                                 this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                 this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -7532,8 +9332,8 @@
                             this.if1EventItemCantidad = 0;
                             value = this.f1EventItemCantidad;
                             this.af1Event = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L7 = this.f1EventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L7; nContador++)
+                            int VB_t_i4_L7 = this.f1EventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L7; nContador++)
                             {
                                 this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                 this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -7544,8 +9344,8 @@
                             this.if1EventItemCantidad = oRespuesta.Events.Length;
                             value = this.f1EventItemCantidad;
                             this.af1Event = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L8 = this.f1EventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L8; nContador++)
+                            int VB_t_i4_L8 = this.f1EventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L8; nContador++)
                             {
                                 this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                 this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -7556,8 +9356,8 @@
                         this.if1TiposCbteItemCantidad = oRespuesta.ResultGet.Length;
                         value = this.f1TiposCbteItemCantidad;
                         this.af1TiposCbte = new f1TiposCbte[(value - 1) + 1];
-                        int VB$t_i4$L9 = this.f1TiposCbteItemCantidad - 1;
-                        for (nContador = 0; nContador <= VB$t_i4$L9; nContador++)
+                        int VB_t_i4_L9 = this.f1TiposCbteItemCantidad - 1;
+                        for (nContador = 0; nContador <= VB_t_i4_L9; nContador++)
                         {
                             this.af1TiposCbte[nContador].id = oRespuesta.ResultGet[nContador].Id;
                             this.af1TiposCbte[nContador].desc = oRespuesta.ResultGet[nContador].Desc;
@@ -7630,8 +9430,8 @@
                                 this.if1ErrorItemCantidad = 0;
                                 value = this.f1ErrorItemCantidad;
                                 this.af1Error = new f1Error[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.f1ErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.f1ErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                     this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -7642,8 +9442,8 @@
                                 this.if1ErrorItemCantidad = oRespuesta.Errors.Length;
                                 value = this.f1ErrorItemCantidad;
                                 this.af1Error = new f1Error[(value - 1) + 1];
-                                int VB$t_i4$L1 = this.f1ErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                                int VB_t_i4_L1 = this.f1ErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                                 {
                                     this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                     this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -7654,8 +9454,8 @@
                                 this.if1EventItemCantidad = 0;
                                 value = this.f1EventItemCantidad;
                                 this.af1Event = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L2 = this.f1EventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L2; nContador++)
+                                int VB_t_i4_L2 = this.f1EventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L2; nContador++)
                                 {
                                     this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                     this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -7666,8 +9466,8 @@
                                 this.if1EventItemCantidad = oRespuesta.Events.Length;
                                 value = this.f1EventItemCantidad;
                                 this.af1Event = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L3 = this.f1EventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L3; nContador++)
+                                int VB_t_i4_L3 = this.f1EventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L3; nContador++)
                                 {
                                     this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                     this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -7678,8 +9478,8 @@
                             this.if1TiposConceptoItemCantidad = oRespuesta.ResultGet.Length;
                             value = this.f1TiposConceptoItemCantidad;
                             this.af1TiposConcepto = new f1TiposConcepto[(value - 1) + 1];
-                            int VB$t_i4$L4 = this.f1TiposConceptoItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L4; nContador++)
+                            int VB_t_i4_L4 = this.f1TiposConceptoItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L4; nContador++)
                             {
                                 this.af1TiposConcepto[nContador].id = oRespuesta.ResultGet[nContador].Id;
                                 this.af1TiposConcepto[nContador].desc = oRespuesta.ResultGet[nContador].Desc;
@@ -7699,12 +9499,12 @@
                     }
                     return bResultado;
                 }
-                WSAFIPFE.f1AFIP.FEAuthRequest autorizacion = new WSAFIPFE.f1AFIP.FEAuthRequest();
+                WSAFIPFE.f1AFIP.FEAuthRequest feAuthRequest = new WSAFIPFE.f1AFIP.FEAuthRequest();
                 try
                 {
-                    autorizacion.Cuit = Conversions.ToLong(this.cuit);
-                    autorizacion.Token = this.f1token;
-                    autorizacion.Sign = this.f1sign;
+                    feAuthRequest.Cuit = Conversions.ToLong(this.cuit);
+                    feAuthRequest.Token = this.f1token;
+                    feAuthRequest.Sign = this.f1sign;
                 }
                 catch (Exception exception3)
                 {
@@ -7731,14 +9531,14 @@
                             servicio.Proxy = pr;
                         }
                         servicio.Url = this.f1DireccionServicioURL;
-                        WSAFIPFE.f1AFIP.ConceptoTipoResponse oRespuesta = servicio.FEParamGetTiposConcepto(autorizacion);
+                        WSAFIPFE.f1AFIP.ConceptoTipoResponse oRespuesta = servicio.FEParamGetTiposConcepto(feAuthRequest);
                         if (oRespuesta.Errors == null)
                         {
                             this.if1ErrorItemCantidad = 0;
                             value = this.f1ErrorItemCantidad;
                             this.af1Error = new f1Error[(value - 1) + 1];
-                            int VB$t_i4$L5 = this.f1ErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L5; nContador++)
+                            int VB_t_i4_L5 = this.f1ErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L5; nContador++)
                             {
                                 this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                 this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -7749,8 +9549,8 @@
                             this.if1ErrorItemCantidad = oRespuesta.Errors.Length;
                             value = this.f1ErrorItemCantidad;
                             this.af1Error = new f1Error[(value - 1) + 1];
-                            int VB$t_i4$L6 = this.f1ErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L6; nContador++)
+                            int VB_t_i4_L6 = this.f1ErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L6; nContador++)
                             {
                                 this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                 this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -7761,8 +9561,8 @@
                             this.if1EventItemCantidad = 0;
                             value = this.f1EventItemCantidad;
                             this.af1Event = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L7 = this.f1EventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L7; nContador++)
+                            int VB_t_i4_L7 = this.f1EventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L7; nContador++)
                             {
                                 this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                 this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -7773,8 +9573,8 @@
                             this.if1EventItemCantidad = oRespuesta.Events.Length;
                             value = this.f1EventItemCantidad;
                             this.af1Event = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L8 = this.f1EventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L8; nContador++)
+                            int VB_t_i4_L8 = this.f1EventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L8; nContador++)
                             {
                                 this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                 this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -7785,8 +9585,8 @@
                         this.if1TiposConceptoItemCantidad = oRespuesta.ResultGet.Length;
                         value = this.f1TiposConceptoItemCantidad;
                         this.af1TiposConcepto = new f1TiposConcepto[(value - 1) + 1];
-                        int VB$t_i4$L9 = this.f1TiposConceptoItemCantidad - 1;
-                        for (nContador = 0; nContador <= VB$t_i4$L9; nContador++)
+                        int VB_t_i4_L9 = this.f1TiposConceptoItemCantidad - 1;
+                        for (nContador = 0; nContador <= VB_t_i4_L9; nContador++)
                         {
                             this.af1TiposConcepto[nContador].id = oRespuesta.ResultGet[nContador].Id;
                             this.af1TiposConcepto[nContador].desc = oRespuesta.ResultGet[nContador].Desc;
@@ -7859,8 +9659,8 @@
                                 this.if1ErrorItemCantidad = 0;
                                 value = this.f1ErrorItemCantidad;
                                 this.af1Error = new f1Error[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.f1ErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.f1ErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                     this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -7871,8 +9671,8 @@
                                 this.if1ErrorItemCantidad = oRespuesta.Errors.Length;
                                 value = this.f1ErrorItemCantidad;
                                 this.af1Error = new f1Error[(value - 1) + 1];
-                                int VB$t_i4$L1 = this.f1ErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                                int VB_t_i4_L1 = this.f1ErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                                 {
                                     this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                     this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -7883,8 +9683,8 @@
                                 this.if1EventItemCantidad = 0;
                                 value = this.f1EventItemCantidad;
                                 this.af1Event = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L2 = this.f1EventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L2; nContador++)
+                                int VB_t_i4_L2 = this.f1EventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L2; nContador++)
                                 {
                                     this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                     this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -7895,8 +9695,8 @@
                                 this.if1EventItemCantidad = oRespuesta.Events.Length;
                                 value = this.f1EventItemCantidad;
                                 this.af1Event = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L3 = this.f1EventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L3; nContador++)
+                                int VB_t_i4_L3 = this.f1EventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L3; nContador++)
                                 {
                                     this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                     this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -7907,8 +9707,8 @@
                             this.if1TiposDocItemCantidad = oRespuesta.ResultGet.Length;
                             value = this.f1TiposDocItemCantidad;
                             this.af1TiposDoc = new f1TiposDoc[(value - 1) + 1];
-                            int VB$t_i4$L4 = this.f1TiposDocItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L4; nContador++)
+                            int VB_t_i4_L4 = this.f1TiposDocItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L4; nContador++)
                             {
                                 this.af1TiposDoc[nContador].id = oRespuesta.ResultGet[nContador].Id;
                                 this.af1TiposDoc[nContador].desc = oRespuesta.ResultGet[nContador].Desc;
@@ -7928,12 +9728,12 @@
                     }
                     return bResultado;
                 }
-                WSAFIPFE.f1AFIP.FEAuthRequest autorizacion = new WSAFIPFE.f1AFIP.FEAuthRequest();
+                WSAFIPFE.f1AFIP.FEAuthRequest feAuthRequest = new WSAFIPFE.f1AFIP.FEAuthRequest();
                 try
                 {
-                    autorizacion.Cuit = Conversions.ToLong(this.cuit);
-                    autorizacion.Token = this.f1token;
-                    autorizacion.Sign = this.f1sign;
+                    feAuthRequest.Cuit = Conversions.ToLong(this.cuit);
+                    feAuthRequest.Token = this.f1token;
+                    feAuthRequest.Sign = this.f1sign;
                 }
                 catch (Exception exception3)
                 {
@@ -7960,14 +9760,14 @@
                             servicio.Proxy = pr;
                         }
                         servicio.Url = this.f1DireccionServicioURL;
-                        WSAFIPFE.f1AFIP.DocTipoResponse oRespuesta = servicio.FEParamGetTiposDoc(autorizacion);
+                        WSAFIPFE.f1AFIP.DocTipoResponse oRespuesta = servicio.FEParamGetTiposDoc(feAuthRequest);
                         if (oRespuesta.Errors == null)
                         {
                             this.if1ErrorItemCantidad = 0;
                             value = this.f1ErrorItemCantidad;
                             this.af1Error = new f1Error[(value - 1) + 1];
-                            int VB$t_i4$L5 = this.f1ErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L5; nContador++)
+                            int VB_t_i4_L5 = this.f1ErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L5; nContador++)
                             {
                                 this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                 this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -7978,8 +9778,8 @@
                             this.if1ErrorItemCantidad = oRespuesta.Errors.Length;
                             value = this.f1ErrorItemCantidad;
                             this.af1Error = new f1Error[(value - 1) + 1];
-                            int VB$t_i4$L6 = this.f1ErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L6; nContador++)
+                            int VB_t_i4_L6 = this.f1ErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L6; nContador++)
                             {
                                 this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                 this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -7990,8 +9790,8 @@
                             this.if1EventItemCantidad = 0;
                             value = this.f1EventItemCantidad;
                             this.af1Event = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L7 = this.f1EventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L7; nContador++)
+                            int VB_t_i4_L7 = this.f1EventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L7; nContador++)
                             {
                                 this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                 this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -8002,8 +9802,8 @@
                             this.if1EventItemCantidad = oRespuesta.Events.Length;
                             value = this.f1EventItemCantidad;
                             this.af1Event = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L8 = this.f1EventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L8; nContador++)
+                            int VB_t_i4_L8 = this.f1EventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L8; nContador++)
                             {
                                 this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                 this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -8014,8 +9814,8 @@
                         this.if1TiposDocItemCantidad = oRespuesta.ResultGet.Length;
                         value = this.f1TiposDocItemCantidad;
                         this.af1TiposDoc = new f1TiposDoc[(value - 1) + 1];
-                        int VB$t_i4$L9 = this.f1TiposDocItemCantidad - 1;
-                        for (nContador = 0; nContador <= VB$t_i4$L9; nContador++)
+                        int VB_t_i4_L9 = this.f1TiposDocItemCantidad - 1;
+                        for (nContador = 0; nContador <= VB_t_i4_L9; nContador++)
                         {
                             this.af1TiposDoc[nContador].id = oRespuesta.ResultGet[nContador].Id;
                             this.af1TiposDoc[nContador].desc = oRespuesta.ResultGet[nContador].Desc;
@@ -8088,8 +9888,8 @@
                                 this.if1ErrorItemCantidad = 0;
                                 value = this.f1ErrorItemCantidad;
                                 this.af1Error = new f1Error[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.f1ErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.f1ErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                     this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -8100,8 +9900,8 @@
                                 this.if1ErrorItemCantidad = oRespuesta.Errors.Length;
                                 value = this.f1ErrorItemCantidad;
                                 this.af1Error = new f1Error[(value - 1) + 1];
-                                int VB$t_i4$L1 = this.f1ErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                                int VB_t_i4_L1 = this.f1ErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                                 {
                                     this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                     this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -8112,8 +9912,8 @@
                                 this.if1EventItemCantidad = 0;
                                 value = this.f1EventItemCantidad;
                                 this.af1Event = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L2 = this.f1EventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L2; nContador++)
+                                int VB_t_i4_L2 = this.f1EventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L2; nContador++)
                                 {
                                     this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                     this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -8124,8 +9924,8 @@
                                 this.if1EventItemCantidad = oRespuesta.Events.Length;
                                 value = this.f1EventItemCantidad;
                                 this.af1Event = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L3 = this.f1EventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L3; nContador++)
+                                int VB_t_i4_L3 = this.f1EventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L3; nContador++)
                                 {
                                     this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                     this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -8136,8 +9936,8 @@
                             this.if1TiposIvaItemCantidad = oRespuesta.ResultGet.Length;
                             value = this.f1TiposIvaItemCantidad;
                             this.af1TiposIva = new f1TiposIva[(value - 1) + 1];
-                            int VB$t_i4$L4 = this.f1TiposIvaItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L4; nContador++)
+                            int VB_t_i4_L4 = this.f1TiposIvaItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L4; nContador++)
                             {
                                 this.af1TiposIva[nContador].id = Conversions.ToInteger(oRespuesta.ResultGet[nContador].Id);
                                 this.af1TiposIva[nContador].desc = oRespuesta.ResultGet[nContador].Desc;
@@ -8157,12 +9957,12 @@
                     }
                     return bResultado;
                 }
-                WSAFIPFE.f1AFIP.FEAuthRequest autorizacion = new WSAFIPFE.f1AFIP.FEAuthRequest();
+                WSAFIPFE.f1AFIP.FEAuthRequest feAuthRequest = new WSAFIPFE.f1AFIP.FEAuthRequest();
                 try
                 {
-                    autorizacion.Cuit = Conversions.ToLong(this.cuit);
-                    autorizacion.Token = this.f1token;
-                    autorizacion.Sign = this.f1sign;
+                    feAuthRequest.Cuit = Conversions.ToLong(this.cuit);
+                    feAuthRequest.Token = this.f1token;
+                    feAuthRequest.Sign = this.f1sign;
                 }
                 catch (Exception exception3)
                 {
@@ -8189,14 +9989,14 @@
                             servicio.Proxy = pr;
                         }
                         servicio.Url = this.f1DireccionServicioURL;
-                        WSAFIPFE.f1AFIP.IvaTipoResponse oRespuesta = servicio.FEParamGetTiposIva(autorizacion);
+                        WSAFIPFE.f1AFIP.IvaTipoResponse oRespuesta = servicio.FEParamGetTiposIva(feAuthRequest);
                         if (oRespuesta.Errors == null)
                         {
                             this.if1ErrorItemCantidad = 0;
                             value = this.f1ErrorItemCantidad;
                             this.af1Error = new f1Error[(value - 1) + 1];
-                            int VB$t_i4$L5 = this.f1ErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L5; nContador++)
+                            int VB_t_i4_L5 = this.f1ErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L5; nContador++)
                             {
                                 this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                 this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -8207,8 +10007,8 @@
                             this.if1ErrorItemCantidad = oRespuesta.Errors.Length;
                             value = this.f1ErrorItemCantidad;
                             this.af1Error = new f1Error[(value - 1) + 1];
-                            int VB$t_i4$L6 = this.f1ErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L6; nContador++)
+                            int VB_t_i4_L6 = this.f1ErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L6; nContador++)
                             {
                                 this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                 this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -8219,8 +10019,8 @@
                             this.if1EventItemCantidad = 0;
                             value = this.f1EventItemCantidad;
                             this.af1Event = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L7 = this.f1EventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L7; nContador++)
+                            int VB_t_i4_L7 = this.f1EventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L7; nContador++)
                             {
                                 this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                 this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -8231,8 +10031,8 @@
                             this.if1EventItemCantidad = oRespuesta.Events.Length;
                             value = this.f1EventItemCantidad;
                             this.af1Event = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L8 = this.f1EventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L8; nContador++)
+                            int VB_t_i4_L8 = this.f1EventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L8; nContador++)
                             {
                                 this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                 this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -8243,8 +10043,8 @@
                         this.if1TiposIvaItemCantidad = oRespuesta.ResultGet.Length;
                         value = this.f1TiposIvaItemCantidad;
                         this.af1TiposIva = new f1TiposIva[(value - 1) + 1];
-                        int VB$t_i4$L9 = this.f1TiposIvaItemCantidad - 1;
-                        for (nContador = 0; nContador <= VB$t_i4$L9; nContador++)
+                        int VB_t_i4_L9 = this.f1TiposIvaItemCantidad - 1;
+                        for (nContador = 0; nContador <= VB_t_i4_L9; nContador++)
                         {
                             this.af1TiposIva[nContador].id = Conversions.ToInteger(oRespuesta.ResultGet[nContador].Id);
                             this.af1TiposIva[nContador].desc = oRespuesta.ResultGet[nContador].Desc;
@@ -8317,8 +10117,8 @@
                                 this.if1ErrorItemCantidad = 0;
                                 value = this.f1ErrorItemCantidad;
                                 this.af1Error = new f1Error[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.f1ErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.f1ErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                     this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -8329,8 +10129,8 @@
                                 this.if1ErrorItemCantidad = oRespuesta.Errors.Length;
                                 value = this.f1ErrorItemCantidad;
                                 this.af1Error = new f1Error[(value - 1) + 1];
-                                int VB$t_i4$L1 = this.f1ErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                                int VB_t_i4_L1 = this.f1ErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                                 {
                                     this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                     this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -8341,8 +10141,8 @@
                                 this.if1EventItemCantidad = 0;
                                 value = this.f1EventItemCantidad;
                                 this.af1Event = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L2 = this.f1EventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L2; nContador++)
+                                int VB_t_i4_L2 = this.f1EventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L2; nContador++)
                                 {
                                     this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                     this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -8353,8 +10153,8 @@
                                 this.if1EventItemCantidad = oRespuesta.Events.Length;
                                 value = this.f1EventItemCantidad;
                                 this.af1Event = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L3 = this.f1EventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L3; nContador++)
+                                int VB_t_i4_L3 = this.f1EventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L3; nContador++)
                                 {
                                     this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                     this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -8365,8 +10165,8 @@
                             this.if1TiposMonedaItemCantidad = oRespuesta.ResultGet.Length;
                             value = this.f1TiposMonedaItemCantidad;
                             this.af1TiposMoneda = new f1TiposMoneda[(value - 1) + 1];
-                            int VB$t_i4$L4 = this.f1TiposMonedaItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L4; nContador++)
+                            int VB_t_i4_L4 = this.f1TiposMonedaItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L4; nContador++)
                             {
                                 this.af1TiposMoneda[nContador].id = oRespuesta.ResultGet[nContador].Id;
                                 this.af1TiposMoneda[nContador].desc = oRespuesta.ResultGet[nContador].Desc;
@@ -8386,12 +10186,12 @@
                     }
                     return bResultado;
                 }
-                WSAFIPFE.f1AFIP.FEAuthRequest autorizacion = new WSAFIPFE.f1AFIP.FEAuthRequest();
+                WSAFIPFE.f1AFIP.FEAuthRequest feAuthRequest = new WSAFIPFE.f1AFIP.FEAuthRequest();
                 try
                 {
-                    autorizacion.Cuit = Conversions.ToLong(this.cuit);
-                    autorizacion.Token = this.f1token;
-                    autorizacion.Sign = this.f1sign;
+                    feAuthRequest.Cuit = Conversions.ToLong(this.cuit);
+                    feAuthRequest.Token = this.f1token;
+                    feAuthRequest.Sign = this.f1sign;
                 }
                 catch (Exception exception3)
                 {
@@ -8418,14 +10218,14 @@
                             servicio.Proxy = pr;
                         }
                         servicio.Url = this.f1DireccionServicioURL;
-                        WSAFIPFE.f1AFIP.MonedaResponse oRespuesta = servicio.FEParamGetTiposMonedas(autorizacion);
+                        WSAFIPFE.f1AFIP.MonedaResponse oRespuesta = servicio.FEParamGetTiposMonedas(feAuthRequest);
                         if (oRespuesta.Errors == null)
                         {
                             this.if1ErrorItemCantidad = 0;
                             value = this.f1ErrorItemCantidad;
                             this.af1Error = new f1Error[(value - 1) + 1];
-                            int VB$t_i4$L5 = this.f1ErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L5; nContador++)
+                            int VB_t_i4_L5 = this.f1ErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L5; nContador++)
                             {
                                 this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                 this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -8436,8 +10236,8 @@
                             this.if1ErrorItemCantidad = oRespuesta.Errors.Length;
                             value = this.f1ErrorItemCantidad;
                             this.af1Error = new f1Error[(value - 1) + 1];
-                            int VB$t_i4$L6 = this.f1ErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L6; nContador++)
+                            int VB_t_i4_L6 = this.f1ErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L6; nContador++)
                             {
                                 this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                 this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -8448,8 +10248,8 @@
                             this.if1EventItemCantidad = 0;
                             value = this.f1EventItemCantidad;
                             this.af1Event = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L7 = this.f1EventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L7; nContador++)
+                            int VB_t_i4_L7 = this.f1EventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L7; nContador++)
                             {
                                 this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                 this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -8460,8 +10260,8 @@
                             this.if1EventItemCantidad = oRespuesta.Events.Length;
                             value = this.f1EventItemCantidad;
                             this.af1Event = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L8 = this.f1EventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L8; nContador++)
+                            int VB_t_i4_L8 = this.f1EventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L8; nContador++)
                             {
                                 this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                 this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -8472,8 +10272,8 @@
                         this.if1TiposMonedaItemCantidad = oRespuesta.ResultGet.Length;
                         value = this.f1TiposMonedaItemCantidad;
                         this.af1TiposMoneda = new f1TiposMoneda[(value - 1) + 1];
-                        int VB$t_i4$L9 = this.f1TiposMonedaItemCantidad - 1;
-                        for (nContador = 0; nContador <= VB$t_i4$L9; nContador++)
+                        int VB_t_i4_L9 = this.f1TiposMonedaItemCantidad - 1;
+                        for (nContador = 0; nContador <= VB_t_i4_L9; nContador++)
                         {
                             this.af1TiposMoneda[nContador].id = oRespuesta.ResultGet[nContador].Id;
                             this.af1TiposMoneda[nContador].desc = oRespuesta.ResultGet[nContador].Desc;
@@ -8546,8 +10346,8 @@
                                 this.if1ErrorItemCantidad = 0;
                                 value = this.f1ErrorItemCantidad;
                                 this.af1Error = new f1Error[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.f1ErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.f1ErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                     this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -8558,8 +10358,8 @@
                                 this.if1ErrorItemCantidad = oRespuesta.Errors.Length;
                                 value = this.f1ErrorItemCantidad;
                                 this.af1Error = new f1Error[(value - 1) + 1];
-                                int VB$t_i4$L1 = this.f1ErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                                int VB_t_i4_L1 = this.f1ErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                                 {
                                     this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                     this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -8570,8 +10370,8 @@
                                 this.if1EventItemCantidad = 0;
                                 value = this.f1EventItemCantidad;
                                 this.af1Event = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L2 = this.f1EventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L2; nContador++)
+                                int VB_t_i4_L2 = this.f1EventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L2; nContador++)
                                 {
                                     this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                     this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -8582,8 +10382,8 @@
                                 this.if1EventItemCantidad = oRespuesta.Events.Length;
                                 value = this.f1EventItemCantidad;
                                 this.af1Event = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L3 = this.f1EventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L3; nContador++)
+                                int VB_t_i4_L3 = this.f1EventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L3; nContador++)
                                 {
                                     this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                     this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -8594,8 +10394,8 @@
                             this.if1TiposOpcionalItemCantidad = oRespuesta.ResultGet.Length;
                             value = this.f1TiposOpcionalItemCantidad;
                             this.af1TiposOpcional = new f1TiposOpcional[(value - 1) + 1];
-                            int VB$t_i4$L4 = this.f1TiposOpcionalItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L4; nContador++)
+                            int VB_t_i4_L4 = this.f1TiposOpcionalItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L4; nContador++)
                             {
                                 this.af1TiposOpcional[nContador].id = Conversions.ToInteger(oRespuesta.ResultGet[nContador].Id);
                                 this.af1TiposOpcional[nContador].desc = oRespuesta.ResultGet[nContador].Desc;
@@ -8615,12 +10415,12 @@
                     }
                     return bResultado;
                 }
-                WSAFIPFE.f1AFIP.FEAuthRequest autorizacion = new WSAFIPFE.f1AFIP.FEAuthRequest();
+                WSAFIPFE.f1AFIP.FEAuthRequest feAuthRequest = new WSAFIPFE.f1AFIP.FEAuthRequest();
                 try
                 {
-                    autorizacion.Cuit = Conversions.ToLong(this.cuit);
-                    autorizacion.Token = this.f1token;
-                    autorizacion.Sign = this.f1sign;
+                    feAuthRequest.Cuit = Conversions.ToLong(this.cuit);
+                    feAuthRequest.Token = this.f1token;
+                    feAuthRequest.Sign = this.f1sign;
                 }
                 catch (Exception exception3)
                 {
@@ -8647,14 +10447,14 @@
                             servicio.Proxy = pr;
                         }
                         servicio.Url = this.f1DireccionServicioURL;
-                        WSAFIPFE.f1AFIP.OpcionalTipoResponse oRespuesta = servicio.FEParamGetTiposOpcional(autorizacion);
+                        WSAFIPFE.f1AFIP.OpcionalTipoResponse oRespuesta = servicio.FEParamGetTiposOpcional(feAuthRequest);
                         if (oRespuesta.Errors == null)
                         {
                             this.if1ErrorItemCantidad = 0;
                             value = this.f1ErrorItemCantidad;
                             this.af1Error = new f1Error[(value - 1) + 1];
-                            int VB$t_i4$L5 = this.f1ErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L5; nContador++)
+                            int VB_t_i4_L5 = this.f1ErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L5; nContador++)
                             {
                                 this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                 this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -8665,8 +10465,8 @@
                             this.if1ErrorItemCantidad = oRespuesta.Errors.Length;
                             value = this.f1ErrorItemCantidad;
                             this.af1Error = new f1Error[(value - 1) + 1];
-                            int VB$t_i4$L6 = this.f1ErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L6; nContador++)
+                            int VB_t_i4_L6 = this.f1ErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L6; nContador++)
                             {
                                 this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                 this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -8677,8 +10477,8 @@
                             this.if1EventItemCantidad = 0;
                             value = this.f1EventItemCantidad;
                             this.af1Event = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L7 = this.f1EventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L7; nContador++)
+                            int VB_t_i4_L7 = this.f1EventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L7; nContador++)
                             {
                                 this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                 this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -8689,8 +10489,8 @@
                             this.if1EventItemCantidad = oRespuesta.Events.Length;
                             value = this.f1EventItemCantidad;
                             this.af1Event = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L8 = this.f1EventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L8; nContador++)
+                            int VB_t_i4_L8 = this.f1EventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L8; nContador++)
                             {
                                 this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                 this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -8701,8 +10501,8 @@
                         this.if1TiposOpcionalItemCantidad = oRespuesta.ResultGet.Length;
                         value = this.f1TiposOpcionalItemCantidad;
                         this.af1TiposOpcional = new f1TiposOpcional[(value - 1) + 1];
-                        int VB$t_i4$L9 = this.f1TiposOpcionalItemCantidad - 1;
-                        for (nContador = 0; nContador <= VB$t_i4$L9; nContador++)
+                        int VB_t_i4_L9 = this.f1TiposOpcionalItemCantidad - 1;
+                        for (nContador = 0; nContador <= VB_t_i4_L9; nContador++)
                         {
                             this.af1TiposOpcional[nContador].id = Conversions.ToInteger(oRespuesta.ResultGet[nContador].Id);
                             this.af1TiposOpcional[nContador].desc = oRespuesta.ResultGet[nContador].Desc;
@@ -8775,8 +10575,8 @@
                                 this.if1ErrorItemCantidad = 0;
                                 value = this.f1ErrorItemCantidad;
                                 this.af1Error = new f1Error[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.f1ErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.f1ErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                     this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -8787,8 +10587,8 @@
                                 this.if1ErrorItemCantidad = oRespuesta.Errors.Length;
                                 value = this.f1ErrorItemCantidad;
                                 this.af1Error = new f1Error[(value - 1) + 1];
-                                int VB$t_i4$L1 = this.f1ErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                                int VB_t_i4_L1 = this.f1ErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                                 {
                                     this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                     this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -8799,8 +10599,8 @@
                                 this.if1EventItemCantidad = 0;
                                 value = this.f1EventItemCantidad;
                                 this.af1Event = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L2 = this.f1EventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L2; nContador++)
+                                int VB_t_i4_L2 = this.f1EventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L2; nContador++)
                                 {
                                     this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                     this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -8811,8 +10611,8 @@
                                 this.if1EventItemCantidad = oRespuesta.Events.Length;
                                 value = this.f1EventItemCantidad;
                                 this.af1Event = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L3 = this.f1EventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L3; nContador++)
+                                int VB_t_i4_L3 = this.f1EventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L3; nContador++)
                                 {
                                     this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                     this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -8823,8 +10623,8 @@
                             this.if1TiposTributoItemCantidad = oRespuesta.ResultGet.Length;
                             value = this.f1TiposTributoItemCantidad;
                             this.af1TiposTributo = new f1TiposTributo[(value - 1) + 1];
-                            int VB$t_i4$L4 = this.f1TiposTributoItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L4; nContador++)
+                            int VB_t_i4_L4 = this.f1TiposTributoItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L4; nContador++)
                             {
                                 this.af1TiposTributo[nContador].id = oRespuesta.ResultGet[nContador].Id;
                                 this.af1TiposTributo[nContador].desc = oRespuesta.ResultGet[nContador].Desc;
@@ -8844,12 +10644,12 @@
                     }
                     return bResultado;
                 }
-                WSAFIPFE.f1AFIP.FEAuthRequest autorizacion = new WSAFIPFE.f1AFIP.FEAuthRequest();
+                WSAFIPFE.f1AFIP.FEAuthRequest feAuthRequest = new WSAFIPFE.f1AFIP.FEAuthRequest();
                 try
                 {
-                    autorizacion.Cuit = Conversions.ToLong(this.cuit);
-                    autorizacion.Token = this.f1token;
-                    autorizacion.Sign = this.f1sign;
+                    feAuthRequest.Cuit = Conversions.ToLong(this.cuit);
+                    feAuthRequest.Token = this.f1token;
+                    feAuthRequest.Sign = this.f1sign;
                 }
                 catch (Exception exception3)
                 {
@@ -8876,14 +10676,14 @@
                             servicio.Proxy = pr;
                         }
                         servicio.Url = this.f1DireccionServicioURL;
-                        WSAFIPFE.f1AFIP.FETributoResponse oRespuesta = servicio.FEParamGetTiposTributos(autorizacion);
+                        WSAFIPFE.f1AFIP.FETributoResponse oRespuesta = servicio.FEParamGetTiposTributos(feAuthRequest);
                         if (oRespuesta.Errors == null)
                         {
                             this.if1ErrorItemCantidad = 0;
                             value = this.f1ErrorItemCantidad;
                             this.af1Error = new f1Error[(value - 1) + 1];
-                            int VB$t_i4$L5 = this.f1ErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L5; nContador++)
+                            int VB_t_i4_L5 = this.f1ErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L5; nContador++)
                             {
                                 this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                 this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -8894,8 +10694,8 @@
                             this.if1ErrorItemCantidad = oRespuesta.Errors.Length;
                             value = this.f1ErrorItemCantidad;
                             this.af1Error = new f1Error[(value - 1) + 1];
-                            int VB$t_i4$L6 = this.f1ErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L6; nContador++)
+                            int VB_t_i4_L6 = this.f1ErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L6; nContador++)
                             {
                                 this.af1Error[nContador].code = oRespuesta.Errors[nContador].Code;
                                 this.af1Error[nContador].msg = oRespuesta.Errors[nContador].Msg;
@@ -8906,8 +10706,8 @@
                             this.if1EventItemCantidad = 0;
                             value = this.f1EventItemCantidad;
                             this.af1Event = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L7 = this.f1EventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L7; nContador++)
+                            int VB_t_i4_L7 = this.f1EventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L7; nContador++)
                             {
                                 this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                 this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -8918,8 +10718,8 @@
                             this.if1EventItemCantidad = oRespuesta.Events.Length;
                             value = this.f1EventItemCantidad;
                             this.af1Event = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L8 = this.f1EventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L8; nContador++)
+                            int VB_t_i4_L8 = this.f1EventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L8; nContador++)
                             {
                                 this.af1Event[nContador].code = oRespuesta.Events[nContador].Code;
                                 this.af1Event[nContador].msg = oRespuesta.Events[nContador].Msg;
@@ -8930,8 +10730,8 @@
                         this.if1TiposTributoItemCantidad = oRespuesta.ResultGet.Length;
                         value = this.f1TiposTributoItemCantidad;
                         this.af1TiposTributo = new f1TiposTributo[(value - 1) + 1];
-                        int VB$t_i4$L9 = this.f1TiposTributoItemCantidad - 1;
-                        for (nContador = 0; nContador <= VB$t_i4$L9; nContador++)
+                        int VB_t_i4_L9 = this.f1TiposTributoItemCantidad - 1;
+                        for (nContador = 0; nContador <= VB_t_i4_L9; nContador++)
                         {
                             this.af1TiposTributo[nContador].id = oRespuesta.ResultGet[nContador].Id;
                             this.af1TiposTributo[nContador].desc = oRespuesta.ResultGet[nContador].Desc;
@@ -9002,8 +10802,8 @@
                         oPedidoCabecera.cantidadreg = this.FECabeceraCantReg;
                         oPedidoCabecera.presta_serv = this.FECabeceraPresta_serv;
                         oPedido.Fecr = oPedidoCabecera;
-                        int VB$t_i4$L0 = nLimite - 1;
-                        for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                        int VB_t_i4_L0 = nLimite - 1;
+                        for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                         {
                             WSAFIPFE.afipTest.FEDetalleRequest oPedidoitem = new WSAFIPFE.afipTest.FEDetalleRequest();
                             oPedidoitem.cbt_desde = this.aFEDetalle[nContador].cbt_desde;
@@ -9097,8 +10897,8 @@
                                 this.strFERespuestaMotivo = oRespuestaDetalle.motivo;
                                 this.strFERespuestaReproceso = oRespuestaDetalle.reproceso;
                                 this.strFERespuestaResultado = oRespuestaDetalle.resultado;
-                                int VB$t_i4$L1 = oRespuesta.FedResp.Length - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                                int VB_t_i4_L1 = oRespuesta.FedResp.Length - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                                 {
                                     WSAFIPFE.afipTest.FEDetalleResponse oRespuestaDetalleItem = oRespuesta.FedResp[nContador];
                                     this.aFERespuestaDetalle[nContador].cae = oRespuestaDetalleItem.cae;
@@ -9178,8 +10978,8 @@
                     oPedidoCabecera.cantidadreg = this.FECabeceraCantReg;
                     oPedidoCabecera.presta_serv = this.FECabeceraPresta_serv;
                     oPedido.Fecr = oPedidoCabecera;
-                    int VB$t_i4$L2 = nLimite - 1;
-                    for (nContador = 0; nContador <= VB$t_i4$L2; nContador++)
+                    int VB_t_i4_L2 = nLimite - 1;
+                    for (nContador = 0; nContador <= VB_t_i4_L2; nContador++)
                     {
                         WSAFIPFE.afip.FEDetalleRequest oPedidoitem = new WSAFIPFE.afip.FEDetalleRequest();
                         oPedidoitem.cbt_desde = this.aFEDetalle[nContador].cbt_desde;
@@ -9278,8 +11078,8 @@
                             this.strFERespuestaMotivo = oRespuestaDetalle.motivo;
                             this.strFERespuestaReproceso = oRespuestaDetalle.reproceso;
                             this.strFERespuestaResultado = oRespuestaDetalle.resultado;
-                            int VB$t_i4$L3 = oRespuesta.FedResp.Length - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L3; nContador++)
+                            int VB_t_i4_L3 = oRespuesta.FedResp.Length - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L3; nContador++)
                             {
                                 WSAFIPFE.afip.FEDetalleResponse oRespuestaDetalleItem = oRespuesta.FedResp[nContador];
                                 this.aFERespuestaDetalle[nContador].cae = oRespuestaDetalleItem.cae;
@@ -9389,12 +11189,12 @@
                     }
                     return bResultado;
                 }
-                WSAFIPFE.afip.FEAuthRequest autorizacion = new WSAFIPFE.afip.FEAuthRequest();
+                WSAFIPFE.afip.FEAuthRequest feAuthRequest = new WSAFIPFE.afip.FEAuthRequest();
                 try
                 {
-                    autorizacion.cuit = Conversions.ToLong(this.cuit);
-                    autorizacion.Token = this.token;
-                    autorizacion.Sign = this.sign;
+                    feAuthRequest.cuit = Conversions.ToLong(this.cuit);
+                    feAuthRequest.Token = this.token;
+                    feAuthRequest.Sign = this.sign;
                 }
                 catch (Exception exception3)
                 {
@@ -9434,7 +11234,7 @@
                     oParametro.imp_total = mTotal;
                     oParametro.punto_vta = iPuntoVenta;
                     oParametro.tipo_cbte = (int) iTipoComprobante;
-                    if (servicio.FEConsultaCAERequest(autorizacion, oParametro).Resultado == 1)
+                    if (servicio.FEConsultaCAERequest(feAuthRequest, oParametro).Resultado == 1)
                     {
                         return true;
                     }
@@ -9513,12 +11313,12 @@
                     }
                     return nResultado;
                 }
-                WSAFIPFE.afip.FEAuthRequest autorizacion = new WSAFIPFE.afip.FEAuthRequest();
+                WSAFIPFE.afip.FEAuthRequest feAuthRequest = new WSAFIPFE.afip.FEAuthRequest();
                 try
                 {
-                    autorizacion.cuit = Conversions.ToLong(this.cuit);
-                    autorizacion.Token = this.token;
-                    autorizacion.Sign = this.sign;
+                    feAuthRequest.cuit = Conversions.ToLong(this.cuit);
+                    feAuthRequest.Token = this.token;
+                    feAuthRequest.Sign = this.sign;
                 }
                 catch (Exception exception3)
                 {
@@ -9552,7 +11352,7 @@
                     {
                         servicio.Timeout = this.TimeOut;
                     }
-                    nResultado = servicio.FERecuperaQTYRequest(autorizacion).qty.value;
+                    nResultado = servicio.FERecuperaQTYRequest(feAuthRequest).qty.value;
                 }
                 catch (Exception exception4)
                 {
@@ -9828,8 +11628,8 @@
                             else
                             {
                                 oPedidoItemCbteAsocs = new WSAFIPFE.fxAFIPTest.ComprobanteAsociadoType[(this.fxComprobantesAsociadosItemCantidad - 1) + 1];
-                                int VB$t_i4$L0 = this.fxComprobantesAsociadosItemCantidad - 1;
-                                for (nContador2 = 0; nContador2 <= VB$t_i4$L0; nContador2++)
+                                int VB_t_i4_L0 = this.fxComprobantesAsociadosItemCantidad - 1;
+                                for (nContador2 = 0; nContador2 <= VB_t_i4_L0; nContador2++)
                                 {
                                     WSAFIPFE.fxAFIPTest.ComprobanteAsociadoType oPedidoItemCbteAsoc = new WSAFIPFE.fxAFIPTest.ComprobanteAsociadoType();
                                     this.fxIndiceItem = nContador2;
@@ -9847,8 +11647,8 @@
                             else
                             {
                                 oPedidoItemIvas = new WSAFIPFE.fxAFIPTest.SubtotalIVAType[(this.fxSubTotalesItemCantidad - 1) + 1];
-                                int VB$t_i4$L1 = this.fxSubTotalesItemCantidad - 1;
-                                for (nContador2 = 0; nContador2 <= VB$t_i4$L1; nContador2++)
+                                int VB_t_i4_L1 = this.fxSubTotalesItemCantidad - 1;
+                                for (nContador2 = 0; nContador2 <= VB_t_i4_L1; nContador2++)
                                 {
                                     WSAFIPFE.fxAFIPTest.SubtotalIVAType oPedidoItemIva = new WSAFIPFE.fxAFIPTest.SubtotalIVAType();
                                     this.fxIndiceItem = nContador2;
@@ -9865,8 +11665,8 @@
                             else
                             {
                                 oPedidoItemTributos = new WSAFIPFE.fxAFIPTest.OtroTributoType[(this.fxOtrosTributosItemCantidad - 1) + 1];
-                                int VB$t_i4$L2 = this.fxOtrosTributosItemCantidad - 1;
-                                for (nContador2 = 0; nContador2 <= VB$t_i4$L2; nContador2++)
+                                int VB_t_i4_L2 = this.fxOtrosTributosItemCantidad - 1;
+                                for (nContador2 = 0; nContador2 <= VB_t_i4_L2; nContador2++)
                                 {
                                     WSAFIPFE.fxAFIPTest.OtroTributoType oPedidoItemTributo = new WSAFIPFE.fxAFIPTest.OtroTributoType();
                                     this.fxIndiceItem = nContador2;
@@ -9885,8 +11685,8 @@
                             else
                             {
                                 oPedidoitems = new WSAFIPFE.fxAFIPTest.ItemType[(this.fxItemsItemCantidad - 1) + 1];
-                                int VB$t_i4$L3 = this.fxItemsItemCantidad - 1;
-                                for (nContador2 = 0; nContador2 <= VB$t_i4$L3; nContador2++)
+                                int VB_t_i4_L3 = this.fxItemsItemCantidad - 1;
+                                for (nContador2 = 0; nContador2 <= VB_t_i4_L3; nContador2++)
                                 {
                                     WSAFIPFE.fxAFIPTest.ItemType oPedidoitem = new WSAFIPFE.fxAFIPTest.ItemType();
                                     this.fxIndiceItem = nContador2;
@@ -9956,8 +11756,8 @@
                                 this.ifxEventItemCantidad = 1;
                                 value = this.fxEventItemCantidad;
                                 this.afxEvent = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L4 = this.fxEventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L4; nContador++)
+                                int VB_t_i4_L4 = this.fxEventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L4; nContador++)
                                 {
                                     this.afxEvent[nContador].code = oEvento.codigo;
                                     this.afxEvent[nContador].msg = oEvento.descripcion;
@@ -9974,8 +11774,8 @@
                                 this.ifxErrorItemCantidad = 1;
                                 value = this.fxErrorItemCantidad;
                                 this.afxError = new fxError[(value - 1) + 1];
-                                int VB$t_i4$L5 = this.fxErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L5; nContador++)
+                                int VB_t_i4_L5 = this.fxErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L5; nContador++)
                                 {
                                     this.afxError[nContador].code = oErrores[nContador].codigo;
                                     this.afxError[nContador].msg = oErrores[nContador].descripcion;
@@ -9992,8 +11792,8 @@
                                 this.ifxObervacionItemCantidad = 1;
                                 value = this.fxObervacionItemCantidad;
                                 this.afxObervacion = new fxObservacion[(value - 1) + 1];
-                                int VB$t_i4$L6 = this.fxObervacionItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L6; nContador++)
+                                int VB_t_i4_L6 = this.fxObervacionItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L6; nContador++)
                                 {
                                     this.afxObervacion[nContador].codigo = oObservaciones[nContador].codigo;
                                     this.afxObervacion[nContador].descripcion = oObservaciones[nContador].descripcion;
@@ -10025,8 +11825,8 @@
                             this.ifxErrorItemCantidad = 1;
                             value = this.fxErrorItemCantidad;
                             this.afxError = new fxError[(value - 1) + 1];
-                            int VB$t_i4$L7 = this.fxErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L7; nContador++)
+                            int VB_t_i4_L7 = this.fxErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L7; nContador++)
                             {
                                 this.afxError[nContador].msg = ex1.Message;
                                 this.afxError[nContador].code = 0;
@@ -10164,8 +11964,8 @@
                             else
                             {
                                 oPedidoItemCbteAsocs = new WSAFIPFE.fxAFIP.ComprobanteAsociadoType[(this.fxComprobantesAsociadosItemCantidad - 1) + 1];
-                                int VB$t_i4$L8 = this.fxComprobantesAsociadosItemCantidad - 1;
-                                for (nContador2 = 0; nContador2 <= VB$t_i4$L8; nContador2++)
+                                int VB_t_i4_L8 = this.fxComprobantesAsociadosItemCantidad - 1;
+                                for (nContador2 = 0; nContador2 <= VB_t_i4_L8; nContador2++)
                                 {
                                     WSAFIPFE.fxAFIP.ComprobanteAsociadoType oPedidoItemCbteAsoc = new WSAFIPFE.fxAFIP.ComprobanteAsociadoType();
                                     this.fxIndiceItem = nContador2;
@@ -10183,8 +11983,8 @@
                             else
                             {
                                 oPedidoItemIvas = new WSAFIPFE.fxAFIP.SubtotalIVAType[(this.fxSubTotalesItemCantidad - 1) + 1];
-                                int VB$t_i4$L9 = this.fxSubTotalesItemCantidad - 1;
-                                for (nContador2 = 0; nContador2 <= VB$t_i4$L9; nContador2++)
+                                int VB_t_i4_L9 = this.fxSubTotalesItemCantidad - 1;
+                                for (nContador2 = 0; nContador2 <= VB_t_i4_L9; nContador2++)
                                 {
                                     WSAFIPFE.fxAFIP.SubtotalIVAType oPedidoItemIva = new WSAFIPFE.fxAFIP.SubtotalIVAType();
                                     this.fxIndiceItem = nContador2;
@@ -10201,8 +12001,8 @@
                             else
                             {
                                 oPedidoItemTributos = new WSAFIPFE.fxAFIP.OtroTributoType[(this.fxOtrosTributosItemCantidad - 1) + 1];
-                                int VB$t_i4$L10 = this.fxOtrosTributosItemCantidad - 1;
-                                for (nContador2 = 0; nContador2 <= VB$t_i4$L10; nContador2++)
+                                int VB_t_i4_L10 = this.fxOtrosTributosItemCantidad - 1;
+                                for (nContador2 = 0; nContador2 <= VB_t_i4_L10; nContador2++)
                                 {
                                     WSAFIPFE.fxAFIP.OtroTributoType oPedidoItemTributo = new WSAFIPFE.fxAFIP.OtroTributoType();
                                     this.fxIndiceItem = nContador2;
@@ -10221,8 +12021,8 @@
                             else
                             {
                                 oPedidoitems = new WSAFIPFE.fxAFIP.ItemType[(this.fxItemsItemCantidad - 1) + 1];
-                                int VB$t_i4$L11 = this.fxItemsItemCantidad - 1;
-                                for (nContador2 = 0; nContador2 <= VB$t_i4$L11; nContador2++)
+                                int VB_t_i4_L11 = this.fxItemsItemCantidad - 1;
+                                for (nContador2 = 0; nContador2 <= VB_t_i4_L11; nContador2++)
                                 {
                                     WSAFIPFE.fxAFIP.ItemType oPedidoitem = new WSAFIPFE.fxAFIP.ItemType();
                                     this.fxIndiceItem = nContador2;
@@ -10292,8 +12092,8 @@
                                 this.ifxEventItemCantidad = 1;
                                 value = this.fxEventItemCantidad;
                                 this.afxEvent = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L12 = this.fxEventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L12; nContador++)
+                                int VB_t_i4_L12 = this.fxEventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L12; nContador++)
                                 {
                                     this.afxEvent[nContador].code = oEvento.codigo;
                                     this.afxEvent[nContador].msg = oEvento.descripcion;
@@ -10310,8 +12110,8 @@
                                 this.ifxErrorItemCantidad = 1;
                                 value = this.fxErrorItemCantidad;
                                 this.afxError = new fxError[(value - 1) + 1];
-                                int VB$t_i4$L13 = this.fxErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L13; nContador++)
+                                int VB_t_i4_L13 = this.fxErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L13; nContador++)
                                 {
                                     this.afxError[nContador].code = oErrores[nContador].codigo;
                                     this.afxError[nContador].msg = oErrores[nContador].descripcion;
@@ -10328,8 +12128,8 @@
                                 this.ifxObervacionItemCantidad = 1;
                                 value = this.fxObervacionItemCantidad;
                                 this.afxObervacion = new fxObservacion[(value - 1) + 1];
-                                int VB$t_i4$L14 = this.fxObervacionItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L14; nContador++)
+                                int VB_t_i4_L14 = this.fxObervacionItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L14; nContador++)
                                 {
                                     this.afxObervacion[nContador].codigo = oObservaciones[nContador].codigo;
                                     this.afxObervacion[nContador].descripcion = oObservaciones[nContador].descripcion;
@@ -10361,8 +12161,8 @@
                             this.ifxErrorItemCantidad = 1;
                             value = this.fxErrorItemCantidad;
                             this.afxError = new fxError[(value - 1) + 1];
-                            int VB$t_i4$L15 = this.fxErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L15; nContador++)
+                            int VB_t_i4_L15 = this.fxErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L15; nContador++)
                             {
                                 this.afxError[nContador].msg = ex1.Message;
                                 this.afxError[nContador].code = 0;
@@ -10482,8 +12282,8 @@
                                 this.ifxErrorItemCantidad = 0;
                                 value = this.fxErrorItemCantidad;
                                 this.afxError = new fxError[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.fxErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.fxErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.afxError[nContador].code = oErrores[nContador].codigo;
                                     this.afxError[nContador].msg = oErrores[nContador].descripcion;
@@ -10494,8 +12294,8 @@
                                 this.ifxErrorItemCantidad = oErrores.Length;
                                 value = this.fxErrorItemCantidad;
                                 this.afxError = new fxError[(value - 1) + 1];
-                                int VB$t_i4$L1 = this.fxErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                                int VB_t_i4_L1 = this.fxErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                                 {
                                     this.afxError[nContador].code = oErrores[nContador].codigo;
                                     this.afxError[nContador].msg = oErrores[nContador].descripcion;
@@ -10508,8 +12308,8 @@
                                 this.ifxEventItemCantidad = 0;
                                 value = this.fxEventItemCantidad;
                                 this.afxEvent = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L2 = this.fxEventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L2; nContador++)
+                                int VB_t_i4_L2 = this.fxEventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L2; nContador++)
                                 {
                                     this.afxEvent[nContador].code = oEvento.codigo;
                                     this.afxEvent[nContador].msg = oEvento.descripcion;
@@ -10520,8 +12320,8 @@
                                 this.ifxEventItemCantidad = 1;
                                 value = this.fxEventItemCantidad;
                                 this.afxEvent = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L3 = this.fxEventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L3; nContador++)
+                                int VB_t_i4_L3 = this.fxEventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L3; nContador++)
                                 {
                                     this.afxEvent[nContador].code = oEvento.codigo;
                                     this.afxEvent[nContador].msg = oEvento.descripcion;
@@ -10548,8 +12348,8 @@
                             this.ifxErrorItemCantidad = 1;
                             int value = this.fxErrorItemCantidad;
                             this.afxError = new fxError[(value - 1) + 1];
-                            int VB$t_i4$L4 = this.fxErrorItemCantidad - 1;
-                            for (int ncontador = 0; ncontador <= VB$t_i4$L4; ncontador++)
+                            int VB_t_i4_L4 = this.fxErrorItemCantidad - 1;
+                            for (int ncontador = 0; ncontador <= VB_t_i4_L4; ncontador++)
                             {
                                 this.afxError[ncontador].msg = ex1.Message;
                                 this.afxError[ncontador].code = 0;
@@ -10639,8 +12439,8 @@
                             this.ifxErrorItemCantidad = 0;
                             value = this.fxErrorItemCantidad;
                             this.afxError = new fxError[(value - 1) + 1];
-                            int VB$t_i4$L5 = this.fxErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L5; nContador++)
+                            int VB_t_i4_L5 = this.fxErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L5; nContador++)
                             {
                                 this.afxError[nContador].code = oErrores[nContador].codigo;
                                 this.afxError[nContador].msg = oErrores[nContador].descripcion;
@@ -10651,8 +12451,8 @@
                             this.ifxErrorItemCantidad = oErrores.Length;
                             value = this.fxErrorItemCantidad;
                             this.afxError = new fxError[(value - 1) + 1];
-                            int VB$t_i4$L6 = this.fxErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L6; nContador++)
+                            int VB_t_i4_L6 = this.fxErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L6; nContador++)
                             {
                                 this.afxError[nContador].code = oErrores[nContador].codigo;
                                 this.afxError[nContador].msg = oErrores[nContador].descripcion;
@@ -10665,8 +12465,8 @@
                             this.ifxEventItemCantidad = 0;
                             value = this.fxEventItemCantidad;
                             this.afxEvent = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L7 = this.fxEventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L7; nContador++)
+                            int VB_t_i4_L7 = this.fxEventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L7; nContador++)
                             {
                                 this.afxEvent[nContador].code = oEvento.codigo;
                                 this.afxEvent[nContador].msg = oEvento.descripcion;
@@ -10677,8 +12477,8 @@
                             this.ifxEventItemCantidad = 1;
                             value = this.fxEventItemCantidad;
                             this.afxEvent = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L8 = this.fxEventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L8; nContador++)
+                            int VB_t_i4_L8 = this.fxEventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L8; nContador++)
                             {
                                 this.afxEvent[nContador].code = oEvento.codigo;
                                 this.afxEvent[nContador].msg = oEvento.descripcion;
@@ -10705,8 +12505,8 @@
                         this.ifxErrorItemCantidad = 1;
                         int value = this.fxErrorItemCantidad;
                         this.afxError = new fxError[(value - 1) + 1];
-                        int VB$t_i4$L9 = this.fxErrorItemCantidad - 1;
-                        for (int ncontador = 0; ncontador <= VB$t_i4$L9; ncontador++)
+                        int VB_t_i4_L9 = this.fxErrorItemCantidad - 1;
+                        for (int ncontador = 0; ncontador <= VB_t_i4_L9; ncontador++)
                         {
                             this.afxError[ncontador].msg = ex1.Message;
                             this.afxError[ncontador].code = 0;
@@ -10824,8 +12624,8 @@
                                     this.ifxErrorItemCantidad = 0;
                                     value = this.fxErrorItemCantidad;
                                     this.afxError = new fxError[(value - 1) + 1];
-                                    int VB$t_i4$L0 = this.fxErrorItemCantidad - 1;
-                                    for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                    int VB_t_i4_L0 = this.fxErrorItemCantidad - 1;
+                                    for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                     {
                                         this.afxError[nContador].code = oErrores[nContador].codigo;
                                         this.afxError[nContador].msg = oErrores[nContador].descripcion;
@@ -10836,8 +12636,8 @@
                                     this.ifxErrorItemCantidad = oErrores.Length;
                                     value = this.fxErrorItemCantidad;
                                     this.afxError = new fxError[(value - 1) + 1];
-                                    int VB$t_i4$L1 = this.fxErrorItemCantidad - 1;
-                                    for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                                    int VB_t_i4_L1 = this.fxErrorItemCantidad - 1;
+                                    for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                                     {
                                         this.afxError[nContador].code = oErrores[nContador].codigo;
                                         this.afxError[nContador].msg = oErrores[nContador].descripcion;
@@ -10848,8 +12648,8 @@
                                     this.ifxEventItemCantidad = 0;
                                     value = this.fxEventItemCantidad;
                                     this.afxEvent = new f1Event[(value - 1) + 1];
-                                    int VB$t_i4$L2 = this.fxEventItemCantidad - 1;
-                                    for (nContador = 0; nContador <= VB$t_i4$L2; nContador++)
+                                    int VB_t_i4_L2 = this.fxEventItemCantidad - 1;
+                                    for (nContador = 0; nContador <= VB_t_i4_L2; nContador++)
                                     {
                                         this.afxEvent[nContador].code = oEvento.codigo;
                                         this.afxEvent[nContador].msg = oEvento.descripcion;
@@ -10860,8 +12660,8 @@
                                     this.ifxEventItemCantidad = 1;
                                     value = this.fxEventItemCantidad;
                                     this.afxEvent = new f1Event[(value - 1) + 1];
-                                    int VB$t_i4$L3 = this.fxEventItemCantidad - 1;
-                                    for (nContador = 0; nContador <= VB$t_i4$L3; nContador++)
+                                    int VB_t_i4_L3 = this.fxEventItemCantidad - 1;
+                                    for (nContador = 0; nContador <= VB_t_i4_L3; nContador++)
                                     {
                                         this.afxEvent[nContador].code = oEvento.codigo;
                                         this.afxEvent[nContador].msg = oEvento.descripcion;
@@ -10878,8 +12678,8 @@
                                     this.ifxCAEAItemCantidad = oRespuesta.Length;
                                     value = this.fxCAEAItemCantidad - 1;
                                     this.aFxCAEAs = new fxCAEA[value + 1];
-                                    int VB$t_i4$L4 = this.fxCAEAItemCantidad - 1;
-                                    for (nContador = 0; nContador <= VB$t_i4$L4; nContador++)
+                                    int VB_t_i4_L4 = this.fxCAEAItemCantidad - 1;
+                                    for (nContador = 0; nContador <= VB_t_i4_L4; nContador++)
                                     {
                                         this.fxIndiceItem = nContador;
                                         this.aFxCAEAs[this.fxIndiceItem].strFxRespuestaCAEA = Conversions.ToString(oRespuesta[nContador].CAEA);
@@ -10902,8 +12702,8 @@
                             this.ifxErrorItemCantidad = 1;
                             int value = this.fxErrorItemCantidad;
                             this.afxError = new fxError[(value - 1) + 1];
-                            int VB$t_i4$L5 = this.fxErrorItemCantidad - 1;
-                            for (int ncontador = 0; ncontador <= VB$t_i4$L5; ncontador++)
+                            int VB_t_i4_L5 = this.fxErrorItemCantidad - 1;
+                            for (int ncontador = 0; ncontador <= VB_t_i4_L5; ncontador++)
                             {
                                 this.afxError[ncontador].msg = ex1.Message;
                                 this.afxError[ncontador].code = 0;
@@ -11001,8 +12801,8 @@
                                 this.ifxErrorItemCantidad = 0;
                                 value = this.fxErrorItemCantidad;
                                 this.afxError = new fxError[(value - 1) + 1];
-                                int VB$t_i4$L6 = this.fxErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L6; nContador++)
+                                int VB_t_i4_L6 = this.fxErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L6; nContador++)
                                 {
                                     this.afxError[nContador].code = oErrores[nContador].codigo;
                                     this.afxError[nContador].msg = oErrores[nContador].descripcion;
@@ -11013,8 +12813,8 @@
                                 this.ifxErrorItemCantidad = oErrores.Length;
                                 value = this.fxErrorItemCantidad;
                                 this.afxError = new fxError[(value - 1) + 1];
-                                int VB$t_i4$L7 = this.fxErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L7; nContador++)
+                                int VB_t_i4_L7 = this.fxErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L7; nContador++)
                                 {
                                     this.afxError[nContador].code = oErrores[nContador].codigo;
                                     this.afxError[nContador].msg = oErrores[nContador].descripcion;
@@ -11025,8 +12825,8 @@
                                 this.ifxEventItemCantidad = 0;
                                 value = this.fxEventItemCantidad;
                                 this.afxEvent = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L8 = this.fxEventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L8; nContador++)
+                                int VB_t_i4_L8 = this.fxEventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L8; nContador++)
                                 {
                                     this.afxEvent[nContador].code = oEvento.codigo;
                                     this.afxEvent[nContador].msg = oEvento.descripcion;
@@ -11037,8 +12837,8 @@
                                 this.ifxEventItemCantidad = 1;
                                 value = this.fxEventItemCantidad;
                                 this.afxEvent = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L9 = this.fxEventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L9; nContador++)
+                                int VB_t_i4_L9 = this.fxEventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L9; nContador++)
                                 {
                                     this.afxEvent[nContador].code = oEvento.codigo;
                                     this.afxEvent[nContador].msg = oEvento.descripcion;
@@ -11055,8 +12855,8 @@
                                 this.ifxCAEAItemCantidad = oRespuesta.Length;
                                 value = this.fxCAEAItemCantidad - 1;
                                 this.aFxCAEAs = new fxCAEA[value + 1];
-                                int VB$t_i4$L10 = this.fxCAEAItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L10; nContador++)
+                                int VB_t_i4_L10 = this.fxCAEAItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L10; nContador++)
                                 {
                                     this.fxIndiceItem = nContador;
                                     this.aFxCAEAs[this.fxIndiceItem].strFxRespuestaCAEA = Conversions.ToString(oRespuesta[nContador].CAEA);
@@ -11079,8 +12879,8 @@
                         this.ifxErrorItemCantidad = 1;
                         int value = this.fxErrorItemCantidad;
                         this.afxError = new fxError[(value - 1) + 1];
-                        int VB$t_i4$L11 = this.fxErrorItemCantidad - 1;
-                        for (int ncontador = 0; ncontador <= VB$t_i4$L11; ncontador++)
+                        int VB_t_i4_L11 = this.fxErrorItemCantidad - 1;
+                        for (int ncontador = 0; ncontador <= VB_t_i4_L11; ncontador++)
                         {
                             this.afxError[ncontador].msg = ex1.Message;
                             this.afxError[ncontador].code = 0;
@@ -11199,9 +12999,9 @@
                         this.ifxErrorItemCantidad = 1;
                         int VALUE = this.fxErrorItemCantidad;
                         this.afxError = new fxError[(VALUE - 1) + 1];
-                        int VB$t_i4$L0 = this.fxErrorItemCantidad - 1;
+                        int VB_t_i4_L0 = this.fxErrorItemCantidad - 1;
                         nContador = 0;
-                        while (nContador <= VB$t_i4$L0)
+                        while (nContador <= VB_t_i4_L0)
                         {
                             this.afxError[nContador].msg = ex1.Message;
                             this.afxError[nContador].code = 0;
@@ -11259,8 +13059,8 @@
                             this.ifxErrorItemCantidad = 0;
                             value = this.fxErrorItemCantidad;
                             this.afxError = new fxError[(value - 1) + 1];
-                            int VB$t_i4$L1 = this.fxErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                            int VB_t_i4_L1 = this.fxErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                             {
                                 this.afxError[nContador].code = oErrores[nContador].codigo;
                                 this.afxError[nContador].msg = oErrores[nContador].descripcion;
@@ -11271,8 +13071,8 @@
                             this.ifxErrorItemCantidad = oErrores.Length;
                             value = this.fxErrorItemCantidad;
                             this.afxError = new fxError[(value - 1) + 1];
-                            int VB$t_i4$L2 = this.fxErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L2; nContador++)
+                            int VB_t_i4_L2 = this.fxErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L2; nContador++)
                             {
                                 this.afxError[nContador].code = oErrores[nContador].codigo;
                                 this.afxError[nContador].msg = oErrores[nContador].descripcion;
@@ -11289,8 +13089,8 @@
                             this.ifxEventItemCantidad = 1;
                             value = this.fxEventItemCantidad;
                             this.afxEvent = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L3 = this.fxEventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L3; nContador++)
+                            int VB_t_i4_L3 = this.fxEventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L3; nContador++)
                             {
                                 this.afxEvent[nContador].code = oEvento.codigo;
                                 this.afxEvent[nContador].msg = oEvento.descripcion;
@@ -11361,8 +13161,8 @@
                                 this.fxComprobantesAsociadosItemCantidad = oRespuesta.arrayComprobantesAsociados.Length;
                             }
                             WSAFIPFE.fxAFIPTest.ComprobanteAsociadoType[] oPedidoItemCbteAsocs = new WSAFIPFE.fxAFIPTest.ComprobanteAsociadoType[(this.fxComprobantesAsociadosItemCantidad - 1) + 1];
-                            int VB$t_i4$L4 = this.fxComprobantesAsociadosItemCantidad - 1;
-                            for (nContador2 = 0; nContador2 <= VB$t_i4$L4; nContador2++)
+                            int VB_t_i4_L4 = this.fxComprobantesAsociadosItemCantidad - 1;
+                            for (nContador2 = 0; nContador2 <= VB_t_i4_L4; nContador2++)
                             {
                                 WSAFIPFE.fxAFIPTest.ComprobanteAsociadoType oPedidoItemCbteAsoc = oRespuesta.arrayComprobantesAsociados[nContador2];
                                 this.fxIndiceItem = nContador2;
@@ -11379,8 +13179,8 @@
                                 this.fxSubTotalesItemCantidad = oRespuesta.arraySubtotalesIVA.Length;
                             }
                             WSAFIPFE.fxAFIPTest.SubtotalIVAType[] oSubTotales = new WSAFIPFE.fxAFIPTest.SubtotalIVAType[(this.fxSubTotalesItemCantidad - 1) + 1];
-                            int VB$t_i4$L5 = this.fxSubTotalesItemCantidad - 1;
-                            for (nContador2 = 0; nContador2 <= VB$t_i4$L5; nContador2++)
+                            int VB_t_i4_L5 = this.fxSubTotalesItemCantidad - 1;
+                            for (nContador2 = 0; nContador2 <= VB_t_i4_L5; nContador2++)
                             {
                                 WSAFIPFE.fxAFIPTest.SubtotalIVAType oSubTotal = oRespuesta.arraySubtotalesIVA[nContador2];
                                 this.fxIndiceItem = nContador2;
@@ -11396,8 +13196,8 @@
                                 this.fxOtrosTributosItemCantidad = oRespuesta.arrayOtrosTributos.Length;
                             }
                             WSAFIPFE.fxAFIPTest.OtroTributoType[] oOtrosTributos = new WSAFIPFE.fxAFIPTest.OtroTributoType[(this.fxOtrosTributosItemCantidad - 1) + 1];
-                            int VB$t_i4$L6 = this.fxOtrosTributosItemCantidad - 1;
-                            for (nContador2 = 0; nContador2 <= VB$t_i4$L6; nContador2++)
+                            int VB_t_i4_L6 = this.fxOtrosTributosItemCantidad - 1;
+                            for (nContador2 = 0; nContador2 <= VB_t_i4_L6; nContador2++)
                             {
                                 WSAFIPFE.fxAFIPTest.OtroTributoType oOtrosTributo = oRespuesta.arrayOtrosTributos[nContador2];
                                 this.fxIndiceItem = nContador2;
@@ -11415,8 +13215,8 @@
                                 this.fxItemsItemCantidad = oRespuesta.arrayItems.Length;
                             }
                             value2 = this.fxItemsItemCantidad;
-                            int VB$t_i4$L7 = this.fxItemsItemCantidad - 1;
-                            for (nContador2 = 0; nContador2 <= VB$t_i4$L7; nContador2++)
+                            int VB_t_i4_L7 = this.fxItemsItemCantidad - 1;
+                            for (nContador2 = 0; nContador2 <= VB_t_i4_L7; nContador2++)
                             {
                                 WSAFIPFE.fxAFIPTest.ItemType oItem = oRespuesta.arrayItems[nContador2];
                                 this.fxIndiceItem = nContador2;
@@ -11517,9 +13317,9 @@
                     this.ifxErrorItemCantidad = 1;
                     int VALUE = this.fxErrorItemCantidad;
                     this.afxError = new fxError[(VALUE - 1) + 1];
-                    int VB$t_i4$L8 = this.fxErrorItemCantidad - 1;
+                    int VB_t_i4_L8 = this.fxErrorItemCantidad - 1;
                     nContador = 0;
-                    while (nContador <= VB$t_i4$L8)
+                    while (nContador <= VB_t_i4_L8)
                     {
                         this.afxError[nContador].msg = ex1.Message;
                         this.afxError[nContador].code = 0;
@@ -11577,8 +13377,8 @@
                         this.ifxErrorItemCantidad = 0;
                         value = this.fxErrorItemCantidad;
                         this.afxError = new fxError[(value - 1) + 1];
-                        int VB$t_i4$L9 = this.fxErrorItemCantidad - 1;
-                        for (nContador = 0; nContador <= VB$t_i4$L9; nContador++)
+                        int VB_t_i4_L9 = this.fxErrorItemCantidad - 1;
+                        for (nContador = 0; nContador <= VB_t_i4_L9; nContador++)
                         {
                             this.afxError[nContador].code = oErrores[nContador].codigo;
                             this.afxError[nContador].msg = oErrores[nContador].descripcion;
@@ -11589,8 +13389,8 @@
                         this.ifxErrorItemCantidad = oErrores.Length;
                         value = this.fxErrorItemCantidad;
                         this.afxError = new fxError[(value - 1) + 1];
-                        int VB$t_i4$L10 = this.fxErrorItemCantidad - 1;
-                        for (nContador = 0; nContador <= VB$t_i4$L10; nContador++)
+                        int VB_t_i4_L10 = this.fxErrorItemCantidad - 1;
+                        for (nContador = 0; nContador <= VB_t_i4_L10; nContador++)
                         {
                             this.afxError[nContador].code = oErrores[nContador].codigo;
                             this.afxError[nContador].msg = oErrores[nContador].descripcion;
@@ -11607,8 +13407,8 @@
                         this.ifxEventItemCantidad = 1;
                         value = this.fxEventItemCantidad;
                         this.afxEvent = new f1Event[(value - 1) + 1];
-                        int VB$t_i4$L11 = this.fxEventItemCantidad - 1;
-                        for (nContador = 0; nContador <= VB$t_i4$L11; nContador++)
+                        int VB_t_i4_L11 = this.fxEventItemCantidad - 1;
+                        for (nContador = 0; nContador <= VB_t_i4_L11; nContador++)
                         {
                             this.afxEvent[nContador].code = oEvento.codigo;
                             this.afxEvent[nContador].msg = oEvento.descripcion;
@@ -11679,8 +13479,8 @@
                             this.fxComprobantesAsociadosItemCantidad = oRespuesta.arrayComprobantesAsociados.Length;
                         }
                         WSAFIPFE.fxAFIP.ComprobanteAsociadoType[] oPedidoItemCbteAsocs = new WSAFIPFE.fxAFIP.ComprobanteAsociadoType[(this.fxComprobantesAsociadosItemCantidad - 1) + 1];
-                        int VB$t_i4$L12 = this.fxComprobantesAsociadosItemCantidad - 1;
-                        for (nContador2 = 0; nContador2 <= VB$t_i4$L12; nContador2++)
+                        int VB_t_i4_L12 = this.fxComprobantesAsociadosItemCantidad - 1;
+                        for (nContador2 = 0; nContador2 <= VB_t_i4_L12; nContador2++)
                         {
                             WSAFIPFE.fxAFIP.ComprobanteAsociadoType oPedidoItemCbteAsoc = oRespuesta.arrayComprobantesAsociados[nContador2];
                             this.fxIndiceItem = nContador2;
@@ -11697,8 +13497,8 @@
                             this.fxSubTotalesItemCantidad = oRespuesta.arraySubtotalesIVA.Length;
                         }
                         WSAFIPFE.fxAFIP.SubtotalIVAType[] oSubTotales = new WSAFIPFE.fxAFIP.SubtotalIVAType[(this.fxSubTotalesItemCantidad - 1) + 1];
-                        int VB$t_i4$L13 = this.fxSubTotalesItemCantidad - 1;
-                        for (nContador2 = 0; nContador2 <= VB$t_i4$L13; nContador2++)
+                        int VB_t_i4_L13 = this.fxSubTotalesItemCantidad - 1;
+                        for (nContador2 = 0; nContador2 <= VB_t_i4_L13; nContador2++)
                         {
                             WSAFIPFE.fxAFIP.SubtotalIVAType oSubTotal = oRespuesta.arraySubtotalesIVA[nContador2];
                             this.fxIndiceItem = nContador2;
@@ -11714,8 +13514,8 @@
                             this.fxOtrosTributosItemCantidad = oRespuesta.arrayOtrosTributos.Length;
                         }
                         WSAFIPFE.fxAFIP.OtroTributoType[] oOtrosTributos = new WSAFIPFE.fxAFIP.OtroTributoType[(this.fxOtrosTributosItemCantidad - 1) + 1];
-                        int VB$t_i4$L14 = this.fxOtrosTributosItemCantidad - 1;
-                        for (nContador2 = 0; nContador2 <= VB$t_i4$L14; nContador2++)
+                        int VB_t_i4_L14 = this.fxOtrosTributosItemCantidad - 1;
+                        for (nContador2 = 0; nContador2 <= VB_t_i4_L14; nContador2++)
                         {
                             WSAFIPFE.fxAFIP.OtroTributoType oOtrosTributo = oRespuesta.arrayOtrosTributos[nContador2];
                             this.fxIndiceItem = nContador2;
@@ -11733,8 +13533,8 @@
                             this.fxItemsItemCantidad = oRespuesta.arrayItems.Length;
                         }
                         value2 = this.fxItemsItemCantidad;
-                        int VB$t_i4$L15 = this.fxItemsItemCantidad - 1;
-                        for (nContador2 = 0; nContador2 <= VB$t_i4$L15; nContador2++)
+                        int VB_t_i4_L15 = this.fxItemsItemCantidad - 1;
+                        for (nContador2 = 0; nContador2 <= VB_t_i4_L15; nContador2++)
                         {
                             WSAFIPFE.fxAFIP.ItemType oItem = oRespuesta.arrayItems[nContador2];
                             this.fxIndiceItem = nContador2;
@@ -11818,44 +13618,44 @@
                                 pr.Credentials = cr;
                                 servicio.Proxy = pr;
                             }
-                            string VB$t_string$L0 = strTipo;
-                            if (VB$t_string$L0 == "TIPOSCOMPROBANTE")
+                            string VB_t_string_L0 = strTipo;
+                            if (VB_t_string_L0 == "TIPOSCOMPROBANTE")
                             {
                                 oRespuesta = servicio.consultarTiposComprobante(autorizacion, ref oEvento);
                             }
-                            else if (VB$t_string$L0 == "TIPOSDOCUMENTO")
+                            else if (VB_t_string_L0 == "TIPOSDOCUMENTO")
                             {
                                 oRespuesta = servicio.consultarTiposDocumento(autorizacion, ref oEvento);
                             }
-                            else if (VB$t_string$L0 == "ALICUOTASIVA")
+                            else if (VB_t_string_L0 == "ALICUOTASIVA")
                             {
                                 oRespuesta = servicio.consultarAlicuotasIVA(autorizacion, ref oEvento);
                             }
-                            else if (VB$t_string$L0 == "CONDICIONESIVA")
+                            else if (VB_t_string_L0 == "CONDICIONESIVA")
                             {
                                 oRespuesta = servicio.consultarCondicionesIVA(autorizacion, ref oEvento);
                             }
-                            else if (VB$t_string$L0 == "UNIDADESMEDIDA")
+                            else if (VB_t_string_L0 == "UNIDADESMEDIDA")
                             {
                                 oRespuesta = servicio.consultarUnidadesMedida(autorizacion, ref oEvento);
                             }
-                            else if (VB$t_string$L0 == "MONEDAS")
+                            else if (VB_t_string_L0 == "MONEDAS")
                             {
                                 oRespuesta2 = servicio.consultarMonedas(autorizacion, ref oEvento);
                             }
-                            else if (VB$t_string$L0 == "PUNTOSVENTA")
+                            else if (VB_t_string_L0 == "PUNTOSVENTA")
                             {
                                 oRespuesta3 = servicio.consultarPuntosVenta(autorizacion, ref oEvento);
                             }
-                            else if (VB$t_string$L0 == "PUNTOSVENTACAE")
+                            else if (VB_t_string_L0 == "PUNTOSVENTACAE")
                             {
                                 oRespuesta3 = servicio.consultarPuntosVentaCAE(autorizacion, ref oEvento);
                             }
-                            else if (VB$t_string$L0 == "PUNTOSVENTACAEA")
+                            else if (VB_t_string_L0 == "PUNTOSVENTACAEA")
                             {
                                 oRespuesta3 = servicio.consultarPuntosVentaCAEA(autorizacion, ref oEvento);
                             }
-                            else if (VB$t_string$L0 == "TIPOSTRIBUTO")
+                            else if (VB_t_string_L0 == "TIPOSTRIBUTO")
                             {
                                 oRespuesta = servicio.consultarTiposTributo(autorizacion, ref oEvento);
                             }
@@ -11875,8 +13675,8 @@
                                 this.ifxEventItemCantidad = 1;
                                 value = this.fxEventItemCantidad;
                                 this.afxEvent = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.fxEventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.fxEventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.afxEvent[nContador].code = oEvento.codigo;
                                     this.afxEvent[nContador].msg = oEvento.descripcion;
@@ -11897,8 +13697,8 @@
                                         this.ifxListaItemCantidad = oRespuesta3.Length;
                                         value = this.fxListaItemCantidad;
                                         this.afxLista = new fxLista[(value - 1) + 1];
-                                        int VB$t_i4$L1 = this.fxListaItemCantidad - 1;
-                                        for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                                        int VB_t_i4_L1 = this.fxListaItemCantidad - 1;
+                                        for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                                         {
                                             this.afxLista[nContador].codigo = oRespuesta3[nContador].numeroPuntoVenta;
                                             this.afxLista[nContador].descripcion = oRespuesta3[nContador].bloqueado.ToString();
@@ -11912,8 +13712,8 @@
                                     this.ifxListaItemCantidad = oRespuesta2.Length;
                                     value = this.fxListaItemCantidad;
                                     this.afxLista = new fxLista[(value - 1) + 1];
-                                    int VB$t_i4$L2 = this.fxListaItemCantidad - 1;
-                                    for (nContador = 0; nContador <= VB$t_i4$L2; nContador++)
+                                    int VB_t_i4_L2 = this.fxListaItemCantidad - 1;
+                                    for (nContador = 0; nContador <= VB_t_i4_L2; nContador++)
                                     {
                                         this.afxLista[nContador].codigo2 = oRespuesta2[nContador].codigo;
                                         this.afxLista[nContador].descripcion = oRespuesta2[nContador].descripcion;
@@ -11925,8 +13725,8 @@
                                 this.ifxListaItemCantidad = oRespuesta.Length;
                                 value = this.fxListaItemCantidad;
                                 this.afxLista = new fxLista[(value - 1) + 1];
-                                int VB$t_i4$L3 = this.fxListaItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L3; nContador++)
+                                int VB_t_i4_L3 = this.fxListaItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L3; nContador++)
                                 {
                                     this.afxLista[nContador].codigo = oRespuesta[nContador].codigo;
                                     this.afxLista[nContador].descripcion = oRespuesta[nContador].descripcion;
@@ -11947,12 +13747,12 @@
                     }
                     return bResultado;
                 }
-                WSAFIPFE.fxAFIP.AuthRequestType autorizacion = new WSAFIPFE.fxAFIP.AuthRequestType();
+                WSAFIPFE.fxAFIP.AuthRequestType authRequestType = new WSAFIPFE.fxAFIP.AuthRequestType();
                 try
                 {
-                    autorizacion.cuitRepresentada = Conversions.ToLong(this.cuit);
-                    autorizacion.token = this.fxtoken;
-                    autorizacion.sign = this.fxsign;
+                    authRequestType.cuitRepresentada = Conversions.ToLong(this.cuit);
+                    authRequestType.token = this.fxtoken;
+                    authRequestType.sign = this.fxsign;
                 }
                 catch (Exception exception3)
                 {
@@ -11983,46 +13783,46 @@
                             servicio.Proxy = pr;
                         }
                         servicio.Url = this.fxDireccionServicioURL;
-                        string VB$t_string$L1 = strTipo;
-                        if (VB$t_string$L1 == "TIPOSCOMPROBANTE")
+                        string VB_t_string_L1 = strTipo;
+                        if (VB_t_string_L1 == "TIPOSCOMPROBANTE")
                         {
-                            oRespuesta = servicio.consultarTiposComprobante(autorizacion, ref oEvento);
+                            oRespuesta = servicio.consultarTiposComprobante(authRequestType, ref oEvento);
                         }
-                        else if (VB$t_string$L1 == "TIPOSDOCUMENTO")
+                        else if (VB_t_string_L1 == "TIPOSDOCUMENTO")
                         {
-                            oRespuesta = servicio.consultarTiposDocumento(autorizacion, ref oEvento);
+                            oRespuesta = servicio.consultarTiposDocumento(authRequestType, ref oEvento);
                         }
-                        else if (VB$t_string$L1 == "ALICUOTASIVA")
+                        else if (VB_t_string_L1 == "ALICUOTASIVA")
                         {
-                            oRespuesta = servicio.consultarAlicuotasIVA(autorizacion, ref oEvento);
+                            oRespuesta = servicio.consultarAlicuotasIVA(authRequestType, ref oEvento);
                         }
-                        else if (VB$t_string$L1 == "CONDICIONESIVA")
+                        else if (VB_t_string_L1 == "CONDICIONESIVA")
                         {
-                            oRespuesta = servicio.consultarCondicionesIVA(autorizacion, ref oEvento);
+                            oRespuesta = servicio.consultarCondicionesIVA(authRequestType, ref oEvento);
                         }
-                        else if (VB$t_string$L1 == "UNIDADESMEDIDA")
+                        else if (VB_t_string_L1 == "UNIDADESMEDIDA")
                         {
-                            oRespuesta = servicio.consultarUnidadesMedida(autorizacion, ref oEvento);
+                            oRespuesta = servicio.consultarUnidadesMedida(authRequestType, ref oEvento);
                         }
-                        else if (VB$t_string$L1 == "MONEDAS")
+                        else if (VB_t_string_L1 == "MONEDAS")
                         {
-                            oRespuesta2 = servicio.consultarMonedas(autorizacion, ref oEvento);
+                            oRespuesta2 = servicio.consultarMonedas(authRequestType, ref oEvento);
                         }
-                        else if (VB$t_string$L1 == "PUNTOSVENTA")
+                        else if (VB_t_string_L1 == "PUNTOSVENTA")
                         {
-                            oRespuesta3 = servicio.consultarPuntosVenta(autorizacion, ref oEvento);
+                            oRespuesta3 = servicio.consultarPuntosVenta(authRequestType, ref oEvento);
                         }
-                        else if (VB$t_string$L1 == "PUNTOSVENTACAE")
+                        else if (VB_t_string_L1 == "PUNTOSVENTACAE")
                         {
-                            oRespuesta3 = servicio.consultarPuntosVentaCAE(autorizacion, ref oEvento);
+                            oRespuesta3 = servicio.consultarPuntosVentaCAE(authRequestType, ref oEvento);
                         }
-                        else if (VB$t_string$L1 == "PUNTOSVENTACAEA")
+                        else if (VB_t_string_L1 == "PUNTOSVENTACAEA")
                         {
-                            oRespuesta3 = servicio.consultarPuntosVentaCAEA(autorizacion, ref oEvento);
+                            oRespuesta3 = servicio.consultarPuntosVentaCAEA(authRequestType, ref oEvento);
                         }
-                        else if (VB$t_string$L1 == "TIPOSTRIBUTO")
+                        else if (VB_t_string_L1 == "TIPOSTRIBUTO")
                         {
-                            oRespuesta = servicio.consultarTiposTributo(autorizacion, ref oEvento);
+                            oRespuesta = servicio.consultarTiposTributo(authRequestType, ref oEvento);
                         }
                         else
                         {
@@ -12040,8 +13840,8 @@
                             this.ifxEventItemCantidad = 1;
                             value = this.fxEventItemCantidad;
                             this.afxEvent = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L4 = this.fxEventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L4; nContador++)
+                            int VB_t_i4_L4 = this.fxEventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L4; nContador++)
                             {
                                 this.afxEvent[nContador].code = oEvento.codigo;
                                 this.afxEvent[nContador].msg = oEvento.descripcion;
@@ -12062,8 +13862,8 @@
                                     this.ifxListaItemCantidad = oRespuesta3.Length;
                                     value = this.fxListaItemCantidad;
                                     this.afxLista = new fxLista[(value - 1) + 1];
-                                    int VB$t_i4$L5 = this.fxListaItemCantidad - 1;
-                                    for (nContador = 0; nContador <= VB$t_i4$L5; nContador++)
+                                    int VB_t_i4_L5 = this.fxListaItemCantidad - 1;
+                                    for (nContador = 0; nContador <= VB_t_i4_L5; nContador++)
                                     {
                                         this.afxLista[nContador].codigo = oRespuesta3[nContador].numeroPuntoVenta;
                                         this.afxLista[nContador].descripcion = oRespuesta3[nContador].bloqueado.ToString();
@@ -12077,8 +13877,8 @@
                                 this.ifxListaItemCantidad = oRespuesta2.Length;
                                 value = this.fxListaItemCantidad;
                                 this.afxLista = new fxLista[(value - 1) + 1];
-                                int VB$t_i4$L6 = this.fxListaItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L6; nContador++)
+                                int VB_t_i4_L6 = this.fxListaItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L6; nContador++)
                                 {
                                     this.afxLista[nContador].codigo2 = oRespuesta2[nContador].codigo;
                                     this.afxLista[nContador].descripcion = oRespuesta2[nContador].descripcion;
@@ -12090,8 +13890,8 @@
                             this.ifxListaItemCantidad = oRespuesta.Length;
                             value = this.fxListaItemCantidad;
                             this.afxLista = new fxLista[(value - 1) + 1];
-                            int VB$t_i4$L7 = this.fxListaItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L7; nContador++)
+                            int VB_t_i4_L7 = this.fxListaItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L7; nContador++)
                             {
                                 this.afxLista[nContador].codigo = oRespuesta[nContador].codigo;
                                 this.afxLista[nContador].descripcion = oRespuesta[nContador].descripcion;
@@ -12194,8 +13994,8 @@
                                 this.ifxErrorItemCantidad = 0;
                                 value = this.fxErrorItemCantidad;
                                 this.afxError = new fxError[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.fxErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.fxErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.afxError[nContador].code = oErrores[nContador].codigo;
                                     this.afxError[nContador].msg = oErrores[nContador].descripcion;
@@ -12206,8 +14006,8 @@
                                 this.ifxErrorItemCantidad = oErrores.Length;
                                 value = this.fxErrorItemCantidad;
                                 this.afxError = new fxError[(value - 1) + 1];
-                                int VB$t_i4$L1 = this.fxErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                                int VB_t_i4_L1 = this.fxErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                                 {
                                     this.afxError[nContador].code = oErrores[nContador].codigo;
                                     this.afxError[nContador].msg = oErrores[nContador].descripcion;
@@ -12220,8 +14020,8 @@
                                 this.ifxEventItemCantidad = 0;
                                 value = this.fxEventItemCantidad;
                                 this.afxEvent = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L2 = this.fxEventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L2; nContador++)
+                                int VB_t_i4_L2 = this.fxEventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L2; nContador++)
                                 {
                                     this.afxEvent[nContador].code = oEvento.codigo;
                                     this.afxEvent[nContador].msg = oEvento.descripcion;
@@ -12232,8 +14032,8 @@
                                 this.ifxEventItemCantidad = 1;
                                 value = this.fxEventItemCantidad;
                                 this.afxEvent = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L3 = this.fxEventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L3; nContador++)
+                                int VB_t_i4_L3 = this.fxEventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L3; nContador++)
                                 {
                                     this.afxEvent[nContador].code = oEvento.codigo;
                                     this.afxEvent[nContador].msg = oEvento.descripcion;
@@ -12249,8 +14049,8 @@
                                 this.iFxRespuestaCAEAItemCantidad = oRespuesta.Length;
                                 value = this.iFxRespuestaCAEAItemCantidad;
                                 this.aFxRespuestaDetalleCAEA = new FxDetalleRespuestaCAEA[(value - 1) + 1];
-                                int VB$t_i4$L4 = this.FxRespuestaCAEAItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L4; nContador++)
+                                int VB_t_i4_L4 = this.FxRespuestaCAEAItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L4; nContador++)
                                 {
                                     this.aFxRespuestaDetalleCAEA[nContador].Bloqueado = Conversions.ToString((int) oRespuesta[nContador].bloqueado);
                                     this.aFxRespuestaDetalleCAEA[nContador].NumeroPuntoDeventa = oRespuesta[nContador].numeroPuntoVenta;
@@ -12266,8 +14066,8 @@
                             this.ifxErrorItemCantidad = 1;
                             int value = this.fxErrorItemCantidad;
                             this.afxError = new fxError[(value - 1) + 1];
-                            int VB$t_i4$L5 = this.fxErrorItemCantidad - 1;
-                            for (int ncontador = 0; ncontador <= VB$t_i4$L5; ncontador++)
+                            int VB_t_i4_L5 = this.fxErrorItemCantidad - 1;
+                            for (int ncontador = 0; ncontador <= VB_t_i4_L5; ncontador++)
                             {
                                 this.afxError[ncontador].msg = ex1.Message;
                                 this.afxError[ncontador].code = 0;
@@ -12357,8 +14157,8 @@
                             this.ifxErrorItemCantidad = 0;
                             value = this.fxErrorItemCantidad;
                             this.afxError = new fxError[(value - 1) + 1];
-                            int VB$t_i4$L6 = this.fxErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L6; nContador++)
+                            int VB_t_i4_L6 = this.fxErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L6; nContador++)
                             {
                                 this.afxError[nContador].code = oErrores[nContador].codigo;
                                 this.afxError[nContador].msg = oErrores[nContador].descripcion;
@@ -12369,8 +14169,8 @@
                             this.ifxErrorItemCantidad = oErrores.Length;
                             value = this.fxErrorItemCantidad;
                             this.afxError = new fxError[(value - 1) + 1];
-                            int VB$t_i4$L7 = this.fxErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L7; nContador++)
+                            int VB_t_i4_L7 = this.fxErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L7; nContador++)
                             {
                                 this.afxError[nContador].code = oErrores[nContador].codigo;
                                 this.afxError[nContador].msg = oErrores[nContador].descripcion;
@@ -12383,8 +14183,8 @@
                             this.ifxEventItemCantidad = 0;
                             value = this.fxEventItemCantidad;
                             this.afxEvent = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L8 = this.fxEventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L8; nContador++)
+                            int VB_t_i4_L8 = this.fxEventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L8; nContador++)
                             {
                                 this.afxEvent[nContador].code = oEvento.codigo;
                                 this.afxEvent[nContador].msg = oEvento.descripcion;
@@ -12395,8 +14195,8 @@
                             this.ifxEventItemCantidad = 1;
                             value = this.fxEventItemCantidad;
                             this.afxEvent = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L9 = this.fxEventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L9; nContador++)
+                            int VB_t_i4_L9 = this.fxEventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L9; nContador++)
                             {
                                 this.afxEvent[nContador].code = oEvento.codigo;
                                 this.afxEvent[nContador].msg = oEvento.descripcion;
@@ -12412,8 +14212,8 @@
                             this.iFxRespuestaCAEAItemCantidad = oRespuesta.Length;
                             value = this.iFxRespuestaCAEAItemCantidad;
                             this.aFxRespuestaDetalleCAEA = new FxDetalleRespuestaCAEA[(value - 1) + 1];
-                            int VB$t_i4$L10 = this.FxRespuestaCAEAItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L10; nContador++)
+                            int VB_t_i4_L10 = this.FxRespuestaCAEAItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L10; nContador++)
                             {
                                 this.aFxRespuestaDetalleCAEA[nContador].Bloqueado = Conversions.ToString((int) oRespuesta[nContador].bloqueado);
                                 this.aFxRespuestaDetalleCAEA[nContador].NumeroPuntoDeventa = oRespuesta[nContador].numeroPuntoVenta;
@@ -12429,8 +14229,8 @@
                         this.ifxErrorItemCantidad = 1;
                         int value = this.fxErrorItemCantidad;
                         this.afxError = new fxError[(value - 1) + 1];
-                        int VB$t_i4$L11 = this.fxErrorItemCantidad - 1;
-                        for (int ncontador = 0; ncontador <= VB$t_i4$L11; ncontador++)
+                        int VB_t_i4_L11 = this.fxErrorItemCantidad - 1;
+                        for (int ncontador = 0; ncontador <= VB_t_i4_L11; ncontador++)
                         {
                             this.afxError[ncontador].msg = ex1.Message;
                             this.afxError[ncontador].code = 0;
@@ -12490,7 +14290,7 @@
 
         public int fxConsultarUltimoComprobanteAutorizado(int iPtoVta, int iCbteTipo)
         {
-            int mResultado;
+            int mResultado=0;
             this.ifxErrorItemCantidad = 0;
             this.ifxEventItemCantidad = 0;
             bool bResultado = true;
@@ -12550,11 +14350,11 @@
                             this.ifxErrorItemCantidad = 1;
                             int VALUE = this.fxErrorItemCantidad;
                             this.afxError = new fxError[(VALUE - 1) + 1];
-                            int VB$t_i4$L0 = this.fxErrorItemCantidad - 1;
-                            for (int nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                            int VB_t_i4_L0 = this.fxErrorItemCantidad - 1;
+                            for (int contador = 0; contador <= VB_t_i4_L0; contador++)
                             {
-                                this.afxError[nContador].msg = ex1.Message;
-                                this.afxError[nContador].code = 0;
+                                this.afxError[contador].msg = ex1.Message;
+                                this.afxError[contador].code = 0;
                             }
                             this.strUltimoMensajeError = ex1.Message + "." + ex1.Code.ToString();
                             this.iUltimoNumeroError = 13;
@@ -12581,8 +14381,8 @@
                             this.ifxEventItemCantidad = 1;
                             value = this.fxEventItemCantidad;
                             this.afxEvent = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L1 = this.fxEventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                            int VB_t_i4_L1 = this.fxEventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                             {
                                 this.afxEvent[nContador].code = oEvento.codigo;
                                 this.afxEvent[nContador].msg = oEvento.descripcion;
@@ -12599,8 +14399,8 @@
                             this.ifxErrorItemCantidad = 1;
                             value = this.fxErrorItemCantidad;
                             this.afxError = new fxError[(value - 1) + 1];
-                            int VB$t_i4$L2 = this.fxErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L2; nContador++)
+                            int VB_t_i4_L2 = this.fxErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L2; nContador++)
                             {
                                 this.afxError[nContador].code = oErrores[nContador].codigo;
                                 this.afxError[nContador].msg = oErrores[nContador].descripcion;
@@ -12670,11 +14470,11 @@
                         this.ifxErrorItemCantidad = 1;
                         int VALUE = this.fxErrorItemCantidad;
                         this.afxError = new fxError[(VALUE - 1) + 1];
-                        int VB$t_i4$L3 = this.fxErrorItemCantidad - 1;
-                        for (int nContador = 0; nContador <= VB$t_i4$L3; nContador++)
+                        int VB_t_i4_L3 = this.fxErrorItemCantidad - 1;
+                        for (int contador = 0; contador <= VB_t_i4_L3; contador++)
                         {
-                            this.afxError[nContador].msg = ex1.Message;
-                            this.afxError[nContador].code = 0;
+                            this.afxError[contador].msg = ex1.Message;
+                            this.afxError[contador].code = 0;
                         }
                         this.strUltimoMensajeError = ex1.Message + "." + ex1.Code.ToString();
                         this.iUltimoNumeroError = 13;
@@ -12701,8 +14501,8 @@
                         this.ifxEventItemCantidad = 1;
                         value = this.fxEventItemCantidad;
                         this.afxEvent = new f1Event[(value - 1) + 1];
-                        int VB$t_i4$L4 = this.fxEventItemCantidad - 1;
-                        for (nContador = 0; nContador <= VB$t_i4$L4; nContador++)
+                        int VB_t_i4_L4 = this.fxEventItemCantidad - 1;
+                        for (nContador = 0; nContador <= VB_t_i4_L4; nContador++)
                         {
                             this.afxEvent[nContador].code = oEvento.codigo;
                             this.afxEvent[nContador].msg = oEvento.descripcion;
@@ -12719,8 +14519,8 @@
                         this.ifxErrorItemCantidad = 1;
                         value = this.fxErrorItemCantidad;
                         this.afxError = new fxError[(value - 1) + 1];
-                        int VB$t_i4$L5 = this.fxErrorItemCantidad - 1;
-                        for (nContador = 0; nContador <= VB$t_i4$L5; nContador++)
+                        int VB_t_i4_L5 = this.fxErrorItemCantidad - 1;
+                        for (nContador = 0; nContador <= VB_t_i4_L5; nContador++)
                         {
                             this.afxError[nContador].code = oErrores[nContador].codigo;
                             this.afxError[nContador].msg = oErrores[nContador].descripcion;
@@ -12866,7 +14666,7 @@
                         }
                         try
                         {
-                            DateTime dFecha;
+                            DateTime dFecha= new DateTime();
                             int nContador;
                             int value;
                             servicio.informarCAEANoUtilizado(autorizacion, ref lCAEA, ref dFecha, ref oErrores, ref oEvento);
@@ -12893,8 +14693,8 @@
                                 this.ifxErrorItemCantidad = 0;
                                 value = this.fxErrorItemCantidad;
                                 this.afxError = new fxError[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.fxErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.fxErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.afxError[nContador].code = oErrores[nContador].codigo;
                                     this.afxError[nContador].msg = oErrores[nContador].descripcion;
@@ -12905,8 +14705,8 @@
                                 this.ifxErrorItemCantidad = oErrores.Length;
                                 value = this.fxErrorItemCantidad;
                                 this.afxError = new fxError[(value - 1) + 1];
-                                int VB$t_i4$L1 = this.fxErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                                int VB_t_i4_L1 = this.fxErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                                 {
                                     this.afxError[nContador].code = oErrores[nContador].codigo;
                                     this.afxError[nContador].msg = oErrores[nContador].descripcion;
@@ -12919,8 +14719,8 @@
                                 this.ifxEventItemCantidad = 0;
                                 value = this.fxEventItemCantidad;
                                 this.afxEvent = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L2 = this.fxEventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L2; nContador++)
+                                int VB_t_i4_L2 = this.fxEventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L2; nContador++)
                                 {
                                     this.afxEvent[nContador].code = oEvento.codigo;
                                     this.afxEvent[nContador].msg = oEvento.descripcion;
@@ -12931,8 +14731,8 @@
                                 this.ifxEventItemCantidad = 1;
                                 value = this.fxEventItemCantidad;
                                 this.afxEvent = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L3 = this.fxEventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L3; nContador++)
+                                int VB_t_i4_L3 = this.fxEventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L3; nContador++)
                                 {
                                     this.afxEvent[nContador].code = oEvento.codigo;
                                     this.afxEvent[nContador].msg = oEvento.descripcion;
@@ -12956,8 +14756,8 @@
                             this.ifxErrorItemCantidad = 1;
                             int value = this.fxErrorItemCantidad;
                             this.afxError = new fxError[(value - 1) + 1];
-                            int VB$t_i4$L4 = this.fxErrorItemCantidad - 1;
-                            for (int ncontador = 0; ncontador <= VB$t_i4$L4; ncontador++)
+                            int VB_t_i4_L4 = this.fxErrorItemCantidad - 1;
+                            for (int ncontador = 0; ncontador <= VB_t_i4_L4; ncontador++)
                             {
                                 this.afxError[ncontador].msg = ex1.Message;
                                 this.afxError[ncontador].code = 0;
@@ -13022,7 +14822,7 @@
                     servicio.Url = this.fxDireccionServicioURL;
                     try
                     {
-                        DateTime dFecha;
+                        DateTime dFecha= new DateTime();
                         int nContador;
                         int value;
                         servicio.informarCAEANoUtilizado(autorizacion, ref lCAEA, ref dFecha, ref oErrores, ref oEvento);
@@ -13049,8 +14849,8 @@
                             this.ifxErrorItemCantidad = 0;
                             value = this.fxErrorItemCantidad;
                             this.afxError = new fxError[(value - 1) + 1];
-                            int VB$t_i4$L5 = this.fxErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L5; nContador++)
+                            int VB_t_i4_L5 = this.fxErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L5; nContador++)
                             {
                                 this.afxError[nContador].code = oErrores[nContador].codigo;
                                 this.afxError[nContador].msg = oErrores[nContador].descripcion;
@@ -13061,8 +14861,8 @@
                             this.ifxErrorItemCantidad = oErrores.Length;
                             value = this.fxErrorItemCantidad;
                             this.afxError = new fxError[(value - 1) + 1];
-                            int VB$t_i4$L6 = this.fxErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L6; nContador++)
+                            int VB_t_i4_L6 = this.fxErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L6; nContador++)
                             {
                                 this.afxError[nContador].code = oErrores[nContador].codigo;
                                 this.afxError[nContador].msg = oErrores[nContador].descripcion;
@@ -13075,8 +14875,8 @@
                             this.ifxEventItemCantidad = 0;
                             value = this.fxEventItemCantidad;
                             this.afxEvent = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L7 = this.fxEventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L7; nContador++)
+                            int VB_t_i4_L7 = this.fxEventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L7; nContador++)
                             {
                                 this.afxEvent[nContador].code = oEvento.codigo;
                                 this.afxEvent[nContador].msg = oEvento.descripcion;
@@ -13087,8 +14887,8 @@
                             this.ifxEventItemCantidad = 1;
                             value = this.fxEventItemCantidad;
                             this.afxEvent = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L8 = this.fxEventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L8; nContador++)
+                            int VB_t_i4_L8 = this.fxEventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L8; nContador++)
                             {
                                 this.afxEvent[nContador].code = oEvento.codigo;
                                 this.afxEvent[nContador].msg = oEvento.descripcion;
@@ -13112,8 +14912,8 @@
                         this.ifxErrorItemCantidad = 1;
                         int value = this.fxErrorItemCantidad;
                         this.afxError = new fxError[(value - 1) + 1];
-                        int VB$t_i4$L9 = this.fxErrorItemCantidad - 1;
-                        for (int ncontador = 0; ncontador <= VB$t_i4$L9; ncontador++)
+                        int VB_t_i4_L9 = this.fxErrorItemCantidad - 1;
+                        for (int ncontador = 0; ncontador <= VB_t_i4_L9; ncontador++)
                         {
                             this.afxError[ncontador].msg = ex1.Message;
                             this.afxError[ncontador].code = 0;
@@ -13189,7 +14989,7 @@
                         }
                         try
                         {
-                            DateTime dFecha;
+                            DateTime dFecha = new DateTime();
                             int nContador;
                             int value;
                             oRespuesta = servicio.informarCAEANoUtilizadoPtoVta(autorizacion, ref lCAEA, ref sPuntoVenta, ref dFecha, ref oErrores, ref oEvento);
@@ -13216,8 +15016,8 @@
                                 this.ifxErrorItemCantidad = 0;
                                 value = this.fxErrorItemCantidad;
                                 this.afxError = new fxError[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.fxErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.fxErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.afxError[nContador].code = oErrores[nContador].codigo;
                                     this.afxError[nContador].msg = oErrores[nContador].descripcion;
@@ -13228,8 +15028,8 @@
                                 this.ifxErrorItemCantidad = oErrores.Length;
                                 value = this.fxErrorItemCantidad;
                                 this.afxError = new fxError[(value - 1) + 1];
-                                int VB$t_i4$L1 = this.fxErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                                int VB_t_i4_L1 = this.fxErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                                 {
                                     this.afxError[nContador].code = oErrores[nContador].codigo;
                                     this.afxError[nContador].msg = oErrores[nContador].descripcion;
@@ -13242,8 +15042,8 @@
                                 this.ifxEventItemCantidad = 0;
                                 value = this.fxEventItemCantidad;
                                 this.afxEvent = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L2 = this.fxEventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L2; nContador++)
+                                int VB_t_i4_L2 = this.fxEventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L2; nContador++)
                                 {
                                     this.afxEvent[nContador].code = oEvento.codigo;
                                     this.afxEvent[nContador].msg = oEvento.descripcion;
@@ -13254,8 +15054,8 @@
                                 this.ifxEventItemCantidad = 1;
                                 value = this.fxEventItemCantidad;
                                 this.afxEvent = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L3 = this.fxEventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L3; nContador++)
+                                int VB_t_i4_L3 = this.fxEventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L3; nContador++)
                                 {
                                     this.afxEvent[nContador].code = oEvento.codigo;
                                     this.afxEvent[nContador].msg = oEvento.descripcion;
@@ -13279,8 +15079,8 @@
                             this.ifxErrorItemCantidad = 1;
                             int value = this.fxErrorItemCantidad;
                             this.afxError = new fxError[(value - 1) + 1];
-                            int VB$t_i4$L4 = this.fxErrorItemCantidad - 1;
-                            for (int ncontador = 0; ncontador <= VB$t_i4$L4; ncontador++)
+                            int VB_t_i4_L4 = this.fxErrorItemCantidad - 1;
+                            for (int ncontador = 0; ncontador <= VB_t_i4_L4; ncontador++)
                             {
                                 this.afxError[ncontador].msg = ex1.Message;
                                 this.afxError[ncontador].code = 0;
@@ -13346,7 +15146,7 @@
                     servicio.Url = this.fxDireccionServicioURL;
                     try
                     {
-                        DateTime dFecha;
+                        DateTime dFecha = new DateTime();
                         int nContador;
                         int value;
                         oRespuesta = servicio.informarCAEANoUtilizadoPtoVta(autorizacion, ref lCAEA, ref sPuntoVenta, ref dFecha, ref oErrores, ref oEvento);
@@ -13373,8 +15173,8 @@
                             this.ifxErrorItemCantidad = 0;
                             value = this.fxErrorItemCantidad;
                             this.afxError = new fxError[(value - 1) + 1];
-                            int VB$t_i4$L5 = this.fxErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L5; nContador++)
+                            int VB_t_i4_L5 = this.fxErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L5; nContador++)
                             {
                                 this.afxError[nContador].code = oErrores[nContador].codigo;
                                 this.afxError[nContador].msg = oErrores[nContador].descripcion;
@@ -13385,8 +15185,8 @@
                             this.ifxErrorItemCantidad = oErrores.Length;
                             value = this.fxErrorItemCantidad;
                             this.afxError = new fxError[(value - 1) + 1];
-                            int VB$t_i4$L6 = this.fxErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L6; nContador++)
+                            int VB_t_i4_L6 = this.fxErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L6; nContador++)
                             {
                                 this.afxError[nContador].code = oErrores[nContador].codigo;
                                 this.afxError[nContador].msg = oErrores[nContador].descripcion;
@@ -13399,8 +15199,8 @@
                             this.ifxEventItemCantidad = 0;
                             value = this.fxEventItemCantidad;
                             this.afxEvent = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L7 = this.fxEventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L7; nContador++)
+                            int VB_t_i4_L7 = this.fxEventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L7; nContador++)
                             {
                                 this.afxEvent[nContador].code = oEvento.codigo;
                                 this.afxEvent[nContador].msg = oEvento.descripcion;
@@ -13411,8 +15211,8 @@
                             this.ifxEventItemCantidad = 1;
                             value = this.fxEventItemCantidad;
                             this.afxEvent = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L8 = this.fxEventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L8; nContador++)
+                            int VB_t_i4_L8 = this.fxEventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L8; nContador++)
                             {
                                 this.afxEvent[nContador].code = oEvento.codigo;
                                 this.afxEvent[nContador].msg = oEvento.descripcion;
@@ -13436,8 +15236,8 @@
                         this.ifxErrorItemCantidad = 1;
                         int value = this.fxErrorItemCantidad;
                         this.afxError = new fxError[(value - 1) + 1];
-                        int VB$t_i4$L9 = this.fxErrorItemCantidad - 1;
-                        for (int ncontador = 0; ncontador <= VB$t_i4$L9; ncontador++)
+                        int VB_t_i4_L9 = this.fxErrorItemCantidad - 1;
+                        for (int ncontador = 0; ncontador <= VB_t_i4_L9; ncontador++)
                         {
                             this.afxError[ncontador].msg = ex1.Message;
                             this.afxError[ncontador].code = 0;
@@ -13610,8 +15410,8 @@
                             else
                             {
                                 oPedidoItemCbteAsocs = new WSAFIPFE.fxAFIPTest.ComprobanteAsociadoType[(this.fxComprobantesAsociadosItemCantidad - 1) + 1];
-                                int VB$t_i4$L0 = this.fxComprobantesAsociadosItemCantidad - 1;
-                                for (nContador2 = 0; nContador2 <= VB$t_i4$L0; nContador2++)
+                                int VB_t_i4_L0 = this.fxComprobantesAsociadosItemCantidad - 1;
+                                for (nContador2 = 0; nContador2 <= VB_t_i4_L0; nContador2++)
                                 {
                                     WSAFIPFE.fxAFIPTest.ComprobanteAsociadoType oPedidoItemCbteAsoc = new WSAFIPFE.fxAFIPTest.ComprobanteAsociadoType();
                                     this.fxIndiceItem = nContador2;
@@ -13629,8 +15429,8 @@
                             else
                             {
                                 oPedidoItemIvas = new WSAFIPFE.fxAFIPTest.SubtotalIVAType[(this.fxSubTotalesItemCantidad - 1) + 1];
-                                int VB$t_i4$L1 = this.fxSubTotalesItemCantidad - 1;
-                                for (nContador2 = 0; nContador2 <= VB$t_i4$L1; nContador2++)
+                                int VB_t_i4_L1 = this.fxSubTotalesItemCantidad - 1;
+                                for (nContador2 = 0; nContador2 <= VB_t_i4_L1; nContador2++)
                                 {
                                     WSAFIPFE.fxAFIPTest.SubtotalIVAType oPedidoItemIva = new WSAFIPFE.fxAFIPTest.SubtotalIVAType();
                                     this.fxIndiceItem = nContador2;
@@ -13647,8 +15447,8 @@
                             else
                             {
                                 oPedidoItemTributos = new WSAFIPFE.fxAFIPTest.OtroTributoType[(this.fxOtrosTributosItemCantidad - 1) + 1];
-                                int VB$t_i4$L2 = this.fxOtrosTributosItemCantidad - 1;
-                                for (nContador2 = 0; nContador2 <= VB$t_i4$L2; nContador2++)
+                                int VB_t_i4_L2 = this.fxOtrosTributosItemCantidad - 1;
+                                for (nContador2 = 0; nContador2 <= VB_t_i4_L2; nContador2++)
                                 {
                                     WSAFIPFE.fxAFIPTest.OtroTributoType oPedidoItemTributo = new WSAFIPFE.fxAFIPTest.OtroTributoType();
                                     this.fxIndiceItem = nContador2;
@@ -13667,8 +15467,8 @@
                             else
                             {
                                 oPedidoitems = new WSAFIPFE.fxAFIPTest.ItemType[(this.fxItemsItemCantidad - 1) + 1];
-                                int VB$t_i4$L3 = this.fxItemsItemCantidad - 1;
-                                for (nContador2 = 0; nContador2 <= VB$t_i4$L3; nContador2++)
+                                int VB_t_i4_L3 = this.fxItemsItemCantidad - 1;
+                                for (nContador2 = 0; nContador2 <= VB_t_i4_L3; nContador2++)
                                 {
                                     WSAFIPFE.fxAFIPTest.ItemType oPedidoitem = new WSAFIPFE.fxAFIPTest.ItemType();
                                     this.fxIndiceItem = nContador2;
@@ -13738,8 +15538,8 @@
                                 this.ifxEventItemCantidad = 1;
                                 value = this.fxEventItemCantidad;
                                 this.afxEvent = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L4 = this.fxEventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L4; nContador++)
+                                int VB_t_i4_L4 = this.fxEventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L4; nContador++)
                                 {
                                     this.afxEvent[nContador].code = oEvento.codigo;
                                     this.afxEvent[nContador].msg = oEvento.descripcion;
@@ -13756,8 +15556,8 @@
                                 this.ifxErrorItemCantidad = 1;
                                 value = this.fxErrorItemCantidad;
                                 this.afxError = new fxError[(value - 1) + 1];
-                                int VB$t_i4$L5 = this.fxErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L5; nContador++)
+                                int VB_t_i4_L5 = this.fxErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L5; nContador++)
                                 {
                                     this.afxError[nContador].code = oErrores[nContador].codigo;
                                     this.afxError[nContador].msg = oErrores[nContador].descripcion;
@@ -13774,8 +15574,8 @@
                                 this.ifxObervacionItemCantidad = 1;
                                 value = this.fxObervacionItemCantidad;
                                 this.afxObervacion = new fxObservacion[(value - 1) + 1];
-                                int VB$t_i4$L6 = this.fxObervacionItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L6; nContador++)
+                                int VB_t_i4_L6 = this.fxObervacionItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L6; nContador++)
                                 {
                                     this.afxObervacion[nContador].codigo = oObservaciones[nContador].codigo;
                                     this.afxObervacion[nContador].descripcion = oObservaciones[nContador].descripcion;
@@ -13805,8 +15605,8 @@
                             this.ifxErrorItemCantidad = 1;
                             value = this.fxErrorItemCantidad;
                             this.afxError = new fxError[(value - 1) + 1];
-                            int VB$t_i4$L7 = this.fxErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L7; nContador++)
+                            int VB_t_i4_L7 = this.fxErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L7; nContador++)
                             {
                                 this.afxError[nContador].msg = ex1.Message;
                                 this.afxError[nContador].code = 0;
@@ -13827,12 +15627,12 @@
                     }
                     return bResultado;
                 }
-                WSAFIPFE.fxAFIP.AuthRequestType autorizacion = new WSAFIPFE.fxAFIP.AuthRequestType();
+                WSAFIPFE.fxAFIP.AuthRequestType authRequestType = new WSAFIPFE.fxAFIP.AuthRequestType();
                 try
                 {
-                    autorizacion.cuitRepresentada = Conversions.ToLong(this.cuit);
-                    autorizacion.token = this.fxtoken;
-                    autorizacion.sign = this.fxsign;
+                    authRequestType.cuitRepresentada = Conversions.ToLong(this.cuit);
+                    authRequestType.token = this.fxtoken;
+                    authRequestType.sign = this.fxsign;
                 }
                 catch (Exception exception6)
                 {
@@ -13943,8 +15743,8 @@
                         else
                         {
                             oPedidoItemCbteAsocs = new WSAFIPFE.fxAFIP.ComprobanteAsociadoType[(this.fxComprobantesAsociadosItemCantidad - 1) + 1];
-                            int VB$t_i4$L8 = this.fxComprobantesAsociadosItemCantidad - 1;
-                            for (nContador2 = 0; nContador2 <= VB$t_i4$L8; nContador2++)
+                            int VB_t_i4_L8 = this.fxComprobantesAsociadosItemCantidad - 1;
+                            for (nContador2 = 0; nContador2 <= VB_t_i4_L8; nContador2++)
                             {
                                 WSAFIPFE.fxAFIP.ComprobanteAsociadoType oPedidoItemCbteAsoc = new WSAFIPFE.fxAFIP.ComprobanteAsociadoType();
                                 this.fxIndiceItem = nContador2;
@@ -13962,8 +15762,8 @@
                         else
                         {
                             oPedidoItemIvas = new WSAFIPFE.fxAFIP.SubtotalIVAType[(this.fxSubTotalesItemCantidad - 1) + 1];
-                            int VB$t_i4$L9 = this.fxSubTotalesItemCantidad - 1;
-                            for (nContador2 = 0; nContador2 <= VB$t_i4$L9; nContador2++)
+                            int VB_t_i4_L9 = this.fxSubTotalesItemCantidad - 1;
+                            for (nContador2 = 0; nContador2 <= VB_t_i4_L9; nContador2++)
                             {
                                 WSAFIPFE.fxAFIP.SubtotalIVAType oPedidoItemIva = new WSAFIPFE.fxAFIP.SubtotalIVAType();
                                 this.fxIndiceItem = nContador2;
@@ -13980,8 +15780,8 @@
                         else
                         {
                             oPedidoItemTributos = new WSAFIPFE.fxAFIP.OtroTributoType[(this.fxOtrosTributosItemCantidad - 1) + 1];
-                            int VB$t_i4$L10 = this.fxOtrosTributosItemCantidad - 1;
-                            for (nContador2 = 0; nContador2 <= VB$t_i4$L10; nContador2++)
+                            int VB_t_i4_L10 = this.fxOtrosTributosItemCantidad - 1;
+                            for (nContador2 = 0; nContador2 <= VB_t_i4_L10; nContador2++)
                             {
                                 WSAFIPFE.fxAFIP.OtroTributoType oPedidoItemTributo = new WSAFIPFE.fxAFIP.OtroTributoType();
                                 this.fxIndiceItem = nContador2;
@@ -14000,8 +15800,8 @@
                         else
                         {
                             oPedidoitems = new WSAFIPFE.fxAFIP.ItemType[(this.fxItemsItemCantidad - 1) + 1];
-                            int VB$t_i4$L11 = this.fxItemsItemCantidad - 1;
-                            for (nContador2 = 0; nContador2 <= VB$t_i4$L11; nContador2++)
+                            int VB_t_i4_L11 = this.fxItemsItemCantidad - 1;
+                            for (nContador2 = 0; nContador2 <= VB_t_i4_L11; nContador2++)
                             {
                                 WSAFIPFE.fxAFIP.ItemType oPedidoitem = new WSAFIPFE.fxAFIP.ItemType();
                                 this.fxIndiceItem = nContador2;
@@ -14042,7 +15842,7 @@
                                 ProjectData.ClearProjectError();
                             }
                         }
-                        WSAFIPFE.fxAFIP.ResultadoSimpleType oresultado = servicio.informarComprobanteCAEA(autorizacion, oPedido, ref dFechaProceso, ref oRespuesta, ref oObservaciones, ref oErrores, ref oEvento);
+                        WSAFIPFE.fxAFIP.ResultadoSimpleType oresultado = servicio.informarComprobanteCAEA(authRequestType, oPedido, ref dFechaProceso, ref oRespuesta, ref oObservaciones, ref oErrores, ref oEvento);
                         if (this.ArchivoXMLRecibido != "")
                         {
                             try
@@ -14071,8 +15871,8 @@
                             this.ifxEventItemCantidad = 1;
                             value = this.fxEventItemCantidad;
                             this.afxEvent = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L12 = this.fxEventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L12; nContador++)
+                            int VB_t_i4_L12 = this.fxEventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L12; nContador++)
                             {
                                 this.afxEvent[nContador].code = oEvento.codigo;
                                 this.afxEvent[nContador].msg = oEvento.descripcion;
@@ -14089,8 +15889,8 @@
                             this.ifxErrorItemCantidad = 1;
                             value = this.fxErrorItemCantidad;
                             this.afxError = new fxError[(value - 1) + 1];
-                            int VB$t_i4$L13 = this.fxErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L13; nContador++)
+                            int VB_t_i4_L13 = this.fxErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L13; nContador++)
                             {
                                 this.afxError[nContador].code = oErrores[nContador].codigo;
                                 this.afxError[nContador].msg = oErrores[nContador].descripcion;
@@ -14107,8 +15907,8 @@
                             this.ifxObervacionItemCantidad = 1;
                             value = this.fxObervacionItemCantidad;
                             this.afxObervacion = new fxObservacion[(value - 1) + 1];
-                            int VB$t_i4$L14 = this.fxObervacionItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L14; nContador++)
+                            int VB_t_i4_L14 = this.fxObervacionItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L14; nContador++)
                             {
                                 this.afxObervacion[nContador].codigo = oObservaciones[nContador].codigo;
                                 this.afxObervacion[nContador].descripcion = oObservaciones[nContador].descripcion;
@@ -14138,8 +15938,8 @@
                         this.ifxErrorItemCantidad = 1;
                         value = this.fxErrorItemCantidad;
                         this.afxError = new fxError[(value - 1) + 1];
-                        int VB$t_i4$L15 = this.fxErrorItemCantidad - 1;
-                        for (nContador = 0; nContador <= VB$t_i4$L15; nContador++)
+                        int VB_t_i4_L15 = this.fxErrorItemCantidad - 1;
+                        for (nContador = 0; nContador <= VB_t_i4_L15; nContador++)
                         {
                             this.afxError[nContador].msg = ex1.Message;
                             this.afxError[nContador].code = 0;
@@ -14447,8 +16247,8 @@
                                 this.ifxErrorItemCantidad = 0;
                                 value = this.fxErrorItemCantidad;
                                 this.afxError = new fxError[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.fxErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.fxErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.afxError[nContador].code = oErrores[nContador].codigo;
                                     this.afxError[nContador].msg = oErrores[nContador].descripcion;
@@ -14459,8 +16259,8 @@
                                 this.ifxErrorItemCantidad = oErrores.Length;
                                 value = this.fxErrorItemCantidad;
                                 this.afxError = new fxError[(value - 1) + 1];
-                                int VB$t_i4$L1 = this.fxErrorItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                                int VB_t_i4_L1 = this.fxErrorItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                                 {
                                     this.afxError[nContador].code = oErrores[nContador].codigo;
                                     this.afxError[nContador].msg = oErrores[nContador].descripcion;
@@ -14473,8 +16273,8 @@
                                 this.ifxEventItemCantidad = 0;
                                 value = this.fxEventItemCantidad;
                                 this.afxEvent = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L2 = this.fxEventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L2; nContador++)
+                                int VB_t_i4_L2 = this.fxEventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L2; nContador++)
                                 {
                                     this.afxEvent[nContador].code = oEvento.codigo;
                                     this.afxEvent[nContador].msg = oEvento.descripcion;
@@ -14485,8 +16285,8 @@
                                 this.ifxEventItemCantidad = 1;
                                 value = this.fxEventItemCantidad;
                                 this.afxEvent = new f1Event[(value - 1) + 1];
-                                int VB$t_i4$L3 = this.fxEventItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L3; nContador++)
+                                int VB_t_i4_L3 = this.fxEventItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L3; nContador++)
                                 {
                                     this.afxEvent[nContador].code = oEvento.codigo;
                                     this.afxEvent[nContador].msg = oEvento.descripcion;
@@ -14513,8 +16313,8 @@
                             this.ifxErrorItemCantidad = 1;
                             int value = this.fxErrorItemCantidad;
                             this.afxError = new fxError[(value - 1) + 1];
-                            int VB$t_i4$L4 = this.fxErrorItemCantidad - 1;
-                            for (int ncontador = 0; ncontador <= VB$t_i4$L4; ncontador++)
+                            int VB_t_i4_L4 = this.fxErrorItemCantidad - 1;
+                            for (int ncontador = 0; ncontador <= VB_t_i4_L4; ncontador++)
                             {
                                 this.afxError[ncontador].msg = ex1.Message;
                                 this.afxError[ncontador].code = 0;
@@ -14623,8 +16423,8 @@
                             this.ifxErrorItemCantidad = 0;
                             value = this.fxErrorItemCantidad;
                             this.afxError = new fxError[(value - 1) + 1];
-                            int VB$t_i4$L5 = this.fxErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L5; nContador++)
+                            int VB_t_i4_L5 = this.fxErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L5; nContador++)
                             {
                                 this.afxError[nContador].code = oErrores[nContador].codigo;
                                 this.afxError[nContador].msg = oErrores[nContador].descripcion;
@@ -14635,8 +16435,8 @@
                             this.ifxErrorItemCantidad = oErrores.Length;
                             value = this.fxErrorItemCantidad;
                             this.afxError = new fxError[(value - 1) + 1];
-                            int VB$t_i4$L6 = this.fxErrorItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L6; nContador++)
+                            int VB_t_i4_L6 = this.fxErrorItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L6; nContador++)
                             {
                                 this.afxError[nContador].code = oErrores[nContador].codigo;
                                 this.afxError[nContador].msg = oErrores[nContador].descripcion;
@@ -14649,8 +16449,8 @@
                             this.ifxEventItemCantidad = 0;
                             value = this.fxEventItemCantidad;
                             this.afxEvent = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L7 = this.fxEventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L7; nContador++)
+                            int VB_t_i4_L7 = this.fxEventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L7; nContador++)
                             {
                                 this.afxEvent[nContador].code = oEvento.codigo;
                                 this.afxEvent[nContador].msg = oEvento.descripcion;
@@ -14661,8 +16461,8 @@
                             this.ifxEventItemCantidad = 1;
                             value = this.fxEventItemCantidad;
                             this.afxEvent = new f1Event[(value - 1) + 1];
-                            int VB$t_i4$L8 = this.fxEventItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L8; nContador++)
+                            int VB_t_i4_L8 = this.fxEventItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L8; nContador++)
                             {
                                 this.afxEvent[nContador].code = oEvento.codigo;
                                 this.afxEvent[nContador].msg = oEvento.descripcion;
@@ -14689,8 +16489,8 @@
                         this.ifxErrorItemCantidad = 1;
                         int value = this.fxErrorItemCantidad;
                         this.afxError = new fxError[(value - 1) + 1];
-                        int VB$t_i4$L9 = this.fxErrorItemCantidad - 1;
-                        for (int ncontador = 0; ncontador <= VB$t_i4$L9; ncontador++)
+                        int VB_t_i4_L9 = this.fxErrorItemCantidad - 1;
+                        for (int ncontador = 0; ncontador <= VB_t_i4_L9; ncontador++)
                         {
                             this.afxError[ncontador].msg = ex1.Message;
                             this.afxError[ncontador].code = 0;
@@ -14927,8 +16727,8 @@
                         return false;
                     }
                     this.gCosechaItemCantidad = oRespuesta.Length;
-                    int VB$t_i4$L0 = this.gCosechaItemCantidad - 1;
-                    for (int nIndex = 0; nIndex <= VB$t_i4$L0; nIndex++)
+                    int VB_t_i4_L0 = this.gCosechaItemCantidad - 1;
+                    for (int nIndex = 0; nIndex <= VB_t_i4_L0; nIndex++)
                     {
                         this.agCosecha[nIndex].codigoCosecha = oRespuesta[nIndex].codigoCosecha;
                         this.agCosecha[nIndex].descripcionCosecha = oRespuesta[nIndex].descripcionCosecha;
@@ -14992,8 +16792,8 @@
                         return false;
                     }
                     this.gEspecieItemCantidad = oRespuesta.Length;
-                    int VB$t_i4$L0 = this.gEspecieItemCantidad - 1;
-                    for (int nIndex = 0; nIndex <= VB$t_i4$L0; nIndex++)
+                    int VB_t_i4_L0 = this.gEspecieItemCantidad - 1;
+                    for (int nIndex = 0; nIndex <= VB_t_i4_L0; nIndex++)
                     {
                         this.agEspecie[nIndex].codigoEspecie = oRespuesta[nIndex].codigoEspecie;
                         this.agEspecie[nIndex].descripcionEspecie = oRespuesta[nIndex].descripcionEspecie;
@@ -15059,8 +16859,8 @@
                         return false;
                     }
                     this.gLocalidadItemCantidad = oRespuesta.Length;
-                    int VB$t_i4$L0 = this.gLocalidadItemCantidad - 1;
-                    for (int nIndex = 0; nIndex <= VB$t_i4$L0; nIndex++)
+                    int VB_t_i4_L0 = this.gLocalidadItemCantidad - 1;
+                    for (int nIndex = 0; nIndex <= VB_t_i4_L0; nIndex++)
                     {
                         this.agLocalidad[nIndex].codigoLocalidad = oRespuesta[nIndex].codigoLocalidad;
                         this.agLocalidad[nIndex].descripcionLocalidad = oRespuesta[nIndex].descripcionLocalidad;
@@ -15124,8 +16924,8 @@
                     {
                         return false;
                     }
-                    int VB$t_i4$L0 = oRespuesta.Length - 1;
-                    for (int nIndex = 0; nIndex <= VB$t_i4$L0; nIndex++)
+                    int VB_t_i4_L0 = oRespuesta.Length - 1;
+                    for (int nIndex = 0; nIndex <= VB_t_i4_L0; nIndex++)
                     {
                         sbyte nCodigoProvincia = oRespuesta[nIndex].codigoProvincia;
                         ObtenerLocalidadesPorCodigoProvinciaRequest oPedido = new ObtenerLocalidadesPorCodigoProvinciaRequest();
@@ -15138,8 +16938,8 @@
                         else
                         {
                             this.gLocalidadTodasItemCantidad += oRespuesta2.Length;
-                            int VB$t_i4$L1 = oRespuesta2.Length - 1;
-                            for (int nIndex2 = 0; nIndex2 <= VB$t_i4$L1; nIndex2++)
+                            int VB_t_i4_L1 = oRespuesta2.Length - 1;
+                            for (int nIndex2 = 0; nIndex2 <= VB_t_i4_L1; nIndex2++)
                             {
                                 this.agLocalidadTodas[nI].codigoLocalidad = oRespuesta2[nIndex2].codigoLocalidad;
                                 this.agLocalidadTodas[nI].descripcionLocalidad = oRespuesta2[nIndex2].descripcionLocalidad;
@@ -15214,8 +17014,8 @@
                         return false;
                     }
                     this.gProvinciaItemCantidad = oRespuesta.Length;
-                    int VB$t_i4$L0 = this.gProvinciaItemCantidad - 1;
-                    for (int nIndex = 0; nIndex <= VB$t_i4$L0; nIndex++)
+                    int VB_t_i4_L0 = this.gProvinciaItemCantidad - 1;
+                    for (int nIndex = 0; nIndex <= VB_t_i4_L0; nIndex++)
                     {
                         this.agProvincia[nIndex].codigoProvincia = oRespuesta[nIndex].codigoProvincia;
                         this.agProvincia[nIndex].descripcionProvincia = oRespuesta[nIndex].descripcionProvincia;
@@ -15789,12 +17589,12 @@
                     }
                     return nResultado;
                 }
-                WSAFIPFE.afip.FEAuthRequest autorizacion = new WSAFIPFE.afip.FEAuthRequest();
+                WSAFIPFE.afip.FEAuthRequest feAuthRequest = new WSAFIPFE.afip.FEAuthRequest();
                 try
                 {
-                    autorizacion.cuit = Conversions.ToLong(this.cuit);
-                    autorizacion.Token = this.token;
-                    autorizacion.Sign = this.sign;
+                    feAuthRequest.cuit = Conversions.ToLong(this.cuit);
+                    feAuthRequest.Token = this.token;
+                    feAuthRequest.Sign = this.sign;
                 }
                 catch (Exception exception3)
                 {
@@ -15828,7 +17628,7 @@
                         {
                             servicio.Timeout = this.TimeOut;
                         }
-                        WSAFIPFE.afip.FERecuperaLastCMPResponse oRespuesta = servicio.FERecuperaLastCMPRequest(autorizacion, oParametro);
+                        WSAFIPFE.afip.FERecuperaLastCMPResponse oRespuesta = servicio.FERecuperaLastCMPRequest(feAuthRequest, oParametro);
                         nResultado = oRespuesta.cbte_nro;
                         this.strUltimoMensajeError = oRespuesta.RError.perrmsg;
                         this.iUltimoNumeroError = oRespuesta.RError.percode;
@@ -15928,12 +17728,12 @@
                     }
                     return cResultado;
                 }
-                WSAFIPFE.afip.FEAuthRequest autorizacion = new WSAFIPFE.afip.FEAuthRequest();
+                WSAFIPFE.afip.FEAuthRequest feAuthRequest = new WSAFIPFE.afip.FEAuthRequest();
                 try
                 {
-                    autorizacion.cuit = Conversions.ToLong(this.cuit);
-                    autorizacion.Token = this.token;
-                    autorizacion.Sign = this.sign;
+                    feAuthRequest.cuit = Conversions.ToLong(this.cuit);
+                    feAuthRequest.Token = this.token;
+                    feAuthRequest.Sign = this.sign;
                 }
                 catch (Exception exception3)
                 {
@@ -15967,7 +17767,7 @@
                         {
                             servicio.Timeout = this.TimeOut;
                         }
-                        WSAFIPFE.afip.FERecuperaLastCMPResponse oRespuesta = servicio.FERecuperaLastCMPRequest(autorizacion, oParametro);
+                        WSAFIPFE.afip.FERecuperaLastCMPResponse oRespuesta = servicio.FERecuperaLastCMPRequest(feAuthRequest, oParametro);
                         cResultado = oRespuesta.cbte_nro.ToString();
                         this.strUltimoMensajeError = oRespuesta.RError.perrmsg;
                         this.iUltimoNumeroError = oRespuesta.RError.percode;
@@ -16086,8 +17886,8 @@
                         oPedidoCabecera.cantidadreg = this.FECabeceraCantReg;
                         oPedidoCabecera.presta_serv = this.FECabeceraPresta_serv;
                         oPedido.Fecr = oPedidoCabecera;
-                        int VB$t_i4$L0 = nLimite - 1;
-                        for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                        int VB_t_i4_L0 = nLimite - 1;
+                        for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                         {
                             WSAFIPFE.afipTest.FEDetalleRequest oPedidoitem = new WSAFIPFE.afipTest.FEDetalleRequest();
                             oPedidoitem.cbt_desde = (nNumero + 1L) + nContador;
@@ -16174,8 +17974,8 @@
                                 this.strFERespuestaMotivo = oRespuestaDetalle.motivo;
                                 this.strFERespuestaReproceso = oRespuestaDetalle.reproceso;
                                 this.strFERespuestaResultado = oRespuestaDetalle.resultado;
-                                int VB$t_i4$L1 = oRespuesta.FedResp.Length - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                                int VB_t_i4_L1 = oRespuesta.FedResp.Length - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                                 {
                                     WSAFIPFE.afipTest.FEDetalleResponse oRespuestaDetalleItem = oRespuesta.FedResp[nContador];
                                     this.aFERespuestaDetalle[nContador].cae = oRespuestaDetalleItem.cae;
@@ -16317,8 +18117,8 @@
                     oPedidoCabecera.cantidadreg = this.FECabeceraCantReg;
                     oPedidoCabecera.presta_serv = this.FECabeceraPresta_serv;
                     oPedido.Fecr = oPedidoCabecera;
-                    int VB$t_i4$L2 = nLimite - 1;
-                    for (nContador = 0; nContador <= VB$t_i4$L2; nContador++)
+                    int VB_t_i4_L2 = nLimite - 1;
+                    for (nContador = 0; nContador <= VB_t_i4_L2; nContador++)
                     {
                         WSAFIPFE.afip.FEDetalleRequest oPedidoitem = new WSAFIPFE.afip.FEDetalleRequest();
                         oPedidoitem.cbt_desde = (nNumero + 1L) + nContador;
@@ -16410,8 +18210,8 @@
                             this.strFERespuestaMotivo = oRespuestaDetalle.motivo;
                             this.strFERespuestaReproceso = oRespuestaDetalle.reproceso;
                             this.strFERespuestaResultado = oRespuestaDetalle.resultado;
-                            int VB$t_i4$L3 = oRespuesta.FedResp.Length - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L3; nContador++)
+                            int VB_t_i4_L3 = oRespuesta.FedResp.Length - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L3; nContador++)
                             {
                                 WSAFIPFE.afip.FEDetalleResponse oRespuestaDetalleItem = oRespuesta.FedResp[nContador];
                                 this.aFERespuestaDetalle[nContador].cae = oRespuestaDetalleItem.cae;
@@ -16529,8 +18329,8 @@
                         oPedidoCabecera.cantidadreg = this.FECabeceraCantReg;
                         oPedidoCabecera.presta_serv = this.FECabeceraPresta_serv;
                         oPedido.Fecr = oPedidoCabecera;
-                        int VB$t_i4$L0 = nLimite - 1;
-                        for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                        int VB_t_i4_L0 = nLimite - 1;
+                        for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                         {
                             WSAFIPFE.afipTest.FEDetalleRequest oPedidoitem = new WSAFIPFE.afipTest.FEDetalleRequest();
                             oPedidoitem.cbt_desde = ((nNumero + 1L) + nContador) - 1L;
@@ -16600,8 +18400,8 @@
                                 this.strFERespuestaMotivo = oRespuestaDetalle.motivo;
                                 this.strFERespuestaReproceso = oRespuestaDetalle.reproceso;
                                 this.strFERespuestaResultado = oRespuestaDetalle.resultado;
-                                int VB$t_i4$L1 = oRespuesta.FedResp.Length - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                                int VB_t_i4_L1 = oRespuesta.FedResp.Length - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                                 {
                                     WSAFIPFE.afipTest.FEDetalleResponse oRespuestaDetalleItem = oRespuesta.FedResp[nContador];
                                     this.aFERespuestaDetalle[nContador].cae = oRespuestaDetalleItem.cae;
@@ -16698,8 +18498,8 @@
                     oPedidoCabecera.cantidadreg = this.FECabeceraCantReg;
                     oPedidoCabecera.presta_serv = this.FECabeceraPresta_serv;
                     oPedido.Fecr = oPedidoCabecera;
-                    int VB$t_i4$L2 = nLimite - 1;
-                    for (nContador = 0; nContador <= VB$t_i4$L2; nContador++)
+                    int VB_t_i4_L2 = nLimite - 1;
+                    for (nContador = 0; nContador <= VB_t_i4_L2; nContador++)
                     {
                         WSAFIPFE.afip.FEDetalleRequest oPedidoitem = new WSAFIPFE.afip.FEDetalleRequest();
                         oPedidoitem.cbt_desde = ((nNumero + 1L) + nContador) - 1L;
@@ -16786,8 +18586,8 @@
                             this.strFERespuestaMotivo = oRespuestaDetalle.motivo;
                             this.strFERespuestaReproceso = oRespuestaDetalle.reproceso;
                             this.strFERespuestaResultado = oRespuestaDetalle.resultado;
-                            int VB$t_i4$L3 = oRespuesta.FedResp.Length - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L3; nContador++)
+                            int VB_t_i4_L3 = oRespuesta.FedResp.Length - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L3; nContador++)
                             {
                                 WSAFIPFE.afip.FEDetalleResponse oRespuestaDetalleItem = oRespuesta.FedResp[nContador];
                                 this.aFERespuestaDetalle[nContador].cae = oRespuestaDetalleItem.cae;
@@ -17041,8 +18841,8 @@
                         this.sItemCantidad = oRespuesta.SEGResultGet.Items.Length - 1;
                         int value = this.sItemCantidad;
                         this.asItem = new sItem[(value - 1) + 1];
-                        int VB$t_i4$L0 = this.bItemCantidad - 1;
-                        for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                        int VB_t_i4_L0 = this.bItemCantidad - 1;
+                        for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                         {
                             this.IndiceItem = nContador;
                             this.sItemds = oRespuesta.SEGResultGet.Items[nContador].Ds;
@@ -17085,12 +18885,12 @@
             {
                 return false;
             }
-            WSAFIPFE.sAFIP.ClsSEGAuthRequest autorizacion = new WSAFIPFE.sAFIP.ClsSEGAuthRequest();
+            WSAFIPFE.sAFIP.ClsSEGAuthRequest clsSegAuthRequest = new WSAFIPFE.sAFIP.ClsSEGAuthRequest();
             try
             {
-                autorizacion.Cuit = Conversions.ToLong(this.cuit);
-                autorizacion.Token = this.stoken;
-                autorizacion.Sign = this.ssign;
+                clsSegAuthRequest.Cuit = Conversions.ToLong(this.cuit);
+                clsSegAuthRequest.Token = this.stoken;
+                clsSegAuthRequest.Sign = this.ssign;
             }
             catch (Exception exception3)
             {
@@ -17118,7 +18918,7 @@
                 oPedido.Cbte_nro = nNumeroComprobante;
                 oPedido.Punto_vta = nPuntoVenta;
                 oPedido.Tipo_cbte = (short) nTipoComprobante;
-                WSAFIPFE.sAFIP.SEGGetCMPResponse oRespuesta = servicio.SEGGetCMP(autorizacion, oPedido);
+                WSAFIPFE.sAFIP.SEGGetCMPResponse oRespuesta = servicio.SEGGetCMP(clsSegAuthRequest, oPedido);
                 if (oRespuesta == null)
                 {
                     bResultado = false;
@@ -17164,8 +18964,8 @@
                     this.sItemCantidad = oRespuesta.SEGResultGet.Items.Length - 1;
                     int value = this.sItemCantidad;
                     this.asItem = new sItem[(value - 1) + 1];
-                    int VB$t_i4$L1 = this.bItemCantidad - 1;
-                    for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                    int VB_t_i4_L1 = this.bItemCantidad - 1;
+                    for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                     {
                         this.IndiceItem = nContador;
                         this.sItemds = oRespuesta.SEGResultGet.Items[nContador].Ds;
@@ -17351,12 +19151,12 @@
                     }
                     return cResultado;
                 }
-                WSAFIPFE.sAFIP.ClsSEGAuthRequest autorizacion = new WSAFIPFE.sAFIP.ClsSEGAuthRequest();
+                WSAFIPFE.sAFIP.ClsSEGAuthRequest clsSegAuthRequest = new WSAFIPFE.sAFIP.ClsSEGAuthRequest();
                 try
                 {
-                    autorizacion.Cuit = Conversions.ToLong(this.cuit);
-                    autorizacion.Token = this.stoken;
-                    autorizacion.Sign = this.ssign;
+                    clsSegAuthRequest.Cuit = Conversions.ToLong(this.cuit);
+                    clsSegAuthRequest.Token = this.stoken;
+                    clsSegAuthRequest.Sign = this.ssign;
                 }
                 catch (Exception exception3)
                 {
@@ -17382,7 +19182,7 @@
                             pr.Credentials = cr;
                             servicio.Proxy = pr;
                         }
-                        WSAFIPFE.sAFIP.SEGResponse_LastID oRespuesta = servicio.SEGGetLast_ID(autorizacion);
+                        WSAFIPFE.sAFIP.SEGResponse_LastID oRespuesta = servicio.SEGGetLast_ID(clsSegAuthRequest);
                         this.iserrcode = oRespuesta.SEGErr.ErrCode;
                         this.strberrmsg = oRespuesta.SEGErr.ErrMsg;
                         cResultado = oRespuesta.SEGResultGet.Id.ToString();
@@ -17457,8 +19257,8 @@
                                 this.isMonedaItemCantidad = oRespuesta.SEGResultGet.Length;
                                 value = this.sMonedaItemCantidad;
                                 this.aSMoneda = new sMoneda[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.sMonedaItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.sMonedaItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.aSMoneda[nContador].id = oRespuesta.SEGResultGet[nContador].Mon_Id;
                                     this.aSMoneda[nContador].ds = oRespuesta.SEGResultGet[nContador].Mon_Ds;
@@ -17481,12 +19281,12 @@
                     }
                     return bResultado;
                 }
-                WSAFIPFE.sAFIP.ClsSEGAuthRequest autorizacion = new WSAFIPFE.sAFIP.ClsSEGAuthRequest();
+                WSAFIPFE.sAFIP.ClsSEGAuthRequest clsSegAuthRequest = new WSAFIPFE.sAFIP.ClsSEGAuthRequest();
                 try
                 {
-                    autorizacion.Cuit = Conversions.ToLong(this.cuit);
-                    autorizacion.Token = this.stoken;
-                    autorizacion.Sign = this.ssign;
+                    clsSegAuthRequest.Cuit = Conversions.ToLong(this.cuit);
+                    clsSegAuthRequest.Token = this.stoken;
+                    clsSegAuthRequest.Sign = this.ssign;
                 }
                 catch (Exception exception3)
                 {
@@ -17512,7 +19312,7 @@
                             pr.Credentials = cr;
                             servicio.Proxy = pr;
                         }
-                        WSAFIPFE.sAFIP.SEGResponse_Mon oRespuesta = servicio.SEGGetPARAM_MON(autorizacion);
+                        WSAFIPFE.sAFIP.SEGResponse_Mon oRespuesta = servicio.SEGGetPARAM_MON(clsSegAuthRequest);
                         this.iserrcode = oRespuesta.SEGErr.ErrCode;
                         this.strserrmsg = oRespuesta.SEGErr.ErrMsg;
                         this.iserrcode = oRespuesta.SEGEvents.EventCode;
@@ -17522,8 +19322,8 @@
                             this.isMonedaItemCantidad = oRespuesta.SEGResultGet.Length;
                             value = this.sMonedaItemCantidad;
                             this.aSMoneda = new sMoneda[(value - 1) + 1];
-                            int VB$t_i4$L1 = this.sMonedaItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                            int VB_t_i4_L1 = this.sMonedaItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                             {
                                 this.aSMoneda[nContador].id = oRespuesta.SEGResultGet[nContador].Mon_Id;
                                 this.aSMoneda[nContador].ds = oRespuesta.SEGResultGet[nContador].Mon_Ds;
@@ -17601,8 +19401,8 @@
                                 this.isTipo_CbteItemCantidad = oRespuesta.SEGResultGet.Length;
                                 value = this.isTipo_CbteItemCantidad;
                                 this.aSTipo_cpte = new sTipo_cbtes[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.sTipo_CbteItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.sTipo_CbteItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.aSTipo_cpte[nContador].id = oRespuesta.SEGResultGet[nContador].Cbte_Id;
                                     this.aSTipo_cpte[nContador].ds = oRespuesta.SEGResultGet[nContador].Cbte_Ds;
@@ -17625,12 +19425,12 @@
                     }
                     return bResultado;
                 }
-                WSAFIPFE.sAFIP.ClsSEGAuthRequest autorizacion = new WSAFIPFE.sAFIP.ClsSEGAuthRequest();
+                WSAFIPFE.sAFIP.ClsSEGAuthRequest clsSegAuthRequest = new WSAFIPFE.sAFIP.ClsSEGAuthRequest();
                 try
                 {
-                    autorizacion.Cuit = Conversions.ToLong(this.cuit);
-                    autorizacion.Token = this.stoken;
-                    autorizacion.Sign = this.ssign;
+                    clsSegAuthRequest.Cuit = Conversions.ToLong(this.cuit);
+                    clsSegAuthRequest.Token = this.stoken;
+                    clsSegAuthRequest.Sign = this.ssign;
                 }
                 catch (Exception exception3)
                 {
@@ -17656,7 +19456,7 @@
                             pr.Credentials = cr;
                             servicio.Proxy = pr;
                         }
-                        WSAFIPFE.sAFIP.SEGResponse_Tipo_Cbte oRespuesta = servicio.SEGGetPARAM_Tipo_Cbte(autorizacion);
+                        WSAFIPFE.sAFIP.SEGResponse_Tipo_Cbte oRespuesta = servicio.SEGGetPARAM_Tipo_Cbte(clsSegAuthRequest);
                         this.iberrcode = oRespuesta.SEGErr.ErrCode;
                         this.strberrmsg = oRespuesta.SEGErr.ErrMsg;
                         this.iberrcode = oRespuesta.SEGErr.ErrCode;
@@ -17666,8 +19466,8 @@
                             this.isTipo_CbteItemCantidad = oRespuesta.SEGResultGet.Length;
                             value = this.isTipo_CbteItemCantidad;
                             this.aSTipo_cpte = new sTipo_cbtes[(value - 1) + 1];
-                            int VB$t_i4$L1 = this.sTipo_CbteItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                            int VB_t_i4_L1 = this.sTipo_CbteItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                             {
                                 this.aSTipo_cpte[nContador].id = oRespuesta.SEGResultGet[nContador].Cbte_Id;
                                 this.aSTipo_cpte[nContador].ds = oRespuesta.SEGResultGet[nContador].Cbte_Ds;
@@ -17745,8 +19545,8 @@
                                 this.isTipoDocItemCantidad = oRespuesta.SEGResultGet.Length;
                                 value = this.isTipoDocItemCantidad;
                                 this.asTipoDoc = new sTipoDoc[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.sTipoDocItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.sTipoDocItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.asTipoDoc[nContador].id = oRespuesta.SEGResultGet[nContador].Doc_Id;
                                     this.asTipoDoc[nContador].ds = oRespuesta.SEGResultGet[nContador].Doc_Ds;
@@ -17769,12 +19569,12 @@
                     }
                     return bResultado;
                 }
-                WSAFIPFE.sAFIP.ClsSEGAuthRequest autorizacion = new WSAFIPFE.sAFIP.ClsSEGAuthRequest();
+                WSAFIPFE.sAFIP.ClsSEGAuthRequest clsSegAuthRequest = new WSAFIPFE.sAFIP.ClsSEGAuthRequest();
                 try
                 {
-                    autorizacion.Cuit = Conversions.ToLong(this.cuit);
-                    autorizacion.Token = this.stoken;
-                    autorizacion.Sign = this.ssign;
+                    clsSegAuthRequest.Cuit = Conversions.ToLong(this.cuit);
+                    clsSegAuthRequest.Token = this.stoken;
+                    clsSegAuthRequest.Sign = this.ssign;
                 }
                 catch (Exception exception3)
                 {
@@ -17800,7 +19600,7 @@
                             pr.Credentials = cr;
                             servicio.Proxy = pr;
                         }
-                        WSAFIPFE.sAFIP.SEGResponse_Tipo_doc oRespuesta = servicio.SEGGetPARAM_Tipo_doc(autorizacion);
+                        WSAFIPFE.sAFIP.SEGResponse_Tipo_doc oRespuesta = servicio.SEGGetPARAM_Tipo_doc(clsSegAuthRequest);
                         this.iserrcode = oRespuesta.SEGErr.ErrCode;
                         this.strserrmsg = oRespuesta.SEGErr.ErrMsg;
                         this.iserrcode = oRespuesta.SEGErr.ErrCode;
@@ -17810,8 +19610,8 @@
                             this.isTipoDocItemCantidad = oRespuesta.SEGResultGet.Length;
                             value = this.isTipoDocItemCantidad;
                             this.asTipoDoc = new sTipoDoc[(value - 1) + 1];
-                            int VB$t_i4$L1 = this.sTipoDocItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                            int VB_t_i4_L1 = this.sTipoDocItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                             {
                                 this.asTipoDoc[nContador].id = oRespuesta.SEGResultGet[nContador].Doc_Id;
                                 this.asTipoDoc[nContador].ds = oRespuesta.SEGResultGet[nContador].Doc_Ds;
@@ -17889,8 +19689,8 @@
                                 this.isTipoIvaItemCantidad = oRespuesta.SEGResultGet.Length;
                                 value = this.isTipoIvaItemCantidad;
                                 this.asTipoIva = new sTipoIva[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.sTipoIvaItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.sTipoIvaItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.asTipoIva[nContador].id = oRespuesta.SEGResultGet[nContador].IVA_Id;
                                     this.asTipoIva[nContador].ds = oRespuesta.SEGResultGet[nContador].IVA_Ds;
@@ -17913,12 +19713,12 @@
                     }
                     return bResultado;
                 }
-                WSAFIPFE.sAFIP.ClsSEGAuthRequest autorizacion = new WSAFIPFE.sAFIP.ClsSEGAuthRequest();
+                WSAFIPFE.sAFIP.ClsSEGAuthRequest clsSegAuthRequest = new WSAFIPFE.sAFIP.ClsSEGAuthRequest();
                 try
                 {
-                    autorizacion.Cuit = Conversions.ToLong(this.cuit);
-                    autorizacion.Token = this.stoken;
-                    autorizacion.Sign = this.ssign;
+                    clsSegAuthRequest.Cuit = Conversions.ToLong(this.cuit);
+                    clsSegAuthRequest.Token = this.stoken;
+                    clsSegAuthRequest.Sign = this.ssign;
                 }
                 catch (Exception exception3)
                 {
@@ -17944,7 +19744,7 @@
                             pr.Credentials = cr;
                             servicio.Proxy = pr;
                         }
-                        WSAFIPFE.sAFIP.SEGResponse_Tipo_IVA oRespuesta = servicio.SEGGetPARAM_Tipo_IVA(autorizacion);
+                        WSAFIPFE.sAFIP.SEGResponse_Tipo_IVA oRespuesta = servicio.SEGGetPARAM_Tipo_IVA(clsSegAuthRequest);
                         this.iberrcode = oRespuesta.SEGErr.ErrCode;
                         this.strberrmsg = oRespuesta.SEGErr.ErrMsg;
                         this.iberrcode = oRespuesta.SEGErr.ErrCode;
@@ -17954,8 +19754,8 @@
                             this.isTipoIvaItemCantidad = oRespuesta.SEGResultGet.Length;
                             value = this.isTipoIvaItemCantidad;
                             this.asTipoIva = new sTipoIva[(value - 1) + 1];
-                            int VB$t_i4$L1 = this.sTipoIvaItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                            int VB_t_i4_L1 = this.sTipoIvaItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                             {
                                 this.asTipoIva[nContador].id = oRespuesta.SEGResultGet[nContador].IVA_Id;
                                 this.asTipoIva[nContador].ds = oRespuesta.SEGResultGet[nContador].IVA_Ds;
@@ -18124,8 +19924,8 @@
                     oPedido.Tipo_cbte = (short) nTipoComprobante;
                     oPedido.Tipo_doc = (short) this.sTipo_Doc;
                     oPedido.Imp_otrib_prov = this.sImp_otrib_prov;
-                    int VB$t_i4$L0 = this.iItemCantidad - 1;
-                    for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                    int VB_t_i4_L0 = this.iItemCantidad - 1;
+                    for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                     {
                         WSAFIPFE.sAFIPTest.Item oPedidoitem = new WSAFIPFE.sAFIPTest.Item();
                         this.IndiceItem = nContador;
@@ -18264,8 +20064,8 @@
                     oPedido.Tipo_cbte = (short) nTipoComprobante;
                     oPedido.Tipo_doc = (short) this.sTipo_Doc;
                     oPedido.Imp_otrib_prov = this.sImp_otrib_prov;
-                    int VB$t_i4$L1 = this.iItemCantidad - 1;
-                    for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                    int VB_t_i4_L1 = this.iItemCantidad - 1;
+                    for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                     {
                         WSAFIPFE.sAFIP.Item oPedidoitem = new WSAFIPFE.sAFIP.Item();
                         this.IndiceItem = nContador;
@@ -18515,12 +20315,12 @@
                     }
                     return cResultado;
                 }
-                WSAFIPFE.xAFIP.ClsFEXAuthRequest autorizacion = new WSAFIPFE.xAFIP.ClsFEXAuthRequest();
+                WSAFIPFE.xAFIP.ClsFEXAuthRequest clsFexAuthRequest = new WSAFIPFE.xAFIP.ClsFEXAuthRequest();
                 try
                 {
-                    autorizacion.Cuit = Conversions.ToLong(this.cuit);
-                    autorizacion.Token = this.xtoken;
-                    autorizacion.Sign = this.xsign;
+                    clsFexAuthRequest.Cuit = Conversions.ToLong(this.cuit);
+                    clsFexAuthRequest.Token = this.xtoken;
+                    clsFexAuthRequest.Sign = this.xsign;
                 }
                 catch (Exception exception3)
                 {
@@ -18551,7 +20351,7 @@
                         {
                             servicio.Timeout = this.TimeOut;
                         }
-                        WSAFIPFE.xAFIP.FEXResponse_CheckPermiso oRespuesta = servicio.FEXCheck_Permiso(autorizacion, strIdPermiso, intDestinoMercaderia);
+                        WSAFIPFE.xAFIP.FEXResponse_CheckPermiso oRespuesta = servicio.FEXCheck_Permiso(clsFexAuthRequest, strIdPermiso, intDestinoMercaderia);
                         this.ixerrcode = oRespuesta.FEXErr.ErrCode;
                         this.strxerrmsg = oRespuesta.FEXErr.ErrMsg;
                         if (oRespuesta.FEXResultGet == null)
@@ -18686,8 +20486,8 @@
                             nLimite = 0;
                             if (oRespuesta.FEXResultGet.Items != null)
                             {
-                                int VB$t_i4$L0 = oRespuesta.FEXResultGet.Items.Length - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = oRespuesta.FEXResultGet.Items.Length - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     try
                                     {
@@ -18707,8 +20507,8 @@
                             this.xItemCantidad = nLimite;
                             int value = this.xItemCantidad;
                             this.axItems = new xItem[(value - 1) + 1];
-                            int VB$t_i4$L1 = this.xItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                            int VB_t_i4_L1 = this.xItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                             {
                                 this.xIndiceItem = nContador;
                                 this.xITEMPro_codigo = oRespuesta.FEXResultGet.Items[nContador].Pro_codigo;
@@ -18721,8 +20521,8 @@
                             nLimite = 0;
                             if (oRespuesta.FEXResultGet.Permisos != null)
                             {
-                                int VB$t_i4$L2 = oRespuesta.FEXResultGet.Permisos.Length - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L2; nContador++)
+                                int VB_t_i4_L2 = oRespuesta.FEXResultGet.Permisos.Length - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L2; nContador++)
                                 {
                                     try
                                     {
@@ -18742,8 +20542,8 @@
                             this.xPermisoCantidad = nLimite;
                             value = this.xPermisoCantidad;
                             this.axPermisos = new xPermisos[(value - 1) + 1];
-                            int VB$t_i4$L3 = this.xPermisoCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L3; nContador++)
+                            int VB_t_i4_L3 = this.xPermisoCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L3; nContador++)
                             {
                                 this.xIndiceItem = nContador;
                                 this.xPERMISO_id_permiso = oRespuesta.FEXResultGet.Permisos[nContador].Id_permiso;
@@ -18756,8 +20556,8 @@
                             }
                             else
                             {
-                                int VB$t_i4$L4 = oRespuesta.FEXResultGet.Cmps_asoc.Length - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L4; nContador++)
+                                int VB_t_i4_L4 = oRespuesta.FEXResultGet.Cmps_asoc.Length - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L4; nContador++)
                                 {
                                     try
                                     {
@@ -18781,8 +20581,8 @@
                             this.xCmps_asocCantidad = nLimite;
                             value = this.xCmps_asocCantidad;
                             this.axCmps_asocs = new xCmps_asoc[(value - 1) + 1];
-                            int VB$t_i4$L5 = this.xCmps_asocCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L5; nContador++)
+                            int VB_t_i4_L5 = this.xCmps_asocCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L5; nContador++)
                             {
                                 this.xIndiceItem = nContador;
                                 this.xCMPS_ASOC_cbte_nro = (int) oRespuesta.FEXResultGet.Cmps_asoc[nContador].Cbte_nro;
@@ -18819,12 +20619,12 @@
             {
                 return false;
             }
-            WSAFIPFE.xAFIP.ClsFEXAuthRequest autorizacion = new WSAFIPFE.xAFIP.ClsFEXAuthRequest();
+            WSAFIPFE.xAFIP.ClsFEXAuthRequest clsFexAuthRequest = new WSAFIPFE.xAFIP.ClsFEXAuthRequest();
             try
             {
-                autorizacion.Cuit = Conversions.ToLong(this.cuit);
-                autorizacion.Token = this.xtoken;
-                autorizacion.Sign = this.xsign;
+                clsFexAuthRequest.Cuit = Conversions.ToLong(this.cuit);
+                clsFexAuthRequest.Token = this.xtoken;
+                clsFexAuthRequest.Sign = this.xsign;
             }
             catch (Exception exception6)
             {
@@ -18857,7 +20657,7 @@
                 oPedido.Cbte_nro = nNumeroComprobante;
                 oPedido.Punto_vta = (short) nPuntoVenta;
                 oPedido.Tipo_cbte = (short) nTipoComprobante;
-                WSAFIPFE.xAFIP.FEXGetCMPResponse oRespuesta = servicio.FEXGetCMP(autorizacion, oPedido);
+                WSAFIPFE.xAFIP.FEXGetCMPResponse oRespuesta = servicio.FEXGetCMP(clsFexAuthRequest, oPedido);
                 if (oRespuesta == null)
                 {
                     bResultado = false;
@@ -18920,8 +20720,8 @@
                         nLimite = 0;
                         if (oRespuesta.FEXResultGet.Items != null)
                         {
-                            int VB$t_i4$L6 = oRespuesta.FEXResultGet.Items.Length - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L6; nContador++)
+                            int VB_t_i4_L6 = oRespuesta.FEXResultGet.Items.Length - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L6; nContador++)
                             {
                                 try
                                 {
@@ -18941,8 +20741,8 @@
                         this.xItemCantidad = nLimite;
                         int value = this.xItemCantidad;
                         this.axItems = new xItem[(value - 1) + 1];
-                        int VB$t_i4$L7 = this.xItemCantidad - 1;
-                        for (nContador = 0; nContador <= VB$t_i4$L7; nContador++)
+                        int VB_t_i4_L7 = this.xItemCantidad - 1;
+                        for (nContador = 0; nContador <= VB_t_i4_L7; nContador++)
                         {
                             this.xIndiceItem = nContador;
                             this.xITEMPro_codigo = oRespuesta.FEXResultGet.Items[nContador].Pro_codigo;
@@ -18955,8 +20755,8 @@
                         nLimite = 0;
                         if (oRespuesta.FEXResultGet.Permisos != null)
                         {
-                            int VB$t_i4$L8 = oRespuesta.FEXResultGet.Permisos.Length - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L8; nContador++)
+                            int VB_t_i4_L8 = oRespuesta.FEXResultGet.Permisos.Length - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L8; nContador++)
                             {
                                 try
                                 {
@@ -18976,8 +20776,8 @@
                         this.xPermisoCantidad = nLimite;
                         value = this.xPermisoCantidad;
                         this.axPermisos = new xPermisos[(value - 1) + 1];
-                        int VB$t_i4$L9 = this.xPermisoCantidad - 1;
-                        for (nContador = 0; nContador <= VB$t_i4$L9; nContador++)
+                        int VB_t_i4_L9 = this.xPermisoCantidad - 1;
+                        for (nContador = 0; nContador <= VB_t_i4_L9; nContador++)
                         {
                             this.xIndiceItem = nContador;
                             this.xPERMISO_id_permiso = oRespuesta.FEXResultGet.Permisos[nContador].Id_permiso;
@@ -18990,8 +20790,8 @@
                         }
                         else
                         {
-                            int VB$t_i4$L10 = oRespuesta.FEXResultGet.Cmps_asoc.Length - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L10; nContador++)
+                            int VB_t_i4_L10 = oRespuesta.FEXResultGet.Cmps_asoc.Length - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L10; nContador++)
                             {
                                 try
                                 {
@@ -19015,8 +20815,8 @@
                         this.xCmps_asocCantidad = nLimite;
                         value = this.xCmps_asocCantidad;
                         this.axCmps_asocs = new xCmps_asoc[(value - 1) + 1];
-                        int VB$t_i4$L11 = this.xCmps_asocCantidad - 1;
-                        for (nContador = 0; nContador <= VB$t_i4$L11; nContador++)
+                        int VB_t_i4_L11 = this.xCmps_asocCantidad - 1;
+                        for (nContador = 0; nContador <= VB_t_i4_L11; nContador++)
                         {
                             this.xIndiceItem = nContador;
                             this.xCMPS_ASOC_cbte_nro = (int) oRespuesta.FEXResultGet.Cmps_asoc[nContador].Cbte_nro;
@@ -19346,12 +21146,12 @@
                     }
                     return nResultado;
                 }
-                WSAFIPFE.xAFIP.ClsFEXAuthRequest autorizacion = new WSAFIPFE.xAFIP.ClsFEXAuthRequest();
+                WSAFIPFE.xAFIP.ClsFEXAuthRequest clsFexAuthRequest = new WSAFIPFE.xAFIP.ClsFEXAuthRequest();
                 try
                 {
-                    autorizacion.Cuit = Conversions.ToLong(this.cuit);
-                    autorizacion.Token = this.xtoken;
-                    autorizacion.Sign = this.xsign;
+                    clsFexAuthRequest.Cuit = Conversions.ToLong(this.cuit);
+                    clsFexAuthRequest.Token = this.xtoken;
+                    clsFexAuthRequest.Sign = this.xsign;
                 }
                 catch (Exception exception3)
                 {
@@ -19382,7 +21182,7 @@
                         {
                             servicio.Timeout = this.TimeOut;
                         }
-                        WSAFIPFE.xAFIP.FEXResponse_Ctz oRespuesta = servicio.FEXGetPARAM_Ctz(autorizacion, strMon_id);
+                        WSAFIPFE.xAFIP.FEXResponse_Ctz oRespuesta = servicio.FEXGetPARAM_Ctz(clsFexAuthRequest, strMon_id);
                         if (oRespuesta.FEXResultGet == null)
                         {
                             this.nxRespuestaMonedaCtz = 0.0;
@@ -19424,7 +21224,7 @@
 
         public double xFEGetPARAM_CTZS(string strMon_ids)
         {
-            double xFEGetPARAM_CTZS;
+            double xFEGetPARAM_CTZS=0.0;
             string strMon_id = strMon_ids;
             if (strMon_id.Length < 3)
             {
@@ -19489,8 +21289,8 @@
                                 this.ixCuitItemCantidad = oRespuesta.FEXResultGet.Length;
                                 value = this.xCuitItemCantidad;
                                 this.axPaisCuit = new xPaisCuit[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.ixCuitItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.ixCuitItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.axPaisCuit[nContador].cuit = Conversions.ToString(oRespuesta.FEXResultGet[nContador].DST_CUIT);
                                     this.axPaisCuit[nContador].ds = oRespuesta.FEXResultGet[nContador].DST_Ds;
@@ -19511,12 +21311,12 @@
                     }
                     return bResultado;
                 }
-                WSAFIPFE.xAFIP.ClsFEXAuthRequest autorizacion = new WSAFIPFE.xAFIP.ClsFEXAuthRequest();
+                WSAFIPFE.xAFIP.ClsFEXAuthRequest clsFexAuthRequest = new WSAFIPFE.xAFIP.ClsFEXAuthRequest();
                 try
                 {
-                    autorizacion.Cuit = Conversions.ToLong(this.cuit);
-                    autorizacion.Token = this.xtoken;
-                    autorizacion.Sign = this.xsign;
+                    clsFexAuthRequest.Cuit = Conversions.ToLong(this.cuit);
+                    clsFexAuthRequest.Token = this.xtoken;
+                    clsFexAuthRequest.Sign = this.xsign;
                 }
                 catch (Exception exception3)
                 {
@@ -19547,7 +21347,7 @@
                         {
                             servicio.Timeout = this.TimeOut;
                         }
-                        WSAFIPFE.xAFIP.FEXResponse_DST_cuit oRespuesta = servicio.FEXGetPARAM_DST_CUIT(autorizacion);
+                        WSAFIPFE.xAFIP.FEXResponse_DST_cuit oRespuesta = servicio.FEXGetPARAM_DST_CUIT(clsFexAuthRequest);
                         this.ixerrcode = oRespuesta.FEXErr.ErrCode;
                         this.strxerrmsg = oRespuesta.FEXErr.ErrMsg;
                         if (this.ixerrcode == 0)
@@ -19555,8 +21355,8 @@
                             this.ixCuitItemCantidad = oRespuesta.FEXResultGet.Length;
                             value = this.xCuitItemCantidad;
                             this.axPaisCuit = new xPaisCuit[(value - 1) + 1];
-                            int VB$t_i4$L1 = this.ixCuitItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                            int VB_t_i4_L1 = this.ixCuitItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                             {
                                 this.axPaisCuit[nContador].cuit = Conversions.ToString(oRespuesta.FEXResultGet[nContador].DST_CUIT);
                                 this.axPaisCuit[nContador].ds = oRespuesta.FEXResultGet[nContador].DST_Ds;
@@ -19630,8 +21430,8 @@
                                 this.ixPaisItemCantidad = oRespuesta.FEXResultGet.Length;
                                 value = this.xPaisItemCantidad;
                                 this.axPais = new xPais[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.ixPaisItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.ixPaisItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.axPais[nContador].codigo = oRespuesta.FEXResultGet[nContador].DST_Codigo;
                                     this.axPais[nContador].ds = oRespuesta.FEXResultGet[nContador].DST_Ds;
@@ -19652,12 +21452,12 @@
                     }
                     return bResultado;
                 }
-                WSAFIPFE.xAFIP.ClsFEXAuthRequest autorizacion = new WSAFIPFE.xAFIP.ClsFEXAuthRequest();
+                WSAFIPFE.xAFIP.ClsFEXAuthRequest clsFexAuthRequest = new WSAFIPFE.xAFIP.ClsFEXAuthRequest();
                 try
                 {
-                    autorizacion.Cuit = Conversions.ToLong(this.cuit);
-                    autorizacion.Token = this.xtoken;
-                    autorizacion.Sign = this.xsign;
+                    clsFexAuthRequest.Cuit = Conversions.ToLong(this.cuit);
+                    clsFexAuthRequest.Token = this.xtoken;
+                    clsFexAuthRequest.Sign = this.xsign;
                 }
                 catch (Exception exception3)
                 {
@@ -19688,7 +21488,7 @@
                         {
                             servicio.Timeout = this.TimeOut;
                         }
-                        WSAFIPFE.xAFIP.FEXResponse_DST_pais oRespuesta = servicio.FEXGetPARAM_DST_pais(autorizacion);
+                        WSAFIPFE.xAFIP.FEXResponse_DST_pais oRespuesta = servicio.FEXGetPARAM_DST_pais(clsFexAuthRequest);
                         this.ixerrcode = oRespuesta.FEXErr.ErrCode;
                         this.strxerrmsg = oRespuesta.FEXErr.ErrMsg;
                         if (this.ixerrcode == 0)
@@ -19696,8 +21496,8 @@
                             this.ixPaisItemCantidad = oRespuesta.FEXResultGet.Length;
                             value = this.xPaisItemCantidad;
                             this.axPais = new xPais[(value - 1) + 1];
-                            int VB$t_i4$L1 = this.ixPaisItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                            int VB_t_i4_L1 = this.ixPaisItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                             {
                                 this.axPais[nContador].codigo = oRespuesta.FEXResultGet[nContador].DST_Codigo;
                                 this.axPais[nContador].ds = oRespuesta.FEXResultGet[nContador].DST_Ds;
@@ -19771,8 +21571,8 @@
                                 this.ixIdiomaItemCantidad = oRespuesta.FEXResultGet.Length;
                                 value = this.xIdiomaItemCantidad;
                                 this.axIdioma = new xIdioma[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.ixIdiomaItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.ixIdiomaItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.axIdioma[nContador].idi_id = Conversions.ToString((int) oRespuesta.FEXResultGet[nContador].Idi_Id);
                                     this.axIdioma[nContador].idi_ds = oRespuesta.FEXResultGet[nContador].Idi_Ds;
@@ -19795,12 +21595,12 @@
                     }
                     return bResultado;
                 }
-                WSAFIPFE.xAFIP.ClsFEXAuthRequest autorizacion = new WSAFIPFE.xAFIP.ClsFEXAuthRequest();
+                WSAFIPFE.xAFIP.ClsFEXAuthRequest clsFexAuthRequest = new WSAFIPFE.xAFIP.ClsFEXAuthRequest();
                 try
                 {
-                    autorizacion.Cuit = Conversions.ToLong(this.cuit);
-                    autorizacion.Token = this.xtoken;
-                    autorizacion.Sign = this.xsign;
+                    clsFexAuthRequest.Cuit = Conversions.ToLong(this.cuit);
+                    clsFexAuthRequest.Token = this.xtoken;
+                    clsFexAuthRequest.Sign = this.xsign;
                 }
                 catch (Exception exception3)
                 {
@@ -19831,7 +21631,7 @@
                         {
                             servicio.Timeout = this.TimeOut;
                         }
-                        WSAFIPFE.xAFIP.FEXResponse_Idi oRespuesta = servicio.FEXGetPARAM_Idiomas(autorizacion);
+                        WSAFIPFE.xAFIP.FEXResponse_Idi oRespuesta = servicio.FEXGetPARAM_Idiomas(clsFexAuthRequest);
                         this.ixerrcode = oRespuesta.FEXErr.ErrCode;
                         this.strxerrmsg = oRespuesta.FEXErr.ErrMsg;
                         if (this.ixerrcode == 0)
@@ -19839,8 +21639,8 @@
                             this.ixIdiomaItemCantidad = oRespuesta.FEXResultGet.Length;
                             value = this.xIdiomaItemCantidad;
                             this.axIdioma = new xIdioma[(value - 1) + 1];
-                            int VB$t_i4$L1 = this.ixIdiomaItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                            int VB_t_i4_L1 = this.ixIdiomaItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                             {
                                 this.axIdioma[nContador].idi_id = Conversions.ToString((int) oRespuesta.FEXResultGet[nContador].Idi_Id);
                                 this.axIdioma[nContador].idi_ds = oRespuesta.FEXResultGet[nContador].Idi_Ds;
@@ -19916,8 +21716,8 @@
                                 this.ixIncoTermsItemCantidad = oRespuesta.FEXResultGet.Length;
                                 value = this.xIncoTermsItemCantidad;
                                 this.axIncoTerms = new xIncotermss[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.ixIncoTermsItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.ixIncoTermsItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.axIncoTerms[nContador].inc_id = oRespuesta.FEXResultGet[nContador].Inc_Id;
                                     this.axIncoTerms[nContador].inc_ds = oRespuesta.FEXResultGet[nContador].Inc_Ds;
@@ -19940,12 +21740,12 @@
                     }
                     return bResultado;
                 }
-                WSAFIPFE.xAFIP.ClsFEXAuthRequest autorizacion = new WSAFIPFE.xAFIP.ClsFEXAuthRequest();
+                WSAFIPFE.xAFIP.ClsFEXAuthRequest clsFexAuthRequest = new WSAFIPFE.xAFIP.ClsFEXAuthRequest();
                 try
                 {
-                    autorizacion.Cuit = Conversions.ToLong(this.cuit);
-                    autorizacion.Token = this.xtoken;
-                    autorizacion.Sign = this.xsign;
+                    clsFexAuthRequest.Cuit = Conversions.ToLong(this.cuit);
+                    clsFexAuthRequest.Token = this.xtoken;
+                    clsFexAuthRequest.Sign = this.xsign;
                 }
                 catch (Exception exception3)
                 {
@@ -19976,7 +21776,7 @@
                         {
                             servicio.Timeout = this.TimeOut;
                         }
-                        WSAFIPFE.xAFIP.FEXResponse_Inc oRespuesta = servicio.FEXGetPARAM_Incoterms(autorizacion);
+                        WSAFIPFE.xAFIP.FEXResponse_Inc oRespuesta = servicio.FEXGetPARAM_Incoterms(clsFexAuthRequest);
                         this.ixerrcode = oRespuesta.FEXErr.ErrCode;
                         this.strxerrmsg = oRespuesta.FEXErr.ErrMsg;
                         if (this.ixerrcode == 0)
@@ -19984,8 +21784,8 @@
                             this.ixIncoTermsItemCantidad = oRespuesta.FEXResultGet.Length;
                             value = this.xIncoTermsItemCantidad;
                             this.axIncoTerms = new xIncotermss[(value - 1) + 1];
-                            int VB$t_i4$L1 = this.ixIncoTermsItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                            int VB_t_i4_L1 = this.ixIncoTermsItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                             {
                                 this.axIncoTerms[nContador].inc_id = oRespuesta.FEXResultGet[nContador].Inc_Id;
                                 this.axIncoTerms[nContador].inc_ds = oRespuesta.FEXResultGet[nContador].Inc_Ds;
@@ -20061,8 +21861,8 @@
                                 this.ixMonedaItemCantidad = oRespuesta.FEXResultGet.Length;
                                 value = this.xMonedaItemCantidad;
                                 this.axMoneda = new xMoneda[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.ixMonedaItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.ixMonedaItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.axMoneda[nContador].id = oRespuesta.FEXResultGet[nContador].Mon_Id;
                                     this.axMoneda[nContador].ds = oRespuesta.FEXResultGet[nContador].Mon_Ds;
@@ -20085,12 +21885,12 @@
                     }
                     return bResultado;
                 }
-                WSAFIPFE.xAFIP.ClsFEXAuthRequest autorizacion = new WSAFIPFE.xAFIP.ClsFEXAuthRequest();
+                WSAFIPFE.xAFIP.ClsFEXAuthRequest clsFexAuthRequest = new WSAFIPFE.xAFIP.ClsFEXAuthRequest();
                 try
                 {
-                    autorizacion.Cuit = Conversions.ToLong(this.cuit);
-                    autorizacion.Token = this.xtoken;
-                    autorizacion.Sign = this.xsign;
+                    clsFexAuthRequest.Cuit = Conversions.ToLong(this.cuit);
+                    clsFexAuthRequest.Token = this.xtoken;
+                    clsFexAuthRequest.Sign = this.xsign;
                 }
                 catch (Exception exception3)
                 {
@@ -20121,7 +21921,7 @@
                         {
                             servicio.Timeout = this.TimeOut;
                         }
-                        WSAFIPFE.xAFIP.FEXResponse_Mon oRespuesta = servicio.FEXGetPARAM_MON(autorizacion);
+                        WSAFIPFE.xAFIP.FEXResponse_Mon oRespuesta = servicio.FEXGetPARAM_MON(clsFexAuthRequest);
                         this.ixerrcode = oRespuesta.FEXErr.ErrCode;
                         this.strxerrmsg = oRespuesta.FEXErr.ErrMsg;
                         if (this.ixerrcode == 0)
@@ -20129,8 +21929,8 @@
                             this.ixMonedaItemCantidad = oRespuesta.FEXResultGet.Length;
                             value = this.xMonedaItemCantidad;
                             this.axMoneda = new xMoneda[(value - 1) + 1];
-                            int VB$t_i4$L1 = this.ixMonedaItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                            int VB_t_i4_L1 = this.ixMonedaItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                             {
                                 this.axMoneda[nContador].id = oRespuesta.FEXResultGet[nContador].Mon_Id;
                                 this.axMoneda[nContador].ds = oRespuesta.FEXResultGet[nContador].Mon_Ds;
@@ -20206,8 +22006,8 @@
                                 this.ixPtoVentaItemCantidad = oRespuesta.FEXResultGet.Length;
                                 value = this.xPtoVentaItemCantidad;
                                 this.axPtoVenta = new xPtoVenta[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.ixPtoVentaItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.ixPtoVentaItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.axPtoVenta[nContador].pvo_nro = oRespuesta.FEXResultGet[nContador].Pve_Nro;
                                     this.axPtoVenta[nContador].pvo_bloqueado = oRespuesta.FEXResultGet[nContador].Pve_Bloqueado;
@@ -20229,12 +22029,12 @@
                     }
                     return bResultado;
                 }
-                WSAFIPFE.xAFIP.ClsFEXAuthRequest autorizacion = new WSAFIPFE.xAFIP.ClsFEXAuthRequest();
+                WSAFIPFE.xAFIP.ClsFEXAuthRequest clsFexAuthRequest = new WSAFIPFE.xAFIP.ClsFEXAuthRequest();
                 try
                 {
-                    autorizacion.Cuit = Conversions.ToLong(this.cuit);
-                    autorizacion.Token = this.xtoken;
-                    autorizacion.Sign = this.xsign;
+                    clsFexAuthRequest.Cuit = Conversions.ToLong(this.cuit);
+                    clsFexAuthRequest.Token = this.xtoken;
+                    clsFexAuthRequest.Sign = this.xsign;
                 }
                 catch (Exception exception3)
                 {
@@ -20265,7 +22065,7 @@
                         {
                             servicio.Timeout = this.TimeOut;
                         }
-                        WSAFIPFE.xAFIP.FEXResponse_PtoVenta oRespuesta = servicio.FEXGetPARAM_PtoVenta(autorizacion);
+                        WSAFIPFE.xAFIP.FEXResponse_PtoVenta oRespuesta = servicio.FEXGetPARAM_PtoVenta(clsFexAuthRequest);
                         this.ixerrcode = oRespuesta.FEXErr.ErrCode;
                         this.strxerrmsg = oRespuesta.FEXErr.ErrMsg;
                         if (this.ixerrcode == 0)
@@ -20273,8 +22073,8 @@
                             this.ixPtoVentaItemCantidad = oRespuesta.FEXResultGet.Length;
                             value = this.xPtoVentaItemCantidad;
                             this.axPtoVenta = new xPtoVenta[(value - 1) + 1];
-                            int VB$t_i4$L1 = this.ixPtoVentaItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                            int VB_t_i4_L1 = this.ixPtoVentaItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                             {
                                 this.axPtoVenta[nContador].pvo_nro = oRespuesta.FEXResultGet[nContador].Pve_Nro;
                                 this.axPtoVenta[nContador].pvo_bloqueado = oRespuesta.FEXResultGet[nContador].Pve_Bloqueado;
@@ -20349,8 +22149,8 @@
                                 this.ixTipo_CbteItemCantidad = oRespuesta.FEXResultGet.Length;
                                 value = this.xTipo_CbteItemCantidad;
                                 this.axTipo_cbte = new xTipo_cbtes[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.ixTipo_CbteItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.ixTipo_CbteItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.axTipo_cbte[nContador].id = oRespuesta.FEXResultGet[nContador].Cbte_Id;
                                     this.axTipo_cbte[nContador].ds = oRespuesta.FEXResultGet[nContador].Cbte_Ds;
@@ -20373,12 +22173,12 @@
                     }
                     return bResultado;
                 }
-                WSAFIPFE.xAFIP.ClsFEXAuthRequest autorizacion = new WSAFIPFE.xAFIP.ClsFEXAuthRequest();
+                WSAFIPFE.xAFIP.ClsFEXAuthRequest clsFexAuthRequest = new WSAFIPFE.xAFIP.ClsFEXAuthRequest();
                 try
                 {
-                    autorizacion.Cuit = Conversions.ToLong(this.cuit);
-                    autorizacion.Token = this.xtoken;
-                    autorizacion.Sign = this.xsign;
+                    clsFexAuthRequest.Cuit = Conversions.ToLong(this.cuit);
+                    clsFexAuthRequest.Token = this.xtoken;
+                    clsFexAuthRequest.Sign = this.xsign;
                 }
                 catch (Exception exception3)
                 {
@@ -20409,7 +22209,7 @@
                         {
                             servicio.Timeout = this.TimeOut;
                         }
-                        WSAFIPFE.xAFIP.FEXResponse_Tipo_Cbte oRespuesta = servicio.FEXGetPARAM_Tipo_Cbte(autorizacion);
+                        WSAFIPFE.xAFIP.FEXResponse_Tipo_Cbte oRespuesta = servicio.FEXGetPARAM_Tipo_Cbte(clsFexAuthRequest);
                         this.ixerrcode = oRespuesta.FEXErr.ErrCode;
                         this.strxerrmsg = oRespuesta.FEXErr.ErrMsg;
                         if (this.ixerrcode == 0)
@@ -20417,8 +22217,8 @@
                             this.ixTipo_CbteItemCantidad = oRespuesta.FEXResultGet.Length;
                             value = this.xTipo_CbteItemCantidad;
                             this.axTipo_cbte = new xTipo_cbtes[(value - 1) + 1];
-                            int VB$t_i4$L1 = this.ixTipo_CbteItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                            int VB_t_i4_L1 = this.ixTipo_CbteItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                             {
                                 this.axTipo_cbte[nContador].id = oRespuesta.FEXResultGet[nContador].Cbte_Id;
                                 this.axTipo_cbte[nContador].ds = oRespuesta.FEXResultGet[nContador].Cbte_Ds;
@@ -20494,8 +22294,8 @@
                                 this.ixTipo_expoItemCantidad = oRespuesta.FEXResultGet.Length;
                                 value = this.xTipo_expoItemCantidad;
                                 this.axTipo_expo = new xTipo_expos[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.ixTipo_expoItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.ixTipo_expoItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.axTipo_expo[nContador].tex_id = Conversions.ToString((int) oRespuesta.FEXResultGet[nContador].Tex_Id);
                                     this.axTipo_expo[nContador].tex_ds = oRespuesta.FEXResultGet[nContador].Tex_Ds;
@@ -20518,12 +22318,12 @@
                     }
                     return bResultado;
                 }
-                WSAFIPFE.xAFIP.ClsFEXAuthRequest autorizacion = new WSAFIPFE.xAFIP.ClsFEXAuthRequest();
+                WSAFIPFE.xAFIP.ClsFEXAuthRequest clsFexAuthRequest = new WSAFIPFE.xAFIP.ClsFEXAuthRequest();
                 try
                 {
-                    autorizacion.Cuit = Conversions.ToLong(this.cuit);
-                    autorizacion.Token = this.xtoken;
-                    autorizacion.Sign = this.xsign;
+                    clsFexAuthRequest.Cuit = Conversions.ToLong(this.cuit);
+                    clsFexAuthRequest.Token = this.xtoken;
+                    clsFexAuthRequest.Sign = this.xsign;
                 }
                 catch (Exception exception3)
                 {
@@ -20550,7 +22350,7 @@
                             servicio.Proxy = pr;
                         }
                         servicio.Url = this.xDireccionServicioURL;
-                        WSAFIPFE.xAFIP.FEXResponse_Tex oRespuesta = servicio.FEXGetPARAM_Tipo_Expo(autorizacion);
+                        WSAFIPFE.xAFIP.FEXResponse_Tex oRespuesta = servicio.FEXGetPARAM_Tipo_Expo(clsFexAuthRequest);
                         if (this.TimeOut != 0)
                         {
                             servicio.Timeout = this.TimeOut;
@@ -20562,8 +22362,8 @@
                             this.ixTipo_expoItemCantidad = oRespuesta.FEXResultGet.Length;
                             value = this.xTipo_expoItemCantidad;
                             this.axTipo_expo = new xTipo_expos[(value - 1) + 1];
-                            int VB$t_i4$L1 = this.ixTipo_expoItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                            int VB_t_i4_L1 = this.ixTipo_expoItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                             {
                                 this.axTipo_expo[nContador].tex_id = Conversions.ToString((int) oRespuesta.FEXResultGet[nContador].Tex_Id);
                                 this.axTipo_expo[nContador].tex_ds = oRespuesta.FEXResultGet[nContador].Tex_Ds;
@@ -20639,8 +22439,8 @@
                                 this.ixUMedItemCantidad = oRespuesta.FEXResultGet.Length;
                                 value = this.xUMedItemCantidad;
                                 this.axUMed = new xUMed[(value - 1) + 1];
-                                int VB$t_i4$L0 = this.ixUMedItemCantidad - 1;
-                                for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                                int VB_t_i4_L0 = this.ixUMedItemCantidad - 1;
+                                for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                                 {
                                     this.axUMed[nContador].id = oRespuesta.FEXResultGet[nContador].Umed_Id;
                                     this.axUMed[nContador].ds = oRespuesta.FEXResultGet[nContador].Umed_Ds;
@@ -20663,12 +22463,12 @@
                     }
                     return bResultado;
                 }
-                WSAFIPFE.xAFIP.ClsFEXAuthRequest autorizacion = new WSAFIPFE.xAFIP.ClsFEXAuthRequest();
+                WSAFIPFE.xAFIP.ClsFEXAuthRequest clsFexAuthRequest = new WSAFIPFE.xAFIP.ClsFEXAuthRequest();
                 try
                 {
-                    autorizacion.Cuit = Conversions.ToLong(this.cuit);
-                    autorizacion.Token = this.xtoken;
-                    autorizacion.Sign = this.xsign;
+                    clsFexAuthRequest.Cuit = Conversions.ToLong(this.cuit);
+                    clsFexAuthRequest.Token = this.xtoken;
+                    clsFexAuthRequest.Sign = this.xsign;
                 }
                 catch (Exception exception3)
                 {
@@ -20699,7 +22499,7 @@
                         {
                             servicio.Timeout = this.TimeOut;
                         }
-                        WSAFIPFE.xAFIP.FEXResponse_Umed oRespuesta = servicio.FEXGetPARAM_UMed(autorizacion);
+                        WSAFIPFE.xAFIP.FEXResponse_Umed oRespuesta = servicio.FEXGetPARAM_UMed(clsFexAuthRequest);
                         this.ixerrcode = oRespuesta.FEXErr.ErrCode;
                         this.strxerrmsg = oRespuesta.FEXErr.ErrMsg;
                         if (this.ixerrcode == 0)
@@ -20707,8 +22507,8 @@
                             this.ixUMedItemCantidad = oRespuesta.FEXResultGet.Length;
                             value = this.xUMedItemCantidad;
                             this.axUMed = new xUMed[(value - 1) + 1];
-                            int VB$t_i4$L1 = this.ixUMedItemCantidad - 1;
-                            for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                            int VB_t_i4_L1 = this.ixUMedItemCantidad - 1;
+                            for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                             {
                                 this.axUMed[nContador].id = oRespuesta.FEXResultGet[nContador].Umed_Id;
                                 this.axUMed[nContador].ds = oRespuesta.FEXResultGet[nContador].Umed_Ds;
@@ -20879,8 +22679,8 @@
                         oPedido.Punto_vta = (short) nPuntoVenta;
                         oPedido.Tipo_cbte = (short) nTipoComprobante;
                         oPedido.Tipo_expo = (short) this.xtipo_expo;
-                        int VB$t_i4$L0 = this.xItemCantidad - 1;
-                        for (nContador = 0; nContador <= VB$t_i4$L0; nContador++)
+                        int VB_t_i4_L0 = this.xItemCantidad - 1;
+                        for (nContador = 0; nContador <= VB_t_i4_L0; nContador++)
                         {
                             WSAFIPFE.xAFIPTest.Item oPedidoitem = new WSAFIPFE.xAFIPTest.Item();
                             this.xIndiceItem = nContador;
@@ -20893,8 +22693,8 @@
                             opedidoitems[nContador] = oPedidoitem;
                         }
                         oPedido.Items = opedidoitems;
-                        int VB$t_i4$L1 = this.xPermisoCantidad - 1;
-                        for (nContador = 0; nContador <= VB$t_i4$L1; nContador++)
+                        int VB_t_i4_L1 = this.xPermisoCantidad - 1;
+                        for (nContador = 0; nContador <= VB_t_i4_L1; nContador++)
                         {
                             this.xIndiceItem = nContador;
                             WSAFIPFE.xAFIPTest.Permiso oPedidoPermiso = new WSAFIPFE.xAFIPTest.Permiso();
@@ -20910,8 +22710,8 @@
                         {
                             oPedido.Permisos = oPedidoPermisos;
                         }
-                        int VB$t_i4$L2 = this.xCmps_asocCantidad - 1;
-                        for (nContador = 0; nContador <= VB$t_i4$L2; nContador++)
+                        int VB_t_i4_L2 = this.xCmps_asocCantidad - 1;
+                        for (nContador = 0; nContador <= VB_t_i4_L2; nContador++)
                         {
                             this.xIndiceItem = nContador;
                             WSAFIPFE.xAFIPTest.Cmp_asoc oPedidoCmps_asoc = new WSAFIPFE.xAFIPTest.Cmp_asoc();
@@ -21060,8 +22860,8 @@
                     oPedido.Punto_vta = (short) nPuntoVenta;
                     oPedido.Tipo_cbte = (short) nTipoComprobante;
                     oPedido.Tipo_expo = (short) this.xtipo_expo;
-                    int VB$t_i4$L3 = this.xItemCantidad - 1;
-                    for (nContador = 0; nContador <= VB$t_i4$L3; nContador++)
+                    int VB_t_i4_L3 = this.xItemCantidad - 1;
+                    for (nContador = 0; nContador <= VB_t_i4_L3; nContador++)
                     {
                         WSAFIPFE.xAFIP.Item oPedidoitem = new WSAFIPFE.xAFIP.Item();
                         this.xIndiceItem = nContador;
@@ -21074,8 +22874,8 @@
                         opedidoitems[nContador] = oPedidoitem;
                     }
                     oPedido.Items = opedidoitems;
-                    int VB$t_i4$L4 = this.xPermisoCantidad - 1;
-                    for (nContador = 0; nContador <= VB$t_i4$L4; nContador++)
+                    int VB_t_i4_L4 = this.xPermisoCantidad - 1;
+                    for (nContador = 0; nContador <= VB_t_i4_L4; nContador++)
                     {
                         this.xIndiceItem = nContador;
                         WSAFIPFE.xAFIP.Permiso oPedidoPermiso = new WSAFIPFE.xAFIP.Permiso();
@@ -21091,8 +22891,8 @@
                     {
                         oPedido.Permisos = oPedidoPermisos;
                     }
-                    int VB$t_i4$L5 = this.xCmps_asocCantidad - 1;
-                    for (nContador = 0; nContador <= VB$t_i4$L5; nContador++)
+                    int VB_t_i4_L5 = this.xCmps_asocCantidad - 1;
+                    for (nContador = 0; nContador <= VB_t_i4_L5; nContador++)
                     {
                         this.xIndiceItem = nContador;
                         WSAFIPFE.xAFIP.Cmp_asoc oPedidoCmps_asoc = new WSAFIPFE.xAFIP.Cmp_asoc();
@@ -26994,22 +28794,7 @@
             }
         }
 
-        public bool this[DateTime dFecha]
-        {
-            get
-            {
-                if (this.Licencia == null)
-                {
-                    return false;
-                }
-                if (DateTime.Compare(dFecha, this.Licencia.Hasta) > 0)
-                {
-                    return false;
-                }
-                return true;
-            }
-        }
-
+        
         public DateTime LicenciaHasta
         {
             get
@@ -28380,7 +30165,7 @@
         }
 
         [DispId(0x17)]
-        public string WSAFIPFE.Factura._Factura.ArchivoXMLEnviado
+        string WSAFIPFE._Factura.ArchivoXMLEnviado
         {
             get
             {
@@ -28393,7 +30178,7 @@
         }
 
         [DispId(0x15)]
-        public string WSAFIPFE.Factura._Factura.ArchivoXMLError
+        string WSAFIPFE._Factura.ArchivoXMLError
         {
             get
             {
@@ -28402,7 +30187,7 @@
         }
 
         [DispId(0x16)]
-        public string WSAFIPFE.Factura._Factura.ArchivoXMLRecibido
+        string WSAFIPFE._Factura.ArchivoXMLRecibido
         {
             get
             {
@@ -28415,7 +30200,7 @@
         }
 
         [DispId(0x1d7)]
-        public string WSAFIPFE.Factura._Factura.Autenticidad
+        string WSAFIPFE._Factura.Autenticidad
         {
             get
             {
@@ -28427,7 +30212,7 @@
         }
 
         [DispId(0xd6)]
-        public int WSAFIPFE.Factura._Factura.bcbte_nro
+        int WSAFIPFE._Factura.bcbte_nro
         {
             get
             {
@@ -28440,7 +30225,7 @@
         }
 
         [DispId(0x1dd)]
-        public string WSAFIPFE.Factura._Factura.bDireccionServicio
+        string WSAFIPFE._Factura.bDireccionServicio
         {
             get
             {
@@ -28453,7 +30238,7 @@
         }
 
         [DispId(0x1de)]
-        public string WSAFIPFE.Factura._Factura.bDireccionServicioURL
+        string WSAFIPFE._Factura.bDireccionServicioURL
         {
             get
             {
@@ -28466,7 +30251,7 @@
         }
 
         [DispId(130)]
-        public int WSAFIPFE.Factura._Factura.berrcode
+        int WSAFIPFE._Factura.berrcode
         {
             get
             {
@@ -28475,7 +30260,7 @@
         }
 
         [DispId(0x84)]
-        public string WSAFIPFE.Factura._Factura.berrcodeST
+        string WSAFIPFE._Factura.berrcodeST
         {
             get
             {
@@ -28484,7 +30269,7 @@
         }
 
         [DispId(0x7d)]
-        public string WSAFIPFE.Factura._Factura.berrmsg
+        string WSAFIPFE._Factura.berrmsg
         {
             get
             {
@@ -28493,7 +30278,7 @@
         }
 
         [DispId(0x3b)]
-        public int WSAFIPFE.Factura._Factura.bEventCode
+        int WSAFIPFE._Factura.bEventCode
         {
             get
             {
@@ -28502,7 +30287,7 @@
         }
 
         [DispId(0x41)]
-        public string WSAFIPFE.Factura._Factura.bEventMsg
+        string WSAFIPFE._Factura.bEventMsg
         {
             get
             {
@@ -28511,7 +30296,7 @@
         }
 
         [DispId(230)]
-        public string WSAFIPFE.Factura._Factura.bFecha_cae
+        string WSAFIPFE._Factura.bFecha_cae
         {
             get
             {
@@ -28524,7 +30309,7 @@
         }
 
         [DispId(0xe3)]
-        public string WSAFIPFE.Factura._Factura.bFecha_cbte
+        string WSAFIPFE._Factura.bFecha_cbte
         {
             get
             {
@@ -28537,7 +30322,7 @@
         }
 
         [DispId(0xe5)]
-        public string WSAFIPFE.Factura._Factura.bFecha_cbte_cae
+        string WSAFIPFE._Factura.bFecha_cbte_cae
         {
             get
             {
@@ -28550,7 +30335,7 @@
         }
 
         [DispId(0xe4)]
-        public string WSAFIPFE.Factura._Factura.bFecha_cbte_orig
+        string WSAFIPFE._Factura.bFecha_cbte_orig
         {
             get
             {
@@ -28563,7 +30348,7 @@
         }
 
         [DispId(0xdf)]
-        public double WSAFIPFE.Factura._Factura.bImp_iibb
+        double WSAFIPFE._Factura.bImp_iibb
         {
             get
             {
@@ -28576,7 +30361,7 @@
         }
 
         [DispId(0xe0)]
-        public double WSAFIPFE.Factura._Factura.bImp_internos
+        double WSAFIPFE._Factura.bImp_internos
         {
             get
             {
@@ -28589,7 +30374,7 @@
         }
 
         [DispId(0xe2)]
-        public double WSAFIPFE.Factura._Factura.bImp_moneda_ctz
+        double WSAFIPFE._Factura.bImp_moneda_ctz
         {
             get
             {
@@ -28602,7 +30387,7 @@
         }
 
         [DispId(0xe1)]
-        public string WSAFIPFE.Factura._Factura.bImp_moneda_id
+        string WSAFIPFE._Factura.bImp_moneda_id
         {
             get
             {
@@ -28615,7 +30400,7 @@
         }
 
         [DispId(0xd9)]
-        public double WSAFIPFE.Factura._Factura.bImp_neto
+        double WSAFIPFE._Factura.bImp_neto
         {
             get
             {
@@ -28628,7 +30413,7 @@
         }
 
         [DispId(220)]
-        public double WSAFIPFE.Factura._Factura.bimp_op_ex
+        double WSAFIPFE._Factura.bimp_op_ex
         {
             get
             {
@@ -28641,7 +30426,7 @@
         }
 
         [DispId(0xdd)]
-        public double WSAFIPFE.Factura._Factura.bImp_perc
+        double WSAFIPFE._Factura.bImp_perc
         {
             get
             {
@@ -28654,7 +30439,7 @@
         }
 
         [DispId(0xde)]
-        public double WSAFIPFE.Factura._Factura.bImp_perc_mun
+        double WSAFIPFE._Factura.bImp_perc_mun
         {
             get
             {
@@ -28667,7 +30452,7 @@
         }
 
         [DispId(0xd7)]
-        public double WSAFIPFE.Factura._Factura.bImp_total
+        double WSAFIPFE._Factura.bImp_total
         {
             get
             {
@@ -28680,7 +30465,7 @@
         }
 
         [DispId(0xd8)]
-        public double WSAFIPFE.Factura._Factura.bImp_total_conc
+        double WSAFIPFE._Factura.bImp_total_conc
         {
             get
             {
@@ -28693,7 +30478,7 @@
         }
 
         [DispId(0xda)]
-        public double WSAFIPFE.Factura._Factura.bimpto_liq
+        double WSAFIPFE._Factura.bimpto_liq
         {
             get
             {
@@ -28706,7 +30491,7 @@
         }
 
         [DispId(0xdb)]
-        public double WSAFIPFE.Factura._Factura.bimpto_liq_rni
+        double WSAFIPFE._Factura.bimpto_liq_rni
         {
             get
             {
@@ -28719,7 +30504,7 @@
         }
 
         [DispId(0x9d)]
-        public int WSAFIPFE.Factura._Factura.bIndiceItem
+        int WSAFIPFE._Factura.bIndiceItem
         {
             get
             {
@@ -28732,7 +30517,7 @@
         }
 
         [DispId(0xa4)]
-        public int WSAFIPFE.Factura._Factura.bItemCantidad
+        int WSAFIPFE._Factura.bItemCantidad
         {
             get
             {
@@ -28746,7 +30531,7 @@
         }
 
         [DispId(0xc4)]
-        public double WSAFIPFE.Factura._Factura.bITEMimp_bonif
+        double WSAFIPFE._Factura.bITEMimp_bonif
         {
             get
             {
@@ -28759,7 +30544,7 @@
         }
 
         [DispId(0xc5)]
-        public double WSAFIPFE.Factura._Factura.bITEMimp_total
+        double WSAFIPFE._Factura.bITEMimp_total
         {
             get
             {
@@ -28772,7 +30557,7 @@
         }
 
         [DispId(0xd0)]
-        public int WSAFIPFE.Factura._Factura.bITEMIva_id
+        int WSAFIPFE._Factura.bITEMIva_id
         {
             get
             {
@@ -28785,7 +30570,7 @@
         }
 
         [DispId(190)]
-        public string WSAFIPFE.Factura._Factura.bITEMpro_codigo_ncm
+        string WSAFIPFE._Factura.bITEMpro_codigo_ncm
         {
             get
             {
@@ -28798,7 +30583,7 @@
         }
 
         [DispId(0xbf)]
-        public string WSAFIPFE.Factura._Factura.bITEMpro_codigo_sec
+        string WSAFIPFE._Factura.bITEMpro_codigo_sec
         {
             get
             {
@@ -28811,7 +30596,7 @@
         }
 
         [DispId(0xc0)]
-        public string WSAFIPFE.Factura._Factura.bITEMpro_ds
+        string WSAFIPFE._Factura.bITEMpro_ds
         {
             get
             {
@@ -28824,7 +30609,7 @@
         }
 
         [DispId(0xc3)]
-        public double WSAFIPFE.Factura._Factura.bITEMpro_precio_uni
+        double WSAFIPFE._Factura.bITEMpro_precio_uni
         {
             get
             {
@@ -28837,7 +30622,7 @@
         }
 
         [DispId(0xc1)]
-        public double WSAFIPFE.Factura._Factura.bITEMpro_qty
+        double WSAFIPFE._Factura.bITEMpro_qty
         {
             get
             {
@@ -28850,7 +30635,7 @@
         }
 
         [DispId(0xc2)]
-        public int WSAFIPFE.Factura._Factura.bITEMpro_umed
+        int WSAFIPFE._Factura.bITEMpro_umed
         {
             get
             {
@@ -28863,7 +30648,7 @@
         }
 
         [DispId(0x75)]
-        public bool WSAFIPFE.Factura._Factura.BLicenciaValida
+        bool WSAFIPFE._Factura.BLicenciaValida
         {
             get
             {
@@ -28872,7 +30657,7 @@
         }
 
         [DispId(0x1e1)]
-        public string WSAFIPFE.Factura._Factura.bMonedaDS
+        string WSAFIPFE._Factura.bMonedaDS
         {
             get
             {
@@ -28885,7 +30670,7 @@
         }
 
         [DispId(480)]
-        public string WSAFIPFE.Factura._Factura.bMonedaId
+        string WSAFIPFE._Factura.bMonedaId
         {
             get
             {
@@ -28898,7 +30683,7 @@
         }
 
         [DispId(0x19)]
-        public int WSAFIPFE.Factura._Factura.bMonedaItemCantidad
+        int WSAFIPFE._Factura.bMonedaItemCantidad
         {
             get
             {
@@ -28907,7 +30692,7 @@
         }
 
         [DispId(0x1e2)]
-        public string WSAFIPFE.Factura._Factura.bMonedaVig_desde
+        string WSAFIPFE._Factura.bMonedaVig_desde
         {
             get
             {
@@ -28920,7 +30705,7 @@
         }
 
         [DispId(0x1e3)]
-        public string WSAFIPFE.Factura._Factura.bMonedaVig_hasta
+        string WSAFIPFE._Factura.bMonedaVig_hasta
         {
             get
             {
@@ -28933,7 +30718,7 @@
         }
 
         [DispId(0x1fb)]
-        public string WSAFIPFE.Factura._Factura.bNombreServicio
+        string WSAFIPFE._Factura.bNombreServicio
         {
             get
             {
@@ -28946,7 +30731,7 @@
         }
 
         [DispId(210)]
-        public string WSAFIPFE.Factura._Factura.bNro_doc
+        string WSAFIPFE._Factura.bNro_doc
         {
             get
             {
@@ -28963,7 +30748,7 @@
         }
 
         [DispId(0x33)]
-        public int WSAFIPFE.Factura._Factura.bProductoItemCantidad
+        int WSAFIPFE._Factura.bProductoItemCantidad
         {
             get
             {
@@ -28972,7 +30757,7 @@
         }
 
         [DispId(620)]
-        public string WSAFIPFE.Factura._Factura.bProductoNCM_codigo
+        string WSAFIPFE._Factura.bProductoNCM_codigo
         {
             get
             {
@@ -28985,7 +30770,7 @@
         }
 
         [DispId(0x26d)]
-        public string WSAFIPFE.Factura._Factura.bProductoNCM_ds
+        string WSAFIPFE._Factura.bProductoNCM_ds
         {
             get
             {
@@ -28998,7 +30783,7 @@
         }
 
         [DispId(0x26e)]
-        public string WSAFIPFE.Factura._Factura.bProductoNCM_nota
+        string WSAFIPFE._Factura.bProductoNCM_nota
         {
             get
             {
@@ -29011,7 +30796,7 @@
         }
 
         [DispId(0x26f)]
-        public string WSAFIPFE.Factura._Factura.bProductoNCM_Vig_desde
+        string WSAFIPFE._Factura.bProductoNCM_Vig_desde
         {
             get
             {
@@ -29024,7 +30809,7 @@
         }
 
         [DispId(0x270)]
-        public string WSAFIPFE.Factura._Factura.bProductoNCM_Vig_Hasta
+        string WSAFIPFE._Factura.bProductoNCM_Vig_Hasta
         {
             get
             {
@@ -29037,7 +30822,7 @@
         }
 
         [DispId(0xd5)]
-        public int WSAFIPFE.Factura._Factura.bPunto_vta
+        int WSAFIPFE._Factura.bPunto_vta
         {
             get
             {
@@ -29050,7 +30835,7 @@
         }
 
         [DispId(70)]
-        public string WSAFIPFE.Factura._Factura.bRespuestaCAE
+        string WSAFIPFE._Factura.bRespuestaCAE
         {
             get
             {
@@ -29059,7 +30844,7 @@
         }
 
         [DispId(0x45)]
-        public int WSAFIPFE.Factura._Factura.bRespuestaCbte_numero
+        int WSAFIPFE._Factura.bRespuestaCbte_numero
         {
             get
             {
@@ -29068,7 +30853,7 @@
         }
 
         [DispId(0x17e)]
-        public string WSAFIPFE.Factura._Factura.BRespuestaDummyAuthServer
+        string WSAFIPFE._Factura.BRespuestaDummyAuthServer
         {
             get
             {
@@ -29077,7 +30862,7 @@
         }
 
         [DispId(0x17f)]
-        public string WSAFIPFE.Factura._Factura.BRespuestaDummyDbServer
+        string WSAFIPFE._Factura.BRespuestaDummyDbServer
         {
             get
             {
@@ -29086,7 +30871,7 @@
         }
 
         [DispId(0x47)]
-        public string WSAFIPFE.Factura._Factura.bRespuestaFch_cbte
+        string WSAFIPFE._Factura.bRespuestaFch_cbte
         {
             get
             {
@@ -29095,7 +30880,7 @@
         }
 
         [DispId(0x3f)]
-        public string WSAFIPFE.Factura._Factura.bRespuestaFch_venc_cae
+        string WSAFIPFE._Factura.bRespuestaFch_venc_cae
         {
             get
             {
@@ -29104,7 +30889,7 @@
         }
 
         [DispId(0x44)]
-        public string WSAFIPFE.Factura._Factura.bRespuestaId
+        string WSAFIPFE._Factura.bRespuestaId
         {
             get
             {
@@ -29113,7 +30898,7 @@
         }
 
         [DispId(0x4a)]
-        public string WSAFIPFE.Factura._Factura.bRespuestaOBS
+        string WSAFIPFE._Factura.bRespuestaOBS
         {
             get
             {
@@ -29122,7 +30907,7 @@
         }
 
         [DispId(0x49)]
-        public string WSAFIPFE.Factura._Factura.bRespuestaReproceso
+        string WSAFIPFE._Factura.bRespuestaReproceso
         {
             get
             {
@@ -29131,7 +30916,7 @@
         }
 
         [DispId(0x48)]
-        public string WSAFIPFE.Factura._Factura.bRespuestaResultado
+        string WSAFIPFE._Factura.bRespuestaResultado
         {
             get
             {
@@ -29140,7 +30925,7 @@
         }
 
         [DispId(0x3e)]
-        public string WSAFIPFE.Factura._Factura.bRespuestasCUIT
+        string WSAFIPFE._Factura.bRespuestasCUIT
         {
             get
             {
@@ -29149,7 +30934,7 @@
         }
 
         [DispId(0x17d)]
-        public string WSAFIPFE.Factura._Factura.BRespuetaDummyAppServer
+        string WSAFIPFE._Factura.BRespuetaDummyAppServer
         {
             get
             {
@@ -29158,7 +30943,7 @@
         }
 
         [DispId(0x16c)]
-        public string WSAFIPFE.Factura._Factura.bsign
+        string WSAFIPFE._Factura.bsign
         {
             get
             {
@@ -29171,7 +30956,7 @@
         }
 
         [DispId(0x66)]
-        public bool WSAFIPFE.Factura._Factura.bTicketEsValido
+        bool WSAFIPFE._Factura.bTicketEsValido
         {
             get
             {
@@ -29184,7 +30969,7 @@
         }
 
         [DispId(0x143)]
-        public DateTime WSAFIPFE.Factura._Factura.bTicketHora
+        DateTime WSAFIPFE._Factura.bTicketHora
         {
             get
             {
@@ -29193,7 +30978,7 @@
         }
 
         [DispId(0x14d)]
-        public DateTime WSAFIPFE.Factura._Factura.bTicketHoraVencimiento
+        DateTime WSAFIPFE._Factura.bTicketHoraVencimiento
         {
             get
             {
@@ -29202,7 +30987,7 @@
         }
 
         [DispId(0x157)]
-        public bool WSAFIPFE.Factura._Factura.BTicketValido
+        bool WSAFIPFE._Factura.BTicketValido
         {
             get
             {
@@ -29211,7 +30996,7 @@
         }
 
         [DispId(0xd4)]
-        public int WSAFIPFE.Factura._Factura.bTipo_cbte
+        int WSAFIPFE._Factura.bTipo_cbte
         {
             get
             {
@@ -29224,7 +31009,7 @@
         }
 
         [DispId(0x221)]
-        public string WSAFIPFE.Factura._Factura.bTipo_cbteDS
+        string WSAFIPFE._Factura.bTipo_cbteDS
         {
             get
             {
@@ -29237,7 +31022,7 @@
         }
 
         [DispId(0x220)]
-        public int WSAFIPFE.Factura._Factura.bTipo_cbteId
+        int WSAFIPFE._Factura.bTipo_cbteId
         {
             get
             {
@@ -29250,7 +31035,7 @@
         }
 
         [DispId(0x22)]
-        public int WSAFIPFE.Factura._Factura.bTipo_CbteItemCantidad
+        int WSAFIPFE._Factura.bTipo_CbteItemCantidad
         {
             get
             {
@@ -29259,7 +31044,7 @@
         }
 
         [DispId(0x222)]
-        public string WSAFIPFE.Factura._Factura.bTipo_cbteVig_desde
+        string WSAFIPFE._Factura.bTipo_cbteVig_desde
         {
             get
             {
@@ -29272,7 +31057,7 @@
         }
 
         [DispId(0x223)]
-        public string WSAFIPFE.Factura._Factura.bTipo_cbteVig_hasta
+        string WSAFIPFE._Factura.bTipo_cbteVig_hasta
         {
             get
             {
@@ -29285,7 +31070,7 @@
         }
 
         [DispId(0x21d)]
-        public string WSAFIPFE.Factura._Factura.bTipo_cpteDS
+        string WSAFIPFE._Factura.bTipo_cpteDS
         {
             get
             {
@@ -29298,7 +31083,7 @@
         }
 
         [DispId(540)]
-        public int WSAFIPFE.Factura._Factura.bTipo_cpteId
+        int WSAFIPFE._Factura.bTipo_cpteId
         {
             get
             {
@@ -29311,7 +31096,7 @@
         }
 
         [DispId(0x21e)]
-        public string WSAFIPFE.Factura._Factura.bTipo_cpteVig_desde
+        string WSAFIPFE._Factura.bTipo_cpteVig_desde
         {
             get
             {
@@ -29324,7 +31109,7 @@
         }
 
         [DispId(0x21f)]
-        public string WSAFIPFE.Factura._Factura.bTipo_cpteVig_hasta
+        string WSAFIPFE._Factura.bTipo_cpteVig_hasta
         {
             get
             {
@@ -29337,7 +31122,7 @@
         }
 
         [DispId(0xd1)]
-        public int WSAFIPFE.Factura._Factura.bTipo_Doc
+        int WSAFIPFE._Factura.bTipo_Doc
         {
             get
             {
@@ -29350,7 +31135,7 @@
         }
 
         [DispId(0x20d)]
-        public string WSAFIPFE.Factura._Factura.bTipoDocDS
+        string WSAFIPFE._Factura.bTipoDocDS
         {
             get
             {
@@ -29363,7 +31148,7 @@
         }
 
         [DispId(0x20c)]
-        public int WSAFIPFE.Factura._Factura.bTipoDocID
+        int WSAFIPFE._Factura.bTipoDocID
         {
             get
             {
@@ -29376,7 +31161,7 @@
         }
 
         [DispId(0x38)]
-        public int WSAFIPFE.Factura._Factura.bTipoDocItemCantidad
+        int WSAFIPFE._Factura.bTipoDocItemCantidad
         {
             get
             {
@@ -29385,7 +31170,7 @@
         }
 
         [DispId(0x20e)]
-        public string WSAFIPFE.Factura._Factura.bTipoDocVig_desde
+        string WSAFIPFE._Factura.bTipoDocVig_desde
         {
             get
             {
@@ -29398,7 +31183,7 @@
         }
 
         [DispId(0x20f)]
-        public string WSAFIPFE.Factura._Factura.bTipoDocVig_hasta
+        string WSAFIPFE._Factura.bTipoDocVig_hasta
         {
             get
             {
@@ -29411,7 +31196,7 @@
         }
 
         [DispId(0x215)]
-        public string WSAFIPFE.Factura._Factura.bTipoIvaDS
+        string WSAFIPFE._Factura.bTipoIvaDS
         {
             get
             {
@@ -29424,7 +31209,7 @@
         }
 
         [DispId(0x214)]
-        public int WSAFIPFE.Factura._Factura.bTipoIvaId
+        int WSAFIPFE._Factura.bTipoIvaId
         {
             get
             {
@@ -29437,7 +31222,7 @@
         }
 
         [DispId(0x34)]
-        public int WSAFIPFE.Factura._Factura.bTipoIvaItemCantidad
+        int WSAFIPFE._Factura.bTipoIvaItemCantidad
         {
             get
             {
@@ -29446,7 +31231,7 @@
         }
 
         [DispId(0x216)]
-        public string WSAFIPFE.Factura._Factura.bTipoIvaVig_desde
+        string WSAFIPFE._Factura.bTipoIvaVig_desde
         {
             get
             {
@@ -29459,7 +31244,7 @@
         }
 
         [DispId(0x217)]
-        public string WSAFIPFE.Factura._Factura.bTipoIvaVig_hasta
+        string WSAFIPFE._Factura.bTipoIvaVig_hasta
         {
             get
             {
@@ -29472,7 +31257,7 @@
         }
 
         [DispId(0x162)]
-        public string WSAFIPFE.Factura._Factura.btoken
+        string WSAFIPFE._Factura.btoken
         {
             get
             {
@@ -29485,7 +31270,7 @@
         }
 
         [DispId(0x205)]
-        public string WSAFIPFE.Factura._Factura.bUMedDS
+        string WSAFIPFE._Factura.bUMedDS
         {
             get
             {
@@ -29498,7 +31283,7 @@
         }
 
         [DispId(0x204)]
-        public int WSAFIPFE.Factura._Factura.bUMedId
+        int WSAFIPFE._Factura.bUMedId
         {
             get
             {
@@ -29511,7 +31296,7 @@
         }
 
         [DispId(0x36)]
-        public int WSAFIPFE.Factura._Factura.bUMedItemCantidad
+        int WSAFIPFE._Factura.bUMedItemCantidad
         {
             get
             {
@@ -29520,7 +31305,7 @@
         }
 
         [DispId(0x206)]
-        public string WSAFIPFE.Factura._Factura.bUMedVig_desde
+        string WSAFIPFE._Factura.bUMedVig_desde
         {
             get
             {
@@ -29533,7 +31318,7 @@
         }
 
         [DispId(0x207)]
-        public string WSAFIPFE.Factura._Factura.bUMedVig_hasta
+        string WSAFIPFE._Factura.bUMedVig_hasta
         {
             get
             {
@@ -29546,7 +31331,7 @@
         }
 
         [DispId(0xd3)]
-        public int WSAFIPFE.Factura._Factura.bZona
+        int WSAFIPFE._Factura.bZona
         {
             get
             {
@@ -29559,7 +31344,7 @@
         }
 
         [DispId(0x201)]
-        public string WSAFIPFE.Factura._Factura.bZonaDS
+        string WSAFIPFE._Factura.bZonaDS
         {
             get
             {
@@ -29572,7 +31357,7 @@
         }
 
         [DispId(0x200)]
-        public int WSAFIPFE.Factura._Factura.bZonaId
+        int WSAFIPFE._Factura.bZonaId
         {
             get
             {
@@ -29585,7 +31370,7 @@
         }
 
         [DispId(0x3a)]
-        public int WSAFIPFE.Factura._Factura.bZonaItemCantidad
+        int WSAFIPFE._Factura.bZonaItemCantidad
         {
             get
             {
@@ -29594,7 +31379,7 @@
         }
 
         [DispId(0x202)]
-        public string WSAFIPFE.Factura._Factura.bZonaVig_desde
+        string WSAFIPFE._Factura.bZonaVig_desde
         {
             get
             {
@@ -29607,7 +31392,7 @@
         }
 
         [DispId(0x203)]
-        public string WSAFIPFE.Factura._Factura.bZonaVig_hasta
+        string WSAFIPFE._Factura.bZonaVig_hasta
         {
             get
             {
@@ -29620,7 +31405,7 @@
         }
 
         [DispId(0x160)]
-        public string WSAFIPFE.Factura._Factura.cuit
+        string WSAFIPFE._Factura.cuit
         {
             get
             {
@@ -29629,7 +31414,7 @@
         }
 
         [DispId(0x10a)]
-        public int WSAFIPFE.Factura._Factura.dCantidadTotal
+        int WSAFIPFE._Factura.dCantidadTotal
         {
             get
             {
@@ -29642,7 +31427,7 @@
         }
 
         [DispId(0x106)]
-        public string WSAFIPFE.Factura._Factura.dCodigo
+        string WSAFIPFE._Factura.dCodigo
         {
             get
             {
@@ -29655,7 +31440,7 @@
         }
 
         [DispId(0x105)]
-        public string WSAFIPFE.Factura._Factura.dCuitATA
+        string WSAFIPFE._Factura.dCuitATA
         {
             get
             {
@@ -29668,7 +31453,7 @@
         }
 
         [DispId(0x102)]
-        public string WSAFIPFE.Factura._Factura.dCuitDeclarante
+        string WSAFIPFE._Factura.dCuitDeclarante
         {
             get
             {
@@ -29681,7 +31466,7 @@
         }
 
         [DispId(260)]
-        public string WSAFIPFE.Factura._Factura.dCuitIE
+        string WSAFIPFE._Factura.dCuitIE
         {
             get
             {
@@ -29694,7 +31479,7 @@
         }
 
         [DispId(0x103)]
-        public string WSAFIPFE.Factura._Factura.dCuitPSad
+        string WSAFIPFE._Factura.dCuitPSad
         {
             get
             {
@@ -29707,7 +31492,7 @@
         }
 
         [DispId(0xb1)]
-        public int WSAFIPFE.Factura._Factura.dFamiliaCantidad
+        int WSAFIPFE._Factura.dFamiliaCantidad
         {
             get
             {
@@ -29720,7 +31505,7 @@
         }
 
         [DispId(0xb0)]
-        public string WSAFIPFE.Factura._Factura.dFamiliaCodigo
+        string WSAFIPFE._Factura.dFamiliaCodigo
         {
             get
             {
@@ -29733,7 +31518,7 @@
         }
 
         [DispId(0xa6)]
-        public int WSAFIPFE.Factura._Factura.dFamiliaItemCantidad
+        int WSAFIPFE._Factura.dFamiliaItemCantidad
         {
             get
             {
@@ -29747,7 +31532,7 @@
         }
 
         [DispId(0x100)]
-        public DateTime WSAFIPFE.Factura._Factura.dFechaHoraAcept
+        DateTime WSAFIPFE._Factura.dFechaHoraAcept
         {
             get
             {
@@ -29760,7 +31545,7 @@
         }
 
         [DispId(0x101)]
-        public string WSAFIPFE.Factura._Factura.dFechaHoraAceptS
+        string WSAFIPFE._Factura.dFechaHoraAceptS
         {
             get
             {
@@ -29780,7 +31565,7 @@
         }
 
         [DispId(0x109)]
-        public string WSAFIPFE.Factura._Factura.dHashing
+        string WSAFIPFE._Factura.dHashing
         {
             get
             {
@@ -29793,7 +31578,7 @@
         }
 
         [DispId(0xa1)]
-        public int WSAFIPFE.Factura._Factura.dIndiceItem
+        int WSAFIPFE._Factura.dIndiceItem
         {
             get
             {
@@ -29806,7 +31591,7 @@
         }
 
         [DispId(0x1d9)]
-        public string WSAFIPFE.Factura._Factura.DireccionServicio
+        string WSAFIPFE._Factura.DireccionServicio
         {
             get
             {
@@ -29819,7 +31604,7 @@
         }
 
         [DispId(0x1da)]
-        public string WSAFIPFE.Factura._Factura.DireccionServicioURL
+        string WSAFIPFE._Factura.DireccionServicioURL
         {
             get
             {
@@ -29832,7 +31617,7 @@
         }
 
         [DispId(0x77)]
-        public bool WSAFIPFE.Factura._Factura.dLicenciaValida
+        bool WSAFIPFE._Factura.dLicenciaValida
         {
             get
             {
@@ -29841,7 +31626,7 @@
         }
 
         [DispId(0xff)]
-        public string WSAFIPFE.Factura._Factura.dNroLegajo
+        string WSAFIPFE._Factura.dNroLegajo
         {
             get
             {
@@ -29854,7 +31639,7 @@
         }
 
         [DispId(0x11)]
-        public int WSAFIPFE.Factura._Factura.dRespuestaCodError
+        int WSAFIPFE._Factura.dRespuestaCodError
         {
             get
             {
@@ -29863,7 +31648,7 @@
         }
 
         [DispId(0x12)]
-        public string WSAFIPFE.Factura._Factura.dRespuestaDescError
+        string WSAFIPFE._Factura.dRespuestaDescError
         {
             get
             {
@@ -29872,7 +31657,7 @@
         }
 
         [DispId(410)]
-        public string WSAFIPFE.Factura._Factura.dRespuestaDummyAuthServer
+        string WSAFIPFE._Factura.dRespuestaDummyAuthServer
         {
             get
             {
@@ -29881,7 +31666,7 @@
         }
 
         [DispId(0x19b)]
-        public string WSAFIPFE.Factura._Factura.dRespuestaDummyDbServer
+        string WSAFIPFE._Factura.dRespuestaDummyDbServer
         {
             get
             {
@@ -29890,7 +31675,7 @@
         }
 
         [DispId(0x199)]
-        public string WSAFIPFE.Factura._Factura.dRespuetaDummyAppServer
+        string WSAFIPFE._Factura.dRespuetaDummyAppServer
         {
             get
             {
@@ -29899,7 +31684,7 @@
         }
 
         [DispId(0xfd)]
-        public string WSAFIPFE.Factura._Factura.dRol
+        string WSAFIPFE._Factura.dRol
         {
             get
             {
@@ -29912,7 +31697,7 @@
         }
 
         [DispId(0x171)]
-        public string WSAFIPFE.Factura._Factura.dsign
+        string WSAFIPFE._Factura.dsign
         {
             get
             {
@@ -29925,7 +31710,7 @@
         }
 
         [DispId(0x108)]
-        public string WSAFIPFE.Factura._Factura.dTicket
+        string WSAFIPFE._Factura.dTicket
         {
             get
             {
@@ -29938,7 +31723,7 @@
         }
 
         [DispId(0x148)]
-        public DateTime WSAFIPFE.Factura._Factura.dTicketHora
+        DateTime WSAFIPFE._Factura.dTicketHora
         {
             get
             {
@@ -29947,7 +31732,7 @@
         }
 
         [DispId(0x152)]
-        public DateTime WSAFIPFE.Factura._Factura.dTicketHoraVencimiento
+        DateTime WSAFIPFE._Factura.dTicketHoraVencimiento
         {
             get
             {
@@ -29956,7 +31741,7 @@
         }
 
         [DispId(0x15c)]
-        public bool WSAFIPFE.Factura._Factura.dTicketValido
+        bool WSAFIPFE._Factura.dTicketValido
         {
             get
             {
@@ -29965,7 +31750,7 @@
         }
 
         [DispId(0xfe)]
-        public string WSAFIPFE.Factura._Factura.dTipoAgente
+        string WSAFIPFE._Factura.dTipoAgente
         {
             get
             {
@@ -29978,7 +31763,7 @@
         }
 
         [DispId(0x167)]
-        public string WSAFIPFE.Factura._Factura.dtoken
+        string WSAFIPFE._Factura.dtoken
         {
             get
             {
@@ -29991,7 +31776,7 @@
         }
 
         [DispId(0x107)]
-        public string WSAFIPFE.Factura._Factura.dURL
+        string WSAFIPFE._Factura.dURL
         {
             get
             {
@@ -30004,7 +31789,7 @@
         }
 
         [DispId(0x2fb)]
-        public int WSAFIPFE.Factura._Factura.F1CabeceraCantReg
+        int WSAFIPFE._Factura.F1CabeceraCantReg
         {
             get
             {
@@ -30025,7 +31810,7 @@
         }
 
         [DispId(0x2fa)]
-        public int WSAFIPFE.Factura._Factura.F1CabeceraCbteTipo
+        int WSAFIPFE._Factura.F1CabeceraCbteTipo
         {
             get
             {
@@ -30038,7 +31823,7 @@
         }
 
         [DispId(0x2f9)]
-        public int WSAFIPFE.Factura._Factura.F1CabeceraPtoVta
+        int WSAFIPFE._Factura.F1CabeceraPtoVta
         {
             get
             {
@@ -30051,7 +31836,7 @@
         }
 
         [DispId(0x29c)]
-        public string WSAFIPFE.Factura._Factura.F1DetalleCAEA
+        string WSAFIPFE._Factura.F1DetalleCAEA
         {
             get
             {
@@ -30064,7 +31849,7 @@
         }
 
         [DispId(0x298)]
-        public int WSAFIPFE.Factura._Factura.F1DetalleCbteDesde
+        int WSAFIPFE._Factura.F1DetalleCbteDesde
         {
             get
             {
@@ -30077,7 +31862,7 @@
         }
 
         [DispId(0x299)]
-        public string WSAFIPFE.Factura._Factura.F1DetalleCbteDesdeS
+        string WSAFIPFE._Factura.F1DetalleCbteDesdeS
         {
             get
             {
@@ -30090,7 +31875,7 @@
         }
 
         [DispId(0x29d)]
-        public string WSAFIPFE.Factura._Factura.F1DetalleCbteFch
+        string WSAFIPFE._Factura.F1DetalleCbteFch
         {
             get
             {
@@ -30103,7 +31888,7 @@
         }
 
         [DispId(0x29a)]
-        public int WSAFIPFE.Factura._Factura.F1DetalleCbteHasta
+        int WSAFIPFE._Factura.F1DetalleCbteHasta
         {
             get
             {
@@ -30116,7 +31901,7 @@
         }
 
         [DispId(0x29b)]
-        public string WSAFIPFE.Factura._Factura.F1DetalleCbteHastaS
+        string WSAFIPFE._Factura.F1DetalleCbteHastaS
         {
             get
             {
@@ -30129,7 +31914,7 @@
         }
 
         [DispId(0x2fc)]
-        public int WSAFIPFE.Factura._Factura.F1DetalleCbtesAsocItemCantidad
+        int WSAFIPFE._Factura.F1DetalleCbtesAsocItemCantidad
         {
             get
             {
@@ -30155,7 +31940,7 @@
         }
 
         [DispId(0x2a9)]
-        public int WSAFIPFE.Factura._Factura.F1DetalleCbtesAsocNro
+        int WSAFIPFE._Factura.F1DetalleCbtesAsocNro
         {
             get
             {
@@ -30168,7 +31953,7 @@
         }
 
         [DispId(0x2aa)]
-        public string WSAFIPFE.Factura._Factura.F1DetalleCbtesAsocNroS
+        string WSAFIPFE._Factura.F1DetalleCbtesAsocNroS
         {
             get
             {
@@ -30181,7 +31966,7 @@
         }
 
         [DispId(0x2ab)]
-        public int WSAFIPFE.Factura._Factura.F1DetalleCbtesAsocPtoVta
+        int WSAFIPFE._Factura.F1DetalleCbtesAsocPtoVta
         {
             get
             {
@@ -30194,7 +31979,7 @@
         }
 
         [DispId(0x2ac)]
-        public int WSAFIPFE.Factura._Factura.F1DetalleCbtesAsocTipo
+        int WSAFIPFE._Factura.F1DetalleCbtesAsocTipo
         {
             get
             {
@@ -30207,7 +31992,7 @@
         }
 
         [DispId(0x295)]
-        public int WSAFIPFE.Factura._Factura.F1DetalleConcepto
+        int WSAFIPFE._Factura.F1DetalleConcepto
         {
             get
             {
@@ -30220,7 +32005,7 @@
         }
 
         [DispId(0x297)]
-        public string WSAFIPFE.Factura._Factura.F1DetalleDocNro
+        string WSAFIPFE._Factura.F1DetalleDocNro
         {
             get
             {
@@ -30233,7 +32018,7 @@
         }
 
         [DispId(0x296)]
-        public int WSAFIPFE.Factura._Factura.F1DetalleDocTipo
+        int WSAFIPFE._Factura.F1DetalleDocTipo
         {
             get
             {
@@ -30246,7 +32031,7 @@
         }
 
         [DispId(0x2a4)]
-        public string WSAFIPFE.Factura._Factura.F1DetalleFchServDesde
+        string WSAFIPFE._Factura.F1DetalleFchServDesde
         {
             get
             {
@@ -30259,7 +32044,7 @@
         }
 
         [DispId(0x2a5)]
-        public string WSAFIPFE.Factura._Factura.F1DetalleFchServHasta
+        string WSAFIPFE._Factura.F1DetalleFchServHasta
         {
             get
             {
@@ -30272,7 +32057,7 @@
         }
 
         [DispId(0x2a6)]
-        public string WSAFIPFE.Factura._Factura.F1DetalleFchVtoPago
+        string WSAFIPFE._Factura.F1DetalleFchVtoPago
         {
             get
             {
@@ -30285,7 +32070,7 @@
         }
 
         [DispId(0x2a3)]
-        public double WSAFIPFE.Factura._Factura.F1DetalleImpIva
+        double WSAFIPFE._Factura.F1DetalleImpIva
         {
             get
             {
@@ -30298,7 +32083,7 @@
         }
 
         [DispId(0x2a0)]
-        public double WSAFIPFE.Factura._Factura.F1DetalleImpNeto
+        double WSAFIPFE._Factura.F1DetalleImpNeto
         {
             get
             {
@@ -30311,7 +32096,7 @@
         }
 
         [DispId(0x2a1)]
-        public double WSAFIPFE.Factura._Factura.F1DetalleImpOpEx
+        double WSAFIPFE._Factura.F1DetalleImpOpEx
         {
             get
             {
@@ -30324,7 +32109,7 @@
         }
 
         [DispId(670)]
-        public double WSAFIPFE.Factura._Factura.F1DetalleImpTotal
+        double WSAFIPFE._Factura.F1DetalleImpTotal
         {
             get
             {
@@ -30337,7 +32122,7 @@
         }
 
         [DispId(0x29f)]
-        public double WSAFIPFE.Factura._Factura.F1DetalleImpTotalConc
+        double WSAFIPFE._Factura.F1DetalleImpTotalConc
         {
             get
             {
@@ -30350,7 +32135,7 @@
         }
 
         [DispId(0x2a2)]
-        public double WSAFIPFE.Factura._Factura.F1DetalleImpTrib
+        double WSAFIPFE._Factura.F1DetalleImpTrib
         {
             get
             {
@@ -30363,7 +32148,7 @@
         }
 
         [DispId(0x2b3)]
-        public double WSAFIPFE.Factura._Factura.F1DetalleIvaBaseImp
+        double WSAFIPFE._Factura.F1DetalleIvaBaseImp
         {
             get
             {
@@ -30376,7 +32161,7 @@
         }
 
         [DispId(690)]
-        public int WSAFIPFE.Factura._Factura.F1DetalleIvaId
+        int WSAFIPFE._Factura.F1DetalleIvaId
         {
             get
             {
@@ -30389,7 +32174,7 @@
         }
 
         [DispId(0x2b4)]
-        public double WSAFIPFE.Factura._Factura.F1DetalleIvaImporte
+        double WSAFIPFE._Factura.F1DetalleIvaImporte
         {
             get
             {
@@ -30402,7 +32187,7 @@
         }
 
         [DispId(0x2fe)]
-        public int WSAFIPFE.Factura._Factura.F1DetalleIvaItemCantidad
+        int WSAFIPFE._Factura.F1DetalleIvaItemCantidad
         {
             get
             {
@@ -30428,7 +32213,7 @@
         }
 
         [DispId(680)]
-        public double WSAFIPFE.Factura._Factura.F1DetalleMonCotiz
+        double WSAFIPFE._Factura.F1DetalleMonCotiz
         {
             get
             {
@@ -30441,7 +32226,7 @@
         }
 
         [DispId(0x2a7)]
-        public string WSAFIPFE.Factura._Factura.F1DetalleMonId
+        string WSAFIPFE._Factura.F1DetalleMonId
         {
             get
             {
@@ -30454,7 +32239,7 @@
         }
 
         [DispId(0x2b5)]
-        public string WSAFIPFE.Factura._Factura.F1DetalleOpcionalId
+        string WSAFIPFE._Factura.F1DetalleOpcionalId
         {
             get
             {
@@ -30467,7 +32252,7 @@
         }
 
         [DispId(0x2ff)]
-        public int WSAFIPFE.Factura._Factura.F1DetalleOpcionalItemCantidad
+        int WSAFIPFE._Factura.F1DetalleOpcionalItemCantidad
         {
             get
             {
@@ -30493,7 +32278,7 @@
         }
 
         [DispId(0x2b6)]
-        public string WSAFIPFE.Factura._Factura.F1DetalleOpcionalValor
+        string WSAFIPFE._Factura.F1DetalleOpcionalValor
         {
             get
             {
@@ -30506,7 +32291,7 @@
         }
 
         [DispId(0x2af)]
-        public double WSAFIPFE.Factura._Factura.F1DetalleTributoAlic
+        double WSAFIPFE._Factura.F1DetalleTributoAlic
         {
             get
             {
@@ -30519,7 +32304,7 @@
         }
 
         [DispId(0x2b0)]
-        public double WSAFIPFE.Factura._Factura.F1DetalleTributoBaseImp
+        double WSAFIPFE._Factura.F1DetalleTributoBaseImp
         {
             get
             {
@@ -30532,7 +32317,7 @@
         }
 
         [DispId(0x2ae)]
-        public string WSAFIPFE.Factura._Factura.F1DetalleTributoDesc
+        string WSAFIPFE._Factura.F1DetalleTributoDesc
         {
             get
             {
@@ -30545,7 +32330,7 @@
         }
 
         [DispId(0x2ad)]
-        public int WSAFIPFE.Factura._Factura.F1DetalleTributoId
+        int WSAFIPFE._Factura.F1DetalleTributoId
         {
             get
             {
@@ -30558,7 +32343,7 @@
         }
 
         [DispId(0x2b1)]
-        public double WSAFIPFE.Factura._Factura.F1DetalleTributoImporte
+        double WSAFIPFE._Factura.F1DetalleTributoImporte
         {
             get
             {
@@ -30571,7 +32356,7 @@
         }
 
         [DispId(0x2fd)]
-        public int WSAFIPFE.Factura._Factura.F1DetalleTributoItemCantidad
+        int WSAFIPFE._Factura.F1DetalleTributoItemCantidad
         {
             get
             {
@@ -30597,7 +32382,7 @@
         }
 
         [DispId(0x1dc)]
-        public string WSAFIPFE.Factura._Factura.f1DireccionServicioURL
+        string WSAFIPFE._Factura.f1DireccionServicioURL
         {
             get
             {
@@ -30610,7 +32395,7 @@
         }
 
         [DispId(0x248)]
-        public int WSAFIPFE.Factura._Factura.f1ErrorCode
+        int WSAFIPFE._Factura.f1ErrorCode
         {
             get
             {
@@ -30623,7 +32408,7 @@
         }
 
         [DispId(600)]
-        public int WSAFIPFE.Factura._Factura.f1ErrorCode1
+        int WSAFIPFE._Factura.f1ErrorCode1
         {
             get
             {
@@ -30636,7 +32421,7 @@
         }
 
         [DispId(0x25a)]
-        public int WSAFIPFE.Factura._Factura.f1ErrorCode2
+        int WSAFIPFE._Factura.f1ErrorCode2
         {
             get
             {
@@ -30649,7 +32434,7 @@
         }
 
         [DispId(0x2d)]
-        public int WSAFIPFE.Factura._Factura.f1ErrorItemCantidad
+        int WSAFIPFE._Factura.f1ErrorItemCantidad
         {
             get
             {
@@ -30658,7 +32443,7 @@
         }
 
         [DispId(0x24b)]
-        public string WSAFIPFE.Factura._Factura.f1ErrorMsg
+        string WSAFIPFE._Factura.f1ErrorMsg
         {
             get
             {
@@ -30671,7 +32456,7 @@
         }
 
         [DispId(0x252)]
-        public string WSAFIPFE.Factura._Factura.f1ErrorMsg1
+        string WSAFIPFE._Factura.f1ErrorMsg1
         {
             get
             {
@@ -30684,7 +32469,7 @@
         }
 
         [DispId(0x256)]
-        public string WSAFIPFE.Factura._Factura.f1ErrorMsg2
+        string WSAFIPFE._Factura.f1ErrorMsg2
         {
             get
             {
@@ -30697,7 +32482,7 @@
         }
 
         [DispId(590)]
-        public int WSAFIPFE.Factura._Factura.f1EventCode
+        int WSAFIPFE._Factura.f1EventCode
         {
             get
             {
@@ -30710,7 +32495,7 @@
         }
 
         [DispId(0x260)]
-        public int WSAFIPFE.Factura._Factura.f1EventCode1
+        int WSAFIPFE._Factura.f1EventCode1
         {
             get
             {
@@ -30723,7 +32508,7 @@
         }
 
         [DispId(610)]
-        public int WSAFIPFE.Factura._Factura.f1EventCode2
+        int WSAFIPFE._Factura.f1EventCode2
         {
             get
             {
@@ -30736,7 +32521,7 @@
         }
 
         [DispId(0x2e)]
-        public int WSAFIPFE.Factura._Factura.f1EventItemCantidad
+        int WSAFIPFE._Factura.f1EventItemCantidad
         {
             get
             {
@@ -30745,7 +32530,7 @@
         }
 
         [DispId(0x250)]
-        public string WSAFIPFE.Factura._Factura.f1EventMsg
+        string WSAFIPFE._Factura.f1EventMsg
         {
             get
             {
@@ -30758,7 +32543,7 @@
         }
 
         [DispId(0x25c)]
-        public string WSAFIPFE.Factura._Factura.f1EventMsg1
+        string WSAFIPFE._Factura.f1EventMsg1
         {
             get
             {
@@ -30771,7 +32556,7 @@
         }
 
         [DispId(0x25e)]
-        public string WSAFIPFE.Factura._Factura.f1EventMsg2
+        string WSAFIPFE._Factura.f1EventMsg2
         {
             get
             {
@@ -30784,7 +32569,7 @@
         }
 
         [DispId(470)]
-        public int WSAFIPFE.Factura._Factura.f1Indice
+        int WSAFIPFE._Factura.f1Indice
         {
             get
             {
@@ -30797,7 +32582,7 @@
         }
 
         [DispId(0x9f)]
-        public int WSAFIPFE.Factura._Factura.f1IndiceItem
+        int WSAFIPFE._Factura.f1IndiceItem
         {
             get
             {
@@ -30810,7 +32595,7 @@
         }
 
         [DispId(0x71)]
-        public bool WSAFIPFE.Factura._Factura.f1LicenciaValidaCae
+        bool WSAFIPFE._Factura.f1LicenciaValidaCae
         {
             get
             {
@@ -30819,7 +32604,7 @@
         }
 
         [DispId(0x72)]
-        public bool WSAFIPFE.Factura._Factura.f1LicenciaValidaCaea
+        bool WSAFIPFE._Factura.f1LicenciaValidaCaea
         {
             get
             {
@@ -30828,7 +32613,7 @@
         }
 
         [DispId(0x242)]
-        public string WSAFIPFE.Factura._Factura.f1PtosVenta_Bloqueado
+        string WSAFIPFE._Factura.f1PtosVenta_Bloqueado
         {
             get
             {
@@ -30841,7 +32626,7 @@
         }
 
         [DispId(0x241)]
-        public string WSAFIPFE.Factura._Factura.f1PtosVenta_EmisisionTipo
+        string WSAFIPFE._Factura.f1PtosVenta_EmisisionTipo
         {
             get
             {
@@ -30854,7 +32639,7 @@
         }
 
         [DispId(0x243)]
-        public string WSAFIPFE.Factura._Factura.f1PtosVenta_fchBaja
+        string WSAFIPFE._Factura.f1PtosVenta_fchBaja
         {
             get
             {
@@ -30867,7 +32652,7 @@
         }
 
         [DispId(0x240)]
-        public int WSAFIPFE.Factura._Factura.f1PtosVenta_nro
+        int WSAFIPFE._Factura.f1PtosVenta_nro
         {
             get
             {
@@ -30880,7 +32665,7 @@
         }
 
         [DispId(0x2b)]
-        public int WSAFIPFE.Factura._Factura.f1PtosVentaItemCantidad
+        int WSAFIPFE._Factura.f1PtosVentaItemCantidad
         {
             get
             {
@@ -30889,7 +32674,7 @@
         }
 
         [DispId(0x1c3)]
-        public string WSAFIPFE.Factura._Factura.f1RespuestaCAEA
+        string WSAFIPFE._Factura.f1RespuestaCAEA
         {
             get
             {
@@ -30898,7 +32683,7 @@
         }
 
         [DispId(0x1cb)]
-        public string WSAFIPFE.Factura._Factura.f1RespuestaCAEAFchProceso
+        string WSAFIPFE._Factura.f1RespuestaCAEAFchProceso
         {
             get
             {
@@ -30907,7 +32692,7 @@
         }
 
         [DispId(0x1ca)]
-        public string WSAFIPFE.Factura._Factura.f1RespuestaCAEAFchTopeInf
+        string WSAFIPFE._Factura.f1RespuestaCAEAFchTopeInf
         {
             get
             {
@@ -30916,7 +32701,7 @@
         }
 
         [DispId(0x1c8)]
-        public string WSAFIPFE.Factura._Factura.f1RespuestaCAEAFchVigDesde
+        string WSAFIPFE._Factura.f1RespuestaCAEAFchVigDesde
         {
             get
             {
@@ -30925,7 +32710,7 @@
         }
 
         [DispId(0x1c9)]
-        public string WSAFIPFE.Factura._Factura.f1RespuestaCAEAFchVigHasta
+        string WSAFIPFE._Factura.f1RespuestaCAEAFchVigHasta
         {
             get
             {
@@ -30934,7 +32719,7 @@
         }
 
         [DispId(0x188)]
-        public int WSAFIPFE.Factura._Factura.F1RespuestaCAEAItemCantidad
+        int WSAFIPFE._Factura.F1RespuestaCAEAItemCantidad
         {
             get
             {
@@ -30943,7 +32728,7 @@
         }
 
         [DispId(0x1c6)]
-        public int WSAFIPFE.Factura._Factura.f1RespuestaCAEAOrden
+        int WSAFIPFE._Factura.f1RespuestaCAEAOrden
         {
             get
             {
@@ -30952,7 +32737,7 @@
         }
 
         [DispId(0x1c7)]
-        public string WSAFIPFE.Factura._Factura.f1RespuestaCAEAOrdenS
+        string WSAFIPFE._Factura.f1RespuestaCAEAOrdenS
         {
             get
             {
@@ -30961,7 +32746,7 @@
         }
 
         [DispId(0x1c4)]
-        public int WSAFIPFE.Factura._Factura.f1RespuestaCAEAPeriodo
+        int WSAFIPFE._Factura.f1RespuestaCAEAPeriodo
         {
             get
             {
@@ -30970,7 +32755,7 @@
         }
 
         [DispId(0x1c5)]
-        public string WSAFIPFE.Factura._Factura.f1RespuestaCAEAPeriodoS
+        string WSAFIPFE._Factura.f1RespuestaCAEAPeriodoS
         {
             get
             {
@@ -30979,7 +32764,7 @@
         }
 
         [DispId(0x187)]
-        public int WSAFIPFE.Factura._Factura.F1RespuestaCantidadReg
+        int WSAFIPFE._Factura.F1RespuestaCantidadReg
         {
             get
             {
@@ -30988,7 +32773,7 @@
         }
 
         [DispId(0x1af)]
-        public string WSAFIPFE.Factura._Factura.F1RespuestaDetalleCae
+        string WSAFIPFE._Factura.F1RespuestaDetalleCae
         {
             get
             {
@@ -30997,7 +32782,7 @@
         }
 
         [DispId(0x1ac)]
-        public string WSAFIPFE.Factura._Factura.F1RespuestaDetalleCAEA
+        string WSAFIPFE._Factura.F1RespuestaDetalleCAEA
         {
             get
             {
@@ -31006,7 +32791,7 @@
         }
 
         [DispId(0x290)]
-        public string WSAFIPFE.Factura._Factura.F1RespuestaDetalleCAEACAEA
+        string WSAFIPFE._Factura.F1RespuestaDetalleCAEACAEA
         {
             get
             {
@@ -31015,7 +32800,7 @@
         }
 
         [DispId(0x28f)]
-        public string WSAFIPFE.Factura._Factura.F1RespuestaDetalleCAEAFchProceso
+        string WSAFIPFE._Factura.F1RespuestaDetalleCAEAFchProceso
         {
             get
             {
@@ -31024,7 +32809,7 @@
         }
 
         [DispId(0x291)]
-        public int WSAFIPFE.Factura._Factura.F1RespuestaDetalleCAEAPtoVta
+        int WSAFIPFE._Factura.F1RespuestaDetalleCAEAPtoVta
         {
             get
             {
@@ -31033,7 +32818,7 @@
         }
 
         [DispId(0x1b1)]
-        public string WSAFIPFE.Factura._Factura.F1RespuestaDetalleCAEFchVto
+        string WSAFIPFE._Factura.F1RespuestaDetalleCAEFchVto
         {
             get
             {
@@ -31042,7 +32827,7 @@
         }
 
         [DispId(0x1a7)]
-        public int WSAFIPFE.Factura._Factura.F1RespuestaDetalleCbteDesde
+        int WSAFIPFE._Factura.F1RespuestaDetalleCbteDesde
         {
             get
             {
@@ -31051,7 +32836,7 @@
         }
 
         [DispId(0x1a8)]
-        public string WSAFIPFE.Factura._Factura.F1RespuestaDetalleCbteDesdeS
+        string WSAFIPFE._Factura.F1RespuestaDetalleCbteDesdeS
         {
             get
             {
@@ -31060,7 +32845,7 @@
         }
 
         [DispId(0x1b0)]
-        public string WSAFIPFE.Factura._Factura.F1RespuestaDetalleCbteFch
+        string WSAFIPFE._Factura.F1RespuestaDetalleCbteFch
         {
             get
             {
@@ -31069,7 +32854,7 @@
         }
 
         [DispId(0x1a9)]
-        public int WSAFIPFE.Factura._Factura.F1RespuestaDetalleCbteHasta
+        int WSAFIPFE._Factura.F1RespuestaDetalleCbteHasta
         {
             get
             {
@@ -31078,7 +32863,7 @@
         }
 
         [DispId(0x1aa)]
-        public string WSAFIPFE.Factura._Factura.F1RespuestaDetalleCbteHastaS
+        string WSAFIPFE._Factura.F1RespuestaDetalleCbteHastaS
         {
             get
             {
@@ -31087,7 +32872,7 @@
         }
 
         [DispId(0x1ad)]
-        public string WSAFIPFE.Factura._Factura.F1RespuestaDetalleCodAutorizacion
+        string WSAFIPFE._Factura.F1RespuestaDetalleCodAutorizacion
         {
             get
             {
@@ -31096,7 +32881,7 @@
         }
 
         [DispId(0x1a5)]
-        public int WSAFIPFE.Factura._Factura.F1RespuestaDetalleConcepto
+        int WSAFIPFE._Factura.F1RespuestaDetalleConcepto
         {
             get
             {
@@ -31105,7 +32890,7 @@
         }
 
         [DispId(0x1b2)]
-        public string WSAFIPFE.Factura._Factura.F1RespuestaDetalleDocNro
+        string WSAFIPFE._Factura.F1RespuestaDetalleDocNro
         {
             get
             {
@@ -31114,7 +32899,7 @@
         }
 
         [DispId(0x1a6)]
-        public int WSAFIPFE.Factura._Factura.F1RespuestaDetalleDocTipo
+        int WSAFIPFE._Factura.F1RespuestaDetalleDocTipo
         {
             get
             {
@@ -31123,7 +32908,7 @@
         }
 
         [DispId(430)]
-        public string WSAFIPFE.Factura._Factura.F1RespuestaDetalleEmisionTipo
+        string WSAFIPFE._Factura.F1RespuestaDetalleEmisionTipo
         {
             get
             {
@@ -31132,7 +32917,7 @@
         }
 
         [DispId(0x1b5)]
-        public int WSAFIPFE.Factura._Factura.F1RespuestaDetalleObservacionCode
+        int WSAFIPFE._Factura.F1RespuestaDetalleObservacionCode
         {
             get
             {
@@ -31141,7 +32926,7 @@
         }
 
         [DispId(0x1bf)]
-        public int WSAFIPFE.Factura._Factura.F1RespuestaDetalleObservacionCode1
+        int WSAFIPFE._Factura.F1RespuestaDetalleObservacionCode1
         {
             get
             {
@@ -31154,7 +32939,7 @@
         }
 
         [DispId(0x1b3)]
-        public int WSAFIPFE.Factura._Factura.F1RespuestaDetalleObservacionItemCantidad
+        int WSAFIPFE._Factura.F1RespuestaDetalleObservacionItemCantidad
         {
             get
             {
@@ -31163,7 +32948,7 @@
         }
 
         [DispId(0x1b6)]
-        public string WSAFIPFE.Factura._Factura.F1RespuestaDetalleObservacionMsg
+        string WSAFIPFE._Factura.F1RespuestaDetalleObservacionMsg
         {
             get
             {
@@ -31172,7 +32957,7 @@
         }
 
         [DispId(0x1b7)]
-        public string WSAFIPFE.Factura._Factura.F1RespuestaDetalleObservacionMsg1
+        string WSAFIPFE._Factura.F1RespuestaDetalleObservacionMsg1
         {
             get
             {
@@ -31185,7 +32970,7 @@
         }
 
         [DispId(0x1ab)]
-        public string WSAFIPFE.Factura._Factura.F1RespuestaDetalleResultado
+        string WSAFIPFE._Factura.F1RespuestaDetalleResultado
         {
             get
             {
@@ -31194,7 +32979,7 @@
         }
 
         [DispId(0x184)]
-        public string WSAFIPFE.Factura._Factura.f1RespuestaDummyAuthServer
+        string WSAFIPFE._Factura.f1RespuestaDummyAuthServer
         {
             get
             {
@@ -31203,7 +32988,7 @@
         }
 
         [DispId(0x195)]
-        public string WSAFIPFE.Factura._Factura.f1RespuestaDummyDbServer
+        string WSAFIPFE._Factura.f1RespuestaDummyDbServer
         {
             get
             {
@@ -31212,7 +32997,7 @@
         }
 
         [DispId(0x18a)]
-        public string WSAFIPFE.Factura._Factura.F1RespuestaFchProceso
+        string WSAFIPFE._Factura.F1RespuestaFchProceso
         {
             get
             {
@@ -31221,7 +33006,7 @@
         }
 
         [DispId(450)]
-        public double WSAFIPFE.Factura._Factura.f1RespuestaMonedaCotiz
+        double WSAFIPFE._Factura.f1RespuestaMonedaCotiz
         {
             get
             {
@@ -31230,7 +33015,7 @@
         }
 
         [DispId(0x1c1)]
-        public string WSAFIPFE.Factura._Factura.f1RespuestaMonedaFchCotiz
+        string WSAFIPFE._Factura.f1RespuestaMonedaFchCotiz
         {
             get
             {
@@ -31239,7 +33024,7 @@
         }
 
         [DispId(0x1c0)]
-        public string WSAFIPFE.Factura._Factura.f1RespuestaMonedaId
+        string WSAFIPFE._Factura.f1RespuestaMonedaId
         {
             get
             {
@@ -31248,7 +33033,7 @@
         }
 
         [DispId(0x194)]
-        public string WSAFIPFE.Factura._Factura.F1RespuestaReProceso
+        string WSAFIPFE._Factura.F1RespuestaReProceso
         {
             get
             {
@@ -31257,7 +33042,7 @@
         }
 
         [DispId(0x18b)]
-        public string WSAFIPFE.Factura._Factura.F1RespuestaResultado
+        string WSAFIPFE._Factura.F1RespuestaResultado
         {
             get
             {
@@ -31266,7 +33051,7 @@
         }
 
         [DispId(0x183)]
-        public string WSAFIPFE.Factura._Factura.f1RespuetaDummyAppServer
+        string WSAFIPFE._Factura.f1RespuetaDummyAppServer
         {
             get
             {
@@ -31275,7 +33060,7 @@
         }
 
         [DispId(0x16e)]
-        public string WSAFIPFE.Factura._Factura.f1sign
+        string WSAFIPFE._Factura.f1sign
         {
             get
             {
@@ -31288,7 +33073,7 @@
         }
 
         [DispId(0x68)]
-        public bool WSAFIPFE.Factura._Factura.f1TicketEsValido
+        bool WSAFIPFE._Factura.f1TicketEsValido
         {
             get
             {
@@ -31301,7 +33086,7 @@
         }
 
         [DispId(0x145)]
-        public DateTime WSAFIPFE.Factura._Factura.f1TicketHora
+        DateTime WSAFIPFE._Factura.f1TicketHora
         {
             get
             {
@@ -31310,7 +33095,7 @@
         }
 
         [DispId(0x14f)]
-        public DateTime WSAFIPFE.Factura._Factura.f1TicketHoraVencimiento
+        DateTime WSAFIPFE._Factura.f1TicketHoraVencimiento
         {
             get
             {
@@ -31319,7 +33104,7 @@
         }
 
         [DispId(0x159)]
-        public bool WSAFIPFE.Factura._Factura.f1TicketValido
+        bool WSAFIPFE._Factura.f1TicketValido
         {
             get
             {
@@ -31328,7 +33113,7 @@
         }
 
         [DispId(0x229)]
-        public string WSAFIPFE.Factura._Factura.f1TiposCbte_Desc
+        string WSAFIPFE._Factura.f1TiposCbte_Desc
         {
             get
             {
@@ -31341,7 +33126,7 @@
         }
 
         [DispId(0x22a)]
-        public string WSAFIPFE.Factura._Factura.f1TiposCbte_fchDesde
+        string WSAFIPFE._Factura.f1TiposCbte_fchDesde
         {
             get
             {
@@ -31354,7 +33139,7 @@
         }
 
         [DispId(0x22b)]
-        public string WSAFIPFE.Factura._Factura.f1TiposCbte_fchHasta
+        string WSAFIPFE._Factura.f1TiposCbte_fchHasta
         {
             get
             {
@@ -31367,7 +33152,7 @@
         }
 
         [DispId(0x228)]
-        public int WSAFIPFE.Factura._Factura.f1TiposCbte_Id
+        int WSAFIPFE._Factura.f1TiposCbte_Id
         {
             get
             {
@@ -31380,7 +33165,7 @@
         }
 
         [DispId(0x24)]
-        public int WSAFIPFE.Factura._Factura.f1TiposCbteItemCantidad
+        int WSAFIPFE._Factura.f1TiposCbteItemCantidad
         {
             get
             {
@@ -31389,7 +33174,7 @@
         }
 
         [DispId(0x245)]
-        public string WSAFIPFE.Factura._Factura.f1TiposConcepto_Desc
+        string WSAFIPFE._Factura.f1TiposConcepto_Desc
         {
             get
             {
@@ -31402,7 +33187,7 @@
         }
 
         [DispId(0x246)]
-        public string WSAFIPFE.Factura._Factura.f1TiposConcepto_fchDesde
+        string WSAFIPFE._Factura.f1TiposConcepto_fchDesde
         {
             get
             {
@@ -31415,7 +33200,7 @@
         }
 
         [DispId(0x247)]
-        public string WSAFIPFE.Factura._Factura.f1TiposConcepto_fchHasta
+        string WSAFIPFE._Factura.f1TiposConcepto_fchHasta
         {
             get
             {
@@ -31428,7 +33213,7 @@
         }
 
         [DispId(580)]
-        public int WSAFIPFE.Factura._Factura.f1TiposConcepto_Id
+        int WSAFIPFE._Factura.f1TiposConcepto_Id
         {
             get
             {
@@ -31441,7 +33226,7 @@
         }
 
         [DispId(0x2c)]
-        public int WSAFIPFE.Factura._Factura.f1TiposConceptoItemCantidad
+        int WSAFIPFE._Factura.f1TiposConceptoItemCantidad
         {
             get
             {
@@ -31450,7 +33235,7 @@
         }
 
         [DispId(0x23d)]
-        public string WSAFIPFE.Factura._Factura.f1TiposDoc_Desc
+        string WSAFIPFE._Factura.f1TiposDoc_Desc
         {
             get
             {
@@ -31463,7 +33248,7 @@
         }
 
         [DispId(0x23e)]
-        public string WSAFIPFE.Factura._Factura.f1TiposDoc_fchDesde
+        string WSAFIPFE._Factura.f1TiposDoc_fchDesde
         {
             get
             {
@@ -31476,7 +33261,7 @@
         }
 
         [DispId(0x23f)]
-        public string WSAFIPFE.Factura._Factura.f1TiposDoc_fchHasta
+        string WSAFIPFE._Factura.f1TiposDoc_fchHasta
         {
             get
             {
@@ -31489,7 +33274,7 @@
         }
 
         [DispId(0x23c)]
-        public int WSAFIPFE.Factura._Factura.f1TiposDoc_Id
+        int WSAFIPFE._Factura.f1TiposDoc_Id
         {
             get
             {
@@ -31502,7 +33287,7 @@
         }
 
         [DispId(0x2a)]
-        public int WSAFIPFE.Factura._Factura.f1TiposDocItemCantidad
+        int WSAFIPFE._Factura.f1TiposDocItemCantidad
         {
             get
             {
@@ -31511,7 +33296,7 @@
         }
 
         [DispId(0x239)]
-        public string WSAFIPFE.Factura._Factura.f1TiposIva_Desc
+        string WSAFIPFE._Factura.f1TiposIva_Desc
         {
             get
             {
@@ -31524,7 +33309,7 @@
         }
 
         [DispId(570)]
-        public string WSAFIPFE.Factura._Factura.f1TiposIva_fchDesde
+        string WSAFIPFE._Factura.f1TiposIva_fchDesde
         {
             get
             {
@@ -31537,7 +33322,7 @@
         }
 
         [DispId(0x23b)]
-        public string WSAFIPFE.Factura._Factura.f1TiposIva_fchHasta
+        string WSAFIPFE._Factura.f1TiposIva_fchHasta
         {
             get
             {
@@ -31550,7 +33335,7 @@
         }
 
         [DispId(0x238)]
-        public int WSAFIPFE.Factura._Factura.f1TiposIva_Id
+        int WSAFIPFE._Factura.f1TiposIva_Id
         {
             get
             {
@@ -31563,7 +33348,7 @@
         }
 
         [DispId(0x29)]
-        public int WSAFIPFE.Factura._Factura.f1TiposIvaItemCantidad
+        int WSAFIPFE._Factura.f1TiposIvaItemCantidad
         {
             get
             {
@@ -31572,7 +33357,7 @@
         }
 
         [DispId(0x235)]
-        public string WSAFIPFE.Factura._Factura.f1TiposMoneda_Desc
+        string WSAFIPFE._Factura.f1TiposMoneda_Desc
         {
             get
             {
@@ -31585,7 +33370,7 @@
         }
 
         [DispId(0x236)]
-        public string WSAFIPFE.Factura._Factura.f1TiposMoneda_fchDesde
+        string WSAFIPFE._Factura.f1TiposMoneda_fchDesde
         {
             get
             {
@@ -31598,7 +33383,7 @@
         }
 
         [DispId(0x237)]
-        public string WSAFIPFE.Factura._Factura.f1TiposMoneda_fchHasta
+        string WSAFIPFE._Factura.f1TiposMoneda_fchHasta
         {
             get
             {
@@ -31611,7 +33396,7 @@
         }
 
         [DispId(0x234)]
-        public string WSAFIPFE.Factura._Factura.f1TiposMoneda_Id
+        string WSAFIPFE._Factura.f1TiposMoneda_Id
         {
             get
             {
@@ -31624,7 +33409,7 @@
         }
 
         [DispId(40)]
-        public int WSAFIPFE.Factura._Factura.f1TiposMonedaItemCantidad
+        int WSAFIPFE._Factura.f1TiposMonedaItemCantidad
         {
             get
             {
@@ -31633,7 +33418,7 @@
         }
 
         [DispId(0x231)]
-        public string WSAFIPFE.Factura._Factura.f1TiposOpcional_Desc
+        string WSAFIPFE._Factura.f1TiposOpcional_Desc
         {
             get
             {
@@ -31646,7 +33431,7 @@
         }
 
         [DispId(0x232)]
-        public string WSAFIPFE.Factura._Factura.f1TiposOpcional_fchDesde
+        string WSAFIPFE._Factura.f1TiposOpcional_fchDesde
         {
             get
             {
@@ -31659,7 +33444,7 @@
         }
 
         [DispId(0x233)]
-        public string WSAFIPFE.Factura._Factura.f1TiposOpcional_fchHasta
+        string WSAFIPFE._Factura.f1TiposOpcional_fchHasta
         {
             get
             {
@@ -31672,7 +33457,7 @@
         }
 
         [DispId(560)]
-        public int WSAFIPFE.Factura._Factura.f1TiposOpcional_Id
+        int WSAFIPFE._Factura.f1TiposOpcional_Id
         {
             get
             {
@@ -31685,7 +33470,7 @@
         }
 
         [DispId(0x27)]
-        public int WSAFIPFE.Factura._Factura.f1TiposOpcionalItemCantidad
+        int WSAFIPFE._Factura.f1TiposOpcionalItemCantidad
         {
             get
             {
@@ -31694,7 +33479,7 @@
         }
 
         [DispId(0x22d)]
-        public string WSAFIPFE.Factura._Factura.f1TiposTributo_Desc
+        string WSAFIPFE._Factura.f1TiposTributo_Desc
         {
             get
             {
@@ -31707,7 +33492,7 @@
         }
 
         [DispId(0x22e)]
-        public string WSAFIPFE.Factura._Factura.f1TiposTributo_fchDesde
+        string WSAFIPFE._Factura.f1TiposTributo_fchDesde
         {
             get
             {
@@ -31720,7 +33505,7 @@
         }
 
         [DispId(0x22f)]
-        public string WSAFIPFE.Factura._Factura.f1TiposTributo_fchHasta
+        string WSAFIPFE._Factura.f1TiposTributo_fchHasta
         {
             get
             {
@@ -31733,7 +33518,7 @@
         }
 
         [DispId(0x22c)]
-        public int WSAFIPFE.Factura._Factura.f1TiposTributo_Id
+        int WSAFIPFE._Factura.f1TiposTributo_Id
         {
             get
             {
@@ -31746,7 +33531,7 @@
         }
 
         [DispId(0x26)]
-        public int WSAFIPFE.Factura._Factura.f1TiposTributoItemCantidad
+        int WSAFIPFE._Factura.f1TiposTributoItemCantidad
         {
             get
             {
@@ -31755,7 +33540,7 @@
         }
 
         [DispId(0x164)]
-        public string WSAFIPFE.Factura._Factura.f1token
+        string WSAFIPFE._Factura.f1token
         {
             get
             {
@@ -31768,7 +33553,7 @@
         }
 
         [DispId(320)]
-        public int WSAFIPFE.Factura._Factura.FECabeceraCantReg
+        int WSAFIPFE._Factura.FECabeceraCantReg
         {
             get
             {
@@ -31789,7 +33574,7 @@
         }
 
         [DispId(0x141)]
-        public int WSAFIPFE.Factura._Factura.FECabeceraPresta_serv
+        int WSAFIPFE._Factura.FECabeceraPresta_serv
         {
             get
             {
@@ -31802,7 +33587,7 @@
         }
 
         [DispId(0x132)]
-        public int WSAFIPFE.Factura._Factura.FEDetalleCbt_desde
+        int WSAFIPFE._Factura.FEDetalleCbt_desde
         {
             get
             {
@@ -31815,7 +33600,7 @@
         }
 
         [DispId(0x133)]
-        public string WSAFIPFE.Factura._Factura.FEDetalleCbt_desdeS
+        string WSAFIPFE._Factura.FEDetalleCbt_desdeS
         {
             get
             {
@@ -31828,7 +33613,7 @@
         }
 
         [DispId(0x134)]
-        public int WSAFIPFE.Factura._Factura.FEDetalleCbt_hasta
+        int WSAFIPFE._Factura.FEDetalleCbt_hasta
         {
             get
             {
@@ -31841,7 +33626,7 @@
         }
 
         [DispId(0x135)]
-        public string WSAFIPFE.Factura._Factura.FEDetalleCbt_hastaS
+        string WSAFIPFE._Factura.FEDetalleCbt_hastaS
         {
             get
             {
@@ -31854,7 +33639,7 @@
         }
 
         [DispId(0x13f)]
-        public string WSAFIPFE.Factura._Factura.FEDetalleFecha_cbte
+        string WSAFIPFE._Factura.FEDetalleFecha_cbte
         {
             get
             {
@@ -31867,7 +33652,7 @@
         }
 
         [DispId(0x13c)]
-        public string WSAFIPFE.Factura._Factura.FEDetalleFecha_serv_desde
+        string WSAFIPFE._Factura.FEDetalleFecha_serv_desde
         {
             get
             {
@@ -31880,7 +33665,7 @@
         }
 
         [DispId(0x13d)]
-        public string WSAFIPFE.Factura._Factura.FEDetalleFecha_serv_hasta
+        string WSAFIPFE._Factura.FEDetalleFecha_serv_hasta
         {
             get
             {
@@ -31893,7 +33678,7 @@
         }
 
         [DispId(0x13e)]
-        public string WSAFIPFE.Factura._Factura.FEDetalleFecha_vence_pago
+        string WSAFIPFE._Factura.FEDetalleFecha_vence_pago
         {
             get
             {
@@ -31906,7 +33691,7 @@
         }
 
         [DispId(0x138)]
-        public double WSAFIPFE.Factura._Factura.FEDetalleImp_neto
+        double WSAFIPFE._Factura.FEDetalleImp_neto
         {
             get
             {
@@ -31919,7 +33704,7 @@
         }
 
         [DispId(0x13b)]
-        public double WSAFIPFE.Factura._Factura.FEDetalleImp_op_ex
+        double WSAFIPFE._Factura.FEDetalleImp_op_ex
         {
             get
             {
@@ -31932,7 +33717,7 @@
         }
 
         [DispId(0x137)]
-        public double WSAFIPFE.Factura._Factura.FEDetalleImp_tot_conc
+        double WSAFIPFE._Factura.FEDetalleImp_tot_conc
         {
             get
             {
@@ -31945,7 +33730,7 @@
         }
 
         [DispId(310)]
-        public double WSAFIPFE.Factura._Factura.FEDetalleImp_total
+        double WSAFIPFE._Factura.FEDetalleImp_total
         {
             get
             {
@@ -31958,7 +33743,7 @@
         }
 
         [DispId(0x139)]
-        public double WSAFIPFE.Factura._Factura.FEDetalleImpto_liq
+        double WSAFIPFE._Factura.FEDetalleImpto_liq
         {
             get
             {
@@ -31971,7 +33756,7 @@
         }
 
         [DispId(0x13a)]
-        public double WSAFIPFE.Factura._Factura.FEdetalleImto_liq_rni
+        double WSAFIPFE._Factura.FEdetalleImto_liq_rni
         {
             get
             {
@@ -31984,7 +33769,7 @@
         }
 
         [DispId(0x12e)]
-        public string WSAFIPFE.Factura._Factura.FEDetalleNro_doc
+        string WSAFIPFE._Factura.FEDetalleNro_doc
         {
             get
             {
@@ -32001,7 +33786,7 @@
         }
 
         [DispId(0x131)]
-        public int WSAFIPFE.Factura._Factura.FEDetallePunto_vta
+        int WSAFIPFE._Factura.FEDetallePunto_vta
         {
             get
             {
@@ -32014,7 +33799,7 @@
         }
 
         [DispId(0x130)]
-        public TipoComprobante WSAFIPFE.Factura._Factura.FEDetalleTipo_cbte
+        TipoComprobante WSAFIPFE._Factura.FEDetalleTipo_cbte
         {
             get
             {
@@ -32027,7 +33812,7 @@
         }
 
         [DispId(0x12f)]
-        public TipoDocumento WSAFIPFE.Factura._Factura.FEDetalleTipo_doc
+        TipoDocumento WSAFIPFE._Factura.FEDetalleTipo_doc
         {
             get
             {
@@ -32040,7 +33825,7 @@
         }
 
         [DispId(0x129)]
-        public int WSAFIPFE.Factura._Factura.FERespuestaCantidadReg
+        int WSAFIPFE._Factura.FERespuestaCantidadReg
         {
             get
             {
@@ -32049,7 +33834,7 @@
         }
 
         [DispId(0x127)]
-        public string WSAFIPFE.Factura._Factura.FERespuestaCuit
+        string WSAFIPFE._Factura.FERespuestaCuit
         {
             get
             {
@@ -32058,7 +33843,7 @@
         }
 
         [DispId(0x8d)]
-        public string WSAFIPFE.Factura._Factura.FERespuestaDetalleCae
+        string WSAFIPFE._Factura.FERespuestaDetalleCae
         {
             get
             {
@@ -32067,7 +33852,7 @@
         }
 
         [DispId(0x98)]
-        public int WSAFIPFE.Factura._Factura.FERespuestaDetalleCbt_desde
+        int WSAFIPFE._Factura.FERespuestaDetalleCbt_desde
         {
             get
             {
@@ -32076,7 +33861,7 @@
         }
 
         [DispId(0x99)]
-        public string WSAFIPFE.Factura._Factura.FERespuestaDetalleCbt_desdeS
+        string WSAFIPFE._Factura.FERespuestaDetalleCbt_desdeS
         {
             get
             {
@@ -32085,7 +33870,7 @@
         }
 
         [DispId(150)]
-        public int WSAFIPFE.Factura._Factura.FERespuestaDetalleCbt_hasta
+        int WSAFIPFE._Factura.FERespuestaDetalleCbt_hasta
         {
             get
             {
@@ -32094,7 +33879,7 @@
         }
 
         [DispId(0x97)]
-        public string WSAFIPFE.Factura._Factura.FERespuestaDetalleCbt_hastaS
+        string WSAFIPFE._Factura.FERespuestaDetalleCbt_hastaS
         {
             get
             {
@@ -32103,7 +33888,7 @@
         }
 
         [DispId(0x8f)]
-        public string WSAFIPFE.Factura._Factura.FERespuestaDetalleFecha_cbte
+        string WSAFIPFE._Factura.FERespuestaDetalleFecha_cbte
         {
             get
             {
@@ -32112,7 +33897,7 @@
         }
 
         [DispId(0x8a)]
-        public string WSAFIPFE.Factura._Factura.FERespuestaDetalleFecha_serv_desde
+        string WSAFIPFE._Factura.FERespuestaDetalleFecha_serv_desde
         {
             get
             {
@@ -32121,7 +33906,7 @@
         }
 
         [DispId(0x89)]
-        public string WSAFIPFE.Factura._Factura.FERespuestaDetalleFecha_serv_hasta
+        string WSAFIPFE._Factura.FERespuestaDetalleFecha_serv_hasta
         {
             get
             {
@@ -32130,7 +33915,7 @@
         }
 
         [DispId(0x88)]
-        public string WSAFIPFE.Factura._Factura.FERespuestaDetalleFecha_venc_pago
+        string WSAFIPFE._Factura.FERespuestaDetalleFecha_venc_pago
         {
             get
             {
@@ -32139,7 +33924,7 @@
         }
 
         [DispId(140)]
-        public string WSAFIPFE.Factura._Factura.FERespuestaDetalleFecha_vto
+        string WSAFIPFE._Factura.FERespuestaDetalleFecha_vto
         {
             get
             {
@@ -32148,7 +33933,7 @@
         }
 
         [DispId(0x93)]
-        public double WSAFIPFE.Factura._Factura.FERespuestaDetalleImp_neto
+        double WSAFIPFE._Factura.FERespuestaDetalleImp_neto
         {
             get
             {
@@ -32157,7 +33942,7 @@
         }
 
         [DispId(0x90)]
-        public double WSAFIPFE.Factura._Factura.FERespuestaDetalleImp_op_ex
+        double WSAFIPFE._Factura.FERespuestaDetalleImp_op_ex
         {
             get
             {
@@ -32166,7 +33951,7 @@
         }
 
         [DispId(0x94)]
-        public double WSAFIPFE.Factura._Factura.FERespuestaDetalleImp_tot_conc
+        double WSAFIPFE._Factura.FERespuestaDetalleImp_tot_conc
         {
             get
             {
@@ -32175,7 +33960,7 @@
         }
 
         [DispId(0x95)]
-        public double WSAFIPFE.Factura._Factura.FERespuestaDetalleImp_total
+        double WSAFIPFE._Factura.FERespuestaDetalleImp_total
         {
             get
             {
@@ -32184,7 +33969,7 @@
         }
 
         [DispId(0x91)]
-        public double WSAFIPFE.Factura._Factura.FERespuestaDetalleImpt_liq_rni
+        double WSAFIPFE._Factura.FERespuestaDetalleImpt_liq_rni
         {
             get
             {
@@ -32193,7 +33978,7 @@
         }
 
         [DispId(0x92)]
-        public double WSAFIPFE.Factura._Factura.FERespuestaDetalleImpto_liq
+        double WSAFIPFE._Factura.FERespuestaDetalleImpto_liq
         {
             get
             {
@@ -32202,7 +33987,7 @@
         }
 
         [DispId(0x8b)]
-        public string WSAFIPFE.Factura._Factura.FERespuestaDetalleMotivo
+        string WSAFIPFE._Factura.FERespuestaDetalleMotivo
         {
             get
             {
@@ -32211,7 +33996,7 @@
         }
 
         [DispId(0x124)]
-        public string WSAFIPFE.Factura._Factura.FERespuestaDetalleNor_doc
+        string WSAFIPFE._Factura.FERespuestaDetalleNor_doc
         {
             get
             {
@@ -32220,7 +34005,7 @@
         }
 
         [DispId(0x9a)]
-        public int WSAFIPFE.Factura._Factura.FERespuestaDetallePunto_vta
+        int WSAFIPFE._Factura.FERespuestaDetallePunto_vta
         {
             get
             {
@@ -32229,7 +34014,7 @@
         }
 
         [DispId(0x8e)]
-        public string WSAFIPFE.Factura._Factura.FERespuestaDetalleResultado
+        string WSAFIPFE._Factura.FERespuestaDetalleResultado
         {
             get
             {
@@ -32238,7 +34023,7 @@
         }
 
         [DispId(0x9b)]
-        public TipoComprobante WSAFIPFE.Factura._Factura.FERespuestaDetalleTipo_cbte
+        TipoComprobante WSAFIPFE._Factura.FERespuestaDetalleTipo_cbte
         {
             get
             {
@@ -32247,7 +34032,7 @@
         }
 
         [DispId(0x125)]
-        public TipoDocumento WSAFIPFE.Factura._Factura.FERespuestaDetalleTipo_doc
+        TipoDocumento WSAFIPFE._Factura.FERespuestaDetalleTipo_doc
         {
             get
             {
@@ -32256,7 +34041,7 @@
         }
 
         [DispId(0x128)]
-        public string WSAFIPFE.Factura._Factura.FERespuestaFecha_cae
+        string WSAFIPFE._Factura.FERespuestaFecha_cae
         {
             get
             {
@@ -32265,7 +34050,7 @@
         }
 
         [DispId(0x126)]
-        public string WSAFIPFE.Factura._Factura.FERespuestaId
+        string WSAFIPFE._Factura.FERespuestaId
         {
             get
             {
@@ -32274,7 +34059,7 @@
         }
 
         [DispId(0x12b)]
-        public string WSAFIPFE.Factura._Factura.FERespuestaMotivo
+        string WSAFIPFE._Factura.FERespuestaMotivo
         {
             get
             {
@@ -32283,7 +34068,7 @@
         }
 
         [DispId(0x12d)]
-        public int WSAFIPFE.Factura._Factura.FERespuestaPresta_serv
+        int WSAFIPFE._Factura.FERespuestaPresta_serv
         {
             get
             {
@@ -32292,7 +34077,7 @@
         }
 
         [DispId(300)]
-        public string WSAFIPFE.Factura._Factura.FERespuestaReproceso
+        string WSAFIPFE._Factura.FERespuestaReproceso
         {
             get
             {
@@ -32301,7 +34086,7 @@
         }
 
         [DispId(0x12a)]
-        public string WSAFIPFE.Factura._Factura.FERespuestaResultado
+        string WSAFIPFE._Factura.FERespuestaResultado
         {
             get
             {
@@ -32310,7 +34095,7 @@
         }
 
         [DispId(0x2df)]
-        public int WSAFIPFE.Factura._Factura.fxCAEAItemCantidad
+        int WSAFIPFE._Factura.fxCAEAItemCantidad
         {
             get
             {
@@ -32324,7 +34109,7 @@
         }
 
         [DispId(0x2b7)]
-        public string WSAFIPFE.Factura._Factura.fxCodigoAutorizacion
+        string WSAFIPFE._Factura.fxCodigoAutorizacion
         {
             get
             {
@@ -32341,7 +34126,7 @@
         }
 
         [DispId(0x2b8)]
-        public bool WSAFIPFE.Factura._Factura.fxCodigoAutorizacionNO
+        bool WSAFIPFE._Factura.fxCodigoAutorizacionNO
         {
             get
             {
@@ -32361,7 +34146,7 @@
         }
 
         [DispId(0x2c7)]
-        public int WSAFIPFE.Factura._Factura.fxCodigoConcepto
+        int WSAFIPFE._Factura.fxCodigoConcepto
         {
             get
             {
@@ -32374,7 +34159,7 @@
         }
 
         [DispId(0x2b9)]
-        public string WSAFIPFE.Factura._Factura.fxCodigoMoneda
+        string WSAFIPFE._Factura.fxCodigoMoneda
         {
             get
             {
@@ -32387,7 +34172,7 @@
         }
 
         [DispId(0x2cc)]
-        public string WSAFIPFE.Factura._Factura.fxCodigoTipoAutorizacion
+        string WSAFIPFE._Factura.fxCodigoTipoAutorizacion
         {
             get
             {
@@ -32400,7 +34185,7 @@
         }
 
         [DispId(0x2c9)]
-        public bool WSAFIPFE.Factura._Factura.fxCodigoTipoAutorizacionNO
+        bool WSAFIPFE._Factura.fxCodigoTipoAutorizacionNO
         {
             get
             {
@@ -32420,7 +34205,7 @@
         }
 
         [DispId(0x2c8)]
-        public int WSAFIPFE.Factura._Factura.fxCodigoTipoComprobante
+        int WSAFIPFE._Factura.fxCodigoTipoComprobante
         {
             get
             {
@@ -32433,7 +34218,7 @@
         }
 
         [DispId(0x2ca)]
-        public int WSAFIPFE.Factura._Factura.fxCodigoTipoDocumento
+        int WSAFIPFE._Factura.fxCodigoTipoDocumento
         {
             get
             {
@@ -32446,7 +34231,7 @@
         }
 
         [DispId(0x2cb)]
-        public bool WSAFIPFE.Factura._Factura.fxCodigoTipoDocumentoNO
+        bool WSAFIPFE._Factura.fxCodigoTipoDocumentoNO
         {
             get
             {
@@ -32466,7 +34251,7 @@
         }
 
         [DispId(730)]
-        public int WSAFIPFE.Factura._Factura.fxComprobanteAsosiadoCodigoTipoComprobante
+        int WSAFIPFE._Factura.fxComprobanteAsosiadoCodigoTipoComprobante
         {
             get
             {
@@ -32479,7 +34264,7 @@
         }
 
         [DispId(0x2db)]
-        public int WSAFIPFE.Factura._Factura.fxComprobanteAsosiadoNumeroComprobante
+        int WSAFIPFE._Factura.fxComprobanteAsosiadoNumeroComprobante
         {
             get
             {
@@ -32492,7 +34277,7 @@
         }
 
         [DispId(0x2dc)]
-        public int WSAFIPFE.Factura._Factura.fxComprobanteAsosiadoNumeroPuntoVenta
+        int WSAFIPFE._Factura.fxComprobanteAsosiadoNumeroPuntoVenta
         {
             get
             {
@@ -32505,7 +34290,7 @@
         }
 
         [DispId(0x2dd)]
-        public int WSAFIPFE.Factura._Factura.fxComprobantesAsociadosItemCantidad
+        int WSAFIPFE._Factura.fxComprobantesAsociadosItemCantidad
         {
             get
             {
@@ -32519,7 +34304,7 @@
         }
 
         [DispId(0x2cd)]
-        public double WSAFIPFE.Factura._Factura.fxCotizacionMoneda
+        double WSAFIPFE._Factura.fxCotizacionMoneda
         {
             get
             {
@@ -32532,7 +34317,7 @@
         }
 
         [DispId(0x1db)]
-        public string WSAFIPFE.Factura._Factura.fxDireccionServicioURL
+        string WSAFIPFE._Factura.fxDireccionServicioURL
         {
             get
             {
@@ -32545,7 +34330,7 @@
         }
 
         [DispId(0x249)]
-        public int WSAFIPFE.Factura._Factura.fxErrorCode
+        int WSAFIPFE._Factura.fxErrorCode
         {
             get
             {
@@ -32558,7 +34343,7 @@
         }
 
         [DispId(0x259)]
-        public int WSAFIPFE.Factura._Factura.fxErrorCode1
+        int WSAFIPFE._Factura.fxErrorCode1
         {
             get
             {
@@ -32571,7 +34356,7 @@
         }
 
         [DispId(0x25b)]
-        public int WSAFIPFE.Factura._Factura.fxErrorCode2
+        int WSAFIPFE._Factura.fxErrorCode2
         {
             get
             {
@@ -32584,7 +34369,7 @@
         }
 
         [DispId(0x2f)]
-        public int WSAFIPFE.Factura._Factura.fxErrorItemCantidad
+        int WSAFIPFE._Factura.fxErrorItemCantidad
         {
             get
             {
@@ -32593,7 +34378,7 @@
         }
 
         [DispId(0x24c)]
-        public string WSAFIPFE.Factura._Factura.fxErrorMsg
+        string WSAFIPFE._Factura.fxErrorMsg
         {
             get
             {
@@ -32606,7 +34391,7 @@
         }
 
         [DispId(0x255)]
-        public string WSAFIPFE.Factura._Factura.fxErrorMsg1
+        string WSAFIPFE._Factura.fxErrorMsg1
         {
             get
             {
@@ -32619,7 +34404,7 @@
         }
 
         [DispId(0x257)]
-        public string WSAFIPFE.Factura._Factura.fxErrorMsg2
+        string WSAFIPFE._Factura.fxErrorMsg2
         {
             get
             {
@@ -32632,7 +34417,7 @@
         }
 
         [DispId(0x24f)]
-        public int WSAFIPFE.Factura._Factura.fxEventCode
+        int WSAFIPFE._Factura.fxEventCode
         {
             get
             {
@@ -32645,7 +34430,7 @@
         }
 
         [DispId(0x261)]
-        public int WSAFIPFE.Factura._Factura.fxEventCode1
+        int WSAFIPFE._Factura.fxEventCode1
         {
             get
             {
@@ -32658,7 +34443,7 @@
         }
 
         [DispId(0x263)]
-        public int WSAFIPFE.Factura._Factura.fxEventCode2
+        int WSAFIPFE._Factura.fxEventCode2
         {
             get
             {
@@ -32671,7 +34456,7 @@
         }
 
         [DispId(0x31)]
-        public int WSAFIPFE.Factura._Factura.fxEventItemCantidad
+        int WSAFIPFE._Factura.fxEventItemCantidad
         {
             get
             {
@@ -32680,7 +34465,7 @@
         }
 
         [DispId(0x251)]
-        public string WSAFIPFE.Factura._Factura.fxEventMsg
+        string WSAFIPFE._Factura.fxEventMsg
         {
             get
             {
@@ -32693,7 +34478,7 @@
         }
 
         [DispId(0x25d)]
-        public string WSAFIPFE.Factura._Factura.fxEventMsg1
+        string WSAFIPFE._Factura.fxEventMsg1
         {
             get
             {
@@ -32706,7 +34491,7 @@
         }
 
         [DispId(0x25f)]
-        public string WSAFIPFE.Factura._Factura.fxEventMsg2
+        string WSAFIPFE._Factura.fxEventMsg2
         {
             get
             {
@@ -32719,7 +34504,7 @@
         }
 
         [DispId(0x2bd)]
-        public string WSAFIPFE.Factura._Factura.fxFechaEmision
+        string WSAFIPFE._Factura.fxFechaEmision
         {
             get
             {
@@ -32736,7 +34521,7 @@
         }
 
         [DispId(0x2be)]
-        public bool WSAFIPFE.Factura._Factura.fxFechaEmisionNO
+        bool WSAFIPFE._Factura.fxFechaEmisionNO
         {
             get
             {
@@ -32756,7 +34541,7 @@
         }
 
         [DispId(0x2c5)]
-        public string WSAFIPFE.Factura._Factura.fxFechaServicioDesde
+        string WSAFIPFE._Factura.fxFechaServicioDesde
         {
             get
             {
@@ -32773,7 +34558,7 @@
         }
 
         [DispId(710)]
-        public bool WSAFIPFE.Factura._Factura.fxFechaServicioDesdeNO
+        bool WSAFIPFE._Factura.fxFechaServicioDesdeNO
         {
             get
             {
@@ -32793,7 +34578,7 @@
         }
 
         [DispId(0x2bf)]
-        public string WSAFIPFE.Factura._Factura.fxFechaServicioHasta
+        string WSAFIPFE._Factura.fxFechaServicioHasta
         {
             get
             {
@@ -32810,7 +34595,7 @@
         }
 
         [DispId(0x2c0)]
-        public bool WSAFIPFE.Factura._Factura.fxFechaServicioHastaNO
+        bool WSAFIPFE._Factura.fxFechaServicioHastaNO
         {
             get
             {
@@ -32830,7 +34615,7 @@
         }
 
         [DispId(0x2c1)]
-        public string WSAFIPFE.Factura._Factura.fxFechaVencimiento
+        string WSAFIPFE._Factura.fxFechaVencimiento
         {
             get
             {
@@ -32847,7 +34632,7 @@
         }
 
         [DispId(0x2c2)]
-        public bool WSAFIPFE.Factura._Factura.fxFechaVencimientoNO
+        bool WSAFIPFE._Factura.fxFechaVencimientoNO
         {
             get
             {
@@ -32867,7 +34652,7 @@
         }
 
         [DispId(0x2c3)]
-        public string WSAFIPFE.Factura._Factura.fxFechaVencimientoPago
+        string WSAFIPFE._Factura.fxFechaVencimientoPago
         {
             get
             {
@@ -32884,7 +34669,7 @@
         }
 
         [DispId(0x2c4)]
-        public bool WSAFIPFE.Factura._Factura.fxFechaVencimientoPagoNO
+        bool WSAFIPFE._Factura.fxFechaVencimientoPagoNO
         {
             get
             {
@@ -32904,7 +34689,7 @@
         }
 
         [DispId(0x2ce)]
-        public double WSAFIPFE.Factura._Factura.fxImporteExento
+        double WSAFIPFE._Factura.fxImporteExento
         {
             get
             {
@@ -32917,7 +34702,7 @@
         }
 
         [DispId(0x2cf)]
-        public bool WSAFIPFE.Factura._Factura.fxImporteExentoNO
+        bool WSAFIPFE._Factura.fxImporteExentoNO
         {
             get
             {
@@ -32937,7 +34722,7 @@
         }
 
         [DispId(720)]
-        public double WSAFIPFE.Factura._Factura.fxImporteGravado
+        double WSAFIPFE._Factura.fxImporteGravado
         {
             get
             {
@@ -32950,7 +34735,7 @@
         }
 
         [DispId(0x2d1)]
-        public bool WSAFIPFE.Factura._Factura.fxImporteGravadoNO
+        bool WSAFIPFE._Factura.fxImporteGravadoNO
         {
             get
             {
@@ -32970,7 +34755,7 @@
         }
 
         [DispId(0x2d2)]
-        public double WSAFIPFE.Factura._Factura.fxImporteNoGravado
+        double WSAFIPFE._Factura.fxImporteNoGravado
         {
             get
             {
@@ -32983,7 +34768,7 @@
         }
 
         [DispId(0x2d3)]
-        public bool WSAFIPFE.Factura._Factura.fxImporteNoGravadoNO
+        bool WSAFIPFE._Factura.fxImporteNoGravadoNO
         {
             get
             {
@@ -33003,7 +34788,7 @@
         }
 
         [DispId(0x2d4)]
-        public double WSAFIPFE.Factura._Factura.fxImporteOtrosTributos
+        double WSAFIPFE._Factura.fxImporteOtrosTributos
         {
             get
             {
@@ -33016,7 +34801,7 @@
         }
 
         [DispId(0x2d5)]
-        public bool WSAFIPFE.Factura._Factura.fxImporteOtrosTributosNO
+        bool WSAFIPFE._Factura.fxImporteOtrosTributosNO
         {
             get
             {
@@ -33036,7 +34821,7 @@
         }
 
         [DispId(0x2d7)]
-        public double WSAFIPFE.Factura._Factura.fxImporteSubTotal
+        double WSAFIPFE._Factura.fxImporteSubTotal
         {
             get
             {
@@ -33049,7 +34834,7 @@
         }
 
         [DispId(0x2d8)]
-        public double WSAFIPFE.Factura._Factura.fxImporteTotal
+        double WSAFIPFE._Factura.fxImporteTotal
         {
             get
             {
@@ -33062,7 +34847,7 @@
         }
 
         [DispId(160)]
-        public int WSAFIPFE.Factura._Factura.fxIndiceItem
+        int WSAFIPFE._Factura.fxIndiceItem
         {
             get
             {
@@ -33075,7 +34860,7 @@
         }
 
         [DispId(0x2e2)]
-        public double WSAFIPFE.Factura._Factura.fxItemCantidad
+        double WSAFIPFE._Factura.fxItemCantidad
         {
             get
             {
@@ -33088,7 +34873,7 @@
         }
 
         [DispId(0x2e3)]
-        public bool WSAFIPFE.Factura._Factura.fxItemCantidadNO
+        bool WSAFIPFE._Factura.fxItemCantidadNO
         {
             get
             {
@@ -33108,7 +34893,7 @@
         }
 
         [DispId(0x2eb)]
-        public string WSAFIPFE.Factura._Factura.fxItemCodigo
+        string WSAFIPFE._Factura.fxItemCodigo
         {
             get
             {
@@ -33121,7 +34906,7 @@
         }
 
         [DispId(0x2f4)]
-        public int WSAFIPFE.Factura._Factura.fxItemCodigoCondicionIva
+        int WSAFIPFE._Factura.fxItemCodigoCondicionIva
         {
             get
             {
@@ -33134,7 +34919,7 @@
         }
 
         [DispId(0x2f2)]
-        public string WSAFIPFE.Factura._Factura.fxItemCodigoMtx
+        string WSAFIPFE._Factura.fxItemCodigoMtx
         {
             get
             {
@@ -33147,7 +34932,7 @@
         }
 
         [DispId(0x2f5)]
-        public int WSAFIPFE.Factura._Factura.fxItemCodigoUnidadMedida
+        int WSAFIPFE._Factura.fxItemCodigoUnidadMedida
         {
             get
             {
@@ -33160,7 +34945,7 @@
         }
 
         [DispId(0x2f3)]
-        public string WSAFIPFE.Factura._Factura.fxItemDescripcion
+        string WSAFIPFE._Factura.fxItemDescripcion
         {
             get
             {
@@ -33173,7 +34958,7 @@
         }
 
         [DispId(0x2e5)]
-        public double WSAFIPFE.Factura._Factura.fxItemImporteBonificacion
+        double WSAFIPFE._Factura.fxItemImporteBonificacion
         {
             get
             {
@@ -33186,7 +34971,7 @@
         }
 
         [DispId(740)]
-        public bool WSAFIPFE.Factura._Factura.fxItemImporteBonificacionNO
+        bool WSAFIPFE._Factura.fxItemImporteBonificacionNO
         {
             get
             {
@@ -33206,7 +34991,7 @@
         }
 
         [DispId(0x2e6)]
-        public double WSAFIPFE.Factura._Factura.fxItemImporteItem
+        double WSAFIPFE._Factura.fxItemImporteItem
         {
             get
             {
@@ -33219,7 +35004,7 @@
         }
 
         [DispId(0x2e7)]
-        public double WSAFIPFE.Factura._Factura.fxItemImporteIva
+        double WSAFIPFE._Factura.fxItemImporteIva
         {
             get
             {
@@ -33232,7 +35017,7 @@
         }
 
         [DispId(0x2e8)]
-        public bool WSAFIPFE.Factura._Factura.fxItemImporteIvaNO
+        bool WSAFIPFE._Factura.fxItemImporteIvaNO
         {
             get
             {
@@ -33252,7 +35037,7 @@
         }
 
         [DispId(0x2e9)]
-        public double WSAFIPFE.Factura._Factura.fxItemPrecioUnitario
+        double WSAFIPFE._Factura.fxItemPrecioUnitario
         {
             get
             {
@@ -33265,7 +35050,7 @@
         }
 
         [DispId(0x2ea)]
-        public bool WSAFIPFE.Factura._Factura.fxItemPrecioUnitarioNO
+        bool WSAFIPFE._Factura.fxItemPrecioUnitarioNO
         {
             get
             {
@@ -33285,7 +35070,7 @@
         }
 
         [DispId(0x2de)]
-        public int WSAFIPFE.Factura._Factura.fxItemsItemCantidad
+        int WSAFIPFE._Factura.fxItemsItemCantidad
         {
             get
             {
@@ -33299,7 +35084,7 @@
         }
 
         [DispId(0x2f6)]
-        public int WSAFIPFE.Factura._Factura.fxItemUnidadesMtx
+        int WSAFIPFE._Factura.fxItemUnidadesMtx
         {
             get
             {
@@ -33312,7 +35097,7 @@
         }
 
         [DispId(760)]
-        public bool WSAFIPFE.Factura._Factura.fxItemUnidadesMtxNO
+        bool WSAFIPFE._Factura.fxItemUnidadesMtxNO
         {
             get
             {
@@ -33332,7 +35117,7 @@
         }
 
         [DispId(0x2f7)]
-        public string WSAFIPFE.Factura._Factura.fxItemUnidadesMtxS
+        string WSAFIPFE._Factura.fxItemUnidadesMtxS
         {
             get
             {
@@ -33345,7 +35130,7 @@
         }
 
         [DispId(0x73)]
-        public bool WSAFIPFE.Factura._Factura.fxLicenciaValidaCAE
+        bool WSAFIPFE._Factura.fxLicenciaValidaCAE
         {
             get
             {
@@ -33354,7 +35139,7 @@
         }
 
         [DispId(0x74)]
-        public bool WSAFIPFE.Factura._Factura.fxLicenciaValidaCAEA
+        bool WSAFIPFE._Factura.fxLicenciaValidaCAEA
         {
             get
             {
@@ -33363,7 +35148,7 @@
         }
 
         [DispId(0x1ba)]
-        public int WSAFIPFE.Factura._Factura.fxListaCodigo
+        int WSAFIPFE._Factura.fxListaCodigo
         {
             get
             {
@@ -33372,7 +35157,7 @@
         }
 
         [DispId(0x1bc)]
-        public string WSAFIPFE.Factura._Factura.fxListaCodigo2
+        string WSAFIPFE._Factura.fxListaCodigo2
         {
             get
             {
@@ -33381,7 +35166,7 @@
         }
 
         [DispId(0x1bb)]
-        public string WSAFIPFE.Factura._Factura.fxListaDescripcion
+        string WSAFIPFE._Factura.fxListaDescripcion
         {
             get
             {
@@ -33390,7 +35175,7 @@
         }
 
         [DispId(0x1bd)]
-        public string WSAFIPFE.Factura._Factura.fxListaDesde
+        string WSAFIPFE._Factura.fxListaDesde
         {
             get
             {
@@ -33399,7 +35184,7 @@
         }
 
         [DispId(0x1be)]
-        public string WSAFIPFE.Factura._Factura.fxListaHasta
+        string WSAFIPFE._Factura.fxListaHasta
         {
             get
             {
@@ -33408,7 +35193,7 @@
         }
 
         [DispId(0x25)]
-        public int WSAFIPFE.Factura._Factura.fxListaItemCantidad
+        int WSAFIPFE._Factura.fxListaItemCantidad
         {
             get
             {
@@ -33417,7 +35202,7 @@
         }
 
         [DispId(0x2d9)]
-        public int WSAFIPFE.Factura._Factura.fxNumeroComprobante
+        int WSAFIPFE._Factura.fxNumeroComprobante
         {
             get
             {
@@ -33430,7 +35215,7 @@
         }
 
         [DispId(0x2bb)]
-        public string WSAFIPFE.Factura._Factura.fxNumeroDocumento
+        string WSAFIPFE._Factura.fxNumeroDocumento
         {
             get
             {
@@ -33447,7 +35232,7 @@
         }
 
         [DispId(0x2d6)]
-        public bool WSAFIPFE.Factura._Factura.fxNumeroDocumentoNO
+        bool WSAFIPFE._Factura.fxNumeroDocumentoNO
         {
             get
             {
@@ -33467,7 +35252,7 @@
         }
 
         [DispId(700)]
-        public int WSAFIPFE.Factura._Factura.fxNumeroPuntoVenta
+        int WSAFIPFE._Factura.fxNumeroPuntoVenta
         {
             get
             {
@@ -33480,7 +35265,7 @@
         }
 
         [DispId(0x24a)]
-        public int WSAFIPFE.Factura._Factura.fxObervacionCodigo
+        int WSAFIPFE._Factura.fxObervacionCodigo
         {
             get
             {
@@ -33493,7 +35278,7 @@
         }
 
         [DispId(0x254)]
-        public int WSAFIPFE.Factura._Factura.fxObervacionCodigo1
+        int WSAFIPFE._Factura.fxObervacionCodigo1
         {
             get
             {
@@ -33506,7 +35291,7 @@
         }
 
         [DispId(0x24d)]
-        public string WSAFIPFE.Factura._Factura.fxObervacionDescripcion
+        string WSAFIPFE._Factura.fxObervacionDescripcion
         {
             get
             {
@@ -33519,7 +35304,7 @@
         }
 
         [DispId(0x253)]
-        public string WSAFIPFE.Factura._Factura.fxObervacionDescripcion1
+        string WSAFIPFE._Factura.fxObervacionDescripcion1
         {
             get
             {
@@ -33532,7 +35317,7 @@
         }
 
         [DispId(0x30)]
-        public int WSAFIPFE.Factura._Factura.fxObervacionItemCantidad
+        int WSAFIPFE._Factura.fxObervacionItemCantidad
         {
             get
             {
@@ -33541,7 +35326,7 @@
         }
 
         [DispId(0x2ba)]
-        public string WSAFIPFE.Factura._Factura.fxObservaciones
+        string WSAFIPFE._Factura.fxObservaciones
         {
             get
             {
@@ -33554,7 +35339,7 @@
         }
 
         [DispId(0x2ec)]
-        public double WSAFIPFE.Factura._Factura.fxOtrosTributosBaseImponible
+        double WSAFIPFE._Factura.fxOtrosTributosBaseImponible
         {
             get
             {
@@ -33567,7 +35352,7 @@
         }
 
         [DispId(0x2ef)]
-        public int WSAFIPFE.Factura._Factura.fxOtrosTributosCodigo
+        int WSAFIPFE._Factura.fxOtrosTributosCodigo
         {
             get
             {
@@ -33580,7 +35365,7 @@
         }
 
         [DispId(750)]
-        public string WSAFIPFE.Factura._Factura.fxOtrosTributosDescripcion
+        string WSAFIPFE._Factura.fxOtrosTributosDescripcion
         {
             get
             {
@@ -33593,7 +35378,7 @@
         }
 
         [DispId(0x2ed)]
-        public double WSAFIPFE.Factura._Factura.fxOtrosTributosImporte
+        double WSAFIPFE._Factura.fxOtrosTributosImporte
         {
             get
             {
@@ -33606,7 +35391,7 @@
         }
 
         [DispId(0x2e0)]
-        public int WSAFIPFE.Factura._Factura.fxOtrosTributosItemCantidad
+        int WSAFIPFE._Factura.fxOtrosTributosItemCantidad
         {
             get
             {
@@ -33620,7 +35405,7 @@
         }
 
         [DispId(0x18d)]
-        public string WSAFIPFE.Factura._Factura.fxRespuestaCAE
+        string WSAFIPFE._Factura.fxRespuestaCAE
         {
             get
             {
@@ -33629,7 +35414,7 @@
         }
 
         [DispId(460)]
-        public string WSAFIPFE.Factura._Factura.fxRespuestaCAEA
+        string WSAFIPFE._Factura.fxRespuestaCAEA
         {
             get
             {
@@ -33638,7 +35423,7 @@
         }
 
         [DispId(0x1d1)]
-        public string WSAFIPFE.Factura._Factura.fxRespuestaCAEAFechaDesde
+        string WSAFIPFE._Factura.fxRespuestaCAEAFechaDesde
         {
             get
             {
@@ -33647,7 +35432,7 @@
         }
 
         [DispId(0x1d2)]
-        public string WSAFIPFE.Factura._Factura.fxRespuestaCAEAFechaHasta
+        string WSAFIPFE._Factura.fxRespuestaCAEAFechaHasta
         {
             get
             {
@@ -33656,7 +35441,7 @@
         }
 
         [DispId(0x1d4)]
-        public string WSAFIPFE.Factura._Factura.fxRespuestaCAEAFechaProceso
+        string WSAFIPFE._Factura.fxRespuestaCAEAFechaProceso
         {
             get
             {
@@ -33665,7 +35450,7 @@
         }
 
         [DispId(0x1d3)]
-        public string WSAFIPFE.Factura._Factura.fxRespuestaCAEAFechaTopeInforme
+        string WSAFIPFE._Factura.fxRespuestaCAEAFechaTopeInforme
         {
             get
             {
@@ -33674,7 +35459,7 @@
         }
 
         [DispId(0x189)]
-        public int WSAFIPFE.Factura._Factura.FxRespuestaCAEAItemCantidad
+        int WSAFIPFE._Factura.FxRespuestaCAEAItemCantidad
         {
             get
             {
@@ -33683,7 +35468,7 @@
         }
 
         [DispId(0x1cf)]
-        public int WSAFIPFE.Factura._Factura.fxRespuestaCAEAOrden
+        int WSAFIPFE._Factura.fxRespuestaCAEAOrden
         {
             get
             {
@@ -33692,7 +35477,7 @@
         }
 
         [DispId(0x1d0)]
-        public string WSAFIPFE.Factura._Factura.fxRespuestaCAEAOrdenS
+        string WSAFIPFE._Factura.fxRespuestaCAEAOrdenS
         {
             get
             {
@@ -33701,7 +35486,7 @@
         }
 
         [DispId(0x1cd)]
-        public int WSAFIPFE.Factura._Factura.fxRespuestaCAEAPeriodo
+        int WSAFIPFE._Factura.fxRespuestaCAEAPeriodo
         {
             get
             {
@@ -33710,7 +35495,7 @@
         }
 
         [DispId(0x1ce)]
-        public string WSAFIPFE.Factura._Factura.fxRespuestaCAEAPeriodoS
+        string WSAFIPFE._Factura.fxRespuestaCAEAPeriodoS
         {
             get
             {
@@ -33719,7 +35504,7 @@
         }
 
         [DispId(400)]
-        public int WSAFIPFE.Factura._Factura.fxRespuestaCodigoTipoComprobante
+        int WSAFIPFE._Factura.fxRespuestaCodigoTipoComprobante
         {
             get
             {
@@ -33728,7 +35513,7 @@
         }
 
         [DispId(0x18e)]
-        public string WSAFIPFE.Factura._Factura.fxRespuestaCUIT
+        string WSAFIPFE._Factura.fxRespuestaCUIT
         {
             get
             {
@@ -33737,7 +35522,7 @@
         }
 
         [DispId(0x293)]
-        public string WSAFIPFE.Factura._Factura.FxRespuestaDetalleCAEABloqueado
+        string WSAFIPFE._Factura.FxRespuestaDetalleCAEABloqueado
         {
             get
             {
@@ -33746,7 +35531,7 @@
         }
 
         [DispId(660)]
-        public string WSAFIPFE.Factura._Factura.FxRespuestaDetalleCAEAFechaBaja
+        string WSAFIPFE._Factura.FxRespuestaDetalleCAEAFechaBaja
         {
             get
             {
@@ -33755,7 +35540,7 @@
         }
 
         [DispId(0x292)]
-        public int WSAFIPFE.Factura._Factura.FxRespuestaDetalleCAEANumeroPuntoventa
+        int WSAFIPFE._Factura.FxRespuestaDetalleCAEANumeroPuntoventa
         {
             get
             {
@@ -33764,7 +35549,7 @@
         }
 
         [DispId(390)]
-        public string WSAFIPFE.Factura._Factura.fxRespuestaDummyAuthServer
+        string WSAFIPFE._Factura.fxRespuestaDummyAuthServer
         {
             get
             {
@@ -33773,7 +35558,7 @@
         }
 
         [DispId(0x192)]
-        public string WSAFIPFE.Factura._Factura.fxRespuestaFechaEmision
+        string WSAFIPFE._Factura.fxRespuestaFechaEmision
         {
             get
             {
@@ -33782,7 +35567,7 @@
         }
 
         [DispId(0x193)]
-        public string WSAFIPFE.Factura._Factura.fxRespuestaFechaVencimientoCAE
+        string WSAFIPFE._Factura.fxRespuestaFechaVencimientoCAE
         {
             get
             {
@@ -33791,7 +35576,7 @@
         }
 
         [DispId(0x18f)]
-        public int WSAFIPFE.Factura._Factura.fxRespuestaNumeroComprobante
+        int WSAFIPFE._Factura.fxRespuestaNumeroComprobante
         {
             get
             {
@@ -33800,7 +35585,7 @@
         }
 
         [DispId(0x191)]
-        public int WSAFIPFE.Factura._Factura.fxRespuestaNumeroPuntoVenta
+        int WSAFIPFE._Factura.fxRespuestaNumeroPuntoVenta
         {
             get
             {
@@ -33809,7 +35594,7 @@
         }
 
         [DispId(0x1b9)]
-        public int WSAFIPFE.Factura._Factura.FxRespuestaObservacionCodigo1
+        int WSAFIPFE._Factura.FxRespuestaObservacionCodigo1
         {
             get
             {
@@ -33822,7 +35607,7 @@
         }
 
         [DispId(440)]
-        public string WSAFIPFE.Factura._Factura.FxRespuestaObservacionDescripcion1
+        string WSAFIPFE._Factura.FxRespuestaObservacionDescripcion1
         {
             get
             {
@@ -33835,7 +35620,7 @@
         }
 
         [DispId(0x1b4)]
-        public int WSAFIPFE.Factura._Factura.FxRespuestaObservacionItemCantidad
+        int WSAFIPFE._Factura.FxRespuestaObservacionItemCantidad
         {
             get
             {
@@ -33844,7 +35629,7 @@
         }
 
         [DispId(0x18c)]
-        public string WSAFIPFE.Factura._Factura.fxRespuestaResultado
+        string WSAFIPFE._Factura.fxRespuestaResultado
         {
             get
             {
@@ -33853,7 +35638,7 @@
         }
 
         [DispId(0x185)]
-        public string WSAFIPFE.Factura._Factura.fxRespuetaDummyAppServer
+        string WSAFIPFE._Factura.fxRespuetaDummyAppServer
         {
             get
             {
@@ -33862,7 +35647,7 @@
         }
 
         [DispId(0x16f)]
-        public string WSAFIPFE.Factura._Factura.fxsign
+        string WSAFIPFE._Factura.fxsign
         {
             get
             {
@@ -33875,7 +35660,7 @@
         }
 
         [DispId(0x2e1)]
-        public int WSAFIPFE.Factura._Factura.fxSubTotalesItemCantidad
+        int WSAFIPFE._Factura.fxSubTotalesItemCantidad
         {
             get
             {
@@ -33889,7 +35674,7 @@
         }
 
         [DispId(0x2f0)]
-        public int WSAFIPFE.Factura._Factura.fxSubTotalesIvaCodigo
+        int WSAFIPFE._Factura.fxSubTotalesIvaCodigo
         {
             get
             {
@@ -33902,7 +35687,7 @@
         }
 
         [DispId(0x2f1)]
-        public double WSAFIPFE.Factura._Factura.fxSubTotalesIvaImporte
+        double WSAFIPFE._Factura.fxSubTotalesIvaImporte
         {
             get
             {
@@ -33915,7 +35700,7 @@
         }
 
         [DispId(0x69)]
-        public bool WSAFIPFE.Factura._Factura.fxTicketEsValido
+        bool WSAFIPFE._Factura.fxTicketEsValido
         {
             get
             {
@@ -33928,7 +35713,7 @@
         }
 
         [DispId(0x146)]
-        public DateTime WSAFIPFE.Factura._Factura.fxTicketHora
+        DateTime WSAFIPFE._Factura.fxTicketHora
         {
             get
             {
@@ -33937,7 +35722,7 @@
         }
 
         [DispId(0x150)]
-        public DateTime WSAFIPFE.Factura._Factura.fxTicketHoraVencimiento
+        DateTime WSAFIPFE._Factura.fxTicketHoraVencimiento
         {
             get
             {
@@ -33946,7 +35731,7 @@
         }
 
         [DispId(0x15a)]
-        public bool WSAFIPFE.Factura._Factura.fxTicketValido
+        bool WSAFIPFE._Factura.fxTicketValido
         {
             get
             {
@@ -33955,7 +35740,7 @@
         }
 
         [DispId(0x165)]
-        public string WSAFIPFE.Factura._Factura.fxtoken
+        string WSAFIPFE._Factura.fxtoken
         {
             get
             {
@@ -33968,7 +35753,7 @@
         }
 
         [DispId(0x27b)]
-        public string WSAFIPFE.Factura._Factura.gCosechaCodigo
+        string WSAFIPFE._Factura.gCosechaCodigo
         {
             get
             {
@@ -33981,7 +35766,7 @@
         }
 
         [DispId(0x27c)]
-        public string WSAFIPFE.Factura._Factura.gCosechaDescripcion
+        string WSAFIPFE._Factura.gCosechaDescripcion
         {
             get
             {
@@ -33994,7 +35779,7 @@
         }
 
         [DispId(0xab)]
-        public int WSAFIPFE.Factura._Factura.gCosechaItemCantidad
+        int WSAFIPFE._Factura.gCosechaItemCantidad
         {
             get
             {
@@ -34008,7 +35793,7 @@
         }
 
         [DispId(0x27d)]
-        public int WSAFIPFE.Factura._Factura.gCTGCantHoras
+        int WSAFIPFE._Factura.gCTGCantHoras
         {
             get
             {
@@ -34021,7 +35806,7 @@
         }
 
         [DispId(0x27f)]
-        public string WSAFIPFE.Factura._Factura.gCTGCodigoCosecha
+        string WSAFIPFE._Factura.gCTGCodigoCosecha
         {
             get
             {
@@ -34034,7 +35819,7 @@
         }
 
         [DispId(0x27e)]
-        public string WSAFIPFE.Factura._Factura.gCTGCodigoEspecie
+        string WSAFIPFE._Factura.gCTGCodigoEspecie
         {
             get
             {
@@ -34047,7 +35832,7 @@
         }
 
         [DispId(640)]
-        public int WSAFIPFE.Factura._Factura.gCTGCodigoLocalidadDestino
+        int WSAFIPFE._Factura.gCTGCodigoLocalidadDestino
         {
             get
             {
@@ -34060,7 +35845,7 @@
         }
 
         [DispId(0x281)]
-        public int WSAFIPFE.Factura._Factura.gCTGCodigoLocalidadOrigen
+        int WSAFIPFE._Factura.gCTGCodigoLocalidadOrigen
         {
             get
             {
@@ -34073,7 +35858,7 @@
         }
 
         [DispId(0x282)]
-        public string WSAFIPFE.Factura._Factura.gCTGCuitDestinatario
+        string WSAFIPFE._Factura.gCTGCuitDestinatario
         {
             get
             {
@@ -34090,7 +35875,7 @@
         }
 
         [DispId(0x283)]
-        public string WSAFIPFE.Factura._Factura.gCTGCuitDestino
+        string WSAFIPFE._Factura.gCTGCuitDestino
         {
             get
             {
@@ -34107,7 +35892,7 @@
         }
 
         [DispId(0x284)]
-        public string WSAFIPFE.Factura._Factura.gCTGCuitRemitenteComercial
+        string WSAFIPFE._Factura.gCTGCuitRemitenteComercial
         {
             get
             {
@@ -34124,7 +35909,7 @@
         }
 
         [DispId(0x286)]
-        public string WSAFIPFE.Factura._Factura.gCTGCuitRepresentado
+        string WSAFIPFE._Factura.gCTGCuitRepresentado
         {
             get
             {
@@ -34141,7 +35926,7 @@
         }
 
         [DispId(0x285)]
-        public string WSAFIPFE.Factura._Factura.gCTGCuitTrasnportista
+        string WSAFIPFE._Factura.gCTGCuitTrasnportista
         {
             get
             {
@@ -34158,7 +35943,7 @@
         }
 
         [DispId(0x287)]
-        public string WSAFIPFE.Factura._Factura.gCTGNumeroCartaPorte
+        string WSAFIPFE._Factura.gCTGNumeroCartaPorte
         {
             get
             {
@@ -34175,7 +35960,7 @@
         }
 
         [DispId(0x288)]
-        public string WSAFIPFE.Factura._Factura.gCTGPatenteVehiculo
+        string WSAFIPFE._Factura.gCTGPatenteVehiculo
         {
             get
             {
@@ -34188,7 +35973,7 @@
         }
 
         [DispId(0x289)]
-        public string WSAFIPFE.Factura._Factura.gCTGPatenteVehiculoS
+        string WSAFIPFE._Factura.gCTGPatenteVehiculoS
         {
             get
             {
@@ -34201,7 +35986,7 @@
         }
 
         [DispId(650)]
-        public string WSAFIPFE.Factura._Factura.gCTGPesoNetoCarga
+        string WSAFIPFE._Factura.gCTGPesoNetoCarga
         {
             get
             {
@@ -34218,7 +36003,7 @@
         }
 
         [DispId(0x28d)]
-        public string WSAFIPFE.Factura._Factura.gCTGRespuestaCodigoTransaccion
+        string WSAFIPFE._Factura.gCTGRespuestaCodigoTransaccion
         {
             get
             {
@@ -34227,7 +36012,7 @@
         }
 
         [DispId(0x28b)]
-        public string WSAFIPFE.Factura._Factura.gCTGRespuestaNumeroCartaPorte
+        string WSAFIPFE._Factura.gCTGRespuestaNumeroCartaPorte
         {
             get
             {
@@ -34236,7 +36021,7 @@
         }
 
         [DispId(0x28c)]
-        public string WSAFIPFE.Factura._Factura.gCTGRespuestaNumeroCTG
+        string WSAFIPFE._Factura.gCTGRespuestaNumeroCTG
         {
             get
             {
@@ -34245,7 +36030,7 @@
         }
 
         [DispId(0x28e)]
-        public string WSAFIPFE.Factura._Factura.gCTGRespuestaObervaciones
+        string WSAFIPFE._Factura.gCTGRespuestaObervaciones
         {
             get
             {
@@ -34254,7 +36039,7 @@
         }
 
         [DispId(0x6c)]
-        public string WSAFIPFE.Factura._Factura.gErrorCodigo
+        string WSAFIPFE._Factura.gErrorCodigo
         {
             get
             {
@@ -34263,7 +36048,7 @@
         }
 
         [DispId(0x6b)]
-        public string WSAFIPFE.Factura._Factura.gErrorMensaje
+        string WSAFIPFE._Factura.gErrorMensaje
         {
             get
             {
@@ -34272,7 +36057,7 @@
         }
 
         [DispId(0x271)]
-        public int WSAFIPFE.Factura._Factura.gEspecieCodigo
+        int WSAFIPFE._Factura.gEspecieCodigo
         {
             get
             {
@@ -34285,7 +36070,7 @@
         }
 
         [DispId(0x272)]
-        public string WSAFIPFE.Factura._Factura.gEspecieDescripcion
+        string WSAFIPFE._Factura.gEspecieDescripcion
         {
             get
             {
@@ -34298,7 +36083,7 @@
         }
 
         [DispId(0xa7)]
-        public int WSAFIPFE.Factura._Factura.gEspecieItemCantidad
+        int WSAFIPFE._Factura.gEspecieItemCantidad
         {
             get
             {
@@ -34312,7 +36097,7 @@
         }
 
         [DispId(0xa2)]
-        public int WSAFIPFE.Factura._Factura.gIndiceItem
+        int WSAFIPFE._Factura.gIndiceItem
         {
             get
             {
@@ -34325,7 +36110,7 @@
         }
 
         [DispId(120)]
-        public bool WSAFIPFE.Factura._Factura.gLicenciaValida
+        bool WSAFIPFE._Factura.gLicenciaValida
         {
             get
             {
@@ -34334,7 +36119,7 @@
         }
 
         [DispId(0x275)]
-        public int WSAFIPFE.Factura._Factura.gLocalidadCodigo
+        int WSAFIPFE._Factura.gLocalidadCodigo
         {
             get
             {
@@ -34347,7 +36132,7 @@
         }
 
         [DispId(630)]
-        public string WSAFIPFE.Factura._Factura.gLocalidadDescripcion
+        string WSAFIPFE._Factura.gLocalidadDescripcion
         {
             get
             {
@@ -34360,7 +36145,7 @@
         }
 
         [DispId(0xa9)]
-        public int WSAFIPFE.Factura._Factura.gLocalidadItemCantidad
+        int WSAFIPFE._Factura.gLocalidadItemCantidad
         {
             get
             {
@@ -34374,7 +36159,7 @@
         }
 
         [DispId(0x277)]
-        public int WSAFIPFE.Factura._Factura.gLocalidadTodasCodigo
+        int WSAFIPFE._Factura.gLocalidadTodasCodigo
         {
             get
             {
@@ -34387,7 +36172,7 @@
         }
 
         [DispId(0x279)]
-        public int WSAFIPFE.Factura._Factura.gLocalidadTodasCodigoProvincia
+        int WSAFIPFE._Factura.gLocalidadTodasCodigoProvincia
         {
             get
             {
@@ -34400,7 +36185,7 @@
         }
 
         [DispId(0x278)]
-        public string WSAFIPFE.Factura._Factura.gLocalidadTodasDescripcion
+        string WSAFIPFE._Factura.gLocalidadTodasDescripcion
         {
             get
             {
@@ -34413,7 +36198,7 @@
         }
 
         [DispId(0x27a)]
-        public string WSAFIPFE.Factura._Factura.gLocalidadTodasDescripcionProvincia
+        string WSAFIPFE._Factura.gLocalidadTodasDescripcionProvincia
         {
             get
             {
@@ -34426,7 +36211,7 @@
         }
 
         [DispId(170)]
-        public int WSAFIPFE.Factura._Factura.gLocalidadTodasItemCantidad
+        int WSAFIPFE._Factura.gLocalidadTodasItemCantidad
         {
             get
             {
@@ -34448,7 +36233,7 @@
         }
 
         [DispId(0x273)]
-        public int WSAFIPFE.Factura._Factura.gProvinciaCodigo
+        int WSAFIPFE._Factura.gProvinciaCodigo
         {
             get
             {
@@ -34461,7 +36246,7 @@
         }
 
         [DispId(0x274)]
-        public string WSAFIPFE.Factura._Factura.gProvinciaDescripcion
+        string WSAFIPFE._Factura.gProvinciaDescripcion
         {
             get
             {
@@ -34474,7 +36259,7 @@
         }
 
         [DispId(0xa8)]
-        public int WSAFIPFE.Factura._Factura.gProvinciaItemCantidad
+        int WSAFIPFE._Factura.gProvinciaItemCantidad
         {
             get
             {
@@ -34488,7 +36273,7 @@
         }
 
         [DispId(0x19d)]
-        public string WSAFIPFE.Factura._Factura.gRespuestaDummyAuthServer
+        string WSAFIPFE._Factura.gRespuestaDummyAuthServer
         {
             get
             {
@@ -34497,7 +36282,7 @@
         }
 
         [DispId(0x19e)]
-        public string WSAFIPFE.Factura._Factura.gRespuestaDummyDbServer
+        string WSAFIPFE._Factura.gRespuestaDummyDbServer
         {
             get
             {
@@ -34506,7 +36291,7 @@
         }
 
         [DispId(0x19c)]
-        public string WSAFIPFE.Factura._Factura.gRespuetaDummyAppServer
+        string WSAFIPFE._Factura.gRespuetaDummyAppServer
         {
             get
             {
@@ -34515,7 +36300,7 @@
         }
 
         [DispId(370)]
-        public string WSAFIPFE.Factura._Factura.gsign
+        string WSAFIPFE._Factura.gsign
         {
             get
             {
@@ -34528,7 +36313,7 @@
         }
 
         [DispId(0x6d)]
-        public bool WSAFIPFE.Factura._Factura.gTicketEsValido
+        bool WSAFIPFE._Factura.gTicketEsValido
         {
             get
             {
@@ -34541,7 +36326,7 @@
         }
 
         [DispId(0x149)]
-        public DateTime WSAFIPFE.Factura._Factura.gTicketHora
+        DateTime WSAFIPFE._Factura.gTicketHora
         {
             get
             {
@@ -34550,7 +36335,7 @@
         }
 
         [DispId(0x153)]
-        public DateTime WSAFIPFE.Factura._Factura.gTicketHoraVencimiento
+        DateTime WSAFIPFE._Factura.gTicketHoraVencimiento
         {
             get
             {
@@ -34559,7 +36344,7 @@
         }
 
         [DispId(0x15d)]
-        public bool WSAFIPFE.Factura._Factura.gTicketValido
+        bool WSAFIPFE._Factura.gTicketValido
         {
             get
             {
@@ -34568,7 +36353,7 @@
         }
 
         [DispId(360)]
-        public string WSAFIPFE.Factura._Factura.gtoken
+        string WSAFIPFE._Factura.gtoken
         {
             get
             {
@@ -34581,7 +36366,7 @@
         }
 
         [DispId(0x175)]
-        public string WSAFIPFE.Factura._Factura.Identificador
+        string WSAFIPFE._Factura.Identificador
         {
             get
             {
@@ -34598,7 +36383,7 @@
         }
 
         [DispId(0x1d5)]
-        public int WSAFIPFE.Factura._Factura.indice
+        int WSAFIPFE._Factura.indice
         {
             get
             {
@@ -34611,7 +36396,7 @@
         }
 
         [DispId(0x9c)]
-        public int WSAFIPFE.Factura._Factura.IndiceItem
+        int WSAFIPFE._Factura.IndiceItem
         {
             get
             {
@@ -34624,7 +36409,7 @@
         }
 
         [DispId(2)]
-        public bool WSAFIPFE.Factura._Factura.LicenciaArchivoValido
+        bool WSAFIPFE._Factura.LicenciaArchivoValido
         {
             get
             {
@@ -34637,7 +36422,7 @@
         }
 
         [DispId(3)]
-        public string WSAFIPFE.Factura._Factura.LicenciaCodigo
+        string WSAFIPFE._Factura.LicenciaCodigo
         {
             get
             {
@@ -34650,7 +36435,7 @@
         }
 
         [DispId(4)]
-        public string WSAFIPFE.Factura._Factura.LicenciaDatos
+        string WSAFIPFE._Factura.LicenciaDatos
         {
             get
             {
@@ -34663,7 +36448,7 @@
         }
 
         [DispId(5)]
-        public bool WSAFIPFE.Factura._Factura.LicenciaDatosValida
+        bool WSAFIPFE._Factura.LicenciaDatosValida
         {
             get
             {
@@ -34676,7 +36461,7 @@
         }
 
         [DispId(6)]
-        public DateTime WSAFIPFE.Factura._Factura.LicenciaFecha
+        DateTime WSAFIPFE._Factura.LicenciaFecha
         {
             get
             {
@@ -34706,7 +36491,7 @@
         }
 
         [DispId(8)]
-        public DateTime WSAFIPFE.Factura._Factura.LicenciaHasta
+        DateTime WSAFIPFE._Factura.LicenciaHasta
         {
             get
             {
@@ -34719,7 +36504,7 @@
         }
 
         [DispId(10)]
-        public int WSAFIPFE.Factura._Factura.LicenciaLimite
+        int WSAFIPFE._Factura.LicenciaLimite
         {
             get
             {
@@ -34732,7 +36517,7 @@
         }
 
         [DispId(0x7b)]
-        public bool WSAFIPFE.Factura._Factura.LicenciaLote
+        bool WSAFIPFE._Factura.LicenciaLote
         {
             get
             {
@@ -34741,7 +36526,7 @@
         }
 
         [DispId(11)]
-        public int WSAFIPFE.Factura._Factura.LicenciaUsado
+        int WSAFIPFE._Factura.LicenciaUsado
         {
             get
             {
@@ -34754,7 +36539,7 @@
         }
 
         [DispId(0x70)]
-        public bool WSAFIPFE.Factura._Factura.LicenciaValida
+        bool WSAFIPFE._Factura.LicenciaValida
         {
             get
             {
@@ -34763,7 +36548,7 @@
         }
 
         [DispId(9)]
-        public int WSAFIPFE.Factura._Factura.LicenciaValor
+        int WSAFIPFE._Factura.LicenciaValor
         {
             get
             {
@@ -34776,7 +36561,7 @@
         }
 
         [DispId(0x178)]
-        public modoFiscal WSAFIPFE.Factura._Factura.Modo
+        modoFiscal WSAFIPFE._Factura.Modo
         {
             get
             {
@@ -34789,7 +36574,7 @@
         }
 
         [DispId(0x197)]
-        public string WSAFIPFE.Factura._Factura.mRespuestaDummyAuthServer
+        string WSAFIPFE._Factura.mRespuestaDummyAuthServer
         {
             get
             {
@@ -34798,7 +36583,7 @@
         }
 
         [DispId(0x198)]
-        public string WSAFIPFE.Factura._Factura.mRespuestaDummyDbServer
+        string WSAFIPFE._Factura.mRespuestaDummyDbServer
         {
             get
             {
@@ -34807,7 +36592,7 @@
         }
 
         [DispId(0x196)]
-        public string WSAFIPFE.Factura._Factura.mRespuetaDummyAppServer
+        string WSAFIPFE._Factura.mRespuetaDummyAppServer
         {
             get
             {
@@ -34816,7 +36601,7 @@
         }
 
         [DispId(0x170)]
-        public string WSAFIPFE.Factura._Factura.msign
+        string WSAFIPFE._Factura.msign
         {
             get
             {
@@ -34829,7 +36614,7 @@
         }
 
         [DispId(0x6a)]
-        public bool WSAFIPFE.Factura._Factura.mTicketEsValido
+        bool WSAFIPFE._Factura.mTicketEsValido
         {
             get
             {
@@ -34842,7 +36627,7 @@
         }
 
         [DispId(0x147)]
-        public DateTime WSAFIPFE.Factura._Factura.mTicketHora
+        DateTime WSAFIPFE._Factura.mTicketHora
         {
             get
             {
@@ -34851,7 +36636,7 @@
         }
 
         [DispId(0x151)]
-        public DateTime WSAFIPFE.Factura._Factura.mTicketHoraVencimiento
+        DateTime WSAFIPFE._Factura.mTicketHoraVencimiento
         {
             get
             {
@@ -34860,7 +36645,7 @@
         }
 
         [DispId(0x15b)]
-        public bool WSAFIPFE.Factura._Factura.mTicketValido
+        bool WSAFIPFE._Factura.mTicketValido
         {
             get
             {
@@ -34869,7 +36654,7 @@
         }
 
         [DispId(0x166)]
-        public string WSAFIPFE.Factura._Factura.mtoken
+        string WSAFIPFE._Factura.mtoken
         {
             get
             {
@@ -34882,7 +36667,7 @@
         }
 
         [DispId(0x1d8)]
-        public string WSAFIPFE.Factura._Factura.NombreServicio
+        string WSAFIPFE._Factura.NombreServicio
         {
             get
             {
@@ -34895,7 +36680,7 @@
         }
 
         [DispId(0x79)]
-        public bool WSAFIPFE.Factura._Factura.OLicenciaValida
+        bool WSAFIPFE._Factura.OLicenciaValida
         {
             get
             {
@@ -34904,7 +36689,7 @@
         }
 
         [DispId(0x1a0)]
-        public string WSAFIPFE.Factura._Factura.oRespuestaDummyAuthServer
+        string WSAFIPFE._Factura.oRespuestaDummyAuthServer
         {
             get
             {
@@ -34913,7 +36698,7 @@
         }
 
         [DispId(0x1a1)]
-        public string WSAFIPFE.Factura._Factura.oRespuestaDummyDbServer
+        string WSAFIPFE._Factura.oRespuestaDummyDbServer
         {
             get
             {
@@ -34922,7 +36707,7 @@
         }
 
         [DispId(0x19f)]
-        public string WSAFIPFE.Factura._Factura.oRespuetaDummyAppServer
+        string WSAFIPFE._Factura.oRespuetaDummyAppServer
         {
             get
             {
@@ -34931,7 +36716,7 @@
         }
 
         [DispId(0x173)]
-        public string WSAFIPFE.Factura._Factura.osign
+        string WSAFIPFE._Factura.osign
         {
             get
             {
@@ -34944,7 +36729,7 @@
         }
 
         [DispId(330)]
-        public DateTime WSAFIPFE.Factura._Factura.oTicketHora
+        DateTime WSAFIPFE._Factura.oTicketHora
         {
             get
             {
@@ -34953,7 +36738,7 @@
         }
 
         [DispId(340)]
-        public DateTime WSAFIPFE.Factura._Factura.oTicketHoraVencimiento
+        DateTime WSAFIPFE._Factura.oTicketHoraVencimiento
         {
             get
             {
@@ -34962,7 +36747,7 @@
         }
 
         [DispId(350)]
-        public bool WSAFIPFE.Factura._Factura.oTicketValido
+        bool WSAFIPFE._Factura.oTicketValido
         {
             get
             {
@@ -34971,7 +36756,7 @@
         }
 
         [DispId(0x169)]
-        public string WSAFIPFE.Factura._Factura.otoken
+        string WSAFIPFE._Factura.otoken
         {
             get
             {
@@ -34984,7 +36769,7 @@
         }
 
         [DispId(0x18)]
-        public int WSAFIPFE.Factura._Factura.paso
+        int WSAFIPFE._Factura.paso
         {
             get
             {
@@ -34997,7 +36782,7 @@
         }
 
         [DispId(0x80)]
-        public int WSAFIPFE.Factura._Factura.PerCode
+        int WSAFIPFE._Factura.PerCode
         {
             get
             {
@@ -35006,7 +36791,7 @@
         }
 
         [DispId(0x81)]
-        public string WSAFIPFE.Factura._Factura.PerCodeSt
+        string WSAFIPFE._Factura.PerCodeSt
         {
             get
             {
@@ -35015,7 +36800,7 @@
         }
 
         [DispId(0x7c)]
-        public string WSAFIPFE.Factura._Factura.Permsg
+        string WSAFIPFE._Factura.Permsg
         {
             get
             {
@@ -35024,7 +36809,7 @@
         }
 
         [DispId(13)]
-        public string WSAFIPFE.Factura._Factura.ProxyDomain
+        string WSAFIPFE._Factura.ProxyDomain
         {
             get
             {
@@ -35037,7 +36822,7 @@
         }
 
         [DispId(14)]
-        public string WSAFIPFE.Factura._Factura.ProxyHost
+        string WSAFIPFE._Factura.ProxyHost
         {
             get
             {
@@ -35050,7 +36835,7 @@
         }
 
         [DispId(15)]
-        public int WSAFIPFE.Factura._Factura.ProxyPort
+        int WSAFIPFE._Factura.ProxyPort
         {
             get
             {
@@ -35063,7 +36848,7 @@
         }
 
         [DispId(12)]
-        public string WSAFIPFE.Factura._Factura.ProxyUserName
+        string WSAFIPFE._Factura.ProxyUserName
         {
             get
             {
@@ -35076,7 +36861,7 @@
         }
 
         [DispId(0x10)]
-        public string WSAFIPFE.Factura._Factura.ProxyUserPassword
+        string WSAFIPFE._Factura.ProxyUserPassword
         {
             get
             {
@@ -35089,7 +36874,7 @@
         }
 
         [DispId(0x17b)]
-        public string WSAFIPFE.Factura._Factura.RespuestaDummyAuthServer
+        string WSAFIPFE._Factura.RespuestaDummyAuthServer
         {
             get
             {
@@ -35098,7 +36883,7 @@
         }
 
         [DispId(380)]
-        public string WSAFIPFE.Factura._Factura.RespuestaDummyDbServer
+        string WSAFIPFE._Factura.RespuestaDummyDbServer
         {
             get
             {
@@ -35107,7 +36892,7 @@
         }
 
         [DispId(0x17a)]
-        public string WSAFIPFE.Factura._Factura.RespuetaDummyAppServer
+        string WSAFIPFE._Factura.RespuetaDummyAppServer
         {
             get
             {
@@ -35116,7 +36901,7 @@
         }
 
         [DispId(1)]
-        public string WSAFIPFE.Factura._Factura.revision
+        string WSAFIPFE._Factura.revision
         {
             get
             {
@@ -35125,7 +36910,7 @@
         }
 
         [DispId(0x179)]
-        public string WSAFIPFE.Factura._Factura.RutaArchivoCertificado
+        string WSAFIPFE._Factura.RutaArchivoCertificado
         {
             get
             {
@@ -35138,7 +36923,7 @@
         }
 
         [DispId(0xeb)]
-        public int WSAFIPFE.Factura._Factura.scbte_nro
+        int WSAFIPFE._Factura.scbte_nro
         {
             get
             {
@@ -35151,7 +36936,7 @@
         }
 
         [DispId(0x86)]
-        public int WSAFIPFE.Factura._Factura.serrcode
+        int WSAFIPFE._Factura.serrcode
         {
             get
             {
@@ -35160,7 +36945,7 @@
         }
 
         [DispId(0x87)]
-        public string WSAFIPFE.Factura._Factura.serrcodeST
+        string WSAFIPFE._Factura.serrcodeST
         {
             get
             {
@@ -35169,7 +36954,7 @@
         }
 
         [DispId(0x7f)]
-        public string WSAFIPFE.Factura._Factura.serrmsg
+        string WSAFIPFE._Factura.serrmsg
         {
             get
             {
@@ -35178,7 +36963,7 @@
         }
 
         [DispId(0x3d)]
-        public int WSAFIPFE.Factura._Factura.sEventCode
+        int WSAFIPFE._Factura.sEventCode
         {
             get
             {
@@ -35187,7 +36972,7 @@
         }
 
         [DispId(0x43)]
-        public string WSAFIPFE.Factura._Factura.sEventMsg
+        string WSAFIPFE._Factura.sEventMsg
         {
             get
             {
@@ -35196,7 +36981,7 @@
         }
 
         [DispId(0xfc)]
-        public string WSAFIPFE.Factura._Factura.sFecha_cae
+        string WSAFIPFE._Factura.sFecha_cae
         {
             get
             {
@@ -35209,7 +36994,7 @@
         }
 
         [DispId(0xf9)]
-        public string WSAFIPFE.Factura._Factura.sFecha_cbte
+        string WSAFIPFE._Factura.sFecha_cbte
         {
             get
             {
@@ -35222,7 +37007,7 @@
         }
 
         [DispId(0xfb)]
-        public string WSAFIPFE.Factura._Factura.sFecha_cbte_cae
+        string WSAFIPFE._Factura.sFecha_cbte_cae
         {
             get
             {
@@ -35235,7 +37020,7 @@
         }
 
         [DispId(250)]
-        public string WSAFIPFE.Factura._Factura.sFecha_cbte_orig
+        string WSAFIPFE._Factura.sFecha_cbte_orig
         {
             get
             {
@@ -35248,7 +37033,7 @@
         }
 
         [DispId(0x16b)]
-        public string WSAFIPFE.Factura._Factura.sign
+        string WSAFIPFE._Factura.sign
         {
             get
             {
@@ -35261,7 +37046,7 @@
         }
 
         [DispId(0xf4)]
-        public double WSAFIPFE.Factura._Factura.sImp_iibb
+        double WSAFIPFE._Factura.sImp_iibb
         {
             get
             {
@@ -35274,7 +37059,7 @@
         }
 
         [DispId(0xf5)]
-        public double WSAFIPFE.Factura._Factura.sImp_internos
+        double WSAFIPFE._Factura.sImp_internos
         {
             get
             {
@@ -35287,7 +37072,7 @@
         }
 
         [DispId(0xf7)]
-        public double WSAFIPFE.Factura._Factura.sImp_moneda_ctz
+        double WSAFIPFE._Factura.sImp_moneda_ctz
         {
             get
             {
@@ -35300,7 +37085,7 @@
         }
 
         [DispId(0xf6)]
-        public string WSAFIPFE.Factura._Factura.sImp_moneda_id
+        string WSAFIPFE._Factura.sImp_moneda_id
         {
             get
             {
@@ -35313,7 +37098,7 @@
         }
 
         [DispId(0xee)]
-        public double WSAFIPFE.Factura._Factura.sImp_neto
+        double WSAFIPFE._Factura.sImp_neto
         {
             get
             {
@@ -35326,7 +37111,7 @@
         }
 
         [DispId(0xf1)]
-        public double WSAFIPFE.Factura._Factura.simp_op_ex
+        double WSAFIPFE._Factura.simp_op_ex
         {
             get
             {
@@ -35339,7 +37124,7 @@
         }
 
         [DispId(0xf8)]
-        public double WSAFIPFE.Factura._Factura.sImp_otrib_prov
+        double WSAFIPFE._Factura.sImp_otrib_prov
         {
             get
             {
@@ -35352,7 +37137,7 @@
         }
 
         [DispId(0xf2)]
-        public double WSAFIPFE.Factura._Factura.sImp_perc
+        double WSAFIPFE._Factura.sImp_perc
         {
             get
             {
@@ -35365,7 +37150,7 @@
         }
 
         [DispId(0xf3)]
-        public double WSAFIPFE.Factura._Factura.sImp_perc_mun
+        double WSAFIPFE._Factura.sImp_perc_mun
         {
             get
             {
@@ -35378,7 +37163,7 @@
         }
 
         [DispId(0xec)]
-        public double WSAFIPFE.Factura._Factura.sImp_total
+        double WSAFIPFE._Factura.sImp_total
         {
             get
             {
@@ -35391,7 +37176,7 @@
         }
 
         [DispId(0xed)]
-        public double WSAFIPFE.Factura._Factura.sImp_total_conc
+        double WSAFIPFE._Factura.sImp_total_conc
         {
             get
             {
@@ -35404,7 +37189,7 @@
         }
 
         [DispId(0xef)]
-        public double WSAFIPFE.Factura._Factura.simpto_liq
+        double WSAFIPFE._Factura.simpto_liq
         {
             get
             {
@@ -35417,7 +37202,7 @@
         }
 
         [DispId(240)]
-        public double WSAFIPFE.Factura._Factura.simpto_liq_rni
+        double WSAFIPFE._Factura.simpto_liq_rni
         {
             get
             {
@@ -35430,7 +37215,7 @@
         }
 
         [DispId(0xa3)]
-        public int WSAFIPFE.Factura._Factura.sIndiceItem
+        int WSAFIPFE._Factura.sIndiceItem
         {
             get
             {
@@ -35443,7 +37228,7 @@
         }
 
         [DispId(0xaf)]
-        public int WSAFIPFE.Factura._Factura.sItemCantidad
+        int WSAFIPFE._Factura.sItemCantidad
         {
             get
             {
@@ -35457,7 +37242,7 @@
         }
 
         [DispId(200)]
-        public string WSAFIPFE.Factura._Factura.sItemds
+        string WSAFIPFE._Factura.sItemds
         {
             get
             {
@@ -35470,7 +37255,7 @@
         }
 
         [DispId(0xc7)]
-        public string WSAFIPFE.Factura._Factura.sItemEndoso
+        string WSAFIPFE._Factura.sItemEndoso
         {
             get
             {
@@ -35483,7 +37268,7 @@
         }
 
         [DispId(0xcb)]
-        public double WSAFIPFE.Factura._Factura.sItemimp_bonif
+        double WSAFIPFE._Factura.sItemimp_bonif
         {
             get
             {
@@ -35496,7 +37281,7 @@
         }
 
         [DispId(0xcd)]
-        public string WSAFIPFE.Factura._Factura.sItemimp_moneda_vaseg
+        string WSAFIPFE._Factura.sItemimp_moneda_vaseg
         {
             get
             {
@@ -35509,7 +37294,7 @@
         }
 
         [DispId(0xcc)]
-        public double WSAFIPFE.Factura._Factura.sItemimp_total
+        double WSAFIPFE._Factura.sItemimp_total
         {
             get
             {
@@ -35522,7 +37307,7 @@
         }
 
         [DispId(0xce)]
-        public double WSAFIPFE.Factura._Factura.sItemimp_valor_aseg
+        double WSAFIPFE._Factura.sItemimp_valor_aseg
         {
             get
             {
@@ -35535,7 +37320,7 @@
         }
 
         [DispId(0xcf)]
-        public int WSAFIPFE.Factura._Factura.sItemIva_id
+        int WSAFIPFE._Factura.sItemIva_id
         {
             get
             {
@@ -35548,7 +37333,7 @@
         }
 
         [DispId(0xc6)]
-        public string WSAFIPFE.Factura._Factura.sItemPoliza
+        string WSAFIPFE._Factura.sItemPoliza
         {
             get
             {
@@ -35561,7 +37346,7 @@
         }
 
         [DispId(0xca)]
-        public double WSAFIPFE.Factura._Factura.sItemprecio_uni
+        double WSAFIPFE._Factura.sItemprecio_uni
         {
             get
             {
@@ -35574,7 +37359,7 @@
         }
 
         [DispId(0xc9)]
-        public double WSAFIPFE.Factura._Factura.sItemqty
+        double WSAFIPFE._Factura.sItemqty
         {
             get
             {
@@ -35587,7 +37372,7 @@
         }
 
         [DispId(0x7a)]
-        public bool WSAFIPFE.Factura._Factura.sLicenciaValida
+        bool WSAFIPFE._Factura.sLicenciaValida
         {
             get
             {
@@ -35596,7 +37381,7 @@
         }
 
         [DispId(0x1fd)]
-        public string WSAFIPFE.Factura._Factura.sMonedaDS
+        string WSAFIPFE._Factura.sMonedaDS
         {
             get
             {
@@ -35609,7 +37394,7 @@
         }
 
         [DispId(0x1fc)]
-        public string WSAFIPFE.Factura._Factura.sMonedaId
+        string WSAFIPFE._Factura.sMonedaId
         {
             get
             {
@@ -35622,7 +37407,7 @@
         }
 
         [DispId(0x21)]
-        public int WSAFIPFE.Factura._Factura.sMonedaItemCantidad
+        int WSAFIPFE._Factura.sMonedaItemCantidad
         {
             get
             {
@@ -35631,7 +37416,7 @@
         }
 
         [DispId(510)]
-        public string WSAFIPFE.Factura._Factura.sMonedaVig_desde
+        string WSAFIPFE._Factura.sMonedaVig_desde
         {
             get
             {
@@ -35644,7 +37429,7 @@
         }
 
         [DispId(0x1ff)]
-        public string WSAFIPFE.Factura._Factura.sMonedaVig_hasta
+        string WSAFIPFE._Factura.sMonedaVig_hasta
         {
             get
             {
@@ -35657,7 +37442,7 @@
         }
 
         [DispId(0xe8)]
-        public string WSAFIPFE.Factura._Factura.sNro_doc
+        string WSAFIPFE._Factura.sNro_doc
         {
             get
             {
@@ -35674,7 +37459,7 @@
         }
 
         [DispId(0xea)]
-        public int WSAFIPFE.Factura._Factura.sPunto_vta
+        int WSAFIPFE._Factura.sPunto_vta
         {
             get
             {
@@ -35687,7 +37472,7 @@
         }
 
         [DispId(0x4d)]
-        public string WSAFIPFE.Factura._Factura.sRespuestaCAE
+        string WSAFIPFE._Factura.sRespuestaCAE
         {
             get
             {
@@ -35696,7 +37481,7 @@
         }
 
         [DispId(0x4c)]
-        public int WSAFIPFE.Factura._Factura.sRespuestaCbte_numero
+        int WSAFIPFE._Factura.sRespuestaCbte_numero
         {
             get
             {
@@ -35705,7 +37490,7 @@
         }
 
         [DispId(0x1a3)]
-        public string WSAFIPFE.Factura._Factura.sRespuestaDummyAuthServer
+        string WSAFIPFE._Factura.sRespuestaDummyAuthServer
         {
             get
             {
@@ -35714,7 +37499,7 @@
         }
 
         [DispId(420)]
-        public string WSAFIPFE.Factura._Factura.sRespuestaDummyDbServer
+        string WSAFIPFE._Factura.sRespuestaDummyDbServer
         {
             get
             {
@@ -35723,7 +37508,7 @@
         }
 
         [DispId(0x4e)]
-        public string WSAFIPFE.Factura._Factura.sRespuestaFch_cbte
+        string WSAFIPFE._Factura.sRespuestaFch_cbte
         {
             get
             {
@@ -35732,7 +37517,7 @@
         }
 
         [DispId(0x40)]
-        public string WSAFIPFE.Factura._Factura.sRespuestaFch_venc_cae
+        string WSAFIPFE._Factura.sRespuestaFch_venc_cae
         {
             get
             {
@@ -35741,7 +37526,7 @@
         }
 
         [DispId(0x4b)]
-        public string WSAFIPFE.Factura._Factura.sRespuestaId
+        string WSAFIPFE._Factura.sRespuestaId
         {
             get
             {
@@ -35750,7 +37535,7 @@
         }
 
         [DispId(0x51)]
-        public string WSAFIPFE.Factura._Factura.sRespuestaOBS
+        string WSAFIPFE._Factura.sRespuestaOBS
         {
             get
             {
@@ -35759,7 +37544,7 @@
         }
 
         [DispId(80)]
-        public string WSAFIPFE.Factura._Factura.sRespuestaReproceso
+        string WSAFIPFE._Factura.sRespuestaReproceso
         {
             get
             {
@@ -35768,7 +37553,7 @@
         }
 
         [DispId(0x4f)]
-        public string WSAFIPFE.Factura._Factura.sRespuestaResultado
+        string WSAFIPFE._Factura.sRespuestaResultado
         {
             get
             {
@@ -35777,7 +37562,7 @@
         }
 
         [DispId(0x52)]
-        public string WSAFIPFE.Factura._Factura.sRespuestasCUIT
+        string WSAFIPFE._Factura.sRespuestasCUIT
         {
             get
             {
@@ -35786,7 +37571,7 @@
         }
 
         [DispId(0x1a2)]
-        public string WSAFIPFE.Factura._Factura.sRespuetaDummyAppServer
+        string WSAFIPFE._Factura.sRespuetaDummyAppServer
         {
             get
             {
@@ -35795,7 +37580,7 @@
         }
 
         [DispId(0x174)]
-        public string WSAFIPFE.Factura._Factura.ssign
+        string WSAFIPFE._Factura.ssign
         {
             get
             {
@@ -35808,7 +37593,7 @@
         }
 
         [DispId(110)]
-        public bool WSAFIPFE.Factura._Factura.sTicketEsValido
+        bool WSAFIPFE._Factura.sTicketEsValido
         {
             get
             {
@@ -35821,7 +37606,7 @@
         }
 
         [DispId(0x14b)]
-        public DateTime WSAFIPFE.Factura._Factura.sTicketHora
+        DateTime WSAFIPFE._Factura.sTicketHora
         {
             get
             {
@@ -35830,7 +37615,7 @@
         }
 
         [DispId(0x155)]
-        public DateTime WSAFIPFE.Factura._Factura.sTicketHoraVencimiento
+        DateTime WSAFIPFE._Factura.sTicketHoraVencimiento
         {
             get
             {
@@ -35839,7 +37624,7 @@
         }
 
         [DispId(0x15f)]
-        public bool WSAFIPFE.Factura._Factura.sTicketValido
+        bool WSAFIPFE._Factura.sTicketValido
         {
             get
             {
@@ -35848,7 +37633,7 @@
         }
 
         [DispId(0xe9)]
-        public int WSAFIPFE.Factura._Factura.sTipo_cbte
+        int WSAFIPFE._Factura.sTipo_cbte
         {
             get
             {
@@ -35861,7 +37646,7 @@
         }
 
         [DispId(0x265)]
-        public string WSAFIPFE.Factura._Factura.sTipo_cbteDS
+        string WSAFIPFE._Factura.sTipo_cbteDS
         {
             get
             {
@@ -35874,7 +37659,7 @@
         }
 
         [DispId(0x264)]
-        public int WSAFIPFE.Factura._Factura.sTipo_cbteId
+        int WSAFIPFE._Factura.sTipo_cbteId
         {
             get
             {
@@ -35887,7 +37672,7 @@
         }
 
         [DispId(50)]
-        public int WSAFIPFE.Factura._Factura.sTipo_CbteItemCantidad
+        int WSAFIPFE._Factura.sTipo_CbteItemCantidad
         {
             get
             {
@@ -35896,7 +37681,7 @@
         }
 
         [DispId(0x266)]
-        public string WSAFIPFE.Factura._Factura.sTipo_cbteVig_desde
+        string WSAFIPFE._Factura.sTipo_cbteVig_desde
         {
             get
             {
@@ -35909,7 +37694,7 @@
         }
 
         [DispId(0x267)]
-        public string WSAFIPFE.Factura._Factura.sTipo_cbteVig_hasta
+        string WSAFIPFE._Factura.sTipo_cbteVig_hasta
         {
             get
             {
@@ -35922,7 +37707,7 @@
         }
 
         [DispId(0x269)]
-        public string WSAFIPFE.Factura._Factura.sTipo_cpteDS
+        string WSAFIPFE._Factura.sTipo_cpteDS
         {
             get
             {
@@ -35935,7 +37720,7 @@
         }
 
         [DispId(0x268)]
-        public int WSAFIPFE.Factura._Factura.sTipo_cpteId
+        int WSAFIPFE._Factura.sTipo_cpteId
         {
             get
             {
@@ -35948,7 +37733,7 @@
         }
 
         [DispId(0x26a)]
-        public string WSAFIPFE.Factura._Factura.sTipo_cpteVig_desde
+        string WSAFIPFE._Factura.sTipo_cpteVig_desde
         {
             get
             {
@@ -35961,7 +37746,7 @@
         }
 
         [DispId(0x26b)]
-        public string WSAFIPFE.Factura._Factura.sTipo_cpteVig_hasta
+        string WSAFIPFE._Factura.sTipo_cpteVig_hasta
         {
             get
             {
@@ -35974,7 +37759,7 @@
         }
 
         [DispId(0xe7)]
-        public int WSAFIPFE.Factura._Factura.sTipo_Doc
+        int WSAFIPFE._Factura.sTipo_Doc
         {
             get
             {
@@ -35987,7 +37772,7 @@
         }
 
         [DispId(0x211)]
-        public string WSAFIPFE.Factura._Factura.sTipoDocDS
+        string WSAFIPFE._Factura.sTipoDocDS
         {
             get
             {
@@ -36000,7 +37785,7 @@
         }
 
         [DispId(0x210)]
-        public int WSAFIPFE.Factura._Factura.sTipoDocID
+        int WSAFIPFE._Factura.sTipoDocID
         {
             get
             {
@@ -36013,7 +37798,7 @@
         }
 
         [DispId(0x39)]
-        public int WSAFIPFE.Factura._Factura.sTipoDocItemCantidad
+        int WSAFIPFE._Factura.sTipoDocItemCantidad
         {
             get
             {
@@ -36022,7 +37807,7 @@
         }
 
         [DispId(530)]
-        public string WSAFIPFE.Factura._Factura.sTipoDocVig_desde
+        string WSAFIPFE._Factura.sTipoDocVig_desde
         {
             get
             {
@@ -36035,7 +37820,7 @@
         }
 
         [DispId(0x213)]
-        public string WSAFIPFE.Factura._Factura.sTipoDocVig_hasta
+        string WSAFIPFE._Factura.sTipoDocVig_hasta
         {
             get
             {
@@ -36048,7 +37833,7 @@
         }
 
         [DispId(0x219)]
-        public string WSAFIPFE.Factura._Factura.sTipoIvaDS
+        string WSAFIPFE._Factura.sTipoIvaDS
         {
             get
             {
@@ -36061,7 +37846,7 @@
         }
 
         [DispId(0x218)]
-        public int WSAFIPFE.Factura._Factura.sTipoIvaId
+        int WSAFIPFE._Factura.sTipoIvaId
         {
             get
             {
@@ -36074,7 +37859,7 @@
         }
 
         [DispId(0x35)]
-        public int WSAFIPFE.Factura._Factura.sTipoIvaItemCantidad
+        int WSAFIPFE._Factura.sTipoIvaItemCantidad
         {
             get
             {
@@ -36083,7 +37868,7 @@
         }
 
         [DispId(0x21a)]
-        public string WSAFIPFE.Factura._Factura.sTipoIvaVig_desde
+        string WSAFIPFE._Factura.sTipoIvaVig_desde
         {
             get
             {
@@ -36096,7 +37881,7 @@
         }
 
         [DispId(0x21b)]
-        public string WSAFIPFE.Factura._Factura.sTipoIvaVig_hasta
+        string WSAFIPFE._Factura.sTipoIvaVig_hasta
         {
             get
             {
@@ -36109,7 +37894,7 @@
         }
 
         [DispId(0x16a)]
-        public string WSAFIPFE.Factura._Factura.stoken
+        string WSAFIPFE._Factura.stoken
         {
             get
             {
@@ -36122,7 +37907,7 @@
         }
 
         [DispId(0x65)]
-        public bool WSAFIPFE.Factura._Factura.TicketEsValido
+        bool WSAFIPFE._Factura.TicketEsValido
         {
             get
             {
@@ -36135,7 +37920,7 @@
         }
 
         [DispId(0x142)]
-        public DateTime WSAFIPFE.Factura._Factura.TicketHora
+        DateTime WSAFIPFE._Factura.TicketHora
         {
             get
             {
@@ -36144,7 +37929,7 @@
         }
 
         [DispId(0x14c)]
-        public DateTime WSAFIPFE.Factura._Factura.TicketHoraVencimiento
+        DateTime WSAFIPFE._Factura.TicketHoraVencimiento
         {
             get
             {
@@ -36153,7 +37938,7 @@
         }
 
         [DispId(0x156)]
-        public bool WSAFIPFE.Factura._Factura.TicketValido
+        bool WSAFIPFE._Factura.TicketValido
         {
             get
             {
@@ -36162,7 +37947,7 @@
         }
 
         [DispId(0x6f)]
-        public int WSAFIPFE.Factura._Factura.TimeOut
+        int WSAFIPFE._Factura.TimeOut
         {
             get
             {
@@ -36175,7 +37960,7 @@
         }
 
         [DispId(0x161)]
-        public string WSAFIPFE.Factura._Factura.token
+        string WSAFIPFE._Factura.token
         {
             get
             {
@@ -36188,7 +37973,7 @@
         }
 
         [DispId(0x176)]
-        public string WSAFIPFE.Factura._Factura.UltimoMensajeError
+        string WSAFIPFE._Factura.UltimoMensajeError
         {
             get
             {
@@ -36197,7 +37982,7 @@
         }
 
         [DispId(0x177)]
-        public int WSAFIPFE.Factura._Factura.UltimoNumeroError
+        int WSAFIPFE._Factura.UltimoNumeroError
         {
             get
             {
@@ -36206,7 +37991,7 @@
         }
 
         [DispId(270)]
-        public long WSAFIPFE.Factura._Factura.xCbte_nro
+        long WSAFIPFE._Factura.xCbte_nro
         {
             get
             {
@@ -36219,7 +38004,7 @@
         }
 
         [DispId(0x10f)]
-        public string WSAFIPFE.Factura._Factura.xCbte_nroS
+        string WSAFIPFE._Factura.xCbte_nroS
         {
             get
             {
@@ -36236,7 +38021,7 @@
         }
 
         [DispId(0x114)]
-        public string WSAFIPFE.Factura._Factura.xCliente
+        string WSAFIPFE._Factura.xCliente
         {
             get
             {
@@ -36249,7 +38034,7 @@
         }
 
         [DispId(0xba)]
-        public int WSAFIPFE.Factura._Factura.xCMPS_ASOC_cbte_nro
+        int WSAFIPFE._Factura.xCMPS_ASOC_cbte_nro
         {
             get
             {
@@ -36262,7 +38047,7 @@
         }
 
         [DispId(0xbb)]
-        public string WSAFIPFE.Factura._Factura.xCMPS_ASOC_cbte_nroS
+        string WSAFIPFE._Factura.xCMPS_ASOC_cbte_nroS
         {
             get
             {
@@ -36279,7 +38064,7 @@
         }
 
         [DispId(0xb9)]
-        public int WSAFIPFE.Factura._Factura.xCMPS_ASOC_cbte_punto_venta
+        int WSAFIPFE._Factura.xCMPS_ASOC_cbte_punto_venta
         {
             get
             {
@@ -36292,7 +38077,7 @@
         }
 
         [DispId(0xb8)]
-        public int WSAFIPFE.Factura._Factura.xCMPS_ASOC_cbte_tipo
+        int WSAFIPFE._Factura.xCMPS_ASOC_cbte_tipo
         {
             get
             {
@@ -36305,7 +38090,7 @@
         }
 
         [DispId(0xae)]
-        public int WSAFIPFE.Factura._Factura.xCmps_asocCantidad
+        int WSAFIPFE._Factura.xCmps_asocCantidad
         {
             get
             {
@@ -36319,7 +38104,7 @@
         }
 
         [DispId(0x1ed)]
-        public string WSAFIPFE.Factura._Factura.xCuit_dst_cuit
+        string WSAFIPFE._Factura.xCuit_dst_cuit
         {
             get
             {
@@ -36332,7 +38117,7 @@
         }
 
         [DispId(0x1ee)]
-        public string WSAFIPFE.Factura._Factura.xCuit_dst_ds
+        string WSAFIPFE._Factura.xCuit_dst_ds
         {
             get
             {
@@ -36345,7 +38130,7 @@
         }
 
         [DispId(0x115)]
-        public long WSAFIPFE.Factura._Factura.xCuit_pais_cliente
+        long WSAFIPFE._Factura.xCuit_pais_cliente
         {
             get
             {
@@ -36358,7 +38143,7 @@
         }
 
         [DispId(0x116)]
-        public string WSAFIPFE.Factura._Factura.xCuit_pais_clienteS
+        string WSAFIPFE._Factura.xCuit_pais_clienteS
         {
             get
             {
@@ -36375,7 +38160,7 @@
         }
 
         [DispId(0x20)]
-        public int WSAFIPFE.Factura._Factura.xCuitItemCantidad
+        int WSAFIPFE._Factura.xCuitItemCantidad
         {
             get
             {
@@ -36384,7 +38169,7 @@
         }
 
         [DispId(0x1df)]
-        public string WSAFIPFE.Factura._Factura.xDireccionServicioURL
+        string WSAFIPFE._Factura.xDireccionServicioURL
         {
             get
             {
@@ -36397,7 +38182,7 @@
         }
 
         [DispId(0x117)]
-        public string WSAFIPFE.Factura._Factura.xDomicilio_cliente
+        string WSAFIPFE._Factura.xDomicilio_cliente
         {
             get
             {
@@ -36410,7 +38195,7 @@
         }
 
         [DispId(0x113)]
-        public int WSAFIPFE.Factura._Factura.xDst_cmp
+        int WSAFIPFE._Factura.xDst_cmp
         {
             get
             {
@@ -36423,7 +38208,7 @@
         }
 
         [DispId(0x83)]
-        public int WSAFIPFE.Factura._Factura.xerrcode
+        int WSAFIPFE._Factura.xerrcode
         {
             get
             {
@@ -36432,7 +38217,7 @@
         }
 
         [DispId(0x85)]
-        public string WSAFIPFE.Factura._Factura.xerrcodeST
+        string WSAFIPFE._Factura.xerrcodeST
         {
             get
             {
@@ -36441,7 +38226,7 @@
         }
 
         [DispId(0x7e)]
-        public string WSAFIPFE.Factura._Factura.xerrmsg
+        string WSAFIPFE._Factura.xerrmsg
         {
             get
             {
@@ -36450,7 +38235,7 @@
         }
 
         [DispId(60)]
-        public int WSAFIPFE.Factura._Factura.xEventCode
+        int WSAFIPFE._Factura.xEventCode
         {
             get
             {
@@ -36459,7 +38244,7 @@
         }
 
         [DispId(0x42)]
-        public string WSAFIPFE.Factura._Factura.xEventMsg
+        string WSAFIPFE._Factura.xEventMsg
         {
             get
             {
@@ -36468,7 +38253,7 @@
         }
 
         [DispId(0x10b)]
-        public string WSAFIPFE.Factura._Factura.xFecha_cbte
+        string WSAFIPFE._Factura.xFecha_cbte
         {
             get
             {
@@ -36481,7 +38266,7 @@
         }
 
         [DispId(0x120)]
-        public string WSAFIPFE.Factura._Factura.xForma_pago
+        string WSAFIPFE._Factura.xForma_pago
         {
             get
             {
@@ -36494,7 +38279,7 @@
         }
 
         [DispId(280)]
-        public string WSAFIPFE.Factura._Factura.xId_impositivo
+        string WSAFIPFE._Factura.xId_impositivo
         {
             get
             {
@@ -36507,7 +38292,7 @@
         }
 
         [DispId(0x123)]
-        public string WSAFIPFE.Factura._Factura.xIdioma_cbte
+        string WSAFIPFE._Factura.xIdioma_cbte
         {
             get
             {
@@ -36520,7 +38305,7 @@
         }
 
         [DispId(0x1f0)]
-        public string WSAFIPFE.Factura._Factura.xIdioma_idi_ds
+        string WSAFIPFE._Factura.xIdioma_idi_ds
         {
             get
             {
@@ -36533,7 +38318,7 @@
         }
 
         [DispId(0x1ef)]
-        public string WSAFIPFE.Factura._Factura.xIdioma_idi_Id
+        string WSAFIPFE._Factura.xIdioma_idi_Id
         {
             get
             {
@@ -36546,7 +38331,7 @@
         }
 
         [DispId(0x1f1)]
-        public string WSAFIPFE.Factura._Factura.xIdioma_idi_Vig_desde
+        string WSAFIPFE._Factura.xIdioma_idi_Vig_desde
         {
             get
             {
@@ -36559,7 +38344,7 @@
         }
 
         [DispId(0x1f2)]
-        public string WSAFIPFE.Factura._Factura.xIdioma_idi_Vig_hasta
+        string WSAFIPFE._Factura.xIdioma_idi_Vig_hasta
         {
             get
             {
@@ -36572,7 +38357,7 @@
         }
 
         [DispId(0x1c)]
-        public int WSAFIPFE.Factura._Factura.xIdiomaItemCantidad
+        int WSAFIPFE._Factura.xIdiomaItemCantidad
         {
             get
             {
@@ -36581,7 +38366,7 @@
         }
 
         [DispId(0x11e)]
-        public double WSAFIPFE.Factura._Factura.xImp_total
+        double WSAFIPFE._Factura.xImp_total
         {
             get
             {
@@ -36594,7 +38379,7 @@
         }
 
         [DispId(0x121)]
-        public string WSAFIPFE.Factura._Factura.xIncoTerms
+        string WSAFIPFE._Factura.xIncoTerms
         {
             get
             {
@@ -36607,7 +38392,7 @@
         }
 
         [DispId(290)]
-        public string WSAFIPFE.Factura._Factura.xIncoTerms_ds
+        string WSAFIPFE._Factura.xIncoTerms_ds
         {
             get
             {
@@ -36620,7 +38405,7 @@
         }
 
         [DispId(500)]
-        public string WSAFIPFE.Factura._Factura.xIncoTErms_inc_ds
+        string WSAFIPFE._Factura.xIncoTErms_inc_ds
         {
             get
             {
@@ -36633,7 +38418,7 @@
         }
 
         [DispId(0x1f3)]
-        public string WSAFIPFE.Factura._Factura.xIncoTErms_inc_Id
+        string WSAFIPFE._Factura.xIncoTErms_inc_Id
         {
             get
             {
@@ -36646,7 +38431,7 @@
         }
 
         [DispId(0x1f5)]
-        public string WSAFIPFE.Factura._Factura.xIncoTErms_inc_Vig_desde
+        string WSAFIPFE._Factura.xIncoTErms_inc_Vig_desde
         {
             get
             {
@@ -36659,7 +38444,7 @@
         }
 
         [DispId(0x1f6)]
-        public string WSAFIPFE.Factura._Factura.xIncoTErms_inc_Vig_hasta
+        string WSAFIPFE._Factura.xIncoTErms_inc_Vig_hasta
         {
             get
             {
@@ -36672,7 +38457,7 @@
         }
 
         [DispId(30)]
-        public int WSAFIPFE.Factura._Factura.xIncoTermsItemCantidad
+        int WSAFIPFE._Factura.xIncoTermsItemCantidad
         {
             get
             {
@@ -36681,7 +38466,7 @@
         }
 
         [DispId(0x9e)]
-        public int WSAFIPFE.Factura._Factura.xIndiceItem
+        int WSAFIPFE._Factura.xIndiceItem
         {
             get
             {
@@ -36694,7 +38479,7 @@
         }
 
         [DispId(0xa5)]
-        public int WSAFIPFE.Factura._Factura.xItemCantidad
+        int WSAFIPFE._Factura.xItemCantidad
         {
             get
             {
@@ -36708,7 +38493,7 @@
         }
 
         [DispId(0xb2)]
-        public string WSAFIPFE.Factura._Factura.xITEMPro_codigo
+        string WSAFIPFE._Factura.xITEMPro_codigo
         {
             get
             {
@@ -36721,7 +38506,7 @@
         }
 
         [DispId(0xb3)]
-        public string WSAFIPFE.Factura._Factura.xITEMPro_ds
+        string WSAFIPFE._Factura.xITEMPro_ds
         {
             get
             {
@@ -36734,7 +38519,7 @@
         }
 
         [DispId(0xb7)]
-        public double WSAFIPFE.Factura._Factura.xITEMPro_precio_item
+        double WSAFIPFE._Factura.xITEMPro_precio_item
         {
             get
             {
@@ -36747,7 +38532,7 @@
         }
 
         [DispId(0xb6)]
-        public double WSAFIPFE.Factura._Factura.xITEMPro_precio_uni
+        double WSAFIPFE._Factura.xITEMPro_precio_uni
         {
             get
             {
@@ -36760,7 +38545,7 @@
         }
 
         [DispId(180)]
-        public double WSAFIPFE.Factura._Factura.xITEMPro_qty
+        double WSAFIPFE._Factura.xITEMPro_qty
         {
             get
             {
@@ -36773,7 +38558,7 @@
         }
 
         [DispId(0xb5)]
-        public int WSAFIPFE.Factura._Factura.xITEMPro_umed
+        int WSAFIPFE._Factura.xITEMPro_umed
         {
             get
             {
@@ -36786,7 +38571,7 @@
         }
 
         [DispId(0x76)]
-        public bool WSAFIPFE.Factura._Factura.xLicenciaValida
+        bool WSAFIPFE._Factura.xLicenciaValida
         {
             get
             {
@@ -36795,7 +38580,7 @@
         }
 
         [DispId(0x62)]
-        public string WSAFIPFE.Factura._Factura.XMLRequest
+        string WSAFIPFE._Factura.XMLRequest
         {
             get
             {
@@ -36804,7 +38589,7 @@
         }
 
         [DispId(0x63)]
-        public string WSAFIPFE.Factura._Factura.XMLRequestFirmado
+        string WSAFIPFE._Factura.XMLRequestFirmado
         {
             get
             {
@@ -36813,7 +38598,7 @@
         }
 
         [DispId(100)]
-        public string WSAFIPFE.Factura._Factura.XMLResponse
+        string WSAFIPFE._Factura.XMLResponse
         {
             get
             {
@@ -36822,7 +38607,7 @@
         }
 
         [DispId(0x11b)]
-        public double WSAFIPFE.Factura._Factura.xMoneda_ctz
+        double WSAFIPFE._Factura.xMoneda_ctz
         {
             get
             {
@@ -36835,7 +38620,7 @@
         }
 
         [DispId(0x11c)]
-        public string WSAFIPFE.Factura._Factura.xMoneda_ctzS
+        string WSAFIPFE._Factura.xMoneda_ctzS
         {
             get
             {
@@ -36852,7 +38637,7 @@
         }
 
         [DispId(0x119)]
-        public string WSAFIPFE.Factura._Factura.xMoneda_id
+        string WSAFIPFE._Factura.xMoneda_id
         {
             get
             {
@@ -36865,7 +38650,7 @@
         }
 
         [DispId(0x11a)]
-        public string WSAFIPFE.Factura._Factura.xMoneda_idS
+        string WSAFIPFE._Factura.xMoneda_idS
         {
             get
             {
@@ -36887,7 +38672,7 @@
         }
 
         [DispId(0x1e5)]
-        public string WSAFIPFE.Factura._Factura.xMonedaDS
+        string WSAFIPFE._Factura.xMonedaDS
         {
             get
             {
@@ -36900,7 +38685,7 @@
         }
 
         [DispId(0x1e4)]
-        public string WSAFIPFE.Factura._Factura.xMonedaId
+        string WSAFIPFE._Factura.xMonedaId
         {
             get
             {
@@ -36913,7 +38698,7 @@
         }
 
         [DispId(0x1a)]
-        public int WSAFIPFE.Factura._Factura.xMonedaItemCantidad
+        int WSAFIPFE._Factura.xMonedaItemCantidad
         {
             get
             {
@@ -36922,7 +38707,7 @@
         }
 
         [DispId(0x1e6)]
-        public string WSAFIPFE.Factura._Factura.xMonedaVig_desde
+        string WSAFIPFE._Factura.xMonedaVig_desde
         {
             get
             {
@@ -36935,7 +38720,7 @@
         }
 
         [DispId(0x1e7)]
-        public string WSAFIPFE.Factura._Factura.xMonedaVig_HASTA
+        string WSAFIPFE._Factura.xMonedaVig_HASTA
         {
             get
             {
@@ -36948,7 +38733,7 @@
         }
 
         [DispId(0x11f)]
-        public string WSAFIPFE.Factura._Factura.xObs
+        string WSAFIPFE._Factura.xObs
         {
             get
             {
@@ -36961,7 +38746,7 @@
         }
 
         [DispId(0x11d)]
-        public string WSAFIPFE.Factura._Factura.xObs_comerciales
+        string WSAFIPFE._Factura.xObs_comerciales
         {
             get
             {
@@ -36974,7 +38759,7 @@
         }
 
         [DispId(0x1eb)]
-        public string WSAFIPFE.Factura._Factura.xPais_dst_codigo
+        string WSAFIPFE._Factura.xPais_dst_codigo
         {
             get
             {
@@ -36987,7 +38772,7 @@
         }
 
         [DispId(0x1ec)]
-        public string WSAFIPFE.Factura._Factura.xPais_dst_ds
+        string WSAFIPFE._Factura.xPais_dst_ds
         {
             get
             {
@@ -37000,7 +38785,7 @@
         }
 
         [DispId(0x1f)]
-        public int WSAFIPFE.Factura._Factura.xPaisItemCantidad
+        int WSAFIPFE._Factura.xPaisItemCantidad
         {
             get
             {
@@ -37009,7 +38794,7 @@
         }
 
         [DispId(0xbd)]
-        public int WSAFIPFE.Factura._Factura.xPERMISO_dst_merc
+        int WSAFIPFE._Factura.xPERMISO_dst_merc
         {
             get
             {
@@ -37022,7 +38807,7 @@
         }
 
         [DispId(0x111)]
-        public string WSAFIPFE.Factura._Factura.xPermiso_existente
+        string WSAFIPFE._Factura.xPermiso_existente
         {
             get
             {
@@ -37035,7 +38820,7 @@
         }
 
         [DispId(0x112)]
-        public string WSAFIPFE.Factura._Factura.xPermiso_existenteS
+        string WSAFIPFE._Factura.xPermiso_existenteS
         {
             get
             {
@@ -37049,7 +38834,7 @@
         }
 
         [DispId(0xbc)]
-        public string WSAFIPFE.Factura._Factura.xPERMISO_id_permiso
+        string WSAFIPFE._Factura.xPERMISO_id_permiso
         {
             get
             {
@@ -37062,7 +38847,7 @@
         }
 
         [DispId(0xac)]
-        public int WSAFIPFE.Factura._Factura.xPermisoCantidad
+        int WSAFIPFE._Factura.xPermisoCantidad
         {
             get
             {
@@ -37076,7 +38861,7 @@
         }
 
         [DispId(0xad)]
-        public int WSAFIPFE.Factura._Factura.xPermisoNoInformar
+        int WSAFIPFE._Factura.xPermisoNoInformar
         {
             get
             {
@@ -37089,7 +38874,7 @@
         }
 
         [DispId(0x1e8)]
-        public int WSAFIPFE.Factura._Factura.xPtoVenta_pve_nro
+        int WSAFIPFE._Factura.xPtoVenta_pve_nro
         {
             get
             {
@@ -37102,7 +38887,7 @@
         }
 
         [DispId(0x1e9)]
-        public string WSAFIPFE.Factura._Factura.xPtoVenta_pvo_bloqueado
+        string WSAFIPFE._Factura.xPtoVenta_pvo_bloqueado
         {
             get
             {
@@ -37115,7 +38900,7 @@
         }
 
         [DispId(490)]
-        public string WSAFIPFE.Factura._Factura.xPtoVenta_pvo_fchbaja
+        string WSAFIPFE._Factura.xPtoVenta_pvo_fchbaja
         {
             get
             {
@@ -37128,7 +38913,7 @@
         }
 
         [DispId(0x1b)]
-        public int WSAFIPFE.Factura._Factura.xPtoVentaItemCantidad
+        int WSAFIPFE._Factura.xPtoVentaItemCantidad
         {
             get
             {
@@ -37137,7 +38922,7 @@
         }
 
         [DispId(0x10c)]
-        public int WSAFIPFE.Factura._Factura.xPunto_vta
+        int WSAFIPFE._Factura.xPunto_vta
         {
             get
             {
@@ -37150,7 +38935,7 @@
         }
 
         [DispId(0x56)]
-        public string WSAFIPFE.Factura._Factura.xRespuestaCAE
+        string WSAFIPFE._Factura.xRespuestaCAE
         {
             get
             {
@@ -37159,7 +38944,7 @@
         }
 
         [DispId(0x60)]
-        public long WSAFIPFE.Factura._Factura.xRespuestacbte_numero
+        long WSAFIPFE._Factura.xRespuestacbte_numero
         {
             get
             {
@@ -37168,7 +38953,7 @@
         }
 
         [DispId(0x61)]
-        public string WSAFIPFE.Factura._Factura.xRespuestacbte_numeroS
+        string WSAFIPFE._Factura.xRespuestacbte_numeroS
         {
             get
             {
@@ -37177,7 +38962,7 @@
         }
 
         [DispId(0x55)]
-        public string WSAFIPFE.Factura._Factura.xRespuestaCUIT
+        string WSAFIPFE._Factura.xRespuestaCUIT
         {
             get
             {
@@ -37186,7 +38971,7 @@
         }
 
         [DispId(0x181)]
-        public string WSAFIPFE.Factura._Factura.xRespuestaDummyAuthServer
+        string WSAFIPFE._Factura.xRespuestaDummyAuthServer
         {
             get
             {
@@ -37195,7 +38980,7 @@
         }
 
         [DispId(0x182)]
-        public string WSAFIPFE.Factura._Factura.xRespuestaDummyDbServer
+        string WSAFIPFE._Factura.xRespuestaDummyDbServer
         {
             get
             {
@@ -37204,7 +38989,7 @@
         }
 
         [DispId(0x59)]
-        public string WSAFIPFE.Factura._Factura.xRespuestaFch_cbte
+        string WSAFIPFE._Factura.xRespuestaFch_cbte
         {
             get
             {
@@ -37213,7 +38998,7 @@
         }
 
         [DispId(90)]
-        public string WSAFIPFE.Factura._Factura.xRespuestaFch_cbte_cae
+        string WSAFIPFE._Factura.xRespuestaFch_cbte_cae
         {
             get
             {
@@ -37222,7 +39007,7 @@
         }
 
         [DispId(0x58)]
-        public string WSAFIPFE.Factura._Factura.xRespuestaFch_venc_cae
+        string WSAFIPFE._Factura.xRespuestaFch_venc_cae
         {
             get
             {
@@ -37231,7 +39016,7 @@
         }
 
         [DispId(0x57)]
-        public string WSAFIPFE.Factura._Factura.xRespuestaFch_vence_cae
+        string WSAFIPFE._Factura.xRespuestaFch_vence_cae
         {
             get
             {
@@ -37240,7 +39025,7 @@
         }
 
         [DispId(0x53)]
-        public long WSAFIPFE.Factura._Factura.xRespuestaId
+        long WSAFIPFE._Factura.xRespuestaId
         {
             get
             {
@@ -37249,7 +39034,7 @@
         }
 
         [DispId(0x54)]
-        public string WSAFIPFE.Factura._Factura.xRespuestaIdS
+        string WSAFIPFE._Factura.xRespuestaIdS
         {
             get
             {
@@ -37258,7 +39043,7 @@
         }
 
         [DispId(0x13)]
-        public double WSAFIPFE.Factura._Factura.xRespuestaMonedaCtz
+        double WSAFIPFE._Factura.xRespuestaMonedaCtz
         {
             get
             {
@@ -37267,7 +39052,7 @@
         }
 
         [DispId(20)]
-        public string WSAFIPFE.Factura._Factura.xRespuestaMonedaCtzFecha
+        string WSAFIPFE._Factura.xRespuestaMonedaCtzFecha
         {
             get
             {
@@ -37276,7 +39061,7 @@
         }
 
         [DispId(0x5d)]
-        public string WSAFIPFE.Factura._Factura.xRespuestaMotivos_obs
+        string WSAFIPFE._Factura.xRespuestaMotivos_obs
         {
             get
             {
@@ -37285,7 +39070,7 @@
         }
 
         [DispId(0x5f)]
-        public int WSAFIPFE.Factura._Factura.xRespuestapunto_vta
+        int WSAFIPFE._Factura.xRespuestapunto_vta
         {
             get
             {
@@ -37294,7 +39079,7 @@
         }
 
         [DispId(0x5c)]
-        public string WSAFIPFE.Factura._Factura.xRespuestaReproceso
+        string WSAFIPFE._Factura.xRespuestaReproceso
         {
             get
             {
@@ -37303,7 +39088,7 @@
         }
 
         [DispId(0x5b)]
-        public string WSAFIPFE.Factura._Factura.xRespuestaResultado
+        string WSAFIPFE._Factura.xRespuestaResultado
         {
             get
             {
@@ -37312,7 +39097,7 @@
         }
 
         [DispId(0x5e)]
-        public int WSAFIPFE.Factura._Factura.xRespuestatipo_cbte
+        int WSAFIPFE._Factura.xRespuestatipo_cbte
         {
             get
             {
@@ -37321,7 +39106,7 @@
         }
 
         [DispId(0x180)]
-        public string WSAFIPFE.Factura._Factura.xRespuetaDummyAppServer
+        string WSAFIPFE._Factura.xRespuetaDummyAppServer
         {
             get
             {
@@ -37330,7 +39115,7 @@
         }
 
         [DispId(0x16d)]
-        public string WSAFIPFE.Factura._Factura.xsign
+        string WSAFIPFE._Factura.xsign
         {
             get
             {
@@ -37343,7 +39128,7 @@
         }
 
         [DispId(0x67)]
-        public bool WSAFIPFE.Factura._Factura.xTicketEsValido
+        bool WSAFIPFE._Factura.xTicketEsValido
         {
             get
             {
@@ -37356,7 +39141,7 @@
         }
 
         [DispId(0x144)]
-        public DateTime WSAFIPFE.Factura._Factura.xTicketHora
+        DateTime WSAFIPFE._Factura.xTicketHora
         {
             get
             {
@@ -37365,7 +39150,7 @@
         }
 
         [DispId(0x14e)]
-        public DateTime WSAFIPFE.Factura._Factura.xTicketHoraVencimiento
+        DateTime WSAFIPFE._Factura.xTicketHoraVencimiento
         {
             get
             {
@@ -37374,7 +39159,7 @@
         }
 
         [DispId(0x158)]
-        public bool WSAFIPFE.Factura._Factura.xTicketValido
+        bool WSAFIPFE._Factura.xTicketValido
         {
             get
             {
@@ -37383,7 +39168,7 @@
         }
 
         [DispId(0x10d)]
-        public int WSAFIPFE.Factura._Factura.xtipo_cbte
+        int WSAFIPFE._Factura.xtipo_cbte
         {
             get
             {
@@ -37396,7 +39181,7 @@
         }
 
         [DispId(0x225)]
-        public string WSAFIPFE.Factura._Factura.xTipo_cbte_DS
+        string WSAFIPFE._Factura.xTipo_cbte_DS
         {
             get
             {
@@ -37409,7 +39194,7 @@
         }
 
         [DispId(0x224)]
-        public int WSAFIPFE.Factura._Factura.xTipo_cbte_Id
+        int WSAFIPFE._Factura.xTipo_cbte_Id
         {
             get
             {
@@ -37422,7 +39207,7 @@
         }
 
         [DispId(550)]
-        public string WSAFIPFE.Factura._Factura.xTipo_cbte_Vig_desde
+        string WSAFIPFE._Factura.xTipo_cbte_Vig_desde
         {
             get
             {
@@ -37435,7 +39220,7 @@
         }
 
         [DispId(0x227)]
-        public string WSAFIPFE.Factura._Factura.xTipo_cbte_Vig_hasta
+        string WSAFIPFE._Factura.xTipo_cbte_Vig_hasta
         {
             get
             {
@@ -37448,7 +39233,7 @@
         }
 
         [DispId(0x23)]
-        public int WSAFIPFE.Factura._Factura.xTipo_CbteItemCantidad
+        int WSAFIPFE._Factura.xTipo_CbteItemCantidad
         {
             get
             {
@@ -37457,7 +39242,7 @@
         }
 
         [DispId(0x110)]
-        public int WSAFIPFE.Factura._Factura.xtipo_expo
+        int WSAFIPFE._Factura.xtipo_expo
         {
             get
             {
@@ -37470,7 +39255,7 @@
         }
 
         [DispId(0x1f8)]
-        public string WSAFIPFE.Factura._Factura.xTipo_expo_tex_ds
+        string WSAFIPFE._Factura.xTipo_expo_tex_ds
         {
             get
             {
@@ -37483,7 +39268,7 @@
         }
 
         [DispId(0x1f7)]
-        public string WSAFIPFE.Factura._Factura.xTipo_expo_tex_Id
+        string WSAFIPFE._Factura.xTipo_expo_tex_Id
         {
             get
             {
@@ -37496,7 +39281,7 @@
         }
 
         [DispId(0x1f9)]
-        public string WSAFIPFE.Factura._Factura.xTipo_expo_tex_Vig_desde
+        string WSAFIPFE._Factura.xTipo_expo_tex_Vig_desde
         {
             get
             {
@@ -37509,7 +39294,7 @@
         }
 
         [DispId(0x1fa)]
-        public string WSAFIPFE.Factura._Factura.xTipo_expo_tex_Vig_hasta
+        string WSAFIPFE._Factura.xTipo_expo_tex_Vig_hasta
         {
             get
             {
@@ -37522,7 +39307,7 @@
         }
 
         [DispId(0x1d)]
-        public int WSAFIPFE.Factura._Factura.xTipo_expoItemCantidad
+        int WSAFIPFE._Factura.xTipo_expoItemCantidad
         {
             get
             {
@@ -37531,7 +39316,7 @@
         }
 
         [DispId(0x163)]
-        public string WSAFIPFE.Factura._Factura.xtoken
+        string WSAFIPFE._Factura.xtoken
         {
             get
             {
@@ -37544,7 +39329,7 @@
         }
 
         [DispId(0x209)]
-        public string WSAFIPFE.Factura._Factura.xUMed_DS
+        string WSAFIPFE._Factura.xUMed_DS
         {
             get
             {
@@ -37557,7 +39342,7 @@
         }
 
         [DispId(520)]
-        public int WSAFIPFE.Factura._Factura.xUMed_Id
+        int WSAFIPFE._Factura.xUMed_Id
         {
             get
             {
@@ -37570,7 +39355,7 @@
         }
 
         [DispId(0x20a)]
-        public string WSAFIPFE.Factura._Factura.xUMed_Vig_desde
+        string WSAFIPFE._Factura.xUMed_Vig_desde
         {
             get
             {
@@ -37583,7 +39368,7 @@
         }
 
         [DispId(0x20b)]
-        public string WSAFIPFE.Factura._Factura.xUMed_Vig_hasta
+        string WSAFIPFE._Factura.xUMed_Vig_hasta
         {
             get
             {
@@ -37596,7 +39381,7 @@
         }
 
         [DispId(0x37)]
-        public int WSAFIPFE.Factura._Factura.xUMedItemCantidad
+        int WSAFIPFE._Factura.xUMedItemCantidad
         {
             get
             {
@@ -38885,1804 +40670,7 @@
             }
         }
 
-        [ComVisible(true), Guid("e0427e75-8757-422f-a419-12b10c49adcb")]
-        public interface _Factura
-        {
-            [DispId(1)]
-            string revision { [DispId(1)] get; }
-            [DispId(2)]
-            bool LicenciaArchivoValido { [DispId(2)] get; }
-            [DispId(3)]
-            string LicenciaCodigo { [DispId(3)] get; }
-            [DispId(4)]
-            string LicenciaDatos { [DispId(4)] get; }
-            [DispId(5)]
-            bool LicenciaDatosValida { [DispId(5)] get; }
-            [DispId(6)]
-            DateTime LicenciaFecha { [DispId(6)] get; }
-            [DispId(7)]
-            bool this[DateTime dFecha] { [DispId(7)] get; }
-            [DispId(8)]
-            DateTime LicenciaHasta { [DispId(8)] get; }
-            [DispId(9)]
-            int LicenciaValor { [DispId(9)] get; }
-            [DispId(10)]
-            int LicenciaLimite { [DispId(10)] get; }
-            [DispId(11)]
-            int LicenciaUsado { [DispId(11)] get; }
-            [DispId(12)]
-            string ProxyUserName { [DispId(12)] get; [DispId(12)] set; }
-            [DispId(13)]
-            string ProxyDomain { [DispId(13)] get; [DispId(13)] set; }
-            [DispId(14)]
-            string ProxyHost { [DispId(14)] get; [DispId(14)] set; }
-            [DispId(15)]
-            int ProxyPort { [DispId(15)] get; [DispId(15)] set; }
-            [DispId(0x10)]
-            string ProxyUserPassword { [DispId(0x10)] get; [DispId(0x10)] set; }
-            [DispId(0x11)]
-            int dRespuestaCodError { [DispId(0x11)] get; }
-            [DispId(0x12)]
-            string dRespuestaDescError { [DispId(0x12)] get; }
-            [DispId(0x13)]
-            double xRespuestaMonedaCtz { [DispId(0x13)] get; }
-            [DispId(20)]
-            string xRespuestaMonedaCtzFecha { [DispId(20)] get; }
-            [DispId(0x15)]
-            string ArchivoXMLError { [DispId(0x15)] get; }
-            [DispId(0x16)]
-            string ArchivoXMLRecibido { [DispId(0x16)] get; [DispId(0x16)] set; }
-            [DispId(0x17)]
-            string ArchivoXMLEnviado { [DispId(0x17)] get; [DispId(0x17)] set; }
-            [DispId(0x18)]
-            int paso { [DispId(0x18)] get; [DispId(0x18)] set; }
-            [DispId(0x19)]
-            int bMonedaItemCantidad { [DispId(0x19)] get; }
-            [DispId(0x1a)]
-            int xMonedaItemCantidad { [DispId(0x1a)] get; }
-            [DispId(0x1b)]
-            int xPtoVentaItemCantidad { [DispId(0x1b)] get; }
-            [DispId(0x1c)]
-            int xIdiomaItemCantidad { [DispId(0x1c)] get; }
-            [DispId(0x1d)]
-            int xTipo_expoItemCantidad { [DispId(0x1d)] get; }
-            [DispId(30)]
-            int xIncoTermsItemCantidad { [DispId(30)] get; }
-            [DispId(0x1f)]
-            int xPaisItemCantidad { [DispId(0x1f)] get; }
-            [DispId(0x20)]
-            int xCuitItemCantidad { [DispId(0x20)] get; }
-            [DispId(0x21)]
-            int sMonedaItemCantidad { [DispId(0x21)] get; }
-            [DispId(0x22)]
-            int bTipo_CbteItemCantidad { [DispId(0x22)] get; }
-            [DispId(0x23)]
-            int xTipo_CbteItemCantidad { [DispId(0x23)] get; }
-            [DispId(0x24)]
-            int f1TiposCbteItemCantidad { [DispId(0x24)] get; }
-            [DispId(0x25)]
-            int fxListaItemCantidad { [DispId(0x25)] get; }
-            [DispId(0x26)]
-            int f1TiposTributoItemCantidad { [DispId(0x26)] get; }
-            [DispId(0x27)]
-            int f1TiposOpcionalItemCantidad { [DispId(0x27)] get; }
-            [DispId(40)]
-            int f1TiposMonedaItemCantidad { [DispId(40)] get; }
-            [DispId(0x29)]
-            int f1TiposIvaItemCantidad { [DispId(0x29)] get; }
-            [DispId(0x2a)]
-            int f1TiposDocItemCantidad { [DispId(0x2a)] get; }
-            [DispId(0x2b)]
-            int f1PtosVentaItemCantidad { [DispId(0x2b)] get; }
-            [DispId(0x2c)]
-            int f1TiposConceptoItemCantidad { [DispId(0x2c)] get; }
-            [DispId(0x2d)]
-            int f1ErrorItemCantidad { [DispId(0x2d)] get; }
-            [DispId(0x2e)]
-            int f1EventItemCantidad { [DispId(0x2e)] get; }
-            [DispId(0x2f)]
-            int fxErrorItemCantidad { [DispId(0x2f)] get; }
-            [DispId(0x30)]
-            int fxObervacionItemCantidad { [DispId(0x30)] get; }
-            [DispId(0x31)]
-            int fxEventItemCantidad { [DispId(0x31)] get; }
-            [DispId(50)]
-            int sTipo_CbteItemCantidad { [DispId(50)] get; }
-            [DispId(0x33)]
-            int bProductoItemCantidad { [DispId(0x33)] get; }
-            [DispId(0x34)]
-            int bTipoIvaItemCantidad { [DispId(0x34)] get; }
-            [DispId(0x35)]
-            int sTipoIvaItemCantidad { [DispId(0x35)] get; }
-            [DispId(0x36)]
-            int bUMedItemCantidad { [DispId(0x36)] get; }
-            [DispId(0x37)]
-            int xUMedItemCantidad { [DispId(0x37)] get; }
-            [DispId(0x38)]
-            int bTipoDocItemCantidad { [DispId(0x38)] get; }
-            [DispId(0x39)]
-            int sTipoDocItemCantidad { [DispId(0x39)] get; }
-            [DispId(0x3a)]
-            int bZonaItemCantidad { [DispId(0x3a)] get; }
-            [DispId(0x3b)]
-            int bEventCode { [DispId(0x3b)] get; }
-            [DispId(60)]
-            int xEventCode { [DispId(60)] get; }
-            [DispId(0x3d)]
-            int sEventCode { [DispId(0x3d)] get; }
-            [DispId(0x3e)]
-            string bRespuestasCUIT { [DispId(0x3e)] get; }
-            [DispId(0x3f)]
-            string bRespuestaFch_venc_cae { [DispId(0x3f)] get; }
-            [DispId(0x40)]
-            string sRespuestaFch_venc_cae { [DispId(0x40)] get; }
-            [DispId(0x41)]
-            string bEventMsg { [DispId(0x41)] get; }
-            [DispId(0x42)]
-            string xEventMsg { [DispId(0x42)] get; }
-            [DispId(0x43)]
-            string sEventMsg { [DispId(0x43)] get; }
-            [DispId(0x44)]
-            string bRespuestaId { [DispId(0x44)] get; }
-            [DispId(0x45)]
-            int bRespuestaCbte_numero { [DispId(0x45)] get; }
-            [DispId(70)]
-            string bRespuestaCAE { [DispId(70)] get; }
-            [DispId(0x47)]
-            string bRespuestaFch_cbte { [DispId(0x47)] get; }
-            [DispId(0x48)]
-            string bRespuestaResultado { [DispId(0x48)] get; }
-            [DispId(0x49)]
-            string bRespuestaReproceso { [DispId(0x49)] get; }
-            [DispId(0x4a)]
-            string bRespuestaOBS { [DispId(0x4a)] get; }
-            [DispId(0x4b)]
-            string sRespuestaId { [DispId(0x4b)] get; }
-            [DispId(0x4c)]
-            int sRespuestaCbte_numero { [DispId(0x4c)] get; }
-            [DispId(0x4d)]
-            string sRespuestaCAE { [DispId(0x4d)] get; }
-            [DispId(0x4e)]
-            string sRespuestaFch_cbte { [DispId(0x4e)] get; }
-            [DispId(0x4f)]
-            string sRespuestaResultado { [DispId(0x4f)] get; }
-            [DispId(80)]
-            string sRespuestaReproceso { [DispId(80)] get; }
-            [DispId(0x51)]
-            string sRespuestaOBS { [DispId(0x51)] get; }
-            [DispId(0x52)]
-            string sRespuestasCUIT { [DispId(0x52)] get; }
-            [DispId(0x53)]
-            long xRespuestaId { [DispId(0x53)] get; }
-            [DispId(0x54)]
-            string xRespuestaIdS { [DispId(0x54)] get; }
-            [DispId(0x55)]
-            string xRespuestaCUIT { [DispId(0x55)] get; }
-            [DispId(0x56)]
-            string xRespuestaCAE { [DispId(0x56)] get; }
-            [DispId(0x57)]
-            string xRespuestaFch_vence_cae { [DispId(0x57)] get; }
-            [DispId(0x58)]
-            string xRespuestaFch_venc_cae { [DispId(0x58)] get; }
-            [DispId(0x59)]
-            string xRespuestaFch_cbte { [DispId(0x59)] get; }
-            [DispId(90)]
-            string xRespuestaFch_cbte_cae { [DispId(90)] get; }
-            [DispId(0x5b)]
-            string xRespuestaResultado { [DispId(0x5b)] get; }
-            [DispId(0x5c)]
-            string xRespuestaReproceso { [DispId(0x5c)] get; }
-            [DispId(0x5d)]
-            string xRespuestaMotivos_obs { [DispId(0x5d)] get; }
-            [DispId(0x5e)]
-            int xRespuestatipo_cbte { [DispId(0x5e)] get; }
-            [DispId(0x5f)]
-            int xRespuestapunto_vta { [DispId(0x5f)] get; }
-            [DispId(0x60)]
-            long xRespuestacbte_numero { [DispId(0x60)] get; }
-            [DispId(0x61)]
-            string xRespuestacbte_numeroS { [DispId(0x61)] get; }
-            [DispId(0x62)]
-            string XMLRequest { [DispId(0x62)] get; }
-            [DispId(0x63)]
-            string XMLRequestFirmado { [DispId(0x63)] get; }
-            [DispId(100)]
-            string XMLResponse { [DispId(100)] get; }
-            [DispId(0x65)]
-            bool TicketEsValido { [DispId(0x65)] get; }
-            [DispId(0x66)]
-            bool bTicketEsValido { [DispId(0x66)] get; }
-            [DispId(0x67)]
-            bool xTicketEsValido { [DispId(0x67)] get; }
-            [DispId(0x68)]
-            bool f1TicketEsValido { [DispId(0x68)] get; }
-            [DispId(0x69)]
-            bool fxTicketEsValido { [DispId(0x69)] get; }
-            [DispId(0x6a)]
-            bool mTicketEsValido { [DispId(0x6a)] get; }
-            [DispId(0x6b)]
-            string gErrorMensaje { [DispId(0x6b)] get; }
-            [DispId(0x6c)]
-            string gErrorCodigo { [DispId(0x6c)] get; }
-            [DispId(0x6d)]
-            bool gTicketEsValido { [DispId(0x6d)] get; }
-            [DispId(110)]
-            bool sTicketEsValido { [DispId(110)] get; }
-            [DispId(0x6f)]
-            int TimeOut { [DispId(0x6f)] get; [DispId(0x6f)] set; }
-            [DispId(0x70)]
-            bool LicenciaValida { [DispId(0x70)] get; }
-            [DispId(0x71)]
-            bool f1LicenciaValidaCae { [DispId(0x71)] get; }
-            [DispId(0x72)]
-            bool f1LicenciaValidaCaea { [DispId(0x72)] get; }
-            [DispId(0x73)]
-            bool fxLicenciaValidaCAE { [DispId(0x73)] get; }
-            [DispId(0x74)]
-            bool fxLicenciaValidaCAEA { [DispId(0x74)] get; }
-            [DispId(0x75)]
-            bool BLicenciaValida { [DispId(0x75)] get; }
-            [DispId(0x76)]
-            bool xLicenciaValida { [DispId(0x76)] get; }
-            [DispId(0x77)]
-            bool dLicenciaValida { [DispId(0x77)] get; }
-            [DispId(120)]
-            bool gLicenciaValida { [DispId(120)] get; }
-            [DispId(0x79)]
-            bool OLicenciaValida { [DispId(0x79)] get; }
-            [DispId(0x7a)]
-            bool sLicenciaValida { [DispId(0x7a)] get; }
-            [DispId(0x7b)]
-            bool LicenciaLote { [DispId(0x7b)] get; }
-            [DispId(0x7c)]
-            string Permsg { [DispId(0x7c)] get; }
-            [DispId(0x7d)]
-            string berrmsg { [DispId(0x7d)] get; }
-            [DispId(0x7e)]
-            string xerrmsg { [DispId(0x7e)] get; }
-            [DispId(0x7f)]
-            string serrmsg { [DispId(0x7f)] get; }
-            [DispId(0x80)]
-            int PerCode { [DispId(0x80)] get; }
-            [DispId(0x81)]
-            string PerCodeSt { [DispId(0x81)] get; }
-            [DispId(130)]
-            int berrcode { [DispId(130)] get; }
-            [DispId(0x83)]
-            int xerrcode { [DispId(0x83)] get; }
-            [DispId(0x84)]
-            string berrcodeST { [DispId(0x84)] get; }
-            [DispId(0x85)]
-            string xerrcodeST { [DispId(0x85)] get; }
-            [DispId(0x86)]
-            int serrcode { [DispId(0x86)] get; }
-            [DispId(0x87)]
-            string serrcodeST { [DispId(0x87)] get; }
-            [DispId(0x88)]
-            string FERespuestaDetalleFecha_venc_pago { [DispId(0x88)] get; }
-            [DispId(0x89)]
-            string FERespuestaDetalleFecha_serv_hasta { [DispId(0x89)] get; }
-            [DispId(0x8a)]
-            string FERespuestaDetalleFecha_serv_desde { [DispId(0x8a)] get; }
-            [DispId(0x8b)]
-            string FERespuestaDetalleMotivo { [DispId(0x8b)] get; }
-            [DispId(140)]
-            string FERespuestaDetalleFecha_vto { [DispId(140)] get; }
-            [DispId(0x8d)]
-            string FERespuestaDetalleCae { [DispId(0x8d)] get; }
-            [DispId(0x8e)]
-            string FERespuestaDetalleResultado { [DispId(0x8e)] get; }
-            [DispId(0x8f)]
-            string FERespuestaDetalleFecha_cbte { [DispId(0x8f)] get; }
-            [DispId(0x90)]
-            double FERespuestaDetalleImp_op_ex { [DispId(0x90)] get; }
-            [DispId(0x91)]
-            double FERespuestaDetalleImpt_liq_rni { [DispId(0x91)] get; }
-            [DispId(0x92)]
-            double FERespuestaDetalleImpto_liq { [DispId(0x92)] get; }
-            [DispId(0x93)]
-            double FERespuestaDetalleImp_neto { [DispId(0x93)] get; }
-            [DispId(0x94)]
-            double FERespuestaDetalleImp_tot_conc { [DispId(0x94)] get; }
-            [DispId(0x95)]
-            double FERespuestaDetalleImp_total { [DispId(0x95)] get; }
-            [DispId(150)]
-            int FERespuestaDetalleCbt_hasta { [DispId(150)] get; }
-            [DispId(0x97)]
-            string FERespuestaDetalleCbt_hastaS { [DispId(0x97)] get; }
-            [DispId(0x98)]
-            int FERespuestaDetalleCbt_desde { [DispId(0x98)] get; }
-            [DispId(0x99)]
-            string FERespuestaDetalleCbt_desdeS { [DispId(0x99)] get; }
-            [DispId(0x9a)]
-            int FERespuestaDetallePunto_vta { [DispId(0x9a)] get; }
-            [DispId(0x9b)]
-            Factura.TipoComprobante FERespuestaDetalleTipo_cbte { [DispId(0x9b)] get; }
-            [DispId(0x9c)]
-            int IndiceItem { [DispId(0x9c)] get; [DispId(0x9c)] set; }
-            [DispId(0x9d)]
-            int bIndiceItem { [DispId(0x9d)] get; [DispId(0x9d)] set; }
-            [DispId(0x9e)]
-            int xIndiceItem { [DispId(0x9e)] get; [DispId(0x9e)] set; }
-            [DispId(0x9f)]
-            int f1IndiceItem { [DispId(0x9f)] get; [DispId(0x9f)] set; }
-            [DispId(160)]
-            int fxIndiceItem { [DispId(160)] get; [DispId(160)] set; }
-            [DispId(0xa1)]
-            int dIndiceItem { [DispId(0xa1)] get; [DispId(0xa1)] set; }
-            [DispId(0xa2)]
-            int gIndiceItem { [DispId(0xa2)] get; [DispId(0xa2)] set; }
-            [DispId(0xa3)]
-            int sIndiceItem { [DispId(0xa3)] get; [DispId(0xa3)] set; }
-            [DispId(0xa4)]
-            int bItemCantidad { [DispId(0xa4)] get; [DispId(0xa4)] set; }
-            [DispId(0xa5)]
-            int xItemCantidad { [DispId(0xa5)] get; [DispId(0xa5)] set; }
-            [DispId(0xa6)]
-            int dFamiliaItemCantidad { [DispId(0xa6)] get; [DispId(0xa6)] set; }
-            [DispId(0xa7)]
-            int gEspecieItemCantidad { [DispId(0xa7)] get; [DispId(0xa7)] set; }
-            [DispId(0xa8)]
-            int gProvinciaItemCantidad { [DispId(0xa8)] get; [DispId(0xa8)] set; }
-            [DispId(0xa9)]
-            int gLocalidadItemCantidad { [DispId(0xa9)] get; [DispId(0xa9)] set; }
-            [DispId(170)]
-            int gLocalidadTodasItemCantidad { [DispId(170)] get; [DispId(170)] set; }
-            [DispId(0xab)]
-            int gCosechaItemCantidad { [DispId(0xab)] get; [DispId(0xab)] set; }
-            [DispId(0xac)]
-            int xPermisoCantidad { [DispId(0xac)] get; [DispId(0xac)] set; }
-            [DispId(0xad)]
-            int xPermisoNoInformar { [DispId(0xad)] get; [DispId(0xad)] set; }
-            [DispId(0xae)]
-            int xCmps_asocCantidad { [DispId(0xae)] get; [DispId(0xae)] set; }
-            [DispId(0xaf)]
-            int sItemCantidad { [DispId(0xaf)] get; [DispId(0xaf)] set; }
-            [DispId(0xb0)]
-            string dFamiliaCodigo { [DispId(0xb0)] get; [DispId(0xb0)] set; }
-            [DispId(0xb1)]
-            int dFamiliaCantidad { [DispId(0xb1)] get; [DispId(0xb1)] set; }
-            [DispId(0xb2)]
-            string xITEMPro_codigo { [DispId(0xb2)] get; [DispId(0xb2)] set; }
-            [DispId(0xb3)]
-            string xITEMPro_ds { [DispId(0xb3)] get; [DispId(0xb3)] set; }
-            [DispId(180)]
-            double xITEMPro_qty { [DispId(180)] get; [DispId(180)] set; }
-            [DispId(0xb5)]
-            int xITEMPro_umed { [DispId(0xb5)] get; [DispId(0xb5)] set; }
-            [DispId(0xb6)]
-            double xITEMPro_precio_uni { [DispId(0xb6)] get; [DispId(0xb6)] set; }
-            [DispId(0xb7)]
-            double xITEMPro_precio_item { [DispId(0xb7)] get; [DispId(0xb7)] set; }
-            [DispId(0xb8)]
-            int xCMPS_ASOC_cbte_tipo { [DispId(0xb8)] get; [DispId(0xb8)] set; }
-            [DispId(0xb9)]
-            int xCMPS_ASOC_cbte_punto_venta { [DispId(0xb9)] get; [DispId(0xb9)] set; }
-            [DispId(0xba)]
-            int xCMPS_ASOC_cbte_nro { [DispId(0xba)] get; [DispId(0xba)] set; }
-            [DispId(0xbb)]
-            string xCMPS_ASOC_cbte_nroS { [DispId(0xbb)] get; [DispId(0xbb)] set; }
-            [DispId(0xbc)]
-            string xPERMISO_id_permiso { [DispId(0xbc)] get; [DispId(0xbc)] set; }
-            [DispId(0xbd)]
-            int xPERMISO_dst_merc { [DispId(0xbd)] get; [DispId(0xbd)] set; }
-            [DispId(190)]
-            string bITEMpro_codigo_ncm { [DispId(190)] get; [DispId(190)] set; }
-            [DispId(0xbf)]
-            string bITEMpro_codigo_sec { [DispId(0xbf)] get; [DispId(0xbf)] set; }
-            [DispId(0xc0)]
-            string bITEMpro_ds { [DispId(0xc0)] get; [DispId(0xc0)] set; }
-            [DispId(0xc1)]
-            double bITEMpro_qty { [DispId(0xc1)] get; [DispId(0xc1)] set; }
-            [DispId(0xc2)]
-            int bITEMpro_umed { [DispId(0xc2)] get; [DispId(0xc2)] set; }
-            [DispId(0xc3)]
-            double bITEMpro_precio_uni { [DispId(0xc3)] get; [DispId(0xc3)] set; }
-            [DispId(0xc4)]
-            double bITEMimp_bonif { [DispId(0xc4)] get; [DispId(0xc4)] set; }
-            [DispId(0xc5)]
-            double bITEMimp_total { [DispId(0xc5)] get; [DispId(0xc5)] set; }
-            [DispId(0xc6)]
-            string sItemPoliza { [DispId(0xc6)] get; [DispId(0xc6)] set; }
-            [DispId(0xc7)]
-            string sItemEndoso { [DispId(0xc7)] get; [DispId(0xc7)] set; }
-            [DispId(200)]
-            string sItemds { [DispId(200)] get; [DispId(200)] set; }
-            [DispId(0xc9)]
-            double sItemqty { [DispId(0xc9)] get; [DispId(0xc9)] set; }
-            [DispId(0xca)]
-            double sItemprecio_uni { [DispId(0xca)] get; [DispId(0xca)] set; }
-            [DispId(0xcb)]
-            double sItemimp_bonif { [DispId(0xcb)] get; [DispId(0xcb)] set; }
-            [DispId(0xcc)]
-            double sItemimp_total { [DispId(0xcc)] get; [DispId(0xcc)] set; }
-            [DispId(0xcd)]
-            string sItemimp_moneda_vaseg { [DispId(0xcd)] get; [DispId(0xcd)] set; }
-            [DispId(0xce)]
-            double sItemimp_valor_aseg { [DispId(0xce)] get; [DispId(0xce)] set; }
-            [DispId(0xcf)]
-            int sItemIva_id { [DispId(0xcf)] get; [DispId(0xcf)] set; }
-            [DispId(0xd0)]
-            int bITEMIva_id { [DispId(0xd0)] get; [DispId(0xd0)] set; }
-            [DispId(0xd1)]
-            int bTipo_Doc { [DispId(0xd1)] get; [DispId(0xd1)] set; }
-            [DispId(210)]
-            string bNro_doc { [DispId(210)] get; [DispId(210)] set; }
-            [DispId(0xd3)]
-            int bZona { [DispId(0xd3)] get; [DispId(0xd3)] set; }
-            [DispId(0xd4)]
-            int bTipo_cbte { [DispId(0xd4)] get; [DispId(0xd4)] set; }
-            [DispId(0xd5)]
-            int bPunto_vta { [DispId(0xd5)] get; [DispId(0xd5)] set; }
-            [DispId(0xd6)]
-            int bcbte_nro { [DispId(0xd6)] get; [DispId(0xd6)] set; }
-            [DispId(0xd7)]
-            double bImp_total { [DispId(0xd7)] get; [DispId(0xd7)] set; }
-            [DispId(0xd8)]
-            double bImp_total_conc { [DispId(0xd8)] get; [DispId(0xd8)] set; }
-            [DispId(0xd9)]
-            double bImp_neto { [DispId(0xd9)] get; [DispId(0xd9)] set; }
-            [DispId(0xda)]
-            double bimpto_liq { [DispId(0xda)] get; [DispId(0xda)] set; }
-            [DispId(0xdb)]
-            double bimpto_liq_rni { [DispId(0xdb)] get; [DispId(0xdb)] set; }
-            [DispId(220)]
-            double bimp_op_ex { [DispId(220)] get; [DispId(220)] set; }
-            [DispId(0xdd)]
-            double bImp_perc { [DispId(0xdd)] get; [DispId(0xdd)] set; }
-            [DispId(0xde)]
-            double bImp_perc_mun { [DispId(0xde)] get; [DispId(0xde)] set; }
-            [DispId(0xdf)]
-            double bImp_iibb { [DispId(0xdf)] get; [DispId(0xdf)] set; }
-            [DispId(0xe0)]
-            double bImp_internos { [DispId(0xe0)] get; [DispId(0xe0)] set; }
-            [DispId(0xe1)]
-            string bImp_moneda_id { [DispId(0xe1)] get; [DispId(0xe1)] set; }
-            [DispId(0xe2)]
-            double bImp_moneda_ctz { [DispId(0xe2)] get; [DispId(0xe2)] set; }
-            [DispId(0xe3)]
-            string bFecha_cbte { [DispId(0xe3)] get; [DispId(0xe3)] set; }
-            [DispId(0xe4)]
-            string bFecha_cbte_orig { [DispId(0xe4)] get; [DispId(0xe4)] set; }
-            [DispId(0xe5)]
-            string bFecha_cbte_cae { [DispId(0xe5)] get; [DispId(0xe5)] set; }
-            [DispId(230)]
-            string bFecha_cae { [DispId(230)] get; [DispId(230)] set; }
-            [DispId(0xe7)]
-            int sTipo_Doc { [DispId(0xe7)] get; [DispId(0xe7)] set; }
-            [DispId(0xe8)]
-            string sNro_doc { [DispId(0xe8)] get; [DispId(0xe8)] set; }
-            [DispId(0xe9)]
-            int sTipo_cbte { [DispId(0xe9)] get; [DispId(0xe9)] set; }
-            [DispId(0xea)]
-            int sPunto_vta { [DispId(0xea)] get; [DispId(0xea)] set; }
-            [DispId(0xeb)]
-            int scbte_nro { [DispId(0xeb)] get; [DispId(0xeb)] set; }
-            [DispId(0xec)]
-            double sImp_total { [DispId(0xec)] get; [DispId(0xec)] set; }
-            [DispId(0xed)]
-            double sImp_total_conc { [DispId(0xed)] get; [DispId(0xed)] set; }
-            [DispId(0xee)]
-            double sImp_neto { [DispId(0xee)] get; [DispId(0xee)] set; }
-            [DispId(0xef)]
-            double simpto_liq { [DispId(0xef)] get; [DispId(0xef)] set; }
-            [DispId(240)]
-            double simpto_liq_rni { [DispId(240)] get; [DispId(240)] set; }
-            [DispId(0xf1)]
-            double simp_op_ex { [DispId(0xf1)] get; [DispId(0xf1)] set; }
-            [DispId(0xf2)]
-            double sImp_perc { [DispId(0xf2)] get; [DispId(0xf2)] set; }
-            [DispId(0xf3)]
-            double sImp_perc_mun { [DispId(0xf3)] get; [DispId(0xf3)] set; }
-            [DispId(0xf4)]
-            double sImp_iibb { [DispId(0xf4)] get; [DispId(0xf4)] set; }
-            [DispId(0xf5)]
-            double sImp_internos { [DispId(0xf5)] get; [DispId(0xf5)] set; }
-            [DispId(0xf6)]
-            string sImp_moneda_id { [DispId(0xf6)] get; [DispId(0xf6)] set; }
-            [DispId(0xf7)]
-            double sImp_moneda_ctz { [DispId(0xf7)] get; [DispId(0xf7)] set; }
-            [DispId(0xf8)]
-            double sImp_otrib_prov { [DispId(0xf8)] get; [DispId(0xf8)] set; }
-            [DispId(0xf9)]
-            string sFecha_cbte { [DispId(0xf9)] get; [DispId(0xf9)] set; }
-            [DispId(250)]
-            string sFecha_cbte_orig { [DispId(250)] get; [DispId(250)] set; }
-            [DispId(0xfb)]
-            string sFecha_cbte_cae { [DispId(0xfb)] get; [DispId(0xfb)] set; }
-            [DispId(0xfc)]
-            string sFecha_cae { [DispId(0xfc)] get; [DispId(0xfc)] set; }
-            [DispId(0xfd)]
-            string dRol { [DispId(0xfd)] get; [DispId(0xfd)] set; }
-            [DispId(0xfe)]
-            string dTipoAgente { [DispId(0xfe)] get; [DispId(0xfe)] set; }
-            [DispId(0xff)]
-            string dNroLegajo { [DispId(0xff)] get; [DispId(0xff)] set; }
-            [DispId(0x100)]
-            DateTime dFechaHoraAcept { [DispId(0x100)] get; [DispId(0x100)] set; }
-            [DispId(0x101)]
-            string dFechaHoraAceptS { [DispId(0x101)] get; [DispId(0x101)] set; }
-            [DispId(0x102)]
-            string dCuitDeclarante { [DispId(0x102)] get; [DispId(0x102)] set; }
-            [DispId(0x103)]
-            string dCuitPSad { [DispId(0x103)] get; [DispId(0x103)] set; }
-            [DispId(260)]
-            string dCuitIE { [DispId(260)] get; [DispId(260)] set; }
-            [DispId(0x105)]
-            string dCuitATA { [DispId(0x105)] get; [DispId(0x105)] set; }
-            [DispId(0x106)]
-            string dCodigo { [DispId(0x106)] get; [DispId(0x106)] set; }
-            [DispId(0x107)]
-            string dURL { [DispId(0x107)] get; [DispId(0x107)] set; }
-            [DispId(0x108)]
-            string dTicket { [DispId(0x108)] get; [DispId(0x108)] set; }
-            [DispId(0x109)]
-            string dHashing { [DispId(0x109)] get; [DispId(0x109)] set; }
-            [DispId(0x10a)]
-            int dCantidadTotal { [DispId(0x10a)] get; [DispId(0x10a)] set; }
-            [DispId(0x10b)]
-            string xFecha_cbte { [DispId(0x10b)] get; [DispId(0x10b)] set; }
-            [DispId(0x10c)]
-            int xPunto_vta { [DispId(0x10c)] get; [DispId(0x10c)] set; }
-            [DispId(0x10d)]
-            int xtipo_cbte { [DispId(0x10d)] get; [DispId(0x10d)] set; }
-            [DispId(270)]
-            long xCbte_nro { [DispId(270)] get; [DispId(270)] set; }
-            [DispId(0x10f)]
-            string xCbte_nroS { [DispId(0x10f)] get; [DispId(0x10f)] set; }
-            [DispId(0x110)]
-            int xtipo_expo { [DispId(0x110)] get; [DispId(0x110)] set; }
-            [DispId(0x111)]
-            string xPermiso_existente { [DispId(0x111)] get; [DispId(0x111)] set; }
-            [DispId(0x112)]
-            string xPermiso_existenteS { [DispId(0x112)] get; [DispId(0x112)] set; }
-            [DispId(0x113)]
-            int xDst_cmp { [DispId(0x113)] get; [DispId(0x113)] set; }
-            [DispId(0x114)]
-            string xCliente { [DispId(0x114)] get; [DispId(0x114)] set; }
-            [DispId(0x115)]
-            long xCuit_pais_cliente { [DispId(0x115)] get; [DispId(0x115)] set; }
-            [DispId(0x116)]
-            string xCuit_pais_clienteS { [DispId(0x116)] get; [DispId(0x116)] set; }
-            [DispId(0x117)]
-            string xDomicilio_cliente { [DispId(0x117)] get; [DispId(0x117)] set; }
-            [DispId(280)]
-            string xId_impositivo { [DispId(280)] get; [DispId(280)] set; }
-            [DispId(0x119)]
-            string xMoneda_id { [DispId(0x119)] get; [DispId(0x119)] set; }
-            [DispId(0x11a)]
-            string xMoneda_idS { [DispId(0x11a)] get; [DispId(0x11a)] set; }
-            [DispId(0x11b)]
-            double xMoneda_ctz { [DispId(0x11b)] get; [DispId(0x11b)] set; }
-            [DispId(0x11c)]
-            string xMoneda_ctzS { [DispId(0x11c)] get; [DispId(0x11c)] set; }
-            [DispId(0x11d)]
-            string xObs_comerciales { [DispId(0x11d)] get; [DispId(0x11d)] set; }
-            [DispId(0x11e)]
-            double xImp_total { [DispId(0x11e)] get; [DispId(0x11e)] set; }
-            [DispId(0x11f)]
-            string xObs { [DispId(0x11f)] get; [DispId(0x11f)] set; }
-            [DispId(0x120)]
-            string xForma_pago { [DispId(0x120)] get; [DispId(0x120)] set; }
-            [DispId(0x121)]
-            string xIncoTerms { [DispId(0x121)] get; [DispId(0x121)] set; }
-            [DispId(290)]
-            string xIncoTerms_ds { [DispId(290)] get; [DispId(290)] set; }
-            [DispId(0x123)]
-            string xIdioma_cbte { [DispId(0x123)] get; [DispId(0x123)] set; }
-            [DispId(0x124)]
-            string FERespuestaDetalleNor_doc { [DispId(0x124)] get; }
-            [DispId(0x125)]
-            Factura.TipoDocumento FERespuestaDetalleTipo_doc { [DispId(0x125)] get; }
-            [DispId(0x126)]
-            string FERespuestaId { [DispId(0x126)] get; }
-            [DispId(0x127)]
-            string FERespuestaCuit { [DispId(0x127)] get; }
-            [DispId(0x128)]
-            string FERespuestaFecha_cae { [DispId(0x128)] get; }
-            [DispId(0x129)]
-            int FERespuestaCantidadReg { [DispId(0x129)] get; }
-            [DispId(0x12a)]
-            string FERespuestaResultado { [DispId(0x12a)] get; }
-            [DispId(0x12b)]
-            string FERespuestaMotivo { [DispId(0x12b)] get; }
-            [DispId(300)]
-            string FERespuestaReproceso { [DispId(300)] get; }
-            [DispId(0x12d)]
-            int FERespuestaPresta_serv { [DispId(0x12d)] get; }
-            [DispId(0x12e)]
-            string FEDetalleNro_doc { [DispId(0x12e)] get; [DispId(0x12e)] set; }
-            [DispId(0x12f)]
-            Factura.TipoDocumento FEDetalleTipo_doc { [DispId(0x12f)] get; [DispId(0x12f)] set; }
-            [DispId(0x130)]
-            Factura.TipoComprobante FEDetalleTipo_cbte { [DispId(0x130)] get; [DispId(0x130)] set; }
-            [DispId(0x131)]
-            int FEDetallePunto_vta { [DispId(0x131)] get; [DispId(0x131)] set; }
-            [DispId(0x132)]
-            int FEDetalleCbt_desde { [DispId(0x132)] get; [DispId(0x132)] set; }
-            [DispId(0x133)]
-            string FEDetalleCbt_desdeS { [DispId(0x133)] get; [DispId(0x133)] set; }
-            [DispId(0x134)]
-            int FEDetalleCbt_hasta { [DispId(0x134)] get; [DispId(0x134)] set; }
-            [DispId(0x135)]
-            string FEDetalleCbt_hastaS { [DispId(0x135)] get; [DispId(0x135)] set; }
-            [DispId(310)]
-            double FEDetalleImp_total { [DispId(310)] get; [DispId(310)] set; }
-            [DispId(0x137)]
-            double FEDetalleImp_tot_conc { [DispId(0x137)] get; [DispId(0x137)] set; }
-            [DispId(0x138)]
-            double FEDetalleImp_neto { [DispId(0x138)] get; [DispId(0x138)] set; }
-            [DispId(0x139)]
-            double FEDetalleImpto_liq { [DispId(0x139)] get; [DispId(0x139)] set; }
-            [DispId(0x13a)]
-            double FEdetalleImto_liq_rni { [DispId(0x13a)] get; [DispId(0x13a)] set; }
-            [DispId(0x13b)]
-            double FEDetalleImp_op_ex { [DispId(0x13b)] get; [DispId(0x13b)] set; }
-            [DispId(0x13c)]
-            string FEDetalleFecha_serv_desde { [DispId(0x13c)] get; [DispId(0x13c)] set; }
-            [DispId(0x13d)]
-            string FEDetalleFecha_serv_hasta { [DispId(0x13d)] get; [DispId(0x13d)] set; }
-            [DispId(0x13e)]
-            string FEDetalleFecha_vence_pago { [DispId(0x13e)] get; [DispId(0x13e)] set; }
-            [DispId(0x13f)]
-            string FEDetalleFecha_cbte { [DispId(0x13f)] get; [DispId(0x13f)] set; }
-            [DispId(320)]
-            int FECabeceraCantReg { [DispId(320)] get; [DispId(320)] set; }
-            [DispId(0x141)]
-            int FECabeceraPresta_serv { [DispId(0x141)] get; [DispId(0x141)] set; }
-            [DispId(0x142)]
-            DateTime TicketHora { [DispId(0x142)] get; }
-            [DispId(0x143)]
-            DateTime bTicketHora { [DispId(0x143)] get; }
-            [DispId(0x144)]
-            DateTime xTicketHora { [DispId(0x144)] get; }
-            [DispId(0x145)]
-            DateTime f1TicketHora { [DispId(0x145)] get; }
-            [DispId(0x146)]
-            DateTime fxTicketHora { [DispId(0x146)] get; }
-            [DispId(0x147)]
-            DateTime mTicketHora { [DispId(0x147)] get; }
-            [DispId(0x148)]
-            DateTime dTicketHora { [DispId(0x148)] get; }
-            [DispId(0x149)]
-            DateTime gTicketHora { [DispId(0x149)] get; }
-            [DispId(330)]
-            DateTime oTicketHora { [DispId(330)] get; }
-            [DispId(0x14b)]
-            DateTime sTicketHora { [DispId(0x14b)] get; }
-            [DispId(0x14c)]
-            DateTime TicketHoraVencimiento { [DispId(0x14c)] get; }
-            [DispId(0x14d)]
-            DateTime bTicketHoraVencimiento { [DispId(0x14d)] get; }
-            [DispId(0x14e)]
-            DateTime xTicketHoraVencimiento { [DispId(0x14e)] get; }
-            [DispId(0x14f)]
-            DateTime f1TicketHoraVencimiento { [DispId(0x14f)] get; }
-            [DispId(0x150)]
-            DateTime fxTicketHoraVencimiento { [DispId(0x150)] get; }
-            [DispId(0x151)]
-            DateTime mTicketHoraVencimiento { [DispId(0x151)] get; }
-            [DispId(0x152)]
-            DateTime dTicketHoraVencimiento { [DispId(0x152)] get; }
-            [DispId(0x153)]
-            DateTime gTicketHoraVencimiento { [DispId(0x153)] get; }
-            [DispId(340)]
-            DateTime oTicketHoraVencimiento { [DispId(340)] get; }
-            [DispId(0x155)]
-            DateTime sTicketHoraVencimiento { [DispId(0x155)] get; }
-            [DispId(0x156)]
-            bool TicketValido { [DispId(0x156)] get; }
-            [DispId(0x157)]
-            bool BTicketValido { [DispId(0x157)] get; }
-            [DispId(0x158)]
-            bool xTicketValido { [DispId(0x158)] get; }
-            [DispId(0x159)]
-            bool f1TicketValido { [DispId(0x159)] get; }
-            [DispId(0x15a)]
-            bool fxTicketValido { [DispId(0x15a)] get; }
-            [DispId(0x15b)]
-            bool mTicketValido { [DispId(0x15b)] get; }
-            [DispId(0x15c)]
-            bool dTicketValido { [DispId(0x15c)] get; }
-            [DispId(0x15d)]
-            bool gTicketValido { [DispId(0x15d)] get; }
-            [DispId(350)]
-            bool oTicketValido { [DispId(350)] get; }
-            [DispId(0x15f)]
-            bool sTicketValido { [DispId(0x15f)] get; }
-            [DispId(0x160)]
-            string cuit { [DispId(0x160)] get; }
-            [DispId(0x161)]
-            string token { [DispId(0x161)] get; [DispId(0x161)] set; }
-            [DispId(0x162)]
-            string btoken { [DispId(0x162)] get; [DispId(0x162)] set; }
-            [DispId(0x163)]
-            string xtoken { [DispId(0x163)] get; [DispId(0x163)] set; }
-            [DispId(0x164)]
-            string f1token { [DispId(0x164)] get; [DispId(0x164)] set; }
-            [DispId(0x165)]
-            string fxtoken { [DispId(0x165)] get; [DispId(0x165)] set; }
-            [DispId(0x166)]
-            string mtoken { [DispId(0x166)] get; [DispId(0x166)] set; }
-            [DispId(0x167)]
-            string dtoken { [DispId(0x167)] get; [DispId(0x167)] set; }
-            [DispId(360)]
-            string gtoken { [DispId(360)] get; [DispId(360)] set; }
-            [DispId(0x169)]
-            string otoken { [DispId(0x169)] get; [DispId(0x169)] set; }
-            [DispId(0x16a)]
-            string stoken { [DispId(0x16a)] get; [DispId(0x16a)] set; }
-            [DispId(0x16b)]
-            string sign { [DispId(0x16b)] get; [DispId(0x16b)] set; }
-            [DispId(0x16c)]
-            string bsign { [DispId(0x16c)] get; [DispId(0x16c)] set; }
-            [DispId(0x16d)]
-            string xsign { [DispId(0x16d)] get; [DispId(0x16d)] set; }
-            [DispId(0x16e)]
-            string f1sign { [DispId(0x16e)] get; [DispId(0x16e)] set; }
-            [DispId(0x16f)]
-            string fxsign { [DispId(0x16f)] get; [DispId(0x16f)] set; }
-            [DispId(0x170)]
-            string msign { [DispId(0x170)] get; [DispId(0x170)] set; }
-            [DispId(0x171)]
-            string dsign { [DispId(0x171)] get; [DispId(0x171)] set; }
-            [DispId(370)]
-            string gsign { [DispId(370)] get; [DispId(370)] set; }
-            [DispId(0x173)]
-            string osign { [DispId(0x173)] get; [DispId(0x173)] set; }
-            [DispId(0x174)]
-            string ssign { [DispId(0x174)] get; [DispId(0x174)] set; }
-            [DispId(0x175)]
-            string Identificador { [DispId(0x175)] get; [DispId(0x175)] set; }
-            [DispId(0x176)]
-            string UltimoMensajeError { [DispId(0x176)] get; }
-            [DispId(0x177)]
-            int UltimoNumeroError { [DispId(0x177)] get; }
-            [DispId(0x178)]
-            Factura.modoFiscal Modo { [DispId(0x178)] get; [DispId(0x178)] set; }
-            [DispId(0x179)]
-            string RutaArchivoCertificado { [DispId(0x179)] get; [DispId(0x179)] set; }
-            [DispId(0x17a)]
-            string RespuetaDummyAppServer { [DispId(0x17a)] get; }
-            [DispId(0x17b)]
-            string RespuestaDummyAuthServer { [DispId(0x17b)] get; }
-            [DispId(380)]
-            string RespuestaDummyDbServer { [DispId(380)] get; }
-            [DispId(0x17d)]
-            string BRespuetaDummyAppServer { [DispId(0x17d)] get; }
-            [DispId(0x17e)]
-            string BRespuestaDummyAuthServer { [DispId(0x17e)] get; }
-            [DispId(0x17f)]
-            string BRespuestaDummyDbServer { [DispId(0x17f)] get; }
-            [DispId(0x180)]
-            string xRespuetaDummyAppServer { [DispId(0x180)] get; }
-            [DispId(0x181)]
-            string xRespuestaDummyAuthServer { [DispId(0x181)] get; }
-            [DispId(0x182)]
-            string xRespuestaDummyDbServer { [DispId(0x182)] get; }
-            [DispId(0x183)]
-            string f1RespuetaDummyAppServer { [DispId(0x183)] get; }
-            [DispId(0x184)]
-            string f1RespuestaDummyAuthServer { [DispId(0x184)] get; }
-            [DispId(0x185)]
-            string fxRespuetaDummyAppServer { [DispId(0x185)] get; }
-            [DispId(390)]
-            string fxRespuestaDummyAuthServer { [DispId(390)] get; }
-            [DispId(0x187)]
-            int F1RespuestaCantidadReg { [DispId(0x187)] get; }
-            [DispId(0x188)]
-            int F1RespuestaCAEAItemCantidad { [DispId(0x188)] get; }
-            [DispId(0x189)]
-            int FxRespuestaCAEAItemCantidad { [DispId(0x189)] get; }
-            [DispId(0x18a)]
-            string F1RespuestaFchProceso { [DispId(0x18a)] get; }
-            [DispId(0x18b)]
-            string F1RespuestaResultado { [DispId(0x18b)] get; }
-            [DispId(0x18c)]
-            string fxRespuestaResultado { [DispId(0x18c)] get; }
-            [DispId(0x18d)]
-            string fxRespuestaCAE { [DispId(0x18d)] get; }
-            [DispId(0x18e)]
-            string fxRespuestaCUIT { [DispId(0x18e)] get; }
-            [DispId(0x18f)]
-            int fxRespuestaNumeroComprobante { [DispId(0x18f)] get; }
-            [DispId(400)]
-            int fxRespuestaCodigoTipoComprobante { [DispId(400)] get; }
-            [DispId(0x191)]
-            int fxRespuestaNumeroPuntoVenta { [DispId(0x191)] get; }
-            [DispId(0x192)]
-            string fxRespuestaFechaEmision { [DispId(0x192)] get; }
-            [DispId(0x193)]
-            string fxRespuestaFechaVencimientoCAE { [DispId(0x193)] get; }
-            [DispId(0x194)]
-            string F1RespuestaReProceso { [DispId(0x194)] get; }
-            [DispId(0x195)]
-            string f1RespuestaDummyDbServer { [DispId(0x195)] get; }
-            [DispId(0x196)]
-            string mRespuetaDummyAppServer { [DispId(0x196)] get; }
-            [DispId(0x197)]
-            string mRespuestaDummyAuthServer { [DispId(0x197)] get; }
-            [DispId(0x198)]
-            string mRespuestaDummyDbServer { [DispId(0x198)] get; }
-            [DispId(0x199)]
-            string dRespuetaDummyAppServer { [DispId(0x199)] get; }
-            [DispId(410)]
-            string dRespuestaDummyAuthServer { [DispId(410)] get; }
-            [DispId(0x19b)]
-            string dRespuestaDummyDbServer { [DispId(0x19b)] get; }
-            [DispId(0x19c)]
-            string gRespuetaDummyAppServer { [DispId(0x19c)] get; }
-            [DispId(0x19d)]
-            string gRespuestaDummyAuthServer { [DispId(0x19d)] get; }
-            [DispId(0x19e)]
-            string gRespuestaDummyDbServer { [DispId(0x19e)] get; }
-            [DispId(0x19f)]
-            string oRespuetaDummyAppServer { [DispId(0x19f)] get; }
-            [DispId(0x1a0)]
-            string oRespuestaDummyAuthServer { [DispId(0x1a0)] get; }
-            [DispId(0x1a1)]
-            string oRespuestaDummyDbServer { [DispId(0x1a1)] get; }
-            [DispId(0x1a2)]
-            string sRespuetaDummyAppServer { [DispId(0x1a2)] get; }
-            [DispId(0x1a3)]
-            string sRespuestaDummyAuthServer { [DispId(0x1a3)] get; }
-            [DispId(420)]
-            string sRespuestaDummyDbServer { [DispId(420)] get; }
-            [DispId(0x1a5)]
-            int F1RespuestaDetalleConcepto { [DispId(0x1a5)] get; }
-            [DispId(0x1a6)]
-            int F1RespuestaDetalleDocTipo { [DispId(0x1a6)] get; }
-            [DispId(0x1a7)]
-            int F1RespuestaDetalleCbteDesde { [DispId(0x1a7)] get; }
-            [DispId(0x1a8)]
-            string F1RespuestaDetalleCbteDesdeS { [DispId(0x1a8)] get; }
-            [DispId(0x1a9)]
-            int F1RespuestaDetalleCbteHasta { [DispId(0x1a9)] get; }
-            [DispId(0x1aa)]
-            string F1RespuestaDetalleCbteHastaS { [DispId(0x1aa)] get; }
-            [DispId(0x1ab)]
-            string F1RespuestaDetalleResultado { [DispId(0x1ab)] get; }
-            [DispId(0x1ac)]
-            string F1RespuestaDetalleCAEA { [DispId(0x1ac)] get; }
-            [DispId(0x1ad)]
-            string F1RespuestaDetalleCodAutorizacion { [DispId(0x1ad)] get; }
-            [DispId(430)]
-            string F1RespuestaDetalleEmisionTipo { [DispId(430)] get; }
-            [DispId(0x1af)]
-            string F1RespuestaDetalleCae { [DispId(0x1af)] get; }
-            [DispId(0x1b0)]
-            string F1RespuestaDetalleCbteFch { [DispId(0x1b0)] get; }
-            [DispId(0x1b1)]
-            string F1RespuestaDetalleCAEFchVto { [DispId(0x1b1)] get; }
-            [DispId(0x1b2)]
-            string F1RespuestaDetalleDocNro { [DispId(0x1b2)] get; }
-            [DispId(0x1b3)]
-            int F1RespuestaDetalleObservacionItemCantidad { [DispId(0x1b3)] get; }
-            [DispId(0x1b4)]
-            int FxRespuestaObservacionItemCantidad { [DispId(0x1b4)] get; }
-            [DispId(0x1b5)]
-            int F1RespuestaDetalleObservacionCode { [DispId(0x1b5)] get; }
-            [DispId(0x1b6)]
-            string F1RespuestaDetalleObservacionMsg { [DispId(0x1b6)] get; }
-            [DispId(0x1b7)]
-            string F1RespuestaDetalleObservacionMsg1 { [DispId(0x1b7)] get; }
-            [DispId(440)]
-            string FxRespuestaObservacionDescripcion1 { [DispId(440)] get; }
-            [DispId(0x1b9)]
-            int FxRespuestaObservacionCodigo1 { [DispId(0x1b9)] get; }
-            [DispId(0x1ba)]
-            int fxListaCodigo { [DispId(0x1ba)] get; }
-            [DispId(0x1bb)]
-            string fxListaDescripcion { [DispId(0x1bb)] get; }
-            [DispId(0x1bc)]
-            string fxListaCodigo2 { [DispId(0x1bc)] get; }
-            [DispId(0x1bd)]
-            string fxListaDesde { [DispId(0x1bd)] get; }
-            [DispId(0x1be)]
-            string fxListaHasta { [DispId(0x1be)] get; }
-            [DispId(0x1bf)]
-            int F1RespuestaDetalleObservacionCode1 { [DispId(0x1bf)] get; }
-            [DispId(0x1c0)]
-            string f1RespuestaMonedaId { [DispId(0x1c0)] get; }
-            [DispId(0x1c1)]
-            string f1RespuestaMonedaFchCotiz { [DispId(0x1c1)] get; }
-            [DispId(450)]
-            double f1RespuestaMonedaCotiz { [DispId(450)] get; }
-            [DispId(0x1c3)]
-            string f1RespuestaCAEA { [DispId(0x1c3)] get; }
-            [DispId(0x1c4)]
-            int f1RespuestaCAEAPeriodo { [DispId(0x1c4)] get; }
-            [DispId(0x1c5)]
-            string f1RespuestaCAEAPeriodoS { [DispId(0x1c5)] get; }
-            [DispId(0x1c6)]
-            int f1RespuestaCAEAOrden { [DispId(0x1c6)] get; }
-            [DispId(0x1c7)]
-            string f1RespuestaCAEAOrdenS { [DispId(0x1c7)] get; }
-            [DispId(0x1c8)]
-            string f1RespuestaCAEAFchVigDesde { [DispId(0x1c8)] get; }
-            [DispId(0x1c9)]
-            string f1RespuestaCAEAFchVigHasta { [DispId(0x1c9)] get; }
-            [DispId(0x1ca)]
-            string f1RespuestaCAEAFchTopeInf { [DispId(0x1ca)] get; }
-            [DispId(0x1cb)]
-            string f1RespuestaCAEAFchProceso { [DispId(0x1cb)] get; }
-            [DispId(460)]
-            string fxRespuestaCAEA { [DispId(460)] get; }
-            [DispId(0x1cd)]
-            int fxRespuestaCAEAPeriodo { [DispId(0x1cd)] get; }
-            [DispId(0x1ce)]
-            string fxRespuestaCAEAPeriodoS { [DispId(0x1ce)] get; }
-            [DispId(0x1cf)]
-            int fxRespuestaCAEAOrden { [DispId(0x1cf)] get; }
-            [DispId(0x1d0)]
-            string fxRespuestaCAEAOrdenS { [DispId(0x1d0)] get; }
-            [DispId(0x1d1)]
-            string fxRespuestaCAEAFechaDesde { [DispId(0x1d1)] get; }
-            [DispId(0x1d2)]
-            string fxRespuestaCAEAFechaHasta { [DispId(0x1d2)] get; }
-            [DispId(0x1d3)]
-            string fxRespuestaCAEAFechaTopeInforme { [DispId(0x1d3)] get; }
-            [DispId(0x1d4)]
-            string fxRespuestaCAEAFechaProceso { [DispId(0x1d4)] get; }
-            [DispId(0x1d5)]
-            int indice { [DispId(0x1d5)] get; [DispId(0x1d5)] set; }
-            [DispId(470)]
-            int f1Indice { [DispId(470)] get; [DispId(470)] set; }
-            [DispId(0x1d7)]
-            string Autenticidad { [DispId(0x1d7)] get; [DispId(0x1d7)] set; }
-            [DispId(0x1d8)]
-            string NombreServicio { [DispId(0x1d8)] get; [DispId(0x1d8)] set; }
-            [DispId(0x1d9)]
-            string DireccionServicio { [DispId(0x1d9)] get; [DispId(0x1d9)] set; }
-            [DispId(0x1da)]
-            string DireccionServicioURL { [DispId(0x1da)] get; [DispId(0x1da)] set; }
-            [DispId(0x1db)]
-            string fxDireccionServicioURL { [DispId(0x1db)] get; [DispId(0x1db)] set; }
-            [DispId(0x1dc)]
-            string f1DireccionServicioURL { [DispId(0x1dc)] get; [DispId(0x1dc)] set; }
-            [DispId(0x1dd)]
-            string bDireccionServicio { [DispId(0x1dd)] get; [DispId(0x1dd)] set; }
-            [DispId(0x1de)]
-            string bDireccionServicioURL { [DispId(0x1de)] get; [DispId(0x1de)] set; }
-            [DispId(0x1df)]
-            string xDireccionServicioURL { [DispId(0x1df)] get; [DispId(0x1df)] set; }
-            [DispId(480)]
-            string bMonedaId { [DispId(480)] get; }
-            [DispId(0x1e1)]
-            string bMonedaDS { [DispId(0x1e1)] get; }
-            [DispId(0x1e2)]
-            string bMonedaVig_desde { [DispId(0x1e2)] get; }
-            [DispId(0x1e3)]
-            string bMonedaVig_hasta { [DispId(0x1e3)] get; }
-            [DispId(0x1e4)]
-            string xMonedaId { [DispId(0x1e4)] get; }
-            [DispId(0x1e5)]
-            string xMonedaDS { [DispId(0x1e5)] get; }
-            [DispId(0x1e6)]
-            string xMonedaVig_desde { [DispId(0x1e6)] get; }
-            [DispId(0x1e7)]
-            string xMonedaVig_HASTA { [DispId(0x1e7)] get; }
-            [DispId(0x1e8)]
-            int xPtoVenta_pve_nro { [DispId(0x1e8)] get; }
-            [DispId(0x1e9)]
-            string xPtoVenta_pvo_bloqueado { [DispId(0x1e9)] get; }
-            [DispId(490)]
-            string xPtoVenta_pvo_fchbaja { [DispId(490)] get; }
-            [DispId(0x1eb)]
-            string xPais_dst_codigo { [DispId(0x1eb)] get; }
-            [DispId(0x1ec)]
-            string xPais_dst_ds { [DispId(0x1ec)] get; }
-            [DispId(0x1ed)]
-            string xCuit_dst_cuit { [DispId(0x1ed)] get; }
-            [DispId(0x1ee)]
-            string xCuit_dst_ds { [DispId(0x1ee)] get; }
-            [DispId(0x1ef)]
-            string xIdioma_idi_Id { [DispId(0x1ef)] get; }
-            [DispId(0x1f0)]
-            string xIdioma_idi_ds { [DispId(0x1f0)] get; }
-            [DispId(0x1f1)]
-            string xIdioma_idi_Vig_desde { [DispId(0x1f1)] get; }
-            [DispId(0x1f2)]
-            string xIdioma_idi_Vig_hasta { [DispId(0x1f2)] get; }
-            [DispId(0x1f3)]
-            string xIncoTErms_inc_Id { [DispId(0x1f3)] get; }
-            [DispId(500)]
-            string xIncoTErms_inc_ds { [DispId(500)] get; }
-            [DispId(0x1f5)]
-            string xIncoTErms_inc_Vig_desde { [DispId(0x1f5)] get; }
-            [DispId(0x1f6)]
-            string xIncoTErms_inc_Vig_hasta { [DispId(0x1f6)] get; }
-            [DispId(0x1f7)]
-            string xTipo_expo_tex_Id { [DispId(0x1f7)] get; }
-            [DispId(0x1f8)]
-            string xTipo_expo_tex_ds { [DispId(0x1f8)] get; }
-            [DispId(0x1f9)]
-            string xTipo_expo_tex_Vig_desde { [DispId(0x1f9)] get; }
-            [DispId(0x1fa)]
-            string xTipo_expo_tex_Vig_hasta { [DispId(0x1fa)] get; }
-            [DispId(0x1fb)]
-            string bNombreServicio { [DispId(0x1fb)] get; [DispId(0x1fb)] set; }
-            [DispId(0x1fc)]
-            string sMonedaId { [DispId(0x1fc)] get; }
-            [DispId(0x1fd)]
-            string sMonedaDS { [DispId(0x1fd)] get; }
-            [DispId(510)]
-            string sMonedaVig_desde { [DispId(510)] get; }
-            [DispId(0x1ff)]
-            string sMonedaVig_hasta { [DispId(0x1ff)] get; }
-            [DispId(0x200)]
-            int bZonaId { [DispId(0x200)] get; }
-            [DispId(0x201)]
-            string bZonaDS { [DispId(0x201)] get; }
-            [DispId(0x202)]
-            string bZonaVig_desde { [DispId(0x202)] get; }
-            [DispId(0x203)]
-            string bZonaVig_hasta { [DispId(0x203)] get; }
-            [DispId(0x204)]
-            int bUMedId { [DispId(0x204)] get; }
-            [DispId(0x205)]
-            string bUMedDS { [DispId(0x205)] get; }
-            [DispId(0x206)]
-            string bUMedVig_desde { [DispId(0x206)] get; }
-            [DispId(0x207)]
-            string bUMedVig_hasta { [DispId(0x207)] get; }
-            [DispId(520)]
-            int xUMed_Id { [DispId(520)] get; }
-            [DispId(0x209)]
-            string xUMed_DS { [DispId(0x209)] get; }
-            [DispId(0x20a)]
-            string xUMed_Vig_desde { [DispId(0x20a)] get; }
-            [DispId(0x20b)]
-            string xUMed_Vig_hasta { [DispId(0x20b)] get; }
-            [DispId(0x20c)]
-            int bTipoDocID { [DispId(0x20c)] get; }
-            [DispId(0x20d)]
-            string bTipoDocDS { [DispId(0x20d)] get; }
-            [DispId(0x20e)]
-            string bTipoDocVig_desde { [DispId(0x20e)] get; }
-            [DispId(0x20f)]
-            string bTipoDocVig_hasta { [DispId(0x20f)] get; }
-            [DispId(0x210)]
-            int sTipoDocID { [DispId(0x210)] get; }
-            [DispId(0x211)]
-            string sTipoDocDS { [DispId(0x211)] get; }
-            [DispId(530)]
-            string sTipoDocVig_desde { [DispId(530)] get; }
-            [DispId(0x213)]
-            string sTipoDocVig_hasta { [DispId(0x213)] get; }
-            [DispId(0x214)]
-            int bTipoIvaId { [DispId(0x214)] get; }
-            [DispId(0x215)]
-            string bTipoIvaDS { [DispId(0x215)] get; }
-            [DispId(0x216)]
-            string bTipoIvaVig_desde { [DispId(0x216)] get; }
-            [DispId(0x217)]
-            string bTipoIvaVig_hasta { [DispId(0x217)] get; }
-            [DispId(0x218)]
-            int sTipoIvaId { [DispId(0x218)] get; }
-            [DispId(0x219)]
-            string sTipoIvaDS { [DispId(0x219)] get; }
-            [DispId(0x21a)]
-            string sTipoIvaVig_desde { [DispId(0x21a)] get; }
-            [DispId(0x21b)]
-            string sTipoIvaVig_hasta { [DispId(0x21b)] get; }
-            [DispId(540)]
-            int bTipo_cpteId { [DispId(540)] get; }
-            [DispId(0x21d)]
-            string bTipo_cpteDS { [DispId(0x21d)] get; }
-            [DispId(0x21e)]
-            string bTipo_cpteVig_desde { [DispId(0x21e)] get; }
-            [DispId(0x21f)]
-            string bTipo_cpteVig_hasta { [DispId(0x21f)] get; }
-            [DispId(0x220)]
-            int bTipo_cbteId { [DispId(0x220)] get; }
-            [DispId(0x221)]
-            string bTipo_cbteDS { [DispId(0x221)] get; }
-            [DispId(0x222)]
-            string bTipo_cbteVig_desde { [DispId(0x222)] get; }
-            [DispId(0x223)]
-            string bTipo_cbteVig_hasta { [DispId(0x223)] get; }
-            [DispId(0x224)]
-            int xTipo_cbte_Id { [DispId(0x224)] get; }
-            [DispId(0x225)]
-            string xTipo_cbte_DS { [DispId(0x225)] get; }
-            [DispId(550)]
-            string xTipo_cbte_Vig_desde { [DispId(550)] get; }
-            [DispId(0x227)]
-            string xTipo_cbte_Vig_hasta { [DispId(0x227)] get; }
-            [DispId(0x228)]
-            int f1TiposCbte_Id { [DispId(0x228)] get; }
-            [DispId(0x229)]
-            string f1TiposCbte_Desc { [DispId(0x229)] get; }
-            [DispId(0x22a)]
-            string f1TiposCbte_fchDesde { [DispId(0x22a)] get; }
-            [DispId(0x22b)]
-            string f1TiposCbte_fchHasta { [DispId(0x22b)] get; }
-            [DispId(0x22c)]
-            int f1TiposTributo_Id { [DispId(0x22c)] get; }
-            [DispId(0x22d)]
-            string f1TiposTributo_Desc { [DispId(0x22d)] get; }
-            [DispId(0x22e)]
-            string f1TiposTributo_fchDesde { [DispId(0x22e)] get; }
-            [DispId(0x22f)]
-            string f1TiposTributo_fchHasta { [DispId(0x22f)] get; }
-            [DispId(560)]
-            int f1TiposOpcional_Id { [DispId(560)] get; }
-            [DispId(0x231)]
-            string f1TiposOpcional_Desc { [DispId(0x231)] get; }
-            [DispId(0x232)]
-            string f1TiposOpcional_fchDesde { [DispId(0x232)] get; }
-            [DispId(0x233)]
-            string f1TiposOpcional_fchHasta { [DispId(0x233)] get; }
-            [DispId(0x234)]
-            string f1TiposMoneda_Id { [DispId(0x234)] get; }
-            [DispId(0x235)]
-            string f1TiposMoneda_Desc { [DispId(0x235)] get; }
-            [DispId(0x236)]
-            string f1TiposMoneda_fchDesde { [DispId(0x236)] get; }
-            [DispId(0x237)]
-            string f1TiposMoneda_fchHasta { [DispId(0x237)] get; }
-            [DispId(0x238)]
-            int f1TiposIva_Id { [DispId(0x238)] get; }
-            [DispId(0x239)]
-            string f1TiposIva_Desc { [DispId(0x239)] get; }
-            [DispId(570)]
-            string f1TiposIva_fchDesde { [DispId(570)] get; }
-            [DispId(0x23b)]
-            string f1TiposIva_fchHasta { [DispId(0x23b)] get; }
-            [DispId(0x23c)]
-            int f1TiposDoc_Id { [DispId(0x23c)] get; }
-            [DispId(0x23d)]
-            string f1TiposDoc_Desc { [DispId(0x23d)] get; }
-            [DispId(0x23e)]
-            string f1TiposDoc_fchDesde { [DispId(0x23e)] get; }
-            [DispId(0x23f)]
-            string f1TiposDoc_fchHasta { [DispId(0x23f)] get; }
-            [DispId(0x240)]
-            int f1PtosVenta_nro { [DispId(0x240)] get; }
-            [DispId(0x241)]
-            string f1PtosVenta_EmisisionTipo { [DispId(0x241)] get; }
-            [DispId(0x242)]
-            string f1PtosVenta_Bloqueado { [DispId(0x242)] get; }
-            [DispId(0x243)]
-            string f1PtosVenta_fchBaja { [DispId(0x243)] get; }
-            [DispId(580)]
-            int f1TiposConcepto_Id { [DispId(580)] get; }
-            [DispId(0x245)]
-            string f1TiposConcepto_Desc { [DispId(0x245)] get; }
-            [DispId(0x246)]
-            string f1TiposConcepto_fchDesde { [DispId(0x246)] get; }
-            [DispId(0x247)]
-            string f1TiposConcepto_fchHasta { [DispId(0x247)] get; }
-            [DispId(0x248)]
-            int f1ErrorCode { [DispId(0x248)] get; }
-            [DispId(0x249)]
-            int fxErrorCode { [DispId(0x249)] get; }
-            [DispId(0x24a)]
-            int fxObervacionCodigo { [DispId(0x24a)] get; }
-            [DispId(0x24b)]
-            string f1ErrorMsg { [DispId(0x24b)] get; }
-            [DispId(0x24c)]
-            string fxErrorMsg { [DispId(0x24c)] get; }
-            [DispId(0x24d)]
-            string fxObervacionDescripcion { [DispId(0x24d)] get; }
-            [DispId(590)]
-            int f1EventCode { [DispId(590)] get; }
-            [DispId(0x24f)]
-            int fxEventCode { [DispId(0x24f)] get; }
-            [DispId(0x250)]
-            string f1EventMsg { [DispId(0x250)] get; }
-            [DispId(0x251)]
-            string fxEventMsg { [DispId(0x251)] get; }
-            [DispId(0x252)]
-            string f1ErrorMsg1 { [DispId(0x252)] get; }
-            [DispId(0x253)]
-            string fxObervacionDescripcion1 { [DispId(0x253)] get; }
-            [DispId(0x254)]
-            int fxObervacionCodigo1 { [DispId(0x254)] get; }
-            [DispId(0x255)]
-            string fxErrorMsg1 { [DispId(0x255)] get; }
-            [DispId(0x256)]
-            string f1ErrorMsg2 { [DispId(0x256)] get; }
-            [DispId(0x257)]
-            string fxErrorMsg2 { [DispId(0x257)] get; }
-            [DispId(600)]
-            int f1ErrorCode1 { [DispId(600)] get; }
-            [DispId(0x259)]
-            int fxErrorCode1 { [DispId(0x259)] get; }
-            [DispId(0x25a)]
-            int f1ErrorCode2 { [DispId(0x25a)] get; }
-            [DispId(0x25b)]
-            int fxErrorCode2 { [DispId(0x25b)] get; }
-            [DispId(0x25c)]
-            string f1EventMsg1 { [DispId(0x25c)] get; }
-            [DispId(0x25d)]
-            string fxEventMsg1 { [DispId(0x25d)] get; }
-            [DispId(0x25e)]
-            string f1EventMsg2 { [DispId(0x25e)] get; }
-            [DispId(0x25f)]
-            string fxEventMsg2 { [DispId(0x25f)] get; }
-            [DispId(0x260)]
-            int f1EventCode1 { [DispId(0x260)] get; }
-            [DispId(0x261)]
-            int fxEventCode1 { [DispId(0x261)] get; }
-            [DispId(610)]
-            int f1EventCode2 { [DispId(610)] get; }
-            [DispId(0x263)]
-            int fxEventCode2 { [DispId(0x263)] get; }
-            [DispId(0x264)]
-            int sTipo_cbteId { [DispId(0x264)] get; }
-            [DispId(0x265)]
-            string sTipo_cbteDS { [DispId(0x265)] get; }
-            [DispId(0x266)]
-            string sTipo_cbteVig_desde { [DispId(0x266)] get; }
-            [DispId(0x267)]
-            string sTipo_cbteVig_hasta { [DispId(0x267)] get; }
-            [DispId(0x268)]
-            int sTipo_cpteId { [DispId(0x268)] get; }
-            [DispId(0x269)]
-            string sTipo_cpteDS { [DispId(0x269)] get; }
-            [DispId(0x26a)]
-            string sTipo_cpteVig_desde { [DispId(0x26a)] get; }
-            [DispId(0x26b)]
-            string sTipo_cpteVig_hasta { [DispId(0x26b)] get; }
-            [DispId(620)]
-            string bProductoNCM_codigo { [DispId(620)] get; }
-            [DispId(0x26d)]
-            string bProductoNCM_ds { [DispId(0x26d)] get; }
-            [DispId(0x26e)]
-            string bProductoNCM_nota { [DispId(0x26e)] get; }
-            [DispId(0x26f)]
-            string bProductoNCM_Vig_desde { [DispId(0x26f)] get; }
-            [DispId(0x270)]
-            string bProductoNCM_Vig_Hasta { [DispId(0x270)] get; }
-            [DispId(0x271)]
-            int gEspecieCodigo { [DispId(0x271)] get; }
-            [DispId(0x272)]
-            string gEspecieDescripcion { [DispId(0x272)] get; }
-            [DispId(0x273)]
-            int gProvinciaCodigo { [DispId(0x273)] get; }
-            [DispId(0x274)]
-            string gProvinciaDescripcion { [DispId(0x274)] get; }
-            [DispId(0x275)]
-            int gLocalidadCodigo { [DispId(0x275)] get; }
-            [DispId(630)]
-            string gLocalidadDescripcion { [DispId(630)] get; }
-            [DispId(0x277)]
-            int gLocalidadTodasCodigo { [DispId(0x277)] get; }
-            [DispId(0x278)]
-            string gLocalidadTodasDescripcion { [DispId(0x278)] get; }
-            [DispId(0x279)]
-            int gLocalidadTodasCodigoProvincia { [DispId(0x279)] get; }
-            [DispId(0x27a)]
-            string gLocalidadTodasDescripcionProvincia { [DispId(0x27a)] get; }
-            [DispId(0x27b)]
-            string gCosechaCodigo { [DispId(0x27b)] get; }
-            [DispId(0x27c)]
-            string gCosechaDescripcion { [DispId(0x27c)] get; }
-            [DispId(0x27d)]
-            int gCTGCantHoras { [DispId(0x27d)] get; [DispId(0x27d)] set; }
-            [DispId(0x27e)]
-            string gCTGCodigoEspecie { [DispId(0x27e)] get; [DispId(0x27e)] set; }
-            [DispId(0x27f)]
-            string gCTGCodigoCosecha { [DispId(0x27f)] get; [DispId(0x27f)] set; }
-            [DispId(640)]
-            int gCTGCodigoLocalidadDestino { [DispId(640)] get; [DispId(640)] set; }
-            [DispId(0x281)]
-            int gCTGCodigoLocalidadOrigen { [DispId(0x281)] get; [DispId(0x281)] set; }
-            [DispId(0x282)]
-            string gCTGCuitDestinatario { [DispId(0x282)] get; [DispId(0x282)] set; }
-            [DispId(0x283)]
-            string gCTGCuitDestino { [DispId(0x283)] get; [DispId(0x283)] set; }
-            [DispId(0x284)]
-            string gCTGCuitRemitenteComercial { [DispId(0x284)] get; [DispId(0x284)] set; }
-            [DispId(0x285)]
-            string gCTGCuitTrasnportista { [DispId(0x285)] get; [DispId(0x285)] set; }
-            [DispId(0x286)]
-            string gCTGCuitRepresentado { [DispId(0x286)] get; [DispId(0x286)] set; }
-            [DispId(0x287)]
-            string gCTGNumeroCartaPorte { [DispId(0x287)] get; [DispId(0x287)] set; }
-            [DispId(0x288)]
-            string gCTGPatenteVehiculo { [DispId(0x288)] get; [DispId(0x288)] set; }
-            [DispId(0x289)]
-            string gCTGPatenteVehiculoS { [DispId(0x289)] get; [DispId(0x289)] set; }
-            [DispId(650)]
-            string gCTGPesoNetoCarga { [DispId(650)] get; [DispId(650)] set; }
-            [DispId(0x28b)]
-            string gCTGRespuestaNumeroCartaPorte { [DispId(0x28b)] get; }
-            [DispId(0x28c)]
-            string gCTGRespuestaNumeroCTG { [DispId(0x28c)] get; }
-            [DispId(0x28d)]
-            string gCTGRespuestaCodigoTransaccion { [DispId(0x28d)] get; }
-            [DispId(0x28e)]
-            string gCTGRespuestaObervaciones { [DispId(0x28e)] get; }
-            [DispId(0x28f)]
-            string F1RespuestaDetalleCAEAFchProceso { [DispId(0x28f)] get; }
-            [DispId(0x290)]
-            string F1RespuestaDetalleCAEACAEA { [DispId(0x290)] get; }
-            [DispId(0x291)]
-            int F1RespuestaDetalleCAEAPtoVta { [DispId(0x291)] get; }
-            [DispId(0x292)]
-            int FxRespuestaDetalleCAEANumeroPuntoventa { [DispId(0x292)] get; }
-            [DispId(0x293)]
-            string FxRespuestaDetalleCAEABloqueado { [DispId(0x293)] get; }
-            [DispId(660)]
-            string FxRespuestaDetalleCAEAFechaBaja { [DispId(660)] get; }
-            [DispId(0x295)]
-            int F1DetalleConcepto { [DispId(0x295)] get; [DispId(0x295)] set; }
-            [DispId(0x296)]
-            int F1DetalleDocTipo { [DispId(0x296)] get; [DispId(0x296)] set; }
-            [DispId(0x297)]
-            string F1DetalleDocNro { [DispId(0x297)] get; [DispId(0x297)] set; }
-            [DispId(0x298)]
-            int F1DetalleCbteDesde { [DispId(0x298)] get; [DispId(0x298)] set; }
-            [DispId(0x299)]
-            string F1DetalleCbteDesdeS { [DispId(0x299)] get; [DispId(0x299)] set; }
-            [DispId(0x29a)]
-            int F1DetalleCbteHasta { [DispId(0x29a)] get; [DispId(0x29a)] set; }
-            [DispId(0x29b)]
-            string F1DetalleCbteHastaS { [DispId(0x29b)] get; [DispId(0x29b)] set; }
-            [DispId(0x29c)]
-            string F1DetalleCAEA { [DispId(0x29c)] get; [DispId(0x29c)] set; }
-            [DispId(0x29d)]
-            string F1DetalleCbteFch { [DispId(0x29d)] get; [DispId(0x29d)] set; }
-            [DispId(670)]
-            double F1DetalleImpTotal { [DispId(670)] get; [DispId(670)] set; }
-            [DispId(0x29f)]
-            double F1DetalleImpTotalConc { [DispId(0x29f)] get; [DispId(0x29f)] set; }
-            [DispId(0x2a0)]
-            double F1DetalleImpNeto { [DispId(0x2a0)] get; [DispId(0x2a0)] set; }
-            [DispId(0x2a1)]
-            double F1DetalleImpOpEx { [DispId(0x2a1)] get; [DispId(0x2a1)] set; }
-            [DispId(0x2a2)]
-            double F1DetalleImpTrib { [DispId(0x2a2)] get; [DispId(0x2a2)] set; }
-            [DispId(0x2a3)]
-            double F1DetalleImpIva { [DispId(0x2a3)] get; [DispId(0x2a3)] set; }
-            [DispId(0x2a4)]
-            string F1DetalleFchServDesde { [DispId(0x2a4)] get; [DispId(0x2a4)] set; }
-            [DispId(0x2a5)]
-            string F1DetalleFchServHasta { [DispId(0x2a5)] get; [DispId(0x2a5)] set; }
-            [DispId(0x2a6)]
-            string F1DetalleFchVtoPago { [DispId(0x2a6)] get; [DispId(0x2a6)] set; }
-            [DispId(0x2a7)]
-            string F1DetalleMonId { [DispId(0x2a7)] get; [DispId(0x2a7)] set; }
-            [DispId(680)]
-            double F1DetalleMonCotiz { [DispId(680)] get; [DispId(680)] set; }
-            [DispId(0x2a9)]
-            int F1DetalleCbtesAsocNro { [DispId(0x2a9)] get; [DispId(0x2a9)] set; }
-            [DispId(0x2aa)]
-            string F1DetalleCbtesAsocNroS { [DispId(0x2aa)] get; [DispId(0x2aa)] set; }
-            [DispId(0x2ab)]
-            int F1DetalleCbtesAsocPtoVta { [DispId(0x2ab)] get; [DispId(0x2ab)] set; }
-            [DispId(0x2ac)]
-            int F1DetalleCbtesAsocTipo { [DispId(0x2ac)] get; [DispId(0x2ac)] set; }
-            [DispId(0x2ad)]
-            int F1DetalleTributoId { [DispId(0x2ad)] get; [DispId(0x2ad)] set; }
-            [DispId(0x2ae)]
-            string F1DetalleTributoDesc { [DispId(0x2ae)] get; [DispId(0x2ae)] set; }
-            [DispId(0x2af)]
-            double F1DetalleTributoAlic { [DispId(0x2af)] get; [DispId(0x2af)] set; }
-            [DispId(0x2b0)]
-            double F1DetalleTributoBaseImp { [DispId(0x2b0)] get; [DispId(0x2b0)] set; }
-            [DispId(0x2b1)]
-            double F1DetalleTributoImporte { [DispId(0x2b1)] get; [DispId(0x2b1)] set; }
-            [DispId(690)]
-            int F1DetalleIvaId { [DispId(690)] get; [DispId(690)] set; }
-            [DispId(0x2b3)]
-            double F1DetalleIvaBaseImp { [DispId(0x2b3)] get; [DispId(0x2b3)] set; }
-            [DispId(0x2b4)]
-            double F1DetalleIvaImporte { [DispId(0x2b4)] get; [DispId(0x2b4)] set; }
-            [DispId(0x2b5)]
-            string F1DetalleOpcionalId { [DispId(0x2b5)] get; [DispId(0x2b5)] set; }
-            [DispId(0x2b6)]
-            string F1DetalleOpcionalValor { [DispId(0x2b6)] get; [DispId(0x2b6)] set; }
-            [DispId(0x2b7)]
-            string fxCodigoAutorizacion { [DispId(0x2b7)] get; [DispId(0x2b7)] set; }
-            [DispId(0x2b8)]
-            bool fxCodigoAutorizacionNO { [DispId(0x2b8)] get; [DispId(0x2b8)] set; }
-            [DispId(0x2b9)]
-            string fxCodigoMoneda { [DispId(0x2b9)] get; [DispId(0x2b9)] set; }
-            [DispId(0x2ba)]
-            string fxObservaciones { [DispId(0x2ba)] get; [DispId(0x2ba)] set; }
-            [DispId(0x2bb)]
-            string fxNumeroDocumento { [DispId(0x2bb)] get; [DispId(0x2bb)] set; }
-            [DispId(700)]
-            int fxNumeroPuntoVenta { [DispId(700)] get; [DispId(700)] set; }
-            [DispId(0x2bd)]
-            string fxFechaEmision { [DispId(0x2bd)] get; [DispId(0x2bd)] set; }
-            [DispId(0x2be)]
-            bool fxFechaEmisionNO { [DispId(0x2be)] get; [DispId(0x2be)] set; }
-            [DispId(0x2bf)]
-            string fxFechaServicioHasta { [DispId(0x2bf)] get; [DispId(0x2bf)] set; }
-            [DispId(0x2c0)]
-            bool fxFechaServicioHastaNO { [DispId(0x2c0)] get; [DispId(0x2c0)] set; }
-            [DispId(0x2c1)]
-            string fxFechaVencimiento { [DispId(0x2c1)] get; [DispId(0x2c1)] set; }
-            [DispId(0x2c2)]
-            bool fxFechaVencimientoNO { [DispId(0x2c2)] get; [DispId(0x2c2)] set; }
-            [DispId(0x2c3)]
-            string fxFechaVencimientoPago { [DispId(0x2c3)] get; [DispId(0x2c3)] set; }
-            [DispId(0x2c4)]
-            bool fxFechaVencimientoPagoNO { [DispId(0x2c4)] get; [DispId(0x2c4)] set; }
-            [DispId(0x2c5)]
-            string fxFechaServicioDesde { [DispId(0x2c5)] get; [DispId(0x2c5)] set; }
-            [DispId(710)]
-            bool fxFechaServicioDesdeNO { [DispId(710)] get; [DispId(710)] set; }
-            [DispId(0x2c7)]
-            int fxCodigoConcepto { [DispId(0x2c7)] get; [DispId(0x2c7)] set; }
-            [DispId(0x2c8)]
-            int fxCodigoTipoComprobante { [DispId(0x2c8)] get; [DispId(0x2c8)] set; }
-            [DispId(0x2c9)]
-            bool fxCodigoTipoAutorizacionNO { [DispId(0x2c9)] get; [DispId(0x2c9)] set; }
-            [DispId(0x2ca)]
-            int fxCodigoTipoDocumento { [DispId(0x2ca)] get; [DispId(0x2ca)] set; }
-            [DispId(0x2cb)]
-            bool fxCodigoTipoDocumentoNO { [DispId(0x2cb)] get; [DispId(0x2cb)] set; }
-            [DispId(0x2cc)]
-            string fxCodigoTipoAutorizacion { [DispId(0x2cc)] get; [DispId(0x2cc)] set; }
-            [DispId(0x2cd)]
-            double fxCotizacionMoneda { [DispId(0x2cd)] get; [DispId(0x2cd)] set; }
-            [DispId(0x2ce)]
-            double fxImporteExento { [DispId(0x2ce)] get; [DispId(0x2ce)] set; }
-            [DispId(0x2cf)]
-            bool fxImporteExentoNO { [DispId(0x2cf)] get; [DispId(0x2cf)] set; }
-            [DispId(720)]
-            double fxImporteGravado { [DispId(720)] get; [DispId(720)] set; }
-            [DispId(0x2d1)]
-            bool fxImporteGravadoNO { [DispId(0x2d1)] get; [DispId(0x2d1)] set; }
-            [DispId(0x2d2)]
-            double fxImporteNoGravado { [DispId(0x2d2)] get; [DispId(0x2d2)] set; }
-            [DispId(0x2d3)]
-            bool fxImporteNoGravadoNO { [DispId(0x2d3)] get; [DispId(0x2d3)] set; }
-            [DispId(0x2d4)]
-            double fxImporteOtrosTributos { [DispId(0x2d4)] get; [DispId(0x2d4)] set; }
-            [DispId(0x2d5)]
-            bool fxImporteOtrosTributosNO { [DispId(0x2d5)] get; [DispId(0x2d5)] set; }
-            [DispId(0x2d6)]
-            bool fxNumeroDocumentoNO { [DispId(0x2d6)] get; [DispId(0x2d6)] set; }
-            [DispId(0x2d7)]
-            double fxImporteSubTotal { [DispId(0x2d7)] get; [DispId(0x2d7)] set; }
-            [DispId(0x2d8)]
-            double fxImporteTotal { [DispId(0x2d8)] get; [DispId(0x2d8)] set; }
-            [DispId(0x2d9)]
-            int fxNumeroComprobante { [DispId(0x2d9)] get; [DispId(0x2d9)] set; }
-            [DispId(730)]
-            int fxComprobanteAsosiadoCodigoTipoComprobante { [DispId(730)] get; [DispId(730)] set; }
-            [DispId(0x2db)]
-            int fxComprobanteAsosiadoNumeroComprobante { [DispId(0x2db)] get; [DispId(0x2db)] set; }
-            [DispId(0x2dc)]
-            int fxComprobanteAsosiadoNumeroPuntoVenta { [DispId(0x2dc)] get; [DispId(0x2dc)] set; }
-            [DispId(0x2dd)]
-            int fxComprobantesAsociadosItemCantidad { [DispId(0x2dd)] get; [DispId(0x2dd)] set; }
-            [DispId(0x2de)]
-            int fxItemsItemCantidad { [DispId(0x2de)] get; [DispId(0x2de)] set; }
-            [DispId(0x2df)]
-            int fxCAEAItemCantidad { [DispId(0x2df)] get; [DispId(0x2df)] set; }
-            [DispId(0x2e0)]
-            int fxOtrosTributosItemCantidad { [DispId(0x2e0)] get; [DispId(0x2e0)] set; }
-            [DispId(0x2e1)]
-            int fxSubTotalesItemCantidad { [DispId(0x2e1)] get; [DispId(0x2e1)] set; }
-            [DispId(0x2e2)]
-            double fxItemCantidad { [DispId(0x2e2)] get; [DispId(0x2e2)] set; }
-            [DispId(0x2e3)]
-            bool fxItemCantidadNO { [DispId(0x2e3)] get; [DispId(0x2e3)] set; }
-            [DispId(740)]
-            bool fxItemImporteBonificacionNO { [DispId(740)] get; [DispId(740)] set; }
-            [DispId(0x2e5)]
-            double fxItemImporteBonificacion { [DispId(0x2e5)] get; [DispId(0x2e5)] set; }
-            [DispId(0x2e6)]
-            double fxItemImporteItem { [DispId(0x2e6)] get; [DispId(0x2e6)] set; }
-            [DispId(0x2e7)]
-            double fxItemImporteIva { [DispId(0x2e7)] get; [DispId(0x2e7)] set; }
-            [DispId(0x2e8)]
-            bool fxItemImporteIvaNO { [DispId(0x2e8)] get; [DispId(0x2e8)] set; }
-            [DispId(0x2e9)]
-            double fxItemPrecioUnitario { [DispId(0x2e9)] get; [DispId(0x2e9)] set; }
-            [DispId(0x2ea)]
-            bool fxItemPrecioUnitarioNO { [DispId(0x2ea)] get; [DispId(0x2ea)] set; }
-            [DispId(0x2eb)]
-            string fxItemCodigo { [DispId(0x2eb)] get; [DispId(0x2eb)] set; }
-            [DispId(0x2ec)]
-            double fxOtrosTributosBaseImponible { [DispId(0x2ec)] get; [DispId(0x2ec)] set; }
-            [DispId(0x2ed)]
-            double fxOtrosTributosImporte { [DispId(0x2ed)] get; [DispId(0x2ed)] set; }
-            [DispId(750)]
-            string fxOtrosTributosDescripcion { [DispId(750)] get; [DispId(750)] set; }
-            [DispId(0x2ef)]
-            int fxOtrosTributosCodigo { [DispId(0x2ef)] get; [DispId(0x2ef)] set; }
-            [DispId(0x2f0)]
-            int fxSubTotalesIvaCodigo { [DispId(0x2f0)] get; [DispId(0x2f0)] set; }
-            [DispId(0x2f1)]
-            double fxSubTotalesIvaImporte { [DispId(0x2f1)] get; [DispId(0x2f1)] set; }
-            [DispId(0x2f2)]
-            string fxItemCodigoMtx { [DispId(0x2f2)] get; [DispId(0x2f2)] set; }
-            [DispId(0x2f3)]
-            string fxItemDescripcion { [DispId(0x2f3)] get; [DispId(0x2f3)] set; }
-            [DispId(0x2f4)]
-            int fxItemCodigoCondicionIva { [DispId(0x2f4)] get; [DispId(0x2f4)] set; }
-            [DispId(0x2f5)]
-            int fxItemCodigoUnidadMedida { [DispId(0x2f5)] get; [DispId(0x2f5)] set; }
-            [DispId(0x2f6)]
-            int fxItemUnidadesMtx { [DispId(0x2f6)] get; [DispId(0x2f6)] set; }
-            [DispId(0x2f7)]
-            string fxItemUnidadesMtxS { [DispId(0x2f7)] get; [DispId(0x2f7)] set; }
-            [DispId(760)]
-            bool fxItemUnidadesMtxNO { [DispId(760)] get; [DispId(760)] set; }
-            [DispId(0x2f9)]
-            int F1CabeceraPtoVta { [DispId(0x2f9)] get; [DispId(0x2f9)] set; }
-            [DispId(0x2fa)]
-            int F1CabeceraCbteTipo { [DispId(0x2fa)] get; [DispId(0x2fa)] set; }
-            [DispId(0x2fb)]
-            int F1CabeceraCantReg { [DispId(0x2fb)] get; [DispId(0x2fb)] set; }
-            [DispId(0x2fc)]
-            int F1DetalleCbtesAsocItemCantidad { [DispId(0x2fc)] get; [DispId(0x2fc)] set; }
-            [DispId(0x2fd)]
-            int F1DetalleTributoItemCantidad { [DispId(0x2fd)] get; [DispId(0x2fd)] set; }
-            [DispId(0x2fe)]
-            int F1DetalleIvaItemCantidad { [DispId(0x2fe)] get; [DispId(0x2fe)] set; }
-            [DispId(0x2ff)]
-            int F1DetalleOpcionalItemCantidad { [DispId(0x2ff)] get; [DispId(0x2ff)] set; }
-            [DispId(0x300)]
-            bool VerificarLicencia(string strMail, string strPassword, string strDocumento, string strHoja, string strRutaArchivo);
-            [DispId(0x301)]
-            bool IniciarYActivar(int iModoFiscal, string cuitTexto, string textoRutaArchivoCertificado, string textoRutaArchivoLicencia, string strGMail, string strPassword);
-            [DispId(770)]
-            bool LeerLicencia(object textoRutaArchivoLicencia);
-            [DispId(0x303)]
-            bool ActivarLicenciaSiNoExiste(string cuitTexto, string textoRutaArchivoLicencia, string strGMail, string strPassword);
-            [DispId(0x304)]
-            bool ActivarLicencia(string cuitTexto, string textoRutaArchivoLicencia, string strGMail, string strPassword);
-            [DispId(0x305)]
-            bool logincms();
-            [DispId(0x306)]
-            bool ObtenerTicketAcceso();
-            [DispId(0x307)]
-            bool bObtenerTicketAcceso();
-            [DispId(0x308)]
-            bool xObtenerTicketAcceso();
-            [DispId(0x309)]
-            bool f1ObtenerTicketAcceso();
-            [DispId(0x30a)]
-            bool fxObtenerTicketAcceso();
-            [DispId(0x30b)]
-            bool dObtenerTicketAcceso();
-            [DispId(780)]
-            bool gObtenerTicketAcceso();
-            [DispId(0x30d)]
-            bool oObtenerTicketAcceso();
-            [DispId(0x30e)]
-            bool sObtenerTicketAcceso();
-            [DispId(0x30f)]
-            bool RegistrarConNumero(int pPuntoVenta, Factura.TipoComprobante pTipoComprobante, string cIdentificador, int nNumeroComprobante);
-            [DispId(0x310)]
-            int FERecuperaLastCMPRequest(int iPuntoVenta, Factura.TipoComprobante iTipoComprobante);
-            [DispId(0x311)]
-            int RecuperaLastCPM(int ipuntoVenta, Factura.TipoComprobante iTipoComprobante);
-            [DispId(0x312)]
-            string RecuperaLastCPMS(int ipuntoVenta, Factura.TipoComprobante iTipoComprobante);
-            [DispId(0x313)]
-            bool Dummy();
-            [DispId(0x314)]
-            bool FEAuthRequest(int pPuntoVenta, Factura.TipoComprobante pTipoComprobante, string cIdentificador);
-            [DispId(0x315)]
-            bool Registrar(int pPuntoVenta, Factura.TipoComprobante pTipoComprobante, string cIdentificador);
-            [DispId(790)]
-            bool FEAutRequestAFIP(string cIdentificador);
-            [DispId(0x317)]
-            bool iniciar(Factura.modoFiscal iModoFiscal, string cuitTexto, string textoRutaArchivoCertificado, string textoRutaArchivoLicencia);
-            [DispId(0x318)]
-            bool FEConsultaCAERequest(string cCuit, Factura.TipoComprobante iTipoComprobante, int iPuntoVenta, int iNumero, double mTotal, string cCae, string cFecha);
-            [DispId(0x319)]
-            int FERecuperaQTYRequest();
-            [DispId(0x31a)]
-            string FEUltNroRequest();
-            [DispId(0x31b)]
-            bool BFEGetPARAM_MON();
-            [DispId(0x31c)]
-            string xFECheck_Permiso(string strIdPermiso, int intDestinoMercaderia);
-            [DispId(0x31d)]
-            bool xFEGetPARAM_MON();
-            [DispId(0x31e)]
-            bool xFEGetPARAM_tipo_cbte();
-            [DispId(0x31f)]
-            bool xFEGetPARAM_uMed();
-            [DispId(800)]
-            bool xFEGetPARAM_PtoVenta();
-            [DispId(0x321)]
-            bool xFEGetPARAM_Idiomas();
-            [DispId(0x322)]
-            bool xFEGetPARAM_Tipo_expo();
-            [DispId(0x323)]
-            bool xFEGetPARAM_IncoTerms();
-            [DispId(0x324)]
-            bool xFEGetPARAM_DST_PAIS();
-            [DispId(0x325)]
-            bool xFEGetPARAM_DST_CUIT();
-            [DispId(0x326)]
-            bool SEGGetPARAM_MON();
-            [DispId(0x327)]
-            bool SEGGetPARAM_Tipo_cbte();
-            [DispId(0x328)]
-            bool SEGGetPARAM_TipoIva();
-            [DispId(0x329)]
-            bool BFEGetPARAM_Tipo_cbte();
-            [DispId(810)]
-            bool SEGGetPARAM_TipoDoc();
-            [DispId(0x32b)]
-            bool BFEGetPARAM_TipoIva();
-            [DispId(0x32c)]
-            bool BFEGetPARAM_TipoDoc();
-            [DispId(0x32d)]
-            bool BFEGetPARAM_UMed();
-            [DispId(0x32e)]
-            bool BFEGetPARAM_Zonas();
-            [DispId(0x32f)]
-            bool bFEAutorize(int nPuntoVenta, int nTipoComprobante, string cIdentificador, int nNumero);
-            [DispId(0x330)]
-            bool SEGAutorize(int nPuntoVenta, int nTipoComprobante, string cIdentificador, int nNumero);
-            [DispId(0x331)]
-            bool bRegistrar(int nPuntoVenta, int nTipoComprobante, string cIdentificador);
-            [DispId(0x332)]
-            bool xRegistrar(int nPuntoVenta, int nTipoComprobante, string cIdentificador);
-            [DispId(0x333)]
-            bool sRegistrar(int nPuntoVenta, int nTipoComprobante, string cIdentificador);
-            [DispId(820)]
-            bool xRegistrarConNumero(int nPuntoVenta, int nTipoComprobante, string cIdentificador, int nNumero);
-            [DispId(0x335)]
-            bool bRegistrarConNumero(int nPuntoVenta, int nTipoComprobante, string cIdentificador, int nNumero);
-            [DispId(0x336)]
-            bool sRegistrarConNumero(int nPuntoVenta, int nTipoComprobante, string cIdentificador, int nNumero);
-            [DispId(0x337)]
-            bool bFEGetCMP(int nPuntoVenta, int nTipoComprobante, int nNumeroComprobante);
-            [DispId(0x338)]
-            bool xFEGetCMP(int nPuntoVenta, int nTipoComprobante, int nNumeroComprobante);
-            [DispId(0x339)]
-            bool xFEGetCMPS(int nPuntoVenta, int nTipoComprobante, string cNumeroComprobante);
-            [DispId(0x33a)]
-            bool SEGGetCMP(int nPuntoVenta, int nTipoComprobante, int nNumeroComprobante);
-            [DispId(0x33b)]
-            bool BFEGetPARAM_NCM();
-            [DispId(0x33c)]
-            string BFEGetLastId();
-            [DispId(0x33d)]
-            string SEGGetLastId();
-            [DispId(830)]
-            int BFEGetLastCMP(int nPuntoVenta, int nTipoComprobante);
-            [DispId(0x33f)]
-            int xFEGetLastCMP(int nPuntoVenta, int nTipoComprobante);
-            [DispId(0x340)]
-            string xFEGetLast_ID();
-            [DispId(0x341)]
-            int SEGGetLastCMP(int nPuntoVenta, int nTipoComprobante);
-            [DispId(0x342)]
-            bool BDummy();
-            [DispId(0x343)]
-            double xFEGetPARAM_CTZ(string strMon_id);
-            [DispId(0x344)]
-            double xFEGetPARAM_CTZS(string strMon_ids);
-            [DispId(0x345)]
-            bool xDummy();
-            [DispId(0x346)]
-            bool f1Dummy();
-            [DispId(0x347)]
-            bool fxDummy();
-            [DispId(840)]
-            bool dDummy();
-            [DispId(0x349)]
-            bool dAvisoDigit();
-            [DispId(0x34a)]
-            bool dAvisoRecepAcept();
-            [DispId(0x34b)]
-            bool gDummy();
-            [DispId(0x34c)]
-            bool gObtenerEspecies();
-            [DispId(0x34d)]
-            bool gObtenerProvincias();
-            [DispId(0x34e)]
-            bool gObtenerCosechas();
-            [DispId(0x34f)]
-            bool gObtenerLocalidadesPorCodigoProvincia(int iCodigoProvincia);
-            [DispId(0x350)]
-            bool gObtenerLocalidadesTodas();
-            [DispId(0x351)]
-            bool gObtenerLocalidadesTodasLiberar();
-            [DispId(850)]
-            bool gSolicitarCTG();
-            [DispId(0x353)]
-            bool gConfirmarCTG(string strcuitRepresentado, string strNumeroCTG, string strNumeroCartaPorte, string strPesoNetoCarga, string strCuitTransportista);
-            [DispId(0x354)]
-            bool oObtenerTipoGrano();
-            [DispId(0x355)]
-            bool SDummy();
-            [DispId(0x356)]
-            bool f1ParamGetTiposCbte();
-            [DispId(0x357)]
-            bool f1ParamGetPtosVenta();
-            [DispId(0x358)]
-            bool f1ParamGetTiposMoneda();
-            [DispId(0x359)]
-            bool f1ParamGetTiposTributo();
-            [DispId(0x35a)]
-            bool f1ParamGetTiposOpcional();
-            [DispId(0x35b)]
-            bool f1ParamGetTiposIva();
-            [DispId(860)]
-            bool f1ParamGetTiposDoc();
-            [DispId(0x35d)]
-            bool f1ParamGetTiposConcepto();
-            [DispId(0x35e)]
-            bool F1CAESolicitar();
-            [DispId(0x35f)]
-            bool F1CompConsultar(int iPtoVta, int iCbteTipo, int iCbteNro);
-            [DispId(0x360)]
-            bool F1CAEARegInformativo();
-            [DispId(0x361)]
-            bool f1CAEASolicitarS(string strPeriodo, string strOrden);
-            [DispId(0x362)]
-            bool F1CAEASolicitar(int iPeriodo, int iOrden);
-            [DispId(0x363)]
-            bool f1CAEAConsultarS(string strPeriodo, string strOrden);
-            [DispId(0x364)]
-            bool F1CAEAConsultar(int iPeriodo, int iOrden);
-            [DispId(0x365)]
-            bool F1CAEASinMovimientoConsultar(string strCAEA, int iPtoVta);
-            [DispId(870)]
-            bool F1CAEASinMovimientoInformar(int iPtoVta, string strCAEA);
-            [DispId(0x367)]
-            double F1ParamGetCotizacion(string strMonId);
-            [DispId(0x368)]
-            int F1CompUltimoAutorizado(int iPtoVta, int iCbteTipo);
-            [DispId(0x369)]
-            int F1CompTotXRequest();
-            [DispId(0x36a)]
-            bool fxConsultarTiposComprobante();
-            [DispId(0x36b)]
-            bool fxConsultarTiposDocumento();
-            [DispId(0x36c)]
-            bool fxConsultarAlicutasIva();
-            [DispId(0x36d)]
-            bool fxConsultarCondicionesIva();
-            [DispId(0x36e)]
-            bool fxConsultarUnidadesMedida();
-            [DispId(0x36f)]
-            bool fxConsultarPuntosVenta();
-            [DispId(880)]
-            bool fxConsultarPuntosVentaCAE();
-            [DispId(0x371)]
-            bool fxConsultarPuntosVentaCAEA();
-            [DispId(0x372)]
-            bool fxConsultarMonedas();
-            [DispId(0x373)]
-            bool fxConsultarTiposTributo();
-            [DispId(0x374)]
-            bool fxNoEspecificar(string strCampo, int nInformar);
-            [DispId(0x375)]
-            bool fxNoEspecificarItem(string strCampo, int nInformar);
-            [DispId(0x376)]
-            int fxConsultarUltimoComprobanteAutorizado(int iPtoVta, int iCbteTipo);
-            [DispId(0x377)]
-            bool fxConsultarComprobante(int iPtoVta, int iCbteTipo, int iCbteNro);
-            [DispId(0x378)]
-            bool fxAutorizarComprobante();
-            [DispId(0x379)]
-            bool fxInformarComprobanteCAEA();
-            [DispId(890)]
-            bool fxSolicitarCAEAS(string strPeriodo, string strOrden);
-            [DispId(0x37b)]
-            bool fxSolicitarCAEA(int iPeriodo, int iOrden);
-            [DispId(0x37c)]
-            bool fxConsultarCAEA(string strCAEA);
-            [DispId(0x37d)]
-            bool fxInformarCAEANoUtilizado(string strCAEA);
-            [DispId(0x37e)]
-            bool fxInformarCAEANoUtilizadoPtoVta(string strCAEA, int iPtoVta);
-            [DispId(0x37f)]
-            bool fxconsultarPtosVtaCAEANoInformados(string strCAEA);
-            [DispId(0x380)]
-            bool fxConsultarCAEAEntreFechas(string strDesde, string strHasta);
-            [DispId(0x381)]
-            bool ProxyConfigurar(bool lActivar);
-        }
+       
 
         [StructLayout(LayoutKind.Sequential)]
         internal struct bMoneda
@@ -41174,6 +41162,9 @@
             private string strMail;
             private string strUltimoMensajeError;
 
+          
+
+
             public bool activar(string strDatos)
             {
                 bool bResultado = false;
@@ -41384,75 +41375,77 @@
 
             public bool LeerLicencia(string strRutaArchivo)
             {
-                bool bResultado = false;
-                string cXML = "";
-                this.iUltimoNumeroError = 0;
-                this.strUltimoMensajeError = "";
-                SCSeguridad seguridad = new SCSeguridad();
-                cXML = seguridad.DesEmpaquetar(strRutaArchivo);
-                if (cXML == "")
-                {
-                    this.iUltimoNumeroError = seguridad.UltimoNumeroError;
-                    this.strUltimoMensajeError = seguridad.UltimoMensajeError;
-                    return bResultado;
-                }
-                try
-                {
-                    XmlSerializer xml = new XmlSerializer(typeof(Factura.SClicencia));
-                    ASCIIEncoding myEncoder = new ASCIIEncoding();
-                    MemoryStream ms = new MemoryStream(myEncoder.GetBytes(cXML));
-                    this.oLicencia = (Factura.SClicencia) xml.Deserialize(ms);
-                    bResultado = true;
-                }
-                catch (Exception exception1)
-                {
-                    ProjectData.SetProjectError(exception1);
-                    Exception ex = exception1;
-                    this.iUltimoNumeroError = 0x22c;
-                    this.strUltimoMensajeError = ex.Message;
-                    ProjectData.ClearProjectError();
-                }
-                return bResultado;
+                return true;
+                //bool bResultado = false;
+                //string cXML = "";
+                //this.iUltimoNumeroError = 0;
+                //this.strUltimoMensajeError = "";
+                //SCSeguridad seguridad = new SCSeguridad();
+                //cXML = seguridad.DesEmpaquetar(strRutaArchivo);
+                //if (cXML == "")
+                //{
+                //    this.iUltimoNumeroError = seguridad.UltimoNumeroError;
+                //    this.strUltimoMensajeError = seguridad.UltimoMensajeError;
+                //    return bResultado;
+                //}
+                //try
+                //{
+                //    XmlSerializer xml = new XmlSerializer(typeof(Factura.SClicencia));
+                //    ASCIIEncoding myEncoder = new ASCIIEncoding();
+                //    MemoryStream ms = new MemoryStream(myEncoder.GetBytes(cXML));
+                //    this.oLicencia = (Factura.SClicencia) xml.Deserialize(ms);
+                //    bResultado = true;
+                //}
+                //catch (Exception exception1)
+                //{
+                //    ProjectData.SetProjectError(exception1);
+                //    Exception ex = exception1;
+                //    this.iUltimoNumeroError = 0x22c;
+                //    this.strUltimoMensajeError = ex.Message;
+                //    ProjectData.ClearProjectError();
+                //}
+                //return bResultado;
             }
 
             public bool LeerLicenciaJ(string strRutaArchivo)
             {
-                bool bResultado = false;
-                string cXML = "";
-                this.iUltimoNumeroError = 0;
-                this.strUltimoMensajeError = "";
-                SCSeguridad seguridad = new SCSeguridad();
-                cXML = seguridad.DesEmpaquetarJ(strRutaArchivo);
-                if (cXML == "")
-                {
-                    this.iUltimoNumeroError = seguridad.UltimoNumeroError;
-                    this.strUltimoMensajeError = seguridad.UltimoMensajeError;
-                    return bResultado;
-                }
-                try
-                {
-                    JavaScriptSerializer xml = new JavaScriptSerializer();
-                    Factura.SClicencia miLicencia = new Factura.SClicencia();
-                    Factura.SCLicenciaJava pepe = xml.Deserialize<Factura.SCLicenciaJava>(cXML);
-                    miLicencia.Codigo = pepe.codigo;
-                    miLicencia.Datos = pepe.datos;
-                    miLicencia.Fecha = DateTime.ParseExact(pepe.fecha, "yyyyMMdd", null);
-                    miLicencia.Hasta = DateTime.ParseExact(pepe.hasta, "yyyyMMdd", null);
-                    miLicencia.Limite = pepe.limite;
-                    miLicencia.Usado = pepe.usado;
-                    miLicencia.valor = pepe.valor;
-                    this.oLicencia = miLicencia;
-                    bResultado = true;
-                }
-                catch (Exception exception1)
-                {
-                    ProjectData.SetProjectError(exception1);
-                    Exception ex = exception1;
-                    this.iUltimoNumeroError = 0x22c;
-                    this.strUltimoMensajeError = ex.Message;
-                    ProjectData.ClearProjectError();
-                }
-                return bResultado;
+                return true;
+                //bool bResultado = false;
+                //string cXML = "";
+                //this.iUltimoNumeroError = 0;
+                //this.strUltimoMensajeError = "";
+                //SCSeguridad seguridad = new SCSeguridad();
+                //cXML = seguridad.DesEmpaquetarJ(strRutaArchivo);
+                //if (cXML == "")
+                //{
+                //    this.iUltimoNumeroError = seguridad.UltimoNumeroError;
+                //    this.strUltimoMensajeError = seguridad.UltimoMensajeError;
+                //    return bResultado;
+                //}
+                //try
+                //{
+                //    JavaScriptSerializer xml = new JavaScriptSerializer();
+                //    Factura.SClicencia miLicencia = new Factura.SClicencia();
+                //    Factura.SCLicenciaJava pepe = xml.Deserialize<Factura.SCLicenciaJava>(cXML);
+                //    miLicencia.Codigo = pepe.codigo;
+                //    miLicencia.Datos = pepe.datos;
+                //    miLicencia.Fecha = DateTime.ParseExact(pepe.fecha, "yyyyMMdd", null);
+                //    miLicencia.Hasta = DateTime.ParseExact(pepe.hasta, "yyyyMMdd", null);
+                //    miLicencia.Limite = pepe.limite;
+                //    miLicencia.Usado = pepe.usado;
+                //    miLicencia.valor = pepe.valor;
+                //    this.oLicencia = miLicencia;
+                //    bResultado = true;
+                //}
+                //catch (Exception exception1)
+                //{
+                //    ProjectData.SetProjectError(exception1);
+                //    Exception ex = exception1;
+                //    this.iUltimoNumeroError = 0x22c;
+                //    this.strUltimoMensajeError = ex.Message;
+                //    ProjectData.ClearProjectError();
+                //}
+                //return bResultado;
             }
 
             public bool TestConexion(string strMail, string strPassWord)
@@ -41602,6 +41595,58 @@
                 private AtomFeed oLote = null;
                 private string strUltimoMensajeError;
 
+                internal string get_CeldaValue(object nFila, object nColumna)
+                {
+                    return this.GoogleFeedCelda[Conversions.ToUInteger(nFila), Conversions.ToUInteger(nColumna)].Value;
+                }
+
+ 
+
+                internal string get_CeldaValueconsulta(object nFila, object nColumna)
+                {
+                    string CeldaValueconsulta;
+                    try
+                    {
+                        ListEntry worksheetrow = (ListEntry)this.GoogleFeedConsulta.Entries[Conversions.ToInteger(Operators.SubtractObject(nFila, 1))];
+                        ListEntry.Custom elemento = worksheetrow.Elements[Conversions.ToInteger(Operators.SubtractObject(nColumna, 1))];
+                        CeldaValueconsulta = elemento.Value;
+                    }
+                    catch (Exception exception1)
+                    {
+                        ProjectData.SetProjectError(exception1);
+                        Exception miEx = exception1;
+                        CeldaValueconsulta = "";
+                        ProjectData.ClearProjectError();
+                    }
+                    return CeldaValueconsulta;
+                }
+
+ 
+
+                public int get_CeldaCountConsulta(bool bFilaONoFila)
+                {
+                    int CeldaCountConsulta;
+                    try
+                    {
+                        if (bFilaONoFila)
+                        {
+                            return this.GoogleFeedConsulta.Entries.Count;
+                        }
+                        ListEntry worksheetrow = (ListEntry)this.GoogleFeedConsulta.Entries[0];
+                        CeldaCountConsulta = worksheetrow.Elements.Count;
+                    }
+                    catch (Exception exception1)
+                    {
+                        ProjectData.SetProjectError(exception1);
+                        Exception miEx = exception1;
+                        CeldaCountConsulta = 0;
+                        ProjectData.ClearProjectError();
+                    }
+                    return CeldaCountConsulta;
+                }
+
+
+
                 public bool ActualizarCeldas()
                 {
                     bool bResultado = true;
@@ -41694,7 +41739,7 @@
                     Exception miEx = null;
                     try
                     {
-                        IEnumerator<AtomEntry> VB$t_ref$L0;
+                        IEnumerator<AtomEntry> VB_t_ref_L0 = null;
                         this.GoogleConexion = new SpreadsheetsService("SC-HOJA-1");
                         this.GoogleConexion.setUserCredentials(strGmail, strPassWord);
                         this.GoogleQueryDocumento = new SpreadsheetQuery();
@@ -41702,10 +41747,10 @@
                         this.GoogleEntryDocumento = null;
                         try
                         {
-                            VB$t_ref$L0 = this.GoogleFeedDocumento.Entries.GetEnumerator();
-                            while (VB$t_ref$L0.MoveNext())
+                            VB_t_ref_L0 = this.GoogleFeedDocumento.Entries.GetEnumerator();
+                            while (VB_t_ref_L0.MoveNext())
                             {
-                                SpreadsheetEntry entry = (SpreadsheetEntry) VB$t_ref$L0.Current;
+                                SpreadsheetEntry entry = (SpreadsheetEntry) VB_t_ref_L0.Current;
                                 if (entry.Title.Text == strDocumento)
                                 {
                                     this.GoogleEntryDocumento = entry;
@@ -41716,9 +41761,9 @@
                         }
                         finally
                         {
-                            if (VB$t_ref$L0 != null)
+                            if (VB_t_ref_L0 != null)
                             {
-                                VB$t_ref$L0.Dispose();
+                                VB_t_ref_L0.Dispose();
                             }
                         }
                     }
@@ -41917,7 +41962,7 @@
                     }
                 }
 
-                internal string this[object nFila, object nColumna]
+                /*internal string this[object nFila, object nColumna]
                 {
                     get
                     {
@@ -41940,7 +41985,7 @@
                     set
                     {
                     }
-                }
+                }*/
 
                 internal int Contador
                 {
@@ -43095,6 +43140,19 @@
             public string Vig_Desde;
             public string Vig_hasta;
         }
+        public bool get_LicenciaFechaValida(DateTime dFecha)
+        {
+            if (this.Licencia == null)
+            {
+                return false;
+            }
+            if (DateTime.Compare(dFecha, this.Licencia.Hasta) > 0)
+            {
+                return false;
+            }
+            return true;
+        }
+
     }
 }
 

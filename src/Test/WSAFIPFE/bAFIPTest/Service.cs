@@ -28,29 +28,29 @@
         private SendOrPostCallback BFEGetPARAM_ZonasOperationCompleted;
         private bool useDefaultCredentialsSetExplicitly;
 
-        public event BFEAuthorizeCompletedEventHandler BFEAuthorizeCompleted;
+        public event BFEAuthorizeCompletedEventHandler BFEAuthorizeCompletedEvent;
 
-        public event BFEDummyCompletedEventHandler BFEDummyCompleted;
+        public event BFEDummyCompletedEventHandler BFEDummyCompletedEvent;
 
-        public event BFEGetCMPCompletedEventHandler BFEGetCMPCompleted;
+        public event BFEGetCMPCompletedEventHandler BFEGetCMPCompletedEvent;
 
-        public event BFEGetLast_CMPCompletedEventHandler BFEGetLast_CMPCompleted;
+        public event BFEGetLast_CMPCompletedEventHandler BFEGetLast_CMPCompletedEvent;
 
-        public event BFEGetLast_IDCompletedEventHandler BFEGetLast_IDCompleted;
+        public event BFEGetLast_IDCompletedEventHandler BFEGetLast_IDCompletedEvent;
 
-        public event BFEGetPARAM_MONCompletedEventHandler BFEGetPARAM_MONCompleted;
+        public event BFEGetPARAM_MONCompletedEventHandler BFEGetPARAM_MONCompletedEvent;
 
-        public event BFEGetPARAM_NCMCompletedEventHandler BFEGetPARAM_NCMCompleted;
+        public event BFEGetPARAM_NCMCompletedEventHandler BFEGetPARAM_NCMCompletedEvent;
 
-        public event BFEGetPARAM_Tipo_CbteCompletedEventHandler BFEGetPARAM_Tipo_CbteCompleted;
+        public event BFEGetPARAM_Tipo_CbteCompletedEventHandler BFEGetPARAM_Tipo_CbteCompletedEvent;
 
-        public event BFEGetPARAM_Tipo_docCompletedEventHandler BFEGetPARAM_Tipo_docCompleted;
+        public event BFEGetPARAM_Tipo_docCompletedEventHandler BFEGetPARAM_Tipo_docCompletedEvent;
 
-        public event BFEGetPARAM_Tipo_IVACompletedEventHandler BFEGetPARAM_Tipo_IVACompleted;
+        public event BFEGetPARAM_Tipo_IVACompletedEventHandler BFEGetPARAM_Tipo_IVACompletedEvent;
 
-        public event BFEGetPARAM_UMedCompletedEventHandler BFEGetPARAM_UMedCompleted;
+        public event BFEGetPARAM_UMedCompletedEventHandler BFEGetPARAM_UMedCompletedEvent;
 
-        public event BFEGetPARAM_ZonasCompletedEventHandler BFEGetPARAM_ZonasCompleted;
+        public event BFEGetPARAM_ZonasCompletedEventHandler BFEGetPARAM_ZonasCompletedEvent;
 
         public Service()
         {
@@ -326,10 +326,10 @@
             if (this.BFEAuthorizeCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                BFEAuthorizeCompletedEventHandler VB$t_ref$S0 = this.BFEAuthorizeCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                BFEAuthorizeCompletedEventHandler VB_t_ref_S0 = this.BFEAuthorizeCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new BFEAuthorizeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new BFEAuthorizeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -339,10 +339,10 @@
             if (this.BFEDummyCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                BFEDummyCompletedEventHandler VB$t_ref$S0 = this.BFEDummyCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                BFEDummyCompletedEventHandler VB_t_ref_S0 = this.BFEDummyCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new BFEDummyCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new BFEDummyCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -352,10 +352,10 @@
             if (this.BFEGetCMPCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                BFEGetCMPCompletedEventHandler VB$t_ref$S0 = this.BFEGetCMPCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                BFEGetCMPCompletedEventHandler VB_t_ref_S0 = this.BFEGetCMPCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new BFEGetCMPCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new BFEGetCMPCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -365,10 +365,10 @@
             if (this.BFEGetLast_CMPCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                BFEGetLast_CMPCompletedEventHandler VB$t_ref$S0 = this.BFEGetLast_CMPCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                BFEGetLast_CMPCompletedEventHandler VB_t_ref_S0 = this.BFEGetLast_CMPCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new BFEGetLast_CMPCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new BFEGetLast_CMPCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -378,10 +378,10 @@
             if (this.BFEGetLast_IDCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                BFEGetLast_IDCompletedEventHandler VB$t_ref$S0 = this.BFEGetLast_IDCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                BFEGetLast_IDCompletedEventHandler VB_t_ref_S0 = this.BFEGetLast_IDCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new BFEGetLast_IDCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new BFEGetLast_IDCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -391,10 +391,10 @@
             if (this.BFEGetPARAM_MONCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                BFEGetPARAM_MONCompletedEventHandler VB$t_ref$S0 = this.BFEGetPARAM_MONCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                BFEGetPARAM_MONCompletedEventHandler VB_t_ref_S0 = this.BFEGetPARAM_MONCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new BFEGetPARAM_MONCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new BFEGetPARAM_MONCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -404,10 +404,10 @@
             if (this.BFEGetPARAM_NCMCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                BFEGetPARAM_NCMCompletedEventHandler VB$t_ref$S0 = this.BFEGetPARAM_NCMCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                BFEGetPARAM_NCMCompletedEventHandler VB_t_ref_S0 = this.BFEGetPARAM_NCMCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new BFEGetPARAM_NCMCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new BFEGetPARAM_NCMCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -417,10 +417,10 @@
             if (this.BFEGetPARAM_Tipo_CbteCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                BFEGetPARAM_Tipo_CbteCompletedEventHandler VB$t_ref$S0 = this.BFEGetPARAM_Tipo_CbteCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                BFEGetPARAM_Tipo_CbteCompletedEventHandler VB_t_ref_S0 = this.BFEGetPARAM_Tipo_CbteCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new BFEGetPARAM_Tipo_CbteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new BFEGetPARAM_Tipo_CbteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -430,10 +430,10 @@
             if (this.BFEGetPARAM_Tipo_docCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                BFEGetPARAM_Tipo_docCompletedEventHandler VB$t_ref$S0 = this.BFEGetPARAM_Tipo_docCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                BFEGetPARAM_Tipo_docCompletedEventHandler VB_t_ref_S0 = this.BFEGetPARAM_Tipo_docCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new BFEGetPARAM_Tipo_docCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new BFEGetPARAM_Tipo_docCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -443,10 +443,10 @@
             if (this.BFEGetPARAM_Tipo_IVACompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                BFEGetPARAM_Tipo_IVACompletedEventHandler VB$t_ref$S0 = this.BFEGetPARAM_Tipo_IVACompletedEvent;
-                if (VB$t_ref$S0 != null)
+                BFEGetPARAM_Tipo_IVACompletedEventHandler VB_t_ref_S0 = this.BFEGetPARAM_Tipo_IVACompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new BFEGetPARAM_Tipo_IVACompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new BFEGetPARAM_Tipo_IVACompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -456,10 +456,10 @@
             if (this.BFEGetPARAM_UMedCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                BFEGetPARAM_UMedCompletedEventHandler VB$t_ref$S0 = this.BFEGetPARAM_UMedCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                BFEGetPARAM_UMedCompletedEventHandler VB_t_ref_S0 = this.BFEGetPARAM_UMedCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new BFEGetPARAM_UMedCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new BFEGetPARAM_UMedCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -469,10 +469,10 @@
             if (this.BFEGetPARAM_ZonasCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                BFEGetPARAM_ZonasCompletedEventHandler VB$t_ref$S0 = this.BFEGetPARAM_ZonasCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                BFEGetPARAM_ZonasCompletedEventHandler VB_t_ref_S0 = this.BFEGetPARAM_ZonasCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new BFEGetPARAM_ZonasCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new BFEGetPARAM_ZonasCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }

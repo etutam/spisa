@@ -25,23 +25,23 @@
         private SendOrPostCallback SEGGetPARAM_Tipo_IVAOperationCompleted;
         private bool useDefaultCredentialsSetExplicitly;
 
-        public event SEGAuthorizeCompletedEventHandler SEGAuthorizeCompleted;
+        public event SEGAuthorizeCompletedEventHandler SEGAuthorizeCompletedEvent;
 
-        public event SEGDummyCompletedEventHandler SEGDummyCompleted;
+        public event SEGDummyCompletedEventHandler SEGDummyCompletedEvent;
 
-        public event SEGGetCMPCompletedEventHandler SEGGetCMPCompleted;
+        public event SEGGetCMPCompletedEventHandler SEGGetCMPCompletedEvent;
 
-        public event SEGGetLast_CMPCompletedEventHandler SEGGetLast_CMPCompleted;
+        public event SEGGetLast_CMPCompletedEventHandler SEGGetLast_CMPCompletedEvent;
 
-        public event SEGGetLast_IDCompletedEventHandler SEGGetLast_IDCompleted;
+        public event SEGGetLast_IDCompletedEventHandler SEGGetLast_IDCompletedEvent;
 
-        public event SEGGetPARAM_MONCompletedEventHandler SEGGetPARAM_MONCompleted;
+        public event SEGGetPARAM_MONCompletedEventHandler SEGGetPARAM_MONCompletedEvent;
 
-        public event SEGGetPARAM_Tipo_CbteCompletedEventHandler SEGGetPARAM_Tipo_CbteCompleted;
+        public event SEGGetPARAM_Tipo_CbteCompletedEventHandler SEGGetPARAM_Tipo_CbteCompletedEvent;
 
-        public event SEGGetPARAM_Tipo_docCompletedEventHandler SEGGetPARAM_Tipo_docCompleted;
+        public event SEGGetPARAM_Tipo_docCompletedEventHandler SEGGetPARAM_Tipo_docCompletedEvent;
 
-        public event SEGGetPARAM_Tipo_IVACompletedEventHandler SEGGetPARAM_Tipo_IVACompleted;
+        public event SEGGetPARAM_Tipo_IVACompletedEventHandler SEGGetPARAM_Tipo_IVACompletedEvent;
 
         public Service()
         {
@@ -77,10 +77,10 @@
             if (this.SEGAuthorizeCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                SEGAuthorizeCompletedEventHandler VB$t_ref$S0 = this.SEGAuthorizeCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                SEGAuthorizeCompletedEventHandler VB_t_ref_S0 = this.SEGAuthorizeCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new SEGAuthorizeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new SEGAuthorizeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -90,10 +90,10 @@
             if (this.SEGDummyCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                SEGDummyCompletedEventHandler VB$t_ref$S0 = this.SEGDummyCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                SEGDummyCompletedEventHandler VB_t_ref_S0 = this.SEGDummyCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new SEGDummyCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new SEGDummyCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -103,10 +103,10 @@
             if (this.SEGGetCMPCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                SEGGetCMPCompletedEventHandler VB$t_ref$S0 = this.SEGGetCMPCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                SEGGetCMPCompletedEventHandler VB_t_ref_S0 = this.SEGGetCMPCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new SEGGetCMPCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new SEGGetCMPCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -116,10 +116,10 @@
             if (this.SEGGetLast_CMPCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                SEGGetLast_CMPCompletedEventHandler VB$t_ref$S0 = this.SEGGetLast_CMPCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                SEGGetLast_CMPCompletedEventHandler VB_t_ref_S0 = this.SEGGetLast_CMPCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new SEGGetLast_CMPCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new SEGGetLast_CMPCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -129,10 +129,10 @@
             if (this.SEGGetLast_IDCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                SEGGetLast_IDCompletedEventHandler VB$t_ref$S0 = this.SEGGetLast_IDCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                SEGGetLast_IDCompletedEventHandler VB_t_ref_S0 = this.SEGGetLast_IDCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new SEGGetLast_IDCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new SEGGetLast_IDCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -142,10 +142,10 @@
             if (this.SEGGetPARAM_MONCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                SEGGetPARAM_MONCompletedEventHandler VB$t_ref$S0 = this.SEGGetPARAM_MONCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                SEGGetPARAM_MONCompletedEventHandler VB_t_ref_S0 = this.SEGGetPARAM_MONCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new SEGGetPARAM_MONCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new SEGGetPARAM_MONCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -155,10 +155,10 @@
             if (this.SEGGetPARAM_Tipo_CbteCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                SEGGetPARAM_Tipo_CbteCompletedEventHandler VB$t_ref$S0 = this.SEGGetPARAM_Tipo_CbteCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                SEGGetPARAM_Tipo_CbteCompletedEventHandler VB_t_ref_S0 = this.SEGGetPARAM_Tipo_CbteCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new SEGGetPARAM_Tipo_CbteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new SEGGetPARAM_Tipo_CbteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -168,10 +168,10 @@
             if (this.SEGGetPARAM_Tipo_docCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                SEGGetPARAM_Tipo_docCompletedEventHandler VB$t_ref$S0 = this.SEGGetPARAM_Tipo_docCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                SEGGetPARAM_Tipo_docCompletedEventHandler VB_t_ref_S0 = this.SEGGetPARAM_Tipo_docCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new SEGGetPARAM_Tipo_docCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new SEGGetPARAM_Tipo_docCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -181,10 +181,10 @@
             if (this.SEGGetPARAM_Tipo_IVACompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                SEGGetPARAM_Tipo_IVACompletedEventHandler VB$t_ref$S0 = this.SEGGetPARAM_Tipo_IVACompletedEvent;
-                if (VB$t_ref$S0 != null)
+                SEGGetPARAM_Tipo_IVACompletedEventHandler VB_t_ref_S0 = this.SEGGetPARAM_Tipo_IVACompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new SEGGetPARAM_Tipo_IVACompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new SEGGetPARAM_Tipo_IVACompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }

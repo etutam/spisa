@@ -1,4 +1,6 @@
-﻿namespace WSAFIPFE.afip
+﻿using System.Runtime.CompilerServices;
+
+namespace WSAFIPFE.afip
 {
     using System;
     using System.CodeDom.Compiler;
