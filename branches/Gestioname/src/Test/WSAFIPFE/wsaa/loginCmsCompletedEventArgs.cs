@@ -1,4 +1,6 @@
-﻿namespace WSAFIPFE.wsaa
+﻿using System.Runtime.CompilerServices;
+
+namespace WSAFIPFE.wsaa
 {
     using Microsoft.VisualBasic.CompilerServices;
     using System;

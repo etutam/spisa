@@ -22,17 +22,17 @@
         private SendOrPostCallback FEUltNroRequestOperationCompleted;
         private bool useDefaultCredentialsSetExplicitly;
 
-        public event FEAutRequestCompletedEventHandler FEAutRequestCompleted;
+        public event FEAutRequestCompletedEventHandler FEAutRequestCompletedEvent;
 
-        public event FEConsultaCAERequestCompletedEventHandler FEConsultaCAERequestCompleted;
+        public event FEConsultaCAERequestCompletedEventHandler FEConsultaCAERequestCompletedEvent;
 
-        public event FEDummyCompletedEventHandler FEDummyCompleted;
+        public event FEDummyCompletedEventHandler FEDummyCompletedEvent;
 
-        public event FERecuperaLastCMPRequestCompletedEventHandler FERecuperaLastCMPRequestCompleted;
+        public event FERecuperaLastCMPRequestCompletedEventHandler FERecuperaLastCMPRequestCompletedEvent;
 
-        public event FERecuperaQTYRequestCompletedEventHandler FERecuperaQTYRequestCompleted;
+        public event FERecuperaQTYRequestCompletedEventHandler FERecuperaQTYRequestCompletedEvent;
 
-        public event FEUltNroRequestCompletedEventHandler FEUltNroRequestCompleted;
+        public event FEUltNroRequestCompletedEventHandler FEUltNroRequestCompletedEvent;
 
         public Service()
         {
@@ -188,10 +188,10 @@
             if (this.FEAutRequestCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FEAutRequestCompletedEventHandler VB$t_ref$S0 = this.FEAutRequestCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FEAutRequestCompletedEventHandler VB_t_ref_S0 = this.FEAutRequestCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FEAutRequestCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FEAutRequestCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -201,10 +201,10 @@
             if (this.FEConsultaCAERequestCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FEConsultaCAERequestCompletedEventHandler VB$t_ref$S0 = this.FEConsultaCAERequestCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FEConsultaCAERequestCompletedEventHandler VB_t_ref_S0 = this.FEConsultaCAERequestCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FEConsultaCAERequestCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FEConsultaCAERequestCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -214,10 +214,10 @@
             if (this.FEDummyCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FEDummyCompletedEventHandler VB$t_ref$S0 = this.FEDummyCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FEDummyCompletedEventHandler VB_t_ref_S0 = this.FEDummyCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FEDummyCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FEDummyCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -227,10 +227,10 @@
             if (this.FERecuperaLastCMPRequestCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FERecuperaLastCMPRequestCompletedEventHandler VB$t_ref$S0 = this.FERecuperaLastCMPRequestCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FERecuperaLastCMPRequestCompletedEventHandler VB_t_ref_S0 = this.FERecuperaLastCMPRequestCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FERecuperaLastCMPRequestCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FERecuperaLastCMPRequestCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -240,10 +240,10 @@
             if (this.FERecuperaQTYRequestCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FERecuperaQTYRequestCompletedEventHandler VB$t_ref$S0 = this.FERecuperaQTYRequestCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FERecuperaQTYRequestCompletedEventHandler VB_t_ref_S0 = this.FERecuperaQTYRequestCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FERecuperaQTYRequestCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FERecuperaQTYRequestCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -253,10 +253,10 @@
             if (this.FEUltNroRequestCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FEUltNroRequestCompletedEventHandler VB$t_ref$S0 = this.FEUltNroRequestCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FEUltNroRequestCompletedEventHandler VB_t_ref_S0 = this.FEUltNroRequestCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FEUltNroRequestCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FEUltNroRequestCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }

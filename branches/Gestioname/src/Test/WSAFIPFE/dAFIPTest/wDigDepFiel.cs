@@ -20,11 +20,11 @@
         private SendOrPostCallback DummyOperationCompleted;
         private bool useDefaultCredentialsSetExplicitly;
 
-        public event AvisoDigitCompletedEventHandler AvisoDigitCompleted;
+        public event AvisoDigitCompletedEventHandler AvisoDigitCompletedEvent;
 
-        public event AvisoRecepAceptCompletedEventHandler AvisoRecepAceptCompleted;
+        public event AvisoRecepAceptCompletedEventHandler AvisoRecepAceptCompletedEvent;
 
-        public event DummyCompletedEventHandler DummyCompleted;
+        public event DummyCompletedEventHandler DummyCompletedEvent;
 
         public wDigDepFiel()
         {
@@ -120,10 +120,10 @@
             if (this.AvisoDigitCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                AvisoDigitCompletedEventHandler VB$t_ref$S0 = this.AvisoDigitCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                AvisoDigitCompletedEventHandler VB_t_ref_S0 = this.AvisoDigitCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new AvisoDigitCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new AvisoDigitCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -133,10 +133,10 @@
             if (this.AvisoRecepAceptCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                AvisoRecepAceptCompletedEventHandler VB$t_ref$S0 = this.AvisoRecepAceptCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                AvisoRecepAceptCompletedEventHandler VB_t_ref_S0 = this.AvisoRecepAceptCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new AvisoRecepAceptCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new AvisoRecepAceptCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -146,10 +146,10 @@
             if (this.DummyCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                DummyCompletedEventHandler VB$t_ref$S0 = this.DummyCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                DummyCompletedEventHandler VB_t_ref_S0 = this.DummyCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new DummyCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new DummyCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }

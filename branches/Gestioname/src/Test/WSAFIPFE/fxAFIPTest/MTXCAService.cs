@@ -41,49 +41,49 @@
         private SendOrPostCallback solicitarCAEAOperationCompleted;
         private bool useDefaultCredentialsSetExplicitly;
 
-        public event autorizarComprobanteCompletedEventHandler autorizarComprobanteCompleted;
+        public event autorizarComprobanteCompletedEventHandler autorizarComprobanteCompletedEvent;
 
-        public event consultarAlicuotasIVACompletedEventHandler consultarAlicuotasIVACompleted;
+        public event consultarAlicuotasIVACompletedEventHandler consultarAlicuotasIVACompletedEvent;
 
-        public event consultarCAEACompletedEventHandler consultarCAEACompleted;
+        public event consultarCAEACompletedEventHandler consultarCAEACompletedEvent;
 
-        public event consultarCAEAEntreFechasCompletedEventHandler consultarCAEAEntreFechasCompleted;
+        public event consultarCAEAEntreFechasCompletedEventHandler consultarCAEAEntreFechasCompletedEvent;
 
-        public event consultarComprobanteCompletedEventHandler consultarComprobanteCompleted;
+        public event consultarComprobanteCompletedEventHandler consultarComprobanteCompletedEvent;
 
-        public event consultarCondicionesIVACompletedEventHandler consultarCondicionesIVACompleted;
+        public event consultarCondicionesIVACompletedEventHandler consultarCondicionesIVACompletedEvent;
 
-        public event consultarCotizacionMonedaCompletedEventHandler consultarCotizacionMonedaCompleted;
+        public event consultarCotizacionMonedaCompletedEventHandler consultarCotizacionMonedaCompletedEvent;
 
-        public event consultarMonedasCompletedEventHandler consultarMonedasCompleted;
+        public event consultarMonedasCompletedEventHandler consultarMonedasCompletedEvent;
 
-        public event consultarPtosVtaCAEANoInformadosCompletedEventHandler consultarPtosVtaCAEANoInformadosCompleted;
+        public event consultarPtosVtaCAEANoInformadosCompletedEventHandler consultarPtosVtaCAEANoInformadosCompletedEvent;
 
-        public event consultarPuntosVentaCAEACompletedEventHandler consultarPuntosVentaCAEACompleted;
+        public event consultarPuntosVentaCAEACompletedEventHandler consultarPuntosVentaCAEACompletedEvent;
 
-        public event consultarPuntosVentaCAECompletedEventHandler consultarPuntosVentaCAECompleted;
+        public event consultarPuntosVentaCAECompletedEventHandler consultarPuntosVentaCAECompletedEvent;
 
-        public event consultarPuntosVentaCompletedEventHandler consultarPuntosVentaCompleted;
+        public event consultarPuntosVentaCompletedEventHandler consultarPuntosVentaCompletedEvent;
 
-        public event consultarTiposComprobanteCompletedEventHandler consultarTiposComprobanteCompleted;
+        public event consultarTiposComprobanteCompletedEventHandler consultarTiposComprobanteCompletedEvent;
 
-        public event consultarTiposDocumentoCompletedEventHandler consultarTiposDocumentoCompleted;
+        public event consultarTiposDocumentoCompletedEventHandler consultarTiposDocumentoCompletedEvent;
 
-        public event consultarTiposTributoCompletedEventHandler consultarTiposTributoCompleted;
+        public event consultarTiposTributoCompletedEventHandler consultarTiposTributoCompletedEvent;
 
-        public event consultarUltimoComprobanteAutorizadoCompletedEventHandler consultarUltimoComprobanteAutorizadoCompleted;
+        public event consultarUltimoComprobanteAutorizadoCompletedEventHandler consultarUltimoComprobanteAutorizadoCompletedEvent;
 
-        public event consultarUnidadesMedidaCompletedEventHandler consultarUnidadesMedidaCompleted;
+        public event consultarUnidadesMedidaCompletedEventHandler consultarUnidadesMedidaCompletedEvent;
 
-        public event dummyCompletedEventHandler dummyCompleted;
+        public event dummyCompletedEventHandler dummyCompletedEvent;
 
-        public event informarCAEANoUtilizadoCompletedEventHandler informarCAEANoUtilizadoCompleted;
+        public event informarCAEANoUtilizadoCompletedEventHandler informarCAEANoUtilizadoCompletedEvent;
 
-        public event informarCAEANoUtilizadoPtoVtaCompletedEventHandler informarCAEANoUtilizadoPtoVtaCompleted;
+        public event informarCAEANoUtilizadoPtoVtaCompletedEventHandler informarCAEANoUtilizadoPtoVtaCompletedEvent;
 
-        public event informarComprobanteCAEACompletedEventHandler informarComprobanteCAEACompleted;
+        public event informarComprobanteCAEACompletedEventHandler informarComprobanteCAEACompletedEvent;
 
-        public event solicitarCAEACompletedEventHandler solicitarCAEACompleted;
+        public event solicitarCAEACompletedEventHandler solicitarCAEACompletedEvent;
 
         public MTXCAService()
         {
@@ -621,10 +621,10 @@
             if (this.autorizarComprobanteCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                autorizarComprobanteCompletedEventHandler VB$t_ref$S0 = this.autorizarComprobanteCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                autorizarComprobanteCompletedEventHandler VB_t_ref_S0 = this.autorizarComprobanteCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new autorizarComprobanteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new autorizarComprobanteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -634,10 +634,10 @@
             if (this.consultarAlicuotasIVACompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                consultarAlicuotasIVACompletedEventHandler VB$t_ref$S0 = this.consultarAlicuotasIVACompletedEvent;
-                if (VB$t_ref$S0 != null)
+                consultarAlicuotasIVACompletedEventHandler VB_t_ref_S0 = this.consultarAlicuotasIVACompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new consultarAlicuotasIVACompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new consultarAlicuotasIVACompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -647,10 +647,10 @@
             if (this.consultarCAEAEntreFechasCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                consultarCAEAEntreFechasCompletedEventHandler VB$t_ref$S0 = this.consultarCAEAEntreFechasCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                consultarCAEAEntreFechasCompletedEventHandler VB_t_ref_S0 = this.consultarCAEAEntreFechasCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new consultarCAEAEntreFechasCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new consultarCAEAEntreFechasCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -660,10 +660,10 @@
             if (this.consultarCAEACompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                consultarCAEACompletedEventHandler VB$t_ref$S0 = this.consultarCAEACompletedEvent;
-                if (VB$t_ref$S0 != null)
+                consultarCAEACompletedEventHandler VB_t_ref_S0 = this.consultarCAEACompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new consultarCAEACompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new consultarCAEACompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -673,10 +673,10 @@
             if (this.consultarComprobanteCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                consultarComprobanteCompletedEventHandler VB$t_ref$S0 = this.consultarComprobanteCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                consultarComprobanteCompletedEventHandler VB_t_ref_S0 = this.consultarComprobanteCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new consultarComprobanteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new consultarComprobanteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -686,10 +686,10 @@
             if (this.consultarCondicionesIVACompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                consultarCondicionesIVACompletedEventHandler VB$t_ref$S0 = this.consultarCondicionesIVACompletedEvent;
-                if (VB$t_ref$S0 != null)
+                consultarCondicionesIVACompletedEventHandler VB_t_ref_S0 = this.consultarCondicionesIVACompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new consultarCondicionesIVACompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new consultarCondicionesIVACompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -699,10 +699,10 @@
             if (this.consultarCotizacionMonedaCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                consultarCotizacionMonedaCompletedEventHandler VB$t_ref$S0 = this.consultarCotizacionMonedaCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                consultarCotizacionMonedaCompletedEventHandler VB_t_ref_S0 = this.consultarCotizacionMonedaCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new consultarCotizacionMonedaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new consultarCotizacionMonedaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -712,10 +712,10 @@
             if (this.consultarMonedasCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                consultarMonedasCompletedEventHandler VB$t_ref$S0 = this.consultarMonedasCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                consultarMonedasCompletedEventHandler VB_t_ref_S0 = this.consultarMonedasCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new consultarMonedasCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new consultarMonedasCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -725,10 +725,10 @@
             if (this.consultarPtosVtaCAEANoInformadosCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                consultarPtosVtaCAEANoInformadosCompletedEventHandler VB$t_ref$S0 = this.consultarPtosVtaCAEANoInformadosCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                consultarPtosVtaCAEANoInformadosCompletedEventHandler VB_t_ref_S0 = this.consultarPtosVtaCAEANoInformadosCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new consultarPtosVtaCAEANoInformadosCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new consultarPtosVtaCAEANoInformadosCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -738,10 +738,10 @@
             if (this.consultarPuntosVentaCAEACompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                consultarPuntosVentaCAEACompletedEventHandler VB$t_ref$S0 = this.consultarPuntosVentaCAEACompletedEvent;
-                if (VB$t_ref$S0 != null)
+                consultarPuntosVentaCAEACompletedEventHandler VB_t_ref_S0 = this.consultarPuntosVentaCAEACompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new consultarPuntosVentaCAEACompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new consultarPuntosVentaCAEACompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -751,10 +751,10 @@
             if (this.consultarPuntosVentaCAECompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                consultarPuntosVentaCAECompletedEventHandler VB$t_ref$S0 = this.consultarPuntosVentaCAECompletedEvent;
-                if (VB$t_ref$S0 != null)
+                consultarPuntosVentaCAECompletedEventHandler VB_t_ref_S0 = this.consultarPuntosVentaCAECompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new consultarPuntosVentaCAECompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new consultarPuntosVentaCAECompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -764,10 +764,10 @@
             if (this.consultarPuntosVentaCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                consultarPuntosVentaCompletedEventHandler VB$t_ref$S0 = this.consultarPuntosVentaCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                consultarPuntosVentaCompletedEventHandler VB_t_ref_S0 = this.consultarPuntosVentaCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new consultarPuntosVentaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new consultarPuntosVentaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -777,10 +777,10 @@
             if (this.consultarTiposComprobanteCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                consultarTiposComprobanteCompletedEventHandler VB$t_ref$S0 = this.consultarTiposComprobanteCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                consultarTiposComprobanteCompletedEventHandler VB_t_ref_S0 = this.consultarTiposComprobanteCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new consultarTiposComprobanteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new consultarTiposComprobanteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -790,10 +790,10 @@
             if (this.consultarTiposDocumentoCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                consultarTiposDocumentoCompletedEventHandler VB$t_ref$S0 = this.consultarTiposDocumentoCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                consultarTiposDocumentoCompletedEventHandler VB_t_ref_S0 = this.consultarTiposDocumentoCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new consultarTiposDocumentoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new consultarTiposDocumentoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -803,10 +803,10 @@
             if (this.consultarTiposTributoCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                consultarTiposTributoCompletedEventHandler VB$t_ref$S0 = this.consultarTiposTributoCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                consultarTiposTributoCompletedEventHandler VB_t_ref_S0 = this.consultarTiposTributoCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new consultarTiposTributoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new consultarTiposTributoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -816,10 +816,10 @@
             if (this.consultarUltimoComprobanteAutorizadoCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                consultarUltimoComprobanteAutorizadoCompletedEventHandler VB$t_ref$S0 = this.consultarUltimoComprobanteAutorizadoCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                consultarUltimoComprobanteAutorizadoCompletedEventHandler VB_t_ref_S0 = this.consultarUltimoComprobanteAutorizadoCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new consultarUltimoComprobanteAutorizadoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new consultarUltimoComprobanteAutorizadoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -829,10 +829,10 @@
             if (this.consultarUnidadesMedidaCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                consultarUnidadesMedidaCompletedEventHandler VB$t_ref$S0 = this.consultarUnidadesMedidaCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                consultarUnidadesMedidaCompletedEventHandler VB_t_ref_S0 = this.consultarUnidadesMedidaCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new consultarUnidadesMedidaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new consultarUnidadesMedidaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -842,10 +842,10 @@
             if (this.dummyCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                dummyCompletedEventHandler VB$t_ref$S0 = this.dummyCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                dummyCompletedEventHandler VB_t_ref_S0 = this.dummyCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new dummyCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new dummyCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -855,10 +855,10 @@
             if (this.informarCAEANoUtilizadoCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                informarCAEANoUtilizadoCompletedEventHandler VB$t_ref$S0 = this.informarCAEANoUtilizadoCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                informarCAEANoUtilizadoCompletedEventHandler VB_t_ref_S0 = this.informarCAEANoUtilizadoCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new informarCAEANoUtilizadoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new informarCAEANoUtilizadoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -868,10 +868,10 @@
             if (this.informarCAEANoUtilizadoPtoVtaCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                informarCAEANoUtilizadoPtoVtaCompletedEventHandler VB$t_ref$S0 = this.informarCAEANoUtilizadoPtoVtaCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                informarCAEANoUtilizadoPtoVtaCompletedEventHandler VB_t_ref_S0 = this.informarCAEANoUtilizadoPtoVtaCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new informarCAEANoUtilizadoPtoVtaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new informarCAEANoUtilizadoPtoVtaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -881,10 +881,10 @@
             if (this.informarComprobanteCAEACompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                informarComprobanteCAEACompletedEventHandler VB$t_ref$S0 = this.informarComprobanteCAEACompletedEvent;
-                if (VB$t_ref$S0 != null)
+                informarComprobanteCAEACompletedEventHandler VB_t_ref_S0 = this.informarComprobanteCAEACompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new informarComprobanteCAEACompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new informarComprobanteCAEACompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -894,10 +894,10 @@
             if (this.solicitarCAEACompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                solicitarCAEACompletedEventHandler VB$t_ref$S0 = this.solicitarCAEACompletedEvent;
-                if (VB$t_ref$S0 != null)
+                solicitarCAEACompletedEventHandler VB_t_ref_S0 = this.solicitarCAEACompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new solicitarCAEACompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new solicitarCAEACompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }

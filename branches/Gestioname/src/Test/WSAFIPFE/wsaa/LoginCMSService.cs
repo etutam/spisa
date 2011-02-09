@@ -19,7 +19,7 @@
         private SendOrPostCallback loginCmsOperationCompleted;
         private bool useDefaultCredentialsSetExplicitly;
 
-        public event loginCmsCompletedEventHandler loginCmsCompleted;
+        public event loginCmsCompletedEventHandler loginCmsCompletedEvent;
 
         public LoginCMSService()
         {
@@ -76,10 +76,10 @@
             if (this.loginCmsCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                loginCmsCompletedEventHandler VB$t_ref$S0 = this.loginCmsCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                loginCmsCompletedEventHandler VB_t_ref_S0 = this.loginCmsCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new loginCmsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new loginCmsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }

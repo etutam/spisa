@@ -1,4 +1,6 @@
-﻿namespace WSAFIPFE.fxAFIPTest
+﻿using System.Runtime.CompilerServices;
+
+namespace WSAFIPFE.fxAFIPTest
 {
     using Microsoft.VisualBasic.CompilerServices;
     using System;

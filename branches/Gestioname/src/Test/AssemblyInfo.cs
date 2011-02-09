@@ -11,7 +11,6 @@
 [assembly: System.Reflection.AssemblyTitle("WSAFIPFE")]
 [assembly: System.Diagnostics.Debuggable(System.Diagnostics.DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints | System.Diagnostics.DebuggableAttribute.DebuggingModes.Default)]
 [assembly: System.Runtime.CompilerServices.CompilationRelaxations(8)]
-[assembly: System.Runtime.CompilerServices.RuntimeCompatibility(WrapNonExceptionThrows=true)]
-[assembly: System.Reflection.AssemblyKeyFile(@"D:\WSAFIPFE\WSAFIPFE.snk")]
+[assembly: System.Runtime.CompilerServices.RuntimeCompatibility(WrapNonExceptionThrows = true)]
 [assembly: System.Reflection.AssemblyFileVersion("10.0.0.0")]
 

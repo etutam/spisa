@@ -1,4 +1,6 @@
-﻿namespace WSAFIPFE.wsaaTest
+﻿using System.Runtime.CompilerServices;
+
+namespace WSAFIPFE.wsaaTest
 {
     using Microsoft.VisualBasic.CompilerServices;
     using System;

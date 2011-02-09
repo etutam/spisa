@@ -25,19 +25,19 @@
         private SendOrPostCallback solicitarCTGOperationCompleted;
         private bool useDefaultCredentialsSetExplicitly;
 
-        public event confirmarCTGCompletedEventHandler confirmarCTGCompleted;
+        public event confirmarCTGCompletedEventHandler confirmarCTGCompletedEvent;
 
-        public event dummyCompletedEventHandler dummyCompleted;
+        public event dummyCompletedEventHandler dummyCompletedEvent;
 
-        public event obtenerCosechasCompletedEventHandler obtenerCosechasCompleted;
+        public event obtenerCosechasCompletedEventHandler obtenerCosechasCompletedEvent;
 
-        public event obtenerEspeciesCompletedEventHandler obtenerEspeciesCompleted;
+        public event obtenerEspeciesCompletedEventHandler obtenerEspeciesCompletedEvent;
 
-        public event obtenerLocalidadesPorCodigoProvinciaCompletedEventHandler obtenerLocalidadesPorCodigoProvinciaCompleted;
+        public event obtenerLocalidadesPorCodigoProvinciaCompletedEventHandler obtenerLocalidadesPorCodigoProvinciaCompletedEvent;
 
-        public event obtenerProvinciasCompletedEventHandler obtenerProvinciasCompleted;
+        public event obtenerProvinciasCompletedEventHandler obtenerProvinciasCompletedEvent;
 
-        public event solicitarCTGCompletedEventHandler solicitarCTGCompleted;
+        public event solicitarCTGCompletedEventHandler solicitarCTGCompletedEvent;
 
         public CTGService()
         {
@@ -199,10 +199,10 @@
             if (this.confirmarCTGCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                confirmarCTGCompletedEventHandler VB$t_ref$S0 = this.confirmarCTGCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                confirmarCTGCompletedEventHandler VB_t_ref_S0 = this.confirmarCTGCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new confirmarCTGCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new confirmarCTGCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -212,10 +212,10 @@
             if (this.dummyCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                dummyCompletedEventHandler VB$t_ref$S0 = this.dummyCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                dummyCompletedEventHandler VB_t_ref_S0 = this.dummyCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new dummyCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new dummyCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -225,10 +225,10 @@
             if (this.obtenerCosechasCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                obtenerCosechasCompletedEventHandler VB$t_ref$S0 = this.obtenerCosechasCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                obtenerCosechasCompletedEventHandler VB_t_ref_S0 = this.obtenerCosechasCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new obtenerCosechasCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new obtenerCosechasCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -238,10 +238,10 @@
             if (this.obtenerEspeciesCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                obtenerEspeciesCompletedEventHandler VB$t_ref$S0 = this.obtenerEspeciesCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                obtenerEspeciesCompletedEventHandler VB_t_ref_S0 = this.obtenerEspeciesCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new obtenerEspeciesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new obtenerEspeciesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -251,10 +251,10 @@
             if (this.obtenerLocalidadesPorCodigoProvinciaCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                obtenerLocalidadesPorCodigoProvinciaCompletedEventHandler VB$t_ref$S0 = this.obtenerLocalidadesPorCodigoProvinciaCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                obtenerLocalidadesPorCodigoProvinciaCompletedEventHandler VB_t_ref_S0 = this.obtenerLocalidadesPorCodigoProvinciaCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new obtenerLocalidadesPorCodigoProvinciaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new obtenerLocalidadesPorCodigoProvinciaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -264,10 +264,10 @@
             if (this.obtenerProvinciasCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                obtenerProvinciasCompletedEventHandler VB$t_ref$S0 = this.obtenerProvinciasCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                obtenerProvinciasCompletedEventHandler VB_t_ref_S0 = this.obtenerProvinciasCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new obtenerProvinciasCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new obtenerProvinciasCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -277,10 +277,10 @@
             if (this.solicitarCTGCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                solicitarCTGCompletedEventHandler VB$t_ref$S0 = this.solicitarCTGCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                solicitarCTGCompletedEventHandler VB_t_ref_S0 = this.solicitarCTGCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new solicitarCTGCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new solicitarCTGCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }

@@ -32,37 +32,37 @@
         private SendOrPostCallback FEXGetPARAM_UMedOperationCompleted;
         private bool useDefaultCredentialsSetExplicitly;
 
-        public event FEXAuthorizeCompletedEventHandler FEXAuthorizeCompleted;
+        public event FEXAuthorizeCompletedEventHandler FEXAuthorizeCompletedEvent;
 
-        public event FEXCheck_PermisoCompletedEventHandler FEXCheck_PermisoCompleted;
+        public event FEXCheck_PermisoCompletedEventHandler FEXCheck_PermisoCompletedEvent;
 
-        public event FEXDummyCompletedEventHandler FEXDummyCompleted;
+        public event FEXDummyCompletedEventHandler FEXDummyCompletedEvent;
 
-        public event FEXGetCMPCompletedEventHandler FEXGetCMPCompleted;
+        public event FEXGetCMPCompletedEventHandler FEXGetCMPCompletedEvent;
 
-        public event FEXGetLast_CMPCompletedEventHandler FEXGetLast_CMPCompleted;
+        public event FEXGetLast_CMPCompletedEventHandler FEXGetLast_CMPCompletedEvent;
 
-        public event FEXGetLast_IDCompletedEventHandler FEXGetLast_IDCompleted;
+        public event FEXGetLast_IDCompletedEventHandler FEXGetLast_IDCompletedEvent;
 
-        public event FEXGetPARAM_CtzCompletedEventHandler FEXGetPARAM_CtzCompleted;
+        public event FEXGetPARAM_CtzCompletedEventHandler FEXGetPARAM_CtzCompletedEvent;
 
-        public event FEXGetPARAM_DST_CUITCompletedEventHandler FEXGetPARAM_DST_CUITCompleted;
+        public event FEXGetPARAM_DST_CUITCompletedEventHandler FEXGetPARAM_DST_CUITCompletedEvent;
 
-        public event FEXGetPARAM_DST_paisCompletedEventHandler FEXGetPARAM_DST_paisCompleted;
+        public event FEXGetPARAM_DST_paisCompletedEventHandler FEXGetPARAM_DST_paisCompletedEvent;
 
-        public event FEXGetPARAM_IdiomasCompletedEventHandler FEXGetPARAM_IdiomasCompleted;
+        public event FEXGetPARAM_IdiomasCompletedEventHandler FEXGetPARAM_IdiomasCompletedEvent;
 
-        public event FEXGetPARAM_IncotermsCompletedEventHandler FEXGetPARAM_IncotermsCompleted;
+        public event FEXGetPARAM_IncotermsCompletedEventHandler FEXGetPARAM_IncotermsCompletedEvent;
 
-        public event FEXGetPARAM_MONCompletedEventHandler FEXGetPARAM_MONCompleted;
+        public event FEXGetPARAM_MONCompletedEventHandler FEXGetPARAM_MONCompletedEvent;
 
-        public event FEXGetPARAM_PtoVentaCompletedEventHandler FEXGetPARAM_PtoVentaCompleted;
+        public event FEXGetPARAM_PtoVentaCompletedEventHandler FEXGetPARAM_PtoVentaCompletedEvent;
 
-        public event FEXGetPARAM_Tipo_CbteCompletedEventHandler FEXGetPARAM_Tipo_CbteCompleted;
+        public event FEXGetPARAM_Tipo_CbteCompletedEventHandler FEXGetPARAM_Tipo_CbteCompletedEvent;
 
-        public event FEXGetPARAM_Tipo_ExpoCompletedEventHandler FEXGetPARAM_Tipo_ExpoCompleted;
+        public event FEXGetPARAM_Tipo_ExpoCompletedEventHandler FEXGetPARAM_Tipo_ExpoCompletedEvent;
 
-        public event FEXGetPARAM_UMedCompletedEventHandler FEXGetPARAM_UMedCompleted;
+        public event FEXGetPARAM_UMedCompletedEventHandler FEXGetPARAM_UMedCompletedEvent;
 
         public Service()
         {
@@ -418,10 +418,10 @@
             if (this.FEXAuthorizeCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FEXAuthorizeCompletedEventHandler VB$t_ref$S0 = this.FEXAuthorizeCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FEXAuthorizeCompletedEventHandler VB_t_ref_S0 = this.FEXAuthorizeCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FEXAuthorizeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FEXAuthorizeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -431,10 +431,10 @@
             if (this.FEXCheck_PermisoCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FEXCheck_PermisoCompletedEventHandler VB$t_ref$S0 = this.FEXCheck_PermisoCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FEXCheck_PermisoCompletedEventHandler VB_t_ref_S0 = this.FEXCheck_PermisoCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FEXCheck_PermisoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FEXCheck_PermisoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -444,10 +444,10 @@
             if (this.FEXDummyCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FEXDummyCompletedEventHandler VB$t_ref$S0 = this.FEXDummyCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FEXDummyCompletedEventHandler VB_t_ref_S0 = this.FEXDummyCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FEXDummyCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FEXDummyCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -457,10 +457,10 @@
             if (this.FEXGetCMPCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FEXGetCMPCompletedEventHandler VB$t_ref$S0 = this.FEXGetCMPCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FEXGetCMPCompletedEventHandler VB_t_ref_S0 = this.FEXGetCMPCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FEXGetCMPCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FEXGetCMPCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -470,10 +470,10 @@
             if (this.FEXGetLast_CMPCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FEXGetLast_CMPCompletedEventHandler VB$t_ref$S0 = this.FEXGetLast_CMPCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FEXGetLast_CMPCompletedEventHandler VB_t_ref_S0 = this.FEXGetLast_CMPCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FEXGetLast_CMPCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FEXGetLast_CMPCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -483,10 +483,10 @@
             if (this.FEXGetLast_IDCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FEXGetLast_IDCompletedEventHandler VB$t_ref$S0 = this.FEXGetLast_IDCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FEXGetLast_IDCompletedEventHandler VB_t_ref_S0 = this.FEXGetLast_IDCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FEXGetLast_IDCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FEXGetLast_IDCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -496,10 +496,10 @@
             if (this.FEXGetPARAM_CtzCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FEXGetPARAM_CtzCompletedEventHandler VB$t_ref$S0 = this.FEXGetPARAM_CtzCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FEXGetPARAM_CtzCompletedEventHandler VB_t_ref_S0 = this.FEXGetPARAM_CtzCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FEXGetPARAM_CtzCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FEXGetPARAM_CtzCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -509,10 +509,10 @@
             if (this.FEXGetPARAM_DST_CUITCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FEXGetPARAM_DST_CUITCompletedEventHandler VB$t_ref$S0 = this.FEXGetPARAM_DST_CUITCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FEXGetPARAM_DST_CUITCompletedEventHandler VB_t_ref_S0 = this.FEXGetPARAM_DST_CUITCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FEXGetPARAM_DST_CUITCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FEXGetPARAM_DST_CUITCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -522,10 +522,10 @@
             if (this.FEXGetPARAM_DST_paisCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FEXGetPARAM_DST_paisCompletedEventHandler VB$t_ref$S0 = this.FEXGetPARAM_DST_paisCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FEXGetPARAM_DST_paisCompletedEventHandler VB_t_ref_S0 = this.FEXGetPARAM_DST_paisCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FEXGetPARAM_DST_paisCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FEXGetPARAM_DST_paisCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -535,10 +535,10 @@
             if (this.FEXGetPARAM_IdiomasCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FEXGetPARAM_IdiomasCompletedEventHandler VB$t_ref$S0 = this.FEXGetPARAM_IdiomasCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FEXGetPARAM_IdiomasCompletedEventHandler VB_t_ref_S0 = this.FEXGetPARAM_IdiomasCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FEXGetPARAM_IdiomasCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FEXGetPARAM_IdiomasCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -548,10 +548,10 @@
             if (this.FEXGetPARAM_IncotermsCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FEXGetPARAM_IncotermsCompletedEventHandler VB$t_ref$S0 = this.FEXGetPARAM_IncotermsCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FEXGetPARAM_IncotermsCompletedEventHandler VB_t_ref_S0 = this.FEXGetPARAM_IncotermsCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FEXGetPARAM_IncotermsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FEXGetPARAM_IncotermsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -561,10 +561,10 @@
             if (this.FEXGetPARAM_MONCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FEXGetPARAM_MONCompletedEventHandler VB$t_ref$S0 = this.FEXGetPARAM_MONCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FEXGetPARAM_MONCompletedEventHandler VB_t_ref_S0 = this.FEXGetPARAM_MONCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FEXGetPARAM_MONCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FEXGetPARAM_MONCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -574,10 +574,10 @@
             if (this.FEXGetPARAM_PtoVentaCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FEXGetPARAM_PtoVentaCompletedEventHandler VB$t_ref$S0 = this.FEXGetPARAM_PtoVentaCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FEXGetPARAM_PtoVentaCompletedEventHandler VB_t_ref_S0 = this.FEXGetPARAM_PtoVentaCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FEXGetPARAM_PtoVentaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FEXGetPARAM_PtoVentaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -587,10 +587,10 @@
             if (this.FEXGetPARAM_Tipo_CbteCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FEXGetPARAM_Tipo_CbteCompletedEventHandler VB$t_ref$S0 = this.FEXGetPARAM_Tipo_CbteCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FEXGetPARAM_Tipo_CbteCompletedEventHandler VB_t_ref_S0 = this.FEXGetPARAM_Tipo_CbteCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FEXGetPARAM_Tipo_CbteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FEXGetPARAM_Tipo_CbteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -600,10 +600,10 @@
             if (this.FEXGetPARAM_Tipo_ExpoCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FEXGetPARAM_Tipo_ExpoCompletedEventHandler VB$t_ref$S0 = this.FEXGetPARAM_Tipo_ExpoCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FEXGetPARAM_Tipo_ExpoCompletedEventHandler VB_t_ref_S0 = this.FEXGetPARAM_Tipo_ExpoCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FEXGetPARAM_Tipo_ExpoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FEXGetPARAM_Tipo_ExpoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -613,10 +613,10 @@
             if (this.FEXGetPARAM_UMedCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FEXGetPARAM_UMedCompletedEventHandler VB$t_ref$S0 = this.FEXGetPARAM_UMedCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FEXGetPARAM_UMedCompletedEventHandler VB_t_ref_S0 = this.FEXGetPARAM_UMedCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FEXGetPARAM_UMedCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FEXGetPARAM_UMedCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }

@@ -36,43 +36,43 @@
         private SendOrPostCallback FEParamGetTiposTributosOperationCompleted;
         private bool useDefaultCredentialsSetExplicitly;
 
-        public event FECAEAConsultarCompletedEventHandler FECAEAConsultarCompleted;
+        public event FECAEAConsultarCompletedEventHandler FECAEAConsultarCompletedEvent;
 
-        public event FECAEARegInformativoCompletedEventHandler FECAEARegInformativoCompleted;
+        public event FECAEARegInformativoCompletedEventHandler FECAEARegInformativoCompletedEvent;
 
-        public event FECAEASinMovimientoConsultarCompletedEventHandler FECAEASinMovimientoConsultarCompleted;
+        public event FECAEASinMovimientoConsultarCompletedEventHandler FECAEASinMovimientoConsultarCompletedEvent;
 
-        public event FECAEASinMovimientoInformarCompletedEventHandler FECAEASinMovimientoInformarCompleted;
+        public event FECAEASinMovimientoInformarCompletedEventHandler FECAEASinMovimientoInformarCompletedEvent;
 
-        public event FECAEASolicitarCompletedEventHandler FECAEASolicitarCompleted;
+        public event FECAEASolicitarCompletedEventHandler FECAEASolicitarCompletedEvent;
 
-        public event FECAESolicitarCompletedEventHandler FECAESolicitarCompleted;
+        public event FECAESolicitarCompletedEventHandler FECAESolicitarCompletedEvent;
 
-        public event FECompConsultarCompletedEventHandler FECompConsultarCompleted;
+        public event FECompConsultarCompletedEventHandler FECompConsultarCompletedEvent;
 
-        public event FECompTotXRequestCompletedEventHandler FECompTotXRequestCompleted;
+        public event FECompTotXRequestCompletedEventHandler FECompTotXRequestCompletedEvent;
 
-        public event FECompUltimoAutorizadoCompletedEventHandler FECompUltimoAutorizadoCompleted;
+        public event FECompUltimoAutorizadoCompletedEventHandler FECompUltimoAutorizadoCompletedEvent;
 
-        public event FEDummyCompletedEventHandler FEDummyCompleted;
+        public event FEDummyCompletedEventHandler FEDummyCompletedEvent;
 
-        public event FEParamGetCotizacionCompletedEventHandler FEParamGetCotizacionCompleted;
+        public event FEParamGetCotizacionCompletedEventHandler FEParamGetCotizacionCompletedEvent;
 
-        public event FEParamGetPtosVentaCompletedEventHandler FEParamGetPtosVentaCompleted;
+        public event FEParamGetPtosVentaCompletedEventHandler FEParamGetPtosVentaCompletedEvent;
 
-        public event FEParamGetTiposCbteCompletedEventHandler FEParamGetTiposCbteCompleted;
+        public event FEParamGetTiposCbteCompletedEventHandler FEParamGetTiposCbteCompletedEvent;
 
-        public event FEParamGetTiposConceptoCompletedEventHandler FEParamGetTiposConceptoCompleted;
+        public event FEParamGetTiposConceptoCompletedEventHandler FEParamGetTiposConceptoCompletedEvent;
 
-        public event FEParamGetTiposDocCompletedEventHandler FEParamGetTiposDocCompleted;
+        public event FEParamGetTiposDocCompletedEventHandler FEParamGetTiposDocCompletedEvent;
 
-        public event FEParamGetTiposIvaCompletedEventHandler FEParamGetTiposIvaCompleted;
+        public event FEParamGetTiposIvaCompletedEventHandler FEParamGetTiposIvaCompletedEvent;
 
-        public event FEParamGetTiposMonedasCompletedEventHandler FEParamGetTiposMonedasCompleted;
+        public event FEParamGetTiposMonedasCompletedEventHandler FEParamGetTiposMonedasCompletedEvent;
 
-        public event FEParamGetTiposOpcionalCompletedEventHandler FEParamGetTiposOpcionalCompleted;
+        public event FEParamGetTiposOpcionalCompletedEventHandler FEParamGetTiposOpcionalCompletedEvent;
 
-        public event FEParamGetTiposTributosCompletedEventHandler FEParamGetTiposTributosCompleted;
+        public event FEParamGetTiposTributosCompletedEventHandler FEParamGetTiposTributosCompletedEvent;
 
         public Service()
         {
@@ -488,10 +488,10 @@
             if (this.FECAEAConsultarCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FECAEAConsultarCompletedEventHandler VB$t_ref$S0 = this.FECAEAConsultarCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FECAEAConsultarCompletedEventHandler VB_t_ref_S0 = this.FECAEAConsultarCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FECAEAConsultarCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FECAEAConsultarCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -501,10 +501,10 @@
             if (this.FECAEARegInformativoCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FECAEARegInformativoCompletedEventHandler VB$t_ref$S0 = this.FECAEARegInformativoCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FECAEARegInformativoCompletedEventHandler VB_t_ref_S0 = this.FECAEARegInformativoCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FECAEARegInformativoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FECAEARegInformativoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -514,10 +514,10 @@
             if (this.FECAEASinMovimientoConsultarCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FECAEASinMovimientoConsultarCompletedEventHandler VB$t_ref$S0 = this.FECAEASinMovimientoConsultarCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FECAEASinMovimientoConsultarCompletedEventHandler VB_t_ref_S0 = this.FECAEASinMovimientoConsultarCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FECAEASinMovimientoConsultarCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FECAEASinMovimientoConsultarCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -527,10 +527,10 @@
             if (this.FECAEASinMovimientoInformarCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FECAEASinMovimientoInformarCompletedEventHandler VB$t_ref$S0 = this.FECAEASinMovimientoInformarCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FECAEASinMovimientoInformarCompletedEventHandler VB_t_ref_S0 = this.FECAEASinMovimientoInformarCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FECAEASinMovimientoInformarCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FECAEASinMovimientoInformarCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -540,10 +540,10 @@
             if (this.FECAEASolicitarCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FECAEASolicitarCompletedEventHandler VB$t_ref$S0 = this.FECAEASolicitarCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FECAEASolicitarCompletedEventHandler VB_t_ref_S0 = this.FECAEASolicitarCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FECAEASolicitarCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FECAEASolicitarCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -553,10 +553,10 @@
             if (this.FECAESolicitarCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FECAESolicitarCompletedEventHandler VB$t_ref$S0 = this.FECAESolicitarCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FECAESolicitarCompletedEventHandler VB_t_ref_S0 = this.FECAESolicitarCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FECAESolicitarCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FECAESolicitarCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -566,10 +566,10 @@
             if (this.FECompConsultarCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FECompConsultarCompletedEventHandler VB$t_ref$S0 = this.FECompConsultarCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FECompConsultarCompletedEventHandler VB_t_ref_S0 = this.FECompConsultarCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FECompConsultarCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FECompConsultarCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -579,10 +579,10 @@
             if (this.FECompTotXRequestCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FECompTotXRequestCompletedEventHandler VB$t_ref$S0 = this.FECompTotXRequestCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FECompTotXRequestCompletedEventHandler VB_t_ref_S0 = this.FECompTotXRequestCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FECompTotXRequestCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FECompTotXRequestCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -592,10 +592,10 @@
             if (this.FECompUltimoAutorizadoCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FECompUltimoAutorizadoCompletedEventHandler VB$t_ref$S0 = this.FECompUltimoAutorizadoCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FECompUltimoAutorizadoCompletedEventHandler VB_t_ref_S0 = this.FECompUltimoAutorizadoCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FECompUltimoAutorizadoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FECompUltimoAutorizadoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -605,10 +605,10 @@
             if (this.FEDummyCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FEDummyCompletedEventHandler VB$t_ref$S0 = this.FEDummyCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FEDummyCompletedEventHandler VB_t_ref_S0 = this.FEDummyCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FEDummyCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FEDummyCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -618,10 +618,10 @@
             if (this.FEParamGetCotizacionCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FEParamGetCotizacionCompletedEventHandler VB$t_ref$S0 = this.FEParamGetCotizacionCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FEParamGetCotizacionCompletedEventHandler VB_t_ref_S0 = this.FEParamGetCotizacionCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FEParamGetCotizacionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FEParamGetCotizacionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -631,10 +631,10 @@
             if (this.FEParamGetPtosVentaCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FEParamGetPtosVentaCompletedEventHandler VB$t_ref$S0 = this.FEParamGetPtosVentaCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FEParamGetPtosVentaCompletedEventHandler VB_t_ref_S0 = this.FEParamGetPtosVentaCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FEParamGetPtosVentaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FEParamGetPtosVentaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -644,10 +644,10 @@
             if (this.FEParamGetTiposCbteCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FEParamGetTiposCbteCompletedEventHandler VB$t_ref$S0 = this.FEParamGetTiposCbteCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FEParamGetTiposCbteCompletedEventHandler VB_t_ref_S0 = this.FEParamGetTiposCbteCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FEParamGetTiposCbteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FEParamGetTiposCbteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -657,10 +657,10 @@
             if (this.FEParamGetTiposConceptoCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FEParamGetTiposConceptoCompletedEventHandler VB$t_ref$S0 = this.FEParamGetTiposConceptoCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FEParamGetTiposConceptoCompletedEventHandler VB_t_ref_S0 = this.FEParamGetTiposConceptoCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FEParamGetTiposConceptoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FEParamGetTiposConceptoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -670,10 +670,10 @@
             if (this.FEParamGetTiposDocCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FEParamGetTiposDocCompletedEventHandler VB$t_ref$S0 = this.FEParamGetTiposDocCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FEParamGetTiposDocCompletedEventHandler VB_t_ref_S0 = this.FEParamGetTiposDocCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FEParamGetTiposDocCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FEParamGetTiposDocCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -683,10 +683,10 @@
             if (this.FEParamGetTiposIvaCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FEParamGetTiposIvaCompletedEventHandler VB$t_ref$S0 = this.FEParamGetTiposIvaCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FEParamGetTiposIvaCompletedEventHandler VB_t_ref_S0 = this.FEParamGetTiposIvaCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FEParamGetTiposIvaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FEParamGetTiposIvaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -696,10 +696,10 @@
             if (this.FEParamGetTiposMonedasCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FEParamGetTiposMonedasCompletedEventHandler VB$t_ref$S0 = this.FEParamGetTiposMonedasCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FEParamGetTiposMonedasCompletedEventHandler VB_t_ref_S0 = this.FEParamGetTiposMonedasCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FEParamGetTiposMonedasCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FEParamGetTiposMonedasCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -709,10 +709,10 @@
             if (this.FEParamGetTiposOpcionalCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FEParamGetTiposOpcionalCompletedEventHandler VB$t_ref$S0 = this.FEParamGetTiposOpcionalCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FEParamGetTiposOpcionalCompletedEventHandler VB_t_ref_S0 = this.FEParamGetTiposOpcionalCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FEParamGetTiposOpcionalCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FEParamGetTiposOpcionalCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
@@ -722,10 +722,10 @@
             if (this.FEParamGetTiposTributosCompletedEvent != null)
             {
                 InvokeCompletedEventArgs invokeArgs = (InvokeCompletedEventArgs) arg;
-                FEParamGetTiposTributosCompletedEventHandler VB$t_ref$S0 = this.FEParamGetTiposTributosCompletedEvent;
-                if (VB$t_ref$S0 != null)
+                FEParamGetTiposTributosCompletedEventHandler VB_t_ref_S0 = this.FEParamGetTiposTributosCompletedEvent;
+                if (VB_t_ref_S0 != null)
                 {
-                    VB$t_ref$S0(this, new FEParamGetTiposTributosCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
+                    VB_t_ref_S0(this, new FEParamGetTiposTributosCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, RuntimeHelpers.GetObjectValue(invokeArgs.UserState)));
                 }
             }
         }
