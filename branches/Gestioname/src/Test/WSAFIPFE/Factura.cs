@@ -17361,14 +17361,16 @@
                     strDireccionServicio = this.DireccionServicio;
                 }
                 ticket oTicket = new ticket();
-                if (this.ProxyUserName != "")
-                {
-                    oTicket.ProxyDomain = this.ProxyDomain;
-                    oTicket.ProxyHost = this.ProxyHost;
-                    oTicket.ProxyPort = this.ProxyPort;
-                    oTicket.ProxyUserName = this.ProxyUserName;
-                    oTicket.ProxyUserPassword = this.ProxyUserPassword;
-                }
+                oTicket.ProxyUserName = this.ProxyUserName;
+
+                //if (this.ProxyUserName != "")
+                //{
+                //    oTicket.ProxyDomain = this.ProxyDomain;
+                //    oTicket.ProxyHost = this.ProxyHost;
+                //    oTicket.ProxyPort = this.ProxyPort;
+                //    oTicket.ProxyUserName = this.ProxyUserName;
+                //    oTicket.ProxyUserPassword = this.ProxyUserPassword;
+                //}
                 try
                 {
                     string strTicketRespuesta = oTicket.ObtenerLoginTicketResponse(this.NombreServicio, strDireccionServicio, this.RutaArchivoCertificado, this.Modo, Conversions.ToLong(this.Identificador));

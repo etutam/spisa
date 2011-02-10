@@ -13,7 +13,7 @@
     using System.Xml.Serialization;
     using WSAFIPFE.My;
 
-    [WebServiceBinding(Name="LoginCmsSoapBinding", Namespace="https://wsaa.afip.gov.ar/ws/services/LoginCms"), DesignerCategory("code"), DebuggerStepThrough, GeneratedCode("System.Web.Services", "2.0.50727.3053")]
+    [WebServiceBinding(Name="LoginCmsSoapBinding", Namespace="https://wsaahomo.afip.gov.ar/ws/services/LoginCms"), DesignerCategory("code"), DebuggerStepThrough, GeneratedCode("System.Web.Services", "2.0.50727.3053")]
     public class LoginCMSService : SoapHttpClientProtocol
     {
         private SendOrPostCallback loginCmsOperationCompleted;

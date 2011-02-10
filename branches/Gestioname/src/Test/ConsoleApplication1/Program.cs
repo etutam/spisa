@@ -9,6 +9,8 @@ namespace AfipTest
         static void Main(string[] args)
         {
             WSAFIPFE.Factura f = new WSAFIPFE.Factura();
+            f.ProxyUserName = "";
+
 
             if (f.iniciar(WSAFIPFE.Factura.modoFiscal.Test, "33708293739", @"c:\pirulo.pfx", ""))
             {
