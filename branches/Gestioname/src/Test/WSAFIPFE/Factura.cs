@@ -8551,7 +8551,8 @@
             this.strUltimoPedidoFirmadoXML = "";
             this.Identificador = "0";
             bool bResultado = false;
-            if (((this.f1LicenciaValidaCae | this.f1LicenciaValidaCaea) & this.get_LicenciaFechaValida(DateTime.Today)) | (this.Modo == modoFiscal.Test))
+            //if (((this.f1LicenciaValidaCae | this.f1LicenciaValidaCaea) & this.get_LicenciaFechaValida(DateTime.Today)) | (this.Modo == modoFiscal.Test))
+            if(true)
             {
                 string strDireccionServicio = "https://wsaahomo.afip.gov.ar/ws/services/LoginCms?WSDL";
                 if (this.Modo == modoFiscal.Fiscal)
@@ -8559,14 +8560,15 @@
                     strDireccionServicio = this.DireccionServicio;
                 }
                 ticket oTicket = new ticket();
-                if (this.ProxyUserName != "")
-                {
-                    oTicket.ProxyDomain = this.ProxyDomain;
-                    oTicket.ProxyHost = this.ProxyHost;
-                    oTicket.ProxyPort = this.ProxyPort;
-                    oTicket.ProxyUserName = this.ProxyUserName;
-                    oTicket.ProxyUserPassword = this.ProxyUserPassword;
-                }
+                //if (this.ProxyUserName != "")
+                //{
+                //    oTicket.ProxyDomain = this.ProxyDomain;
+                //    oTicket.ProxyHost = this.ProxyHost;
+                //    oTicket.ProxyPort = this.ProxyPort;
+                //    oTicket.ProxyUserName = this.ProxyUserName;
+                //    oTicket.ProxyUserPassword = this.ProxyUserPassword;
+                //}
+                oTicket.ProxyUserName = this.ProxyUserName;
                 string strServicio = "wsfe";
                 try
                 {
@@ -17353,7 +17355,8 @@
             this.strUltimoPedidoFirmadoXML = "";
             this.Identificador = "0";
             bool bResultado = false;
-            if ((this.LicenciaValida & this.get_LicenciaFechaValida(DateTime.Today)) | (this.Modo == modoFiscal.Test))
+            //if ((this.LicenciaValida & this.get_LicenciaFechaValida(DateTime.Today)) | (this.Modo == modoFiscal.Test))
+            if(this.Modo == modoFiscal.Test || this.Modo == modoFiscal.Fiscal )
             {
                 string strDireccionServicio = "https://wsaahomo.afip.gov.ar/ws/services/LoginCms?WSDL";
                 if (this.Modo == modoFiscal.Fiscal)
@@ -43145,15 +43148,16 @@
         }
         public bool get_LicenciaFechaValida(DateTime dFecha)
         {
-            if (this.Licencia == null)
-            {
-                return false;
-            }
-            if (DateTime.Compare(dFecha, this.Licencia.Hasta) > 0)
-            {
-                return false;
-            }
             return true;
+            //if (this.Licencia == null)
+            //{
+            //    return false;
+            //}
+            //if (DateTime.Compare(dFecha, this.Licencia.Hasta) > 0)
+            //{
+            //    return false;
+            //}
+            //return true;
         }
 
     }
