@@ -95,6 +95,7 @@
                         if (this.ProxyUserName != "")
                         {
                             NetworkCredential cr = new NetworkCredential();
+                           
                             WebProxy pr = new WebProxy(this.ProxyHost, this.ProxyPort);
                             cr.Domain = this.ProxyDomain;
                             cr.Password = this.ProxyUserPassword;
