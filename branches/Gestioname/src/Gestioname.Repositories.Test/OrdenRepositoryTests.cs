@@ -16,32 +16,22 @@ namespace Gestioname.Repositories.Test
 
         public IClienteRepository ClienteRepository { get; set; }
 
-        [Test]
-        public void RunDefaultsTest()
+        protected override void BeforeSave(Orden orden)
         {
-            base.RunDefaultUnitTests();
-        }
-
-        protected override void OnSetUp()
-        {
-            base.OnSetUp();
-
             ClienteRepository.Save(new Cliente().GetTestInstance());
+
+            orden.Cliente = ClienteRepository.GetAll().First();
         }
 
-        protected override void OnTearDown()
+        protected override void AfterSave(Orden entity)
         {
             ClienteRepository.Remove(ClienteRepository.GetAll().First());
         }
 
-        protected override void BeforeSave(Orden orden)
-        {
-            orden.Cliente = ClienteRepository.GetAll().First();
-        }
-
         [Test]
-        public void TestVacio()
+        public void Dummy()
         {
+            
         }
     }
 }

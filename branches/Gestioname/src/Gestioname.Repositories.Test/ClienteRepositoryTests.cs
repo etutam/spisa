@@ -14,13 +14,7 @@ namespace Gestioname.Repositories.Test
     {
         public IClienteRepository ClienteRepository { get; set; }
         
-        [Test]
-        public void RunDefaultTests()
-        {
-            base.RunDefaultUnitTests();
-        }
-
-        //Intento de Adri 1
+      //Intento de Adri 1
         [Test]
         public void GetbyRazonSocialTest()
         {
