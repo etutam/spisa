@@ -14,12 +14,7 @@ namespace Gestioname.Repositories.Test
         class ArticuloRepositoryTests: RepositoryTestCase<Articulo,ArticuloRepository>
         {
         public IArticuloRepository ArticuloRepository { get; set; }
-        [Test]
-        public void RunDefaultsTest()
-        {
-            base.RunDefaultUnitTests();
-        }
-
+      
         [Test]
         public void FindByCodigo()
         {
