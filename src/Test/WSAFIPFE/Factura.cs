@@ -17347,6 +17347,7 @@
 
         internal bool ObtenerTicket()
         {
+            
             this.strUltimaRespuestaXML = "";
             this.strUltimoPedidoXML = "";
             this.strUltimoPedidoFirmadoXML = "";
@@ -29094,7 +29095,7 @@
                 this.strProxyDomain = value;
             }
         }
-
+        
         public string ProxyHost
         {
             get
