@@ -56,12 +56,12 @@ namespace SPISA.Libreria
                     f.F1DetalleConcepto = 1;
                     f.F1DetalleDocTipo = 80;
                     f.F1DetalleDocNro = datosCliente.CUIT;
-                    f.F1DetalleCbteDesde = (int)(datosFactura.NumeroFactura - 10720);
-                    f.F1DetalleCbteHasta = (int)(datosFactura.NumeroFactura - 10720);
-                    Resultados.Add("FCOMPULTIMOAUTORIZADO: " + f.F1CompUltimoAutorizado(6, 1));
+                    f.F1DetalleCbteDesde = f.F1CompUltimoAutorizado(1,1) + 1;
+                    f.F1DetalleCbteHasta = f.F1CompUltimoAutorizado(1,1) + 1;
+                     Resultados.Add(f.F1CompUltimoAutorizado(1,1).ToString());
                     //Console.ReadLine();
                     f.F1DetalleCbteFch = datosFactura.Fecha.ToString("yyyMMdd");
-                    f.F1DetalleImpTotal = Convert.ToDouble(totales.Total);
+                    f.F1DetalleImpTotal = Convert.ToDouble(totales.SubTotal2);
                     f.F1DetalleImpTotalConc = 0;
                     f.F1DetalleImpNeto = Convert.ToDouble(totales.SubTotal2);
                     f.F1DetalleImpOpEx = 0;

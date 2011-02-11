@@ -751,9 +751,17 @@ namespace SPISA.Presentacion
                         {
                             Printing p = new Printing   ();
                             p.Objetos = CargarObjetosAImprimir();
-                            
-                            _factura.Registrar(_factura,new Cliente{CUIT = detallesCliente.CUIT},new Factura.Totales{Total = txtTotal.Text,IvaInscripto = txtIva21.Text,SubTotal1 = txtSubTotal.Text,SubTotal2 = txtSubTotal2.Text} );
-
+                            Cliente cliente = new Cliente {CUIT = detallesCliente.CUIT};
+                            Factura.Totales totales = new Factura.Totales
+                                                          {
+                                                              Total = txtTotal.Value.ToString(),
+                                                              IvaInscripto = txtIva21.Value.ToString(),
+                                                              SubTotal1 = txtSubTotal.Value.ToString(),
+                                                              SubTotal2 = txtSubTotal2.Value.ToString()
+                                                          };
+                            //_factura.Registrar(_factura,cliente, totales);
+                            Afip afip = new Afip();
+                            afip.Registrar(_factura, cliente, totales);
                             
                             AppSettingsReader settings = new AppSettingsReader();
                             if (p.Imprimir((short)(settings.GetValue("NumeroDeCopiasFactura", typeof(short)))))
