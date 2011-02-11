@@ -20,6 +20,8 @@
     <UpgradeBackupLocation />
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>keyfile.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>bin\Debug\</OutputPath>
@@ -2383,6 +2385,9 @@
       <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="WSAFIPFE.Resources.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="keyfile.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
