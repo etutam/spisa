@@ -81,10 +81,6 @@
       <Project>{FE026FE8-00E5-4339-91A7-A90CB3335523}</Project>
       <Name>SPISA.Util</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\SISTEMA GESTIONAME\src\Test\WSAFIPFE.csproj">
-      <Project>{A1725F00-E090-4D9A-9FB9-B3A907242FBB}</Project>
-      <Name>WSAFIPFE</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="keyfile.snk" />

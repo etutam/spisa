@@ -749,7 +749,7 @@ namespace SPISA.Presentacion
                     {
                         try
                         {
-                            Printing p = new Printing();
+                            Printing p = new Printing   ();
                             p.Objetos = CargarObjetosAImprimir();
                             
                             _factura.Registrar(_factura,new Cliente{CUIT = detallesCliente.CUIT},new Factura.Totales{Total = txtTotal.Text,IvaInscripto = txtIva21.Text,SubTotal1 = txtSubTotal.Text,SubTotal2 = txtSubTotal2.Text} );
