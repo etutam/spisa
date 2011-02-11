@@ -21,6 +21,8 @@ namespace Gestioname.Repositories.Test
             ClienteRepository.Save(new Cliente().GetTestInstance());
 
             orden.Cliente = ClienteRepository.GetAll().First();
+
+            throw new Exception("falta almacenar items de la orden");
         }
 
         protected override void AfterSave(Orden entity)
