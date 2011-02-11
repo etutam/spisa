@@ -31,9 +31,16 @@ namespace Gestioname.Repositories.Test
         }
 
         [Test]
-        public void Dummy()
+        public void SaveOrderWithItems()
         {
-            
+            Orden orden = new Orden().GetTestInstance();
+
+            orden.Items.Add(new OrdenItem
+                                {
+                                    
+                                });
+
+            Assert.AreEqual(true, false);
         }
     }
 }
