@@ -127,7 +127,7 @@ namespace SPISA.Libreria
             set { _esNotaDeCredito = value; }
         }
 
-        public Afip afip { get; set; }
+        //public Afip afip { get; set; }
         #endregion
 
         #region Metodos Estaticos
@@ -401,11 +401,11 @@ namespace SPISA.Libreria
 
         #region Metodos Publicos
 
-        public virtual void Registrar (Factura factura,Cliente detallesCliente,Totales totales)
-        {
-            afip.Registrar(factura, detallesCliente,
-                totales);
-        }
+        //public void Registrar (Factura factura,Cliente detallesCliente,Totales totales)
+        //{
+        //    afip.Registrar(factura, detallesCliente,
+        //        totales);
+        //}
 
         /// <summary>
         /// El metodo deberá:

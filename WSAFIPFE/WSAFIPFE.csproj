@@ -51,11 +51,13 @@
     <RootNamespace>WSAFIPFE</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Google.GData.Client">
-      <HintPath>lib\Google.GData.Client.dll</HintPath>
+    <Reference Include="Google.GData.Client, Version=1.4.0.2, Culture=neutral, PublicKeyToken=04a59ca9b0273830, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\SISTEMA GESTIONAME\src\Test\lib\Google.GData.Client.dll</HintPath>
     </Reference>
-    <Reference Include="Google.GData.Spreadsheets">
-      <HintPath>lib\Google.GData.Spreadsheets.dll</HintPath>
+    <Reference Include="Google.GData.Spreadsheets, Version=1.4.0.2, Culture=neutral, PublicKeyToken=3f77feb76ff0d9a1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\SISTEMA GESTIONAME\src\Test\lib\Google.GData.Spreadsheets.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic">
       <Name>Microsoft.VisualBasic</Name>
