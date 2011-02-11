@@ -330,7 +330,11 @@ namespace SPISA.Presentacion
                         }
                     }
                 }
-                
+                else
+                {
+                    MessageBox.Show("La Impresion no se ha podido realizar con exito");
+                }
+
             }
             catch (Exception ex)
             {
