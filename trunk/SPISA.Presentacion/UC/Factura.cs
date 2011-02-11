@@ -26,6 +26,8 @@ namespace SPISA.Presentacion
             NoExistenItemsCargados
         }
 
+        
+
         #region Campos Privados
         Factura _factura = null;
         bool _modificable = true;
@@ -281,7 +283,7 @@ namespace SPISA.Presentacion
 
             CalcularTotalesUnitarios(null);
             CalcularTotales();
-
+            
         }
 
         /// <summary>
@@ -749,7 +751,10 @@ namespace SPISA.Presentacion
                         {
                             Printing p = new Printing();
                             p.Objetos = CargarObjetosAImprimir();
+                            
+                            _factura.Registrar(_factura,new Cliente{CUIT = detallesCliente.CUIT},new Factura.Totales{Total = txtTotal.Text,IvaInscripto = txtIva21.Text,SubTotal1 = txtSubTotal.Text,SubTotal2 = txtSubTotal2.Text} );
 
+                            
                             AppSettingsReader settings = new AppSettingsReader();
                             if (p.Imprimir((short)(settings.GetValue("NumeroDeCopiasFactura", typeof(short)))))
                             {

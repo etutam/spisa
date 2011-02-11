@@ -20,6 +20,18 @@ namespace SPISA.Libreria
 
     public class Factura
     {
+        public struct Totales
+        {
+            public string Total;
+            public string SubTotal1;
+            public string SubTotal2;
+            public string IvaInscripto;
+            public string DescuentoEspecial;
+
+        }
+
+
+        
         #region Campos Privados
         int _IdFactura = -1;
         long _NumeroFactura = -1;
@@ -33,6 +45,7 @@ namespace SPISA.Libreria
         bool _fueCancelada = false;
         bool _esNotaDeCredito = false;
         private bool _esCotizacion = false;
+
 
         IList<NotaPedido_Item> _ListaItems = new List<NotaPedido_Item>();
 
@@ -113,6 +126,8 @@ namespace SPISA.Libreria
             get { return _esNotaDeCredito; }
             set { _esNotaDeCredito = value; }
         }
+
+        public Afip afip { get; set; }
         #endregion
 
         #region Metodos Estaticos
@@ -385,6 +400,12 @@ namespace SPISA.Libreria
         #endregion
 
         #region Metodos Publicos
+
+        public virtual void Registrar (Factura factura,Cliente detallesCliente,Totales totales)
+        {
+            afip.Registrar(factura, detallesCliente,
+                totales);
+        }
 
         /// <summary>
         /// El metodo deberá:
