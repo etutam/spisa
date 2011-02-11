@@ -1,0 +1,2392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>local</ProjectType>
+    <ProjectVersion>7.10.3077</ProjectVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A1725F00-E090-4D9A-9FB9-B3A907242FBB}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <AssemblyName>WSAFIPFE</AssemblyName>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <OldToolsVersion>0.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugSymbols>true</DebugSymbols>
+    <NoStdLib>false</NoStdLib>
+    <Optimize>false</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>TRACE</DefineConstants>
+    <DebugSymbols>false</DebugSymbols>
+    <NoStdLib>false</NoStdLib>
+    <Optimize>true</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>WSAFIPFE</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Google.GData.Client">
+      <HintPath>lib\Google.GData.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.GData.Spreadsheets">
+      <HintPath>lib\Google.GData.Spreadsheets.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic">
+      <Name>Microsoft.VisualBasic</Name>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Security">
+      <Name>System.Security</Name>
+    </Reference>
+    <Reference Include="System.Web.Abstractions">
+      <HintPath>lib\System.Web.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <HintPath>lib\System.Web.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.Xml</Name>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <HintPath>lib\System.Xml.Linq.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Global.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afipTest\DummyResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afipTest\FEAuthRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afipTest\FEAutRequestCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afipTest\FEAutRequestCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afipTest\FECabeceraRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afipTest\FECabeceraResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afipTest\FEConsultaCAEReq.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afipTest\FEConsultaCAERequestCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afipTest\FEConsultaCAERequestCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afipTest\FEConsultaCAEResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afipTest\FEDetalleRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afipTest\FEDetalleResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afipTest\FEDummyCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afipTest\FEDummyCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afipTest\FELastCMPtype.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afipTest\FERecuperaLastCMPRequestCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afipTest\FERecuperaLastCMPRequestCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afipTest\FERecuperaLastCMPResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afipTest\FERecuperaQTY.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afipTest\FERecuperaQTYRequestCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afipTest\FERecuperaQTYRequestCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afipTest\FERecuperaQTYResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afipTest\FERequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afipTest\FEResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afipTest\FEUltNroRequestCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afipTest\FEUltNroRequestCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afipTest\FEUltNroResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afipTest\Service.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afipTest\UltNroResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afipTest\vError.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afip\DummyResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afip\FEAuthRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afip\FEAutRequestCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afip\FEAutRequestCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afip\FECabeceraRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afip\FECabeceraResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afip\FEConsultaCAEReq.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afip\FEConsultaCAERequestCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afip\FEConsultaCAERequestCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afip\FEConsultaCAEResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afip\FEDetalleRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afip\FEDetalleResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afip\FEDummyCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afip\FEDummyCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afip\FELastCMPtype.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afip\FERecuperaLastCMPRequestCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afip\FERecuperaLastCMPRequestCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afip\FERecuperaLastCMPResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afip\FERecuperaQTY.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afip\FERecuperaQTYRequestCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afip\FERecuperaQTYRequestCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afip\FERecuperaQTYResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afip\FERequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afip\FEResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afip\FEUltNroRequestCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afip\FEUltNroRequestCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afip\FEUltNroResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afip\Service.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afip\UltNroResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\afip\vError.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\BFEAuthorizeCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\BFEAuthorizeCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\BFEDummyCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\BFEDummyCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\BFEGetCMPCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\BFEGetCMPCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\BFEGetCMPResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\BFEGetLast_CMPCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\BFEGetLast_CMPCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\BFEGetLast_IDCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\BFEGetLast_IDCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\BFEGetPARAM_MONCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\BFEGetPARAM_MONCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\BFEGetPARAM_NCMCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\BFEGetPARAM_NCMCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\BFEGetPARAM_Tipo_CbteCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\BFEGetPARAM_Tipo_CbteCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\BFEGetPARAM_Tipo_docCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\BFEGetPARAM_Tipo_docCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\BFEGetPARAM_Tipo_IVACompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\BFEGetPARAM_Tipo_IVACompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\BFEGetPARAM_UMedCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\BFEGetPARAM_UMedCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\BFEGetPARAM_ZonasCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\BFEGetPARAM_ZonasCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\BFEResponseAuthorize.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\BFEResponseLast_CMP.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\BFEResponse_LastID.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\BFEResponse_Mon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\BFEResponse_NCM.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\BFEResponse_Tipo_Cbte.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\BFEResponse_Tipo_doc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\BFEResponse_Tipo_IVA.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\BFEResponse_Umed.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\BFEResponse_Zon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\ClsBFEAuthRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\ClsBFEErr.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\ClsBFEEvents.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\ClsBFEGetCMP.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\ClsBFEGetCMPR.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\ClsBFEOutAuthorize.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\ClsBFERequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\ClsBFEResponse_LastID.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\ClsBFEResponse_Mon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\ClsBFEResponse_NCM.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\ClsBFEResponse_Tipo_Cbte.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\ClsBFEResponse_Tipo_doc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\ClsBFEResponse_Tipo_IVA.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\ClsBFEResponse_UMed.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\ClsBFEResponse_Zon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\ClsBFE_LastCMP.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\ClsBFE_LastCMP_Response.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\DummyResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\Item.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIPTest\Service.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\BFEAuthorizeCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\BFEAuthorizeCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\BFEDummyCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\BFEDummyCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\BFEGetCMPCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\BFEGetCMPCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\BFEGetCMPResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\BFEGetLast_CMPCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\BFEGetLast_CMPCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\BFEGetLast_IDCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\BFEGetLast_IDCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\BFEGetPARAM_MONCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\BFEGetPARAM_MONCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\BFEGetPARAM_NCMCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\BFEGetPARAM_NCMCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\BFEGetPARAM_Tipo_CbteCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\BFEGetPARAM_Tipo_CbteCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\BFEGetPARAM_Tipo_docCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\BFEGetPARAM_Tipo_docCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\BFEGetPARAM_Tipo_IVACompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\BFEGetPARAM_Tipo_IVACompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\BFEGetPARAM_UMedCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\BFEGetPARAM_UMedCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\BFEGetPARAM_ZonasCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\BFEGetPARAM_ZonasCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\BFEResponseAuthorize.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\BFEResponseLast_CMP.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\BFEResponse_LastID.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\BFEResponse_Mon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\BFEResponse_NCM.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\BFEResponse_Tipo_Cbte.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\BFEResponse_Tipo_doc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\BFEResponse_Tipo_IVA.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\BFEResponse_Umed.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\BFEResponse_Zon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\ClsBFEAuthRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\ClsBFEErr.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\ClsBFEEvents.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\ClsBFEGetCMP.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\ClsBFEGetCMPR.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\ClsBFEOutAuthorize.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\ClsBFERequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\ClsBFEResponse_LastID.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\ClsBFEResponse_Mon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\ClsBFEResponse_NCM.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\ClsBFEResponse_Tipo_Cbte.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\ClsBFEResponse_Tipo_doc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\ClsBFEResponse_Tipo_IVA.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\ClsBFEResponse_UMed.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\ClsBFEResponse_Zon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\ClsBFE_LastCMP.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\ClsBFE_LastCMP_Response.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\DummyResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\Item.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\bAFIP\Service.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\Certificado.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\dAFIPTest\Autenticacion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\dAFIPTest\AvisoDigitCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\dAFIPTest\AvisoDigitCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\dAFIPTest\AvisoRecepAceptCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\dAFIPTest\AvisoRecepAceptCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\dAFIPTest\DummyCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\dAFIPTest\DummyCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\dAFIPTest\Familia.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\dAFIPTest\Recibo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\dAFIPTest\wDigDepFiel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\dAFIPTest\WsDummyResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\AlicIva.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\CbteAsoc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\CbteTipo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\CbteTipoResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\ConceptoTipo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\ConceptoTipoResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\Cotizacion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\DocTipo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\DocTipoResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\DummyResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\Err.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\Evt.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FEAuthRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECabRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECabResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECAEACabRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECAEACabResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECAEAConsultarCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECAEAConsultarCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECAEADetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECAEADetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECAEAGet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECAEAGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECAEARegInformativoCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECAEARegInformativoCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECAEARequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECAEAResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECAEASinMov.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECAEASinMovConsResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECAEASinMovimientoConsultarCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECAEASinMovimientoConsultarCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECAEASinMovimientoInformarCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECAEASinMovimientoInformarCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECAEASinMovResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECAEASolicitarCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECAEASolicitarCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECAECabRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECAECabResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECAEDetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECAEDetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECAERequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECAEResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECAESolicitarCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECAESolicitarCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECompConsResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECompConsultarCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECompConsultarCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECompConsultaReq.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECompConsultaResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECompTotXRequestCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECompTotXRequestCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECompUltimoAutorizadoCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECompUltimoAutorizadoCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FECotizacionResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FEDetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FEDetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FEDummyCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FEDummyCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FEParamGetCotizacionCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FEParamGetCotizacionCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FEParamGetPtosVentaCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FEParamGetPtosVentaCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FEParamGetTiposCbteCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FEParamGetTiposCbteCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FEParamGetTiposConceptoCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FEParamGetTiposConceptoCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FEParamGetTiposDocCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FEParamGetTiposDocCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FEParamGetTiposIvaCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FEParamGetTiposIvaCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FEParamGetTiposMonedasCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FEParamGetTiposMonedasCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FEParamGetTiposOpcionalCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FEParamGetTiposOpcionalCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FEParamGetTiposTributosCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FEParamGetTiposTributosCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FEPtoVentaResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FERecuperaLastCbteResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FERegXReqResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\FETributoResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\IvaTipo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\IvaTipoResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\Moneda.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\MonedaResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\Obs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\Opcional.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\OpcionalTipo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\OpcionalTipoResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\PtoVenta.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\Service.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\Tributo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIPTest\TributoTipo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\AlicIva.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\CbteAsoc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\CbteTipo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\CbteTipoResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\ConceptoTipo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\ConceptoTipoResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\Cotizacion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\DocTipo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\DocTipoResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\DummyResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\Err.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\Evt.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FEAuthRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECabRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECabResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECAEACabRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECAEACabResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECAEAConsultarCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECAEAConsultarCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECAEADetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECAEADetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECAEAGet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECAEAGetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECAEARegInformativoCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECAEARegInformativoCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECAEARequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECAEAResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECAEASinMov.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECAEASinMovConsResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECAEASinMovimientoConsultarCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECAEASinMovimientoConsultarCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECAEASinMovimientoInformarCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECAEASinMovimientoInformarCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECAEASinMovResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECAEASolicitarCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECAEASolicitarCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECAECabRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECAECabResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECAEDetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECAEDetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECAERequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECAEResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECAESolicitarCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECAESolicitarCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECompConsResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECompConsultarCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECompConsultarCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECompConsultaReq.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECompConsultaResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECompTotXRequestCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECompTotXRequestCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECompUltimoAutorizadoCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECompUltimoAutorizadoCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FECotizacionResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FEDetRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FEDetResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FEDummyCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FEDummyCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FEParamGetCotizacionCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FEParamGetCotizacionCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FEParamGetPtosVentaCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FEParamGetPtosVentaCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FEParamGetTiposCbteCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FEParamGetTiposCbteCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FEParamGetTiposConceptoCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FEParamGetTiposConceptoCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FEParamGetTiposDocCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FEParamGetTiposDocCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FEParamGetTiposIvaCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FEParamGetTiposIvaCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FEParamGetTiposMonedasCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FEParamGetTiposMonedasCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FEParamGetTiposOpcionalCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FEParamGetTiposOpcionalCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FEParamGetTiposTributosCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FEParamGetTiposTributosCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FEPtoVentaResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FERecuperaLastCbteResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FERegXReqResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\FETributoResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\IvaTipo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\IvaTipoResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\Moneda.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\MonedaResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\Obs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\Opcional.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\OpcionalTipo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\OpcionalTipoResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\PtoVenta.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\Service.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\Tributo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\f1AFIP\TributoTipo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\Factura.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\AuthRequestType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\autorizarComprobanteCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\autorizarComprobanteCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\CAEAResponseType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\CodigoDescripcionStringType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\CodigoDescripcionType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\CodigoTipoAutorizacionSimpleType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\ComprobanteAsociadoType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\ComprobanteCAEAResponseType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\ComprobanteCAEResponseType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\ComprobanteType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\ConsultaComprobanteRequestType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\consultarAlicuotasIVACompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\consultarAlicuotasIVACompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\consultarCAEACompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\consultarCAEACompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\consultarCAEAEntreFechasCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\consultarCAEAEntreFechasCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\consultarComprobanteCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\consultarComprobanteCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\consultarCondicionesIVACompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\consultarCondicionesIVACompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\consultarCotizacionMonedaCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\consultarCotizacionMonedaCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\consultarMonedasCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\consultarMonedasCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\consultarPtosVtaCAEANoInformadosCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\consultarPtosVtaCAEANoInformadosCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\consultarPuntosVentaCAEACompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\consultarPuntosVentaCAEACompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\consultarPuntosVentaCAECompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\consultarPuntosVentaCAECompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\consultarPuntosVentaCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\consultarPuntosVentaCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\consultarTiposComprobanteCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\consultarTiposComprobanteCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\consultarTiposDocumentoCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\consultarTiposDocumentoCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\consultarTiposTributoCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\consultarTiposTributoCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\consultarUltimoComprobanteAutorizadoCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\consultarUltimoComprobanteAutorizadoCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\consultarUnidadesMedidaCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\consultarUnidadesMedidaCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\ConsultaUltimoComprobanteAutorizadoRequestType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\dummyCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\dummyCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\DummyResponseType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\informarCAEANoUtilizadoCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\informarCAEANoUtilizadoCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\informarCAEANoUtilizadoPtoVtaCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\informarCAEANoUtilizadoPtoVtaCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\informarComprobanteCAEACompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\informarComprobanteCAEACompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\ItemType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\MTXCAService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\OtroTributoType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\PuntoVentaType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\ResultadoSimpleType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\SiNoSimpleType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\solicitarCAEACompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\solicitarCAEACompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\SolicitudCAEAType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIPTest\SubtotalIVAType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\AuthRequestType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\autorizarComprobanteCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\autorizarComprobanteCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\CAEAResponseType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\CodigoDescripcionStringType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\CodigoDescripcionType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\CodigoTipoAutorizacionSimpleType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\ComprobanteAsociadoType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\ComprobanteCAEAResponseType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\ComprobanteCAEResponseType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\ComprobanteType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\ConsultaComprobanteRequestType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\consultarAlicuotasIVACompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\consultarAlicuotasIVACompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\consultarCAEACompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\consultarCAEACompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\consultarCAEAEntreFechasCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\consultarCAEAEntreFechasCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\consultarComprobanteCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\consultarComprobanteCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\consultarCondicionesIVACompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\consultarCondicionesIVACompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\consultarCotizacionMonedaCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\consultarCotizacionMonedaCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\consultarMonedasCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\consultarMonedasCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\consultarPtosVtaCAEANoInformadosCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\consultarPtosVtaCAEANoInformadosCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\consultarPuntosVentaCAEACompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\consultarPuntosVentaCAEACompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\consultarPuntosVentaCAECompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\consultarPuntosVentaCAECompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\consultarPuntosVentaCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\consultarPuntosVentaCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\consultarTiposComprobanteCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\consultarTiposComprobanteCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\consultarTiposDocumentoCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\consultarTiposDocumentoCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\consultarTiposTributoCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\consultarTiposTributoCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\consultarUltimoComprobanteAutorizadoCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\consultarUltimoComprobanteAutorizadoCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\consultarUnidadesMedidaCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\consultarUnidadesMedidaCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\ConsultaUltimoComprobanteAutorizadoRequestType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\dummyCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\dummyCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\DummyResponseType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\informarCAEANoUtilizadoCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\informarCAEANoUtilizadoCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\informarCAEANoUtilizadoPtoVtaCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\informarCAEANoUtilizadoPtoVtaCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\informarComprobanteCAEACompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\informarComprobanteCAEACompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\ItemType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\MTXCAService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\OtroTributoType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\PuntoVentaType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\ResultadoSimpleType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\SiNoSimpleType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\solicitarCAEACompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\solicitarCAEACompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\SolicitudCAEAType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\fxAFIP\SubtotalIVAType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\gAFIPTest\ArrayCosechasResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\gAFIPTest\ArrayEspeciesResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\gAFIPTest\ArrayLocalidadesPorCodigoProvinciaResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\gAFIPTest\ArrayProvinciasResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\gAFIPTest\AuthRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\gAFIPTest\confirmarCTGCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\gAFIPTest\confirmarCTGCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\gAFIPTest\ConfirmarCTGRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\gAFIPTest\ConfirmarCTGResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\gAFIPTest\CTGService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\gAFIPTest\dummyCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\gAFIPTest\dummyCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\gAFIPTest\DummyResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\gAFIPTest\obtenerCosechasCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\gAFIPTest\obtenerCosechasCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\gAFIPTest\obtenerEspeciesCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\gAFIPTest\obtenerEspeciesCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\gAFIPTest\obtenerLocalidadesPorCodigoProvinciaCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\gAFIPTest\obtenerLocalidadesPorCodigoProvinciaCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\gAFIPTest\ObtenerLocalidadesPorCodigoProvinciaRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\gAFIPTest\obtenerProvinciasCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\gAFIPTest\obtenerProvinciasCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\gAFIPTest\solicitarCTGCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\gAFIPTest\solicitarCTGCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\gAFIPTest\SolicitarCTGRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\gAFIPTest\SolicitarCTGResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\My\MyApplication.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\My\MyComputer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\My\MyProject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\My\MySettings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\My\Resources\Resources.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\ClsSEGAuthRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\ClsSEGErr.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\ClsSEGEvents.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\ClsSEGGetCMP.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\ClsSEGGetCMPR.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\ClsSEGOutAuthorize.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\ClsSEGRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\ClsSEGResponse_LastID.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\ClsSEGResponse_Mon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\ClsSEGResponse_Tipo_Cbte.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\ClsSEGResponse_Tipo_doc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\ClsSEGResponse_Tipo_IVA.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\ClsSEG_LastCMP.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\ClsSEG_LastCMP_Response.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\DummyResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\Item.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\SEGAuthorizeCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\SEGAuthorizeCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\SEGDummyCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\SEGDummyCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\SEGGetCMPCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\SEGGetCMPCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\SEGGetCMPResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\SEGGetLast_CMPCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\SEGGetLast_CMPCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\SEGGetLast_IDCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\SEGGetLast_IDCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\SEGGetPARAM_MONCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\SEGGetPARAM_MONCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\SEGGetPARAM_Tipo_CbteCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\SEGGetPARAM_Tipo_CbteCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\SEGGetPARAM_Tipo_docCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\SEGGetPARAM_Tipo_docCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\SEGGetPARAM_Tipo_IVACompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\SEGGetPARAM_Tipo_IVACompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\SEGResponseAuthorize.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\SEGResponseLast_CMP.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\SEGResponse_LastID.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\SEGResponse_Mon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\SEGResponse_Tipo_Cbte.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\SEGResponse_Tipo_doc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\SEGResponse_Tipo_IVA.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIPTest\Service.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\ClsSEGAuthRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\ClsSEGErr.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\ClsSEGEvents.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\ClsSEGGetCMP.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\ClsSEGGetCMPR.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\ClsSEGOutAuthorize.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\ClsSEGRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\ClsSEGResponse_LastID.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\ClsSEGResponse_Mon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\ClsSEGResponse_Tipo_Cbte.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\ClsSEGResponse_Tipo_doc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\ClsSEGResponse_Tipo_IVA.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\ClsSEG_LastCMP.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\ClsSEG_LastCMP_Response.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\DummyResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\Item.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\SEGAuthorizeCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\SEGAuthorizeCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\SEGDummyCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\SEGDummyCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\SEGGetCMPCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\SEGGetCMPCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\SEGGetCMPResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\SEGGetLast_CMPCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\SEGGetLast_CMPCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\SEGGetLast_IDCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\SEGGetLast_IDCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\SEGGetPARAM_MONCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\SEGGetPARAM_MONCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\SEGGetPARAM_Tipo_CbteCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\SEGGetPARAM_Tipo_CbteCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\SEGGetPARAM_Tipo_docCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\SEGGetPARAM_Tipo_docCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\SEGGetPARAM_Tipo_IVACompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\SEGGetPARAM_Tipo_IVACompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\SEGResponseAuthorize.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\SEGResponseLast_CMP.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\SEGResponse_LastID.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\SEGResponse_Mon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\SEGResponse_Tipo_Cbte.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\SEGResponse_Tipo_doc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\SEGResponse_Tipo_IVA.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\sAFIP\Service.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\ticket.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\wsaaTest\loginCmsCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\wsaaTest\loginCmsCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\wsaaTest\LoginCMSService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\wsaa\loginCmsCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\wsaa\loginCmsCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\wsaa\LoginCMSService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\ClsFEXAuthRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\ClsFEXErr.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\ClsFEXEvents.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\ClsFEXGetCMP.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\ClsFEXGetCMPR.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\ClsFEXOutAuthorize.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\ClsFEXRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\ClsFEXResponse_CheckPermiso.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\ClsFEXResponse_Ctz.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\ClsFEXResponse_DST_cuit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\ClsFEXResponse_DST_pais.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\ClsFEXResponse_Idi.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\ClsFEXResponse_Inc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\ClsFEXResponse_LastID.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\ClsFEXResponse_Mon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\ClsFEXResponse_PtoVenta.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\ClsFEXResponse_Tex.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\ClsFEXResponse_Tipo_Cbte.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\ClsFEXResponse_UMed.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\ClsFEX_LastCMP.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\ClsFEX_LastCMP_Response.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\Cmp_asoc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\DummyResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXAuthorizeCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXAuthorizeCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXCheck_PermisoCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXCheck_PermisoCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXDummyCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXDummyCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXGetCMPCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXGetCMPCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXGetCMPResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXGetLast_CMPCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXGetLast_CMPCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXGetLast_IDCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXGetLast_IDCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXGetPARAM_CtzCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXGetPARAM_CtzCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXGetPARAM_DST_CUITCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXGetPARAM_DST_CUITCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXGetPARAM_DST_paisCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXGetPARAM_DST_paisCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXGetPARAM_IdiomasCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXGetPARAM_IdiomasCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXGetPARAM_IncotermsCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXGetPARAM_IncotermsCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXGetPARAM_MONCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXGetPARAM_MONCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXGetPARAM_PtoVentaCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXGetPARAM_PtoVentaCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXGetPARAM_Tipo_CbteCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXGetPARAM_Tipo_CbteCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXGetPARAM_Tipo_ExpoCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXGetPARAM_Tipo_ExpoCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXGetPARAM_UMedCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXGetPARAM_UMedCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXResponseAuthorize.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXResponseLast_CMP.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXResponse_CheckPermiso.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXResponse_Ctz.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXResponse_DST_cuit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXResponse_DST_pais.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXResponse_Idi.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXResponse_Inc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXResponse_LastID.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXResponse_Mon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXResponse_PtoVenta.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXResponse_Tex.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXResponse_Tipo_Cbte.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\FEXResponse_Umed.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\Item.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\Permiso.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIPTest\Service.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\ClsFEXAuthRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\ClsFEXErr.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\ClsFEXEvents.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\ClsFEXGetCMP.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\ClsFEXGetCMPR.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\ClsFEXOutAuthorize.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\ClsFEXRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\ClsFEXResponse_CheckPermiso.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\ClsFEXResponse_Ctz.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\ClsFEXResponse_DST_cuit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\ClsFEXResponse_DST_pais.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\ClsFEXResponse_Idi.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\ClsFEXResponse_Inc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\ClsFEXResponse_LastID.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\ClsFEXResponse_Mon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\ClsFEXResponse_PtoVenta.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\ClsFEXResponse_Tex.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\ClsFEXResponse_Tipo_Cbte.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\ClsFEXResponse_UMed.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\ClsFEX_LastCMP.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\ClsFEX_LastCMP_Response.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\Cmp_asoc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\DummyResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXAuthorizeCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXAuthorizeCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXCheck_PermisoCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXCheck_PermisoCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXDummyCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXDummyCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXGetCMPCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXGetCMPCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXGetCMPResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXGetLast_CMPCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXGetLast_CMPCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXGetLast_IDCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXGetLast_IDCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXGetPARAM_CtzCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXGetPARAM_CtzCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXGetPARAM_DST_CUITCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXGetPARAM_DST_CUITCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXGetPARAM_DST_paisCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXGetPARAM_DST_paisCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXGetPARAM_IdiomasCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXGetPARAM_IdiomasCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXGetPARAM_IncotermsCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXGetPARAM_IncotermsCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXGetPARAM_MONCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXGetPARAM_MONCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXGetPARAM_PtoVentaCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXGetPARAM_PtoVentaCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXGetPARAM_Tipo_CbteCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXGetPARAM_Tipo_CbteCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXGetPARAM_Tipo_ExpoCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXGetPARAM_Tipo_ExpoCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXGetPARAM_UMedCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXGetPARAM_UMedCompletedEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXResponseAuthorize.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXResponseLast_CMP.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXResponse_CheckPermiso.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXResponse_Ctz.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXResponse_DST_cuit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXResponse_DST_pais.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXResponse_Idi.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXResponse_Inc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXResponse_LastID.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXResponse_Mon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXResponse_PtoVenta.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXResponse_Tex.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXResponse_Tipo_Cbte.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\FEXResponse_Umed.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\Item.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\Permiso.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSAFIPFE\xAFIP\Service.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="WSAFIPFE.Resources.resources" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent />
+  </PropertyGroup>
+</Project>
