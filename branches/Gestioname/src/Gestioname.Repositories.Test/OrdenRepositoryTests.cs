@@ -16,13 +16,14 @@ namespace Gestioname.Repositories.Test
 
         public IClienteRepository ClienteRepository { get; set; }
 
+
         protected override void BeforeSave(Orden orden)
         {
             ClienteRepository.Save(new Cliente().GetTestInstance());
 
             orden.Cliente = ClienteRepository.GetAll().First();
-
-            throw new Exception("falta almacenar items de la orden");
+            
+            //throw new Exception("falta almacenar items de la orden");
         }
 
         protected override void AfterSave(Orden entity)
@@ -35,12 +36,19 @@ namespace Gestioname.Repositories.Test
         {
             Orden orden = new Orden().GetTestInstance();
 
-            orden.Items.Add(new OrdenItem
-                                {
-                                    
-                                });
+            ClienteRepository.Save(new Cliente().GetTestInstance());
 
-            Assert.AreEqual(true, false);
+            orden.Cliente = ClienteRepository.GetAll().First();
+
+            OrdenItem itemprueba = new OrdenItem().GetTestInstance();
+
+            orden.Items.Add(itemprueba);
+
+            OrdenRepository.Save(orden);
+
+            Orden resul = OrdenRepository.FindById(orden.Id);
+            
+            Assert.AreEqual(resul,orden);
         }
     }
 }
