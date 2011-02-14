@@ -27,9 +27,17 @@ namespace Gestioname.DomainModel
 
         public virtual IList<Remito> Remitos { get; set; }
 
-        public virtual IList<OrdenItem> Items { get; set; }
+        public virtual IList<OrdenItem> Items
+        {
+            get { return items; }
+            set { items.Add((OrdenItem) value);} }
 
         #endregion
+
+        #region Private
+        private List<OrdenItem> items = new List<OrdenItem>();
+        #endregion
+
 
         #region Methods
 
@@ -38,7 +46,6 @@ namespace Gestioname.DomainModel
             DateTime fecha = new DateTime(2010,2,3);
             return new Orden
                        {
-                           Cliente = new Cliente().GetTestInstance(),
                            DescuentoEspecial = 100,
                            FechaEmision = fecha,
                            FechaEntrega = DateTime.Today,
