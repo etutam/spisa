@@ -27,18 +27,21 @@ namespace Gestioname.DomainModel
 
         public virtual IList<Remito> Remitos { get; set; }
 
-        public virtual IList<OrdenItem> Items
+        public virtual IList<OrdenItem> Items { get; set; }
+
+        #endregion
+
+
+        #region Constructors
+        public Orden()
         {
-            get { return items; }
-            set { items.Add((OrdenItem) value);} }
+            Facturas = new List<Factura>();
 
+            Remitos = new List<Remito>();
+
+            Items = new List<OrdenItem>();
+        }
         #endregion
-
-        #region Private
-        private List<OrdenItem> items = new List<OrdenItem>();
-        #endregion
-
-
         #region Methods
 
         public override Orden GetTestInstance()
