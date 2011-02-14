@@ -12,6 +12,9 @@
     <property name="Numero" />
     <property name="Observaciones" />
     <property name="DescuentoEspecial" />
-
+    <bag name="Items" lazy ="true" cascade="all">
+      <key column="Id"></key>
+      <one-to-many class="OrdenItem"/>
+    </bag>
   </class>
 </hibernate-mapping>

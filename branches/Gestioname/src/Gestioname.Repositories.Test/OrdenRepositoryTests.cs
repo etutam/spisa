@@ -11,6 +11,7 @@ namespace Gestioname.Repositories.Test
     [TestFixture]
     class OrdenRepositoryTests: RepositoryTestCase<Orden,OrdenRepository>
     {
+        public IArticuloRepository ArticuloRepository { get; set; }
 
         public IOrdenRepository OrdenRepository { get; set; }
 
@@ -21,7 +22,9 @@ namespace Gestioname.Repositories.Test
         {
             ClienteRepository.Save(new Cliente().GetTestInstance());
 
+            ArticuloRepository.Save(new Articulo().GetTestInstance());
             orden.Cliente = ClienteRepository.GetAll().First();
+            orden.Items.Add(new OrdenItem(){Articulo = ArticuloRepository.GetAll().First()});
             
             //throw new Exception("falta almacenar items de la orden");
         }
@@ -36,11 +39,15 @@ namespace Gestioname.Repositories.Test
         {
             Orden orden = new Orden().GetTestInstance();
 
+            ArticuloRepository.Save(new Articulo().GetTestInstance());
+
             ClienteRepository.Save(new Cliente().GetTestInstance());
 
             orden.Cliente = ClienteRepository.GetAll().First();
 
             OrdenItem itemprueba = new OrdenItem().GetTestInstance();
+
+            itemprueba.Articulo = ArticuloRepository.GetAll().First();
 
             orden.Items.Add(itemprueba);
 

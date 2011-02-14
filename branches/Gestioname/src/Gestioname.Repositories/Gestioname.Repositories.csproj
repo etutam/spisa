@@ -111,7 +111,9 @@
     <EmbeddedResource Include="Mappings\Transportista.hbm.xml" />
     <EmbeddedResource Include="Mappings\OrdenItem.hbm.xml" />
     <EmbeddedResource Include="Mappings\Remito.hbm.xml" />
-    <EmbeddedResource Include="Mappings\Orden.hbm.xml" />
+    <EmbeddedResource Include="Mappings\Orden.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mappings\Articulo.hbm.xml" />
     <EmbeddedResource Include="Mappings\Factura.hbm.xml">
       <SubType>Designer</SubType>
