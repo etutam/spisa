@@ -19,7 +19,7 @@ namespace Gestioname.DomainModel
 
         public override OrdenItem GetTestInstance()
         {
-            return new OrdenItem {Articulo = new Articulo().GetTestInstance(), Cantidad = 100, Descuento = 20};
+            return new OrdenItem { Cantidad = 100, Descuento = 20};
 
         }
 
