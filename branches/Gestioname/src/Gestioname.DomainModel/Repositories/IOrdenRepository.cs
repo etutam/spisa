@@ -8,6 +8,6 @@ namespace Gestioname.DomainModel.Repositories
 {
     public interface IOrdenRepository: IRepository<Orden>
     {
-
+        Orden CreateFromFactura(Factura factura);
     }
 }

@@ -24,8 +24,11 @@ namespace Gestioname.Repositories.Test
 
             ArticuloRepository.Save(new Articulo().GetTestInstance());
             orden.Cliente = ClienteRepository.GetAll().First();
-            orden.Items.Add(new OrdenItem(){Articulo = ArticuloRepository.GetAll().First()});
-            
+            Articulo productoprueba = ArticuloRepository.GetAll().First();
+
+            orden.Items.Add(new OrdenItem(){Articulo = productoprueba,Orden = orden});
+
+
             //throw new Exception("falta almacenar items de la orden");
         }
 
@@ -49,11 +52,15 @@ namespace Gestioname.Repositories.Test
 
             itemprueba.Articulo = ArticuloRepository.GetAll().First();
 
+            itemprueba.Orden = orden;
+
             orden.Items.Add(itemprueba);
 
             OrdenRepository.Save(orden);
 
             Orden resul = OrdenRepository.FindById(orden.Id);
+            
+            Assert.IsNotNull(resul);
             
             Assert.AreEqual(resul,orden);
         }
