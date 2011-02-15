@@ -7,7 +7,7 @@ using Gestioname.Library;
 
 namespace Gestioname.DomainModel
 {
-    public class Factura : EntityBase<Factura> 
+    public class Factura : EntityBase<Factura>, IHasItems
     {
 
         
@@ -20,6 +20,20 @@ namespace Gestioname.DomainModel
 
         public virtual bool EsNotaDeCredito { get; set; }
 
+        public virtual DateTime Fecha { get; set; }
+
+        public virtual Decimal ValorDolar { get; set; }
+
+        public virtual string Observaciones { get; set; }
+
+        public virtual bool EsCotizacion { get; set; }
+
+        public virtual Orden Orden { get; set; }
+
+        public virtual Cliente Cliente { get; set; }
+
+        public virtual List<OrdenItem> Items { get; set; }
+
         #endregion
 
         #region Methods
@@ -28,7 +42,12 @@ namespace Gestioname.DomainModel
         {
             return new Factura
                        {
-                           NumeroFactura = 1234567891234567
+                           NumeroFactura = 1234567891234567,
+                           Fecha = DateTime.Now,
+                           FueImpresa = false,
+                           EsCotizacion = false,
+                           EsNotaDeCredito = false,
+                           ValorDolar = 4.06m
                        };
         }
 
@@ -40,5 +59,7 @@ namespace Gestioname.DomainModel
 
 
         #endregion
+
+        
     }
 }

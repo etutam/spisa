@@ -9,6 +9,6 @@
     <many-to-one name="Articulo" class="Articulo" column="IdArticulo" />
     <property name="Cantidad" />
     <property name="Descuento" />
-    <many-to-one name="Id" column="Id" class="Orden" ></many-to-one>
+    <many-to-one name="Orden" class="OrdenItem" column="IdOrden"/>
   </class>
 </hibernate-mapping>

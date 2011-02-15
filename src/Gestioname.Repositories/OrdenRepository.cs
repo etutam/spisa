@@ -11,6 +11,14 @@ namespace Gestioname.Repositories
     public class OrdenRepository:NHibernateRepository<Orden> ,IOrdenRepository
     {
 
+        public virtual Orden CreateFromFactura(Factura factura)
+        {
+            Orden orden = new Orden().GetTestInstance();
+            orden.Items = factura.Items;
+            orden.Cliente = factura.Cliente;
+            Save(orden);
+            return FindById(orden.Id);
+        }
 
     }
 }

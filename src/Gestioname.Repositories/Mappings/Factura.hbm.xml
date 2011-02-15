@@ -9,6 +9,12 @@
     <property name="NumeroFactura" />
     <property name="FueImpresa" />
     <property name="EsNotaDeCredito" />
+    <property name="Observaciones" />
+    <property name="Fecha" />
+    <property name="EsCotizacion" />
+    <property name="ValorDolar" />
+    <many-to-one name="Orden" class="Factura" column="IdOrden"/>
+    
 
   </class>
 </hibernate-mapping>

@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\IArticuloController.cs" />
+    <Compile Include="IHasItems.cs" />
     <Compile Include="Inventario\Almacen.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="Controllers\IClienteController.cs" />

@@ -15,6 +15,8 @@ namespace Gestioname.DomainModel
         public virtual int Cantidad { get; set; }
 
         public virtual Decimal Descuento { get; set; }
+
+        public virtual Orden Orden { get;set; }
         #endregion
 
         public override OrdenItem GetTestInstance()
