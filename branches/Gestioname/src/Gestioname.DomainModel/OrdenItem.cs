@@ -9,6 +9,21 @@ namespace Gestioname.DomainModel
 {
     public class OrdenItem: EntityBase<OrdenItem>
     {
+        #region Constructors
+        public OrdenItem()
+        {
+            
+        }
+        
+        public OrdenItem(Articulo articulo, int cantidad, decimal descuento, Orden orden)
+        {
+            Articulo = articulo;
+            Cantidad = cantidad;
+            Descuento = descuento;
+            Orden = orden;
+        }
+        #endregion
+
         #region Properties
         public virtual Articulo Articulo { get; set; }
 

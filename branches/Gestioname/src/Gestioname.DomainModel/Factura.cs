@@ -36,8 +36,15 @@ namespace Gestioname.DomainModel
 
         #endregion
 
+        #region Constructors
+        public Factura()
+        {
+            Items = new List<OrdenItem>();
+        }
+        #endregion
+
         #region Methods
-        
+
         public override Factura GetTestInstance()
         {
             return new Factura
