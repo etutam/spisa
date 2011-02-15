@@ -20,6 +20,30 @@ namespace Gestioname.Repositories.Test
 
         public IArticuloRepository ArticuloRepository { get; set; }
 
+        protected override void BeforeSave(Factura entity)
+        {
+            // Setup
+            ArticuloRepository.Save(new Articulo().GetTestInstance());
+            ClienteRepository.Save(new Cliente().GetTestInstance());
+
+            // Creacion de Orden
+            Orden orden = new Orden().GetTestInstance();
+
+            orden.Cliente = ClienteRepository.GetAll().First();
+            orden.Items.Add(new OrdenItem(ArticuloRepository.GetAll().First(), 10, 1, orden));
+
+            OrdenRepository.Save(orden);
+
+            entity.Orden = OrdenRepository.GetAll().First();
+        }
+
+        protected override void AfterSave(Factura entity)
+        {
+            OrdenRepository.Remove(OrdenRepository.GetAll().First());
+
+            ArticuloRepository.Remove(ArticuloRepository.GetAll().First());
+        }
+
         [Test]
         public void FindByNumeroFactura()
         {
@@ -33,11 +57,13 @@ namespace Gestioname.Repositories.Test
 
             Articulo productoprueba = ArticuloRepository.GetAll().First();
 
-            facturaprueba.Items.Add(new OrdenItem() { Articulo = productoprueba});
+            Orden orden = new Orden().GetTestInstance();
 
-            facturaprueba.Orden = OrdenRepository.CreateFromFactura(facturaprueba);
+            orden.Cliente = ClienteRepository.GetAll().First();
+            orden.Items.Add(new OrdenItem(productoprueba, 10, 1, orden));
 
-
+            OrdenRepository.Save(orden);
+            facturaprueba.Orden = OrdenRepository.GetAll().First();
 
             FacturaRepository.Save(facturaprueba);
             
@@ -46,10 +72,13 @@ namespace Gestioname.Repositories.Test
             Assert.NotNull(resultado);
 
             Assert.AreEqual(facturaprueba.NumeroFactura,resultado.NumeroFactura);
-
-            FacturaRepository.Remove(facturaprueba);
         }
 
+        [Test]
+        public void NoDataSaved()
+        {
+            throw new Exception("Keeps going to setup for each test :(");
+        }
         
        
 

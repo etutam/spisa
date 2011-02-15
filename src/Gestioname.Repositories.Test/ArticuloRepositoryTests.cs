@@ -25,7 +25,7 @@ namespace Gestioname.Repositories.Test
             var resul = ArticuloRepository.FindByCodigo(articulo1.Codigo) as List<Articulo>;
 
             Assert.NotNull(resul);
-            Assert.AreEqual(articulo1,resul[0]);
+            Assert.AreEqual(articulo1, resul.First());
             
         }
 
