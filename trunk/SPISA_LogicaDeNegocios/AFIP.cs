@@ -163,7 +163,7 @@ namespace SPISA.Libreria
             }
         }
 
-        public virtual void RegistrarNotaDeCredito(Factura datosFactura, Cliente datosCliente, Factura.Totales Tatoles)
+        public virtual void RegistrarNotaDeCredito(Factura datosFactura, Cliente datosCliente, Factura.Totales totales)
         {
 
             var f = new WSAFIPFE.Factura();
@@ -205,8 +205,8 @@ namespace SPISA.Libreria
                     f.F1DetalleConcepto = 1;
                     f.F1DetalleDocTipo = 80;
                     f.F1DetalleDocNro = datosCliente.CUIT;
-                    f.F1DetalleCbteDesde = f.F1CompUltimoAutorizado(1, 1) + 1;
-                    f.F1DetalleCbteHasta = f.F1CompUltimoAutorizado(1, 1) + 1;
+                    f.F1DetalleCbteDesde = f.F1CompUltimoAutorizado(1,3) + 1;
+                    f.F1DetalleCbteHasta = f.F1CompUltimoAutorizado(1,3) + 1;
                     Resultados.Add("Comprobante anterior numero : " + f.F1CompUltimoAutorizado(1, 1).ToString());
                     //Console.ReadLine();
                     f.F1DetalleCbteFch = datosFactura.Fecha.ToString("yyyMMdd");
@@ -261,6 +261,8 @@ namespace SPISA.Libreria
 
 
                     this.CaeValido = f.F1CAESolicitar();
+                    
+                    if(f.F1RespuestaDetalleCae!="")
                     this.Cae = Convert.ToInt64(f.F1RespuestaDetalleCae);
                     Resultados.Add("resultado global AFIP: " + f.F1RespuestaResultado);
                     Resultados.Add("es reproceso? " + f.F1RespuestaReProceso);

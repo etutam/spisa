@@ -769,7 +769,11 @@ namespace SPISA.Presentacion
                                 _factura.AlmacenarImpresion(_factura.EsNotaDeCredito);
                                 ret = _factura.Id;
                             }
-                            else ret = 0;
+                            else 
+                            {
+                                ret = 0;
+                                afip.RegistrarNotaDeCredito(_factura,cliente,totales);
+                            }
 
 
                         }
