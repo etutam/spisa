@@ -169,7 +169,7 @@ namespace SPISA.Libreria
             var f = new WSAFIPFE.Factura();
             f.ProxyUserName = "";
 
-
+            
             if (f.iniciar(WSAFIPFE.Factura.modoFiscal.Test, "33708293739", @"c:\pirulo.pfx", ""))
             {
                 if (f.f1ObtenerTicketAcceso())
