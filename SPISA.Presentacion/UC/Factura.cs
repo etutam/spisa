@@ -754,14 +754,14 @@ namespace SPISA.Presentacion
                             Cliente cliente = new Cliente {CUIT = detallesCliente.CUIT};
                             Factura.Totales totales = new Factura.Totales
                                                           {
-                                                              Total = txtTotal.Value.ToString(),
-                                                              IvaInscripto = txtIva21.Value.ToString(),
-                                                              SubTotal1 = txtSubTotal.Value.ToString(),
-                                                              SubTotal2 = txtSubTotal2.Value.ToString()
+                                                              Total = Decimal.Round(txtTotal.Value,2).ToString(),
+                                                              IvaInscripto = Decimal.Round(txtIva21.Value,2).ToString(),
+                                                              SubTotal1 = Decimal.Round(txtSubTotal.Value,2).ToString(),
+                                                              SubTotal2 = Decimal.Round(txtSubTotal2.Value,2).ToString()
                                                           };
                             //_factura.Registrar(_factura,cliente, totales);
                             Afip afip = new Afip();
-                            afip.Registrar(_factura, cliente, totales);
+                            afip.RegistrarFactura(_factura, cliente, totales);
                             
                             AppSettingsReader settings = new AppSettingsReader();
                             if (p.Imprimir((short)(settings.GetValue("NumeroDeCopiasFactura", typeof(short)))))
