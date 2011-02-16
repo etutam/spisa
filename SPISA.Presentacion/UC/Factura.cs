@@ -748,10 +748,11 @@ namespace SPISA.Presentacion
                     if (_factura != null)
                     {
                         try
-                        {
+                        {   
+
                             Printing p = new Printing   ();
                             p.Objetos = CargarObjetosAImprimir();
-                            Cliente cliente = new Cliente {CUIT = detallesCliente.CUIT};
+                            Cliente cliente = Cliente.TraerClientePorCodigo(detallesCliente.CodigoCliente);
                             Factura.Totales totales = new Factura.Totales
                                                           {
                                                               Total = Decimal.Round(txtTotal.Value,2).ToString(),
@@ -766,7 +767,7 @@ namespace SPISA.Presentacion
                             AppSettingsReader settings = new AppSettingsReader();
                             if (p.Imprimir((short)(settings.GetValue("NumeroDeCopiasFactura", typeof(short)))))
                             {
-                                _factura.AlmacenarImpresion(_factura.EsNotaDeCredito);
+                                _factura.AlmacenarImpresion(_factura.EsNotaDeCredito,afip.Cae);
                                 ret = _factura.Id;
                             }
                             else 

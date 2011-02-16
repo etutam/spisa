@@ -46,7 +46,6 @@ namespace SPISA.Libreria
         bool _esNotaDeCredito = false;
         private bool _esCotizacion = false;
 
-
         IList<NotaPedido_Item> _ListaItems = new List<NotaPedido_Item>();
 
         #endregion
@@ -59,6 +58,7 @@ namespace SPISA.Libreria
         #endregion
 
         #region Propiedades
+
         public bool EsCotizacion
         {
             get { return _esCotizacion; }
@@ -413,7 +413,7 @@ namespace SPISA.Libreria
         /// - Se considera que, a partir de la Impresion de la factura, los materiales son considerados como "Debitados" de la base de datos,
         /// y deben darse de baja en la misma.
         /// </summary>
-        public void AlmacenarImpresion(bool EsNotaDeCredito)
+        public void AlmacenarImpresion(bool EsNotaDeCredito,long Cae)
         {
             if (this.FueCancelada) throw new Exception("La factura ha sido cancelada y no puede imprimirse");
 
@@ -422,7 +422,7 @@ namespace SPISA.Libreria
 
             DbCommand dbCmdOC = db.GetStoredProcCommand(sqlCommand);
             db.AddInParameter(dbCmdOC, "IdFactura", DbType.Int32, this._IdFactura);
-
+            db.AddInParameter(dbCmdOC, "Cae", DbType.Int64, Cae);
             using (DbConnection conn = db.CreateConnection())
             {
                 conn.Open();
@@ -432,6 +432,7 @@ namespace SPISA.Libreria
                 {
                     if (!this._fueImpresa)
                     {
+                        
                         db.ExecuteNonQuery(dbCmdOC, ts);
 
                         // Almacenamos el Movimiento
@@ -566,7 +567,7 @@ namespace SPISA.Libreria
                     db.AddInParameter(dbCommand, "ValorDolar", DbType.Decimal, (this._valorDolar != 0 ? this._valorDolar : 0));
                     db.AddInParameter(dbCommand, "EsNotaDeCredito", DbType.Boolean, this._esNotaDeCredito);
                     db.AddInParameter(dbCommand, "EsCotizacion", DbType.Boolean, this._esCotizacion);
-
+                   
                     _IdFactura = Convert.ToInt32(db.ExecuteScalar(dbCommand, ts));
 
 
