@@ -338,6 +338,7 @@ namespace SPISA.Presentacion
             }
             catch (Exception ex)
             {
+                
                 MessageBox.Show("Ha ocurrido un error al intentar imprimir la Factura. Consulte el Log para mas detalles.", "Error al Imprimir Factura", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
