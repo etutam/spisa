@@ -620,7 +620,7 @@ namespace SPISA.Libreria
             db.AddInParameter(dbCommand, "IdFactura", DbType.Int32, this._IdFactura);
             using (DbConnection conn = db.CreateConnection())
             {
-
+ 
                 conn.Open();
 
                 try
