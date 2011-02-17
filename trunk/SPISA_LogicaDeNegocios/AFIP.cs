@@ -138,7 +138,8 @@ namespace SPISA.Libreria
 
 
                     this.CaeValido = f.F1CAESolicitar();
-                    this.Cae = Convert.ToInt64(f.F1RespuestaDetalleCae);
+                    if(f.F1RespuestaResultado!="")
+                        this.Cae = Convert.ToInt64(f.F1RespuestaDetalleCae);
                     Resultados.Add("resultado global AFIP: " + f.F1RespuestaResultado);
                     Resultados.Add("es reproceso? " + f.F1RespuestaReProceso);
                     Resultados.Add("registros procesados por AFIP: " + f.F1RespuestaCantidadReg.ToString());
