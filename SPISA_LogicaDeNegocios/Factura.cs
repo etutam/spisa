@@ -413,7 +413,7 @@ namespace SPISA.Libreria
         /// - Se considera que, a partir de la Impresion de la factura, los materiales son considerados como "Debitados" de la base de datos,
         /// y deben darse de baja en la misma.
         /// </summary>
-        public void AlmacenarImpresion(bool EsNotaDeCredito,long Cae)
+        public void AlmacenarImpresion(bool EsNotaDeCredito, long cae)
         {
             if (this.FueCancelada) throw new Exception("La factura ha sido cancelada y no puede imprimirse");
 
@@ -422,7 +422,7 @@ namespace SPISA.Libreria
 
             DbCommand dbCmdOC = db.GetStoredProcCommand(sqlCommand);
             db.AddInParameter(dbCmdOC, "IdFactura", DbType.Int32, this._IdFactura);
-            db.AddInParameter(dbCmdOC, "Cae", DbType.Int64, Cae);
+            db.AddInParameter(dbCmdOC, "Cae", DbType.Int64, cae);
             using (DbConnection conn = db.CreateConnection())
             {
                 conn.Open();
@@ -618,7 +618,6 @@ namespace SPISA.Libreria
             DbCommand dbCommand = db.GetStoredProcCommand(sqlCommand);
 
             db.AddInParameter(dbCommand, "IdFactura", DbType.Int32, this._IdFactura);
-
             using (DbConnection conn = db.CreateConnection())
             {
 

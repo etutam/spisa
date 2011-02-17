@@ -752,28 +752,45 @@ namespace SPISA.Presentacion
 
                             Printing p = new Printing   ();
                             p.Objetos = CargarObjetosAImprimir();
+
+                            Afip afip = new Afip();
                             Cliente cliente = Cliente.TraerClientePorCodigo(detallesCliente.CodigoCliente);
                             Factura.Totales totales = new Factura.Totales
-                                                          {
-                                                              Total = Decimal.Round(txtTotal.Value,2).ToString(),
-                                                              IvaInscripto = Decimal.Round(txtIva21.Value,2).ToString(),
-                                                              SubTotal1 = Decimal.Round(txtSubTotal.Value,2).ToString(),
-                                                              SubTotal2 = Decimal.Round(txtSubTotal2.Value,2).ToString()
-                                                          };
-                            //_factura.Registrar(_factura,cliente, totales);
-                            Afip afip = new Afip();
-                            afip.RegistrarFactura(_factura, cliente, totales);
-                            
+                            {
+                                Total = Decimal.Round(txtTotal.Value, 2).ToString(),
+                                IvaInscripto =
+                                    Decimal.Round(txtIva21.Value, 2).ToString(),
+                                SubTotal1 =
+                                    Decimal.Round(txtSubTotal.Value, 2).ToString(),
+                                SubTotal2 =
+                                    Decimal.Round(txtSubTotal2.Value, 2).ToString()
+                            };
+                            if (checkBox2.Checked)
+                            {
+                                if (!_factura.EsNotaDeCredito)
+                                    afip.RegistrarFactura(_factura, cliente, totales);
+                                else
+                                    afip.RegistrarNotaDeCredito(_factura, cliente, totales);
+                            }
                             AppSettingsReader settings = new AppSettingsReader();
                             if (p.Imprimir((short)(settings.GetValue("NumeroDeCopiasFactura", typeof(short)))))
                             {
-                                _factura.AlmacenarImpresion(_factura.EsNotaDeCredito,afip.Cae);
+                                if (checkBox2.Checked)
+                                    _factura.AlmacenarImpresion(_factura.EsNotaDeCredito, afip.Cae);
+                                else
+                                    _factura.AlmacenarImpresion(_factura.EsNotaDeCredito, 0);
                                 ret = _factura.Id;
                             }
                             else 
                             {
                                 ret = 0;
-                                afip.RegistrarNotaDeCredito(_factura,cliente,totales);
+                                if (checkBox2.Checked)
+                                {
+                                    if (!_factura.EsNotaDeCredito)
+                                        afip.RegistrarNotaDeCredito(_factura, cliente, totales);
+                                    else
+                                        afip.RegistrarFactura(_factura, cliente, totales);
+                                }
                             }
 
 
