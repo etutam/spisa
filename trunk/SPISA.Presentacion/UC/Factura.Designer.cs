@@ -115,6 +115,7 @@ namespace SPISA.Presentacion
             this.ultraLabel7 = new Infragistics.Win.Misc.UltraLabel();
             this.ucpStockCritico = new Infragistics.Win.UltraWinEditors.UltraColorPicker();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.ucListaArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEditorControlCantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEditorControlDescuento)).BeginInit();
@@ -402,6 +403,7 @@ namespace SPISA.Presentacion
             // 
             // gbDatosGenerales
             // 
+            this.gbDatosGenerales.Controls.Add(this.checkBox2);
             this.gbDatosGenerales.Controls.Add(this.checkBox1);
             this.gbDatosGenerales.Controls.Add(this.chkNotaDeCredito);
             this.gbDatosGenerales.Controls.Add(this.txtObservaciones);
@@ -744,6 +746,17 @@ namespace SPISA.Presentacion
             this.errorProvider.BlinkRate = 100;
             this.errorProvider.ContainerControl = this;
             // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.BackColor = System.Drawing.Color.Transparent;
+            this.checkBox2.Location = new System.Drawing.Point(352, 49);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(97, 17);
+            this.checkBox2.TabIndex = 19;
+            this.checkBox2.Text = "Mandar a AFIP";
+            this.checkBox2.UseVisualStyleBackColor = false;
+            // 
             // UcFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -836,5 +849,6 @@ namespace SPISA.Presentacion
         private Infragistics.Win.Misc.UltraLabel ultraLabel7;
         private Infragistics.Win.UltraWinEditors.UltraColorPicker ucpStockCritico;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }
