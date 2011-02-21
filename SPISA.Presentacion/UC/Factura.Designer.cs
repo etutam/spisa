@@ -87,6 +87,7 @@ namespace SPISA.Presentacion
             this.txtNumeroFactura = new Infragistics.Win.UltraWinMaskedEdit.UltraMaskedEdit();
             this.ultraLabel4 = new Infragistics.Win.Misc.UltraLabel();
             this.gbDatosGenerales = new Infragistics.Win.Misc.UltraGroupBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.chkNotaDeCredito = new Infragistics.Win.UltraWinEditors.UltraCheckEditor();
             this.txtObservaciones = new Infragistics.Win.UltraWinEditors.UltraTextEditor();
@@ -115,7 +116,6 @@ namespace SPISA.Presentacion
             this.ultraLabel7 = new Infragistics.Win.Misc.UltraLabel();
             this.ucpStockCritico = new Infragistics.Win.UltraWinEditors.UltraColorPicker();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.ucListaArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEditorControlCantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEditorControlDescuento)).BeginInit();
@@ -424,6 +424,18 @@ namespace SPISA.Presentacion
             this.gbDatosGenerales.TabIndex = 32;
             this.gbDatosGenerales.Text = "Datos Generales";
             this.gbDatosGenerales.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.BackColor = System.Drawing.Color.Transparent;
+            this.checkBox2.Location = new System.Drawing.Point(352, 49);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(97, 17);
+            this.checkBox2.TabIndex = 19;
+            this.checkBox2.Text = "Mandar a AFIP";
+            this.checkBox2.UseVisualStyleBackColor = false;
+            this.checkBox2.Visible = false;
             // 
             // checkBox1
             // 
@@ -745,17 +757,6 @@ namespace SPISA.Presentacion
             // 
             this.errorProvider.BlinkRate = 100;
             this.errorProvider.ContainerControl = this;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox2.Location = new System.Drawing.Point(352, 49);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(97, 17);
-            this.checkBox2.TabIndex = 19;
-            this.checkBox2.Text = "Mandar a AFIP";
-            this.checkBox2.UseVisualStyleBackColor = false;
             // 
             // UcFactura
             // 

@@ -101,7 +101,18 @@ namespace SPISA.Presentacion
                 Cliente c = Cliente.TraerClientePorCodigo(codigoCliente);
                 this.CargarCliente(c);
                 this._cliente = c;
-                
+                if (c.EsDeudor)
+                {
+                    label1.Text = "ES DEUDOR";
+                    label1.ForeColor = Color.Red;
+                }
+                else
+                {
+                    
+                    label1.Text = "NO ES DEUDOR";
+                    label1.ForeColor = Color.Green;
+                    
+                }
             }
             else
             {
@@ -123,6 +134,7 @@ namespace SPISA.Presentacion
         public void CargarCliente(Cliente c)
         {
             ucListaClientes.Text = c.RazonSocial;
+            
             txtDomicilioComercial.Text = c.Domicilio;
             txtLocalidad.Text = c.Localidad;
             
@@ -132,6 +144,7 @@ namespace SPISA.Presentacion
             txtCUIT.Text = c.CUIT;
             txtCUIT.Tag = c.CUIT;
             txtSaldo.Value = c.Saldo;
+            
 
             if (c.Saldo < 0)
             {
@@ -221,6 +234,38 @@ namespace SPISA.Presentacion
         }
 
         #endregion
+
+        private void ultraLabel11_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(this.Cliente!=null)
+                {
+                    this.Cliente.SetearEstadoDeudor();
+                        if (Cliente.EsDeudor)
+                        {
+                            label1.Text = "ES DEUDOR";
+                            label1.ForeColor = Color.Red;
+                            ucListaClientes.Appearance.ForeColor = Color.Red;
+                        }
+                        else
+                        {
+                            label1.Text = "NO ES DEUDOR";
+                            label1.ForeColor = Color.Green;
+                            ucListaClientes.Appearance.ForeColor = Color.Black;
+                        }
+
+                }
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
 
        
 

@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Data;
 using System.Text;
 using System.Windows.Forms;
-
+using Microsoft.Practices.EnterpriseLibrary.Data;
 using SPISA.Libreria;
 using Infragistics.Win.UltraWinGrid;
 using Infragistics.Win.UltraWinTabControl;
@@ -1211,6 +1211,10 @@ namespace SPISA.Presentacion
                 ugArticulos.PerformAction(UltraGridAction.EnterEditMode, false, false);
 
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
         }
 
        
