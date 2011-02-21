@@ -64,6 +64,8 @@ namespace SPISA.Presentacion
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetallesCliente));
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.ultraGroupBox1 = new Infragistics.Win.Misc.UltraGroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtSaldo = new Infragistics.Win.UltraWinEditors.UltraCurrencyEditor();
             this.ultraLabel1 = new Infragistics.Win.Misc.UltraLabel();
             this.ultraLabel11 = new Infragistics.Win.Misc.UltraLabel();
@@ -100,6 +102,8 @@ namespace SPISA.Presentacion
             // 
             // ultraGroupBox1
             // 
+            this.ultraGroupBox1.Controls.Add(this.button1);
+            this.ultraGroupBox1.Controls.Add(this.label1);
             this.ultraGroupBox1.Controls.Add(this.txtSaldo);
             this.ultraGroupBox1.Controls.Add(this.ultraLabel1);
             this.ultraGroupBox1.Controls.Add(this.ultraLabel11);
@@ -121,6 +125,26 @@ namespace SPISA.Presentacion
             this.ultraGroupBox1.Size = new System.Drawing.Size(676, 145);
             this.ultraGroupBox1.TabIndex = 0;
             this.ultraGroupBox1.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007;
+            // 
+            // button1
+            // 
+            this.button1.AutoSize = true;
+            this.button1.Location = new System.Drawing.Point(558, 88);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(112, 23);
+            this.button1.TabIndex = 58;
+            this.button1.Text = "CAMBIAR ESTADO";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(424, 92);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 57;
             // 
             // txtSaldo
             // 
@@ -152,12 +176,13 @@ namespace SPISA.Presentacion
             appearance2.TextHAlignAsString = "Right";
             appearance2.TextVAlignAsString = "Middle";
             this.ultraLabel11.Appearance = appearance2;
-            this.ultraLabel11.Location = new System.Drawing.Point(392, 88);
+            this.ultraLabel11.Location = new System.Drawing.Point(441, 88);
             this.ultraLabel11.Name = "ultraLabel11";
             this.ultraLabel11.Size = new System.Drawing.Size(111, 23);
             this.ultraLabel11.TabIndex = 54;
             this.ultraLabel11.Text = "Operatoria";
             this.ultraLabel11.Visible = false;
+            this.ultraLabel11.Click += new System.EventHandler(this.ultraLabel11_Click);
             // 
             // ucListaOperatorias
             // 
@@ -493,5 +518,7 @@ namespace SPISA.Presentacion
         private Infragistics.Win.Misc.UltraLabel ultraLabel1;
         private System.Windows.Forms.ImageList imageList1;
         private Infragistics.Win.UltraWinToolTip.UltraToolTipManager toolTipManager;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }

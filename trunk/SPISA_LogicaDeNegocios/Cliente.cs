@@ -23,6 +23,8 @@ namespace SPISA.Libreria
         #endregion
 
         #region Campos Privados
+
+        private bool _esDeudor;
         int _idCliente;
         int _codigo;
         string _razonSocial;
@@ -42,6 +44,11 @@ namespace SPISA.Libreria
         #endregion
 
         #region Propiedades
+        public bool EsDeudor
+        {
+            get { return _esDeudor; }
+            set { _esDeudor = value; }
+        }
         public int Id
         {
             get { return _idCliente; }
@@ -236,6 +243,7 @@ namespace SPISA.Libreria
             c._iva = CondicionIVA.TraerCondicionIVAPorId(Convert.ToInt32(dr["IdCondicionIVA"].ToString()));
             c._cuit = dr["CUIT"].ToString();
             c._operatoria = Operatoria.TraerOperatoriaPorId(Convert.ToInt32(dr["IdOperatoria"].ToString()));
+            c._esDeudor = Convert.ToBoolean(dr["EsDeudor"]);
 
             if (dr["IdTransportista"] != DBNull.Value)
                 c._transportista = Transportista.TraerTransportistaPorId(Convert.ToInt32(dr["IdTransportista"].ToString()));
@@ -297,7 +305,7 @@ namespace SPISA.Libreria
                         Logger.Append(Consts.Clientes_TraerClientePorCodigo, new Object[] { "Codigo", codigo }, "IdCliente=" + c.Id.ToString());
                     }
                 }
-            }
+            }   
             catch (Exception ex)
             {
                 AppSettingsReader appSettingsReader = new AppSettingsReader();
@@ -379,6 +387,7 @@ namespace SPISA.Libreria
                 bool sendErrorsByMail = Convert.ToBoolean(appSettingsReader.GetValue("SendErrorsByMail", typeof(Boolean)));
 
                 if (sendErrorsByMail) ExceptionPolicy.HandleException(ex, "Global Policy");
+
 
                 throw ex;
             }
@@ -496,6 +505,24 @@ namespace SPISA.Libreria
             return _idCliente;
         }
         #endregion
+
+        public void SetearEstadoDeudor()
+        {
+            
+            string sqlCommand = Consts.Cliente_SetearEstadoDeudor;
+
+            try
+            {
+                Database db = DatabaseFactory.CreateDatabase();
+                DbCommand dbCommand = db.GetStoredProcCommand(sqlCommand);
+                db.AddInParameter(dbCommand,"IdCliente",DbType.Int32,this._idCliente);
+                EsDeudor =Convert.ToBoolean(db.ExecuteScalar(dbCommand));
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
     public class Operatoria
     {

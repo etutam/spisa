@@ -33,6 +33,7 @@ namespace SPISA.Libreria
         public const string Remitos_ActualizarRemito = "Remitos_ActualizarRemito";
         public const string Remitos_ObtenerNuevoNumeroDeRemito = "Remitos_ObtenerNuevoNumeroDeRemito";
 
+        public const string Cliente_SetearEstadoDeudor = "Cliente_SetearEstadoDeudor";
         public const string Clientes_TraerClientePorCodigo = "Clientes_TraerClientePorCodigo";
         public const string Clientes_TraerClientePorRazonSocial = "Clientes_TraerClientePorRazonSocial";
         public const string Clientes_TraerPorId = "Clientes_TraerPorId";
